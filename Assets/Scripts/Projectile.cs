@@ -6,6 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Projectile : MonoBehaviour
 {
+    [SerializeField] private float speed;
     private Rigidbody rb;
     private Animator animator;
     private GameObject target;
@@ -34,7 +35,7 @@ public class Projectile : MonoBehaviour
             dir = (target.transform.position - transform.position).normalized;
         else
             dir = transform.forward;
-
-        rb.AddForce(dir, ForceMode.Force);
+        transform.LookAt(dir);
+        rb.AddForce(dir * speed * Time.deltaTime, ForceMode.Force);
     }
 }

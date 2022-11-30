@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Vehicles.Car;
 
 public class AbilityObj : MonoBehaviour
 {
@@ -8,9 +9,10 @@ public class AbilityObj : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Car>() != null)
+        if (other.GetComponent<CarController>() != null)
         {
-            other.GetComponent<Car>().AddAbility(abilitySO);
+            other.GetComponent<CarController>().AddAbility(abilitySO);
+            Destroy(gameObject);
         }
     }
 }

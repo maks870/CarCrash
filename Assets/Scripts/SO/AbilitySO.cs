@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Vehicles.Car;
 
 public abstract class AbilitySO : ScriptableObject
 {
-    public abstract void Use(Car car);
+    public abstract void Use(CarController car);
 
-    public abstract void Use(Car car, Car target);
+    public abstract void Use(CarController car, CarController target);
 }
 
 
