@@ -2,15 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Rigidbody))]
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] private Rigidbody rb;
+    private Rigidbody rb;
+    private Animator animator;
     private GameObject target;
 
     public GameObject Target { set => target = value; }
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
         Launch();
     }
     private void Update()
