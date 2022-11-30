@@ -53,7 +53,7 @@ namespace UnityStandardAssets.Vehicles.Car
             m_CarController = GetComponent<CarController>();
 
             // give the random perlin a random value
-            m_RandomPerlin = Random.value*100;
+            m_RandomPerlin = Random.value*10;
 
             m_Rigidbody = GetComponent<Rigidbody>();
 
