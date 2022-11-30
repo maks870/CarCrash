@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Vehicles.Car;
 
-public class NewCarController : CarController
+public class Car : CarController
 {
-    [SerializeField] GameObject target;
 
     public void AddAbility(AbilitySO ability)
     {
-        ability.Use(this, target.GetComponent<NewCarController>());
+
     }
 }

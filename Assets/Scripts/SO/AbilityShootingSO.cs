@@ -8,12 +8,12 @@ public class AbilityShootingSO : AbilitySO
 {
     [SerializeField] private GameObject projectile;
 
-    public override void Use(NewCarController car)
+    public override void Use(Car car)
     {
         Use(car, null);
     }
 
-    public override void Use(NewCarController car, NewCarController target)
+    public override void Use(Car car, Car target)
     {
         Instantiate(projectile, car.transform.position, Quaternion.identity);
     }

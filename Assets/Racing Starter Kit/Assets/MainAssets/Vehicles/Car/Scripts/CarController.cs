@@ -259,7 +259,7 @@ namespace UnityStandardAssets.Vehicles.Car
         private void AddDownForce()
         {
             m_WheelColliders[0].attachedRigidbody.AddForce(-transform.up*m_Downforce*
-                                                         m_WheelColliders[0].attachedRigidbody.velocity.magnitude);         
+                                                         m_WheelColliders[0].attachedRigidbody.velocity.magnitude);
         }
 
 

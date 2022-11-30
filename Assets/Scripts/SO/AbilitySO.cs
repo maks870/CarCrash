@@ -4,9 +4,9 @@ using UnityEngine;
 
 public abstract class AbilitySO : ScriptableObject
 {
-    public abstract void Use(NewCarController car);
+    public abstract void Use(Car car);
 
-    public abstract void Use(NewCarController car, NewCarController target);
+    public abstract void Use(Car car, Car target);
 }
 
 

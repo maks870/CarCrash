@@ -8,10 +8,9 @@ public class AbilityObj : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<NewCarController>() != null)
+        if (other.GetComponent<Car>() != null)
         {
-            other.GetComponent<NewCarController>().AddAbility(abilitySO);
-            Destroy(gameObject);
+            other.GetComponent<Car>().AddAbility(abilitySO);
         }
     }
 }
