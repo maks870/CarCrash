@@ -23,7 +23,6 @@ namespace UnityStandardAssets.Vehicles.Car
             float h = input.HorizontalAxis;
             float v = input.VerticalAxis;
                     m_Car.Move(h, v, v, 0f);
-
         }
     }
 }
