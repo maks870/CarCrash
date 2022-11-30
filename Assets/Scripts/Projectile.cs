@@ -6,6 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Projectile : MonoBehaviour
 {
+    [SerializeField] float speed = 1;
     private Rigidbody rb;
     private Animator animator;
     private GameObject target;
@@ -25,7 +26,7 @@ public class Projectile : MonoBehaviour
 
     private void Launch()
     {
-
+        //действия и просчеты при запуске
     }
     private void Fly()
     {
@@ -35,6 +36,6 @@ public class Projectile : MonoBehaviour
         else
             dir = transform.forward;
 
-        rb.AddForce(dir, ForceMode.Force);
+        rb.AddForce(dir * speed * Time.deltaTime, ForceMode.Force);
     }
 }
