@@ -7,6 +7,8 @@ public abstract class AbilitySO : ScriptableObject
 {
     [SerializeField] protected GameObject projectile;
     [SerializeField] protected Sprite icon;
+
+    public Sprite Icon => icon; 
     public abstract void Use(Vector3 spawnPoint, CarController target);
 }
 

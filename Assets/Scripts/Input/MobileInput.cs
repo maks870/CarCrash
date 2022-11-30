@@ -18,7 +18,7 @@ public class MobileInput : BaseInput
         {
             GameObject buttonAbilityObj = Instantiate(buttonAbilityPref, container);
             Button buttonAbility = buttonAbilityObj.GetComponent<Button>();
-            buttonAbility.image.sprite = abilities[i].icon;
+            buttonAbility.image.sprite = abilities[i].Icon;
             buttonAbility.onClick.AddListener(() => PressButtonAbilityEvent.Invoke(i));
         }
     }

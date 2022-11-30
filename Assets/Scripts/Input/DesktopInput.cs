@@ -22,7 +22,7 @@ public class DesktopInput : BaseInput
                 imageAbility.GetComponentInChildren<Text>().text = "X";
             if (i == 2)
                 imageAbility.GetComponentInChildren<Text>().text = "C";
-            imageAbility.GetComponent<Image>().sprite = abilities[i].icon;
+            imageAbility.GetComponent<Image>().sprite = abilities[i].Icon;
         }
     }
 
