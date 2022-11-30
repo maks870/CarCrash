@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Vehicles.Car;
 
-public class Player : MonoBehaviour
+public class Car : CarController
 {
 
-   
+
 }

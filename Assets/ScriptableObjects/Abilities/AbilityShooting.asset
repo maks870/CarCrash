@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55a14fe6bf3f77045a8b93df0b07dde8, type: 3}
-  m_Name: AbilityDamage
+  m_Script: {fileID: 11500000, guid: e78c0e73c7d0038429ea6ea751591141, type: 3}
+  m_Name: AbilityShooting
   m_EditorClassIdentifier: 
-  pref: {fileID: 0}
+  projectile: {fileID: 0}
