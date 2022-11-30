@@ -9,7 +9,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float speed;
     private Rigidbody rb;
     private Animator animator;
-    private GameObject target;
+    [SerializeField] private GameObject target;
 
     public GameObject Target { set => target = value; }
 
@@ -20,7 +20,7 @@ public class Projectile : MonoBehaviour
         animator = GetComponent<Animator>();
         Launch();
     }
-    private void Update()
+    private void FixedUpdate()
     {
         Fly();
     }
@@ -33,10 +33,11 @@ public class Projectile : MonoBehaviour
     {
         Vector3 dir;
         if (target != null)
-            dir = (target.transform.position - transform.position).normalized;
+            dir = (target.transform.position - transform.position);
         else
             dir = transform.forward;
+        //rb.AddForce(Vector3.forward * speed * Time.deltaTime, ForceMode.Force);
         rb.AddForce(dir * speed * Time.deltaTime, ForceMode.Force);
-        transform.LookAt(dir);
+        transform.LookAt(target.transform.position);
     }
 }
