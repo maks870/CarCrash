@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace UnityStandardAssets.Vehicles.Car
 {
@@ -20,7 +20,20 @@ namespace UnityStandardAssets.Vehicles.Car
 
     public class CarController : MonoBehaviour
     {
-        [SerializeField] private Transform spawnPoint;
+        [SerializeField] private Transform spawnPointForward;
+        [SerializeField] private Transform spawnPointMiddle;
+        [SerializeField] private Transform spawnPointBack;
+        List<AbilitySO> abilityList = new List<AbilitySO>();
+        [SerializeField] private GameObject target;
+        private bool isDamaged;
+        private float velocityMultiplier = 1;
+
+        [SerializeField] private const float slowMultiplier = 0.5f;
+        [SerializeField] private const float slowTime = 1;
+
+        public delegate void AbilityListHandler(List<AbilitySO> abilitySO);
+        public event AbilityListHandler RefreshAbilityEvent;
+
 
 
         [SerializeField] private CarDriveType m_CarDriveType = CarDriveType.FourWheelDrive;
@@ -41,23 +54,18 @@ namespace UnityStandardAssets.Vehicles.Car
         [SerializeField] private float m_RevRangeBoundary = 1f;
         [SerializeField] private float m_SlipLimit;
         [SerializeField] private float m_BrakeTorque;
-        [SerializeField] private GameObject target;
 
         private Quaternion[] m_WheelMeshLocalRotations;
         private Vector3 m_Prevpos, m_Pos;
-        private bool isDamaged;
         private float m_SteerAngle;
         private int m_GearNum;
         private float m_GearFactor;
         private float m_OldRotation;
         private float m_CurrentTorque;
-        private float velocityMultiplier = 1;
         private Rigidbody m_Rigidbody;
         private const float k_ReversingThreshold = 0.01f;
-        [SerializeField] private const float slowMultiplier = 0.5f;
-        [SerializeField] private const float slowTime = 1;
 
-        public UnityEvent<AbilitySO> PickUpAbilityEvent = new UnityEvent<AbilitySO>();
+
         public bool Skidding { get; private set; }
         public float BrakeInput { get; private set; }
         public float CurrentSteerAngle { get { return m_SteerAngle; } }
@@ -84,7 +92,32 @@ namespace UnityStandardAssets.Vehicles.Car
 
         public void AddAbility(AbilitySO ability)
         {
-            PickUpAbilityEvent.Invoke(ability);
+            abilityList.Add(ability);
+            RefreshAbilityEvent.Invoke(abilityList);
+        }
+        public void UseAbility(int abilityPlace)
+        {
+            AbilitySO ability = abilityList[abilityPlace];
+            Vector3 spawnPoint = Vector3.zero;
+
+            switch (ability.SpawnPlace)
+            {
+                case SpawnPlace.front:
+                    spawnPoint = spawnPointForward.position;
+                    break;
+
+                case SpawnPlace.middle:
+                    spawnPoint = spawnPointMiddle.position;
+                    break;
+
+                case SpawnPlace.back:
+                    spawnPoint = spawnPointBack.position;
+                    break;
+            }
+
+            abilityList[abilityPlace].Use(spawnPoint, target.GetComponent<CarController>());
+            abilityList.Remove(ability);
+            RefreshAbilityEvent.Invoke(abilityList);
         }
         public void TakeDamage()
         {

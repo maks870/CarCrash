@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 1254017168727422477}
   - component: {fileID: 1254017168727422478}
   m_Layer: 0
-  m_Name: Missle Rocket 1
+  m_Name: Missle Rocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,11 +142,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1254017168727422581}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e101bb3f98690a342a5bde522396b637, type: 3}
+  m_Script: {fileID: 11500000, guid: 9dd8f6fd1f02d194fba5cd59424a21c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 100
-  target: {fileID: 0}
 --- !u!95 &1254017168727422477
 Animator:
   serializedVersion: 4

@@ -6,6 +6,8 @@ using UnityStandardAssets.Vehicles.Car;
 [CreateAssetMenu(fileName = "AbilityShooting", menuName = "ScriptableObject/Ability/AbilityShooting")]
 public class AbilityShootingSO : AbilitySO
 {
+    public override SpawnPlace SpawnPlace => SpawnPlace.front;
+
     public override void Use(Vector3 spawnPoint, CarController target)
     {
         GameObject rocket = Instantiate(projectile, spawnPoint, Quaternion.identity);

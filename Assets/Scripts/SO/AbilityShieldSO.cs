@@ -6,7 +6,7 @@ using UnityStandardAssets.Vehicles.Car;
 [CreateAssetMenu(fileName = "AbilityShield", menuName = "ScriptableObject/Ability/AbilityShield")]
 public class AbilityShieldSO : AbilitySO
 {
-    [SerializeField] private GameObject projectile;
+    public override SpawnPlace SpawnPlace => SpawnPlace.middle;
 
     public override void Use(Vector3 spawnPoint, CarController target)
     {
