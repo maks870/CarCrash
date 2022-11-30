@@ -18,6 +18,7 @@ public abstract class Projectile : MonoBehaviour
         if (other.GetComponent<CarController>() != null)
         {
             other.GetComponent<CarController>().TakeDamage();
+            Destroy(gameObject);
         }
     }
     protected virtual void Start()
