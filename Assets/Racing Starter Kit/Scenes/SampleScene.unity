@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.5
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.30098435, g: 0.35323992, b: 0.40420723, a: 0.5}
+  m_IndirectSpecularColor: {r: 0.30098557, g: 0.3532737, b: 0.40416563, a: 0.5}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -142,6 +142,7 @@ Transform:
   - {fileID: 1116438578}
   - {fileID: 1290346689}
   - {fileID: 620085700}
+  - {fileID: 1321064511}
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13273,7 +13274,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea65b38d485c374caa584a03f1de571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 0}
+  spawnPointForward: {fileID: 0}
+  spawnPointMiddle: {fileID: 0}
+  spawnPointBack: {fileID: 0}
+  target: {fileID: 0}
   m_CarDriveType: 2
   m_WheelColliders:
   - {fileID: 1961719836}
@@ -13303,7 +13307,6 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.4
   m_BrakeTorque: 20000
-  target: {fileID: 0}
 --- !u!54 &105824392
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -17140,7 +17143,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea65b38d485c374caa584a03f1de571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 0}
+  spawnPointForward: {fileID: 0}
+  spawnPointMiddle: {fileID: 0}
+  spawnPointBack: {fileID: 0}
+  target: {fileID: 0}
   m_CarDriveType: 2
   m_WheelColliders:
   - {fileID: 155202213}
@@ -17170,7 +17176,6 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.4
   m_BrakeTorque: 20000
-  target: {fileID: 0}
 --- !u!54 &212207064
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -23258,7 +23263,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 282371636}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.308, z: 1.2519989}
+  m_LocalPosition: {x: 0, y: 0.722, z: -0.091}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30735,7 +30740,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 451537363}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.308, z: 1.2519989}
+  m_LocalPosition: {x: 0, y: 0.308, z: 1.855}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -38303,7 +38308,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea65b38d485c374caa584a03f1de571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 0}
+  spawnPointForward: {fileID: 0}
+  spawnPointMiddle: {fileID: 0}
+  spawnPointBack: {fileID: 0}
+  target: {fileID: 0}
   m_CarDriveType: 2
   m_WheelColliders:
   - {fileID: 1250381786}
@@ -38333,7 +38341,6 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.4
   m_BrakeTorque: 20000
-  target: {fileID: 0}
 --- !u!54 &568796607
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -50958,7 +50965,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 662588155}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.308, z: 1.2519989}
+  m_LocalPosition: {x: 0, y: 0.308, z: -1.294}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -65260,7 +65267,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea65b38d485c374caa584a03f1de571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 0}
+  spawnPointForward: {fileID: 0}
+  spawnPointMiddle: {fileID: 0}
+  spawnPointBack: {fileID: 0}
+  target: {fileID: 0}
   m_CarDriveType: 2
   m_WheelColliders:
   - {fileID: 519125781}
@@ -65290,7 +65300,6 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.4
   m_BrakeTorque: 20000
-  target: {fileID: 0}
 --- !u!54 &871780402
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -73265,7 +73274,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea65b38d485c374caa584a03f1de571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 0}
+  spawnPointForward: {fileID: 0}
+  spawnPointMiddle: {fileID: 0}
+  spawnPointBack: {fileID: 0}
+  target: {fileID: 0}
   m_CarDriveType: 2
   m_WheelColliders:
   - {fileID: 1494322434}
@@ -73295,7 +73307,6 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.4
   m_BrakeTorque: 20000
-  target: {fileID: 0}
 --- !u!54 &996858346
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -77791,7 +77802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96468c245ae8e0d4f8f1c7a7b8b0542e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  input: {fileID: 0}
+  inputManager: {fileID: 1321064512}
 --- !u!114 &1185554398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77805,7 +77816,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea65b38d485c374caa584a03f1de571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 451537364}
+  spawnPointForward: {fileID: 451537364}
+  spawnPointMiddle: {fileID: 282371637}
+  spawnPointBack: {fileID: 662588156}
+  target: {fileID: 1337116463}
   m_CarDriveType: 2
   m_WheelColliders:
   - {fileID: 658640237}
@@ -77835,7 +77849,6 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.9
   m_BrakeTorque: 20000
-  target: {fileID: 1337116463}
 --- !u!54 &1185554399
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -79051,7 +79064,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea65b38d485c374caa584a03f1de571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 0}
+  spawnPointForward: {fileID: 0}
+  spawnPointMiddle: {fileID: 0}
+  spawnPointBack: {fileID: 0}
+  target: {fileID: 0}
   m_CarDriveType: 2
   m_WheelColliders:
   - {fileID: 1958003044}
@@ -79081,7 +79097,6 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.4
   m_BrakeTorque: 20000
-  target: {fileID: 0}
 --- !u!54 &1222839595
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -81567,6 +81582,55 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1320569112}
   m_Mesh: {fileID: 4300006, guid: 522a332726338424a9a7da7796ce3440, type: 3}
+--- !u!1 &1321064510
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1321064511}
+  - component: {fileID: 1321064512}
+  m_Layer: 0
+  m_Name: InputManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1321064511
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321064510}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1169443}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1321064512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321064510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8883dc7225ad29e45a3846c286dcc4d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mobileInputObj: {fileID: 4278707506074903962, guid: d22c6e96bdd3b034e89f97e09e7eb5de,
+    type: 3}
+  desktopInputObj: {fileID: 2999086307361950226, guid: faf0472dff4139e48b781693ebf3a62a,
+    type: 3}
+  mobile: 0
 --- !u!1 &1322081990
 GameObject:
   m_ObjectHideFlags: 0
@@ -82245,7 +82309,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea65b38d485c374caa584a03f1de571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 0}
+  spawnPointForward: {fileID: 0}
+  spawnPointMiddle: {fileID: 0}
+  spawnPointBack: {fileID: 0}
+  target: {fileID: 0}
   m_CarDriveType: 2
   m_WheelColliders:
   - {fileID: 1795945576}
@@ -82275,7 +82342,6 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.4
   m_BrakeTorque: 20000
-  target: {fileID: 0}
 --- !u!54 &1337116468
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -84284,7 +84350,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea65b38d485c374caa584a03f1de571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 0}
+  spawnPointForward: {fileID: 0}
+  spawnPointMiddle: {fileID: 0}
+  spawnPointBack: {fileID: 0}
+  target: {fileID: 0}
   m_CarDriveType: 2
   m_WheelColliders:
   - {fileID: 1995577840}
@@ -84314,7 +84383,6 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.4
   m_BrakeTorque: 20000
-  target: {fileID: 0}
 --- !u!54 &1408290452
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -86263,7 +86331,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea65b38d485c374caa584a03f1de571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 0}
+  spawnPointForward: {fileID: 0}
+  spawnPointMiddle: {fileID: 0}
+  spawnPointBack: {fileID: 0}
+  target: {fileID: 0}
   m_CarDriveType: 2
   m_WheelColliders:
   - {fileID: 428659013}
@@ -86293,7 +86364,6 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.4
   m_BrakeTorque: 20000
-  target: {fileID: 0}
 --- !u!54 &1483070711
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -104076,7 +104146,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea65b38d485c374caa584a03f1de571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 0}
+  spawnPointForward: {fileID: 0}
+  spawnPointMiddle: {fileID: 0}
+  spawnPointBack: {fileID: 0}
+  target: {fileID: 0}
   m_CarDriveType: 2
   m_WheelColliders:
   - {fileID: 815852989}
@@ -104106,7 +104179,6 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.4
   m_BrakeTorque: 20000
-  target: {fileID: 0}
 --- !u!54 &1851146784
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -105472,7 +105544,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea65b38d485c374caa584a03f1de571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 0}
+  spawnPointForward: {fileID: 0}
+  spawnPointMiddle: {fileID: 0}
+  spawnPointBack: {fileID: 0}
+  target: {fileID: 0}
   m_CarDriveType: 2
   m_WheelColliders:
   - {fileID: 170311131}
@@ -105502,7 +105577,6 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.4
   m_BrakeTorque: 20000
-  target: {fileID: 0}
 --- !u!54 &1884201546
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -117257,7 +117331,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea65b38d485c374caa584a03f1de571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 0}
+  spawnPointForward: {fileID: 0}
+  spawnPointMiddle: {fileID: 0}
+  spawnPointBack: {fileID: 0}
+  target: {fileID: 0}
   m_CarDriveType: 2
   m_WheelColliders:
   - {fileID: 1645270374}
@@ -117287,7 +117364,6 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.4
   m_BrakeTorque: 20000
-  target: {fileID: 0}
 --- !u!54 &1974400496
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -118441,7 +118517,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea65b38d485c374caa584a03f1de571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoint: {fileID: 0}
+  spawnPointForward: {fileID: 0}
+  spawnPointMiddle: {fileID: 0}
+  spawnPointBack: {fileID: 0}
+  target: {fileID: 0}
   m_CarDriveType: 2
   m_WheelColliders:
   - {fileID: 2104529520}
@@ -118471,7 +118550,6 @@ MonoBehaviour:
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.4
   m_BrakeTorque: 20000
-  target: {fileID: 0}
 --- !u!54 &2003132130
 Rigidbody:
   m_ObjectHideFlags: 0
