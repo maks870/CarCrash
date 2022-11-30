@@ -16,6 +16,7 @@ public class Projectile : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        rb.velocity = (target.transform.position - transform.position).normalized * speed * Time.deltaTime;
         animator = GetComponent<Animator>();
         Launch();
     }
