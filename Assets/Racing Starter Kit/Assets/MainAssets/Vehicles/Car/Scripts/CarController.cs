@@ -115,7 +115,7 @@ namespace UnityStandardAssets.Vehicles.Car
                     break;
             }
 
-            abilityList[abilityPlace].Use(spawnPoint, target.GetComponent<CarController>());
+            ability.Use(spawnPoint, target.GetComponent<CarController>());
             abilityList.Remove(ability);
             RefreshAbilityEvent.Invoke(abilityList);
         }
