@@ -5,6 +5,7 @@ using UnityStandardAssets.Vehicles.Car;
 
 public abstract class AbilitySO : ScriptableObject
 {
+    public Sprite icon;
     public abstract void Use(Vector3 spawnPoint, CarController target);
 }
 

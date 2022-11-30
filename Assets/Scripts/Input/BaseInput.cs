@@ -4,8 +4,14 @@ using UnityEngine;
 
 public abstract class BaseInput : MonoBehaviour
 {
-    float horizontalAxis;
-    float verticalAxis;
+    [SerializeField] protected Transform container;
 
-    protected abstract int PressFire();
+    protected float horizontalAxis;
+    protected float verticalAxis;
+    public abstract event PressButtonAbility PressButtonAbilityEvent;
+    public abstract float HorizontalAxis { get; }
+    public abstract float VerticalAxis { get; }
+
+    public delegate void PressButtonAbility(int numberAbility);
+    public abstract void SetAbilities(AbilitySO[] abilities);
 }
