@@ -8,15 +8,9 @@ public class AbilityShootingSO : AbilitySO
 {
     [SerializeField] private GameObject projectile;
 
-    public override void Use(CarController car)
+    public override void Use(Vector3 spawnPoint, CarController target)
     {
-        Use(car, null);
-    }
-
-    public override void Use(CarController car, CarController target)
-    {
-
-        GameObject rocket = Instantiate(projectile, car.transform.position, Quaternion.identity);
+        GameObject rocket = Instantiate(projectile, spawnPoint, Quaternion.identity);
         rocket.GetComponent<Projectile>().Target = target.gameObject;
     }
 }

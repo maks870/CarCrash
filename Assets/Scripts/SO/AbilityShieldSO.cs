@@ -8,13 +8,8 @@ public class AbilityShieldSO : AbilitySO
 {
     [SerializeField] private GameObject projectile;
 
-    public override void Use(CarController car)
+    public override void Use(Vector3 spawnPoint, CarController target)
     {
-        Use(car, null);
-    }
-
-    public override void Use(CarController car, CarController target)
-    {
-        Instantiate(projectile, car.transform.position, Quaternion.identity);
+        Instantiate(projectile, target.transform.position, Quaternion.identity);
     }
 }

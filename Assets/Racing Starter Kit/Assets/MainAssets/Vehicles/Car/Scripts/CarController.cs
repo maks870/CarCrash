@@ -18,6 +18,9 @@ namespace UnityStandardAssets.Vehicles.Car
 
     public class CarController : MonoBehaviour
     {
+        [SerializeField] private Transform spawnPoint;
+
+
         [SerializeField] private CarDriveType m_CarDriveType = CarDriveType.FourWheelDrive;
         [SerializeField] private WheelCollider[] m_WheelColliders = new WheelCollider[4];
         [SerializeField] private GameObject[] m_WheelMeshes = new GameObject[4];
@@ -74,7 +77,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
         public void AddAbility(AbilitySO ability)
         {
-            ability.Use(this, target.GetComponent<CarController>());
+            ability.Use(spawnPoint.position, target.GetComponent<CarController>());
         }
 
         private void GearChanging()
