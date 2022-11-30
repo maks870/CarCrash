@@ -11,9 +11,9 @@ public class DesktopInput : BaseInput
 
     public override event PressButtonAbility PressButtonAbilityEvent;
 
-    public override void SetAbilities(AbilitySO[] abilities)
+    public override void SetAbilities(List<AbilitySO> abilities)
     {
-        for (int i = 0; i < abilities.Length; i++) 
+        for (int i = 0; i < abilities.Count; i++) 
         {
            GameObject imageAbility  = Instantiate(imageAbilityPref, container);
             if (i == 0) 

@@ -12,9 +12,9 @@ public class MobileInput : BaseInput
 
     public override event PressButtonAbility PressButtonAbilityEvent;
 
-    public override void SetAbilities(AbilitySO[] abilities)
+    public override void SetAbilities(List<AbilitySO> abilities)
     {
-        for (int i = 0; i < abilities.Length; i++)
+        for (int i = 0; i < abilities.Count; i++)
         {
             GameObject buttonAbilityObj = Instantiate(buttonAbilityPref, container);
             Button buttonAbility = buttonAbilityObj.GetComponent<Button>();
@@ -25,7 +25,7 @@ public class MobileInput : BaseInput
 
     private void Update()
     {
-        verticalAxis = Input.GetAxis("Vertical");
-        horizontalAxis = Input.GetAxis("Horizontal");  
+        //verticalAxis = Input.GetAxis("Vertical");
+        //horizontalAxis = Input.GetAxis("Horizontal");  
     }
 }

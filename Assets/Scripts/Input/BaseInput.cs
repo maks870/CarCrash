@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,5 +12,5 @@ public abstract class BaseInput : MonoBehaviour
     public abstract float VerticalAxis { get; }
 
     public delegate void PressButtonAbility(int numberAbility);
-    public abstract void SetAbilities(AbilitySO[] abilities);
+    public abstract void SetAbilities(List<AbilitySO> abilities);
 }
