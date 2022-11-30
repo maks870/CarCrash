@@ -13,6 +13,8 @@ public class DesktopInput : BaseInput
 
     public override void SetAbilities(List<AbilitySO> abilities)
     {
+        ClearButton();
+
         for (int i = 0; i < abilities.Count; i++) 
         {
            GameObject imageAbility  = Instantiate(imageAbilityPref, container);
@@ -31,15 +33,15 @@ public class DesktopInput : BaseInput
         verticalAxis = Input.GetAxis("Vertical");
         horizontalAxis = Input.GetAxis("Horizontal");
 
-        if (Input.GetKeyDown("Z"))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             PressButtonAbilityEvent.Invoke(0);
         }
-        if (Input.GetKeyDown("X"))
+        if (Input.GetKeyDown(KeyCode.X))
         {
             PressButtonAbilityEvent.Invoke(1);
         }
-        if (Input.GetKeyDown("C"))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             PressButtonAbilityEvent.Invoke(2);
         }

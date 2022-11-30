@@ -14,6 +14,8 @@ public class MobileInput : BaseInput
 
     public override void SetAbilities(List<AbilitySO> abilities)
     {
+        ClearButton();
+
         for (int i = 0; i < abilities.Count; i++)
         {
             GameObject buttonAbilityObj = Instantiate(buttonAbilityPref, container);

@@ -13,13 +13,13 @@ namespace UnityStandardAssets.Vehicles.Car
         private void Awake()
         {
             m_Car = GetComponent<CarController>();
-            m_Car.RefreshAbilityEvent += input.SetAbilities;
-            input.PressButtonAbilityEvent += m_Car.UseAbility;
+            input = inputManager.CurrentInput; 
         }
 
         private void Start()
-        {
-            input = inputManager.CurrentInput;
+        {  
+            m_Car.RefreshAbilityEvent += input.SetAbilities;
+            input.PressButtonAbilityEvent += m_Car.UseAbility;
         }
 
         private void FixedUpdate()

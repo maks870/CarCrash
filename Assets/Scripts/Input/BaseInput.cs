@@ -12,5 +12,14 @@ public abstract class BaseInput : MonoBehaviour
     public abstract float VerticalAxis { get; }
 
     public delegate void PressButtonAbility(int numberAbility);
+
+    protected void ClearButton() 
+    {
+        foreach (Transform child in container) 
+        {
+            Destroy(child.gameObject);
+        }
+    }
     public abstract void SetAbilities(List<AbilitySO> abilities);
+
 }

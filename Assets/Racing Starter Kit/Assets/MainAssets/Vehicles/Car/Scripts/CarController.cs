@@ -97,6 +97,7 @@ namespace UnityStandardAssets.Vehicles.Car
         }
         public void UseAbility(int abilityPlace)
         {
+            Debug.Log(abilityPlace);
             AbilitySO ability = abilityList[abilityPlace];
             Vector3 spawnPoint = Vector3.zero;
 
