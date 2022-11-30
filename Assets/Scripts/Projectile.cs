@@ -36,7 +36,7 @@ public class Projectile : MonoBehaviour
             dir = (target.transform.position - transform.position).normalized;
         else
             dir = transform.forward;
-        transform.LookAt(dir);
         rb.AddForce(dir * speed * Time.deltaTime, ForceMode.Force);
+        transform.LookAt(dir);
     }
 }
