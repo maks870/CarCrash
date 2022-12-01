@@ -5,8 +5,8 @@ using UnityStandardAssets.Vehicles.Car;
 //Also, it uses a Box collider with IsTrigger option checked to see if an AI Car or the player car are in front of this car and it will brake
 public class AICarBehaviour : MonoBehaviour
 {
-    CarController AICarController;
-    private Rigidbody AICarRigidbody;
+    [SerializeField] CarController AICarController;
+    [SerializeField] private Rigidbody AICarRigidbody;
     private float AICarSpeed;
     private int CheckReverse, StartReverse;
     private float NormalTorque, NormalSteering, NormalTopspeed;
@@ -15,9 +15,9 @@ public class AICarBehaviour : MonoBehaviour
     void Start()
     {
         StartCoroutine(CheckReverseCoroutine());
-        AICarRigidbody = GetComponent<Rigidbody>();
-        AICarController = gameObject.GetComponentInParent(typeof(CarController)) as CarController;
-        AllWheelColliders = GetComponentsInChildren<WheelCollider>();
+        //AICarRigidbody = GetComponent<Rigidbody>();
+        //AICarController = gameObject.GetComponentInParent(typeof(CarController)) as CarController;
+        AllWheelColliders = AICarController.GetComponentsInChildren<WheelCollider>();
         NormalTorque = AICarController.m_FullTorqueOverAllWheels;
         NormalSteering = AICarController.m_MaximumSteerAngle;
         NormalTopspeed = AICarController.m_Topspeed;

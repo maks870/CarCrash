@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class DesktopInput : BaseInput
 {
     [SerializeField] private GameObject imageAbilityPref;
-    public override float HorizontalAxis { get => horizontalAxis; }
-    public override float VerticalAxis { get => verticalAxis; }
 
     public override event PressButtonAbility PressButtonAbilityEvent;
 
@@ -33,7 +31,16 @@ public class DesktopInput : BaseInput
         verticalAxis = Input.GetAxis("Vertical");
         horizontalAxis = Input.GetAxis("Horizontal");
 
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            handbrake = 1;
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            handbrake = 0;
+        }
+
+       if (Input.GetKeyDown(KeyCode.Z))
         {
             PressButtonAbilityEvent.Invoke(0);
         }

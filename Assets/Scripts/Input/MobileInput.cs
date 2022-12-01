@@ -7,9 +7,6 @@ public class MobileInput : BaseInput
 {
     [SerializeField] private GameObject buttonAbilityPref;
 
-    public override float HorizontalAxis { get => horizontalAxis; }
-    public override float VerticalAxis { get => verticalAxis; }
-
     public override event PressButtonAbility PressButtonAbilityEvent;
 
     public override void SetAbilities(List<AbilitySO> abilities)

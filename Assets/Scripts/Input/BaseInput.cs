@@ -7,9 +7,11 @@ public abstract class BaseInput : MonoBehaviour
 
     protected float horizontalAxis;
     protected float verticalAxis;
+    protected float handbrake;
     public abstract event PressButtonAbility PressButtonAbilityEvent;
-    public abstract float HorizontalAxis { get; }
-    public abstract float VerticalAxis { get; }
+    public float HorizontalAxis => horizontalAxis;
+    public float VerticalAxis => verticalAxis;
+    public float HandBrake => handbrake;
 
     public delegate void PressButtonAbility(int numberAbility);
 

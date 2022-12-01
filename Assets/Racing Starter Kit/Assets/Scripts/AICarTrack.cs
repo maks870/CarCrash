@@ -26,7 +26,12 @@ public class AICarTrack : MonoBehaviour
 
     IEnumerator OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.name == AICarName)//If the AICar collider is detected
+        string nameAI = "";
+
+        if (collision.tag == "AICarTrigger")
+            nameAI = collision.transform.parent.name;
+
+        if (nameAI == AICarName)//If the AICar collider is detected
         {
             Point = GameObject.Find("Point" + CurrentPoint);    //the script will search the next point automatically
             this.transform.position = Point.transform.position; //then, it will get the position of the point and move the tracker to there 
