@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Vehicles.Car;
 
-public enum SpawnPlace
+public enum AbilityType
 {
-    front = 1,
-    middle = 0,
-    back = -1
+    Missle = 0,
+    Shield = 1,
+    Mine = 2
 
 }
 
@@ -16,9 +16,9 @@ public abstract class AbilitySO : ScriptableObject
     [SerializeField] protected GameObject projectile;
     [SerializeField] protected Sprite icon;
 
-    abstract public SpawnPlace SpawnPlace { get; }
+    abstract public AbilityType Type { get; }
     public Sprite Icon => icon;
-    public abstract void Use(Vector3 spawnPoint, CarController target);
+    public abstract void Use(Vector3 spawnPoint, AbilityController target);
 }
 
 

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Vehicles.Car;
 
-[CreateAssetMenu(fileName = "AbilityShooting", menuName = "ScriptableObject/Ability/AbilityShooting")]
-public class AbilityShootingSO : AbilitySO
+[CreateAssetMenu(fileName = "AbilityMissle", menuName = "ScriptableObject/Ability/AbilityMissle")]
+public class AbilityMissleSO : AbilitySO
 {
-    public override SpawnPlace SpawnPlace => SpawnPlace.front;
+    public override AbilityType Type => AbilityType.Missle;
 
-    public override void Use(Vector3 spawnPoint, CarController target)
+    public override void Use(Vector3 spawnPoint, AbilityController target)
     {
         GameObject rocket = Instantiate(projectile, spawnPoint, Quaternion.identity);
         rocket.GetComponent<Projectile>().Target = target.gameObject;

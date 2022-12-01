@@ -15,9 +15,10 @@ public abstract class Projectile : MonoBehaviour
 
     protected virtual void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<CarController>() != null)
+        if (other.GetComponent<AbilityController>() != null)
         {
-            other.GetComponent<CarController>().TakeDamage();
+            Debug.Log("BOOM");
+            other.GetComponent<AbilityController>().TakeDamage();
             Destroy(gameObject);
         }
     }

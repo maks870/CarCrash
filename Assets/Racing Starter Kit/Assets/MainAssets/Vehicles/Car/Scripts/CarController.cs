@@ -20,21 +20,6 @@ namespace UnityStandardAssets.Vehicles.Car
 
     public class CarController : MonoBehaviour
     {
-        [SerializeField] private Transform spawnPointForward;
-        [SerializeField] private Transform spawnPointMiddle;
-        [SerializeField] private Transform spawnPointBack;
-        List<AbilitySO> abilityList = new List<AbilitySO>();
-        [SerializeField] private GameObject target;
-        private bool isDamaged;
-        private float velocityMultiplier = 1;
-
-        [SerializeField] private const float slowMultiplier = 0.5f;
-        [SerializeField] private const float slowTime = 1;
-
-        public delegate void AbilityListHandler(List<AbilitySO> abilitySO);
-        public event AbilityListHandler RefreshAbilityEvent;
-
-
 
         [SerializeField] private CarDriveType m_CarDriveType = CarDriveType.FourWheelDrive;
         [SerializeField] private WheelCollider[] m_WheelColliders = new WheelCollider[4];
@@ -64,8 +49,9 @@ namespace UnityStandardAssets.Vehicles.Car
         private float m_CurrentTorque;
         private Rigidbody m_Rigidbody;
         private const float k_ReversingThreshold = 0.01f;
+        private bool handbrakeOn = false;
 
-
+        public bool HandbrakeOn { set => handbrakeOn = value; }
         public bool Skidding { get; private set; }
         public float BrakeInput { get; private set; }
         public float CurrentSteerAngle { get { return m_SteerAngle; } }
@@ -90,41 +76,6 @@ namespace UnityStandardAssets.Vehicles.Car
             m_CurrentTorque = m_FullTorqueOverAllWheels - (m_TractionControl * m_FullTorqueOverAllWheels);
         }
 
-        public void AddAbility(AbilitySO ability)
-        {
-            abilityList.Add(ability);
-            RefreshAbilityEvent.Invoke(abilityList);
-        }
-        public void UseAbility(int abilityPlace)
-        {
-            Debug.Log(abilityPlace);
-            AbilitySO ability = abilityList[abilityPlace];
-            Vector3 spawnPoint = Vector3.zero;
-
-            switch (ability.SpawnPlace)
-            {
-                case SpawnPlace.front:
-                    spawnPoint = spawnPointForward.position;
-                    break;
-
-                case SpawnPlace.middle:
-                    spawnPoint = spawnPointMiddle.position;
-                    break;
-
-                case SpawnPlace.back:
-                    spawnPoint = spawnPointBack.position;
-                    break;
-            }
-
-            ability.Use(spawnPoint, target.GetComponent<CarController>());
-            abilityList.Remove(ability);
-            RefreshAbilityEvent.Invoke(abilityList);
-        }
-        public void TakeDamage()
-        {
-            if (!isDamaged)
-                StartCoroutine(DamagedTimer());
-        }
         private void GearChanging()
         {
             float f = Mathf.Abs(CurrentSpeed / MaxSpeed);
@@ -141,22 +92,6 @@ namespace UnityStandardAssets.Vehicles.Car
                 m_GearNum++;
             }
         }
-        private void SlowCar()
-        {
-            if (isDamaged)
-                velocityMultiplier = slowMultiplier;
-            else
-                velocityMultiplier = 1;
-
-            m_Rigidbody.velocity *= velocityMultiplier;
-        }
-        IEnumerator DamagedTimer()
-        {
-            isDamaged = true;
-            yield return new WaitForSeconds(slowTime);
-            isDamaged = false;
-        }
-
 
         // simple function to add a curved bias towards 1 for a value in the 0-1 range
         private static float CurveFactor(float factor)
@@ -196,6 +131,9 @@ namespace UnityStandardAssets.Vehicles.Car
 
         public void Move(float steering, float accel, float footbrake, float handbrake)
         {
+            if (handbrakeOn)
+                handbrake = 1;
+
             for (int i = 0; i < 4; i++)
             {
                 Quaternion quat;
@@ -225,9 +163,18 @@ namespace UnityStandardAssets.Vehicles.Car
             //Assuming that wheels 2 and 3 are the rear wheels.
             if (handbrake > 0f)
             {
-                var hbTorque = handbrake * m_MaxHandbrakeTorque;
+                var hbTorque = float.MaxValue;
+                m_WheelColliders[0].brakeTorque = hbTorque;
+                m_WheelColliders[1].brakeTorque = hbTorque;
                 m_WheelColliders[2].brakeTorque = hbTorque;
                 m_WheelColliders[3].brakeTorque = hbTorque;
+            }
+            else
+            {
+                m_WheelColliders[0].brakeTorque = 0;
+                m_WheelColliders[1].brakeTorque = 0;
+                m_WheelColliders[2].brakeTorque = 0;
+                m_WheelColliders[3].brakeTorque = 0;
             }
 
 
@@ -237,7 +184,6 @@ namespace UnityStandardAssets.Vehicles.Car
             AddDownForce();
             CheckForWheelSpin();
             TractionControl();
-            SlowCar();// замедление передвижения(если есть)
         }
 
 

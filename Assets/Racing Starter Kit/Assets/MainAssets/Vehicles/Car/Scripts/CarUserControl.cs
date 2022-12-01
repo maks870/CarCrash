@@ -3,31 +3,27 @@ using UnityEngine;
 namespace UnityStandardAssets.Vehicles.Car
 {
     [RequireComponent(typeof(CarController))]
-    public class CarUserControl : MonoBehaviour
+    public class CarUserControl : CarControl
     {
         [SerializeField] private InputManager inputManager;
-        private CarController m_Car; // the car controller we want to use
         private BaseInput input;
 
 
         private void Awake()
         {
-            m_Car = GetComponent<CarController>();
+            carController = GetComponent<CarController>();
         }
 
         private void Start()
         {
             input = inputManager.CurrentInput;
-            m_Car.RefreshAbilityEvent += input.SetAbilities;
-            input.PressButtonAbilityEvent += m_Car.UseAbility;
+            abilityController.RefreshAbilityEvent += input.SetAbilities;
+            input.PressButtonAbilityEvent += abilityController.UseAbility;
         }
 
         private void FixedUpdate()
         {
-            float h = input.HorizontalAxis;
-            float v = input.VerticalAxis;
-            float x = input.HandBrake;
-            m_Car.Move(h, v, v, x);
+            ControlMove(input.HorizontalAxis, input.VerticalAxis, input.VerticalAxis, input.HandBrake);
         }
     }
 }

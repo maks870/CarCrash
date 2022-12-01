@@ -6,10 +6,11 @@ using UnityStandardAssets.Vehicles.Car;
 [CreateAssetMenu(fileName = "AbilityShield", menuName = "ScriptableObject/Ability/AbilityShield")]
 public class AbilityShieldSO : AbilitySO
 {
-    public override SpawnPlace SpawnPlace => SpawnPlace.middle;
+    public override AbilityType Type => AbilityType.Shield;
 
-    public override void Use(Vector3 spawnPoint, CarController target)
+    public override void Use(Vector3 spawnPoint, AbilityController target)
     {
-        Instantiate(projectile, target.transform.position, Quaternion.identity);
+        Instantiate(projectile, target.transform);
+        target.ActivateShield();
     }
 }

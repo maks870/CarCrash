@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileRocket : Projectile
+public class ProjectileMissle : Projectile
 {
     [SerializeField] protected float speed;
     protected override void Start()
