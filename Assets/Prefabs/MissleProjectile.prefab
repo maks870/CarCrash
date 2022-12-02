@@ -110,10 +110,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd8f6fd1f02d194fba5cd59424a21c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10000
-  maxSpeed: 0
-  angleSpeedChange: 5
-  stopSpeedMultiplier: 0.99
+  maxSpeed: 500
+  brakeTorque: 1
+  angleSpeedChange: 60
+  rotationSpeedMultiplier: 0.5
+  maxSteerAngle: 90
 --- !u!54 &7423350256742407463
 Rigidbody:
   m_ObjectHideFlags: 0
