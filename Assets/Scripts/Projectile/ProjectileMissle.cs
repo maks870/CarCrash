@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class ProjectileMissle : Projectile
 {
-    [SerializeField] protected float speed;
+    [SerializeField] private float speed;
+    [SerializeField] private float angleSpeedChange;
+    [SerializeField] private float stopSpeedMultiplier;
+    private Vector3 rotationDir = Vector3.zero;
     protected override void Start()
     {
         base.Start();
-        rb.velocity = (target.transform.position - transform.position).normalized * speed * Time.deltaTime;
+        //rb.velocity = (target.transform.position - transform.position).normalized * speed * Time.deltaTime;
+        //startVelocity = rb.velocity.magnitude;
         Launch();
     }
     private void FixedUpdate()
@@ -21,13 +25,18 @@ public class ProjectileMissle : Projectile
     }
     private void Fly()
     {
-        Vector3 dir;
-        if (target != null)
-            dir = (target.transform.position - transform.position);
-        else
-            dir = transform.forward;
+        float currentSpeed = speed;
 
-        rb.AddForce(dir * speed * Time.deltaTime, ForceMode.Force);
+        Vector3 dir = target.transform.position - transform.position;
+
+        float rotationAngle = Vector3.Angle(transform.forward, dir);
+
+        if (rotationAngle > angleSpeedChange)
+            rb.AddForce(-rb.velocity.normalized * currentSpeed * stopSpeedMultiplier * Time.deltaTime, ForceMode.Force);
+
+        Debug.Log(rotationAngle);
+
+        rb.AddForce(transform.forward * currentSpeed * Time.deltaTime, ForceMode.Force);
         transform.LookAt(target.transform.position);
     }
 }

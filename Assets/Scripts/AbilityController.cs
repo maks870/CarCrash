@@ -31,10 +31,10 @@ public class AbilityController : MonoBehaviour
 
     public void UseAbility(int abilityPlace)// Использование способности
     {
-        Debug.Log(abilityPlace);
         AbilitySO ability = abilityList[abilityPlace];
         Vector3 spawnPoint = Vector3.zero;
-        AbilityController targetCar = target.GetComponent<AbilityController>();
+        Debug.Log(target.name);
+        AbilityController targetCar = target.GetComponentInChildren<AbilityController>();
 
         switch (ability.Type)
         {
