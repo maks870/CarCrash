@@ -164,15 +164,15 @@ namespace UnityStandardAssets.Vehicles.Car
             if (handbrake > 0f)
             {
                 var hbTorque = float.MaxValue;
-                m_WheelColliders[0].brakeTorque = hbTorque;
-                m_WheelColliders[1].brakeTorque = hbTorque;
+               // m_WheelColliders[0].brakeTorque = hbTorque;
+               // m_WheelColliders[1].brakeTorque = hbTorque;
                 m_WheelColliders[2].brakeTorque = hbTorque;
                 m_WheelColliders[3].brakeTorque = hbTorque;
             }
             else
             {
-                m_WheelColliders[0].brakeTorque = 0;
-                m_WheelColliders[1].brakeTorque = 0;
+               // m_WheelColliders[0].brakeTorque = footbrake;
+               // m_WheelColliders[1].brakeTorque = footbrake;
                 m_WheelColliders[2].brakeTorque = 0;
                 m_WheelColliders[3].brakeTorque = 0;
             }
