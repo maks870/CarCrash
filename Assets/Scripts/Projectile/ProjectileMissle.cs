@@ -2,10 +2,9 @@ using UnityEngine;
 
 public class ProjectileMissle : Projectile
 {
-    [SerializeField] private Rigidbody rb;
     [SerializeField] private float rotateSpeed;
-    [SerializeField] private float maxTimePrediction;
     [SerializeField] private float speed;
+    private Rigidbody rb;
 
     protected override void Start()
     {
