@@ -497,6 +497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shieldLifeTime: 1
+  maxAbilities: 0
   spawnPointForward: {fileID: 1486996635477350854}
   spawnPointMiddle: {fileID: 1486996634953054451}
   spawnPointBack: {fileID: 1486996634635779359}
@@ -7505,6 +7506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shieldLifeTime: 1
+  maxAbilities: 1
   spawnPointForward: {fileID: 7148463510129341337}
   spawnPointMiddle: {fileID: 4428012477557465926}
   spawnPointBack: {fileID: 4004734437813050000}
