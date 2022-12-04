@@ -27,7 +27,6 @@ public class LootBox : MonoBehaviour
 
         int rand = Random.Range(0, totalChance);
         AbilitySO randAbility = ablitities[0].AbilitySO;
-
         for (int i = 0; i < ablitities.Count; i++)
         {
             stepChance += ablitities[i].DropChance;

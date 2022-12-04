@@ -110,4 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1779a4ea779615c41bd94c90150099b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ablitities: []
+  ablitities:
+  - {fileID: 4889018908687095313, guid: 314755b9ad25d9d41ab6e2c188f2691d, type: 3}
+  - {fileID: 4889018908687095313, guid: 7672cc27f00c3934da010160985935e3, type: 3}
+  - {fileID: 4889018908687095313, guid: 50a78df81660e1c4c9249ca23a9717fc, type: 3}
