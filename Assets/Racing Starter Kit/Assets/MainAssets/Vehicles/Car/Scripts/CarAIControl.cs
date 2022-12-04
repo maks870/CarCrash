@@ -44,7 +44,8 @@ namespace UnityStandardAssets.Vehicles.Car
         private float m_AvoidOtherCarSlowdown;    // how much to slow down due to colliding with another car, whilst avoiding
         private float m_AvoidPathOffset;          // direction (-1 or 1) in which to offset path to avoid other car, whilst avoiding
         private Rigidbody m_Rigidbody;
-
+        private Transform oldTarget;
+        private Transform abilityTarget;
 
         private void Awake()
         {
@@ -71,6 +72,30 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void FixedUpdate()
         {
+            if (abilityTarget != null) 
+            {
+                if (!ReachabilityCheck(abilityTarget)) //если не можем достичь цели, то забываем про нее
+                {
+                    abilityTarget = null;
+                }
+                else if (m_Target != abilityTarget) //если можем достичь цель, но она является не нашей текущей
+                {
+                    float distAbility = Vector3.Distance(abilityTarget.position, transform.position);
+                    float distTarget = Vector3.Distance(m_Target.position, transform.position);
+
+                    if (distAbility < distTarget) //если способность ближе, то устанавливаем ее как текущую цель
+                    {
+                        SetAbilityTarget();
+                    }
+                }
+            }
+
+            if (abilityTarget == null && oldTarget!=null)//если мы больше не можем взять способность, то устанавливаем старую цель
+            {
+                m_Target = oldTarget;
+                m_RandomPerlin = Random.value * 10;
+            }
+
             if (m_Target == null || !m_Driving)
             {
                 // Car should not be moving,
@@ -227,6 +252,32 @@ namespace UnityStandardAssets.Vehicles.Car
         {
             m_Target = target;
             m_Driving = true;
+        }
+
+        public void DetectAbility(Transform ability) 
+        {
+            if (abilityController.Abilities.Count == 0)
+            {
+                abilityTarget = ability;
+            }
+        }
+
+        private void SetAbilityTarget()
+        {
+            oldTarget = m_Target;//запоминаем куда ехали до этого
+            SetTarget(abilityTarget);//устанавливаем новую цель
+            m_RandomPerlin = 0;//что бы не промахнуться убираем шум
+        }
+
+        private bool ReachabilityCheck(Transform checkedObject) 
+        {
+            float angle = Vector3.Angle(checkedObject.position - transform.position, transform.forward);
+
+            if (angle > 40) //если угол больше значения, то цель не достижима
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

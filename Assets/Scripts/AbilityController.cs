@@ -13,25 +13,28 @@ public class AbilityController : MonoBehaviour
     [SerializeField] private Transform spawnPointMiddle;
     [SerializeField] private Transform spawnPointBack;
     [SerializeField] private GameObject target;
-    private List<AbilitySO> abilityList = new List<AbilitySO>();
+    private List<AbilitySO> abilities = new List<AbilitySO>();
     private bool isDamaged;
     private bool isProtected;
     private Animator shieldAnimator;
 
     public bool IsDamaged => isDamaged;
 
+    public List<AbilitySO> Abilities { get => abilities; }
+
     public delegate void AbilityListHandler(List<AbilitySO> abilitySO);
     public event AbilityListHandler RefreshAbilityEvent;
 
     public void AddAbility(AbilitySO ability)// Добавление способности
     {
-        abilityList.Add(ability);
-        RefreshAbilityEvent.Invoke(abilityList);
+        abilities.Add(ability);
+        if (RefreshAbilityEvent != null)
+            RefreshAbilityEvent.Invoke(abilities);
     }
 
     public void UseAbility(int abilityPlace)// Использование способности
     {
-        AbilitySO ability = abilityList[abilityPlace];
+        AbilitySO ability = abilities[abilityPlace];
         Vector3 spawnPoint = Vector3.zero;
         Debug.Log(target.name);
         AbilityController targetCar = target.GetComponentInChildren<AbilityController>();
@@ -53,8 +56,8 @@ public class AbilityController : MonoBehaviour
         }
 
         ability.Use(spawnPoint, targetCar);
-        abilityList.Remove(ability);
-        RefreshAbilityEvent.Invoke(abilityList);
+        abilities.Remove(ability);
+        RefreshAbilityEvent.Invoke(abilities);
     }
 
     public void TakeDamage()// Логика получения урона
