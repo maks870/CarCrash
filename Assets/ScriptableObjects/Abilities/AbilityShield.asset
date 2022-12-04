@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e78c0e73c7d0038429ea6ea751591141, type: 3}
-  m_Name: AbilityShooting
+  m_Script: {fileID: 11500000, guid: 3efc2c75765ed094e817ab1ce0b37299, type: 3}
+  m_Name: AbilityShield
   m_EditorClassIdentifier: 
-  projectile: {fileID: 7423350256742407460, guid: 7ce1a668a522b4c488cfa3f9221744f6,
+  projectile: {fileID: 1254017168727422581, guid: b9e3282157f8bd1479a3a911befc81ec,
     type: 3}
-  icon: {fileID: 21300000, guid: 1e89973a6c7cbfb4faf482139542ec41, type: 3}
+  icon: {fileID: 21300000, guid: 1a2af071de8e80b4f98184f24e96cfc4, type: 3}

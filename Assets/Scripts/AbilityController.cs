@@ -9,6 +9,7 @@ public class AbilityController : MonoBehaviour
     private const float slowTime = 1;
 
     [SerializeField] private float shieldLifeTime;
+    [SerializeField] private int maxAbilities;
     [SerializeField] private Transform spawnPointForward;
     [SerializeField] private Transform spawnPointMiddle;
     [SerializeField] private Transform spawnPointBack;
@@ -19,17 +20,21 @@ public class AbilityController : MonoBehaviour
     private Animator shieldAnimator;
 
     public bool IsDamaged => isDamaged;
+    public int MaxAbilities => maxAbilities;
 
-    public List<AbilitySO> Abilities { get => abilities; }
+    public List<AbilitySO> Abilities => abilities;
 
     public delegate void AbilityListHandler(List<AbilitySO> abilitySO);
     public event AbilityListHandler RefreshAbilityEvent;
 
     public void AddAbility(AbilitySO ability)// Добавление способности
     {
-        abilities.Add(ability);
-        if (RefreshAbilityEvent != null)
-            RefreshAbilityEvent.Invoke(abilities);
+        if (abilities.Count < maxAbilities)
+        {
+            abilities.Add(ability);
+            if (RefreshAbilityEvent != null)
+                RefreshAbilityEvent.Invoke(abilities);
+        }
     }
 
     public void UseAbility(int abilityPlace)// Использование способности
@@ -74,12 +79,12 @@ public class AbilityController : MonoBehaviour
     private void ShieldOn()
     {
         isProtected = true;
-        shieldAnimator.SetTrigger("");// TODO: Назначить триггер включения анимации щита
+/*        shieldAnimator.SetTrigger("");*/// TODO: Назначить триггер включения анимации щита
         Debug.Log("Shield Activated");
     }
     private void ShieldOff()
     {
-        shieldAnimator.SetTrigger("");// TODO: Назначить тригер отключения анимации щита
+/*        shieldAnimator.SetTrigger("");*/// TODO: Назначить тригер отключения анимации щита
         isProtected = false;
         Debug.Log("Shield Deactivated");
     }
