@@ -72,7 +72,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void FixedUpdate()
         {
-            if (abilityTarget != null) 
+            if (abilityTarget != null)
             {
                 if (!ReachabilityCheck(abilityTarget)) //если не можем достичь цели, то забываем про нее
                 {
@@ -90,7 +90,7 @@ namespace UnityStandardAssets.Vehicles.Car
                 }
             }
 
-            if (abilityTarget == null && oldTarget!=null)//если мы больше не можем взять способность, то устанавливаем старую цель
+            if (abilityTarget == null && oldTarget != null)//если мы больше не можем взять способность, то устанавливаем старую цель
             {
                 m_Target = oldTarget;
                 m_RandomPerlin = Random.value * 10;
@@ -254,11 +254,11 @@ namespace UnityStandardAssets.Vehicles.Car
             m_Driving = true;
         }
 
-        public void DetectAbility(Transform ability) 
+        public void DetectAbility(Transform lootBox)
         {
-            if (abilityController.Abilities.Count == 0)
+            if (abilityController.Abilities.Count < abilityController.MaxAbilities)
             {
-                abilityTarget = ability;
+                abilityTarget = lootBox;
             }
         }
 
@@ -269,7 +269,7 @@ namespace UnityStandardAssets.Vehicles.Car
             m_RandomPerlin = 0;//что бы не промахнуться убираем шум
         }
 
-        private bool ReachabilityCheck(Transform checkedObject) 
+        private bool ReachabilityCheck(Transform checkedObject)
         {
             float angle = Vector3.Angle(checkedObject.position - transform.position, transform.forward);
 

@@ -9,7 +9,7 @@ public class ProjectileShield : Projectile
         base.Start();
         rb.useGravity = false;
         Debug.Log("Activate shield spawn effect"); 
-        animator.SetTrigger(""); //TODO: Назначить тригер эффекта включения щита
+/*        animator.SetTrigger("");*/ //TODO: Назначить тригер эффекта включения щита
     }
     public void EndAnimation()//TODO: Вызвать по окончании анимации
     {

@@ -8,7 +8,7 @@ public class AiAbilityDetected : MonoBehaviour
     [SerializeField] CarAIControl carAIControl; 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<AbilityObj>() != null) 
+        if (other.GetComponent<LootBox>() != null) 
         {
             carAIControl.DetectAbility(other.transform);
         }

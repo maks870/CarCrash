@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1762540456383612224}
   - component: {fileID: 4889018908687095313}
   m_Layer: 0
-  m_Name: MineAbility
+  m_Name: MissleAbility
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,5 +44,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb6dc3582a4fbab4bab702e4a13b2572, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilitySO: {fileID: 11400000, guid: 4044f30eacdde2f45ab667c6d2b6bbd7, type: 2}
+  abilitySO: {fileID: 11400000, guid: bc2f5381aa10362408a231809927c0fe, type: 2}
   dropChance: 100

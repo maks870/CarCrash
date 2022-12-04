@@ -3,16 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Vehicles.Car;
 
+[System.Serializable]
 public class AbilityObj : MonoBehaviour
 {
     [SerializeField] private AbilitySO abilitySO;
+    [Range(0, 100)] [SerializeField] private int dropChance;
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.GetComponent<AbilityController>() != null)
-        {
-            other.GetComponent<AbilityController>().AddAbility(abilitySO);
-            Destroy(gameObject);
-        }
-    }
+    public AbilitySO AbilitySO => abilitySO;
+    public int DropChance => dropChance;
 }

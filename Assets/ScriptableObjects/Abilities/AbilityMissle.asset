@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fa6ca148c6d0ea4a8758e3bc245d647, type: 3}
-  m_Name: AbilityMine
+  m_Script: {fileID: 11500000, guid: e78c0e73c7d0038429ea6ea751591141, type: 3}
+  m_Name: AbilityMissle
   m_EditorClassIdentifier: 
-  projectile: {fileID: 919132149155446097, guid: 59753a30e2b53e343b6f236481787052,
+  projectile: {fileID: 7423350256742407460, guid: 7ce1a668a522b4c488cfa3f9221744f6,
     type: 3}
-  icon: {fileID: 21300000, guid: 0a43c48b669e3704083d0154f2dbabb3, type: 3}
+  icon: {fileID: 21300000, guid: 1e89973a6c7cbfb4faf482139542ec41, type: 3}

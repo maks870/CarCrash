@@ -4,12 +4,7 @@ public class ProjectileMissle : Projectile
 {
     [SerializeField] private float rotateSpeed;
     [SerializeField] private float speed;
-    private Rigidbody rb;
 
-    protected override void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
     private void FixedUpdate()
     {
         rb.velocity = transform.forward * speed;
