@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -46,6 +47,8 @@ namespace UnityStandardAssets.Vehicles.Car
         private Rigidbody m_Rigidbody;
         private Transform oldTarget;
         private Transform abilityTarget;
+        private bool randomMove = true;
+        [SerializeField] private List<Transform> abilitiesPoints = new List<Transform>();
 
         private void Awake()
         {
@@ -67,35 +70,16 @@ namespace UnityStandardAssets.Vehicles.Car
             }
 
             m_Target = TargetGameObject.GetComponent<Transform>();
+            oldTarget = m_Target;
         }
 
+        private void Update()
+        {
+            NewPosition();
+        }
 
         private void FixedUpdate()
         {
-            if (abilityTarget != null)
-            {
-                if (!ReachabilityCheck(abilityTarget)) //если не можем достичь цели, то забываем про нее
-                {
-                    abilityTarget = null;
-                }
-                else if (m_Target != abilityTarget) //если можем достичь цель, но она является не нашей текущей
-                {
-                    float distAbility = Vector3.Distance(abilityTarget.position, transform.position);
-                    float distTarget = Vector3.Distance(m_Target.position, transform.position);
-
-                    if (distAbility < distTarget) //если способность ближе, то устанавливаем ее как текущую цель
-                    {
-                        SetAbilityTarget();
-                    }
-                }
-            }
-
-            if (abilityTarget == null && oldTarget != null)//если мы больше не можем взять способность, то устанавливаем старую цель
-            {
-                m_Target = oldTarget;
-                m_RandomPerlin = Random.value * 10;
-            }
-
             if (m_Target == null || !m_Driving)
             {
                 // Car should not be moving,
@@ -172,13 +156,13 @@ namespace UnityStandardAssets.Vehicles.Car
                     // and veer towards the side of our path-to-target that is away from the other car
                     offsetTargetPos += m_Target.right * m_AvoidPathOffset;
                 }
-                else
+                else if (randomMove)
                 {
                     // no need for evasive action, we can just wander across the path-to-target in a random way,
                     // which can help prevent AI from seeming too uniform and robotic in their driving
                     offsetTargetPos += m_Target.right *
-                                       (Mathf.PerlinNoise(Time.time * m_LateralWanderSpeed, m_RandomPerlin) * 2 - 1) *
-                                       m_LateralWanderDistance;
+                                   (Mathf.PerlinNoise(Time.time * m_LateralWanderSpeed, m_RandomPerlin) * 2 - 1) *
+                                   m_LateralWanderDistance;
                 }
 
                 // use different sensitivity depending on whether accelerating or braking:
@@ -248,32 +232,80 @@ namespace UnityStandardAssets.Vehicles.Car
         }
 
 
-        public void SetTarget(Transform target)
+        private void NewPosition()
         {
-            m_Target = target;
-            m_Driving = true;
-        }
-
-        public void DetectAbility(Transform lootBox)
-        {
-            if (abilityController.Abilities.Count < abilityController.MaxAbilities)
+            if (abilityTarget == null)
             {
-                abilityTarget = lootBox;
+                if (abilitiesPoints.Count != 0)
+                {
+                    if (abilitiesPoints[0] == null)
+                    {
+                        abilitiesPoints.RemoveAt(0);
+                        return;
+                    }
+                    float distAbility = Vector3.Distance(abilitiesPoints[0].position, transform.position);
+                    float distTarget = Vector3.Distance(oldTarget.position, transform.position);
+
+                    if (distAbility < distTarget) //если способность ближе, то устанавливаем ее как текущую цель
+                    {
+                        SetAbilityTarget(abilitiesPoints[0]);
+                    }
+                    else if (m_Target==null) 
+                    {
+                        ResetAbilityTarget();
+                    }
+                }
+                else if (oldTarget != m_Target)
+                {
+                    ResetAbilityTarget();
+                }
+            }
+            else if (!ReachabilityCheck(abilityTarget))
+            {
+                ResetAbilityTarget();
             }
         }
 
-        private void SetAbilityTarget()
+        public void SetTarget(Transform target)
         {
-            oldTarget = m_Target;//запоминаем куда ехали до этого
-            SetTarget(abilityTarget);//устанавливаем новую цель
-            m_RandomPerlin = 0;//что бы не промахнуться убираем шум
+            if (abilityTarget != m_Target)
+                m_Target = target;
+
+            oldTarget = target;
+            m_Driving = true;
+
+        }
+
+        public void DetectAbility(Transform ability)
+        {
+            abilitiesPoints.Add(ability);
+        }
+
+        private void SetAbilityTarget(Transform abilityTarget)
+        {
+            if (abilityTarget != null)
+            {
+                this.abilityTarget = abilityTarget;
+                m_Target = abilityTarget; //устанавливаем новую цель
+                m_Driving = true;
+                randomMove = false; //что бы не промахнуться убираем шум
+            }
+            abilitiesPoints.RemoveAt(0);
+        }
+
+        private void ResetAbilityTarget()
+        {
+            abilityTarget = null;
+            m_Target = oldTarget;
+            SetTarget(m_Target);
+            randomMove = true;
         }
 
         private bool ReachabilityCheck(Transform checkedObject)
         {
             float angle = Vector3.Angle(checkedObject.position - transform.position, transform.forward);
 
-            if (angle > 40) //если угол больше значения, то цель не достижима
+            if (angle > 10) //если угол больше значения, то цель не достижима
             {
                 return false;
             }

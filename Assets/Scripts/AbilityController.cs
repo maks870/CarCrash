@@ -33,9 +33,13 @@ public class AbilityController : MonoBehaviour
     {
         FindNearstTarget();
     }
+
     private void GetInfoForAbility(AbilitySO ability, out Transform spawnPoint, out AbilityController targetCar)
     {
-        targetCar = target != null ? target.GetComponentInChildren<AbilityController>() : null;
+        targetCar = target != null 
+            ? target.GetComponentInChildren<AbilityController>()
+            : null;
+
         spawnPoint = spawnPointForward.transform;
 
         switch (ability.Type)
