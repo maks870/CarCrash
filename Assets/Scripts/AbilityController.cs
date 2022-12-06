@@ -14,6 +14,7 @@ public class AbilityController : MonoBehaviour
     [SerializeField] private Transform spawnPointMiddle;
     [SerializeField] private Transform spawnPointBack;
     [SerializeField] private GameObject target;
+    [SerializeField] private List<GameObject> possibleTargets = new List<GameObject>();
     private List<AbilitySO> abilities = new List<AbilitySO>();
     private bool isDamaged;
     private bool isProtected;
@@ -21,12 +22,17 @@ public class AbilityController : MonoBehaviour
 
     public bool IsDamaged => isDamaged;
     public int MaxAbilities => maxAbilities;
+    public GameObject Target { set => target = value; }
 
     public List<AbilitySO> Abilities => abilities;
 
     public delegate void AbilityListHandler(List<AbilitySO> abilitySO);
     public event AbilityListHandler RefreshAbilityEvent;
 
+    private void Update()
+    {
+        FindNearstTarget();
+    }
     private void GetInfoForAbility(AbilitySO ability, out Transform spawnPoint, out AbilityController targetCar)
     {
         targetCar = target != null ? target.GetComponentInChildren<AbilityController>() : null;
@@ -47,6 +53,35 @@ public class AbilityController : MonoBehaviour
                 spawnPoint = spawnPointBack.transform;
                 break;
         }
+    }
+
+    private void FindNearstTarget()
+    {
+        if (possibleTargets.Count == 0)
+            return;
+
+        target = possibleTargets[0];
+
+        for (int i = 0; i < possibleTargets.Count; i++)
+        {
+            float newDistance = Vector3.Distance(possibleTargets[0].transform.position, transform.position);
+            float currentDistance = Vector3.Distance(target.transform.position, transform.position);
+
+            if (newDistance < currentDistance)
+                target = possibleTargets[i];
+        }
+    }
+
+    public void AddTarget(GameObject target)
+    {
+        possibleTargets.Add(target);
+        FindNearstTarget();
+    }
+
+    public void RemoveTarget(GameObject target)
+    {
+        possibleTargets.Remove(target);
+        FindNearstTarget();
     }
 
     public void AddAbility(AbilitySO ability)// Добавление способности
