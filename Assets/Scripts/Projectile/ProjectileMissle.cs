@@ -13,7 +13,11 @@ public class ProjectileMissle : Projectile
 
     private void RotateRocket()
     {
-        var rotation = Quaternion.LookRotation(target.transform.position - transform.position);
-        rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, rotation, rotateSpeed * Time.deltaTime));
+        Quaternion rotation;
+        if (target != null)
+        {
+            rotation = Quaternion.LookRotation(target.transform.position - transform.position);
+            rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, rotation, rotateSpeed * Time.deltaTime));
+        }
     }
 }

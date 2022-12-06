@@ -11,6 +11,9 @@ public class AbilityMissleSO : AbilitySO
     public override void Use(Vector3 spawnPoint, AbilityController target)
     {
         GameObject rocket = Instantiate(projectile, spawnPoint, Quaternion.identity);
-        rocket.GetComponent<Projectile>().Target = target.gameObject;
+        if (target != null)
+            rocket.GetComponent<Projectile>().Target = target.gameObject;
+        else
+            rocket.GetComponent<Projectile>().Target = null;
     }
 }

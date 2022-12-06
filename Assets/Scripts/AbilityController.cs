@@ -39,10 +39,19 @@ public class AbilityController : MonoBehaviour
 
     public void UseAbility(int abilityPlace)// Использование способности
     {
+        if (abilities.Count == 0)
+            return;
+
+        if (abilityPlace >= abilities.Count)
+            return;
+
         AbilitySO ability = abilities[abilityPlace];
         Vector3 spawnPoint = Vector3.zero;
-        Debug.Log(target.name);
-        AbilityController targetCar = target.GetComponentInChildren<AbilityController>();
+        AbilityController targetCar;
+        if (target != null)
+            targetCar = target.GetComponentInChildren<AbilityController>();
+        else
+            targetCar = null;
 
         switch (ability.Type)
         {
@@ -79,12 +88,12 @@ public class AbilityController : MonoBehaviour
     private void ShieldOn()
     {
         isProtected = true;
-/*        shieldAnimator.SetTrigger("");*/// TODO: Назначить триггер включения анимации щита
+        /*        shieldAnimator.SetTrigger("");*/// TODO: Назначить триггер включения анимации щита
         Debug.Log("Shield Activated");
     }
     private void ShieldOff()
     {
-/*        shieldAnimator.SetTrigger("");*/// TODO: Назначить тригер отключения анимации щита
+        /*        shieldAnimator.SetTrigger("");*/// TODO: Назначить тригер отключения анимации щита
         isProtected = false;
         Debug.Log("Shield Deactivated");
     }
