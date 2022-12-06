@@ -11,6 +11,8 @@ public class AbilityMissleSO : AbilitySO
     public override void Use(Transform spawnPoint, AbilityController target)
     {
         GameObject rocket = Instantiate(projectile, spawnPoint);
+        rocket.transform.parent = null;
+
         if (target != null)
             rocket.GetComponent<Projectile>().Target = target.gameObject;
         else
