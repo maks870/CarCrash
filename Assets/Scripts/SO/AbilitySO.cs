@@ -18,7 +18,7 @@ public abstract class AbilitySO : ScriptableObject
 
     abstract public AbilityType Type { get; }
     public Sprite Icon => icon;
-    public abstract void Use(Vector3 spawnPoint, AbilityController target);
+    public abstract void Use(Transform spawnPoint, AbilityController target);
 }
 
 

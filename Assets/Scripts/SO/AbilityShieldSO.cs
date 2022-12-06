@@ -8,9 +8,9 @@ public class AbilityShieldSO : AbilitySO
 {
     public override AbilityType Type => AbilityType.Shield;
 
-    public override void Use(Vector3 spawnPoint, AbilityController target)
+    public override void Use(Transform spawnPoint, AbilityController target)
     {
-        Instantiate(projectile, target.transform);
+        Instantiate(projectile, spawnPoint);
         target.ActivateShield();
     }
 }

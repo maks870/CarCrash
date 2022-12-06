@@ -46,7 +46,7 @@ public class AbilityController : MonoBehaviour
             return;
 
         AbilitySO ability = abilities[abilityPlace];
-        Vector3 spawnPoint = Vector3.zero;
+        Transform spawnPoint = spawnPointForward.transform;
         AbilityController targetCar;
         if (target != null)
             targetCar = target.GetComponentInChildren<AbilityController>();
@@ -56,16 +56,16 @@ public class AbilityController : MonoBehaviour
         switch (ability.Type)
         {
             case AbilityType.Missle:
-                spawnPoint = spawnPointForward.position;
+                spawnPoint = spawnPointForward.transform;
                 break;
 
             case AbilityType.Shield:
                 targetCar = this;
-                spawnPoint = spawnPointMiddle.position;
+                spawnPoint = spawnPointMiddle.transform;
                 break;
 
             case AbilityType.Mine:
-                spawnPoint = spawnPointBack.position;
+                spawnPoint = spawnPointBack.transform;
                 break;
         }
 

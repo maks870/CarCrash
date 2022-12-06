@@ -8,8 +8,8 @@ public class AbilityMineSO : AbilitySO
 {
     public override AbilityType Type => AbilityType.Mine;
 
-    public override void Use(Vector3 spawnPoint, AbilityController target)
+    public override void Use(Transform spawnPoint, AbilityController target)
     {
-        GameObject rocket = Instantiate(projectile, spawnPoint, Quaternion.identity);
+        GameObject mine = Instantiate(projectile, spawnPoint);
     }
 }
