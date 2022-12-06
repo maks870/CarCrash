@@ -13,9 +13,6 @@ public class AbilityMissleSO : AbilitySO
         GameObject rocket = Instantiate(projectile, spawnPoint);
         rocket.transform.parent = null;
 
-        if (target != null)
-            rocket.GetComponent<Projectile>().Target = target.gameObject;
-        else
-            rocket.GetComponent<Projectile>().Target = null;
+        rocket.GetComponent<Projectile>().Target = target != null ? target.gameObject : null;
     }
 }

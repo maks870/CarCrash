@@ -27,31 +27,10 @@ public class AbilityController : MonoBehaviour
     public delegate void AbilityListHandler(List<AbilitySO> abilitySO);
     public event AbilityListHandler RefreshAbilityEvent;
 
-    public void AddAbility(AbilitySO ability)// Добавление способности
+    private void GetInfoForAbility(AbilitySO ability, out Transform spawnPoint, out AbilityController targetCar)
     {
-        if (abilities.Count < maxAbilities)
-        {
-            abilities.Add(ability);
-            if (RefreshAbilityEvent != null)
-                RefreshAbilityEvent.Invoke(abilities);
-        }
-    }
-
-    public void UseAbility(int abilityPlace)// Использование способности
-    {
-        if (abilities.Count == 0)
-            return;
-
-        if (abilityPlace >= abilities.Count)
-            return;
-
-        AbilitySO ability = abilities[abilityPlace];
-        Transform spawnPoint = spawnPointForward.transform;
-        AbilityController targetCar;
-        if (target != null)
-            targetCar = target.GetComponentInChildren<AbilityController>();
-        else
-            targetCar = null;
+        targetCar = target != null ? target.GetComponentInChildren<AbilityController>() : null;
+        spawnPoint = spawnPointForward.transform;
 
         switch (ability.Type)
         {
@@ -68,6 +47,28 @@ public class AbilityController : MonoBehaviour
                 spawnPoint = spawnPointBack.transform;
                 break;
         }
+    }
+
+    public void AddAbility(AbilitySO ability)// Добавление способности
+    {
+        if (abilities.Count < maxAbilities)
+        {
+            abilities.Add(ability);
+            if (RefreshAbilityEvent != null)
+                RefreshAbilityEvent.Invoke(abilities);
+        }
+    }
+
+    public void UseAbility(int abilityPlace)// Использование способности
+    {
+        if (abilities.Count == 0 || abilityPlace >= abilities.Count)
+            return;
+
+        Transform spawnPoint;
+        AbilityController targetCar;
+        AbilitySO ability = abilities[abilityPlace];
+
+        GetInfoForAbility(abilities[abilityPlace], out spawnPoint, out targetCar);
 
         ability.Use(spawnPoint, targetCar);
         abilities.Remove(ability);

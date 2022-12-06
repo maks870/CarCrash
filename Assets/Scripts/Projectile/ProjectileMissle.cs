@@ -8,16 +8,13 @@ public class ProjectileMissle : Projectile
     private void FixedUpdate()
     {
         rb.velocity = transform.forward * speed;
-        RotateRocket();
+        if (target != null)
+            RotateRocket();
     }
 
     private void RotateRocket()
     {
-        Quaternion rotation;
-        if (target != null)
-        {
-            rotation = Quaternion.LookRotation(target.transform.position - transform.position);
-            rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, rotation, rotateSpeed * Time.deltaTime));
-        }
+        Quaternion rotation = Quaternion.LookRotation(target.transform.position - transform.position);
+        rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, rotation, rotateSpeed * Time.deltaTime));
     }
 }
