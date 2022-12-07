@@ -22,7 +22,7 @@ public class AbilityController : MonoBehaviour
 
     public bool IsDamaged => isDamaged;
     public int MaxAbilities => maxAbilities;
-    public GameObject Target { set => target = value; }
+    public GameObject Target { get => target; set => target = value; }
 
     public List<AbilitySO> Abilities => abilities;
 
@@ -36,7 +36,7 @@ public class AbilityController : MonoBehaviour
 
     private void GetInfoForAbility(AbilitySO ability, out Transform spawnPoint, out AbilityController targetCar)
     {
-        targetCar = target != null 
+        targetCar = target != null
             ? target.GetComponentInChildren<AbilityController>()
             : null;
 
@@ -62,7 +62,10 @@ public class AbilityController : MonoBehaviour
     private void FindNearstTarget()
     {
         if (possibleTargets.Count == 0)
+        {
+            target = null;
             return;
+        }
 
         target = possibleTargets[0];
 
