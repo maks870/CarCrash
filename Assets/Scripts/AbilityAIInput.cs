@@ -112,7 +112,7 @@ public class AbilityAIInput : MonoBehaviour
         {
             abilityUseType.Add(abilities[i].Type);
             abilityOnCooldown.Add(false);
-            abilityCorutine.Add(new YieldInstruction());
+            abilityCorutine.Add(null);
         }
     }
 
