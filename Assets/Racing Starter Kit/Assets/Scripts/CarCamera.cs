@@ -23,7 +23,7 @@ public class CarCamera : MonoBehaviour
         PlayerCar = GameObject.FindGameObjectWithTag("PlayerCar");
     }
 
-    void LateUpdate()
+    void Update()
     {
         GetComponent<Camera>().transform.Translate(posX, posY, posZ);
         float rotZ = GetComponent<Camera>().transform.eulerAngles.z;

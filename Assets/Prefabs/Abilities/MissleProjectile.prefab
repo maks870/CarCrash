@@ -335,6 +335,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 262dacc45a9a3994e999d4df07a1369b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0e720e922ddf56b4599e17d3737ea89d, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 262dacc45a9a3994e999d4df07a1369b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 20428cb83e0e238499cbf701aa43f010, type: 2}
     - target: {fileID: 919132149155446097, guid: 262dacc45a9a3994e999d4df07a1369b,
         type: 3}
       propertyPath: m_Name
@@ -362,7 +372,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7765437672736704663}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1

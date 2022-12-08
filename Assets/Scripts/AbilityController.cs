@@ -57,8 +57,6 @@ public class AbilityController : MonoBehaviour
             ? target.GetComponentInChildren<AbilityController>()
             : null;
 
-        spawnPoint = spawnPointForward.transform;
-
         switch (ability.Type)
         {
             case AbilityType.Missle:
@@ -72,6 +70,9 @@ public class AbilityController : MonoBehaviour
 
             case AbilityType.Mine:
                 spawnPoint = spawnPointBack.transform;
+                break;
+            default:
+                spawnPoint = spawnPointForward.transform;
                 break;
         }
     }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.5
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.30098435, g: 0.35323992, b: 0.40420723, a: 0.5}
+  m_IndirectSpecularColor: {r: 0.30098557, g: 0.3532737, b: 0.40416563, a: 0.5}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -16038,6 +16038,18 @@ Transform:
   m_Father: {fileID: 1172645144}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1926128837 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1486996635076847426, guid: 060eec9acc6493b4aba640f8ca163733,
+    type: 3}
+  m_PrefabInstance: {fileID: 1486996636155912304}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d963df58504b69045b8d0d746ba6f777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1938187716 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2204723524492799042, guid: 28cbffb474a0b204ea086d33a753600c,
@@ -18580,6 +18592,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AICar1
       objectReference: {fileID: 0}
+    - target: {fileID: 6972168521921557846, guid: 060eec9acc6493b4aba640f8ca163733,
+        type: 3}
+      propertyPath: carAIControl
+      value: 
+      objectReference: {fileID: 1926128837}
     - target: {fileID: 8746159390408742290, guid: 060eec9acc6493b4aba640f8ca163733,
         type: 3}
       propertyPath: complexity
