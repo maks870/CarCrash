@@ -79,6 +79,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
             abilityController.RefreshAbilityEvent += abilityAIInput.SetAbilities;
             abilityAIInput.UseDecisionEvent += abilityController.UseAbility;
+
         }
 
         private void Update()

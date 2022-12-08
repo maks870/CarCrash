@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AbilityController))]
 public class AbilityAIInput : MonoBehaviour
 {
     const float maxAbilityUseTimer = 3;
@@ -14,6 +15,9 @@ public class AbilityAIInput : MonoBehaviour
     private List<AbilityType> abilityUseType;
     private List<YieldInstruction> abilityCorutine;
     private GameObject currentTarget;
+    private AbilityController abilityController;
+
+
 
     public delegate void AbilityUseDecision(int numberAbility);
     public event AbilityUseDecision UseDecisionEvent;
