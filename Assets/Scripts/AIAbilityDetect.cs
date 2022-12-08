@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Vehicles.Car;
 
-public class AiAbilityDetected : MonoBehaviour
+public class AIAbilityDetect : MonoBehaviour
 {
     [SerializeField] CarAIControl carAIControl; 
     private void OnTriggerEnter(Collider other)

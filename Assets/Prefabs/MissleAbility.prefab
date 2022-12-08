@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilitySO: {fileID: 11400000, guid: bc2f5381aa10362408a231809927c0fe, type: 2}
-  dropChance: 100
+  dropChance: 0

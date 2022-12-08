@@ -6,7 +6,6 @@ using Random = UnityEngine.Random;
 namespace UnityStandardAssets.Vehicles.Car
 {
     [RequireComponent(typeof(CarController))]
-    [RequireComponent(typeof(AbilityController))]
     [RequireComponent(typeof(AbilityAIInput))]
     public class CarAIControl : CarControl
     {
@@ -52,12 +51,9 @@ namespace UnityStandardAssets.Vehicles.Car
         private bool randomMove = true;
         [SerializeField] private List<Transform> abilitiesPoints = new List<Transform>();
 
-        [SerializeField] private AbilityAIInput abilityAIInput;
-
         private void Awake()
         {
             carController = GetComponent<CarController>();
-            abilityAIInput = GetComponent<AbilityAIInput>();
 
 
             // give the random perlin a random value
@@ -76,9 +72,6 @@ namespace UnityStandardAssets.Vehicles.Car
 
             m_Target = TargetGameObject.GetComponent<Transform>();
             oldTarget = m_Target;
-
-            abilityController.RefreshAbilityEvent += abilityAIInput.SetAbilities;
-            abilityAIInput.UseDecisionEvent += abilityController.UseAbility;
 
         }
 
