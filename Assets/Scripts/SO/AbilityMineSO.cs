@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityStandardAssets.Vehicles.Car;
 
 [CreateAssetMenu(fileName = "AbilityMine", menuName = "ScriptableObject/Ability/AbilityMine")]
 public class AbilityMineSO : AbilitySO

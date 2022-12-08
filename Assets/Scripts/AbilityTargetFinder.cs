@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class AbilityTargetFinder : MonoBehaviour
 {
-
     [SerializeField] AbilityController ablityController;
-
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,9 +12,8 @@ public class AbilityTargetFinder : MonoBehaviour
         {
             ablityController.AddTarget(other.gameObject);
         }
-
-
     }
+
     private void OnTriggerExit(Collider other)
     {
         ablityController.RemoveTarget(other.gameObject);

@@ -12,7 +12,9 @@ public class AbilityMissleSO : AbilitySO
     {
         GameObject rocket = Instantiate(projectile, spawnPoint);
         rocket.transform.parent = null;
-
         rocket.GetComponent<Projectile>().Target = target != null ? target.gameObject : null;
+
+        if (target != null)
+            target.IsMissleWarning = true;
     }
 }

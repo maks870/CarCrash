@@ -6,6 +6,8 @@ using Random = UnityEngine.Random;
 namespace UnityStandardAssets.Vehicles.Car
 {
     [RequireComponent(typeof(CarController))]
+    [RequireComponent(typeof(AbilityController))]
+    [RequireComponent(typeof(AbilityAIInput))]
     public class CarAIControl : CarControl
     {
         public enum BrakeCondition
@@ -50,10 +52,13 @@ namespace UnityStandardAssets.Vehicles.Car
         private bool randomMove = true;
         [SerializeField] private List<Transform> abilitiesPoints = new List<Transform>();
 
+        [SerializeField] private AbilityAIInput abilityAIInput;
+
         private void Awake()
         {
-            // get the car controller reference
             carController = GetComponent<CarController>();
+            abilityAIInput = GetComponent<AbilityAIInput>();
+
 
             // give the random perlin a random value
             m_RandomPerlin = Random.value * 10;
@@ -71,6 +76,9 @@ namespace UnityStandardAssets.Vehicles.Car
 
             m_Target = TargetGameObject.GetComponent<Transform>();
             oldTarget = m_Target;
+
+            abilityController.RefreshAbilityEvent += abilityAIInput.SetAbilities;
+            abilityAIInput.UseDecisionEvent += abilityController.UseAbility;
         }
 
         private void Update()
@@ -250,7 +258,7 @@ namespace UnityStandardAssets.Vehicles.Car
                     {
                         SetAbilityTarget(abilitiesPoints[0]);
                     }
-                    else if (m_Target==null) 
+                    else if (m_Target == null)
                     {
                         ResetAbilityTarget();
                     }

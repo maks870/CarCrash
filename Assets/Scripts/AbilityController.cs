@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityStandardAssets.Vehicles.Car;
 
 public class AbilityController : MonoBehaviour
 {
@@ -16,10 +15,28 @@ public class AbilityController : MonoBehaviour
     [SerializeField] private GameObject target;
     [SerializeField] private List<GameObject> possibleTargets = new List<GameObject>();
     private List<AbilitySO> abilities = new List<AbilitySO>();
+
+
+    private int missleWarning = 0;
     private bool isDamaged;
     private bool isProtected;
+
     private Animator shieldAnimator;
 
+    public bool IsMissleWarning
+    {
+        get
+        {
+            return missleWarning > 0 ? true : false;
+        }
+        set
+        {
+            if (value)
+                missleWarning++;
+            else
+                missleWarning--;
+        }
+    }
     public bool IsDamaged => isDamaged;
     public int MaxAbilities => maxAbilities;
     public GameObject Target { get => target; set => target = value; }
@@ -79,6 +96,19 @@ public class AbilityController : MonoBehaviour
         }
     }
 
+    private void ShieldOn()
+    {
+        isProtected = true;
+        /*        shieldAnimator.SetTrigger("");*/// TODO: Назначить триггер включения анимации щита
+        Debug.Log("Shield Activated");
+    }
+    private void ShieldOff()
+    {
+        /*        shieldAnimator.SetTrigger("");*/// TODO: Назначить тригер отключения анимации щита
+        isProtected = false;
+        Debug.Log("Shield Deactivated");
+    }
+
     public void AddTarget(GameObject target)
     {
         possibleTargets.Add(target);
@@ -128,29 +158,18 @@ public class AbilityController : MonoBehaviour
             StartCoroutine(DamagedTimer());
     }
 
-    private void ShieldOn()
-    {
-        isProtected = true;
-        /*        shieldAnimator.SetTrigger("");*/// TODO: Назначить триггер включения анимации щита
-        Debug.Log("Shield Activated");
-    }
-    private void ShieldOff()
-    {
-        /*        shieldAnimator.SetTrigger("");*/// TODO: Назначить тригер отключения анимации щита
-        isProtected = false;
-        Debug.Log("Shield Deactivated");
-    }
-
     public void ActivateShield()
     {
         StartCoroutine(ShieldTimer());
     }
+
     IEnumerator ShieldTimer()
     {
         ShieldOn();
         yield return new WaitForSeconds(shieldLifeTime);
         ShieldOff();
     }
+
     IEnumerator DamagedTimer()// Таймер получения урона
     {
         isDamaged = true;

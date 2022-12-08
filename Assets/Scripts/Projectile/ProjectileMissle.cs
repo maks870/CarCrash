@@ -5,6 +5,21 @@ public class ProjectileMissle : Projectile
     [SerializeField] private float rotateSpeed;
     [SerializeField] private float speed;
 
+    protected override void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<AbilityController>() != null)
+        {
+            Debug.Log("BOOM");
+            other.GetComponent<AbilityController>().TakeDamage();
+            Instantiate(effect, transform.position, Quaternion.identity);
+        }
+
+        if (target != null)
+            target.GetComponent<AbilityController>().IsMissleWarning = false;
+
+        Destroy(gameObject);
+    }
+
     private void FixedUpdate()
     {
         rb.velocity = transform.forward * speed;

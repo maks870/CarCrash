@@ -106,6 +106,27 @@ public class AbilityAIInput : MonoBehaviour
 
     }
 
+    public void MineDesicion()//Логика для мины
+    {
+        int? abilityIndex = FindAvailableAbilityIndex(AbilityType.Mine, true);
+
+        if (abilityIndex == null)
+            return;
+
+        bool decision = FinalDecision((int)abilityIndex);
+    }
+
+    public void ShieldDesicion()//Логика для щита
+    {
+        int? abilityIndex = FindAvailableAbilityIndex(AbilityType.Shield, true);
+
+        if (abilityIndex == null)
+            return;
+
+        bool decision = FinalDecision((int)abilityIndex);
+
+    }
+
     public void SetAbilities(List<AbilitySO> abilities)
     {
         for (int i = abilityUseType.Count; i < abilities.Count; i++)
