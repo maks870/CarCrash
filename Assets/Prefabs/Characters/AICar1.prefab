@@ -633,6 +633,7 @@ GameObject:
   - component: {fileID: 1486996635076847424}
   - component: {fileID: 1486996635076847431}
   - component: {fileID: 1486996635076847430}
+  - component: {fileID: 8746159390408742290}
   m_Layer: 0
   m_Name: AICar1
   m_TagString: Untagged
@@ -799,6 +800,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1097fb71545b1340a9237378a549b72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8746159390408742290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486996635076847455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96d84bf1f56ae824dbe14f1799d83011, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  complexity: 100
+  abilityController: {fileID: 825436133910540392}
 --- !u!1 &1486996635092473075
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,7 +1239,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1486996635288918741}
   - component: {fileID: 1486996635288918743}
-  - component: {fileID: 6972168521921557846}
+  - component: {fileID: 1169221165}
   m_Layer: 0
   m_Name: AbilityDetectedCollider
   m_TagString: Untagged
@@ -1260,7 +1275,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 9.53, y: 3.02, z: 12.7}
   m_Center: {x: 0, y: 0, z: 6.62}
---- !u!114 &6972168521921557846
+--- !u!114 &1169221165
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1269,10 +1284,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1486996635288918740}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f03e734242c29a841b87215db61dfae8, type: 3}
+  m_Script: {fileID: 11500000, guid: 96ec5455f52244240808747147a21f34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carAIControl: {fileID: 0}
+  carAIControl: {fileID: 1486996635076847426}
 --- !u!1 &1486996635307945119
 GameObject:
   m_ObjectHideFlags: 0
@@ -1418,6 +1433,7 @@ Transform:
   - {fileID: 1486996634666992480}
   - {fileID: 1486996635125282893}
   - {fileID: 1486996635288918741}
+  - {fileID: 4579615892376102885}
   m_Father: {fileID: 1486996634759204568}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7427,3 +7443,62 @@ Transform:
   m_Father: {fileID: 3546980203070807756}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9191328182613931932
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4579615892376102885}
+  - component: {fileID: 7389596495029044230}
+  - component: {fileID: 643884560308434927}
+  m_Layer: 0
+  m_Name: AbilityTargetCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4579615892376102885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9191328182613931932}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.125, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1486996635398140728}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7389596495029044230
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9191328182613931932}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.600746, y: 1, z: 13.139946}
+  m_Center: {x: 0, y: 0, z: 6.75}
+--- !u!114 &643884560308434927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9191328182613931932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6105ad3e4effc564293238698484e170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ablityController: {fileID: 825436133910540392}
