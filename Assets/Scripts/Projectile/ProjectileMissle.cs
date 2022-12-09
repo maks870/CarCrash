@@ -11,12 +11,12 @@ public class ProjectileMissle : Projectile
         {
             Debug.Log("BOOM");
             other.GetComponent<AbilityController>().TakeDamage();
-            Instantiate(effect, transform.position, Quaternion.identity);
         }
 
         if (target != null)
             target.GetComponent<AbilityController>().IsMissleWarning = false;
 
+        Instantiate(effect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
