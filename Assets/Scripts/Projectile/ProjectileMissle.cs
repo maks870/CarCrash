@@ -5,24 +5,20 @@ public class ProjectileMissle : Projectile
     [SerializeField] private float rotateSpeed;
     [SerializeField] private float speed;
 
-    private void OnCollisionEnter(Collision collision)
+    protected override void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.GetComponent<AbilityController>() != null)
-        {
-            Debug.Log("BOOM");
-            collision.gameObject.GetComponent<AbilityController>().TakeDamage();
-        }
+        other.gameObject.GetComponent<AbilityController>()?.TakeDamage();
 
         if (target != null)
             target.GetComponent<AbilityController>().IsMissleWarning = false;
 
-        Instantiate(effect, transform.position, Quaternion.identity);
-        Destroy(gameObject);
-    }
-
-    protected override void OnTriggerEnter(Collider other)
-    {
-        
+        if (other.gameObject.layer != LayerMask.NameToLayer("Detected")) 
+        {
+            Debug.Log(other.gameObject.layer);
+            Debug.Log(other.gameObject.name);
+            Instantiate(effect, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
     }
 
     private void FixedUpdate()
