@@ -12,10 +12,21 @@ public class AbilityTargetFinder : MonoBehaviour
         {
             ablityController.AddTarget(other.gameObject);
         }
+
+        if (other.GetComponentInChildren<ProjectileMine>() != null)
+        {
+            ablityController.IsMineWarning = true;
+        }
+
     }
 
     private void OnTriggerExit(Collider other)
     {
         ablityController.RemoveTarget(other.gameObject);
+
+        if (other.GetComponentInChildren<ProjectileMine>() != null)
+        {
+            ablityController.IsMineWarning = false;
+        }
     }
 }

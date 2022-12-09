@@ -16,13 +16,27 @@ public class AbilityController : MonoBehaviour
     [SerializeField] private List<GameObject> possibleTargets = new List<GameObject>();
     private List<AbilitySO> abilities = new List<AbilitySO>();
 
-
+    private int mineWarning = 0;
     private int missleWarning = 0;
     private bool isDamaged;
     private bool isProtected;
 
     private Animator shieldAnimator;
 
+    public bool IsMineWarning
+    {
+        get
+        {
+            return mineWarning > 0 ? true : false;
+        }
+        set
+        {
+            if (value)
+                mineWarning++;
+            else
+                mineWarning--;
+        }
+    }
     public bool IsMissleWarning
     {
         get
@@ -37,6 +51,7 @@ public class AbilityController : MonoBehaviour
                 missleWarning--;
         }
     }
+
     public bool IsDamaged => isDamaged;
     public int MaxAbilities => maxAbilities;
     public GameObject Target { get => target; set => target = value; }
