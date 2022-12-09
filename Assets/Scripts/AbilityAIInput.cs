@@ -35,9 +35,10 @@ public class AbilityAIInput : MonoBehaviour
             if (abilityController.IsMissleWarning)
                 ShieldDesicion();
 
-            if (abilityController.IsMissleWarning)
-                MineDesicion();
+            if (abilityController.IsMineWarning)
+                ShieldDesicion();
 
+            MineDesicion();
             MissleDesicion(abilityController.Target);
 
         }

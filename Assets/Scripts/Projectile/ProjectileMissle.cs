@@ -7,18 +7,17 @@ public class ProjectileMissle : Projectile
 
     protected override void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Detected"))
+            return;
+
         other.gameObject.GetComponent<AbilityController>()?.TakeDamage();
+        Instantiate(effect, transform.position, Quaternion.identity);
 
         if (target != null)
             target.GetComponent<AbilityController>().IsMissleWarning = false;
 
-        if (other.gameObject.layer != LayerMask.NameToLayer("Detected")) 
-        {
-            Debug.Log(other.gameObject.layer);
-            Debug.Log(other.gameObject.name);
-            Instantiate(effect, transform.position, Quaternion.identity);
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
+
     }
 
     private void FixedUpdate()
