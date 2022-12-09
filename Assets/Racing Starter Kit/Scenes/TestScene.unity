@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.5
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.30098557, g: 0.3532737, b: 0.40416563, a: 0.5}
+  m_IndirectSpecularColor: {r: 0.30098435, g: 0.35323992, b: 0.40420723, a: 0.5}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4272,12 +4272,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc02ad7ca6ce5d749911b558119a1706, type: 3}
---- !u!4 &534512419 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7099209949348357181, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
-    type: 3}
-  m_PrefabInstance: {fileID: 7099209949318735646}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &537861782
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5889,18 +5883,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f52aa623dfa32e541b942ce2df413719, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &697666238 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7099209949126679314, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
-    type: 3}
-  m_PrefabInstance: {fileID: 7099209949318735646}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb4bf64413a54c44cab1a99925f6c169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &724620079
@@ -11665,65 +11647,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1412438458}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1420006381
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1420006382}
-  - component: {fileID: 1420006383}
-  - component: {fileID: 1420006384}
-  m_Layer: 0
-  m_Name: TargetCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1420006382
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1420006381}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 534512419}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1420006383
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1420006381}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 9.600746, y: 1, z: 13.139946}
-  m_Center: {x: 0, y: 0, z: 6.75}
---- !u!114 &1420006384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1420006381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6105ad3e4effc564293238698484e170, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ablityController: {fileID: 697666238}
 --- !u!1 &1424903129
 GameObject:
   m_ObjectHideFlags: 0
@@ -16038,18 +15961,6 @@ Transform:
   m_Father: {fileID: 1172645144}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1926128837 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1486996635076847426, guid: 060eec9acc6493b4aba640f8ca163733,
-    type: 3}
-  m_PrefabInstance: {fileID: 1486996636155912304}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d963df58504b69045b8d0d746ba6f777, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1938187716 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2204723524492799042, guid: 28cbffb474a0b204ea086d33a753600c,
@@ -16508,18 +16419,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28cbffb474a0b204ea086d33a753600c, type: 3}
---- !u!114 &1974047751 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 825436133910540392, guid: 060eec9acc6493b4aba640f8ca163733,
-    type: 3}
-  m_PrefabInstance: {fileID: 1486996636155912304}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb4bf64413a54c44cab1a99925f6c169, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1975379286
 GameObject:
   m_ObjectHideFlags: 0
@@ -18530,7 +18429,7 @@ PrefabInstance:
     - target: {fileID: 825436133910540392, guid: 060eec9acc6493b4aba640f8ca163733,
         type: 3}
       propertyPath: maxAbilities
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1486996634759204568, guid: 060eec9acc6493b4aba640f8ca163733,
         type: 3}
@@ -18592,21 +18491,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AICar1
       objectReference: {fileID: 0}
-    - target: {fileID: 6972168521921557846, guid: 060eec9acc6493b4aba640f8ca163733,
-        type: 3}
-      propertyPath: carAIControl
-      value: 
-      objectReference: {fileID: 1926128837}
-    - target: {fileID: 8746159390408742290, guid: 060eec9acc6493b4aba640f8ca163733,
-        type: 3}
-      propertyPath: complexity
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 8746159390408742290, guid: 060eec9acc6493b4aba640f8ca163733,
-        type: 3}
-      propertyPath: abilityController
-      value: 
-      objectReference: {fileID: 1974047751}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 060eec9acc6493b4aba640f8ca163733, type: 3}
 --- !u!1001 &2001776216260123424
@@ -18991,11 +18875,6 @@ PrefabInstance:
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 1321064512}
-    - target: {fileID: 7099209949126679314, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
-        type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7099209949602787470, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
         type: 3}
       propertyPath: m_Name
