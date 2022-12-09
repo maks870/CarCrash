@@ -58,23 +58,6 @@ public class AbilityAIInput : MonoBehaviour
         }
         return abilityNumber;
     }
-    //private int? FindAvailableAbilityIndex(AbilityType abilityType, bool isConsiderCooldown)
-    //{
-    //    bool cooldown—ondition;
-    //    int? abilityNumber = null;
-
-    //    for (int i = 0; i < abilityUseType.Count; i++)
-    //    {
-    //        cooldown—ondition = isConsiderCooldown ? !abilityOnCooldown[i] : true;
-
-    //        if (abilityUseType[i] == abilityType && cooldown—ondition)
-    //        {
-    //            abilityNumber = i;
-    //            return abilityNumber;
-    //        }
-    //    }
-    //    return abilityNumber;
-    //}
 
     private bool DecisionPossibility()
     {
@@ -105,30 +88,6 @@ public class AbilityAIInput : MonoBehaviour
             return false;
         }
     }
-    //private bool FinalDecision(int abilityNumber)
-    //{
-    //    if (DecisionPossibility())
-    //    {
-    //        if (abilityCorutine[abilityNumber] != null)
-    //        {
-    //            Coroutine coroutine = (Coroutine)abilityCorutine[abilityNumber];
-    //            StopCoroutine(coroutine);
-    //        }
-
-    //        abilityUseType.RemoveAt(abilityNumber);
-    //        abilityOnCooldown.RemoveAt(abilityNumber);
-    //        abilityCorutine.RemoveAt(abilityNumber);
-
-    //        abilityController.UseAbility(abilityNumber);
-    //        return true;
-    //    }
-    //    else
-    //    {
-    //        Coroutine coroutine = StartCoroutine(AbilityUseTimer(abilityNumber));
-    //        abilityCorutine[abilityNumber] = coroutine;
-    //        return false;
-    //    }
-    //}
 
     private void MissleDesicion(GameObject target)//ÀÓ„ËÍ‡ ‰Îˇ ‡ÍÂÚ˚
     {
@@ -186,26 +145,9 @@ public class AbilityAIInput : MonoBehaviour
         }
     }
 
-    //public void SetAbilities(List<AbilitySO> abilities)
-    //{
-    //    for (int i = abilityUseType.Count; i < abilities.Count; i++)
-    //    {
-    //        abilityUseType.Add(abilities[i].Type);
-    //        abilityOnCooldown.Add(false);
-    //        abilityCorutine.Add(null);
-    //    }
-    //}
-
     IEnumerator AbilityUseTimer(int abilityNumber)//ÌÓ‚˚È
     {
         yield return new WaitForSeconds(abilityUseTimer);
         abilityCorutine[abilityNumber] = null;
     }
-
-    //IEnumerator AbilityUseTimer(int abilityNumber)
-    //{
-    //    abilityOnCooldown[abilityNumber] = true;
-    //    yield return new WaitForSeconds(abilityUseTimer);
-    //    abilityOnCooldown[abilityNumber] = false;
-    //}
 }
