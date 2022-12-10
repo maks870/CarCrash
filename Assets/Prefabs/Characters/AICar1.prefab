@@ -710,7 +710,7 @@ MonoBehaviour:
   m_LateralWanderSpeed: 0.2
   m_AccelWanderAmount: 0.1
   m_AccelWanderSpeed: 0.1
-  m_BrakeCondition: 0
+  m_BrakeCondition: 1
   m_Driving: 1
   m_Target: {fileID: 0}
   m_StopWhenTargetReached: 0
