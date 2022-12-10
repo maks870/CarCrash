@@ -10,14 +10,13 @@ public class MineFinder : MonoBehaviour
     [SerializeField] AbilityController abilityController;
 
 
-    private List<GameObject> mines = new List<GameObject>();
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<ProjectileMine>() != null)
         {
-            mines.Add(other.gameObject);
             abilityController.IsMineWarning = true;
+            carAIControl.AvoidMineAction(other.gameObject);
         }
     }
 
@@ -25,7 +24,6 @@ public class MineFinder : MonoBehaviour
     {
         if (other.GetComponent<ProjectileMine>() != null)
         {
-            mines.Remove(other.gameObject);
             abilityController.IsMineWarning = false;
         }
     }
@@ -33,32 +31,5 @@ public class MineFinder : MonoBehaviour
     private void Start()
     {
         carAIControl.AvoidMineDistance = avoidMineDistance;
-    }
-
-    void Update()
-    {
-        CheckCurrentMine();
-
-        if (mines.Count != 0)
-            carAIControl.MineTarget = mines[0];
-    }
-
-    private void CheckCurrentMine()
-    {
-        if (mines.Count == 0)
-        {
-            carAIControl.MineTarget = null;
-            return;
-        }
-
-        if (mines[0] != null)
-        {
-            if (Vector3.Angle(carAIControl.transform.forward, mines[0].transform.position - carAIControl.transform.position) >= 90)
-                mines.RemoveAt(0);
-        }
-        else
-        {
-            mines.RemoveAt(0);
-        }
     }
 }

@@ -51,13 +51,12 @@ namespace UnityStandardAssets.Vehicles.Car
         private bool randomMove = true;
 
         private float avoidMineWanderDistance;
+        private Vector3 avoidingPos;
         private GameObject mineTarget;
 
 
         [SerializeField] private List<Transform> abilitiesPoints = new List<Transform>();
 
-
-        public GameObject MineTarget { get => mineTarget; set => mineTarget = value; }
         public float AvoidMineDistance { set => avoidMineWanderDistance = value; }
 
         private void Awake()
@@ -169,12 +168,8 @@ namespace UnityStandardAssets.Vehicles.Car
                 }
                 else if (mineTarget != null && !abilityController.IsProtected)
                 {
-                    AvoidMineAction();
-
-                    desiredSpeed *= m_AvoidOtherCarSlowdown;
-
-                    offsetTargetPos = mineTarget.transform.position - mineTarget.transform.right * m_AvoidPathOffset;
-
+                    //desiredSpeed *= m_AvoidOtherCarSlowdown;
+                    offsetTargetPos = avoidingPos;
                 }
                 else if (randomMove)
                 {
@@ -183,6 +178,12 @@ namespace UnityStandardAssets.Vehicles.Car
                     offsetTargetPos += m_Target.right *
                                    (Mathf.PerlinNoise(Time.time * m_LateralWanderSpeed, m_RandomPerlin) * 2 - 1) *
                                    m_LateralWanderDistance;
+                }
+
+                if (mineTarget != null)
+                {
+                    if (Vector3.Angle(transform.forward, mineTarget.transform.position - transform.position) >= 90)
+                        mineTarget = null;
                 }
 
                 // use different sensitivity depending on whether accelerating or braking:
@@ -286,21 +287,32 @@ namespace UnityStandardAssets.Vehicles.Car
             }
         }
 
-        public void AvoidMineAction()
+        public void AvoidMineAction(GameObject mine)
         {
+            mineTarget = mine;
+            RaycastHit hitRight;
+            RaycastHit hitLeft;
 
-            if (Vector3.Angle(transform.forward, mineTarget.transform.position - transform.position) < 90)
+            Vector3 dir = (mineTarget.transform.position - transform.position).normalized;
+            Vector3 right = Quaternion.AngleAxis(90, Vector3.up) * dir;
+            Vector3 left = Quaternion.AngleAxis(-90, Vector3.up) * dir;
+
+            Physics.Raycast(mineTarget.transform.position, right, out hitRight, Mathf.Infinity);
+            Physics.Raycast(mineTarget.transform.position, left, out hitLeft, Mathf.Infinity);
+
+            Vector3 posRight = mineTarget.transform.position + right * avoidMineWanderDistance;
+            Vector3 posLeft = mineTarget.transform.position + left * avoidMineWanderDistance;
+
+            if (hitRight.distance > hitLeft.distance)
             {
-                m_AvoidOtherCarSlowdown = 0.5f;
+                avoidingPos = posRight;
+                Debug.Log("GoRight");
             }
             else
             {
-                m_AvoidOtherCarSlowdown = 1;
+                avoidingPos = posLeft;
+                Debug.Log("GoLeft");
             }
-
-            var otherCarLocalDelta = transform.InverseTransformPoint(mineTarget.transform.position);
-            float otherCarAngle = Mathf.Atan2(otherCarLocalDelta.x, otherCarLocalDelta.z);
-            m_AvoidPathOffset = avoidMineWanderDistance * Mathf.Sign(otherCarAngle);
         }
 
         public void SetTarget(Transform target)
