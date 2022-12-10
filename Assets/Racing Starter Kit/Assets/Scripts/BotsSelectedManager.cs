@@ -3,6 +3,7 @@
 public class BotsSelectedManager : MonoBehaviour
 {
     private GameObject[] AICars;
+    private int countBots;
     private string AICarString;
     private int AICarNumber;
 
