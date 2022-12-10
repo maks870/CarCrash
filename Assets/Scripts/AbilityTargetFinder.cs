@@ -4,29 +4,17 @@ using UnityEngine;
 
 public class AbilityTargetFinder : MonoBehaviour
 {
-    [SerializeField] AbilityController ablityController;
+    [SerializeField] AbilityController abilityController;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponentInChildren<AbilityController>() != null)
-        {
-            ablityController.AddTarget(other.gameObject);
-        }
-
-        if (other.GetComponentInChildren<ProjectileMine>() != null)
-        {
-            ablityController.IsMineWarning = true;
-        }
-
+        if (other.GetComponent<AbilityController>() != null)
+            abilityController.AddTarget(other.gameObject);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        ablityController.RemoveTarget(other.gameObject);
-
-        if (other.GetComponentInChildren<ProjectileMine>() != null)
-        {
-            ablityController.IsMineWarning = false;
-        }
+        if (other.GetComponent<AbilityController>() != null)
+            abilityController.RemoveTarget(other.gameObject);
     }
 }

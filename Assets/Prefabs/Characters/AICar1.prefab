@@ -1,5 +1,66 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1198995543
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1198995544}
+  - component: {fileID: 1198995546}
+  - component: {fileID: 1198995545}
+  m_Layer: 3
+  m_Name: MineFinder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1198995544
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198995543}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1486996635398140728}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1198995546
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198995543}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.16, y: 0.95, z: 4.76}
+  m_Center: {x: 0, y: 0, z: 3.43}
+--- !u!114 &1198995545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198995543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4e3172ab2c3ab4488a7ba9269f3eb6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  avoidMineDistance: 3
+  carAIControl: {fileID: 1486996635076847426}
+  abilityController: {fileID: 825436133910540392}
 --- !u!1 &970096199820404599
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,7 +776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d84bf1f56ae824dbe14f1799d83011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  complexity: 100
+  complexity: 50
   abilityController: {fileID: 825436133910540392}
 --- !u!1 &1486996635092473075
 GameObject:
@@ -1238,6 +1299,7 @@ Transform:
   m_Children:
   - {fileID: 1486996635288918741}
   - {fileID: 4579615892376102885}
+  - {fileID: 1198995544}
   m_Father: {fileID: 1486996634759204568}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7165,7 +7227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb4bf64413a54c44cab1a99925f6c169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldLifeTime: 1
+  shieldLifeTime: 2
   maxAbilities: 3
   spawnPointForward: {fileID: 7148463510129341337}
   spawnPointMiddle: {fileID: 4428012477557465926}
@@ -7305,4 +7367,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6105ad3e4effc564293238698484e170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ablityController: {fileID: 825436133910540392}
+  abilityController: {fileID: 825436133910540392}

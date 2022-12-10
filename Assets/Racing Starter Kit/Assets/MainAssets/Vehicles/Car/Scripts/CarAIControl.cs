@@ -49,7 +49,16 @@ namespace UnityStandardAssets.Vehicles.Car
         private Transform oldTarget;
         private Transform abilityTarget;
         private bool randomMove = true;
+
+        private float avoidMineWanderDistance;
+        private GameObject mineTarget;
+
+
         [SerializeField] private List<Transform> abilitiesPoints = new List<Transform>();
+
+
+        public GameObject MineTarget { get => mineTarget; set => mineTarget = value; }
+        public float AvoidMineDistance { set => avoidMineWanderDistance = value; }
 
         private void Awake()
         {
@@ -157,6 +166,15 @@ namespace UnityStandardAssets.Vehicles.Car
 
                     // and veer towards the side of our path-to-target that is away from the other car
                     offsetTargetPos += m_Target.right * m_AvoidPathOffset;
+                }
+                else if (mineTarget != null && !abilityController.IsProtected)
+                {
+                    AvoidMineAction();
+
+                    desiredSpeed *= m_AvoidOtherCarSlowdown;
+
+                    offsetTargetPos = mineTarget.transform.position - mineTarget.transform.right * m_AvoidPathOffset;
+
                 }
                 else if (randomMove)
                 {
@@ -266,6 +284,23 @@ namespace UnityStandardAssets.Vehicles.Car
             {
                 ResetAbilityTarget();
             }
+        }
+
+        public void AvoidMineAction()
+        {
+
+            if (Vector3.Angle(transform.forward, mineTarget.transform.position - transform.position) < 90)
+            {
+                m_AvoidOtherCarSlowdown = 0.5f;
+            }
+            else
+            {
+                m_AvoidOtherCarSlowdown = 1;
+            }
+
+            var otherCarLocalDelta = transform.InverseTransformPoint(mineTarget.transform.position);
+            float otherCarAngle = Mathf.Atan2(otherCarLocalDelta.x, otherCarLocalDelta.z);
+            m_AvoidPathOffset = avoidMineWanderDistance * Mathf.Sign(otherCarAngle);
         }
 
         public void SetTarget(Transform target)

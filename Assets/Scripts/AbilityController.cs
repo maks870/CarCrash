@@ -53,6 +53,7 @@ public class AbilityController : MonoBehaviour
     }
 
     public bool IsDamaged => isDamaged;
+    public bool IsProtected => isProtected;
     public int MaxAbilities => maxAbilities;
     public GameObject Target { get => target; set => target = value; }
 

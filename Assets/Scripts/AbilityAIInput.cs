@@ -109,6 +109,7 @@ public class AbilityAIInput : MonoBehaviour
         if (target == currentTarget)
         {
             abilityIndex = FindAvailableAbilityIndex(AbilityType.Missle, true);
+
             if (abilityIndex == null)
                 return;
         }
@@ -152,6 +153,8 @@ public class AbilityAIInput : MonoBehaviour
     IEnumerator AbilityUseTimer(int abilityNumber)//новый
     {
         yield return new WaitForSeconds(abilityUseTimer);
-        abilityCorutine[abilityNumber] = null;
+
+        if (abilityCorutine.Count > abilityNumber)
+            abilityCorutine[abilityNumber] = null;
     }
 }
