@@ -13,6 +13,7 @@ public class AbilityController : MonoBehaviour
     [SerializeField] private Transform spawnPointMiddle;
     [SerializeField] private Transform spawnPointBack;
     [SerializeField] private GameObject target;
+    [SerializeField] private GameObject shieldObj;
     [SerializeField] private List<GameObject> possibleTargets = new List<GameObject>();
     private List<AbilitySO> abilities = new List<AbilitySO>();
 
@@ -20,8 +21,6 @@ public class AbilityController : MonoBehaviour
     private int missleWarning = 0;
     private bool isDamaged;
     private bool isProtected;
-
-    private Animator shieldAnimator;
 
     public bool IsMineWarning
     {
@@ -116,12 +115,12 @@ public class AbilityController : MonoBehaviour
     private void ShieldOn()
     {
         isProtected = true;
-        /*        shieldAnimator.SetTrigger("");*/// TODO: Назначить триггер включения анимации щита
+        shieldObj.SetActive(true);
         Debug.Log("Shield Activated");
     }
     private void ShieldOff()
     {
-        /*        shieldAnimator.SetTrigger("");*/// TODO: Назначить тригер отключения анимации щита
+        shieldObj.SetActive(false);
         isProtected = false;
         Debug.Log("Shield Deactivated");
     }

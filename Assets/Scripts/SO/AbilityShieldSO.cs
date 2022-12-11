@@ -10,7 +10,6 @@ public class AbilityShieldSO : AbilitySO
 
     public override void Use(Transform spawnPoint, AbilityController target)
     {
-        Instantiate(projectile, spawnPoint);
         target.ActivateShield();
     }
 }
