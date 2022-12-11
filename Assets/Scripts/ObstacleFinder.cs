@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Vehicles.Car;
 
-public class MineFinder : MonoBehaviour
+public class ObstacleFinder : MonoBehaviour
 {
     [SerializeField] float avoidMineDistance = 5f;
     [SerializeField] CarAIControl carAIControl;
