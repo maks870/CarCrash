@@ -3055,7 +3055,7 @@ MonoBehaviour:
   spawnPointMiddle: {fileID: 1186090241}
   spawnPointBack: {fileID: 506765489}
   target: {fileID: 605221161}
-  shieldObj: {fileID: 0}
+  shieldObj: {fileID: 1643260178}
   possibleTargets: []
 --- !u!1001 &212495074
 PrefabInstance:
@@ -3877,7 +3877,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 284284816}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -65.21, y: -0.015, z: 25.4}
+  m_LocalPosition: {x: -85.12, y: -0.015, z: 25.4}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25313,6 +25313,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccab4c70ac303d544a8b72d1a85e555c, type: 3}
+--- !u!1 &1643260178 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1254017168727422581, guid: b9e3282157f8bd1479a3a911befc81ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 1706441048}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1643692933
 PrefabInstance:
   m_ObjectHideFlags: 0
