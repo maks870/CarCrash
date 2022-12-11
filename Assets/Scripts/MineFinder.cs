@@ -8,6 +8,7 @@ public class MineFinder : MonoBehaviour
     [SerializeField] float avoidMineDistance = 5f;
     [SerializeField] CarAIControl carAIControl;
     [SerializeField] AbilityController abilityController;
+    [SerializeField] List<CarController> carControllers = new List<CarController>();
 
 
 
@@ -18,14 +19,31 @@ public class MineFinder : MonoBehaviour
             abilityController.IsMineWarning = true;
             carAIControl.AvoidMineAction(other.gameObject);
         }
-        if (other.GetComponent<CarController>()!=null && other.GetComponent<CarController>().CurrentSpeed < 0.3f)
+        if (other.GetComponent<CarController>()!=null )
         {
-            carAIControl.AvoidMineAction(other.gameObject);
+            carControllers.Add(other.GetComponent<CarController>());
+        }
+    }
+
+    private void Update()
+    {
+        foreach (CarController car in carControllers) 
+        {
+            if (car != null && car.CurrentSpeed < 2) 
+            {
+                carAIControl.AvoidMineAction(car.gameObject);
+                carControllers.Remove(car);
+                break;
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
+        if (other.GetComponent<CarController>() != null)
+        {
+            carControllers.Remove(other.GetComponent<CarController>());
+        }
         if (other.GetComponent<ProjectileMine>() != null)
         {
             abilityController.IsMineWarning = false;
