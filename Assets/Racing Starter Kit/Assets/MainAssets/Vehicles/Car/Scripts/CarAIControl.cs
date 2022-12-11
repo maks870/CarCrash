@@ -52,15 +52,13 @@ namespace UnityStandardAssets.Vehicles.Car
 
         [SerializeField] float avoidNearAngle = 60f;
         [SerializeField] float avoidFarAngle = 100f;
-        private float avoidMineWanderDistance;
         private Vector3 avoidingPos;
-        private GameObject mineTarget;
-        private bool isAvoidMine;
+        private GameObject obstacleTarget;
+        private bool isAvoidObstacle;
 
 
         [SerializeField] private List<Transform> abilitiesPoints = new List<Transform>();
 
-        public float AvoidMineDistance { set => avoidMineWanderDistance = value; }
 
         private void Awake()
         {
@@ -169,7 +167,7 @@ namespace UnityStandardAssets.Vehicles.Car
                     // and veer towards the side of our path-to-target that is away from the other car
                     offsetTargetPos += m_Target.right * m_AvoidPathOffset;
                 }
-                else if (mineTarget != null && !abilityController.IsProtected && isAvoidMine)
+                else if (obstacleTarget != null && !abilityController.IsProtected && isAvoidObstacle)
                 {
                     //desiredSpeed *= m_AvoidOtherCarSlowdown;
                     offsetTargetPos = avoidingPos;
@@ -183,11 +181,11 @@ namespace UnityStandardAssets.Vehicles.Car
                                    m_LateralWanderDistance;
                 }
 
-                if (mineTarget != null)
+                if (obstacleTarget != null)
                 {
-                    if (Vector3.Angle(transform.forward, mineTarget.transform.position - transform.position) >= 90)
+                    if (Vector3.Angle(transform.forward, obstacleTarget.transform.position - transform.position) >= 90)
                     {
-                        mineTarget = null;
+                        obstacleTarget = null;
                     }
                 }
 
@@ -291,25 +289,25 @@ namespace UnityStandardAssets.Vehicles.Car
             }
         }
 
-        public void AvoidMineAction(GameObject mine)
+        public void AvoidMineAction(GameObject objectObstacle)
         {
-            mineTarget = mine;
+            obstacleTarget = objectObstacle;
             RaycastHit hitRight;
             RaycastHit hitLeft;
             int layerMask = LayerMask.GetMask("Border");
 
             Vector3 position = new Vector3(oldTarget.position.x, 0.2f, oldTarget.position.z);
-            Vector3 positionMine = new Vector3(mineTarget.transform.position.x, 0.2f, mineTarget.transform.position.z);
+            Vector3 positionObject = new Vector3(obstacleTarget.transform.position.x, 0.2f, obstacleTarget.transform.position.z);
 
-            Vector3 dir = (position - positionMine).normalized;
+            Vector3 dir = (position - positionObject).normalized;
             Vector3 right = Quaternion.AngleAxis(-90, Vector3.up) * dir;
             Vector3 left = Quaternion.AngleAxis(90, Vector3.up) * dir;
 
-            Physics.Raycast(positionMine, right, out hitRight, Mathf.Infinity, layerMask);
-            Physics.Raycast(positionMine, left, out hitLeft, Mathf.Infinity, layerMask);
+            Physics.Raycast(positionObject, right, out hitRight, Mathf.Infinity, layerMask);
+            Physics.Raycast(positionObject, left, out hitLeft, Mathf.Infinity, layerMask);
 
-            Vector3 posRight = mineTarget.transform.position + (right * hitRight.distance / 2);
-            Vector3 posLeft = mineTarget.transform.position + (left * hitLeft.distance / 2);
+            Vector3 posRight = obstacleTarget.transform.position + (right * hitRight.distance / 2);
+            Vector3 posLeft = obstacleTarget.transform.position + (left * hitLeft.distance / 2);
 
             if (hitRight.distance > hitLeft.distance)
             {
@@ -322,15 +320,15 @@ namespace UnityStandardAssets.Vehicles.Car
 
 
             float nearAngle = Vector3.Angle(transform.forward, avoidingPos - transform.position);
-            float farAngle = Vector3.Angle(transform.position - mineTarget.transform.position, avoidingPos - mineTarget.transform.position);
+            float farAngle = Vector3.Angle(transform.position - obstacleTarget.transform.position, avoidingPos - obstacleTarget.transform.position);
 
-            Debug.DrawLine(positionMine, avoidingPos, Color.yellow, 10);
+            Debug.DrawLine(positionObject, avoidingPos, Color.yellow, 10);
 
 
             if (nearAngle < avoidFarAngle && farAngle < avoidFarAngle)
-                isAvoidMine = true;
+                isAvoidObstacle = true;
             else
-                isAvoidMine = false;
+                isAvoidObstacle = false;
 
             Debug.Log("Ближний угол " + (nearAngle < avoidFarAngle));
             Debug.Log("Дaльний угол " + (farAngle < avoidFarAngle));
