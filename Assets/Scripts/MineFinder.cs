@@ -18,6 +18,10 @@ public class MineFinder : MonoBehaviour
             abilityController.IsMineWarning = true;
             carAIControl.AvoidMineAction(other.gameObject);
         }
+        if (other.GetComponent<CarController>()!=null && other.GetComponent<CarController>().CurrentSpeed < 0.3f)
+        {
+            carAIControl.AvoidMineAction(other.gameObject);
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -26,10 +30,5 @@ public class MineFinder : MonoBehaviour
         {
             abilityController.IsMineWarning = false;
         }
-    }
-
-    private void Start()
-    {
-        carAIControl.AvoidMineDistance = avoidMineDistance;
     }
 }
