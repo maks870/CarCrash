@@ -297,15 +297,15 @@ namespace UnityStandardAssets.Vehicles.Car
             RaycastHit hitLeft;
             int layerMask = LayerMask.GetMask("Border");
 
-            Vector3 position = new Vector3(transform.position.x, 0.2f, transform.position.z);
+            Vector3 position = new Vector3(oldTarget.position.x, 0.2f, oldTarget.position.z);
             Vector3 positionMine = new Vector3(mineTarget.transform.position.x, 0.2f, mineTarget.transform.position.z);
 
             Vector3 dir = (position - positionMine).normalized;
             Vector3 right = Quaternion.AngleAxis(-90, Vector3.up) * dir;
             Vector3 left = Quaternion.AngleAxis(90, Vector3.up) * dir;
 
-            Physics.Raycast(mineTarget.transform.position, right, out hitRight, Mathf.Infinity, layerMask);
-            Physics.Raycast(mineTarget.transform.position, left, out hitLeft, Mathf.Infinity, layerMask);
+            Physics.Raycast(positionMine, right, out hitRight, Mathf.Infinity, layerMask);
+            Physics.Raycast(positionMine, left, out hitLeft, Mathf.Infinity, layerMask);
 
             Vector3 posRight = mineTarget.transform.position + (right * hitRight.distance / 2);
             Vector3 posLeft = mineTarget.transform.position + (left * hitLeft.distance / 2);
