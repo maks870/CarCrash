@@ -45,6 +45,7 @@ public class AICarBehaviour : MonoBehaviour
         {
             //invert the torque of the car so it starts going in reverse
             AICarController.m_FullTorqueOverAllWheels = (AICarController.m_FullTorqueOverAllWheels * -1);
+            AICarController.CurrentSteerAngle = (-AICarController.CurrentSteerAngle);
             AICarController.m_MaximumSteerAngle = 0;//the car won't turn
             StartReverse = 0;//leave this deactivated so we can use it again in future reverses on the same race
             StartCoroutine(ReverseCoroutine());//start the reverse coroutine
@@ -58,7 +59,7 @@ public class AICarBehaviour : MonoBehaviour
         foreach (WheelCollider wc in AllWheelColliders)
             wc.enabled = true;
         //the reverse coroutine will wait 1 second with the car going in reverse and without turning
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(1.5f);
         //after that, it will bring back the normal torque of the car so it goes forward again
         AICarController.m_FullTorqueOverAllWheels = AICarController.m_FullTorqueOverAllWheels + NormalTorque + NormalTorque;
         //after one second, the car will be able to turn again

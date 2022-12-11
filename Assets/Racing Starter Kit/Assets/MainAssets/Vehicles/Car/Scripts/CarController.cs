@@ -54,7 +54,7 @@ namespace UnityStandardAssets.Vehicles.Car
         public bool HandbrakeOn { set => handbrakeOn = value; }
         public bool Skidding { get; private set; }
         public float BrakeInput { get; private set; }
-        public float CurrentSteerAngle { get { return m_SteerAngle; } }
+        public float CurrentSteerAngle { get => m_SteerAngle; set => m_SteerAngle = value; }
         public float CurrentSpeed { get { return m_Rigidbody.velocity.magnitude * 2.23693629f; } }
         public float MaxSpeed { get { return m_Topspeed; } }
         public float Revs { get; private set; }
@@ -151,9 +151,9 @@ namespace UnityStandardAssets.Vehicles.Car
 
             //Set the steer on the front wheels.
             //Assuming that wheels 0 and 1 are the front wheels.
-            m_SteerAngle = steering * m_MaximumSteerAngle;
-            m_WheelColliders[0].steerAngle = m_SteerAngle;
-            m_WheelColliders[1].steerAngle = m_SteerAngle;
+            CurrentSteerAngle = steering * m_MaximumSteerAngle;
+            m_WheelColliders[0].steerAngle = CurrentSteerAngle;
+            m_WheelColliders[1].steerAngle = CurrentSteerAngle;
 
             SteerHelper();
             ApplyDrive(accel, footbrake);

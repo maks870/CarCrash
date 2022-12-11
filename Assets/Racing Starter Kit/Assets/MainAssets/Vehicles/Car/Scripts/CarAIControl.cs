@@ -281,7 +281,7 @@ namespace UnityStandardAssets.Vehicles.Car
                     ResetAbilityTarget();
                 }
             }
-            else if (!ReachabilityCheck(abilityTarget))
+            else if (!ReachabilityCheck(abilityTarget.position))
             {
                 ResetAbilityTarget();
             }
@@ -317,9 +317,6 @@ namespace UnityStandardAssets.Vehicles.Car
                 avoidingPos = posLeft;
                 Debug.DrawRay(positionMine, left * hitLeft.distance / 2, Color.yellow, 10);
             }
-
-            GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            sphere.transform.position = avoidingPos;
         }
 
         public void SetTarget(Transform target)
@@ -357,9 +354,9 @@ namespace UnityStandardAssets.Vehicles.Car
             randomMove = true;
         }
 
-        private bool ReachabilityCheck(Transform checkedObject)
+        private bool ReachabilityCheck(Vector3 checkedObject)
         {
-            float angle = Vector3.Angle(checkedObject.position - transform.position, transform.forward);
+            float angle = Vector3.Angle(checkedObject - transform.position, transform.forward);
 
             if (angle > 10) //если угол больше значения, то цель не достижима
             {
