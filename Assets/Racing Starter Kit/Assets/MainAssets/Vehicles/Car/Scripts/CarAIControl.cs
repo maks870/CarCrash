@@ -50,7 +50,8 @@ namespace UnityStandardAssets.Vehicles.Car
         private Transform abilityTarget;
         private bool randomMove = false;
 
-        [SerializeField] float avoidMineAngle = 60f;
+        [SerializeField] float avoidNearAngle = 60f;
+        [SerializeField] float avoidFarAngle = 100f;
         private float avoidMineWanderDistance;
         private Vector3 avoidingPos;
         private GameObject mineTarget;
@@ -319,7 +320,13 @@ namespace UnityStandardAssets.Vehicles.Car
                 avoidingPos = posLeft;
             }
 
-            if (Vector3.Angle(transform.forward, avoidingPos - transform.position) < avoidMineAngle)
+
+            float nearAngle = Vector3.Angle(transform.forward, avoidingPos - transform.position);
+            float farAngle = Vector3.Angle(transform.position - mineTarget.transform.position, avoidingPos - mineTarget.transform.position);
+
+            if (nearAngle < avoidFarAngle)
+                isAvoidMine = true;
+            else if (farAngle < avoidFarAngle)
                 isAvoidMine = true;
             else
                 isAvoidMine = false;
