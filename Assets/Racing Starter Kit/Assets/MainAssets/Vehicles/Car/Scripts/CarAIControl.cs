@@ -48,7 +48,7 @@ namespace UnityStandardAssets.Vehicles.Car
         private Rigidbody m_Rigidbody;
         private Transform oldTarget;
         private Transform abilityTarget;
-        private bool randomMove = true;
+        private bool randomMove = false;
 
         private float avoidMineWanderDistance;
         private Vector3 avoidingPos;
@@ -341,7 +341,7 @@ namespace UnityStandardAssets.Vehicles.Car
                 this.abilityTarget = abilityTarget;
                 m_Target = abilityTarget; //устанавливаем новую цель
                 m_Driving = true;
-                randomMove = false; //что бы не промахнуться убираем шум
+                //randomMove = false; //что бы не промахнуться убираем шум
             }
             abilitiesPoints.RemoveAt(0);
         }
@@ -351,7 +351,7 @@ namespace UnityStandardAssets.Vehicles.Car
             abilityTarget = null;
             m_Target = oldTarget;
             SetTarget(m_Target);
-            randomMove = true;
+            //randomMove = true;
         }
 
         private bool ReachabilityCheck(Vector3 checkedObject)
