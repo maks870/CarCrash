@@ -50,9 +50,11 @@ namespace UnityStandardAssets.Vehicles.Car
         private Transform abilityTarget;
         private bool randomMove = false;
 
+        [SerializeField] float avoidMineAngle = 60f;
         private float avoidMineWanderDistance;
         private Vector3 avoidingPos;
         private GameObject mineTarget;
+        private bool isAvoidMine;
 
 
         [SerializeField] private List<Transform> abilitiesPoints = new List<Transform>();
@@ -166,7 +168,7 @@ namespace UnityStandardAssets.Vehicles.Car
                     // and veer towards the side of our path-to-target that is away from the other car
                     offsetTargetPos += m_Target.right * m_AvoidPathOffset;
                 }
-                else if (mineTarget != null && !abilityController.IsProtected)
+                else if (mineTarget != null && !abilityController.IsProtected && isAvoidMine)
                 {
                     //desiredSpeed *= m_AvoidOtherCarSlowdown;
                     offsetTargetPos = avoidingPos;
@@ -183,7 +185,9 @@ namespace UnityStandardAssets.Vehicles.Car
                 if (mineTarget != null)
                 {
                     if (Vector3.Angle(transform.forward, mineTarget.transform.position - transform.position) >= 90)
+                    {
                         mineTarget = null;
+                    }
                 }
 
                 // use different sensitivity depending on whether accelerating or braking:
@@ -304,19 +308,23 @@ namespace UnityStandardAssets.Vehicles.Car
             Physics.Raycast(mineTarget.transform.position, right, out hitRight, Mathf.Infinity, layerMask);
             Physics.Raycast(mineTarget.transform.position, left, out hitLeft, Mathf.Infinity, layerMask);
 
-            Vector3 posRight = mineTarget.transform.position + (right * hitRight.distance/2);
-            Vector3 posLeft = mineTarget.transform.position + (left * hitLeft.distance/2);
+            Vector3 posRight = mineTarget.transform.position + (right * hitRight.distance / 2);
+            Vector3 posLeft = mineTarget.transform.position + (left * hitLeft.distance / 2);
 
             if (hitRight.distance > hitLeft.distance)
             {
                 avoidingPos = posRight;
-                Debug.DrawRay(positionMine, right * hitRight.distance / 2, Color.yellow, 10);
             }
             else
             {
                 avoidingPos = posLeft;
-                Debug.DrawRay(positionMine, left * hitLeft.distance / 2, Color.yellow, 10);
             }
+
+            if (Vector3.Angle(transform.forward, avoidingPos - transform.position) < avoidMineAngle)
+                isAvoidMine = true;
+            else
+                isAvoidMine = false;
+
         }
 
         public void SetTarget(Transform target)
