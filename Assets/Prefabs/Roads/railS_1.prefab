@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6695047905881910111}
   - component: {fileID: 8866850790870917013}
   - component: {fileID: 8527491922896997132}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: railS_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

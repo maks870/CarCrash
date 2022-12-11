@@ -292,27 +292,34 @@ namespace UnityStandardAssets.Vehicles.Car
             mineTarget = mine;
             RaycastHit hitRight;
             RaycastHit hitLeft;
+            int layerMask = LayerMask.GetMask("Border");
 
-            Vector3 dir = (mineTarget.transform.position - transform.position).normalized;
-            Vector3 right = Quaternion.AngleAxis(90, Vector3.up) * dir;
-            Vector3 left = Quaternion.AngleAxis(-90, Vector3.up) * dir;
+            Vector3 position = new Vector3(transform.position.x, 0.2f, transform.position.z);
+            Vector3 positionMine = new Vector3(mineTarget.transform.position.x, 0.2f, mineTarget.transform.position.z);
 
-            Physics.Raycast(mineTarget.transform.position, right, out hitRight, Mathf.Infinity);
-            Physics.Raycast(mineTarget.transform.position, left, out hitLeft, Mathf.Infinity);
+            Vector3 dir = (position - positionMine).normalized;
+            Vector3 right = Quaternion.AngleAxis(-90, Vector3.up) * dir;
+            Vector3 left = Quaternion.AngleAxis(90, Vector3.up) * dir;
 
-            Vector3 posRight = mineTarget.transform.position + right * avoidMineWanderDistance;
-            Vector3 posLeft = mineTarget.transform.position + left * avoidMineWanderDistance;
+            Physics.Raycast(mineTarget.transform.position, right, out hitRight, Mathf.Infinity, layerMask);
+            Physics.Raycast(mineTarget.transform.position, left, out hitLeft, Mathf.Infinity, layerMask);
+
+            Vector3 posRight = mineTarget.transform.position + (right * hitRight.distance/2);
+            Vector3 posLeft = mineTarget.transform.position + (left * hitLeft.distance/2);
 
             if (hitRight.distance > hitLeft.distance)
             {
                 avoidingPos = posRight;
-                Debug.Log("GoRight");
+                Debug.DrawRay(positionMine, right * hitRight.distance / 2, Color.yellow, 10);
             }
             else
             {
                 avoidingPos = posLeft;
-                Debug.Log("GoLeft");
+                Debug.DrawRay(positionMine, left * hitLeft.distance / 2, Color.yellow, 10);
             }
+
+            GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            sphere.transform.position = avoidingPos;
         }
 
         public void SetTarget(Transform target)

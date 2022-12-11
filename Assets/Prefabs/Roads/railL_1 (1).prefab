@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4769471657622475989}
   - component: {fileID: 7337602367148351519}
   - component: {fileID: 1898938042}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: railL_1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,5 +97,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.1848235, y: 1.2079988, z: 0.5878216}
+  m_Size: {x: 3.1848235, y: 1.507999, z: 0.5878216}
   m_Center: {x: -0.001482249, y: 0.6008954, z: -0.0012921247}
