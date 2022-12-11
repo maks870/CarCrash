@@ -715,6 +715,8 @@ MonoBehaviour:
   m_Target: {fileID: 0}
   m_StopWhenTargetReached: 0
   m_ReachTargetThreshold: 2
+  avoidNearAngle: 90
+  avoidFarAngle: 100
   abilitiesPoints: []
 --- !u!114 &1486996635076847424
 MonoBehaviour:

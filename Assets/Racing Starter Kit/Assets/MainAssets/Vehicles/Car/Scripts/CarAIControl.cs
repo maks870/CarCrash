@@ -324,12 +324,16 @@ namespace UnityStandardAssets.Vehicles.Car
             float nearAngle = Vector3.Angle(transform.forward, avoidingPos - transform.position);
             float farAngle = Vector3.Angle(transform.position - mineTarget.transform.position, avoidingPos - mineTarget.transform.position);
 
-            if (nearAngle < avoidFarAngle)
-                isAvoidMine = true;
-            else if (farAngle < avoidFarAngle)
+            Debug.DrawLine(positionMine, avoidingPos, Color.yellow, 10);
+
+
+            if (nearAngle < avoidFarAngle && farAngle < avoidFarAngle)
                 isAvoidMine = true;
             else
                 isAvoidMine = false;
+
+            Debug.Log("Ближний угол " + (nearAngle < avoidFarAngle));
+            Debug.Log("Дaльний угол " + (farAngle < avoidFarAngle));
 
         }
 
