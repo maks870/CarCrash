@@ -6,12 +6,15 @@ public class LootBox : MonoBehaviour
 {
     [SerializeField] private List<AbilityObj> ablitities = new List<AbilityObj>();
     private LootboxSpawner spawner;
+
     public LootboxSpawner Spawner { set => spawner = value; }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<AbilityController>() != null)
         {
-            other.GetComponent<AbilityController>().AddAbility(GetRandomAbility());
+            AbilityController carAbility = other.GetComponent<AbilityController>();
+            carAbility.AddAbility(GetRandomAbility());
             spawner.PickUpLootbox();
         }
     }
@@ -38,5 +41,15 @@ public class LootBox : MonoBehaviour
             }
         }
         return randAbility;
+    }
+
+    public void Show()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public void Hide()
+    {
+        gameObject.SetActive(false);
     }
 }

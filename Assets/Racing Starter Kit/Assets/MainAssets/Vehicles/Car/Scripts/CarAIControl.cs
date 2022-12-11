@@ -256,10 +256,9 @@ namespace UnityStandardAssets.Vehicles.Car
             }
         }
 
-
         private void NewPosition()
         {
-            if (abilityTarget == null)
+            if (abilityTarget == null || !abilityTarget.gameObject.activeInHierarchy)
             {
                 if (abilitiesPoints.Count != 0)
                 {

@@ -6,12 +6,12 @@ public class LootboxSpawner : MonoBehaviour
 {
     [SerializeField] private float spawnDelay;
     [SerializeField] private GameObject prefab;
-    private GameObject lootbox;
+    private LootBox lootbox;
 
     void Start()
     {
-        lootbox = Instantiate(prefab, transform);
-        lootbox.GetComponent<LootBox>().Spawner = this;
+        lootbox = Instantiate(prefab, transform).GetComponent<LootBox>();
+        lootbox.Spawner = this;
     }
 
     public void PickUpLootbox()
@@ -21,8 +21,8 @@ public class LootboxSpawner : MonoBehaviour
 
     IEnumerator SpawnTimer(float time)
     {
-        lootbox.SetActive(false);
+        lootbox.Hide();
         yield return new WaitForSeconds(time);
-        lootbox.SetActive(true);
+        lootbox.Show();
     }
 }
