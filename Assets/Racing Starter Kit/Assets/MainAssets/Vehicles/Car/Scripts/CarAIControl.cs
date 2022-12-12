@@ -52,6 +52,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
         [SerializeField] float avoidNearAngle = 60f;
         [SerializeField] float avoidFarAngle = 100f;
+        [SerializeField] float avoidMinimumDistance = 2f;
         private Vector3 avoidingPos;
         private GameObject obstacleTarget;
         private bool isAvoidObstacle;
@@ -289,6 +290,17 @@ namespace UnityStandardAssets.Vehicles.Car
             }
         }
 
+        private bool CheckAvoidAngle(Vector3 avoidingPos)
+        {
+            float nearAngle = Vector3.Angle(transform.forward, avoidingPos - transform.position);
+            float farAngle = Vector3.Angle(transform.position - obstacleTarget.transform.position, avoidingPos - obstacleTarget.transform.position);
+
+            if (nearAngle < avoidFarAngle && farAngle < avoidFarAngle)
+                return true;
+            else
+                return false;
+        }
+
         public void AvoidMineAction(GameObject objectObstacle)
         {
             obstacleTarget = objectObstacle;
@@ -309,30 +321,35 @@ namespace UnityStandardAssets.Vehicles.Car
             Vector3 posRight = obstacleTarget.transform.position + (right * hitRight.distance / 2);
             Vector3 posLeft = obstacleTarget.transform.position + (left * hitLeft.distance / 2);
 
-            if (hitRight.distance > hitLeft.distance)
+            bool rightChoice = CheckAvoidAngle(posRight);
+            bool leftChoice = CheckAvoidAngle(posLeft);
+
+            if (rightChoice)
+                rightChoice = hitRight.distance > avoidMinimumDistance;
+            if (leftChoice)
+                leftChoice = hitLeft.distance > avoidMinimumDistance;
+
+            isAvoidObstacle = true;
+
+            if (rightChoice && leftChoice)
+            {
+                if (hitRight.distance > hitLeft.distance)
+                    avoidingPos = posRight;
+                else
+                    avoidingPos = posLeft;
+            }
+            else if (rightChoice)
             {
                 avoidingPos = posRight;
             }
-            else
+            else if (leftChoice)
             {
                 avoidingPos = posLeft;
             }
-
-
-            float nearAngle = Vector3.Angle(transform.forward, avoidingPos - transform.position);
-            float farAngle = Vector3.Angle(transform.position - obstacleTarget.transform.position, avoidingPos - obstacleTarget.transform.position);
-
-            Debug.DrawLine(positionObject, avoidingPos, Color.yellow, 10);
-
-
-            if (nearAngle < avoidFarAngle && farAngle < avoidFarAngle)
-                isAvoidObstacle = true;
             else
+            {
                 isAvoidObstacle = false;
-
-            Debug.Log("Ближний угол " + (nearAngle < avoidFarAngle));
-            Debug.Log("Дaльний угол " + (farAngle < avoidFarAngle));
-
+            }
         }
 
         public void SetTarget(Transform target)
