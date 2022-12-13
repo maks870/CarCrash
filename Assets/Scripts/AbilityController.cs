@@ -78,6 +78,7 @@ public class AbilityController : MonoBehaviour
                 break;
 
             case AbilityType.Shield:
+                spawnPoint = spawnPointForward.transform;
                 targetCar = this;
                 break;
 

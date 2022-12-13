@@ -37,6 +37,7 @@ namespace UnityStandardAssets.Vehicles.Car
             if (abilityController.Target != null)
             {
                 targetMark.SetActive(true);
+
                 targetMark.transform.position = abilityController.Target.transform.position + Vector3.up * 2;
             }
             else
