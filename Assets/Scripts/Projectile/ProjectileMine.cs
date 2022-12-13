@@ -15,7 +15,6 @@ public class ProjectileMine : Projectile
     {
         for (int i = 0; i < warningCars.Count; i++)
         {
-            Debug.Log("Нет минной тревоги");
             warningCars[i].IsMineWarning = false;
         }
         base.Destruct();

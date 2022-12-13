@@ -56,7 +56,7 @@ namespace UnityStandardAssets.Vehicles.Car
         public float BrakeInput { get; private set; }
         public float CurrentSteerAngle { get => m_SteerAngle; set => m_SteerAngle = value; }
         public float CurrentSpeed { get { return m_Rigidbody.velocity.magnitude * 2.23693629f; } }
-        public float MaxSpeed { get { return m_Topspeed; } }
+        public float MaxSpeed { get { return m_Topspeed; } set => m_Topspeed = value; }
         public float Revs { get; private set; }
         public float AccelInput { get; private set; }
 
@@ -164,15 +164,15 @@ namespace UnityStandardAssets.Vehicles.Car
             if (handbrake > 0f)
             {
                 var hbTorque = float.MaxValue;
-               // m_WheelColliders[0].brakeTorque = hbTorque;
-               // m_WheelColliders[1].brakeTorque = hbTorque;
+                // m_WheelColliders[0].brakeTorque = hbTorque;
+                // m_WheelColliders[1].brakeTorque = hbTorque;
                 m_WheelColliders[2].brakeTorque = hbTorque;
                 m_WheelColliders[3].brakeTorque = hbTorque;
             }
             else
             {
-               // m_WheelColliders[0].brakeTorque = footbrake;
-               // m_WheelColliders[1].brakeTorque = footbrake;
+                // m_WheelColliders[0].brakeTorque = footbrake;
+                // m_WheelColliders[1].brakeTorque = footbrake;
                 m_WheelColliders[2].brakeTorque = 0;
                 m_WheelColliders[3].brakeTorque = 0;
             }

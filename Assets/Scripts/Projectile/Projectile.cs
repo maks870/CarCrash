@@ -18,7 +18,6 @@ public abstract class Projectile : MonoBehaviour
     {
         if (other.GetComponent<AbilityController>() != null)
         {
-            Debug.Log("BOOM");
             other.GetComponent<AbilityController>().TakeDamage();
             Destruct();
         }

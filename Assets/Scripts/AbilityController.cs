@@ -117,13 +117,11 @@ public class AbilityController : MonoBehaviour
     {
         isProtected = true;
         shieldObj.SetActive(true);
-        Debug.Log("Shield Activated");
     }
     private void ShieldOff()
     {
         shieldObj.SetActive(false);
         isProtected = false;
-        Debug.Log("Shield Deactivated");
     }
 
     public void AddTarget(GameObject target)

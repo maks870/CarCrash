@@ -24,6 +24,10 @@ public class ObstacleFinder : MonoBehaviour
         {
             carControllers.Add(other.GetComponent<CarController>());
         }
+        else if (other.GetComponentInChildren<CarController>() != null)
+        {
+            carControllers.Add(other.GetComponent<CarController>());
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -32,6 +36,11 @@ public class ObstacleFinder : MonoBehaviour
         {
             carControllers.Remove(other.GetComponent<CarController>());
         }
+        else if (other.GetComponentInChildren<CarController>() != null)
+        {
+            carControllers.Remove(other.GetComponent<CarController>());
+        }
+
         if (other.GetComponent<ProjectileMine>() != null)
         {
             other.GetComponent<ProjectileMine>().warningCars.Remove(abilityController);

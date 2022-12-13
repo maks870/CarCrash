@@ -50,9 +50,14 @@ namespace UnityStandardAssets.Vehicles.Car
         private Transform abilityTarget;
         private bool randomMove = false;
 
-        [SerializeField] float avoidNearAngle = 60f;
-        [SerializeField] float avoidFarAngle = 100f;
-        [SerializeField] float avoidMinimumDistance = 2f;
+        [SerializeField] private float avoidNearAngle = 60f;
+        [SerializeField] private float avoidFarAngle = 100f;
+        [SerializeField] private float avoidMinimumDistance = 2f;
+        [SerializeField] private float avoidDifferenceDistance = 1f;
+        [SerializeField] private float avoidSpeedMultiplier = 0.7f;
+        private float maxSpeed;
+
+
         private Vector3 avoidingPos;
         private GameObject obstacleTarget;
         private bool isAvoidObstacle;
@@ -65,7 +70,7 @@ namespace UnityStandardAssets.Vehicles.Car
         {
             carController = GetComponent<CarController>();
 
-
+            maxSpeed = carController.MaxSpeed;
             // give the random perlin a random value
             m_RandomPerlin = Random.value * 10;
 
@@ -170,7 +175,9 @@ namespace UnityStandardAssets.Vehicles.Car
                 }
                 else if (obstacleTarget != null && !abilityController.IsProtected && isAvoidObstacle)
                 {
-                    //desiredSpeed *= m_AvoidOtherCarSlowdown;
+                    //desiredSpeed *= avoidSpeedMultiplier;
+
+                    carController.MaxSpeed = maxSpeed * avoidSpeedMultiplier;
                     offsetTargetPos = avoidingPos;
                 }
                 else if (randomMove)
@@ -186,6 +193,7 @@ namespace UnityStandardAssets.Vehicles.Car
                 {
                     if (Vector3.Angle(transform.forward, obstacleTarget.transform.position - transform.position) >= 90)
                     {
+                        carController.MaxSpeed = maxSpeed;
                         obstacleTarget = null;
                     }
                 }
@@ -333,10 +341,22 @@ namespace UnityStandardAssets.Vehicles.Car
 
             if (rightChoice && leftChoice)
             {
-                if (hitRight.distance > hitLeft.distance)
-                    avoidingPos = posRight;
+                if (Mathf.Abs(hitRight.distance - hitLeft.distance) > avoidDifferenceDistance)
+                {
+                    if (hitRight.distance > hitLeft.distance)
+                        avoidingPos = posRight;
+                    else
+                        avoidingPos = posLeft;
+                }
                 else
-                    avoidingPos = posLeft;
+                {
+                    float distanseRight = Vector3.Distance(posRight, transform.position);
+                    float distanseLeft = Vector3.Distance(posLeft, transform.position);
+
+                    avoidingPos = distanseRight < distanseLeft
+                        ? posRight
+                        : posLeft;
+                }
             }
             else if (rightChoice)
             {
@@ -350,6 +370,8 @@ namespace UnityStandardAssets.Vehicles.Car
             {
                 isAvoidObstacle = false;
             }
+
+            Debug.DrawLine(positionObject, avoidingPos, Color.yellow, 10);
         }
 
         public void SetTarget(Transform target)
