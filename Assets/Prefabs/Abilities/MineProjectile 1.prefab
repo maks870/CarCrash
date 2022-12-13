@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4453041658829945128}
   - component: {fileID: 4453041658829945131}
   - component: {fileID: 5759163030829094670}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MineProjectile 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effect: {fileID: 100010, guid: 645413a00f7bd0242bbd6d0e5eb6f439, type: 3}
+  warningCars: []
 --- !u!95 &4453041658829945128
 Animator:
   serializedVersion: 4
@@ -179,6 +180,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: mine
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 59753a30e2b53e343b6f236481787052,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59753a30e2b53e343b6f236481787052, type: 3}

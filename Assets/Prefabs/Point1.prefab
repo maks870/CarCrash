@@ -3,8 +3,7 @@
 --- !u!1 &2775021179243526067
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1208709009841596, guid: 67bf07ab8a9652742b74ef66bc07b0bd,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
@@ -13,7 +12,7 @@ GameObject:
   - component: {fileID: 2775021179243526070}
   - component: {fileID: 2775021179243526069}
   - component: {fileID: 2775021179243526068}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23,8 +22,7 @@ GameObject:
 --- !u!4 &2775021179243526071
 Transform:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 4870916572766362, guid: 67bf07ab8a9652742b74ef66bc07b0bd,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2775021179243526067}
@@ -39,8 +37,7 @@ Transform:
 --- !u!33 &2775021179243526070
 MeshFilter:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 33514062589539876, guid: 67bf07ab8a9652742b74ef66bc07b0bd,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2775021179243526067}
@@ -48,8 +45,7 @@ MeshFilter:
 --- !u!23 &2775021179243526069
 MeshRenderer:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 23535904594599156, guid: 67bf07ab8a9652742b74ef66bc07b0bd,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2775021179243526067}
@@ -91,8 +87,7 @@ MeshRenderer:
 --- !u!65 &2775021179243526068
 BoxCollider:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 65482081523791398, guid: 67bf07ab8a9652742b74ef66bc07b0bd,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2775021179243526067}
