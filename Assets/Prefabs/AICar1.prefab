@@ -549,7 +549,7 @@ MonoBehaviour:
   m_MaxHandbrakeTorque: 100000000
   m_Downforce: 100
   m_SpeedType: 0
-  m_Topspeed: 35
+  m_Topspeed: 50
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.4
   m_BrakeTorque: 20000
@@ -588,6 +588,7 @@ MonoBehaviour:
   avoidMinimumDistance: 3
   avoidDifferenceDistance: 1
   avoidSpeedMultiplier: 0.8
+  avoidEndAngle: 90
   abilitiesPoints: []
 --- !u!114 &3267986177610925941
 MonoBehaviour:
@@ -6213,7 +6214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e3172ab2c3ab4488a7ba9269f3eb6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  avoidMineDistance: 2
+  carToAvoidMinSpeed: 5
   carAIControl: {fileID: 3267986177610925943}
   abilityController: {fileID: 3642407526396612701}
   carControllers: []

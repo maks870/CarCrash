@@ -55,6 +55,7 @@ namespace UnityStandardAssets.Vehicles.Car
         [SerializeField] private float avoidMinimumDistance = 2f;
         [SerializeField] private float avoidDifferenceDistance = 1f;
         [SerializeField] private float avoidSpeedMultiplier = 0.7f;
+        [SerializeField] private float avoidEndAngle = 90f;
         private float maxSpeed;
 
 
@@ -177,6 +178,7 @@ namespace UnityStandardAssets.Vehicles.Car
                 {
                     //desiredSpeed *= avoidSpeedMultiplier;
 
+                    //carController.m_Topspeed = maxSpeed * avoidSpeedMultiplier;
                     carController.MaxSpeed = maxSpeed * avoidSpeedMultiplier;
                     offsetTargetPos = avoidingPos;
                 }
@@ -191,8 +193,9 @@ namespace UnityStandardAssets.Vehicles.Car
 
                 if (obstacleTarget != null)
                 {
-                    if (Vector3.Angle(transform.forward, obstacleTarget.transform.position - transform.position) >= 90)
+                    if (Vector3.Angle(transform.forward, obstacleTarget.transform.position - transform.position) >= avoidEndAngle)
                     {
+                        //carController.m_Topspeed = maxSpeed;
                         carController.MaxSpeed = maxSpeed;
                         obstacleTarget = null;
                     }
@@ -347,6 +350,7 @@ namespace UnityStandardAssets.Vehicles.Car
                         avoidingPos = posRight;
                     else
                         avoidingPos = posLeft;
+
                 }
                 else
                 {

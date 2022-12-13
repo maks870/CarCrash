@@ -5,7 +5,7 @@ using UnityStandardAssets.Vehicles.Car;
 
 public class ObstacleFinder : MonoBehaviour
 {
-    [SerializeField] float avoidMineDistance = 5f;
+    [SerializeField] float carToAvoidMinSpeed = 5f;
     [SerializeField] CarAIControl carAIControl;
     [SerializeField] AbilityController abilityController;
     [SerializeField] List<CarController> carControllers = new List<CarController>();
@@ -52,7 +52,7 @@ public class ObstacleFinder : MonoBehaviour
     {
         foreach (CarController car in carControllers)
         {
-            if (car != null && car.CurrentSpeed < 2)
+            if (car != null && car.CurrentSpeed < carToAvoidMinSpeed)
             {
                 carAIControl.AvoidMineAction(car.gameObject);
                 carControllers.Remove(car);
