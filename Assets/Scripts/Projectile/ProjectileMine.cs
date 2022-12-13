@@ -3,18 +3,7 @@ using UnityEngine;
 
 public class ProjectileMine : Projectile
 {
-    public List<AbilityController> warningCars = new List<AbilityController>();
-
-    protected override void OnTriggerEnter(Collider other)
-    {
-        if (other.GetComponent<AbilityController>() != null)
-        {
-            Debug.Log("BOOM");
-            other.GetComponent<AbilityController>().TakeDamage();
-            Instantiate(effect, transform.position, Quaternion.identity);
-            Destroy(gameObject);
-        }
-    }
+    [HideInInspector] public List<AbilityController> warningCars = new List<AbilityController>();
 
     protected override void Start()
     {
@@ -26,6 +15,7 @@ public class ProjectileMine : Projectile
     {
         for (int i = 0; i < warningCars.Count; i++)
         {
+            Debug.Log("Нет минной тревоги");
             warningCars[i].IsMineWarning = false;
         }
         base.Destruct();
