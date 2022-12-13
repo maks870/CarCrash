@@ -16,25 +16,13 @@ public class ObstacleFinder : MonoBehaviour
     {
         if (other.GetComponent<ProjectileMine>() != null)
         {
+            other.GetComponent<ProjectileMine>().warningCars.Add(abilityController);
             abilityController.IsMineWarning = true;
             carAIControl.AvoidMineAction(other.gameObject);
         }
-        if (other.GetComponent<CarController>()!=null )
+        if (other.GetComponent<CarController>() != null)
         {
             carControllers.Add(other.GetComponent<CarController>());
-        }
-    }
-
-    private void Update()
-    {
-        foreach (CarController car in carControllers) 
-        {
-            if (car != null && car.CurrentSpeed < 2) 
-            {
-                carAIControl.AvoidMineAction(car.gameObject);
-                carControllers.Remove(car);
-                break;
-            }
         }
     }
 
@@ -46,7 +34,22 @@ public class ObstacleFinder : MonoBehaviour
         }
         if (other.GetComponent<ProjectileMine>() != null)
         {
+            other.GetComponent<ProjectileMine>().warningCars.Remove(abilityController);
             abilityController.IsMineWarning = false;
         }
     }
+
+    private void Update()
+    {
+        foreach (CarController car in carControllers)
+        {
+            if (car != null && car.CurrentSpeed < 2)
+            {
+                carAIControl.AvoidMineAction(car.gameObject);
+                carControllers.Remove(car);
+                break;
+            }
+        }
+    }
+
 }

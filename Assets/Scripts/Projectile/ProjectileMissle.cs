@@ -11,13 +11,11 @@ public class ProjectileMissle : Projectile
             return;
 
         other.gameObject.GetComponent<AbilityController>()?.TakeDamage();
-        Instantiate(effect, transform.position, Quaternion.identity);
 
         if (target != null)
             target.GetComponent<AbilityController>().IsMissleWarning = false;
 
-        Destroy(gameObject);
-
+        Destruct();
     }
 
     private void FixedUpdate()

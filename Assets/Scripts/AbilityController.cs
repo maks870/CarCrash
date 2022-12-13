@@ -6,7 +6,6 @@ public class AbilityController : MonoBehaviour
 {
     private const float slowMultiplier = 0.9f;
     private const float slowTime = 1;
-    [SerializeField] private float shieldLifeTime;
     [SerializeField] private int maxAbilities;
     [SerializeField] private Transform spawnPointForward;
     [SerializeField] private Transform spawnPointMiddle;
@@ -14,6 +13,7 @@ public class AbilityController : MonoBehaviour
     [SerializeField] private GameObject target;
     [SerializeField] private GameObject shieldObj;
     [SerializeField] private List<GameObject> possibleTargets = new List<GameObject>();
+    private float shieldLifeTime;
     private List<AbilitySO> abilities = new List<AbilitySO>();
 
     private int mineWarning = 0;
@@ -50,6 +50,7 @@ public class AbilityController : MonoBehaviour
         }
     }
 
+    public float ShieldLifetime { set => shieldLifeTime = value; }
     public bool IsDamaged => isDamaged;
     public bool IsProtected => isProtected;
     public int MaxAbilities => maxAbilities;

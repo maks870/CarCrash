@@ -20,13 +20,18 @@ public abstract class Projectile : MonoBehaviour
         {
             Debug.Log("BOOM");
             other.GetComponent<AbilityController>().TakeDamage();
-            Instantiate(effect, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            Destruct();
         }
     }
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+    }
+
+    protected virtual void Destruct()
+    {
+        Instantiate(effect, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }
