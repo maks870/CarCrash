@@ -12,6 +12,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void Awake()
         {
+            targetMark.SetActive(false);
             carController = GetComponent<CarController>();
         }
 
