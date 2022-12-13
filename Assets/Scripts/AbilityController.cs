@@ -6,7 +6,6 @@ public class AbilityController : MonoBehaviour
 {
     private const float slowMultiplier = 0.9f;
     private const float slowTime = 1;
-    [SerializeField] private GameObject targetMark;
     [SerializeField] private float shieldLifeTime;
     [SerializeField] private int maxAbilities;
     [SerializeField] private Transform spawnPointForward;
@@ -80,12 +79,12 @@ public class AbilityController : MonoBehaviour
 
             case AbilityType.Shield:
                 targetCar = this;
-                spawnPoint = spawnPointMiddle.transform;
                 break;
 
             case AbilityType.Mine:
                 spawnPoint = spawnPointBack.transform;
                 break;
+
             default:
                 spawnPoint = spawnPointForward.transform;
                 break;
@@ -104,7 +103,7 @@ public class AbilityController : MonoBehaviour
 
         for (int i = 0; i < possibleTargets.Count; i++)
         {
-            float newDistance = Vector3.Distance(possibleTargets[0].transform.position, transform.position);
+            float newDistance = Vector3.Distance(possibleTargets[i].transform.position, transform.position);
             float currentDistance = Vector3.Distance(target.transform.position, transform.position);
 
             if (newDistance < currentDistance)
