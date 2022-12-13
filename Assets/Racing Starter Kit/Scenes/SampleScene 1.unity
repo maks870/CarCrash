@@ -17937,7 +17937,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 20428cb83e0e238499cbf701aa43f010, type: 2}
+  - {fileID: 2100000, guid: c617e7cbee0d2344a9b5e53116c43a2c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -27450,7 +27450,7 @@ GameObject:
   - component: {fileID: 1919448873}
   - component: {fileID: 1919448872}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Mark
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27489,7 +27489,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d9d481556c239f047b097c980001497e, type: 2}
+  - {fileID: 2100000, guid: bdc5afc2ee5046743b12f268a1fdb29e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -27518,7 +27518,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919448871}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 3172588266583607461, guid: cfddb62e732a85a4d8e0443adf758c77, type: 3}
 --- !u!4 &1919448875
 Transform:
   m_ObjectHideFlags: 0
