@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 497e556c83f3e8941a3122d4612de3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effect: {fileID: 100010, guid: 645413a00f7bd0242bbd6d0e5eb6f439, type: 3}
+  effect: {fileID: 1892078723244562, guid: 46876a2780737ec45a19d62f88e5ce56, type: 3}
   warningCars: []
 --- !u!95 &4453041658829945128
 Animator:

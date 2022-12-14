@@ -20,8 +20,6 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void Start()
         {
-            skidParticles = transform.root.GetComponentInChildren<ParticleSystem>();
-
             if (skidParticles == null)
             {
                 Debug.LogWarning(" no particle system found on car to generate smoke particles", gameObject);
