@@ -297,6 +297,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AICar5
       objectReference: {fileID: 0}
+    - target: {fileID: 3267986177610925930, guid: 2b476568fc8796e449d5aabb8168b58c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b476568fc8796e449d5aabb8168b58c, type: 3}
 --- !u!4 &6700444 stripped
@@ -446,6 +451,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AICar3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267986177610925930, guid: 2b476568fc8796e449d5aabb8168b58c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b476568fc8796e449d5aabb8168b58c, type: 3}
@@ -8696,7 +8706,7 @@ MonoBehaviour:
   BotDown: {fileID: 1789797650}
   Bots: {fileID: 1341721340}
   BotsPanel: {fileID: 561615556}
-  botCounts: 6
+  botCounts: 1
 --- !u!114 &898437915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11472,6 +11482,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AICar6
       objectReference: {fileID: 0}
+    - target: {fileID: 3267986177610925930, guid: 2b476568fc8796e449d5aabb8168b58c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b476568fc8796e449d5aabb8168b58c, type: 3}
 --- !u!1 &1112440749
@@ -12141,6 +12156,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AICar2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267986177610925930, guid: 2b476568fc8796e449d5aabb8168b58c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b476568fc8796e449d5aabb8168b58c, type: 3}
@@ -17387,6 +17407,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AICar4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267986177610925930, guid: 2b476568fc8796e449d5aabb8168b58c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b476568fc8796e449d5aabb8168b58c, type: 3}

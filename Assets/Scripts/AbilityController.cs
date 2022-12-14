@@ -19,7 +19,22 @@ public class AbilityController : MonoBehaviour
     private int mineWarning = 0;
     private int missleWarning = 0;
     private bool isDamaged;
-    private bool isProtected;
+    private int protectsCount;
+
+    public bool IsProtected
+    {
+        get
+        {
+            return protectsCount > 0 ? true : false;
+        }
+        set
+        {
+            if (value)
+                protectsCount++;
+            else
+                protectsCount = 0;
+        }
+    }
 
     public bool IsMineWarning
     {
@@ -52,7 +67,6 @@ public class AbilityController : MonoBehaviour
 
     public float ShieldLifetime { set => shieldLifeTime = value; }
     public bool IsDamaged => isDamaged;
-    public bool IsProtected => isProtected;
     public int MaxAbilities => maxAbilities;
     public GameObject Target => target;
 
@@ -115,13 +129,13 @@ public class AbilityController : MonoBehaviour
 
     private void ShieldOn()
     {
-        isProtected = true;
+        IsProtected = true;
         shieldObj.SetActive(true);
     }
     private void ShieldOff()
     {
         shieldObj.SetActive(false);
-        isProtected = false;
+        IsProtected = false;
     }
 
     public void AddTarget(GameObject target)
@@ -164,7 +178,7 @@ public class AbilityController : MonoBehaviour
 
     public void TakeDamage()// Логика получения урона
     {
-        if (isProtected)
+        if (IsProtected)
         {
             ShieldOff();
             return;
@@ -182,7 +196,11 @@ public class AbilityController : MonoBehaviour
     {
         ShieldOn();
         yield return new WaitForSeconds(shieldLifeTime);
-        ShieldOff();
+
+        if (protectsCount > 1)
+            protectsCount--;
+        else
+            ShieldOff();
     }
 
     IEnumerator DamagedTimer()// Таймер получения урона
