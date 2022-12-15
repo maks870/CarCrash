@@ -11396,7 +11396,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 730516366}
   m_LocalRotation: {x: 0, y: 0, z: 0.18103409, w: 0.9834768}
-  m_LocalPosition: {x: -49.42, y: -0.3, z: 25.772}
+  m_LocalPosition: {x: -42.49, y: -0.3, z: 25.772}
   m_LocalScale: {x: -11.74, y: 1, z: 5.07}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -38157,6 +38157,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: roadStraightSkew
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118151536440091756, guid: 89b7187c663029244b7a112027419cde,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8926881455464644310, guid: 89b7187c663029244b7a112027419cde,
         type: 3}
