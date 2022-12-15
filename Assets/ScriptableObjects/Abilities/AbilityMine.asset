@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 4453041658829945168, guid: d041884b10627924dbae9dd2eb037a53,
     type: 3}
-  icon: {fileID: 21300000, guid: 0a43c48b669e3704083d0154f2dbabb3, type: 3}
+  icon: {fileID: 21300000, guid: c2f95744a2ae8c540a5b989ed77e9e7d, type: 3}

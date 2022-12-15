@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e78c0e73c7d0038429ea6ea751591141, type: 3}
   m_Name: AbilityMissle
   m_EditorClassIdentifier: 
-  projectile: {fileID: 7423350256742407460, guid: 7ce1a668a522b4c488cfa3f9221744f6,
+  projectile: {fileID: 8433372905311574783, guid: 314755b9ad25d9d41ab6e2c188f2691d,
     type: 3}
-  icon: {fileID: 21300000, guid: 1e89973a6c7cbfb4faf482139542ec41, type: 3}
+  icon: {fileID: 21300000, guid: 79435f9fd7a84ad47a59f3e5f111ee56, type: 3}
