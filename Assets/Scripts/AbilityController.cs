@@ -16,11 +16,26 @@ public class AbilityController : MonoBehaviour
     private float shieldLifeTime;
     private List<AbilitySO> abilities = new List<AbilitySO>();
 
+    private bool isDamaged;
+    private int haveTargetWeapon = 0;
     private int mineWarning = 0;
     private int missleWarning = 0;
-    private bool isDamaged;
-    private int protectsCount;
+    private int protectsCount = 0;
 
+    public bool HaveTargetWeapon
+    {
+        get
+        {
+            return haveTargetWeapon > 0 ? true : false;
+        }
+        set
+        {
+            if (value)
+                haveTargetWeapon++;
+            else
+                haveTargetWeapon--;
+        }
+    }
     public bool IsProtected
     {
         get
@@ -154,6 +169,9 @@ public class AbilityController : MonoBehaviour
     {
         if (abilities.Count < maxAbilities)
         {
+            if (ability.Type == AbilityType.Missle)
+                HaveTargetWeapon = true;
+
             abilities.Add(ability);
             if (RefreshAbilityEvent != null)
                 RefreshAbilityEvent.Invoke(abilities);
@@ -170,6 +188,9 @@ public class AbilityController : MonoBehaviour
         AbilitySO ability = abilities[abilityPlace];
 
         GetInfoForAbility(abilities[abilityPlace], out spawnPoint, out targetCar);
+
+        if (ability.Type == AbilityType.Missle)
+            HaveTargetWeapon = false;
 
         ability.Use(spawnPoint, targetCar);
         abilities.Remove(ability);

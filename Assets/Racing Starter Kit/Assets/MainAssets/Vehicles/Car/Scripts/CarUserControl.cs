@@ -7,6 +7,7 @@ namespace UnityStandardAssets.Vehicles.Car
     {
         [SerializeField] private InputManager inputManager;
         [SerializeField] private GameObject targetMark;
+        [SerializeField] private float targetMarkHeight = 1f;
         private BaseInput input;
 
 
@@ -35,11 +36,10 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void SetTargetMark()
         {
-            if (abilityController.Target != null)
+            if (abilityController.Target != null && abilityController.HaveTargetWeapon)
             {
                 targetMark.SetActive(true);
-
-                targetMark.transform.position = abilityController.Target.transform.position + Vector3.up * 2;
+                targetMark.transform.position = abilityController.Target.transform.position + Vector3.up * targetMarkHeight;
             }
             else
             {
