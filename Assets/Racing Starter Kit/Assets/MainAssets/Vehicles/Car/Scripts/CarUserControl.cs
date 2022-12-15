@@ -33,7 +33,7 @@ namespace UnityStandardAssets.Vehicles.Car
         private void Update()
         {
             SetTargetMark();
-            ReportMissle();
+            //ReportMissle();
         }
 
         private void ReportMissle()
