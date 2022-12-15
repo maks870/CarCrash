@@ -10,9 +10,12 @@ public class AbilityMissleSO : AbilitySO
 
     public override void Use(Transform spawnPoint, AbilityController target)
     {
-        GameObject rocket = Instantiate(projectile, spawnPoint);
-        rocket.transform.parent = null;
-        rocket.GetComponent<Projectile>().Target = target != null ? target.gameObject : null;
+        GameObject missle = Instantiate(projectile, spawnPoint);
+
+        missle.transform.parent = null;
+        ProjectileMissle projectileMissle = missle.GetComponent<ProjectileMissle>();
+        projectileMissle.Launcher = spawnPoint.parent.GetComponent<AbilityController>();
+        projectileMissle.Target = target != null ? target.gameObject : null;
 
         if (target != null)
             target.IsMissleWarning = true;
