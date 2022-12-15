@@ -608,7 +608,7 @@ MonoBehaviour:
   engineSoundStyle: 0
   lowAccelClip: {fileID: 8300000, guid: c4d8928c75c21af43998193f0f038429, type: 3}
   lowDecelClip: {fileID: 8300000, guid: 5699dddcce16c4543b95951c4ce0e092, type: 3}
-  highAccelClip: {fileID: 8300000, guid: 03e3bd08a6e70684dbe299a3e185fdd2, type: 3}
+  highAccelClip: {fileID: 8300000, guid: de1d8d0d9dae5ec43bae32beae1d3eef, type: 3}
   highDecelClip: {fileID: 8300000, guid: 03bf91d88fce91c41995d27de63cc967, type: 3}
   pitchMultiplier: 1
   lowPitchMin: 1
