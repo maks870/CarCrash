@@ -33,13 +33,16 @@ namespace UnityStandardAssets.Vehicles.Car
         private void Update()
         {
             SetTargetMark();
-            //ReportMissle();
+            ReportMissle();
         }
 
         private void ReportMissle()
         {
             if (abilityController.IsMissleWarning)
+            {
+                Debug.LogError("–¿ ≈“¿!!!!!!!!!!!");
                 missleWarningUI.SetActive(true);
+            }
             else
                 missleWarningUI.SetActive(false);
         }
