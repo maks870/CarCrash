@@ -42,6 +42,7 @@ namespace UnityStandardAssets.Vehicles.Car
         public float maxRolloffDistance = 500;                                      // The maximum distance where rollof starts to take place
         public float dopplerLevel = 1;                                              // The mount of doppler effect used in the audio
         public bool useDoppler = true;                                              // Toggle for using doppler
+        public AudioSource source;
 
         private AudioSource m_LowAccel; // Source for the low acceleration sounds
         private AudioSource m_LowDecel; // Source for the low deceleration sounds
@@ -159,8 +160,10 @@ namespace UnityStandardAssets.Vehicles.Car
         // sets up and adds new audio source to the gane object
         private AudioSource SetUpEngineAudioSource(AudioClip clip)
         {
-            // create the new audio source component on the game object and set up its properties
-            AudioSource source = gameObject.AddComponent<AudioSource>();
+            if (source == null)
+                source = gameObject.AddComponent<AudioSource>();// create the new audio source component on the game object and set up its properties
+
+
             source.clip = clip;
             source.volume = 0;
             source.loop = true;
