@@ -10,11 +10,13 @@ public class ChkTrigger : MonoBehaviour
     private int nCheckpointNumber, kPos, CurrentChk, NextChk;
     public int CarPosListNumber;
 
+    public Transform lastCheckpoint;
+
     private void Start()
     {
         if (transform.parent.name.Length == 6)//one-digit number name has 6 characters (for example: AICar4)
         {
-            CarPosListNumber =  int.Parse(transform.parent.name.Substring(transform.parent.name.Length - 1));//get the last character (4)
+            CarPosListNumber = int.Parse(transform.parent.name.Substring(transform.parent.name.Length - 1));//get the last character (4)
         }
         if (transform.parent.name.Length == 7)//two-digit numbers name has 7 characters (for example: AICar17)
         {
@@ -57,6 +59,9 @@ public class ChkTrigger : MonoBehaviour
             nCheckpointNumber = Convert.ToInt32(other.gameObject.name.Substring(kPos, other.gameObject.name.Length - kPos));
             if (CurrentChk + 1 == nCheckpointNumber)
             {
+
+                lastCheckpoint = other.gameObject.transform;
+
                 ChkManager.nChk[CarPosListNumber]/*position 0 in chk manager arrays stands for player 1*/ = nCheckpointNumber;
                 CurrentChk += 1;
                 NextChk += 1;

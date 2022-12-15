@@ -1260,6 +1260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CarPosListNumber: 0
+  lastCheckpoint: {fileID: 0}
 --- !u!1 &4650270483354694011
 GameObject:
   m_ObjectHideFlags: 0
@@ -1276,6 +1277,7 @@ GameObject:
   - component: {fileID: 4650270483354693953}
   - component: {fileID: 4650270483354693952}
   - component: {fileID: 4650270483154986804}
+  - component: {fileID: 5701516614010965053}
   m_Layer: 0
   m_Name: car
   m_TagString: PlayerCar
@@ -1356,7 +1358,7 @@ MonoBehaviour:
   m_SteerHelper: 0
   m_TractionControl: 0
   m_FullTorqueOverAllWheels: 465
-  m_ReverseTorque: 50
+  m_ReverseTorque: 100
   m_MaxHandbrakeTorque: 0
   m_Downforce: 100
   m_SpeedType: 0
@@ -1443,6 +1445,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.15, y: 1.19, z: 0.2}
   m_Center: {x: 0, y: 0.41, z: 0}
+--- !u!114 &5701516614010965053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4650270483354694011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cdd304a968efa543aef884512d0d65f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToReturn: 1
+  returnHeight: 1
+  chkTrigger: {fileID: 4650270483154986803}
 --- !u!1 &4650270483627135073
 GameObject:
   m_ObjectHideFlags: 0
