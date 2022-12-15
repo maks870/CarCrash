@@ -36,6 +36,8 @@ public class TrackReturner : MonoBehaviour
     {
         if (!onTrack)
             timeOffTrack += Time.deltaTime;
+        else
+            timeOffTrack = 0;
 
         if (timeOffTrack > timeToReturn)
             ReturnToTrack();
