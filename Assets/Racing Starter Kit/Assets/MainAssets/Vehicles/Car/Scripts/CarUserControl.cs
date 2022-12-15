@@ -7,6 +7,7 @@ namespace UnityStandardAssets.Vehicles.Car
     {
         [SerializeField] private InputManager inputManager;
         [SerializeField] private GameObject targetMark;
+        [SerializeField] private GameObject missleWarningUI;
         [SerializeField] private float targetMarkHeight = 1f;
         private BaseInput input;
 
@@ -32,11 +33,20 @@ namespace UnityStandardAssets.Vehicles.Car
         private void Update()
         {
             SetTargetMark();
+            ReportMissle();
+        }
+
+        private void ReportMissle()
+        {
+            if (abilityController.IsMissleWarning)
+                missleWarningUI.SetActive(true);
+            else
+                missleWarningUI.SetActive(false);
         }
 
         private void SetTargetMark()
         {
-            if (abilityController.Target != null && abilityController.HaveTargetWeapon)
+            if (abilityController.Target != null)
             {
                 targetMark.SetActive(true);
                 targetMark.transform.position = abilityController.Target.transform.position + Vector3.up * targetMarkHeight;

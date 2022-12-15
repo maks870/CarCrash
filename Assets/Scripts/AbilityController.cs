@@ -14,7 +14,7 @@ public class AbilityController : MonoBehaviour
     [SerializeField] private GameObject shieldObj;
     [SerializeField] private List<GameObject> possibleTargets = new List<GameObject>();
     private float shieldLifeTime;
-    private List<AbilitySO> abilities = new List<AbilitySO>();
+    [SerializeField] private List<AbilitySO> abilities = new List<AbilitySO>();
 
     private bool isDamaged;
     private int haveTargetWeapon = 0;
@@ -50,7 +50,6 @@ public class AbilityController : MonoBehaviour
                 protectsCount = 0;
         }
     }
-
     public bool IsMineWarning
     {
         get

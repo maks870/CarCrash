@@ -17,6 +17,10 @@ public class LootBox : MonoBehaviour
             carAbility.AddAbility(GetRandomAbility());
             spawner.PickUpLootbox();
         }
+        if (other.GetComponent<ProjectileMissle>() != null)
+        {
+            spawner.PickUpLootbox();
+        }
     }
 
     private AbilitySO GetRandomAbility()
