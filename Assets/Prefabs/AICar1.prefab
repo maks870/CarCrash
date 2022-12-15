@@ -86,6 +86,7 @@ MonoBehaviour:
   target: {fileID: 0}
   shieldObj: {fileID: 6925276039485062325}
   possibleTargets: []
+  abilities: []
 --- !u!65 &1996182181288508851
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -318,7 +319,7 @@ GameObject:
   - component: {fileID: 3267986177360491714}
   - component: {fileID: 3267986177360491715}
   - component: {fileID: 3267986177360491712}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CarPosAI
   m_TagString: Untagged
   m_Icon: {fileID: 0}

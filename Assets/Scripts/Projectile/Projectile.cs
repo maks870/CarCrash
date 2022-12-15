@@ -30,7 +30,7 @@ public abstract class Projectile : MonoBehaviour
 
     protected virtual void Destruct()
     {
-       GameObject effectObject = Instantiate(effect, transform.position, Quaternion.identity);
+        GameObject effectObject = Instantiate(effect, transform.position, Quaternion.identity);
         effectObject.transform.position = effectObject.transform.position + new Vector3(0, 0.5f, 0);
         Destroy(gameObject);
     }

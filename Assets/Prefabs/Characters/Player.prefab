@@ -114,6 +114,7 @@ MonoBehaviour:
   target: {fileID: 0}
   shieldObj: {fileID: 5903723942068494733}
   possibleTargets: []
+  abilities: []
 --- !u!65 &4650270482181886635
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1161,7 +1162,7 @@ GameObject:
   - component: {fileID: 4650270483154986754}
   - component: {fileID: 4650270483154986753}
   - component: {fileID: 4650270483154986803}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CarPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1379,6 +1380,8 @@ MonoBehaviour:
   carController: {fileID: 4650270483354694014}
   inputManager: {fileID: 0}
   targetMark: {fileID: 0}
+  missleWarningUI: {fileID: 0}
+  targetMarkHeight: 1
 --- !u!114 &4650270483354694012
 MonoBehaviour:
   m_ObjectHideFlags: 0

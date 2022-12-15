@@ -37120,11 +37120,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1881434633546146088, guid: 2b476568fc8796e449d5aabb8168b58c,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 32a76832b79e84347ad9df08b12709c3, type: 2}
     - target: {fileID: 3267986177311911661, guid: 2b476568fc8796e449d5aabb8168b58c,
         type: 3}
       propertyPath: m_RootOrder
@@ -37184,16 +37179,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AICar1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6925276039485062320, guid: 2b476568fc8796e449d5aabb8168b58c,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.182
-      objectReference: {fileID: 0}
-    - target: {fileID: 6925276039485062325, guid: 2b476568fc8796e449d5aabb8168b58c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b476568fc8796e449d5aabb8168b58c, type: 3}
@@ -37636,7 +37621,7 @@ PrefabInstance:
     - target: {fileID: 4650270482510969137, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -79.9
+      value: -74.69
       objectReference: {fileID: 0}
     - target: {fileID: 4650270482510969137, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
         type: 3}
@@ -37646,7 +37631,7 @@ PrefabInstance:
     - target: {fileID: 4650270482510969137, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 24.42
+      value: 26.59
       objectReference: {fileID: 0}
     - target: {fileID: 4650270482510969137, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
         type: 3}

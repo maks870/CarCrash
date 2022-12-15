@@ -21,9 +21,6 @@ public class ProjectileMissle : Projectile
                 other.GetComponent<AbilityController>().TakeDamage();
         }
 
-        if (target != null)
-            target.GetComponent<AbilityController>().IsMissleWarning = false;
-
         Destruct();
     }
 
@@ -39,6 +36,12 @@ public class ProjectileMissle : Projectile
         Quaternion rotation = Quaternion.LookRotation(target.transform.position - transform.position);
         rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, rotation, rotateSpeed * Time.deltaTime));
     }
+    protected override void Destruct()
+    {
+        if (target != null)
+            target.GetComponent<AbilityController>().IsMissleWarning = false;
 
+        base.Destruct();
+    }
 
 }

@@ -40,7 +40,6 @@ namespace UnityStandardAssets.Vehicles.Car
         {
             if (abilityController.IsMissleWarning)
             {
-                Debug.LogError("–¿ ≈“¿!!!!!!!!!!!");
                 missleWarningUI.SetActive(true);
             }
             else
