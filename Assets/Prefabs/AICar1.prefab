@@ -417,6 +417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CarPosListNumber: 0
+  lastCheckpoint: {fileID: 0}
 --- !u!1 &3267986177483540417
 GameObject:
   m_ObjectHideFlags: 0
