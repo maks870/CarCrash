@@ -3,8 +3,12 @@ using UnityEngine;
 public class ProjectileMissle : Projectile
 {
     [SerializeField] private float rotateSpeed;
-    [SerializeField] private float speed;
+    [SerializeField] private float differenceSpeed;
+    [SerializeField] private float minimumSpeed;
     [SerializeField] private AbilityController launcher;
+    private float currentSpeed;
+    private float noTargetSpeed = 15f;
+    private Rigidbody rbTarget;
 
     public AbilityController Launcher { get => launcher; set => launcher = value; }
 
@@ -26,7 +30,22 @@ public class ProjectileMissle : Projectile
 
     private void FixedUpdate()
     {
-        rb.velocity = transform.forward * speed;
+        if (target != null)
+        {
+            if (rbTarget == null)
+                rbTarget = target.transform.parent.GetComponent<Rigidbody>();
+
+            currentSpeed = rbTarget.velocity.magnitude < minimumSpeed
+                ? minimumSpeed
+                : rbTarget.velocity.magnitude;
+        }
+        else
+        {
+            currentSpeed = noTargetSpeed;
+        }
+
+        rb.velocity = transform.forward * (currentSpeed + differenceSpeed);
+
         if (target != null)
             RotateRocket();
     }

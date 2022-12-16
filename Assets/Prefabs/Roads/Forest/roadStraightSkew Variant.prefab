@@ -248,7 +248,7 @@ PrefabInstance:
     - target: {fileID: 3436454282387031865, guid: 9a524fa50d76d524d896a85b7d053593,
         type: 3}
       propertyPath: m_Name
-      value: roadStraightSkew
+      value: roadStraightSkew Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3436454282387031865, guid: 9a524fa50d76d524d896a85b7d053593,
         type: 3}
@@ -257,6 +257,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a524fa50d76d524d896a85b7d053593, type: 3}
+--- !u!1 &8118151536440091756 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3436454282387031865, guid: 9a524fa50d76d524d896a85b7d053593,
+    type: 3}
+  m_PrefabInstance: {fileID: 6852731757834347349}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &5497567768816467269
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8118151536440091756}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6837709422511605674, guid: c6fe1f66ab83aeb42a59053d4905d418, type: 3}
 --- !u!4 &8926881455464644310 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2664842742319603075, guid: 9a524fa50d76d524d896a85b7d053593,

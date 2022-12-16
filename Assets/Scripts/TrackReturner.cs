@@ -22,10 +22,12 @@ public class TrackReturner : MonoBehaviour
             onTrack = false;
         }
     }
+
     private void Update()
     {
         CountTimeToReturn();
     }
+
     private void ReturnToTrack()
     {
         transform.parent.transform.position = chkTrigger.lastCheckpoint.position + Vector3.up * returnHeight;
