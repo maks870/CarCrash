@@ -11,16 +11,15 @@ public class AbilityController : MonoBehaviour
     [SerializeField] private Transform spawnPointMiddle;
     [SerializeField] private Transform spawnPointBack;
     [SerializeField] private GameObject target;
-    [SerializeField] private GameObject shieldObj;
     [SerializeField] private List<GameObject> possibleTargets = new List<GameObject>();
-    private float shieldLifeTime;
     [SerializeField] private List<AbilitySO> abilities = new List<AbilitySO>();
 
     private bool isDamaged;
     private int haveTargetWeapon = 0;
     private int mineWarning = 0;
     private int missleWarning = 0;
-    private int protectsCount = 0;
+
+    public ShieldProjectile shield;
 
     public bool HaveTargetWeapon
     {
@@ -34,20 +33,6 @@ public class AbilityController : MonoBehaviour
                 haveTargetWeapon++;
             else
                 haveTargetWeapon--;
-        }
-    }
-    public bool IsProtected
-    {
-        get
-        {
-            return protectsCount > 0 ? true : false;
-        }
-        set
-        {
-            if (value)
-                protectsCount++;
-            else
-                protectsCount = 0;
         }
     }
     public bool IsMineWarning
@@ -79,7 +64,7 @@ public class AbilityController : MonoBehaviour
         }
     }
 
-    public float ShieldLifetime { set => shieldLifeTime = value; }
+    public float ShieldLifetime { set => shield.lifeTime = value; }
     public bool IsDamaged => isDamaged;
     public int MaxAbilities => maxAbilities;
     public GameObject Target => target;
@@ -141,17 +126,6 @@ public class AbilityController : MonoBehaviour
         }
     }
 
-    private void ShieldOn()
-    {
-        IsProtected = true;
-        shieldObj.SetActive(true);
-    }
-    private void ShieldOff()
-    {
-        shieldObj.SetActive(false);
-        IsProtected = false;
-    }
-
     public void AddTarget(GameObject target)
     {
         possibleTargets.Add(target);
@@ -172,6 +146,7 @@ public class AbilityController : MonoBehaviour
                 HaveTargetWeapon = true;
 
             abilities.Add(ability);
+
             if (RefreshAbilityEvent != null)
                 RefreshAbilityEvent.Invoke(abilities);
         }
@@ -198,29 +173,19 @@ public class AbilityController : MonoBehaviour
 
     public void TakeDamage()// Логика получения урона
     {
-        if (IsProtected)
+        if (shield.IsProtected)
         {
-            ShieldOff();
-            return;
+            shield.Deactivate();
         }
-        if (!isDamaged)
+        else if (!isDamaged) 
+        {
             StartCoroutine(DamagedTimer());
+        }   
     }
 
     public void ActivateShield()
     {
-        StartCoroutine(ShieldTimer());
-    }
-
-    IEnumerator ShieldTimer()
-    {
-        ShieldOn();
-        yield return new WaitForSeconds(shieldLifeTime);
-
-        if (protectsCount > 1)
-            protectsCount--;
-        else
-            ShieldOff();
+        shield.Activate();
     }
 
     IEnumerator DamagedTimer()// Таймер получения урона

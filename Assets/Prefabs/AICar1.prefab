@@ -84,9 +84,9 @@ MonoBehaviour:
   spawnPointMiddle: {fileID: 0}
   spawnPointBack: {fileID: 1039006956092193445}
   target: {fileID: 0}
-  shieldObj: {fileID: 6925276039485062325}
   possibleTargets: []
   abilities: []
+  shield: {fileID: 1868119027}
 --- !u!65 &1996182181288508851
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2095,6 +2095,11 @@ PrefabInstance:
     - target: {fileID: 1254017168727422581, guid: b9e3282157f8bd1479a3a911befc81ec,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7737358921867226088, guid: b9e3282157f8bd1479a3a911befc81ec,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7737358921867226088, guid: b9e3282157f8bd1479a3a911befc81ec,
@@ -2116,3 +2121,16 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8177600299607444160}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1868119027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6925276039485062325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ac95f58140813942b7d9b5614501b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 0
