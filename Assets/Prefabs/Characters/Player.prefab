@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4650270482126605028}
   - component: {fileID: 4650270482126605030}
   - component: {fileID: 4650270482126605029}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: AbilityTargetCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,9 +112,9 @@ MonoBehaviour:
   spawnPointMiddle: {fileID: 0}
   spawnPointBack: {fileID: 4650270482405887505}
   target: {fileID: 0}
-  shieldObj: {fileID: 5903723942068494733}
   possibleTargets: []
   abilities: []
+  shield: {fileID: 781813624}
 --- !u!65 &4650270482181886635
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -126,8 +126,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.30331498, z: 2.06}
-  m_Center: {x: 0, y: 0.34834272, z: 0}
+  m_Size: {x: 1.002212, y: 0.3058437, z: 2.1364815}
+  m_Center: {x: 2.5400676e-16, y: 0.34707835, z: -0.038241025}
 --- !u!1 &4650270482244009992
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 4650270482638940145}
   - component: {fileID: 4650270482638940144}
   - component: {fileID: 4650270482638940143}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WheelHubRearRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -603,7 +603,7 @@ GameObject:
   - component: {fileID: 4650270482791080909}
   - component: {fileID: 4650270482791080908}
   - component: {fileID: 4650270482791080907}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WheelHubFrontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -811,7 +811,7 @@ GameObject:
   - component: {fileID: 4650270483069664848}
   - component: {fileID: 4650270483069664847}
   - component: {fileID: 4650270483069664846}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WheelHubFrontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -986,7 +986,7 @@ GameObject:
   - component: {fileID: 4650270483147351890}
   - component: {fileID: 4650270483147351889}
   - component: {fileID: 4650270483147351888}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WheelHubRearLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1469,7 +1469,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4650270483354694011}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 03bf91d88fce91c41995d27de63cc967, type: 3}
@@ -1785,7 +1785,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9e68ed9aa76434745a0bc3bb6c5ab809, type: 2}
+      objectReference: {fileID: 2100000, guid: 30621df6471e7c143a6b290102604049, type: 2}
     - target: {fileID: -7511558181221131132, guid: 158fef1a958a5cb4587178690a8e7d47,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
@@ -1968,6 +1968,11 @@ PrefabInstance:
     - target: {fileID: 1254017168727422581, guid: b9e3282157f8bd1479a3a911befc81ec,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7737358921867226088, guid: b9e3282157f8bd1479a3a911befc81ec,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7737358921867226088, guid: b9e3282157f8bd1479a3a911befc81ec,
@@ -1989,6 +1994,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4650270483907549176}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &781813624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5903723942068494733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ac95f58140813942b7d9b5614501b45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 0
 --- !u!1001 &4650270484114236270
 PrefabInstance:
   m_ObjectHideFlags: 0

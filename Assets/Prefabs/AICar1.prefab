@@ -98,8 +98,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.30331498, z: 2.06}
-  m_Center: {x: 0, y: 0.34834272, z: 0}
+  m_Size: {x: 1.0517569, y: 0.31177422, z: 2.1769292}
+  m_Center: {x: 5.2833468e-17, y: 0.3441131, z: -0.058464326}
 --- !u!1 &3267986176970643301
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 3267986177014887469}
   - component: {fileID: 3267986177014887458}
   - component: {fileID: 3267986177014887459}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WheelHubFrontLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -845,7 +845,7 @@ GameObject:
   - component: {fileID: 3267986177792134767}
   - component: {fileID: 3267986177792134764}
   - component: {fileID: 3267986177792134765}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WheelHubRearRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1173,7 +1173,7 @@ GameObject:
   - component: {fileID: 3267986178700652094}
   - component: {fileID: 3267986178700652095}
   - component: {fileID: 3267986178700652092}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WheelHubFrontRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1347,7 +1347,7 @@ GameObject:
   - component: {fileID: 3267986178934203825}
   - component: {fileID: 3267986178934203830}
   - component: {fileID: 3267986178934203831}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WheelHubRearLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
