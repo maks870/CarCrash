@@ -116,7 +116,7 @@ MonoBehaviour:
   rotateSpeed: 250
   differenceSpeed: 2
   minimumSpeed: 10
-  noTargetSpeed: 1
+  noTargetSpeed: 15
   launcher: {fileID: 0}
 --- !u!54 &7423350256742407463
 Rigidbody:
