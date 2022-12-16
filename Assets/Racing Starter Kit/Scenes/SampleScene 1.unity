@@ -13791,25 +13791,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1879319554}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &781813619 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5903723942068494733, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
-    type: 3}
-  m_PrefabInstance: {fileID: 4650270482241498784}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &781813624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 781813619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ac95f58140813942b7d9b5614501b45, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifeTime: 0
 --- !u!4 &784598043 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8930885862814177750, guid: 13dd10d6717971d4ea9125d158299b1e,
@@ -21241,6 +21222,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: AICar2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267986177610925930, guid: 2b476568fc8796e449d5aabb8168b58c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b476568fc8796e449d5aabb8168b58c, type: 3}
@@ -39693,16 +39679,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3164212685001948176, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4650270482181886636, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
-        type: 3}
-      propertyPath: shield
-      value: 
-      objectReference: {fileID: 781813624}
     - target: {fileID: 4650270482510969136, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
         type: 3}
       propertyPath: m_Name
@@ -39783,11 +39759,6 @@ PrefabInstance:
       propertyPath: missleWarningUI
       value: 
       objectReference: {fileID: 2062623830}
-    - target: {fileID: 5903723942068494733, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6289419800361706278, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
