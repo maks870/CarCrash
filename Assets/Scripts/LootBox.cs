@@ -5,7 +5,15 @@ using UnityEngine;
 public class LootBox : MonoBehaviour
 {
     [SerializeField] private List<AbilityObj> ablitities = new List<AbilityObj>();
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private MeshRenderer meshRenderer;
+    private BoxCollider boxCollider;
     private LootboxSpawner spawner;
+
+    private void Awake()
+    {
+        boxCollider = GetComponent<BoxCollider>();
+    }
 
     public LootboxSpawner Spawner { set => spawner = value; }
 
@@ -51,11 +59,15 @@ public class LootBox : MonoBehaviour
 
     public void Show()
     {
-        gameObject.SetActive(true);
+        boxCollider.enabled = true;
+        meshRenderer.enabled = true;
     }
 
     public void Hide()
     {
-        gameObject.SetActive(false);
+        boxCollider.enabled = false;
+        meshRenderer.enabled = false;
+        audioSource.Play();
+       // gameObject.SetActive(false);
     }
 }
