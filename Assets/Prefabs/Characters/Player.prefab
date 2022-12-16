@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4650270482126605028}
   - component: {fileID: 4650270482126605030}
   - component: {fileID: 4650270482126605029}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: AbilityTargetCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,8 +126,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.002212, y: 0.3058437, z: 2.1364815}
-  m_Center: {x: 2.5400676e-16, y: 0.34707835, z: -0.038241025}
+  m_Size: {x: 1.0745769, y: 0.3058437, z: 2.1364815}
+  m_Center: {x: 0, y: 0.34707835, z: -0.038241066}
 --- !u!1 &4650270482244009992
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4650270482244009993}
   - component: {fileID: 4650270482244009994}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GetReadyAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4650270482405887505}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BackSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,7 +296,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4650270482510969137}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,7 +329,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4650270482631645526}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ForwardSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -535,7 +535,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4650270482703835494}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: AudioFiles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -567,7 +567,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4650270482759667005}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -775,7 +775,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4650270482805506234}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1294,7 +1294,7 @@ GameObject:
   - component: {fileID: 4650270483354693952}
   - component: {fileID: 4650270483154986804}
   - component: {fileID: 1676254439}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: car
   m_TagString: PlayerCar
   m_Icon: {fileID: 0}
@@ -1567,7 +1567,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4650270483627135074}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CarParts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1601,7 +1601,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4650270483875270130}
   - component: {fileID: 4650270483875270131}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GoAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1796,6 +1796,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: character-parsche-sport-green_1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 158fef1a958a5cb4587178690a8e7d47,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 158fef1a958a5cb4587178690a8e7d47, type: 3}
 --- !u!4 &5117123958864468041 stripped
@@ -1814,6 +1819,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: f89732ea99785b94c87bbba1e27f75a3, type: 3}
       propertyPath: m_Name
       value: CFX3_Flying_Ember_Upward
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f89732ea99785b94c87bbba1e27f75a3, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f89732ea99785b94c87bbba1e27f75a3, type: 3}
       propertyPath: m_RootOrder
@@ -1967,6 +1976,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1254017168727422581, guid: b9e3282157f8bd1479a3a911befc81ec,
         type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1254017168727422581, guid: b9e3282157f8bd1479a3a911befc81ec,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -2109,10 +2123,20 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[8]
       value: 
       objectReference: {fileID: 2100000, guid: 8c9cbaa0daffbc54f9604406891b5e74, type: 2}
+    - target: {fileID: -3432366751865176856, guid: 98ea897165dfa4340823e059e3aef21b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 98ea897165dfa4340823e059e3aef21b,
         type: 3}
       propertyPath: m_Name
       value: car-parsche-sport-green_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 98ea897165dfa4340823e059e3aef21b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2513161050298241050, guid: 98ea897165dfa4340823e059e3aef21b,
         type: 3}
@@ -2124,6 +2148,31 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9e68ed9aa76434745a0bc3bb6c5ab809, type: 2}
+    - target: {fileID: 2930863154693880077, guid: 98ea897165dfa4340823e059e3aef21b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5472049658881040514, guid: 98ea897165dfa4340823e059e3aef21b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673718730385962863, guid: 98ea897165dfa4340823e059e3aef21b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7852995617794108759, guid: 98ea897165dfa4340823e059e3aef21b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349565679098696492, guid: 98ea897165dfa4340823e059e3aef21b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98ea897165dfa4340823e059e3aef21b, type: 3}
 --- !u!1 &826890407613432812 stripped
@@ -2222,6 +2271,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ParticleBurnoutSmoke
+      objectReference: {fileID: 0}
+    - target: {fileID: 7239715097785553435, guid: f329a764de32cb242ab8c4be43820c47,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7402957207263566467, guid: f329a764de32cb242ab8c4be43820c47,
         type: 3}

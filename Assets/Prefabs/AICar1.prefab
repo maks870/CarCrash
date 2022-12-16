@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6542769434582307756}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ForwardSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3267986176970643300}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +427,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3267986177483540416}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Helpers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,7 +469,7 @@ GameObject:
   - component: {fileID: 4654608971705136551}
   - component: {fileID: 3273841503141795992}
   - component: {fileID: 527328702}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: AICar1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -774,7 +774,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3267986177611893147}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WheelHubs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1016,7 +1016,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3267986177842285749}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: WaypointTargetObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1107,7 +1107,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3267986178154526935}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CarParts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1139,7 +1139,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3267986178310421111}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CameraFocusPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1518,7 +1518,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1039006956092193445}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BackSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1757,10 +1757,20 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9e68ed9aa76434745a0bc3bb6c5ab809, type: 2}
+    - target: {fileID: -3432366751865176856, guid: 98ea897165dfa4340823e059e3aef21b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 98ea897165dfa4340823e059e3aef21b,
         type: 3}
       propertyPath: m_Name
       value: car-parsche-sport-green_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 98ea897165dfa4340823e059e3aef21b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2513161050298241050, guid: 98ea897165dfa4340823e059e3aef21b,
         type: 3}
@@ -1772,6 +1782,31 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9e68ed9aa76434745a0bc3bb6c5ab809, type: 2}
+    - target: {fileID: 2930863154693880077, guid: 98ea897165dfa4340823e059e3aef21b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5472049658881040514, guid: 98ea897165dfa4340823e059e3aef21b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7673718730385962863, guid: 98ea897165dfa4340823e059e3aef21b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7852995617794108759, guid: 98ea897165dfa4340823e059e3aef21b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8349565679098696492, guid: 98ea897165dfa4340823e059e3aef21b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98ea897165dfa4340823e059e3aef21b, type: 3}
 --- !u!1 &429738208641558938 stripped
@@ -1885,6 +1920,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ParticleBurnoutSmoke (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7239715097785553435, guid: f329a764de32cb242ab8c4be43820c47,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7402957207263566467, guid: f329a764de32cb242ab8c4be43820c47,
         type: 3}
@@ -2091,6 +2131,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ShiledProjectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 1254017168727422581, guid: b9e3282157f8bd1479a3a911befc81ec,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1254017168727422581, guid: b9e3282157f8bd1479a3a911befc81ec,
         type: 3}
