@@ -608,14 +608,14 @@ MonoBehaviour:
   engineSoundStyle: 0
   lowAccelClip: {fileID: 8300000, guid: c4d8928c75c21af43998193f0f038429, type: 3}
   lowDecelClip: {fileID: 8300000, guid: 5699dddcce16c4543b95951c4ce0e092, type: 3}
-  highAccelClip: {fileID: 8300000, guid: de1d8d0d9dae5ec43bae32beae1d3eef, type: 3}
+  highAccelClip: {fileID: 8300000, guid: 6c54702c778af6347b8db886b7f1a4ae, type: 3}
   highDecelClip: {fileID: 8300000, guid: 03bf91d88fce91c41995d27de63cc967, type: 3}
-  pitchMultiplier: 1
+  pitchMultiplier: 0.5
   lowPitchMin: 1
   lowPitchMax: 5
-  highPitchMultiplier: 0.25
-  maxRolloffDistance: 500
-  dopplerLevel: 3
+  highPitchMultiplier: 0.2
+  maxRolloffDistance: 150
+  dopplerLevel: 5
   useDoppler: 1
   source: {fileID: 527328702}
 --- !u!114 &3267986177610925938
