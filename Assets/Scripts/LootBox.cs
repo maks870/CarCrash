@@ -68,6 +68,6 @@ public class LootBox : MonoBehaviour
         boxCollider.enabled = false;
         meshRenderer.enabled = false;
         audioSource.Play();
-       // gameObject.SetActive(false);
+        // gameObject.SetActive(false);
     }
 }

@@ -5,9 +5,10 @@ public class ProjectileMissle : Projectile
     [SerializeField] private float rotateSpeed;
     [SerializeField] private float differenceSpeed;
     [SerializeField] private float minimumSpeed;
+    [SerializeField] private float noTargetSpeed = 15f;
+
     [SerializeField] private AbilityController launcher;
-    private float currentSpeed;
-    private float noTargetSpeed = 15f;
+    private float maxSpeed;
     private Rigidbody rbTarget;
 
     public AbilityController Launcher { get => launcher; set => launcher = value; }
@@ -35,16 +36,21 @@ public class ProjectileMissle : Projectile
             if (rbTarget == null)
                 rbTarget = target.transform.parent.GetComponent<Rigidbody>();
 
-            currentSpeed = rbTarget.velocity.magnitude < minimumSpeed
+            maxSpeed = rbTarget.velocity.magnitude < minimumSpeed
                 ? minimumSpeed
                 : rbTarget.velocity.magnitude;
+
+            maxSpeed += differenceSpeed;
         }
         else
         {
-            currentSpeed = noTargetSpeed;
+            maxSpeed = noTargetSpeed;
         }
 
-        rb.velocity = transform.forward * (currentSpeed + differenceSpeed);
+        rb.velocity = transform.forward * maxSpeed;
+
+        //if (rb.velocity.magnitude < maxSpeed)
+        //    rb.AddForce(transform.forward * missleAccel, ForceMode.Force);
 
         if (target != null)
             RotateRocket();

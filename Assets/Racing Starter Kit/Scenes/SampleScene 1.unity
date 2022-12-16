@@ -490,7 +490,7 @@ PrefabInstance:
     - target: {fileID: 3267986177311911661, guid: 2b476568fc8796e449d5aabb8168b58c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 26.88
+      value: 43.82
       objectReference: {fileID: 0}
     - target: {fileID: 3267986177311911661, guid: 2b476568fc8796e449d5aabb8168b58c,
         type: 3}
@@ -15633,7 +15633,7 @@ MonoBehaviour:
   BotDown: {fileID: 1789797650}
   Bots: {fileID: 1341721340}
   BotsPanel: {fileID: 561615556}
-  botCounts: 3
+  botCounts: 0
 --- !u!114 &898437915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21181,7 +21181,7 @@ PrefabInstance:
     - target: {fileID: 3267986177311911661, guid: 2b476568fc8796e449d5aabb8168b58c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 24.53
+      value: 41.47
       objectReference: {fileID: 0}
     - target: {fileID: 3267986177311911661, guid: 2b476568fc8796e449d5aabb8168b58c,
         type: 3}
@@ -39230,7 +39230,7 @@ PrefabInstance:
     - target: {fileID: 3267986177311911661, guid: 2b476568fc8796e449d5aabb8168b58c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 24.53
+      value: 41.47
       objectReference: {fileID: 0}
     - target: {fileID: 3267986177311911661, guid: 2b476568fc8796e449d5aabb8168b58c,
         type: 3}
@@ -39840,6 +39840,21 @@ PrefabInstance:
       propertyPath: missleWarningUI
       value: 
       objectReference: {fileID: 2062623830}
+    - target: {fileID: 4650270483354694014, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
+        type: 3}
+      propertyPath: m_Topspeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4650270483354694014, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
+        type: 3}
+      propertyPath: m_SteerHelper
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4650270483354694014, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
+        type: 3}
+      propertyPath: m_FullTorqueOverAllWheels
+      value: 465
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f1eb3c36ea419147bcf9fc8a44e4380, type: 3}
 --- !u!1001 &5060532278841278915

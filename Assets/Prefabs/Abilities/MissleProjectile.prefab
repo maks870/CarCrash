@@ -114,8 +114,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effect: {fileID: 1892078723244562, guid: 46876a2780737ec45a19d62f88e5ce56, type: 3}
   rotateSpeed: 250
-  differenceSpeed: 1
+  differenceSpeed: 2
   minimumSpeed: 10
+  noTargetSpeed: 1
   launcher: {fileID: 0}
 --- !u!54 &7423350256742407463
 Rigidbody:
