@@ -54,7 +54,6 @@ public class TrackReturner : MonoBehaviour
         transform.parent.rotation = angleReturn;
 
         rbCar.freezeRotation = true;
-        transform.parent.GetComponent<Rigidbody>().velocity = Vector3.zero;
         timeOffTrack = 0;
     }
 
