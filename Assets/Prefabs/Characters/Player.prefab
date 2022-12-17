@@ -236,14 +236,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb4bf64413a54c44cab1a99925f6c169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxAbilities: 2
+  slowTime: 1
+  maxAbilities: 3
   spawnPointForward: {fileID: 4650270482631645526}
   spawnPointMiddle: {fileID: 0}
   spawnPointBack: {fileID: 4650270482405887505}
   target: {fileID: 0}
+  shield: {fileID: 781813624}
   possibleTargets: []
   abilities: []
-  shield: {fileID: 781813624}
 --- !u!65 &4650270482181886635
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1406,7 +1407,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToReturn: 1.5
   returnHeight: 0
-  chkTrigger: {fileID: 4650270483154986803}
 --- !u!1 &4650270483354694011
 GameObject:
   m_ObjectHideFlags: 0
@@ -2151,7 +2151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ac95f58140813942b7d9b5614501b45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 0
 --- !u!1001 &4650270484114236270
 PrefabInstance:
   m_ObjectHideFlags: 0

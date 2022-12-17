@@ -11,7 +11,7 @@ public class AbilityShieldSO : AbilitySO
 
     public override void Use(Transform spawnPoint, AbilityController target)
     {
-        target.ShieldLifetime = shieldLifetime;
+        target.Shield.Lifetime = shieldLifetime;
         target.ActivateShield();
     }
 }

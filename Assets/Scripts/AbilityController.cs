@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class AbilityController : MonoBehaviour
 {
-    private const float slowMultiplier = 0.9f;
-    private const float slowTime = 1;
+    [SerializeField] private float slowTime = 1;
     [SerializeField] private int maxAbilities;
     [SerializeField] private Transform spawnPointForward;
     [SerializeField] private Transform spawnPointMiddle;
     [SerializeField] private Transform spawnPointBack;
     [SerializeField] private GameObject target;
+    [SerializeField] private ShieldProjectile shield;
     [SerializeField] private List<GameObject> possibleTargets = new List<GameObject>();
     [SerializeField] private List<AbilitySO> abilities = new List<AbilitySO>();
 
@@ -18,8 +18,6 @@ public class AbilityController : MonoBehaviour
     private int haveTargetWeapon = 0;
     private int mineWarning = 0;
     private int missleWarning = 0;
-
-    public ShieldProjectile shield;
 
     public bool HaveTargetWeapon
     {
@@ -64,10 +62,10 @@ public class AbilityController : MonoBehaviour
         }
     }
 
-    public float ShieldLifetime { set => shield.lifeTime = value; }
     public bool IsDamaged => isDamaged;
     public int MaxAbilities => maxAbilities;
     public GameObject Target => target;
+    public ShieldProjectile Shield => shield;
 
     public List<AbilitySO> Abilities => abilities;
 
@@ -177,10 +175,10 @@ public class AbilityController : MonoBehaviour
         {
             shield.Deactivate();
         }
-        else if (!isDamaged) 
+        else if (!isDamaged)
         {
             StartCoroutine(DamagedTimer());
-        }   
+        }
     }
 
     public void ActivateShield()
