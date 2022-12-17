@@ -320,6 +320,7 @@ GameObject:
   - component: {fileID: 3267986177360491714}
   - component: {fileID: 3267986177360491715}
   - component: {fileID: 3267986177360491712}
+  - component: {fileID: 7873207428884042478}
   m_Layer: 3
   m_Name: CarPosAI
   m_TagString: Untagged
@@ -335,7 +336,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3267986177360491718}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0.00000011920929, y: 0.368, z: -0.99880993}
+  m_LocalPosition: {x: 0.00000011920929, y: 0.17, z: -0.99880993}
   m_LocalScale: {x: 1, y: 1, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -419,6 +420,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CarPosListNumber: 0
   lastCheckpoint: {fileID: 0}
+--- !u!114 &7873207428884042478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3267986177360491718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cdd304a968efa543aef884512d0d65f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToReturn: 1
+  returnHeight: 1
 --- !u!1 &3267986177483540417
 GameObject:
   m_ObjectHideFlags: 0
