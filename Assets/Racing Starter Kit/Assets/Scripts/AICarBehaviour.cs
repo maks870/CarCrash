@@ -7,6 +7,7 @@ public class AICarBehaviour : MonoBehaviour
 {
     [SerializeField] CarController AICarController;
     [SerializeField] private Rigidbody AICarRigidbody;
+    [SerializeField] private TrackReturner trackReturner;
     private float AICarSpeed;
     private int CheckReverse, StartReverse;
     private float NormalTorque, NormalSteering, NormalTopspeed;
@@ -35,7 +36,7 @@ public class AICarBehaviour : MonoBehaviour
     private void Update()
     {
         AICarSpeed = AICarRigidbody.velocity.magnitude;//speed of the AI car
-        if (AICarSpeed < 0.25f && CheckReverse == 1)//if the AI car speed goes to a near zero speed (0.25f)
+        if (AICarSpeed < 0.25f && CheckReverse == 1 && !trackReturner.JustReturned)//if the AI car speed goes to a near zero speed (0.25f)
         {
             CheckReverse = 0;//stop checking if it needs a reverse
             StartReverse = 1;//and start one
@@ -46,15 +47,18 @@ public class AICarBehaviour : MonoBehaviour
             //invert the torque of the car so it starts going in reverse
             AICarController.m_FullTorqueOverAllWheels = (AICarController.m_FullTorqueOverAllWheels * -1);
             AICarController.m_MaximumSteerAngle = -AICarController.m_MaximumSteerAngle;
-             //AICarController.m_MaximumSteerAngle = 0;//the car won't turn
-             StartReverse = 0;//leave this deactivated so we can use it again in future reverses on the same race
+            //AICarController.m_MaximumSteerAngle = 0;//the car won't turn
+            StartReverse = 0;//leave this deactivated so we can use it again in future reverses on the same race
             StartCoroutine(ReverseCoroutine());//start the reverse coroutine
         }
+
+        if (AICarSpeed > 1)
+            trackReturner.JustReturned = false;
     }
 
     IEnumerator ReverseCoroutine()
-    {      
-        foreach (WheelCollider wc in AllWheelColliders)       
+    {
+        foreach (WheelCollider wc in AllWheelColliders)
             wc.enabled = false;
         foreach (WheelCollider wc in AllWheelColliders)
             wc.enabled = true;
