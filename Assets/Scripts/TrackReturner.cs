@@ -53,7 +53,6 @@ public class TrackReturner : MonoBehaviour
         transform.parent.position = new Vector3(chkTrigger.lastCheckpoint.position.x, 0, chkTrigger.lastCheckpoint.position.z) + Vector3.up * returnHeight;
         transform.parent.rotation = angleReturn;
 
-        Debug.Log(transform.parent.rotation.eulerAngles);
         rbCar.freezeRotation = true;
         transform.parent.GetComponent<Rigidbody>().velocity = Vector3.zero;
         timeOffTrack = 0;
