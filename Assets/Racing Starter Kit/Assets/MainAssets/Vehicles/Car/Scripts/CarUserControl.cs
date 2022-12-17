@@ -7,7 +7,7 @@ namespace UnityStandardAssets.Vehicles.Car
     {
         [SerializeField] private InputManager inputManager;
         [SerializeField] private GameObject targetMark;
-        [SerializeField] private GameObject missleWarningUI;
+        [SerializeField] private UIPlayerManager uiManager;
         [SerializeField] private float targetMarkHeight = 1f;
         private BaseInput input;
 
@@ -16,6 +16,7 @@ namespace UnityStandardAssets.Vehicles.Car
         {
             targetMark.SetActive(false);
             carController = GetComponent<CarController>();
+            uiManager = GameObject.Find("UIPlayerManager").GetComponent<UIPlayerManager>();
         }
 
         private void Start()
@@ -40,10 +41,10 @@ namespace UnityStandardAssets.Vehicles.Car
         {
             if (abilityController.IsMissleWarning)
             {
-                missleWarningUI.SetActive(true);
+                uiManager.WarningActivate();
             }
             else
-                missleWarningUI.SetActive(false);
+                uiManager.WarningDeactivate();
         }
 
         private void SetTargetMark()
