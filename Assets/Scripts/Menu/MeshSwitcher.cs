@@ -9,8 +9,7 @@ public class MeshSwitcher : MonoBehaviour
 
     public void UpdateMesh(ÑollectibleSO model)
     {
-        currentMesh.mesh = model.Mesh;
-        currentRenderer.materials = model.Materials.ToArray();
+
     }
 
 }
