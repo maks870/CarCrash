@@ -8,9 +8,12 @@ public class TrackReturner : MonoBehaviour
     [SerializeField] private float timeToReturn = 1;
     [SerializeField] private float returnHeight = 1;
     private ChkTrigger chkTrigger;
-    private float timeOffTrack = 0;
     private bool onTrack = true;
+    private bool justReturned;
+    private float timeOffTrack = 0;
     private Rigidbody rbCar;
+
+    public bool JustReturned { get => justReturned; set => justReturned = value; }
 
     private void Start()
     {
@@ -55,6 +58,7 @@ public class TrackReturner : MonoBehaviour
 
         rbCar.freezeRotation = true;
         timeOffTrack = 0;
+        justReturned = true;
     }
 
     private void CountTimeToReturn()
