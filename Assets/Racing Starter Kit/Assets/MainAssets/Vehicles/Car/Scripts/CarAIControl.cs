@@ -174,7 +174,7 @@ namespace UnityStandardAssets.Vehicles.Car
                     // and veer towards the side of our path-to-target that is away from the other car
                     offsetTargetPos += m_Target.right * m_AvoidPathOffset;
                 }
-                else if (obstacleTarget != null && !abilityController.shield.IsProtected && isAvoidObstacle)
+                else if (obstacleTarget != null && !abilityController.Shield.IsProtected && isAvoidObstacle)
                 {
                     //desiredSpeed *= avoidSpeedMultiplier;
 

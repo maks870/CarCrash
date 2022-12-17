@@ -7,8 +7,9 @@ public class ShieldProjectile : MonoBehaviour
     private Animator animator;
     private bool isProtected;
     private MeshRenderer meshRenderer;
-    [HideInInspector] public float lifeTime;
+    private float lifeTime;
 
+    public float Lifetime { set => lifeTime = value; }
     public bool IsProtected => isProtected;
 
     private void Awake()

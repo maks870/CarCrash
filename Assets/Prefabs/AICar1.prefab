@@ -79,14 +79,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb4bf64413a54c44cab1a99925f6c169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slowTime: 1
   maxAbilities: 3
   spawnPointForward: {fileID: 6542769434582307756}
   spawnPointMiddle: {fileID: 0}
   spawnPointBack: {fileID: 1039006956092193445}
   target: {fileID: 0}
+  shield: {fileID: 1868119027}
   possibleTargets: []
   abilities: []
-  shield: {fileID: 1868119027}
 --- !u!65 &1996182181288508851
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -404,8 +405,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.7819797, z: 1}
-  m_Center: {x: 0, y: 0.10901016, z: 0}
+  m_Size: {x: 1, y: 0.51708245, z: 1}
+  m_Center: {x: 0, y: -0.023438357, z: 0}
 --- !u!114 &3267986177360491712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -563,7 +564,7 @@ MonoBehaviour:
   m_MaximumSteerAngle: 25
   m_SteerHelper: 1
   m_TractionControl: 1
-  m_FullTorqueOverAllWheels: 300
+  m_FullTorqueOverAllWheels: 365
   m_ReverseTorque: 150
   m_MaxHandbrakeTorque: 100000000
   m_Downforce: 100
@@ -2198,4 +2199,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ac95f58140813942b7d9b5614501b45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 0
