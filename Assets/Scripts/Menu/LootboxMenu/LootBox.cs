@@ -16,10 +16,9 @@ public class LootBox : MonoBehaviour
     [SerializeField] private int minDropGem = 1;
     [SerializeField] private int maxDropGem = 10;
 
+    [SerializeField] private int cost;
 
-    private void Start()
-    {
-    }
+    public int Cost => cost;
 
     public void GetReward(out int coinValue, out int gemValue, out ÑollectibleSO collectibleItem)
     {
@@ -47,7 +46,4 @@ public class LootBox : MonoBehaviour
         if (rand <= coinDropChance)
             coinValue = Random.Range(minDropCoin, maxDropCoin);
     }
-
-
-
 }

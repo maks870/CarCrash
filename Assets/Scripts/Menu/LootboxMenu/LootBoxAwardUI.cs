@@ -13,15 +13,6 @@ public class LootBoxAwardUI : MonoBehaviour
     private List<GameObject> awards = new List<GameObject>();
     private int currentAward = 0;
 
-    void Start()
-    {
-    }
-
-    void Update()
-    {
-
-    }
-
     public void SwitchAward()
     {
         if (currentAward != 0)
@@ -49,7 +40,6 @@ public class LootBoxAwardUI : MonoBehaviour
             awards.Add(gemAward);
         }
 
-
         collectbileAward.GetComponent<Image>().sprite = collectibleItem.Sprite;
         awards.Add(collectbileAward);
          
@@ -57,7 +47,4 @@ public class LootBoxAwardUI : MonoBehaviour
 
         SwitchAward();
     }
-
-
-
 }

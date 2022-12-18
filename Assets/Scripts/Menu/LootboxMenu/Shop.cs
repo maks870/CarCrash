@@ -7,11 +7,23 @@ public class Shop : MonoBehaviour
 {
     [SerializeField] private List<LootBox> lootboxes = new List<LootBox>();
     [SerializeField] private LootBoxAwardUI lootboxAwardUI;
+    [SerializeField] private EarningManagerUI earningManagerUI;
 
+    private void Start()
+    {
 
+    }
 
     public void OpenLootbox(int lootboxIndex)
     {
+        LootBox lootbox = lootboxes[lootboxIndex];
+
+        if (!EarningManager.SpendGem(lootbox.Cost))
+        {
+            earningManagerUI.ShowLackGemsWarning();
+            return;
+        }
+
         int coinValue;
         int gemValue;
         ÑollectibleSO collectibleItem;
