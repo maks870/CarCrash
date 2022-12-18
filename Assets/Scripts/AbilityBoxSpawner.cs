@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LootboxSpawner : MonoBehaviour
+public class AbilityBoxSpawner : MonoBehaviour
 {
     [SerializeField] private float spawnDelay;
     [SerializeField] private GameObject prefab;
-    private LootBox lootbox;
+    private AbilityBox abilityBox;
 
     void Start()
     {
-        lootbox = Instantiate(prefab, transform).GetComponent<LootBox>();
-        lootbox.Spawner = this;
+        abilityBox = Instantiate(prefab, transform).GetComponent<AbilityBox>();
+        abilityBox.Spawner = this;
     }
 
     public void PickUpLootbox()
@@ -21,8 +21,8 @@ public class LootboxSpawner : MonoBehaviour
 
     IEnumerator SpawnTimer(float time)
     {
-        lootbox.Hide();
+        abilityBox.Hide();
         yield return new WaitForSeconds(time);
-        lootbox.Show();
+        abilityBox.Show();
     }
 }
