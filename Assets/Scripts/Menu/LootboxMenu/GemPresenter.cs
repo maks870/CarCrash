@@ -70,13 +70,13 @@ public class GemPresenter : MonoBehaviour
         }
     }
 
-    private void Exchange()
+    public void Exchange()
     {
         if (EarningManager.SpendCoin(exchangeCoinCost))
             EarningManager.AddGem(exchangeGemReward);
     }
 
-    private void ShowAd(int AdIndex)
+    public void ShowAd(int AdIndex)
     {
         YandexGame.RewVideoShow(AdIndex);
     }
