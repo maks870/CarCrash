@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LootBox : MonoBehaviour
+public class AbilityBox : MonoBehaviour
 {
     [SerializeField] private List<AbilityObj> ablitities = new List<AbilityObj>();
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private MeshRenderer meshRenderer;
     private BoxCollider boxCollider;
-    private LootboxSpawner spawner;
+    private AbilityBoxSpawner spawner;
 
     private void Awake()
     {
         boxCollider = GetComponent<BoxCollider>();
     }
 
-    public LootboxSpawner Spawner { set => spawner = value; }
+    public AbilityBoxSpawner Spawner { set => spawner = value; }
 
     private void OnTriggerEnter(Collider other)
     {

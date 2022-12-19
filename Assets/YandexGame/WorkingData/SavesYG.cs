@@ -1,4 +1,6 @@
 ﻿
+using System.Collections.Generic;
+
 namespace YG
 {
     [System.Serializable]
@@ -13,5 +15,13 @@ namespace YG
         public int money = 1;
         public string newPlayerName = "Hello!";
         public bool[] openLevels = new bool[3];
+
+
+        public int coins = 0;
+        public int gems = 0;
+        public List<string> collectedItems = new List<string>();
+
+        public int mediumGemAdCount;
+        public int bigGemAdCount;
     }
 }
