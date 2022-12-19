@@ -1,6 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using YG;
+
+enum AdvertisementType
+{
+    SingleAd = 1,
+    DoubleAd = 2
+}
 
 public class GemPresenter : MonoBehaviour
 {
@@ -8,41 +15,69 @@ public class GemPresenter : MonoBehaviour
     [SerializeField] private int exchangeGemReward = 1;
     [SerializeField] private int smallAdReward = 1;
     [SerializeField] private int mediumAdReward = 2;
-    [SerializeField] private int bigAdReward = 3;
+    [SerializeField] private int mediumAdViews = 2;
     [SerializeField] private GemPresenterUI gemPresenterUI;
 
+    private void OnEnable()
+    {
+        YandexGame.RewardVideoEvent += Rewarded;
+        YandexGame.GetDataEvent += LoadUI;
+    }
+
+    // Отписываемся от события открытия рекламы в OnDisable
+    private void OnDisable()
+    {
+        YandexGame.RewardVideoEvent -= Rewarded;
+        YandexGame.GetDataEvent -= LoadUI;
+    }
 
     void Start()
     {
-
+        if (YandexGame.SDKEnabled == true)
+        {
+            LoadUI();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void LoadUI()
     {
-
+        gemPresenterUI.LoadValuesUI(exchangeCoinCost, exchangeGemReward, smallAdReward, mediumAdReward, mediumAdViews);
     }
 
-    private void Exchange()
+    private void Rewarded(int index)
+    {
+        AdvertisementType type = (AdvertisementType)index;
+        switch (type)
+        {
+            case AdvertisementType.SingleAd:
+                EarningManager.AddGem(smallAdReward);
+                break;
+
+            case AdvertisementType.DoubleAd:
+                if (YandexGame.savesData.mediumGemAdViewed < mediumAdViews - 1)
+                {
+                    YandexGame.savesData.mediumGemAdViewed++;
+                    YandexGame.SaveProgress();
+                }
+                else
+                {
+                    YandexGame.savesData.mediumGemAdViewed = 0;
+                    EarningManager.AddGem(mediumAdReward);
+                };
+
+                gemPresenterUI.UpdateDoubleAdUI();
+                break;
+        }
+    }
+
+    public void Exchange()
     {
         if (EarningManager.SpendCoin(exchangeCoinCost))
             EarningManager.AddGem(exchangeGemReward);
     }
 
-    private void ShowSmallAd()
+    public void ShowAd(int AdIndex)
     {
-        //пок5азываем рекламу после чего даются деньги
+        YandexGame.RewVideoShow(AdIndex);
     }
-
-    private void ShowMediumAd()
-    {
-
-    }
-
-    private void ShowBigAd()
-    {
-
-    }
-
-
 }

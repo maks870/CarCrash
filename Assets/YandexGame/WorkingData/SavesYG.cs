@@ -21,7 +21,6 @@ namespace YG
         public int gems = 0;
         public List<string> collectedItems = new List<string>();
 
-        public int mediumGemAdCount;
-        public int bigGemAdCount;
+        public int mediumGemAdViewed = 0;
     }
 }
