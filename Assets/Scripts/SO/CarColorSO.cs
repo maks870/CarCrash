@@ -5,9 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CarCollectible", menuName = "ScriptableObject/Model/CarCollectible")]
 public class CarColorSO : ÑollectibleSO
 {
-    [SerializeField] private List<Material> materials = new List<Material>();
+    [SerializeField] private Texture2D texture;
     [SerializeField] private int cost;
 
     public int Cost => cost;
-    public List<Material> Materials => materials;
+    public Texture2D Texture => texture;
 }
