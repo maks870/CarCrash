@@ -16,7 +16,6 @@ public static class EarningManager
     public static void AddCoin(int count)
     {
         YandexGame.savesData.coins += count;
-        YandexGame.SaveProgress();
         UpdateEarningsUI();
     }
 
@@ -25,10 +24,12 @@ public static class EarningManager
         int balance = YandexGame.savesData.coins - count;
 
         if (balance < 0)
+        {
+            earningManagerUI.ShowLackCoinsWarning();
             return false;
+        }
 
         YandexGame.savesData.coins = balance;
-        YandexGame.SaveProgress();
         UpdateEarningsUI();
         return true;
     }
@@ -36,7 +37,6 @@ public static class EarningManager
     public static void AddGem(int count)
     {
         YandexGame.savesData.gems += count;
-        YandexGame.SaveProgress();
         UpdateEarningsUI();
     }
 
@@ -45,10 +45,13 @@ public static class EarningManager
         int balance = YandexGame.savesData.gems - count;
 
         if (balance < 0)
+
+        {
+            earningManagerUI.ShowLackGemsWarning();
             return false;
+        }
 
         YandexGame.savesData.coins += balance;
-        YandexGame.SaveProgress();
         UpdateEarningsUI();
         return true;
     }

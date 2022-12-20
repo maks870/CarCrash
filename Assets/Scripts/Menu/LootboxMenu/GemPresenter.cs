@@ -63,6 +63,7 @@ public class GemPresenter : MonoBehaviour
                 {
                     YandexGame.savesData.mediumGemAdViewed = 0;
                     EarningManager.AddGem(mediumAdReward);
+                    YandexGame.SaveProgress();
                 };
 
                 gemPresenterUI.UpdateDoubleAdUI();
@@ -74,6 +75,8 @@ public class GemPresenter : MonoBehaviour
     {
         if (EarningManager.SpendCoin(exchangeCoinCost))
             EarningManager.AddGem(exchangeGemReward);
+
+        YandexGame.SaveProgress();
     }
 
     public void ShowAd(int AdIndex)

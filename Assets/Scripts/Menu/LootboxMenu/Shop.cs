@@ -19,10 +19,7 @@ public class Shop : MonoBehaviour
         LootBox lootbox = lootboxes[lootboxIndex];
 
         if (!EarningManager.SpendGem(lootbox.Cost))
-        {
-            earningManagerUI.ShowLackGemsWarning();
             return;
-        }
 
         int coinValue;
         int gemValue;
