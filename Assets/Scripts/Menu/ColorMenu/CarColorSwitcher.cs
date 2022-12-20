@@ -104,6 +104,6 @@ public class CarColorSwitcher : MonoBehaviour
     public void SetCurrentRenderer(ÑollectibleSO collectible)
     {
         CarColorSO carColorCollectible = (CarColorSO)collectible;
-        currentRenderer.sharedMaterials = carColorCollectible.Materials.ToArray();
+        currentRenderer.material.mainTexture = carColorCollectible.Texture;
     }
 }
