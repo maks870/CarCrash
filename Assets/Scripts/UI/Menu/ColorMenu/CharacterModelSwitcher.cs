@@ -5,11 +5,11 @@ using YG;
 
 public class CharacterModelSwitcher : MonoBehaviour
 {
-    [SerializeField] private CharacterTabSwitcher tabSwitcher;
     [SerializeField] private GameObject currentCharacterObject;
     [SerializeField] private GameObject button;
     [SerializeField] private List<ButtonCollectibleUI> buttons = new List<ButtonCollectibleUI>();
     [SerializeField] private List<CharacterModelSO> charactersSO = new List<CharacterModelSO>();
+    private CharacterTabSwitcher tabSwitcher;
     private CollectibleSO currentCharacter;
 
     private bool isButtonsCreated = false;
