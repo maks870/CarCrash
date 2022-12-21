@@ -32,7 +32,7 @@ namespace EasyUI.Tabs
 #endif
 
         private Sprite tabSpriteActive, tabSpriteInactive;
-        private int current, previous;
+        [SerializeField]private int current, previous;
 
         private Transform parentBtns, parentContent;
 
@@ -85,6 +85,9 @@ namespace EasyUI.Tabs
         {
             if (current != tabIndex)
             {
+                ScrollRect scrollRect = tabContent[current].GetComponent<ScrollRect>();
+                scrollRect.horizontalNormalizedPosition = 0;
+
                 if (OnTabChange != null)
                     OnTabChange.Invoke(tabIndex);
 
@@ -149,6 +152,5 @@ namespace EasyUI.Tabs
 
         }
 #endif
-
     }
 }
