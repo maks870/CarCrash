@@ -20,6 +20,9 @@ namespace YG
         public int coins = 0;
         public int gems = 0;
         public List<string> collectedItems = new List<string>();
+        public string currentCharacterItem;
+        public string currentCarColorItem;
+        public string currentCarModelItem;
 
         public int mediumGemAdViewed = 0;
     }

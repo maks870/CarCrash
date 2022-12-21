@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum Quality
 {
@@ -9,11 +10,11 @@ public enum Quality
     legendary
 
 }
-public class ÑollectibleSO : ScriptableObject
+
+public abstract class CollectibleSO : ScriptableObject
 {
-    [SerializeField] private Sprite sprite;
     [SerializeField] private Quality quality;
 
+    public virtual string Name { get; }
     public Quality Quality => quality;
-    public Sprite Sprite => sprite;
 }

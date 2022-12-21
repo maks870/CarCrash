@@ -23,7 +23,7 @@ public class Shop : MonoBehaviour
 
         int coinValue;
         int gemValue;
-        ÑollectibleSO collectibleItem;
+        CollectibleSO collectibleItem;
 
         lootboxes[lootboxIndex].GetReward(out coinValue, out gemValue, out collectibleItem);
 
@@ -33,7 +33,7 @@ public class Shop : MonoBehaviour
         if (gemValue != 0)
             YandexGame.savesData.gems += gemValue;
 
-        YandexGame.savesData.collectedItems.Add(collectibleItem.Sprite.name);
+        YandexGame.savesData.collectedItems.Add(collectibleItem.Name);
         YandexGame.SaveProgress();
 
         lootboxAwardUI.ShowAwards(coinValue, gemValue, collectibleItem);

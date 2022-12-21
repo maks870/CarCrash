@@ -7,7 +7,7 @@ public class MeshSwitcher : MonoBehaviour
     [SerializeField] private MeshFilter currentMesh;
     [SerializeField] private MeshRenderer currentRenderer;
 
-    public void UpdateMesh(ÑollectibleSO model)
+    public void UpdateMesh(CollectibleSO model)
     {
 
     }

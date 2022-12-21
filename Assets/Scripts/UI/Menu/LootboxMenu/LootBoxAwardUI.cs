@@ -24,7 +24,7 @@ public class LootBoxAwardUI : MonoBehaviour
         awards[currentAward].SetActive(true);
     }
 
-    public void ShowAwards(int coinValue, int gemValue, ÑollectibleSO collectibleItem)
+    public void ShowAwards(int coinValue, int gemValue, CollectibleSO collectibleItem)
     {
         awards.Clear();
 
@@ -40,9 +40,10 @@ public class LootBoxAwardUI : MonoBehaviour
             awards.Add(gemAward);
         }
 
-        collectbileAward.GetComponent<Image>().sprite = collectibleItem.Sprite;
+        CharacterModelSO characterCollectible = (CharacterModelSO)collectibleItem;
+        collectbileAward.GetComponent<Image>().sprite = characterCollectible.Sprite;
         awards.Add(collectbileAward);
-         
+
         currentAward = 0;
 
         SwitchAward();

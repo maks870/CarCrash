@@ -25,15 +25,15 @@ public class PurchaseColor : MonoBehaviour
         if (!EarningManager.SpendCoin(currentCarColorSO.Cost))
             return;
 
-        YandexGame.savesData.collectedItems.Add(currentCarColorSO.Sprite.name);
+        YandexGame.savesData.collectedItems.Add(currentCarColorSO.Name);
         YandexGame.SaveProgress();
         carColorSwitcher.LoadCarColorsSO();
         carColorSwitcher.SetCurrentRenderer(currentCarColorSO);
     }
 
-    public void ShowPurchaseButton(ÑollectibleSO collectible)
+    public void ShowPurchaseButton(CarColorSO collectible)
     {
-        currentCarColorSO = (CarColorSO)collectible;
+        currentCarColorSO = collectible;
         costText.text = currentCarColorSO.Cost.ToString();
         buttonPurchase.onClick.RemoveAllListeners();
         buttonPurchase.onClick.AddListener(BuyColor);
