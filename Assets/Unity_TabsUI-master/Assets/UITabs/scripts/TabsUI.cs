@@ -17,6 +17,9 @@ namespace EasyUI.Tabs
 
         [System.Serializable] public class TabsUIEvent : UnityEvent<int> { }
 
+        [SerializeField] private Transform buttons;
+        [SerializeField] private Transform contents;
+
         [Header("Tabs customization :")]
         //[SerializeField] private Color themeColor = Color.gray ;
         [SerializeField] private float tabSpacing = 2f;
@@ -32,9 +35,7 @@ namespace EasyUI.Tabs
 #endif
 
         private Sprite tabSpriteActive, tabSpriteInactive;
-        [SerializeField]private int current, previous;
-
-        private Transform parentBtns, parentContent;
+        private int current, previous;
 
         private int tabBtnsNum, tabContentNum;
 
@@ -46,10 +47,10 @@ namespace EasyUI.Tabs
 
         private void GetTabBtns()
         {
-            parentBtns = transform.GetChild(0);
-            parentContent = transform.GetChild(1);
-            tabBtnsNum = parentBtns.childCount;
-            tabContentNum = parentContent.childCount;
+            //buttons = transform.GetChild(0);
+            //contents = transform.GetChild(1);
+            tabBtnsNum = buttons.childCount;
+            tabContentNum = contents.childCount;
 
             if (tabBtnsNum != tabContentNum)
             {
@@ -63,12 +64,12 @@ namespace EasyUI.Tabs
             tabContent = new GameObject[tabBtnsNum];
             for (int i = 0; i < tabBtnsNum; i++)
             {
-                tabBtns[i] = parentBtns.GetChild(i).GetComponent<TabButtonUI>();
+                tabBtns[i] = buttons.GetChild(i).GetComponent<TabButtonUI>();
                 int i_copy = i;
                 tabBtns[i].uiButton.onClick.RemoveAllListeners();
                 tabBtns[i].uiButton.onClick.AddListener(() => OnTabButtonClicked(i_copy));
 
-                tabContent[i] = parentContent.GetChild(i).gameObject;
+                tabContent[i] = contents.GetChild(i).gameObject;
                 tabContent[i].SetActive(false);
             }
 
@@ -126,24 +127,24 @@ namespace EasyUI.Tabs
 
         public void Validate(TabsType type)
         {
-            parentBtns = transform.GetChild(0);
-            parentContent = transform.GetChild(1);
-            tabBtnsNum = parentBtns.childCount;
-            tabContentNum = parentContent.childCount;
+            buttons = transform.GetChild(0);
+            //contents = transform.GetChild(1);
+            tabBtnsNum = buttons.childCount;
+            tabContentNum = contents.childCount;
 
             tabBtns = new TabButtonUI[tabBtnsNum];
             tabContent = new GameObject[tabBtnsNum];
 
             for (int i = 0; i < tabBtnsNum; i++)
             {
-                tabBtns[i] = parentBtns.GetChild(i).GetComponent<TabButtonUI>();
-                tabContent[i] = parentContent.GetChild(i).gameObject;
+                tabBtns[i] = buttons.GetChild(i).GetComponent<TabButtonUI>();
+                tabContent[i] = contents.GetChild(i).gameObject;
             }
 
             //  UpdateThemeColor (themeColor) ;
 
             if (layoutGroup == null)
-                layoutGroup = parentBtns.GetComponent<LayoutGroup>();
+                layoutGroup = buttons.GetComponent<LayoutGroup>();
 
             if (type == TabsType.Horizontal)
                 ((HorizontalLayoutGroup)layoutGroup).spacing = tabSpacing;
