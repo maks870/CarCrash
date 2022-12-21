@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CarColorCollectible", menuName = "ScriptableObject/Color/CarColorCollectible")]
+[CreateAssetMenu(fileName = "CarColorCollectible", menuName = "ScriptableObject/Collectible/CarColorCollectible")]
 public class CarColorSO : CollectibleSO
 {
     [SerializeField] private Texture2D texture;
