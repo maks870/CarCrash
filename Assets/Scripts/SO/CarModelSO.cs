@@ -6,9 +6,9 @@ using UnityEngine;
 public class CarModelSO : CollectibleSO
 {
     [SerializeField] private Sprite sprite;
-    [SerializeField] private MeshFilter meshFilter;
+    [SerializeField] private Mesh mesh;
 
     public override string Name { get => sprite.name; }
     public Sprite Sprite => sprite;
-    public MeshFilter MeshFilter => meshFilter;
+    public Mesh Mesh => mesh;
 }

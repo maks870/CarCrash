@@ -100,7 +100,7 @@ public class CarModelSwitcher : MonoBehaviour
 
     public void SetCurrentModel(CarModelSO characterCollectible)
     {
-        currentMeshFilter.mesh = characterCollectible.MeshFilter.mesh;
+        currentMeshFilter.mesh = characterCollectible.Mesh;
         currentCarModel = characterCollectible;
     }
 }

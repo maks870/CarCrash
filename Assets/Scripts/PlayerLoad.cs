@@ -45,6 +45,6 @@ public class PlayerLoad : MonoBehaviour
 
         currentCharacter = characterItem.Prefab;
         currentCarColor.material.mainTexture = carColorItem.Texture;
-        currentCarModel.mesh = carModelItem.MeshFilter.mesh;
+        currentCarModel.mesh = carModelItem.Mesh;
     }
 }
