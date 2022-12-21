@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: CharacterModelCollectible 1
   m_EditorClassIdentifier: 
   quality: 0
-  sprite: {fileID: 0}
-  prefab: {fileID: 0}
+  sprite: {fileID: 21300000, guid: bb55f3e90a04e584eb8fabef4ea2370d, type: 3}
+  prefab: {fileID: 919132149155446097, guid: 0d0a8e4816792fc439c665770418893b, type: 3}

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: CarModelCollectible
   m_EditorClassIdentifier: 
   quality: 0
-  sprite: {fileID: 0}
-  prefab: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 1bb7bfc338ff3ff49aeffacb6fc23458, type: 3}
+  prefab: {fileID: 3267986177610925930, guid: 2b476568fc8796e449d5aabb8168b58c, type: 3}
