@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class CharacterTabSwitcher : MonoBehaviour
 {
+
     [SerializeField] private List<CharacterModelSwitcher> switchers = new List<CharacterModelSwitcher>();
+
+    private void Start()
+    {
+        CharacterModelSwitcher[] arraySwitchers = GetComponentsInChildren<CharacterModelSwitcher>();
+        switchers.AddRange(arraySwitchers);
+    }
 
     public void UpdateCharacterSwitchers()
     {
