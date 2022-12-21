@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657767, g: 0.49641216, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657737, g: 0.49641168, b: 0.5748162, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1514,7 +1514,7 @@ PrefabInstance:
     - target: {fileID: 4745228250676651849, guid: da3ab22ed879bc246a56307af2df9b52,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4745228250676651849, guid: da3ab22ed879bc246a56307af2df9b52,
         type: 3}
@@ -1544,7 +1544,7 @@ PrefabInstance:
     - target: {fileID: 4745228250676651849, guid: da3ab22ed879bc246a56307af2df9b52,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 56.1799
+      value: 61.3884
       objectReference: {fileID: 0}
     - target: {fileID: 4745228250676651849, guid: da3ab22ed879bc246a56307af2df9b52,
         type: 3}
@@ -1589,7 +1589,7 @@ PrefabInstance:
     - target: {fileID: 4745228250676651849, guid: da3ab22ed879bc246a56307af2df9b52,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -3.9000244
+      value: -6.5043
       objectReference: {fileID: 0}
     - target: {fileID: 4745228250676651849, guid: da3ab22ed879bc246a56307af2df9b52,
         type: 3}
@@ -1605,6 +1605,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4745228250676651851, guid: da3ab22ed879bc246a56307af2df9b52,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4745228250676651851, guid: da3ab22ed879bc246a56307af2df9b52,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4745228250676651851, guid: da3ab22ed879bc246a56307af2df9b52,
+        type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da3ab22ed879bc246a56307af2df9b52, type: 3}
@@ -3086,7 +3101,7 @@ PrefabInstance:
     - target: {fileID: 4076675426975417619, guid: 601cd46897c309a4c8acc7a101bb02f0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4076675426975417619, guid: 601cd46897c309a4c8acc7a101bb02f0,
         type: 3}
@@ -7126,7 +7141,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bbdc216fe6fd20747ab0c18f7ad2410d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5829fa89c5aa010418d8332bcec76585, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
