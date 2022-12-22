@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d7053dfac59d234e885eb0ebd8275fe, type: 3}
-  m_Name: CharacterModelCollectible 1
+  m_Name: CharacterModelCollectible 2
   m_EditorClassIdentifier: 
   quality: 0
-  sprite: {fileID: 21300000, guid: bb55f3e90a04e584eb8fabef4ea2370d, type: 3}
-  prefab: {fileID: 919132149155446097, guid: e001f2e7150d97641890de125834bc22, type: 3}
+  sprite: {fileID: 21300000, guid: f3bb8034242f03a48bf8cad3d4f05a05, type: 3}
+  prefab: {fileID: 919132149155446097, guid: 158fef1a958a5cb4587178690a8e7d47, type: 3}
