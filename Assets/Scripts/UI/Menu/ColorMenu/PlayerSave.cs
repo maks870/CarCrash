@@ -25,16 +25,17 @@ public class PlayerSave : MonoBehaviour
         if (YandexGame.SDKEnabled == true)
             InitializeSO();
     }
-    private void InitializeSO()
-    {
-        playerLoad.LoadPlayerItems();
-        SetSavedSO();
-    }
 
     private void SetSavedSO()
     {
         characterTabSwitcher.SetSavedCharacter(playerLoad.CurrentCharacter);
         carTabSwitcher.SetSavedCar(playerLoad.CurrentCarColor, playerLoad.CurrentCarModel);
+    }
+
+    public void InitializeSO()
+    {
+        playerLoad.LoadPlayerItems();
+        SetSavedSO();
     }
 
     public void SavePlayer()

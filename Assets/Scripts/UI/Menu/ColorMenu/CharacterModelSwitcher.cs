@@ -32,7 +32,7 @@ public class CharacterModelSwitcher : MonoBehaviour
     void Start()
     {
         if (YandexGame.SDKEnabled == true)
-            LoadCharactersSO();
+            InitializeUI();
     }
 
     private void InitializeUI()
@@ -63,7 +63,8 @@ public class CharacterModelSwitcher : MonoBehaviour
             buttons[i].ClosedImage.SetActive(false);
             buttons[i].CollectibleSO = openCharacters[i];
             buttons[i].Button.onClick.RemoveAllListeners();
-            buttons[i].Button.onClick.AddListener(() => SetCurrentCharacter((CharacterModelSO)buttons[i].CollectibleSO));
+            CharacterModelSO characterModel = (CharacterModelSO)buttons[i].CollectibleSO;
+            buttons[i].Button.onClick.AddListener(() => SetCurrentCharacter(characterModel));
         }
 
         for (int i = 0; i < closedCharacters.Count; i++)
@@ -79,6 +80,7 @@ public class CharacterModelSwitcher : MonoBehaviour
     public void LoadCharactersSO()
     {
         openedCharacters.Clear();
+        closedCharacters.Clear();
         List<string> collectedItems = YandexGame.savesData.collectedItems;
         closedCharacters.AddRange(charactersSO);
 

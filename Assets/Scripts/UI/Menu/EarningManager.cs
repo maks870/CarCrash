@@ -5,6 +5,8 @@ public static class EarningManager
 {
     private static EarningManagerUI earningManagerUI;
 
+    public static Action lackCoins;
+    public static Action lackGems;
     public static Action<int, int> changeEarnings;
 
     private static void UpdateEarningsUI()
@@ -25,7 +27,7 @@ public static class EarningManager
 
         if (balance < 0)
         {
-            earningManagerUI.ShowLackCoinsWarning();
+            lackCoins.Invoke();
             return false;
         }
 
@@ -45,9 +47,8 @@ public static class EarningManager
         int balance = YandexGame.savesData.gems - count;
 
         if (balance < 0)
-
         {
-            earningManagerUI.ShowLackGemsWarning();
+            lackGems.Invoke();
             return false;
         }
 

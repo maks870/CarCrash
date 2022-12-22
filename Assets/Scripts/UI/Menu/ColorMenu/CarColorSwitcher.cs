@@ -71,7 +71,8 @@ public class CarColorSwitcher : MonoBehaviour
             buttons[i].ClosedImage.SetActive(false);
             buttons[i].CollectibleSO = openColors[i];
             buttons[i].Button.onClick.RemoveAllListeners();
-            buttons[i].Button.onClick.AddListener(() => SetCurrentColor((CarColorSO)buttons[i].CollectibleSO));
+            CarColorSO carColor = (CarColorSO)buttons[i].CollectibleSO;
+            buttons[i].Button.onClick.AddListener(() => SetCurrentColor(carColor));
             buttons[i].Button.onClick.AddListener(() => purchaseColor.HidePurchaseButton());
         }
 
@@ -82,13 +83,15 @@ public class CarColorSwitcher : MonoBehaviour
             buttons[j].ClosedImage.SetActive(true);
             buttons[j].CollectibleSO = closedColors[i];
             buttons[j].Button.onClick.RemoveAllListeners();
-            buttons[j].Button.onClick.AddListener(() => purchaseColor.ShowPurchaseButton((CarColorSO)buttons[j].CollectibleSO));
+            CarColorSO carColor = (CarColorSO)buttons[i].CollectibleSO;
+            buttons[j].Button.onClick.AddListener(() => purchaseColor.ShowPurchaseButton(carColor));
         }
     }
 
     public void LoadCarColorsSO()
     {
         openedCarColors.Clear();
+        closedCarColors.Clear();
         List<string> collectedItems = YandexGame.savesData.collectedItems;
         closedCarColors.AddRange(carColorsSO);
 

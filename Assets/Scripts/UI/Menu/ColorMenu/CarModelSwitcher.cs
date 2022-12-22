@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,8 +17,8 @@ public class CarModelSwitcher : MonoBehaviour
 
     private bool isFirstLoad = true;
     private CollectibleSO currentCarModel;
-    private List<CarModelSO> openedCharacters = new List<CarModelSO>();
-    private List<CarModelSO> closedCharacters = new List<CarModelSO>();
+    private List<CarModelSO> openedCarModels = new List<CarModelSO>();
+    private List<CarModelSO> closedCarModels = new List<CarModelSO>();
 
     public CollectibleSO CurrentCarModel { get => currentCarModel; }
     public GameObject CarStatWindow => carStatWindow;
@@ -38,7 +37,7 @@ public class CarModelSwitcher : MonoBehaviour
     void Start()
     {
         if (YandexGame.SDKEnabled == true)
-            LoadCarModelsSO();
+            InitializeUI();
     }
 
     private void InitializeUI()
@@ -69,10 +68,10 @@ public class CarModelSwitcher : MonoBehaviour
             buttons[i].ClosedImage.SetActive(false);
             buttons[i].CollectibleSO = openCarModels[i];
             buttons[i].Button.onClick.RemoveAllListeners();
-            buttons[i].Button.onClick.AddListener(() => SetCurrentModel((CarModelSO)buttons[i].CollectibleSO));
-            buttons[i].Button.onClick.AddListener(() => UpdateCarStatWindow((CarModelSO)buttons[i].CollectibleSO));
+            CarModelSO carModel = (CarModelSO)buttons[i].CollectibleSO;
+            buttons[i].Button.onClick.AddListener(() => SetCurrentModel(carModel));
+            buttons[i].Button.onClick.AddListener(() => UpdateCarStatWindow(carModel));
         }
-
         for (int i = 0; i < closedCarModels.Count; i++)
         {
             int j = i + openCarModels.Count;
@@ -80,24 +79,24 @@ public class CarModelSwitcher : MonoBehaviour
             buttons[j].ClosedImage.SetActive(true);
             buttons[j].CollectibleSO = closedCarModels[i];
             buttons[j].Button.onClick.RemoveAllListeners();
-            buttons[i].Button.onClick.AddListener(() => UpdateCarStatWindow((CarModelSO)buttons[i].CollectibleSO));
         }
     }
 
     public void LoadCarModelsSO()
     {
-        openedCharacters.Clear();
+        openedCarModels.Clear();
+        closedCarModels.Clear();
         List<string> collectedItems = YandexGame.savesData.collectedItems;
-        closedCharacters.AddRange(carModelsSO);
+        closedCarModels.AddRange(carModelsSO);
 
         foreach (string itemName in collectedItems)
         {
-            CarModelSO collectible = closedCharacters.Find(item => item.Name == itemName);
-            openedCharacters.Add(collectible);
-            closedCharacters.Remove(collectible);
+            CarModelSO collectible = closedCarModels.Find(item => item.Name == itemName);
+            openedCarModels.Add(collectible);
+            closedCarModels.Remove(collectible);
         }
 
-        UpdateUI(openedCharacters, closedCharacters);
+        UpdateUI(openedCarModels, closedCarModels);
     }
     public void UpdateCarStatWindow(CarModelSO carModelSO)
     {
