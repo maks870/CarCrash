@@ -12,7 +12,7 @@ public class CarModelSO : CollectibleSO
 
     public float Acceleration => acceleration;
     public float Handleability => handleability;
-    public override string Name { get => sprite.name; }
+    public override string Name { get => name; }
     public Sprite Sprite => sprite;
     public Mesh Mesh => mesh;
 }
