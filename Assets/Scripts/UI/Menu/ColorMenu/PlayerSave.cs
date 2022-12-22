@@ -5,8 +5,6 @@ using YG;
 
 public class PlayerSave : MonoBehaviour
 {
-    [SerializeField] private CarModelSwitcher carModelSwitcher;
-    [SerializeField] private CarColorSwitcher carColorSwitcher;
     [SerializeField] private CarTabSwitcher carTabSwitcher;
     [SerializeField] private CharacterTabSwitcher characterTabSwitcher;
 
