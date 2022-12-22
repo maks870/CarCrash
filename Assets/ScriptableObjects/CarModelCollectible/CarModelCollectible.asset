@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: CarModelCollectible
   m_EditorClassIdentifier: 
   quality: 0
-  sprite: {fileID: 21300000, guid: 1bb7bfc338ff3ff49aeffacb6fc23458, type: 3}
-  mesh: {fileID: 2345070659363173187, guid: 6de8849b75041a4499813bd5f5ce5fa6, type: 3}
+  acceleration: 40
+  handleability: 40
+  sprite: {fileID: 21300000, guid: bb55f3e90a04e584eb8fabef4ea2370d, type: 3}
+  mesh: {fileID: -2144341515486441058, guid: 1ef3f81c6c1120b4eaf84d2ad8c86acf, type: 3}
