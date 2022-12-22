@@ -17,7 +17,6 @@ public class CarColorSwitcher : MonoBehaviour
     private bool isFirstLoad = true;
     private List<CarColorSO> openedCarColors = new List<CarColorSO>();
     private List<CarColorSO> closedCarColors = new List<CarColorSO>();
-
     public CollectibleSO CurrentCarColor { get => currentCarColor; }
 
     private void OnEnable()

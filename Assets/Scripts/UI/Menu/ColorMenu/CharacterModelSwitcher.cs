@@ -15,7 +15,6 @@ public class CharacterModelSwitcher : MonoBehaviour
     private bool isFirstLoad = true;
     public CharacterTabSwitcher TabSwitcher { set => tabSwitcher = value; }
     public CollectibleSO CurrentCharacter { get => currentCharacter; }
-
     private List<CharacterModelSO> openedCharacters = new List<CharacterModelSO>();
     private List<CharacterModelSO> closedCharacters = new List<CharacterModelSO>();
 
@@ -59,28 +58,25 @@ public class CharacterModelSwitcher : MonoBehaviour
         isFirstLoad = false;
     }
 
-    private void UpdateUI(List<CharacterModelSO> openColors, List<CharacterModelSO> closedColors)
+    private void UpdateUI(List<CharacterModelSO> openCharacters, List<CharacterModelSO> closedCharacters)
     {
-        for (int i = 0; i < openColors.Count; i++)
+        for (int i = 0; i < openCharacters.Count; i++)
         {
-            Debug.Log(i + "i");
-            buttons[i].Image.sprite = openColors[i].Sprite;
+            buttons[i].Image.sprite = openCharacters[i].Sprite;
             buttons[i].ClosedImage.SetActive(false);
-            buttons[i].CollectibleSO = openColors[i];
+            buttons[i].CollectibleSO = openCharacters[i];
             buttons[i].Button.onClick.RemoveAllListeners();
             buttons[i].Button.onClick.AddListener(() => SetCurrentModel((CharacterModelSO)buttons[i].CollectibleSO));
         }
-        Debug.Log(openColors.Count);
-        for (int i = 0; i < closedColors.Count; i++)
+
+        for (int i = 0; i < closedCharacters.Count; i++)
         {
-            Debug.Log(j = "j");
-            int j = i + openColors.Count;
-            buttons[j].Image.sprite = closedColors[i].Sprite;
+            int j = i + openCharacters.Count;
+            buttons[j].Image.sprite = closedCharacters[i].Sprite;
             buttons[j].ClosedImage.SetActive(true);
-            buttons[j].CollectibleSO = closedColors[i];
+            buttons[j].CollectibleSO = closedCharacters[i];
             buttons[j].Button.onClick.RemoveAllListeners();
         }
-        Debug.Log(closedColors.Count);
     }
 
     public void LoadCharactersSO()

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using YG;
 
 public class CarModelSwitcher : MonoBehaviour
@@ -8,16 +9,20 @@ public class CarModelSwitcher : MonoBehaviour
     [SerializeField] private MeshFilter currentMeshFilter;
     [SerializeField] private GameObject button;
     [SerializeField] private List<ButtonCollectibleUI> buttons = new List<ButtonCollectibleUI>();
+    [SerializeField] private GameObject carStatWindow;
+    [SerializeField] private float maxAcceleration;
+    [SerializeField] private float maxHandleability;
+    [SerializeField] private Image accelerationImage;
+    [SerializeField] private Image handleability;
     [SerializeField] private List<CarModelSO> carModelsSO = new List<CarModelSO>();
 
-    private CollectibleSO currentCarModel;
-
     private bool isFirstLoad = true;
-
+    private CollectibleSO currentCarModel;
     private List<CarModelSO> openedCharacters = new List<CarModelSO>();
     private List<CarModelSO> closedCharacters = new List<CarModelSO>();
 
     public CollectibleSO CurrentCarModel { get => currentCarModel; }
+    public GameObject CarStatWindow => carStatWindow;
 
     private void OnEnable()
     {
@@ -62,25 +67,33 @@ public class CarModelSwitcher : MonoBehaviour
 
         isFirstLoad = false;
     }
-
-    private void UpdateUI(List<CarModelSO> openColors, List<CarModelSO> closedColors)
+    private void UpdateCarStatWindow(CarModelSO carModelSO)
     {
-        for (int i = 0; i < openColors.Count; i++)
+        float currentAccel = carModelSO.Acceleration / maxAcceleration;
+        float currentHandleability = carModelSO.Handleability / maxHandleability;
+        accelerationImage.fillAmount = currentAccel;
+        handleability.fillAmount = currentHandleability;
+    }
+    private void UpdateUI(List<CarModelSO> openCarModels, List<CarModelSO> closedCarModels)
+    {
+        for (int i = 0; i < openCarModels.Count; i++)
         {
-            buttons[i].Image.sprite = openColors[i].Sprite;
+            buttons[i].Image.sprite = openCarModels[i].Sprite;
             buttons[i].ClosedImage.SetActive(false);
-            buttons[i].CollectibleSO = openColors[i];
+            buttons[i].CollectibleSO = openCarModels[i];
             buttons[i].Button.onClick.RemoveAllListeners();
             buttons[i].Button.onClick.AddListener(() => SetCurrentModel((CarModelSO)buttons[i].CollectibleSO));
+            buttons[i].Button.onClick.AddListener(() => UpdateCarStatWindow((CarModelSO)buttons[i].CollectibleSO));
         }
 
-        for (int i = 0; i < closedColors.Count; i++)
+        for (int i = 0; i < closedCarModels.Count; i++)
         {
-            int j = i + openColors.Count;
-            buttons[j].Image.sprite = closedColors[i].Sprite;
+            int j = i + openCarModels.Count;
+            buttons[j].Image.sprite = closedCarModels[i].Sprite;
             buttons[j].ClosedImage.SetActive(true);
-            buttons[j].CollectibleSO = closedColors[i];
+            buttons[j].CollectibleSO = closedCarModels[i];
             buttons[j].Button.onClick.RemoveAllListeners();
+            buttons[i].Button.onClick.AddListener(() => UpdateCarStatWindow((CarModelSO)buttons[i].CollectibleSO));
         }
     }
 
