@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d7053dfac59d234e885eb0ebd8275fe, type: 3}
-  m_Name: CharacterModelCollectible 4
+  m_Name: Char4
   m_EditorClassIdentifier: 
   quality: 0
   sprite: {fileID: 21300000, guid: f307396585eb05c46ac7fb04fc991826, type: 3}

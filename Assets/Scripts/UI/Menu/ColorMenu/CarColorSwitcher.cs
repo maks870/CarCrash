@@ -94,9 +94,11 @@ public class CarColorSwitcher : MonoBehaviour
         closedCarColors.Clear();
         List<string> collectedItems = YandexGame.savesData.collectedItems;
         closedCarColors.AddRange(carColorsSO);
-
+        Debug.Log(collectedItems.Count);
+        Debug.Log(YandexGame.savesData.newPlayerName);
         foreach (string itemName in collectedItems)
         {
+            Debug.Log(collectedItems);
             CarColorSO collectible = closedCarColors.Find(item => item.Name == itemName);
             openedCarColors.Add(collectible);
             closedCarColors.Remove(collectible);
