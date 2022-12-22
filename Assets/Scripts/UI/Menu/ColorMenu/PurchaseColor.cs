@@ -26,7 +26,7 @@ public class PurchaseColor : MonoBehaviour
         YandexGame.savesData.collectedItems.Add(currentCarColorSO.Name);
         YandexGame.SaveProgress();
         carColorSwitcher.LoadCarColorsSO();
-        carColorSwitcher.SetCurrentRenderer(currentCarColorSO);
+        carColorSwitcher.SetCurrentColor(currentCarColorSO);
     }
 
     public void ShowPurchaseButton(CarColorSO collectible)

@@ -6,9 +6,9 @@ using YG;
 public class PlayerLoad : MonoBehaviour
 {
 
-    [SerializeField] private GameObject currentCharacter;
-    [SerializeField] private MeshRenderer currentCarColor;
-    [SerializeField] private MeshFilter currentCarModel;
+    [SerializeField] private CharacterModelSO currentCharacter;
+    [SerializeField] private CarColorSO currentCarColor;
+    [SerializeField] private CarModelSO currentCarModel;
 
     [SerializeField] private CharacterModelSO defaultCharacter;
     [SerializeField] private CarColorSO defaultCarColor;
@@ -18,33 +18,28 @@ public class PlayerLoad : MonoBehaviour
     [SerializeField] private List<CollectibleSO> carColorsItems;
     [SerializeField] private List<CollectibleSO> carModelsItems;
 
+    public CharacterModelSO CurrentCharacter => currentCharacter;
+    public CarColorSO CurrentCarColor => currentCarColor;
+    public CarModelSO CurrentCarModel => currentCarModel;
     public CharacterModelSO DefaultCharacter { get => defaultCharacter; }
     public CarColorSO DefaultCarColor { get => defaultCarColor; }
     public CarModelSO DefaultCarModel { get => defaultCarModel; }
 
     public void LoadPlayerItems()
     {
-        CharacterModelSO characterItem;
-        CarColorSO carColorItem;
-        CarModelSO carModelItem;
-
         if (YandexGame.savesData.currentCharacterItem != null)
-            characterItem = (CharacterModelSO)characterItems.Find(item => item.Name == YandexGame.savesData.currentCharacterItem);
+            currentCharacter = (CharacterModelSO)characterItems.Find(item => item.Name == YandexGame.savesData.currentCharacterItem);
         else
-            characterItem = defaultCharacter;
+            currentCharacter = defaultCharacter;
 
         if (YandexGame.savesData.currentCarColorItem != null)
-            carColorItem = (CarColorSO)carColorsItems.Find(item => item.Name == YandexGame.savesData.currentCarColorItem);
+            currentCarColor = (CarColorSO)carColorsItems.Find(item => item.Name == YandexGame.savesData.currentCarColorItem);
         else
-            carColorItem = defaultCarColor;
+            currentCarColor = defaultCarColor;
 
         if (YandexGame.savesData.currentCarModelItem != null)
-            carModelItem = (CarModelSO)carModelsItems.Find(item => item.Name == YandexGame.savesData.currentCarModelItem);
+            currentCarModel = (CarModelSO)carModelsItems.Find(item => item.Name == YandexGame.savesData.currentCarModelItem);
         else
-            carModelItem = defaultCarModel;
-
-        currentCharacter = characterItem.Prefab;
-        currentCarColor.material.mainTexture = carColorItem.Texture;
-        currentCarModel.mesh = carModelItem.Mesh;
+            currentCarModel = defaultCarModel;
     }
 }

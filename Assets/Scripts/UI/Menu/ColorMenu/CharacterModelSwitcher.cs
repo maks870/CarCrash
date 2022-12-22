@@ -31,11 +31,8 @@ public class CharacterModelSwitcher : MonoBehaviour
 
     void Start()
     {
-
         if (YandexGame.SDKEnabled == true)
-        {
             LoadCharactersSO();
-        }
     }
 
     private void InitializeUI()
@@ -66,7 +63,7 @@ public class CharacterModelSwitcher : MonoBehaviour
             buttons[i].ClosedImage.SetActive(false);
             buttons[i].CollectibleSO = openCharacters[i];
             buttons[i].Button.onClick.RemoveAllListeners();
-            buttons[i].Button.onClick.AddListener(() => SetCurrentModel((CharacterModelSO)buttons[i].CollectibleSO));
+            buttons[i].Button.onClick.AddListener(() => SetCurrentCharacter((CharacterModelSO)buttons[i].CollectibleSO));
         }
 
         for (int i = 0; i < closedCharacters.Count; i++)
@@ -95,7 +92,18 @@ public class CharacterModelSwitcher : MonoBehaviour
         UpdateUI(openedCharacters, closedCharacters);
     }
 
-    public void SetCurrentModel(CharacterModelSO characterCollectible)
+    public bool FindStartCharacter(CharacterModelSO characterSO)
+    {
+        bool isFounded = false;
+        for (int i = 0; i < charactersSO.Count; i++)
+        {
+            if (charactersSO[i] == characterSO)
+                isFounded = true;
+        }
+        return isFounded;
+    }
+
+    public void SetCurrentCharacter(CharacterModelSO characterCollectible)
     {
         currentCharacterObject = characterCollectible.Prefab;
         currentCharacter = characterCollectible;

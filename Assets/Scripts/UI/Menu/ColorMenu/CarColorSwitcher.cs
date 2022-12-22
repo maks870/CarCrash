@@ -18,6 +18,7 @@ public class CarColorSwitcher : MonoBehaviour
     private List<CarColorSO> openedCarColors = new List<CarColorSO>();
     private List<CarColorSO> closedCarColors = new List<CarColorSO>();
     public CollectibleSO CurrentCarColor { get => currentCarColor; }
+    public PurchaseColor PurchaseColor => purchaseColor;
 
     private void OnEnable()
     {
@@ -35,9 +36,7 @@ public class CarColorSwitcher : MonoBehaviour
         purchaseColor.CarColorSwitcher = this;
 
         if (YandexGame.SDKEnabled == true)
-        {
             InitializeUI();
-        }
     }
 
     void Update()
@@ -72,7 +71,7 @@ public class CarColorSwitcher : MonoBehaviour
             buttons[i].ClosedImage.SetActive(false);
             buttons[i].CollectibleSO = openColors[i];
             buttons[i].Button.onClick.RemoveAllListeners();
-            buttons[i].Button.onClick.AddListener(() => SetCurrentRenderer((CarColorSO)buttons[i].CollectibleSO));
+            buttons[i].Button.onClick.AddListener(() => SetCurrentColor((CarColorSO)buttons[i].CollectibleSO));
             buttons[i].Button.onClick.AddListener(() => purchaseColor.HidePurchaseButton());
         }
 
@@ -103,7 +102,7 @@ public class CarColorSwitcher : MonoBehaviour
         UpdateUI(openedCarColors, closedCarColors);
     }
 
-    public void SetCurrentRenderer(CarColorSO carColorCollectible)
+    public void SetCurrentColor(CarColorSO carColorCollectible)
     {
         currentRenderer.material.mainTexture = carColorCollectible.Texture;
         currentCarColor = carColorCollectible;

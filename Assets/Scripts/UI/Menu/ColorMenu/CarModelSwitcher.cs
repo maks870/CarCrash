@@ -37,15 +37,8 @@ public class CarModelSwitcher : MonoBehaviour
 
     void Start()
     {
-
         if (YandexGame.SDKEnabled == true)
-        {
             LoadCarModelsSO();
-        }
-    }
-
-    void Update()
-    {
     }
 
     private void InitializeUI()
@@ -67,13 +60,7 @@ public class CarModelSwitcher : MonoBehaviour
 
         isFirstLoad = false;
     }
-    private void UpdateCarStatWindow(CarModelSO carModelSO)
-    {
-        float currentAccel = carModelSO.Acceleration / maxAcceleration;
-        float currentHandleability = carModelSO.Handleability / maxHandleability;
-        accelerationImage.fillAmount = currentAccel;
-        handleability.fillAmount = currentHandleability;
-    }
+
     private void UpdateUI(List<CarModelSO> openCarModels, List<CarModelSO> closedCarModels)
     {
         for (int i = 0; i < openCarModels.Count; i++)
@@ -111,6 +98,13 @@ public class CarModelSwitcher : MonoBehaviour
         }
 
         UpdateUI(openedCharacters, closedCharacters);
+    }
+    public void UpdateCarStatWindow(CarModelSO carModelSO)
+    {
+        float currentAccel = carModelSO.Acceleration / maxAcceleration;
+        float currentHandleability = carModelSO.Handleability / maxHandleability;
+        accelerationImage.fillAmount = currentAccel;
+        handleability.fillAmount = currentHandleability;
     }
 
     public void SetCurrentModel(CarModelSO characterCollectible)

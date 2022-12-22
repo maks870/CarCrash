@@ -13,11 +13,16 @@ public class CharacterTabSwitcher : MonoBehaviour
 
     private void Start()
     {
+    }
+
+    public void SetSavedCharacter(CharacterModelSO characterSO)
+    {
         for (int i = 0; i < switchers.Count; i++)
         {
             switchers[i].TabSwitcher = this;
+            if (switchers[i].FindStartCharacter(characterSO))
+                switchers[i].SetCurrentCharacter(characterSO);
         }
-        currentSwitcher = switchers[0];
     }
 
     public void UpdateCharacterSwitchers()
