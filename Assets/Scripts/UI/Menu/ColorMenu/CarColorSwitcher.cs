@@ -14,20 +14,21 @@ public class CarColorSwitcher : MonoBehaviour
     [SerializeField] private PurchaseColor purchaseColor;
     private CollectibleSO currentCarColor;
 
-    private bool isButtonsCreated = false;
+    private bool isFirstLoad = true;
     private List<CarColorSO> openedCarColors = new List<CarColorSO>();
     private List<CarColorSO> closedCarColors = new List<CarColorSO>();
 
-    public CollectibleSO CurrentCarColor { get => currentCarColor;}
+    public CollectibleSO CurrentCarColor { get => currentCarColor; }
 
     private void OnEnable()
     {
-        YandexGame.GetDataEvent += InitializeUI;
+        if (isFirstLoad)
+            YandexGame.GetDataEvent += InitializeUI;
     }
 
     private void OnDisable()
     {
-        YandexGame.GetDataEvent -= InitializeUI;
+        //YandexGame.GetDataEvent -= InitializeUI;
     }
 
     void Start()
@@ -36,7 +37,7 @@ public class CarColorSwitcher : MonoBehaviour
 
         if (YandexGame.SDKEnabled == true)
         {
-            LoadCarColorsSO();
+            InitializeUI();
         }
     }
 
@@ -46,7 +47,7 @@ public class CarColorSwitcher : MonoBehaviour
 
     private void InitializeUI()
     {
-        if (!isButtonsCreated)
+        if (isFirstLoad)
             CreateButtons();
 
         LoadCarColorsSO();
@@ -54,13 +55,14 @@ public class CarColorSwitcher : MonoBehaviour
 
     private void CreateButtons()
     {
+        buttons.Add(button.GetComponent<ButtonCollectibleUI>());
         for (int i = 0; i < carColorsSO.Count - 1; i++)
         {
             ButtonCollectibleUI newButton = Instantiate(button, transform).GetComponent<ButtonCollectibleUI>();
             buttons.Add(newButton);
         }
 
-        isButtonsCreated = true;
+        isFirstLoad = false;
     }
 
     private void UpdateUI(List<CarColorSO> openColors, List<CarColorSO> closedColors)

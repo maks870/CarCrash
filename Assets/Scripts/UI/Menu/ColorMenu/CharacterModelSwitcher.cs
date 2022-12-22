@@ -12,7 +12,7 @@ public class CharacterModelSwitcher : MonoBehaviour
     private CharacterTabSwitcher tabSwitcher;
     private CollectibleSO currentCharacter;
 
-    private bool isButtonsCreated = false;
+    private bool isFirstLoad = true;
     public CharacterTabSwitcher TabSwitcher { set => tabSwitcher = value; }
     public CollectibleSO CurrentCharacter { get => currentCharacter; }
 
@@ -21,12 +21,13 @@ public class CharacterModelSwitcher : MonoBehaviour
 
     private void OnEnable()
     {
-        YandexGame.GetDataEvent += InitializeUI;
+        if (isFirstLoad)
+            YandexGame.GetDataEvent += InitializeUI;
     }
 
     private void OnDisable()
     {
-        YandexGame.GetDataEvent -= InitializeUI;
+        //YandexGame.GetDataEvent -= InitializeUI;
     }
 
     void Start()
@@ -40,7 +41,7 @@ public class CharacterModelSwitcher : MonoBehaviour
 
     private void InitializeUI()
     {
-        if (!isButtonsCreated)
+        if (isFirstLoad)
             CreateButtons();
 
         LoadCharactersSO();
@@ -48,34 +49,38 @@ public class CharacterModelSwitcher : MonoBehaviour
 
     private void CreateButtons()
     {
+        buttons.Add(button.GetComponent<ButtonCollectibleUI>());
         for (int i = 0; i < charactersSO.Count - 1; i++)
         {
             ButtonCollectibleUI newButton = Instantiate(button, transform).GetComponent<ButtonCollectibleUI>();
             buttons.Add(newButton);
         }
 
-        isButtonsCreated = true;
+        isFirstLoad = false;
     }
 
     private void UpdateUI(List<CharacterModelSO> openColors, List<CharacterModelSO> closedColors)
     {
         for (int i = 0; i < openColors.Count; i++)
         {
+            Debug.Log(i + "i");
             buttons[i].Image.sprite = openColors[i].Sprite;
             buttons[i].ClosedImage.SetActive(false);
             buttons[i].CollectibleSO = openColors[i];
             buttons[i].Button.onClick.RemoveAllListeners();
             buttons[i].Button.onClick.AddListener(() => SetCurrentModel((CharacterModelSO)buttons[i].CollectibleSO));
         }
-
+        Debug.Log(openColors.Count);
         for (int i = 0; i < closedColors.Count; i++)
         {
+            Debug.Log(j = "j");
             int j = i + openColors.Count;
             buttons[j].Image.sprite = closedColors[i].Sprite;
             buttons[j].ClosedImage.SetActive(true);
             buttons[j].CollectibleSO = closedColors[i];
             buttons[j].Button.onClick.RemoveAllListeners();
         }
+        Debug.Log(closedColors.Count);
     }
 
     public void LoadCharactersSO()

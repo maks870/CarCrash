@@ -15,8 +15,6 @@ public class PurchaseColor : MonoBehaviour
 
     void Start()
     {
-        costText = GetComponent<Text>();
-        buttonPurchase = GetComponent<Button>();
         gameObject.SetActive(false);
     }
 

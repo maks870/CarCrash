@@ -12,7 +12,7 @@ public class CarModelSwitcher : MonoBehaviour
 
     private CollectibleSO currentCarModel;
 
-    private bool isButtonsCreated = false;
+    private bool isFirstLoad = true;
 
     private List<CarModelSO> openedCharacters = new List<CarModelSO>();
     private List<CarModelSO> closedCharacters = new List<CarModelSO>();
@@ -21,12 +21,13 @@ public class CarModelSwitcher : MonoBehaviour
 
     private void OnEnable()
     {
-        YandexGame.GetDataEvent += InitializeUI;
+        if (isFirstLoad)
+            YandexGame.GetDataEvent += InitializeUI;
     }
 
     private void OnDisable()
     {
-        YandexGame.GetDataEvent -= InitializeUI;
+        //YandexGame.GetDataEvent -= InitializeUI;
     }
 
     void Start()
@@ -44,7 +45,7 @@ public class CarModelSwitcher : MonoBehaviour
 
     private void InitializeUI()
     {
-        if (!isButtonsCreated)
+        if (isFirstLoad)
             CreateButtons();
 
         LoadCarModelsSO();
@@ -52,13 +53,14 @@ public class CarModelSwitcher : MonoBehaviour
 
     private void CreateButtons()
     {
+        buttons.Add(button.GetComponent<ButtonCollectibleUI>());
         for (int i = 0; i < carModelsSO.Count - 1; i++)
         {
             ButtonCollectibleUI newButton = Instantiate(button, transform).GetComponent<ButtonCollectibleUI>();
             buttons.Add(newButton);
         }
 
-        isButtonsCreated = true;
+        isFirstLoad = false;
     }
 
     private void UpdateUI(List<CarModelSO> openColors, List<CarModelSO> closedColors)
