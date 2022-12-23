@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public enum Quality
 {
@@ -10,7 +7,7 @@ public enum Quality
     legendary
 
 }
-
+ 
 public abstract class CollectibleSO : ScriptableObject
 {
     [SerializeField] private Quality quality;

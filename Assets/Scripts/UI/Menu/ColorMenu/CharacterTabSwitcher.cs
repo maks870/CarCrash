@@ -20,16 +20,11 @@ public class CharacterTabSwitcher : MonoBehaviour
         for (int i = 0; i < switchers.Count; i++)
         {
             switchers[i].TabSwitcher = this;
+            switchers[i].InitializeUI();
+
             if (switchers[i].FindStartCharacter(characterSO))
                 switchers[i].SetCurrentCharacter(characterSO);
-        }
-    }
 
-    public void UpdateCharacterSwitchers()
-    {
-        for (int i = 0; i < switchers.Count; i++)
-        {
-            switchers[i].LoadCharactersSO();
         }
     }
 }

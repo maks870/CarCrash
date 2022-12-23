@@ -23,31 +23,6 @@ public class CarModelSwitcher : MonoBehaviour
     public CollectibleSO CurrentCarModel { get => currentCarModel; }
     public GameObject CarStatWindow => carStatWindow;
 
-    private void OnEnable()
-    {
-        if (isFirstLoad)
-            YandexGame.GetDataEvent += InitializeUI;
-    }
-
-    private void OnDisable()
-    {
-        //YandexGame.GetDataEvent -= InitializeUI;
-    }
-
-    void Start()
-    {
-        if (YandexGame.SDKEnabled == true)
-            InitializeUI();
-    }
-
-    private void InitializeUI()
-    {
-        if (isFirstLoad)
-            CreateButtons();
-
-        LoadCarModelsSO();
-    }
-
     private void CreateButtons()
     {
         buttons.Add(button.GetComponent<ButtonCollectibleUI>());
@@ -82,22 +57,35 @@ public class CarModelSwitcher : MonoBehaviour
         }
     }
 
-    public void LoadCarModelsSO()
+    private void LoadCarModelsSO()
     {
         openedCarModels.Clear();
         closedCarModels.Clear();
-        List<string> collectedItems = YandexGame.savesData.collectedItems;
+        List<string> collectedItems = YandexGame.savesData.playerWrapper.collectibles;
         closedCarModels.AddRange(carModelsSO);
 
         foreach (string itemName in collectedItems)
         {
             CarModelSO collectible = closedCarModels.Find(item => item.Name == itemName);
-            openedCarModels.Add(collectible);
-            closedCarModels.Remove(collectible);
+
+            if (collectible != null)
+            {
+                openedCarModels.Add(collectible);
+                closedCarModels.Remove(collectible);
+            }
         }
 
         UpdateUI(openedCarModels, closedCarModels);
     }
+
+    public void InitializeUI()
+    {
+        if (isFirstLoad)
+            CreateButtons();
+
+        LoadCarModelsSO();
+    }
+
     public void UpdateCarStatWindow(CarModelSO carModelSO)
     {
         float currentAccel = carModelSO.Acceleration / maxAcceleration;

@@ -133,7 +133,7 @@ namespace YG
         public static Action GetDataEvent;
 
 #if UNITY_EDITOR
-        
+
         public static void SaveLocal()
         {
             string path = Application.dataPath + "/YandexGame/WorkingData/";
@@ -175,7 +175,7 @@ namespace YG
                 finally
                 {
                     fs.Close();
-                } 
+                }
             }
             else ResetSaveProgress();
         }
@@ -185,7 +185,7 @@ namespace YG
         {
             Message("Reset Save Progress");
 #if UNITY_EDITOR
-            savesData = new SavesYG { isFirstSession = false };
+            savesData = new SavesYG();/*{ isFirstSession = false };*/
 
             _SDKEnabled = true;
             SwitchLangEvent?.Invoke(savesData.language);
@@ -224,7 +224,7 @@ namespace YG
 
         void SiteLock()
         {
-            try 
+            try
             {
                 string urlOrig = GetURLFromPage();
 
@@ -538,7 +538,7 @@ namespace YG
             {
                 rank[0] = 1; rank[1] = 2; rank[2] = 3;
                 photo[0] = "https://drive.google.com/u/0/uc?id=1TCoEwiiUvIiQwAMbKcBssneWkmsoofuI&export=download";
-                photo[1] = "https://drive.google.com/u/0/uc?id=1MlVQuyQTKMjoX3FDJYnsLKhEb4_M9FQB&export=download"; 
+                photo[1] = "https://drive.google.com/u/0/uc?id=1MlVQuyQTKMjoX3FDJYnsLKhEb4_M9FQB&export=download";
                 photo[2] = "https://drive.google.com/u/0/uc?id=11ZwzHDXm_UNxqnMke2ONo6oJaGVp7VgP&export=download";
                 playersName[0] = "Player"; playersName[1] = "Ivan"; playersName[2] = "Maria";
                 scorePlayers[0] = 23; scorePlayers[1] = 115; scorePlayers[2] = 1053;
@@ -596,7 +596,7 @@ namespace YG
         {
             Purchase purchase = null;
 
-            for(int i = 0; i < PaymentsData.id.Length; i++)
+            for (int i = 0; i < PaymentsData.id.Length; i++)
             {
                 if (PaymentsData.id[i] == ID)
                 {
@@ -752,7 +752,7 @@ namespace YG
         public void CloseVideo()
         {
             nowVideoAd = false;
-            
+
             CloseVideoAd.Invoke();
             CloseVideoEvent?.Invoke();
         }

@@ -27,18 +27,18 @@ public class PlayerLoad : MonoBehaviour
 
     public void LoadPlayerItems()
     {
-        if (YandexGame.savesData.currentCharacterItem != null)
-            currentCharacter = (CharacterModelSO)characterItems.Find(item => item.Name == YandexGame.savesData.currentCharacterItem);
+        if (YandexGame.savesData.playerWrapper.currentCharacterItem != null)
+            currentCharacter = (CharacterModelSO)characterItems.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCharacterItem);
         else
             currentCharacter = defaultCharacter;
 
-        if (YandexGame.savesData.currentCarColorItem != null)
-            currentCarColor = (CarColorSO)carColorsItems.Find(item => item.Name == YandexGame.savesData.currentCarColorItem);
+        if (YandexGame.savesData.playerWrapper.currentCarColorItem != null)
+            currentCarColor = (CarColorSO)carColorsItems.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCarColorItem);
         else
             currentCarColor = defaultCarColor;
 
-        if (YandexGame.savesData.currentCarModelItem != null)
-            currentCarModel = (CarModelSO)carModelsItems.Find(item => item.Name == YandexGame.savesData.currentCarModelItem);
+        if (YandexGame.savesData.playerWrapper.currentCarModelItem != null)
+            currentCarModel = (CarModelSO)carModelsItems.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCarModelItem);
         else
             currentCarModel = defaultCarModel;
     }

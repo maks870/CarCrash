@@ -24,6 +24,8 @@ namespace YG
         public string currentCarColorItem;
         public string currentCarModelItem;
 
+        public PlayerWrapper playerWrapper = new PlayerWrapper();
+
         public int mediumGemAdViewed = 0;
     }
 }

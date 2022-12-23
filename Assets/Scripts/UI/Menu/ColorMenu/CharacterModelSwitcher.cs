@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using YG;
@@ -17,31 +16,6 @@ public class CharacterModelSwitcher : MonoBehaviour
     public CollectibleSO CurrentCharacter { get => currentCharacter; }
     private List<CharacterModelSO> openedCharacters = new List<CharacterModelSO>();
     private List<CharacterModelSO> closedCharacters = new List<CharacterModelSO>();
-
-    private void OnEnable()
-    {
-        if (isFirstLoad)
-            YandexGame.GetDataEvent += InitializeUI;
-    }
-
-    private void OnDisable()
-    {
-        //YandexGame.GetDataEvent -= InitializeUI;
-    }
-
-    void Start()
-    {
-        if (YandexGame.SDKEnabled == true)
-            InitializeUI();
-    }
-
-    private void InitializeUI()
-    {
-        if (isFirstLoad)
-            CreateButtons();
-
-        LoadCharactersSO();
-    }
 
     private void CreateButtons()
     {
@@ -77,21 +51,33 @@ public class CharacterModelSwitcher : MonoBehaviour
         }
     }
 
-    public void LoadCharactersSO()
+    private void LoadCharactersSO()
     {
         openedCharacters.Clear();
         closedCharacters.Clear();
-        List<string> collectedItems = YandexGame.savesData.collectedItems;
+        List<string> collectedItems = YandexGame.savesData.playerWrapper.collectibles;
         closedCharacters.AddRange(charactersSO);
 
         foreach (string itemName in collectedItems)
         {
             CharacterModelSO collectible = closedCharacters.Find(item => item.Name == itemName);
-            openedCharacters.Add(collectible);
-            closedCharacters.Remove(collectible);
+
+            if (collectible != null)
+            {
+                openedCharacters.Add(collectible);
+                closedCharacters.Remove(collectible);
+            }
         }
 
         UpdateUI(openedCharacters, closedCharacters);
+    }
+
+    public void InitializeUI()
+    {
+        if (isFirstLoad)
+            CreateButtons();
+
+        LoadCharactersSO();
     }
 
     public bool FindStartCharacter(CharacterModelSO characterSO)

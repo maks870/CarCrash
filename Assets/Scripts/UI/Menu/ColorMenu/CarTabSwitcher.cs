@@ -22,14 +22,10 @@ public class CarTabSwitcher : MonoBehaviour
         carModelSwitcher.CarStatWindow.SetActive(true);
     }
 
-    public void UpdateCarSwitchers()
-    {
-        carColorSwitcher.LoadCarColorsSO();
-        carModelSwitcher.LoadCarModelsSO();
-    }
-
     public void SetSavedCar(CarColorSO carColor, CarModelSO carModel)
     {
+        carColorSwitcher.InitializeUI();
+        carModelSwitcher.InitializeUI();
         carColorSwitcher.SetCurrentColor(carColor);
         carModelSwitcher.SetCurrentModel(carModel);
     }

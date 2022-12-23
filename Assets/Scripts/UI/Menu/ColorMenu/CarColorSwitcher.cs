@@ -20,37 +20,6 @@ public class CarColorSwitcher : MonoBehaviour
     public CollectibleSO CurrentCarColor { get => currentCarColor; }
     public PurchaseColor PurchaseColor => purchaseColor;
 
-    private void OnEnable()
-    {
-        if (isFirstLoad)
-            YandexGame.GetDataEvent += InitializeUI;
-    }
-
-    private void OnDisable()
-    {
-        //YandexGame.GetDataEvent -= InitializeUI;
-    }
-
-    void Start()
-    {
-        purchaseColor.CarColorSwitcher = this;
-
-        if (YandexGame.SDKEnabled == true)
-            InitializeUI();
-    }
-
-    void Update()
-    {
-    }
-
-    private void InitializeUI()
-    {
-        if (isFirstLoad)
-            CreateButtons();
-
-        LoadCarColorsSO();
-    }
-
     private void CreateButtons()
     {
         buttons.Add(button.GetComponent<ButtonCollectibleUI>());
@@ -87,24 +56,34 @@ public class CarColorSwitcher : MonoBehaviour
             buttons[j].Button.onClick.AddListener(() => purchaseColor.ShowPurchaseButton(carColor));
         }
     }
-
-    public void LoadCarColorsSO()
+    private void LoadCarColorsSO()
     {
         openedCarColors.Clear();
         closedCarColors.Clear();
-        List<string> collectedItems = YandexGame.savesData.collectedItems;
+        List<string> collectedItems = YandexGame.savesData.playerWrapper.collectibles;
         closedCarColors.AddRange(carColorsSO);
-        Debug.Log(collectedItems.Count);
-        Debug.Log(YandexGame.savesData.newPlayerName);
+
+
         foreach (string itemName in collectedItems)
         {
-            Debug.Log(collectedItems);
             CarColorSO collectible = closedCarColors.Find(item => item.Name == itemName);
-            openedCarColors.Add(collectible);
-            closedCarColors.Remove(collectible);
+
+            if (collectible != null)
+            {
+                openedCarColors.Add(collectible);
+                closedCarColors.Remove(collectible);
+            }
         }
 
         UpdateUI(openedCarColors, closedCarColors);
+    }
+
+    public void InitializeUI()
+    {
+        if (isFirstLoad)
+            CreateButtons();
+
+        LoadCarColorsSO();
     }
 
     public void SetCurrentColor(CarColorSO carColorCollectible)

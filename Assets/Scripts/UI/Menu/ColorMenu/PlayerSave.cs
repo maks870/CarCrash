@@ -35,33 +35,34 @@ public class PlayerSave : MonoBehaviour
     public void InitializeSO()
     {
         playerLoad.LoadPlayerItems();
+
+        if (YandexGame.savesData.isFirstSession)
+        {
+            Debug.Log("firstSession");
+            SavePlayer();
+        }
+
         SetSavedSO();
+
     }
 
     public void SavePlayer()
     {
-        //if (characterTabSwitcher.CurrentSwitcher.CurrentCharacter != null)
-        //    characterItem = characterTabSwitcher.CurrentSwitcher.CurrentCharacter;
-        //else
-        //    characterItem = playerLoad.DefaultCharacter;
-
-        //if (carTabSwitcher.CarColorSwitcher.CurrentCarColor != null)
-        //    carColorItem = carTabSwitcher.CarColorSwitcher.CurrentCarColor;
-        //else
-        //    carColorItem = playerLoad.DefaultCarColor;
-
-        //if (carTabSwitcher.CarModelSwitcher.CurrentCarModel != null)
-        //    carModelItem = carTabSwitcher.CarModelSwitcher.CurrentCarModel;
-        //else
-        //    carModelItem = playerLoad.DefaultCarModel;
 
         CollectibleSO characterItem = characterTabSwitcher.CurrentSwitcher.CurrentCharacter;
         CollectibleSO carColorItem = carTabSwitcher.CarColorSwitcher.CurrentCarColor;
         CollectibleSO carModelItem = carTabSwitcher.CarModelSwitcher.CurrentCarModel;
-        YandexGame.savesData.currentCharacterItem = characterItem.Name;
-        YandexGame.savesData.currentCarColorItem = carColorItem.Name;
-        YandexGame.savesData.currentCarModelItem = carModelItem.Name;
+
+
+        YandexGame.savesData.playerWrapper.currentCharacterItem = characterItem.Name;
+        YandexGame.savesData.playerWrapper.currentCarColorItem = carColorItem.Name;
+        YandexGame.savesData.playerWrapper.currentCarModelItem = carModelItem.Name;
 
         YandexGame.SaveProgress();
+    }
+
+    public void ResetProgress()
+    {
+        YandexGame.ResetSaveProgress();
     }
 }
