@@ -9,16 +9,13 @@ public static class EarningManager
     public static Action lackGems;
     public static Action changeEarnings;
 
-    private static void UpdateEarningsUI()
-    {
-        if (earningManagerUI != null)
-            changeEarnings.Invoke();
-    }
+
+
 
     public static void AddCoin(int count)
     {
         YandexGame.savesData.coins += count;
-        UpdateEarningsUI();
+        changeEarnings.Invoke();
     }
 
     public static bool SpendCoin(int count)
@@ -32,14 +29,14 @@ public static class EarningManager
         }
 
         YandexGame.savesData.coins = balance;
-        UpdateEarningsUI();
+        changeEarnings.Invoke();
         return true;
     }
 
     public static void AddGem(int count)
     {
         YandexGame.savesData.gems += count;
-        UpdateEarningsUI();
+        changeEarnings.Invoke();
     }
 
     public static bool SpendGem(int count)
@@ -53,7 +50,7 @@ public static class EarningManager
         }
 
         YandexGame.savesData.coins += balance;
-        UpdateEarningsUI();
+        changeEarnings.Invoke();
         return true;
     }
 }

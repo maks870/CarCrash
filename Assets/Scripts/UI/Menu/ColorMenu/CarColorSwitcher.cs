@@ -36,7 +36,7 @@ public class CarColorSwitcher : MonoBehaviour
     {
         for (int i = 0; i < openColors.Count; i++)
         {
-            //buttons[i].Image.sprite = openColors[i].Sprite; //Сделать нахождение цвеитов пикселей и окрашивать изображение цвета в них в них
+            SetColorImages(buttons[i]);
             buttons[i].ClosedImage.SetActive(false);
             buttons[i].CollectibleSO = openColors[i];
             buttons[i].Button.onClick.RemoveAllListeners();
@@ -48,7 +48,7 @@ public class CarColorSwitcher : MonoBehaviour
         for (int i = 0; i < closedColors.Count; i++)
         {
             int j = i + openColors.Count;
-            //buttons[j].Image.sprite = closedColors[i].Sprite;//Сделать нахождение цвеитов пикселей и окрашивать изображение цвета в них в них
+            SetColorImages(buttons[j]);
             buttons[j].ClosedImage.SetActive(true);
             buttons[j].CollectibleSO = closedColors[i];
             buttons[j].Button.onClick.RemoveAllListeners();
@@ -76,6 +76,30 @@ public class CarColorSwitcher : MonoBehaviour
         }
 
         UpdateUI(openedCarColors, closedCarColors);
+    }
+
+    private void SetColorImages(ButtonCollectibleUI colorButton)
+    {
+        List<Image> images = new List<Image>();
+        Image[] imageComponents = colorButton.transform.GetComponentsInChildren<Image>();
+
+        for (int i = 0; i < imageComponents.Length; i++)
+        {
+            if (imageComponents[i] != colorButton.ClosedImage)
+                images.Add(imageComponents[i]);
+        }
+
+        SetColors((CarColorSO)colorButton.CollectibleSO, images);
+    }
+
+    private void SetColors(CarColorSO carColor, List<Image> images)
+    {
+        Texture2D texture = carColor.Texture;
+
+        for (int i = 0; i < images.Count; i++)
+        {
+            images[i].color = texture.GetPixel(0, i);
+        }
     }
 
     public void InitializeUI()

@@ -47,6 +47,7 @@ public class CarModelSwitcher : MonoBehaviour
             buttons[i].Button.onClick.AddListener(() => SetCurrentModel(carModel));
             buttons[i].Button.onClick.AddListener(() => UpdateCarStatWindow(carModel));
         }
+
         for (int i = 0; i < closedCarModels.Count; i++)
         {
             int j = i + openCarModels.Count;
