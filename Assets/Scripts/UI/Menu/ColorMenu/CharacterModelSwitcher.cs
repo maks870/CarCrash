@@ -8,6 +8,7 @@ public class CharacterModelSwitcher : MonoBehaviour
     [SerializeField] private GameObject button;
     [SerializeField] private List<ButtonCollectibleUI> buttons = new List<ButtonCollectibleUI>();
     [SerializeField] private List<CharacterModelSO> charactersSO = new List<CharacterModelSO>();
+    [SerializeField] private CharacterType characterType;
     private CharacterTabSwitcher tabSwitcher;
     private CollectibleSO currentCharacter;
 
@@ -78,6 +79,15 @@ public class CharacterModelSwitcher : MonoBehaviour
             CreateButtons();
 
         LoadCharactersSO();
+    }
+
+    public void FillListBySO(List<CharacterModelSO> characters)
+    {
+        for (int i = 0; i < characters.Count; i++)
+        {
+            if (characters[i].CharacterType == characterType)
+                charactersSO.Add(characters[i]);
+        }
     }
 
     public bool FindStartCharacter(CharacterModelSO characterSO)

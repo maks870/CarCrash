@@ -87,6 +87,11 @@ public class CarModelSwitcher : MonoBehaviour
         LoadCarModelsSO();
     }
 
+    public void FillListBySO(List<CarModelSO> carModels)
+    {
+        carModelsSO.AddRange(carModels);
+    }
+
     public void UpdateCarStatWindow(CarModelSO carModelSO)
     {
         float currentAccel = carModelSO.Acceleration / maxAcceleration;

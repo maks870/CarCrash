@@ -1,40 +1,38 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using UnityEngine;
 
 public class DynamicCollectibleLoaderUI
 {
-    public static string charactersSOPath;
-    public static string carColorsSOPath;
-    public static string carModelsSOPath;
+    public static List<T> LoadCollectiblesByType<T>()
+    {
+        string resourcesPath = Application.dataPath + "/Resources/ScriptableObjects";
+        DirectoryInfo dirInfo = new DirectoryInfo(resourcesPath);
+        List<T> collectible = new List<T>();
 
+        foreach (FileInfo file in dirInfo.GetFiles())
+        {
+            T[] objects = Resources.LoadAll(file.FullName, typeof(T)).Cast<T>().ToArray();
+            collectible.AddRange(objects);
+        }
 
-    //public static List<T> LoadCollectiblesByType<T>()
-    //{
-    //    List<T> collectible = new List<T>();
+        return collectible;
+    }
 
-    //    T[] objects = Resources.LoadAll(collectiblePath);
+    public static List<CollectibleSO> LoadAllCollectibles()
+    {
+        string resourcesPath = Application.dataPath + "/Resources/ScriptableObjects";
+        DirectoryInfo dirInfo = new DirectoryInfo(resourcesPath);
+        List<CollectibleSO> collectible = new List<CollectibleSO>();
 
-    //    for (int i = 0; i < objects.Length; i++)
-    //    {
-    //        collectible.Add((CollectibleSO)objects[i]);
-    //    }
-
-    //    return collectible;
-    //}
-
-    //public static List<CollectibleSO> LoadAllCollectibles(string collectiblePath)
-    //{
-    //    List<CollectibleSO> collectible = new List<CollectibleSO>();
-
-    //    Object[] objects = Resources.LoadAll(collectiblePath);
-
-    //    for (int i = 0; i < objects.Length; i++)
-    //    {
-    //        collectible.Add((CollectibleSO)objects[i]);
-    //    }
-
-    //    return collectible;
-    //}
+        foreach (FileInfo file in dirInfo.GetFiles())
+        {
+            CollectibleSO[] objects = Resources.LoadAll(file.FullName, typeof(CollectibleSO)) as CollectibleSO[];
+            collectible.AddRange(objects);
+        }
+        return collectible;
+    }
 }

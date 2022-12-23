@@ -10,10 +10,20 @@ public class CharacterTabSwitcher : MonoBehaviour
 
     public CharacterModelSwitcher CurrentSwitcher { get => currentSwitcher; set => currentSwitcher = value; }
 
+    private void Awake()
+    {
+        List<CharacterModelSO> characters = DynamicCollectibleLoaderUI.LoadCollectiblesByType<CharacterModelSO>();
+
+        for (int i = 0; i < switchers.Count; i++)
+        {
+            switchers[i].FillListBySO(characters);
+        }
+    }
 
     private void Start()
     {
     }
+
 
     public void SetSavedCharacter(CharacterModelSO characterSO)
     {
@@ -27,4 +37,6 @@ public class CharacterTabSwitcher : MonoBehaviour
 
         }
     }
+
+
 }

@@ -110,6 +110,11 @@ public class CarColorSwitcher : MonoBehaviour
         LoadCarColorsSO();
     }
 
+    public void FillListBySO(List<CarColorSO> carColors)
+    {
+        carColorsSO.AddRange(carColors);
+    }
+
     public void SetCurrentColor(CarColorSO carColorCollectible)
     {
         currentRenderer.material.mainTexture = carColorCollectible.Texture;
