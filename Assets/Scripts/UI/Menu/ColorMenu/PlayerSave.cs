@@ -38,7 +38,6 @@ public class PlayerSave : MonoBehaviour
 
     private void SaveDefaultSO()
     {
-        Debug.Log("Сохраняем дефолтные SO");
         CollectibleSO characterItem = playerLoad.CurrentCharacter;
         CollectibleSO carColorItem = playerLoad.CurrentCarColor;
         CollectibleSO carModelItem = playerLoad.CurrentCarModel;

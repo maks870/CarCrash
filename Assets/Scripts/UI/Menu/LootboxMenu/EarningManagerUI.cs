@@ -28,16 +28,18 @@ public class EarningManagerUI : MonoBehaviour
 
     private void Start()
     {
-        UpdateEarnings(YandexGame.savesData.coins, YandexGame.savesData.gems);
+        UpdateEarnings();
     }
 
-    public void UpdateEarnings(int coins, int gems)
+    public void UpdateEarnings()
     {
+        Debug.Log("Gjregrf");
+
         if (coinText != null)
-            coinText.text = coins.ToString();
+            coinText.text = YandexGame.savesData.coins.ToString();
 
         if (gemText != null)
-            gemText.text = gems.ToString();
+            gemText.text = YandexGame.savesData.gems.ToString();
     }
 
     public void ShowLackCoinsWarning()

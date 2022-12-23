@@ -13,15 +13,11 @@ public class PurchaseColor : MonoBehaviour
 
     public CarColorSwitcher CarColorSwitcher { set => carColorSwitcher = value; }
 
-    void Start()
-    {
-        gameObject.SetActive(false);
-    }
-
     private void BuyColor()
     {
         if (!EarningManager.SpendCoin(currentCarColorSO.Cost))
             return;
+        Debug.Log("œŒ ”œŒ◊ ¿");
 
         YandexGame.savesData.playerWrapper.collectibles.Add(currentCarColorSO.Name);
         YandexGame.SaveProgress();

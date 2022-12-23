@@ -7,12 +7,12 @@ public static class EarningManager
 
     public static Action lackCoins;
     public static Action lackGems;
-    public static Action<int, int> changeEarnings;
+    public static Action changeEarnings;
 
     private static void UpdateEarningsUI()
     {
         if (earningManagerUI != null)
-            changeEarnings.Invoke(YandexGame.savesData.coins, YandexGame.savesData.gems);
+            changeEarnings.Invoke();
     }
 
     public static void AddCoin(int count)

@@ -18,7 +18,7 @@ namespace YG
         public bool[] openLevels = new bool[3];
 
 
-        public int coins = 0;
+        public int coins = 100;
         public int gems = 0;
         //public List<string> collectedItems = new List<string>() { "Car1", "Char1", "Color1" };
         //public string currentCharacterItem;
