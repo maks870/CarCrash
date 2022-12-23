@@ -23,7 +23,7 @@ public class LootBox : MonoBehaviour
     public void GetReward(out int coinValue, out int gemValue, out CollectibleSO collectibleItem)
     {
         int rand = Random.Range(0, 100);
-        List<string> collectedItems = YandexGame.savesData.collectedItems;
+        List<string> collectedItems = YandexGame.savesData.playerWrapper.collectibles;
         List<CollectibleSO> tempItems = new List<CollectibleSO>();
 
         gemValue = 0;

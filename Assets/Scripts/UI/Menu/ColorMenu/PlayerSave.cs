@@ -10,6 +10,9 @@ public class PlayerSave : MonoBehaviour
 
     [SerializeField] private PlayerLoad playerLoad;
 
+    private bool isInitializeProcess = false;
+
+
     private void OnEnable()
     {
         YandexGame.GetDataEvent += InitializeSO;
@@ -17,7 +20,7 @@ public class PlayerSave : MonoBehaviour
 
     private void OnDisable()
     {
-        YandexGame.GetDataEvent += InitializeSO;
+        YandexGame.GetDataEvent -= InitializeSO;
     }
 
     void Start()
@@ -30,14 +33,19 @@ public class PlayerSave : MonoBehaviour
     {
         characterTabSwitcher.SetSavedCharacter(playerLoad.CurrentCharacter);
         carTabSwitcher.SetSavedCar(playerLoad.CurrentCarColor, playerLoad.CurrentCarModel);
+        isInitializeProcess = false;
     }
 
     private void SaveDefaultSO()
     {
+        Debug.Log("Сохраняем дефолтные SO");
         CollectibleSO characterItem = playerLoad.CurrentCharacter;
         CollectibleSO carColorItem = playerLoad.CurrentCarColor;
         CollectibleSO carModelItem = playerLoad.CurrentCarModel;
 
+        YandexGame.savesData.playerWrapper.collectibles.Add(characterItem.Name);
+        YandexGame.savesData.playerWrapper.collectibles.Add(carColorItem.Name);
+        YandexGame.savesData.playerWrapper.collectibles.Add(carModelItem.Name);
 
         YandexGame.savesData.playerWrapper.currentCharacterItem = characterItem.Name;
         YandexGame.savesData.playerWrapper.currentCarColorItem = carColorItem.Name;
@@ -48,11 +56,17 @@ public class PlayerSave : MonoBehaviour
 
     public void InitializeSO()
     {
+        if (isInitializeProcess)
+            return;
+
+        isInitializeProcess = true;
+
         playerLoad.LoadPlayerItems();
 
-        if (YandexGame.savesData.isFirstSession)
+        if (YandexGame.savesData.isFirstSession2)
         {
             SaveDefaultSO();
+            YandexGame.savesData.isFirstSession2 = false;
         }
 
         SetSavedSO();
@@ -76,5 +90,6 @@ public class PlayerSave : MonoBehaviour
     public void ResetProgress()
     {
         YandexGame.ResetSaveProgress();
+        YandexGame.SaveProgress();
     }
 }

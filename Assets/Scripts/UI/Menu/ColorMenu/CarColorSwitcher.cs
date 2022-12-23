@@ -34,6 +34,7 @@ public class CarColorSwitcher : MonoBehaviour
 
     private void UpdateUI(List<CarColorSO> openColors, List<CarColorSO> closedColors)
     {
+        Debug.Log(111);
         for (int i = 0; i < openColors.Count; i++)
         {
             //buttons[i].Image.sprite = openColors[i].Sprite; //Сделать нахождение цвеитов пикселей и окрашивать изображение цвета в них в них
@@ -53,7 +54,11 @@ public class CarColorSwitcher : MonoBehaviour
             buttons[j].CollectibleSO = closedColors[i];
             buttons[j].Button.onClick.RemoveAllListeners();
             CarColorSO carColor = (CarColorSO)buttons[i].CollectibleSO;
-            buttons[j].Button.onClick.AddListener(() => purchaseColor.ShowPurchaseButton(carColor));
+            buttons[j].Button.onClick.AddListener(() =>
+            {
+                purchaseColor.gameObject.SetActive(true);
+                purchaseColor.ShowPurchaseButton(carColor);
+            });
         }
     }
     private void LoadCarColorsSO()

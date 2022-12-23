@@ -33,7 +33,7 @@ public class Shop : MonoBehaviour
         if (gemValue != 0)
             YandexGame.savesData.gems += gemValue;
 
-        YandexGame.savesData.collectedItems.Add(collectibleItem.Name);
+        YandexGame.savesData.playerWrapper.collectibles.Add(collectibleItem.Name);
         YandexGame.SaveProgress();
 
         lootboxAwardUI.ShowAwards(coinValue, gemValue, collectibleItem);

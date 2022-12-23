@@ -7,6 +7,7 @@ namespace YG
     public class SavesYG
     {
         public bool isFirstSession = true;
+        public bool isFirstSession2 = true;
         public string language = "ru";
         public bool feedbackDone;
         public bool promptDone;
@@ -19,10 +20,10 @@ namespace YG
 
         public int coins = 0;
         public int gems = 0;
-        public List<string> collectedItems = new List<string>() { "Car1", "Char1", "Color1" };
-        public string currentCharacterItem;
-        public string currentCarColorItem;
-        public string currentCarModelItem;
+        //public List<string> collectedItems = new List<string>() { "Car1", "Char1", "Color1" };
+        //public string currentCharacterItem;
+        //public string currentCarColorItem;
+        //public string currentCarModelItem;
 
         public PlayerWrapper playerWrapper = new PlayerWrapper();
 
