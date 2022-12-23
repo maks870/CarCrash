@@ -185,7 +185,7 @@ namespace YG
         {
             Message("Reset Save Progress");
 #if UNITY_EDITOR
-            savesData = new SavesYG { isFirstSession = false };
+            savesData = new SavesYG();
 
             _SDKEnabled = true;
             SwitchLangEvent?.Invoke(savesData.language);
