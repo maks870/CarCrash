@@ -32,18 +32,30 @@ public class PlayerSave : MonoBehaviour
         carTabSwitcher.SetSavedCar(playerLoad.CurrentCarColor, playerLoad.CurrentCarModel);
     }
 
+    private void SaveDefaultSO()
+    {
+        CollectibleSO characterItem = playerLoad.CurrentCharacter;
+        CollectibleSO carColorItem = playerLoad.CurrentCarColor;
+        CollectibleSO carModelItem = playerLoad.CurrentCarModel;
+
+
+        YandexGame.savesData.playerWrapper.currentCharacterItem = characterItem.Name;
+        YandexGame.savesData.playerWrapper.currentCarColorItem = carColorItem.Name;
+        YandexGame.savesData.playerWrapper.currentCarModelItem = carModelItem.Name;
+
+        YandexGame.SaveProgress();
+    }
+
     public void InitializeSO()
     {
         playerLoad.LoadPlayerItems();
 
         if (YandexGame.savesData.isFirstSession)
         {
-            Debug.Log("firstSession");
-            SavePlayer();
+            SaveDefaultSO();
         }
 
         SetSavedSO();
-
     }
 
     public void SavePlayer()
