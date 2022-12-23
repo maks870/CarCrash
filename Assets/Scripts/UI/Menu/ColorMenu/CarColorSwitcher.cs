@@ -20,11 +20,6 @@ public class CarColorSwitcher : MonoBehaviour
     public CollectibleSO CurrentCarColor { get => currentCarColor; }
     public PurchaseColor PurchaseColor => purchaseColor;
 
-    private void Start()
-    {
-        purchaseColor.CarColorSwitcher = this;
-    }
-
     private void CreateButtons()
     {
         buttons.Add(button.GetComponent<ButtonCollectibleUI>());
@@ -39,7 +34,6 @@ public class CarColorSwitcher : MonoBehaviour
 
     private void UpdateUI(List<CarColorSO> openColors, List<CarColorSO> closedColors)
     {
-        Debug.Log(111);
         for (int i = 0; i < openColors.Count; i++)
         {
             //buttons[i].Image.sprite = openColors[i].Sprite; //Сделать нахождение цвеитов пикселей и окрашивать изображение цвета в них в них
@@ -58,7 +52,7 @@ public class CarColorSwitcher : MonoBehaviour
             buttons[j].ClosedImage.SetActive(true);
             buttons[j].CollectibleSO = closedColors[i];
             buttons[j].Button.onClick.RemoveAllListeners();
-            CarColorSO carColor = (CarColorSO)buttons[j].CollectibleSO;
+            CarColorSO carColor = (CarColorSO)buttons[i].CollectibleSO;
             buttons[j].Button.onClick.AddListener(() => purchaseColor.ShowPurchaseButton(carColor));
         }
     }

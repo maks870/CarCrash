@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonCollectibleUI : MonoBehaviour
+public class ButtonCollectibleUI : MonoBehaviour//типа структура
 {
     [SerializeField] private Image image;
     [SerializeField] private GameObject closedImage;
