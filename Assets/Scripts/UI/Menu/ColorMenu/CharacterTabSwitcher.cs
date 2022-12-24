@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharacterTabSwitcher : MonoBehaviour
 {
+    [SerializeField] private Transform startCurrentCharacterTransform;
     [SerializeField] private List<CharacterModelSwitcher> switchers = new List<CharacterModelSwitcher>();
     private CharacterModelSwitcher currentSwitcher;
 
@@ -17,6 +18,7 @@ public class CharacterTabSwitcher : MonoBehaviour
         {
             switchers[i].FillListBySO(characters);
         }
+        UpdateCurrentCharacter(startCurrentCharacterTransform);
     }
 
     public void SetSavedCharacter(CharacterModelSO characterSO)
@@ -29,6 +31,14 @@ public class CharacterTabSwitcher : MonoBehaviour
             if (switchers[i].FindStartCharacter(characterSO))
                 switchers[i].SetCurrentCharacter(characterSO);
 
+        }
+    }
+
+    public void UpdateCurrentCharacter(Transform currentCharacter)
+    {
+        for (int i = 0; i < switchers.Count; i++)
+        {
+            switchers[i].CurrentCharacterTransform = currentCharacter;
         }
     }
 }

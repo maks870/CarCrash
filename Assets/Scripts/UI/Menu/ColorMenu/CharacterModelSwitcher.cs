@@ -4,21 +4,22 @@ using YG;
 
 public class CharacterModelSwitcher : MonoBehaviour
 {
-    [SerializeField] private GameObject currentCharacterObject;
     [SerializeField] private GameObject button;
     [SerializeField] private CharacterType characterType;
     private CharacterTabSwitcher tabSwitcher;
     private CollectibleSO currentCharacter;
 
     private bool isFirstLoad = true;
-    public CollectibleSO CurrentCharacter { get => currentCharacter; }
+
+    private Transform currentCharacterTransform;
     private List<CharacterModelSO> charactersSO = new List<CharacterModelSO>();
     private List<CharacterModelSO> openedCharacters = new List<CharacterModelSO>();
     private List<CharacterModelSO> closedCharacters = new List<CharacterModelSO>();
     private List<ButtonCollectibleUI> buttons = new List<ButtonCollectibleUI>();
 
+    public CollectibleSO CurrentCharacter { get => currentCharacter; }
     public CharacterTabSwitcher TabSwitcher { set => tabSwitcher = value; }
-
+    public Transform CurrentCharacterTransform { set => currentCharacterTransform = value; }
 
     private void CreateButtons()
     {
@@ -105,10 +106,13 @@ public class CharacterModelSwitcher : MonoBehaviour
 
     public void SetCurrentCharacter(CharacterModelSO characterCollectible)
     {
-        currentCharacterObject.GetComponent<MeshFilter>().mesh = characterCollectible.Prefab.GetComponent<MeshFilter>().mesh;
-        currentCharacterObject.GetComponent<MeshRenderer>().materials = characterCollectible.Prefab.GetComponent<MeshRenderer>().materials;
-
+        GameObject character = Instantiate(characterCollectible.Prefab, currentCharacterTransform);
+        character.transform.parent = null;
+        Destroy(currentCharacterTransform.gameObject);
+        tabSwitcher.UpdateCurrentCharacter(character.transform);
         currentCharacter = characterCollectible;
         tabSwitcher.CurrentSwitcher = this;
     }
+
+
 }

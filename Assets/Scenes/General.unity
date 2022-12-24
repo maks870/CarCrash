@@ -2216,9 +2216,9 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &342657379 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2f0d3bf2d597cd743aa7ca4810a6bcd8,
+--- !u!4 &342657382 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2f0d3bf2d597cd743aa7ca4810a6bcd8,
     type: 3}
   m_PrefabInstance: {fileID: 1825202380}
   m_PrefabAsset: {fileID: 0}
@@ -2611,7 +2611,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00021362305, y: 12}
+  m_AnchoredPosition: {x: 0.00018310547, y: 12}
   m_SizeDelta: {x: 0, y: -36.6655}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &407929382
@@ -2726,7 +2726,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee896bbf062af945b31cf03e51dbda2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCharacterObject: {fileID: 342657379}
   button: {fileID: 391491451}
   characterType: 3
 --- !u!222 &407929387
@@ -3535,7 +3534,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00021362305, y: 12}
+  m_AnchoredPosition: {x: 0.00018310547, y: 12}
   m_SizeDelta: {x: 0, y: -36.6655}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &559701151
@@ -3650,7 +3649,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee896bbf062af945b31cf03e51dbda2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCharacterObject: {fileID: 342657379}
   button: {fileID: 214931918}
   characterType: 4
 --- !u!222 &559701156
@@ -6864,7 +6862,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1887013092}
   m_HandleRect: {fileID: 1887013091}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -7152,7 +7150,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00021362305, y: 12}
+  m_AnchoredPosition: {x: 0.00018310547, y: 12}
   m_SizeDelta: {x: 0, y: -36.6655}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &997200281
@@ -7237,7 +7235,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee896bbf062af945b31cf03e51dbda2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCharacterObject: {fileID: 342657379}
   button: {fileID: 674224094}
   characterType: 2
 --- !u!222 &997200285
@@ -12484,7 +12481,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00021362305, y: 12}
+  m_AnchoredPosition: {x: 0.00018310547, y: 12}
   m_SizeDelta: {x: 0, y: -36.6655}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1811665993
@@ -12599,7 +12596,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee896bbf062af945b31cf03e51dbda2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCharacterObject: {fileID: 342657379}
   button: {fileID: 1366267750}
   characterType: 0
 --- !u!222 &1811665998
@@ -15192,7 +15188,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 8.427582, y: 0.00010681152}
+  m_AnchoredPosition: {x: 8.427582, y: 0.00044250488}
   m_SizeDelta: {x: -16.8552, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2039125419
@@ -15356,7 +15352,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 8.427582, y: 0.00010681152}
+  m_AnchoredPosition: {x: 8.427582, y: 0.00044250488}
   m_SizeDelta: {x: -16.8552, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2089091077
@@ -16115,7 +16111,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00021362305, y: 12}
+  m_AnchoredPosition: {x: 0.00018310547, y: 12}
   m_SizeDelta: {x: 0, y: -36.6655}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &2132181934
@@ -16230,7 +16226,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eee896bbf062af945b31cf03e51dbda2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCharacterObject: {fileID: 342657379}
   button: {fileID: 1383066144}
   characterType: 1
 --- !u!222 &2132181939
@@ -26492,6 +26487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b7cbabeb9048d4185b41c4721e452d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startCurrentCharacterTransform: {fileID: 342657382}
   switchers:
   - {fileID: 997200284}
   - {fileID: 559701155}
