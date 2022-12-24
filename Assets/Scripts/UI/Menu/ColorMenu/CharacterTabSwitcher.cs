@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class CharacterTabSwitcher : MonoBehaviour
 {
-
     [SerializeField] private List<CharacterModelSwitcher> switchers = new List<CharacterModelSwitcher>();
-    [SerializeField] private CharacterModelSwitcher currentSwitcher;
+    private CharacterModelSwitcher currentSwitcher;
 
     public CharacterModelSwitcher CurrentSwitcher { get => currentSwitcher; set => currentSwitcher = value; }
 
     private void Awake()
     {
-        List<CharacterModelSO> characters = DynamicCollectibleLoaderUI.LoadCollectiblesByType<CharacterModelSO>();
+        List<CharacterModelSO> characters = CollectibleLoader.LoadCollectiblesByType<CharacterModelSO>();
 
         for (int i = 0; i < switchers.Count; i++)
         {

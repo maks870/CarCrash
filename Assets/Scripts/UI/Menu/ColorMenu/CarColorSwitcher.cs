@@ -9,15 +9,16 @@ public class CarColorSwitcher : MonoBehaviour
 {
     [SerializeField] private MeshRenderer currentRenderer;
     [SerializeField] private GameObject button;
-    [SerializeField] private List<ButtonCollectibleUI> buttons = new List<ButtonCollectibleUI>();
-    [SerializeField] private List<CarColorSO> carColorsSO = new List<CarColorSO>();
     [SerializeField] private PurchaseColor purchaseColor;
     private CollectibleSO currentCarColor;
 
     private bool isFirstLoad = true;
+    private List<CarColorSO> carColorsSO = new List<CarColorSO>();
     private List<CarColorSO> openedCarColors = new List<CarColorSO>();
     private List<CarColorSO> closedCarColors = new List<CarColorSO>();
-    public CollectibleSO CurrentCarColor { get => currentCarColor; }
+    private List<ButtonCollectibleUI> buttons = new List<ButtonCollectibleUI>();
+
+    public CollectibleSO CurrentCarColor => currentCarColor;
     public PurchaseColor PurchaseColor => purchaseColor;
 
     private void CreateButtons()

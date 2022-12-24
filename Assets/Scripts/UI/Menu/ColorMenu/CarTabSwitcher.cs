@@ -12,8 +12,8 @@ public class CarTabSwitcher : MonoBehaviour
 
     private void Awake()
     {
-        List<CarColorSO> carColors = DynamicCollectibleLoaderUI.LoadCollectiblesByType<CarColorSO>();
-        List<CarModelSO> carModels = DynamicCollectibleLoaderUI.LoadCollectiblesByType<CarModelSO>();
+        List<CarColorSO> carColors = CollectibleLoader.LoadCollectiblesByType<CarColorSO>();
+        List<CarModelSO> carModels = CollectibleLoader.LoadCollectiblesByType<CarModelSO>();
 
         carColorSwitcher.FillListBySO(carColors);
         carModelSwitcher.FillListBySO(carModels);

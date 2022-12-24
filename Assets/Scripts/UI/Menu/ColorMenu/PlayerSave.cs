@@ -12,6 +12,10 @@ public class PlayerSave : MonoBehaviour
 
     private bool isInitializeProcess = false;
 
+    private void Awake()
+    {
+        CollectibleLoader.LoadAllCollectibles();
+    }
 
     private void OnEnable()
     {

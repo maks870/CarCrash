@@ -6,17 +6,19 @@ public class CharacterModelSwitcher : MonoBehaviour
 {
     [SerializeField] private GameObject currentCharacterObject;
     [SerializeField] private GameObject button;
-    [SerializeField] private List<ButtonCollectibleUI> buttons = new List<ButtonCollectibleUI>();
-    [SerializeField] private List<CharacterModelSO> charactersSO = new List<CharacterModelSO>();
     [SerializeField] private CharacterType characterType;
     private CharacterTabSwitcher tabSwitcher;
     private CollectibleSO currentCharacter;
 
     private bool isFirstLoad = true;
-    public CharacterTabSwitcher TabSwitcher { set => tabSwitcher = value; }
     public CollectibleSO CurrentCharacter { get => currentCharacter; }
+    private List<CharacterModelSO> charactersSO = new List<CharacterModelSO>();
     private List<CharacterModelSO> openedCharacters = new List<CharacterModelSO>();
     private List<CharacterModelSO> closedCharacters = new List<CharacterModelSO>();
+    private List<ButtonCollectibleUI> buttons = new List<ButtonCollectibleUI>();
+
+    public CharacterTabSwitcher TabSwitcher { set => tabSwitcher = value; }
+
 
     private void CreateButtons()
     {

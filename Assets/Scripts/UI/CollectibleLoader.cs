@@ -1,11 +1,9 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEngine;
 
-public class DynamicCollectibleLoaderUI
+public class CollectibleLoader
 {
     public static List<T> LoadCollectiblesByType<T>()
     {
@@ -13,13 +11,9 @@ public class DynamicCollectibleLoaderUI
         DirectoryInfo dirInfo = new DirectoryInfo(resourcesPath);
         List<T> collectible = new List<T>();
 
-        foreach (DirectoryInfo file in dirInfo.GetDirectories())
+        foreach (DirectoryInfo dir in dirInfo.GetDirectories())
         {
-            T[] objects = Resources.LoadAll(file.FullName, typeof(T)).Cast<T>().ToArray();
-
-            //if (objects.Length > 0)
-            //    Debug.Log("чето скачали");
-
+            T[] objects = Resources.LoadAll("ScriptableObjects/" + dir.Name, typeof(T)).Cast<T>().ToArray();
             collectible.AddRange(objects);
         }
 
@@ -32,11 +26,12 @@ public class DynamicCollectibleLoaderUI
         DirectoryInfo dirInfo = new DirectoryInfo(resourcesPath);
         List<CollectibleSO> collectible = new List<CollectibleSO>();
 
-        foreach (DirectoryInfo file in dirInfo.GetDirectories())
+        foreach (DirectoryInfo dir in dirInfo.GetDirectories())
         {
-            CollectibleSO[] objects = Resources.LoadAll(file.FullName, typeof(CollectibleSO)) as CollectibleSO[];
+            CollectibleSO[] objects = Resources.LoadAll("ScriptableObjects/" + dir.Name, typeof(CollectibleSO)).Cast<CollectibleSO>().ToArray();
             collectible.AddRange(objects);
         }
+
         return collectible;
     }
 }

@@ -27,9 +27,9 @@ public class PlayerLoad : MonoBehaviour
 
     private void Awake()
     {
-        List<CharacterModelSO> characterSO = DynamicCollectibleLoaderUI.LoadCollectiblesByType<CharacterModelSO>();
-        List<CarColorSO> carColorsSO = DynamicCollectibleLoaderUI.LoadCollectiblesByType<CarColorSO>();
-        List<CarModelSO> carModelsSO = DynamicCollectibleLoaderUI.LoadCollectiblesByType<CarModelSO>();
+        List<CharacterModelSO> characterSO = CollectibleLoader.LoadCollectiblesByType<CharacterModelSO>();
+        List<CarColorSO> carColorsSO = CollectibleLoader.LoadCollectiblesByType<CarColorSO>();
+        List<CarModelSO> carModelsSO = CollectibleLoader.LoadCollectiblesByType<CarModelSO>();
 
         characterItems.AddRange(characterSO);
         carColorsItems.AddRange(carColorsSO);

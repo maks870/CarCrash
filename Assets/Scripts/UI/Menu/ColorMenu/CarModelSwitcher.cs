@@ -7,20 +7,20 @@ public class CarModelSwitcher : MonoBehaviour
 {
     [SerializeField] private MeshFilter currentMeshFilter;
     [SerializeField] private GameObject button;
-    [SerializeField] private List<ButtonCollectibleUI> buttons = new List<ButtonCollectibleUI>();
     [SerializeField] private GameObject carStatWindow;
     [SerializeField] private float maxAcceleration;
     [SerializeField] private float maxHandleability;
     [SerializeField] private Image accelerationImage;
     [SerializeField] private Image handleability;
-    [SerializeField] private List<CarModelSO> carModelsSO = new List<CarModelSO>();
 
     private bool isFirstLoad = true;
     private CollectibleSO currentCarModel;
+    private List<CarModelSO> carModelsSO = new List<CarModelSO>();
     private List<CarModelSO> openedCarModels = new List<CarModelSO>();
     private List<CarModelSO> closedCarModels = new List<CarModelSO>();
+    private List<ButtonCollectibleUI> buttons = new List<ButtonCollectibleUI>();
 
-    public CollectibleSO CurrentCarModel { get => currentCarModel; }
+    public CollectibleSO CurrentCarModel => currentCarModel;
     public GameObject CarStatWindow => carStatWindow;
 
     private void CreateButtons()
