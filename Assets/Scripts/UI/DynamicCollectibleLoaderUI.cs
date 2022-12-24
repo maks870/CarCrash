@@ -13,9 +13,13 @@ public class DynamicCollectibleLoaderUI
         DirectoryInfo dirInfo = new DirectoryInfo(resourcesPath);
         List<T> collectible = new List<T>();
 
-        foreach (FileInfo file in dirInfo.GetFiles())
+        foreach (DirectoryInfo file in dirInfo.GetDirectories())
         {
             T[] objects = Resources.LoadAll(file.FullName, typeof(T)).Cast<T>().ToArray();
+
+            //if (objects.Length > 0)
+            //    Debug.Log("чето скачали");
+
             collectible.AddRange(objects);
         }
 
@@ -28,7 +32,7 @@ public class DynamicCollectibleLoaderUI
         DirectoryInfo dirInfo = new DirectoryInfo(resourcesPath);
         List<CollectibleSO> collectible = new List<CollectibleSO>();
 
-        foreach (FileInfo file in dirInfo.GetFiles())
+        foreach (DirectoryInfo file in dirInfo.GetDirectories())
         {
             CollectibleSO[] objects = Resources.LoadAll(file.FullName, typeof(CollectibleSO)) as CollectibleSO[];
             collectible.AddRange(objects);

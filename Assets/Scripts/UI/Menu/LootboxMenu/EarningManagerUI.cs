@@ -33,7 +33,6 @@ public class EarningManagerUI : MonoBehaviour
 
     public void UpdateEarnings()
     {
-        Debug.Log("Gjregrf");
 
         if (coinText != null)
             coinText.text = YandexGame.savesData.coins.ToString();

@@ -7,6 +7,9 @@ public class CarTabSwitcher : MonoBehaviour
     [SerializeField] private CarColorSwitcher carColorSwitcher;
     [SerializeField] private CarModelSwitcher carModelSwitcher;
 
+    public CarColorSwitcher CarColorSwitcher { get => carColorSwitcher; set => carColorSwitcher = value; }
+    public CarModelSwitcher CarModelSwitcher { get => carModelSwitcher; set => carModelSwitcher = value; }
+
     private void Awake()
     {
         List<CarColorSO> carColors = DynamicCollectibleLoaderUI.LoadCollectiblesByType<CarColorSO>();
@@ -15,8 +18,6 @@ public class CarTabSwitcher : MonoBehaviour
         carColorSwitcher.FillListBySO(carColors);
         carModelSwitcher.FillListBySO(carModels);
     }
-    public CarColorSwitcher CarColorSwitcher { get => carColorSwitcher; set => carColorSwitcher = value; }
-    public CarModelSwitcher CarModelSwitcher { get => carModelSwitcher; set => carModelSwitcher = value; }
 
     public void SwitchToCarColor()
     {
