@@ -14,7 +14,6 @@ public class PlayerSave : MonoBehaviour
 
     private void Awake()
     {
-        CollectibleLoader.LoadAllCollectibles();
     }
 
     private void OnEnable()
@@ -90,9 +89,18 @@ public class PlayerSave : MonoBehaviour
         YandexGame.SaveProgress();
     }
 
+    public void ShowOurCollectibles()
+    {
+        foreach (string str in YandexGame.savesData.playerWrapper.collectibles)
+        {
+            Debug.Log("У нас есть " + str);
+        }
+    }
+
     public void ResetProgress()
     {
         YandexGame.ResetSaveProgress();
+        YandexGame.savesData.playerWrapper.collectibles.Add("Char2");
         YandexGame.SaveProgress();
     }
 }

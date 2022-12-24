@@ -21,6 +21,11 @@ public class CarColorSwitcher : MonoBehaviour
     public CollectibleSO CurrentCarColor => currentCarColor;
     public PurchaseColor PurchaseColor => purchaseColor;
 
+    private void Awake()
+    {
+        purchaseColor.CarColorSwitcher = this;
+    }
+
     private void CreateButtons()
     {
         buttons.Add(button.GetComponent<ButtonCollectibleUI>());
@@ -37,9 +42,9 @@ public class CarColorSwitcher : MonoBehaviour
     {
         for (int i = 0; i < openColors.Count; i++)
         {
-            SetColorImages(buttons[i]);
             buttons[i].ClosedImage.SetActive(false);
             buttons[i].CollectibleSO = openColors[i];
+            SetColorImages(buttons[i]);
             buttons[i].Button.onClick.RemoveAllListeners();
             CarColorSO carColor = (CarColorSO)buttons[i].CollectibleSO;
             buttons[i].Button.onClick.AddListener(() => SetCurrentColor(carColor));
@@ -49,11 +54,11 @@ public class CarColorSwitcher : MonoBehaviour
         for (int i = 0; i < closedColors.Count; i++)
         {
             int j = i + openColors.Count;
-            SetColorImages(buttons[j]);
             buttons[j].ClosedImage.SetActive(true);
             buttons[j].CollectibleSO = closedColors[i];
+            SetColorImages(buttons[j]);
             buttons[j].Button.onClick.RemoveAllListeners();
-            CarColorSO carColor = (CarColorSO)buttons[i].CollectibleSO;
+            CarColorSO carColor = (CarColorSO)buttons[j].CollectibleSO;
             buttons[j].Button.onClick.AddListener(() => purchaseColor.ShowPurchaseButton(carColor));
         }
     }
@@ -86,7 +91,7 @@ public class CarColorSwitcher : MonoBehaviour
 
         for (int i = 0; i < imageComponents.Length; i++)
         {
-            if (imageComponents[i] != colorButton.ClosedImage)
+            if (imageComponents[i] != colorButton.ClosedImage && imageComponents[i] != colorButton.Image)
                 images.Add(imageComponents[i]);
         }
 
@@ -96,10 +101,10 @@ public class CarColorSwitcher : MonoBehaviour
     private void SetColors(CarColorSO carColor, List<Image> images)
     {
         Texture2D texture = carColor.Texture;
-
+        int maxYPixel = carColor.Texture.height;
         for (int i = 0; i < images.Count; i++)
         {
-            images[i].color = texture.GetPixel(0, i);
+            images[i].color = texture.GetPixel(i, maxYPixel - 1);
         }
     }
 
