@@ -15,3 +15,4 @@ MonoBehaviour:
   quality: 0
   sprite: {fileID: 21300000, guid: 96ed996461e54a24f8960e13399b415c, type: 3}
   prefab: {fileID: 919132149155446097, guid: cf36cfdc5740b574d90cf2e0ec8bfcc5, type: 3}
+  characterType: 4

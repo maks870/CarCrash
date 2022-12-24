@@ -2611,7 +2611,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 12}
+  m_AnchoredPosition: {x: -0.00012207031, y: 12}
   m_SizeDelta: {x: 0, y: -36.6655}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &407929382
@@ -2728,9 +2728,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentCharacterObject: {fileID: 342657379}
   button: {fileID: 391491451}
-  buttons: []
-  charactersSO:
-  - {fileID: 11400000, guid: ec1cbf7847fea0947a74322b32dea6b4, type: 2}
   characterType: 3
 --- !u!222 &407929387
 CanvasRenderer:
@@ -3538,7 +3535,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 12}
+  m_AnchoredPosition: {x: -0.00012207031, y: 12}
   m_SizeDelta: {x: 0, y: -36.6655}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &559701151
@@ -3655,10 +3652,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentCharacterObject: {fileID: 342657379}
   button: {fileID: 214931918}
-  buttons: []
-  charactersSO:
-  - {fileID: 11400000, guid: 1d8a4bf54897e464f94287d5d62bb2b9, type: 2}
-  - {fileID: 11400000, guid: 200f3c601c9783d4fa728bf000b83b12, type: 2}
   characterType: 4
 --- !u!222 &559701156
 CanvasRenderer:
@@ -4314,6 +4307,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 647926399}
   m_Mesh: {fileID: -251552132055743698, guid: e6fb32438e0a8e145b7a0b174b5251f2, type: 3}
+--- !u!23 &649088750 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8449996119470504636, guid: 952d3bda5262d2146a71979c27c0b918,
+    type: 3}
+  m_PrefabInstance: {fileID: 2094356528}
+  m_PrefabAsset: {fileID: 0}
+--- !u!33 &649088751 stripped
+MeshFilter:
+  m_CorrespondingSourceObject: {fileID: 4306142438199868902, guid: 952d3bda5262d2146a71979c27c0b918,
+    type: 3}
+  m_PrefabInstance: {fileID: 2094356528}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &651132103
 GameObject:
   m_ObjectHideFlags: 0
@@ -6778,8 +6783,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1887013092}
   m_HandleRect: {fileID: 1887013091}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.99999833
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7066,7 +7071,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 12}
+  m_AnchoredPosition: {x: -0.00012207031, y: 12}
   m_SizeDelta: {x: 0, y: -36.6655}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &997200281
@@ -7153,9 +7158,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentCharacterObject: {fileID: 342657379}
   button: {fileID: 674224094}
-  buttons: []
-  charactersSO:
-  - {fileID: 11400000, guid: ff7af11dc5cec754dafc3b78c4b0d5fb, type: 2}
   characterType: 2
 --- !u!222 &997200285
 CanvasRenderer:
@@ -10509,7 +10511,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1173372616}
   m_Direction: 3
   m_Value: 0
-  m_Size: 0.99999136
+  m_Size: 0.9999924
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -12401,7 +12403,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 12}
+  m_AnchoredPosition: {x: -0.00012207031, y: 12}
   m_SizeDelta: {x: 0, y: -36.6655}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1811665993
@@ -12518,9 +12520,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentCharacterObject: {fileID: 342657379}
   button: {fileID: 1366267750}
-  buttons: []
-  charactersSO:
-  - {fileID: 11400000, guid: d7e9568708323e54298525fd1fce9850, type: 2}
   characterType: 0
 --- !u!222 &1811665998
 CanvasRenderer:
@@ -14978,7 +14977,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 8.427582, y: 0.000030517578}
+  m_AnchoredPosition: {x: 8.427582, y: 0.0005187988}
   m_SizeDelta: {x: -16.8552, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2039125419
@@ -15099,13 +15098,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e01e648a5870bfb45bf6aa98cb013209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentRenderer: {fileID: 0}
+  currentRenderer: {fileID: 649088750}
   button: {fileID: 836866153}
-  buttons: []
-  carColorsSO:
-  - {fileID: 11400000, guid: e093bc936f41df749b2bf30d8fce0c92, type: 2}
-  - {fileID: 11400000, guid: 27517029ed2b7b44689c6d23bf5f8d13, type: 2}
-  - {fileID: 11400000, guid: d394073ef13666c4b9a602d8b10e100c, type: 2}
   purchaseColor: {fileID: 3560213250496846871}
 --- !u!1 &2089091075
 GameObject:
@@ -15147,7 +15141,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 8.427582, y: 0.000030517578}
+  m_AnchoredPosition: {x: 8.427582, y: 0.0005187988}
   m_SizeDelta: {x: -16.8552, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2089091077
@@ -15268,19 +15262,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc9b743583cc063428e633a8da84e78b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMeshFilter: {fileID: 0}
+  currentMeshFilter: {fileID: 649088751}
   button: {fileID: 1176621132}
-  buttons: []
   carStatWindow: {fileID: 4348207466390242160}
   maxAcceleration: 100
   maxHandleability: 100
   accelerationImage: {fileID: 4399459909973512593}
   handleability: {fileID: 2877162335835201523}
-  carModelsSO:
-  - {fileID: 11400000, guid: 037cf8e7a9ed2df4fa4bbba940436c37, type: 2}
-  - {fileID: 11400000, guid: 948b7f7278c9cb54d990209d3bb5ed28, type: 2}
-  - {fileID: 11400000, guid: 29fb4ce114bfab24e85fda017c377086, type: 2}
-  - {fileID: 11400000, guid: e9e806e50d6003949b1f420876eee380, type: 2}
 --- !u!1001 &2094356528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15912,7 +15900,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 12}
+  m_AnchoredPosition: {x: -0.00012207031, y: 12}
   m_SizeDelta: {x: 0, y: -36.6655}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &2132181934
@@ -16029,9 +16017,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentCharacterObject: {fileID: 342657379}
   button: {fileID: 1383066144}
-  buttons: []
-  charactersSO:
-  - {fileID: 11400000, guid: 8090f3b19e719f6408882fb747157f2e, type: 2}
   characterType: 1
 --- !u!222 &2132181939
 CanvasRenderer:
@@ -26298,7 +26283,6 @@ MonoBehaviour:
   - {fileID: 2132181938}
   - {fileID: 1811665997}
   - {fileID: 407929386}
-  currentSwitcher: {fileID: 0}
 --- !u!1 &9207275082602423206
 GameObject:
   m_ObjectHideFlags: 0
