@@ -2,7 +2,7 @@ using UnityEngine;
 
 public enum CharacterType
 {
-    SmilingFriends,
+    RaibowFriends,
     Minecraft,
     Hagi,
     SquidGame,

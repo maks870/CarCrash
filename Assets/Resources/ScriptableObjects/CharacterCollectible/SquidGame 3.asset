@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34465f5a2032fee48a06b0fd83c49e20, type: 3}
-  m_Name: Car2
+  m_Script: {fileID: 11500000, guid: 7d7053dfac59d234e885eb0ebd8275fe, type: 3}
+  m_Name: SquidGame 3
   m_EditorClassIdentifier: 
   quality: 0
-  acceleration: 20
-  handleability: 20
-  sprite: {fileID: 21300000, guid: f33964852d358d1418c2aeea02708444, type: 3}
-  mesh: {fileID: -8545447256379345787, guid: 1e2dd3ae7e65373409bebde255714c27, type: 3}
+  sprite: {fileID: 21300000, guid: b29280b49c8286b46be3ff5fe0a40b71, type: 3}
+  prefab: {fileID: 4167348870336284765, guid: c9a85e6ad8d876f4ab59e3152a986ea7, type: 3}
+  characterType: 3

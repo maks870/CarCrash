@@ -15,5 +15,5 @@ MonoBehaviour:
   quality: 0
   acceleration: 30
   handleability: 30
-  sprite: {fileID: 21300000, guid: 96ed996461e54a24f8960e13399b415c, type: 3}
-  mesh: {fileID: -8545447256379345787, guid: 7b3ad0d80128fc4409086e5fb77b237a, type: 3}
+  sprite: {fileID: 21300000, guid: c734dcb1b56a7794a9af918b1aa6bb6e, type: 3}
+  mesh: {fileID: -8545447256379345787, guid: a0423db497cf8ed40883b7a19a3aa97a, type: 3}

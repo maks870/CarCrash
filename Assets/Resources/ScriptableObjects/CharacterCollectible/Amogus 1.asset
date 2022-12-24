@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34465f5a2032fee48a06b0fd83c49e20, type: 3}
-  m_Name: Car2
+  m_Script: {fileID: 11500000, guid: 7d7053dfac59d234e885eb0ebd8275fe, type: 3}
+  m_Name: Amogus 1
   m_EditorClassIdentifier: 
   quality: 0
-  acceleration: 20
-  handleability: 20
-  sprite: {fileID: 21300000, guid: f33964852d358d1418c2aeea02708444, type: 3}
-  mesh: {fileID: -8545447256379345787, guid: 1e2dd3ae7e65373409bebde255714c27, type: 3}
+  sprite: {fileID: 21300000, guid: 1dd8fd7ca2fdb6c4caa338352c928e9b, type: 3}
+  prefab: {fileID: 6508416478699204883, guid: 28e2116422d9d214fa23e2e454da9ff0, type: 3}
+  characterType: 4
