@@ -6,7 +6,7 @@ public class ButtonCollectibleUI : MonoBehaviour//типа структура
     [SerializeField] private Image image;
     [SerializeField] private GameObject closedImage;
     [SerializeField] private Button button;
-    [SerializeField] private CollectibleSO collectibleSO;
+    private CollectibleSO collectibleSO;
 
     public Image Image { get => image; set => image = value; }
     public GameObject ClosedImage { get => closedImage; }
