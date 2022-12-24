@@ -19,11 +19,6 @@ public class CharacterTabSwitcher : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-    }
-
-
     public void SetSavedCharacter(CharacterModelSO characterSO)
     {
         for (int i = 0; i < switchers.Count; i++)
@@ -36,6 +31,4 @@ public class CharacterTabSwitcher : MonoBehaviour
 
         }
     }
-
-
 }

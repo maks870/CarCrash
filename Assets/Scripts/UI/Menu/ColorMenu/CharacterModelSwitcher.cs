@@ -105,7 +105,9 @@ public class CharacterModelSwitcher : MonoBehaviour
 
     public void SetCurrentCharacter(CharacterModelSO characterCollectible)
     {
-        currentCharacterObject = characterCollectible.Prefab;
+        currentCharacterObject.GetComponent<MeshFilter>().mesh = characterCollectible.Prefab.GetComponent<MeshFilter>().mesh;
+        currentCharacterObject.GetComponent<MeshRenderer>().materials = characterCollectible.Prefab.GetComponent<MeshRenderer>().materials;
+
         currentCharacter = characterCollectible;
         tabSwitcher.CurrentSwitcher = this;
     }
