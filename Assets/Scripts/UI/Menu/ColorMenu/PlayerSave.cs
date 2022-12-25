@@ -34,6 +34,8 @@ public class PlayerSave : MonoBehaviour
 
     private void SetSavedSO()
     {
+        Debug.Log("ZALUPA");
+        Debug.Log(playerLoad.CurrentCharacter);
         characterTabSwitcher.SetSavedCharacter(playerLoad.CurrentCharacter);
         carTabSwitcher.SetSavedCar(playerLoad.CurrentCarColor, playerLoad.CurrentCarModel);
         isInitializeProcess = false;
@@ -53,24 +55,32 @@ public class PlayerSave : MonoBehaviour
         YandexGame.savesData.playerWrapper.currentCarColorItem = carColorItem.Name;
         YandexGame.savesData.playerWrapper.currentCarModelItem = carModelItem.Name;
 
+        Debug.Log(characterItem.Name);
+        Debug.Log(YandexGame.savesData.playerWrapper.collectibles[0]);
         YandexGame.SaveProgress();
     }
 
     public void InitializeSO()
     {
+        Debug.Log(isInitializeProcess);
+
         if (isInitializeProcess)
+        {
+            Debug.Log("RETURN");
             return;
+        }
 
         isInitializeProcess = true;
-
         playerLoad.LoadPlayerItems();
 
+        Debug.Log("SETSAVEDSO");
         if (YandexGame.savesData.isFirstSession2)
         {
             SaveDefaultSO();
             YandexGame.savesData.isFirstSession2 = false;
         }
 
+        Debug.Log("SETSAVEDSO");
         SetSavedSO();
     }
 
@@ -100,7 +110,6 @@ public class PlayerSave : MonoBehaviour
     public void ResetProgress()
     {
         YandexGame.ResetSaveProgress();
-        YandexGame.savesData.playerWrapper.collectibles.Add("Char2");
         YandexGame.SaveProgress();
     }
 }
