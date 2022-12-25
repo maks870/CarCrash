@@ -109,7 +109,7 @@ public class CarColorSwitcher : MonoBehaviour
     {
         Texture2D texture = carColor.Texture;
         int maxYPixel = carColor.Texture.height;
-        for (int i = 0; i < images.Count; i++)
+        for (int i = 0; i < 3; i++)
         {
             images[i].color = texture.GetPixel(i, maxYPixel - 1);
         }
