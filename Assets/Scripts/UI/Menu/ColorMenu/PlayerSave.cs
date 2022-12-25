@@ -34,8 +34,8 @@ public class PlayerSave : MonoBehaviour
 
     private void SetSavedSO()
     {
-        Debug.Log("ZALUPA");
-        Debug.Log(playerLoad.CurrentCharacter);
+        Debug.Log("SETPLAYERSSETTINGMETHOD");
+        Debug.Log(playerLoad.CurrentCharacter.Name);
         characterTabSwitcher.SetSavedCharacter(playerLoad.CurrentCharacter);
         carTabSwitcher.SetSavedCar(playerLoad.CurrentCarColor, playerLoad.CurrentCarModel);
         isInitializeProcess = false;
@@ -73,7 +73,7 @@ public class PlayerSave : MonoBehaviour
         isInitializeProcess = true;
         playerLoad.LoadPlayerItems();
 
-        Debug.Log("SETSAVEDSO");
+        Debug.Log("SAVEFIRSTTIME");
         if (YandexGame.savesData.isFirstSession2)
         {
             SaveDefaultSO();
