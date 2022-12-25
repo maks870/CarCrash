@@ -146,9 +146,9 @@ namespace EasyUI.Tabs
             if (layoutGroup == null)
                 layoutGroup = buttons.GetComponent<LayoutGroup>();
 
-            if (type == TabsType.Horizontal)
+            if (type == TabsType.Horizontal && layoutGroup != null)
                 ((HorizontalLayoutGroup)layoutGroup).spacing = tabSpacing;
-            else if (type == TabsType.Vertical)
+            else if (type == TabsType.Vertical && layoutGroup!=null)
                 ((VerticalLayoutGroup)layoutGroup).spacing = tabSpacing;
 
         }
