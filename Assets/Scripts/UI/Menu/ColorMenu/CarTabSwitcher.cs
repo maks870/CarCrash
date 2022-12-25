@@ -29,6 +29,7 @@ public class CarTabSwitcher : MonoBehaviour
     {
         carColorSwitcher.PurchaseColor.HidePurchaseButton();
         carModelSwitcher.CarStatWindow.SetActive(true);
+        carModelSwitcher.UpdateCarStatWindow((CarModelSO)carModelSwitcher.CurrentCarModel);
     }
 
     public void SetSavedCar(CarColorSO carColor, CarModelSO carModel)
