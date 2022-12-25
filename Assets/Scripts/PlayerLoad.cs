@@ -65,10 +65,10 @@ public class PlayerLoad : MonoBehaviour
 
         defaultCharacter = null;
         defaultCarColor = null;
-        defaultCarModel= null;
+        defaultCarModel = null;
 
-        characterItems= null;
-        carColorsItems= null;
-        carModelsItems= null;
+        characterItems = null;
+        carColorsItems = null;
+        carModelsItems = null;
     }
 }

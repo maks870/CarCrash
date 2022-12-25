@@ -15,6 +15,7 @@ public class CarModelSwitcher : MonoBehaviour
 
     private bool isFirstLoad = true;
     private CollectibleSO currentCarModel;
+    private CarTabSwitcher carTabSwitcher;
     private List<CarModelSO> carModelsSO = new List<CarModelSO>();
     private List<CarModelSO> openedCarModels = new List<CarModelSO>();
     private List<CarModelSO> closedCarModels = new List<CarModelSO>();
@@ -22,6 +23,7 @@ public class CarModelSwitcher : MonoBehaviour
 
     public CollectibleSO CurrentCarModel => currentCarModel;
     public GameObject CarStatWindow => carStatWindow;
+    public CarTabSwitcher CarTabSwitcher { set => carTabSwitcher = value; }
 
     private void CreateButtons()
     {
@@ -45,7 +47,6 @@ public class CarModelSwitcher : MonoBehaviour
             buttons[i].Button.onClick.RemoveAllListeners();
             CarModelSO carModel = (CarModelSO)buttons[i].CollectibleSO;
             buttons[i].Button.onClick.AddListener(() => SetCurrentModel(carModel));
-            buttons[i].Button.onClick.AddListener(() => UpdateCarStatWindow(carModel));
         }
 
         for (int i = 0; i < closedCarModels.Count; i++)
@@ -86,14 +87,27 @@ public class CarModelSwitcher : MonoBehaviour
 
         LoadCarModelsSO();
     }
+    public void SelectCurrentButton()
+    {
+        Transform buttonTransform = buttons[0].transform;
+
+        for (int i = 0; i < openedCarModels.Count; i++)
+        {
+            if (openedCarModels[i] == (CarModelSO)currentCarModel)
+                buttonTransform = buttons[i].transform;
+        }
+
+        carTabSwitcher.SelectButton(buttonTransform);
+    }
 
     public void FillListBySO(List<CarModelSO> carModels)
     {
         carModelsSO.AddRange(carModels);
     }
 
-    public void UpdateCarStatWindow(CarModelSO carModelSO)
+    public void UpdateCarStatWindow()
     {
+        CarModelSO carModelSO = (CarModelSO)currentCarModel;
         float currentAccel = carModelSO.Acceleration / maxAcceleration;
         float currentHandleability = carModelSO.Handleability / maxHandleability;
         accelerationImage.fillAmount = currentAccel;
@@ -104,6 +118,8 @@ public class CarModelSwitcher : MonoBehaviour
     {
         currentMeshFilter.mesh = characterCollectible.Mesh;
         currentCarModel = characterCollectible;
+        SelectCurrentButton();
+        UpdateCarStatWindow();
     }
 }
 

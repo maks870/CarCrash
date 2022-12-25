@@ -34,10 +34,9 @@ public class PlayerSave : MonoBehaviour
 
     private void SetSavedSO()
     {
-        Debug.Log("SETPLAYERSSETTINGMETHOD");
-        Debug.Log(playerLoad.CurrentCharacter.Name);
         characterTabSwitcher.SetSavedCharacter(playerLoad.CurrentCharacter);
         carTabSwitcher.SetSavedCar(playerLoad.CurrentCarColor, playerLoad.CurrentCarModel);
+
         isInitializeProcess = false;
     }
 
@@ -65,22 +64,17 @@ public class PlayerSave : MonoBehaviour
         Debug.Log(isInitializeProcess);
 
         if (isInitializeProcess)
-        {
-            Debug.Log("RETURN");
             return;
-        }
 
         isInitializeProcess = true;
         playerLoad.LoadPlayerItems();
 
-        Debug.Log("SAVEFIRSTTIME");
         if (YandexGame.savesData.isFirstSession2)
         {
             SaveDefaultSO();
             YandexGame.savesData.isFirstSession2 = false;
         }
 
-        Debug.Log("SETSAVEDSO");
         SetSavedSO();
     }
 
@@ -110,6 +104,7 @@ public class PlayerSave : MonoBehaviour
 
     public void ShowOurCollectibles()
     {
+        Debug.Log($"В нашей коллекции {YandexGame.savesData.playerWrapper.collectibles.Count} элементов");
         foreach (string str in YandexGame.savesData.playerWrapper.collectibles)
         {
             Debug.Log("У нас есть " + str);

@@ -11,6 +11,7 @@ public class CharacterModelSwitcher : MonoBehaviour
 
     private bool isFirstLoad = true;
 
+    private Transform currentButton;
     private Transform currentCharacterTransform;
     private List<CharacterModelSO> charactersSO = new List<CharacterModelSO>();
     private List<CharacterModelSO> openedCharacters = new List<CharacterModelSO>();
@@ -19,7 +20,9 @@ public class CharacterModelSwitcher : MonoBehaviour
 
     public CollectibleSO CurrentCharacter { get => currentCharacter; }
     public CharacterTabSwitcher TabSwitcher { set => tabSwitcher = value; }
+    public Transform CurrentButton { get => currentButton; set => currentButton = value; }
     public Transform CurrentCharacterTransform { set => currentCharacterTransform = value; }
+
 
     private void CreateButtons()
     {
@@ -84,6 +87,19 @@ public class CharacterModelSwitcher : MonoBehaviour
         LoadCharactersSO();
     }
 
+    public void SelectCurrentButton()
+    {
+        Transform buttonTransform = buttons[0].transform;
+
+        for (int i = 0; i < openedCharacters.Count; i++)
+        {
+            if (openedCharacters[i] == (CharacterModelSO)currentCharacter)
+                buttonTransform = buttons[i].transform;
+        }
+
+        tabSwitcher.SelectButton(buttonTransform);
+    }
+
     public void FillListBySO(List<CharacterModelSO> characters)
     {
         for (int i = 0; i < characters.Count; i++)
@@ -112,6 +128,7 @@ public class CharacterModelSwitcher : MonoBehaviour
         tabSwitcher.UpdateCurrentCharacter(character.transform);
         currentCharacter = characterCollectible;
         tabSwitcher.CurrentSwitcher = this;
+        SelectCurrentButton();
     }
 
 

@@ -11,6 +11,7 @@ public class CarColorSwitcher : MonoBehaviour
     [SerializeField] private GameObject button;
     [SerializeField] private PurchaseColor purchaseColor;
     private CollectibleSO currentCarColor;
+    private CarTabSwitcher carTabSwitcher;
 
     private bool isFirstLoad = true;
     private List<CarColorSO> carColorsSO = new List<CarColorSO>();
@@ -20,6 +21,7 @@ public class CarColorSwitcher : MonoBehaviour
 
     public CollectibleSO CurrentCarColor => currentCarColor;
     public PurchaseColor PurchaseColor => purchaseColor;
+    public CarTabSwitcher CarTabSwitcher { set => carTabSwitcher = value; }
 
     private void Awake()
     {
@@ -59,7 +61,9 @@ public class CarColorSwitcher : MonoBehaviour
             SetColorImages(buttons[j]);
             buttons[j].Button.onClick.RemoveAllListeners();
             CarColorSO carColor = (CarColorSO)buttons[j].CollectibleSO;
+            Transform buttonTransform = buttons[j].transform;
             buttons[j].Button.onClick.AddListener(() => purchaseColor.ShowPurchaseButton(carColor));
+            buttons[j].Button.onClick.AddListener(() => carTabSwitcher.SelectButton(buttonTransform));
         }
     }
     private void LoadCarColorsSO()
@@ -119,6 +123,19 @@ public class CarColorSwitcher : MonoBehaviour
         LoadCarColorsSO();
     }
 
+    public void SelectCurrentButton()
+    {
+        Transform buttonTransform = buttons[0].transform;
+
+        for (int i = 0; i < openedCarColors.Count; i++)
+        {
+            if (openedCarColors[i] == (CarColorSO)currentCarColor)
+                buttonTransform = buttons[i].transform;
+        }
+
+        carTabSwitcher.SelectButton(buttonTransform);
+    }
+
     public void FillListBySO(List<CarColorSO> carColors)
     {
         carColorsSO.AddRange(carColors);
@@ -128,5 +145,6 @@ public class CarColorSwitcher : MonoBehaviour
     {
         currentRenderer.material.mainTexture = carColorCollectible.Texture;
         currentCarColor = carColorCollectible;
+        SelectCurrentButton();
     }
 }
