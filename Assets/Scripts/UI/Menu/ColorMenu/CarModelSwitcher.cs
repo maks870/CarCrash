@@ -40,7 +40,7 @@ public class CarModelSwitcher : MonoBehaviour
         for (int i = 0; i < openCarModels.Count; i++)
         {
             buttons[i].Image.sprite = openCarModels[i].Sprite;
-            buttons[i].ClosedImage.SetActive(false);
+            buttons[i].ClosedImage.gameObject.SetActive(false);
             buttons[i].CollectibleSO = openCarModels[i];
             buttons[i].Button.onClick.RemoveAllListeners();
             CarModelSO carModel = (CarModelSO)buttons[i].CollectibleSO;
@@ -52,7 +52,7 @@ public class CarModelSwitcher : MonoBehaviour
         {
             int j = i + openCarModels.Count;
             buttons[j].Image.sprite = closedCarModels[i].Sprite;
-            buttons[j].ClosedImage.SetActive(true);
+            buttons[j].ClosedImage.gameObject.SetActive(true);
             buttons[j].CollectibleSO = closedCarModels[i];
             buttons[j].Button.onClick.RemoveAllListeners();
         }

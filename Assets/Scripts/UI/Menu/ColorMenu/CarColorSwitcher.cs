@@ -42,7 +42,7 @@ public class CarColorSwitcher : MonoBehaviour
     {
         for (int i = 0; i < openColors.Count; i++)
         {
-            buttons[i].ClosedImage.SetActive(false);
+            buttons[i].ClosedImage.gameObject.SetActive(false);
             buttons[i].CollectibleSO = openColors[i];
             SetColorImages(buttons[i]);
             buttons[i].Button.onClick.RemoveAllListeners();
@@ -54,7 +54,7 @@ public class CarColorSwitcher : MonoBehaviour
         for (int i = 0; i < closedColors.Count; i++)
         {
             int j = i + openColors.Count;
-            buttons[j].ClosedImage.SetActive(true);
+            buttons[j].ClosedImage.gameObject.SetActive(true);
             buttons[j].CollectibleSO = closedColors[i];
             SetColorImages(buttons[j]);
             buttons[j].Button.onClick.RemoveAllListeners();
@@ -91,8 +91,11 @@ public class CarColorSwitcher : MonoBehaviour
 
         for (int i = 0; i < imageComponents.Length; i++)
         {
-            if (imageComponents[i] != colorButton.ClosedImage && imageComponents[i] != colorButton.Image)
+            if (imageComponents[i] != colorButton.ClosedImage.GetComponent<Image>() && imageComponents[i] != colorButton.Image)
+            {
+                Debug.Log("добавили цвет " + i);
                 images.Add(imageComponents[i]);
+            }
         }
 
         SetColors((CarColorSO)colorButton.CollectibleSO, images);

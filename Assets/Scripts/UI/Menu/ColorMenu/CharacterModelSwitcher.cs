@@ -38,7 +38,7 @@ public class CharacterModelSwitcher : MonoBehaviour
         for (int i = 0; i < openCharacters.Count; i++)
         {
             buttons[i].Image.sprite = openCharacters[i].Sprite;
-            buttons[i].ClosedImage.SetActive(false);
+            buttons[i].ClosedImage.gameObject.SetActive(false);
             buttons[i].CollectibleSO = openCharacters[i];
             buttons[i].Button.onClick.RemoveAllListeners();
             CharacterModelSO characterModel = (CharacterModelSO)buttons[i].CollectibleSO;
@@ -49,7 +49,7 @@ public class CharacterModelSwitcher : MonoBehaviour
         {
             int j = i + openCharacters.Count;
             buttons[j].Image.sprite = closedCharacters[i].Sprite;
-            buttons[j].ClosedImage.SetActive(true);
+            buttons[j].ClosedImage.gameObject.SetActive(true);
             buttons[j].CollectibleSO = closedCharacters[i];
             buttons[j].Button.onClick.RemoveAllListeners();
         }
