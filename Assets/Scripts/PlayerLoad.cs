@@ -39,12 +39,10 @@ public class PlayerLoad : MonoBehaviour
     {
         if (YandexGame.savesData.playerWrapper.currentCharacterItem != null)
         {
-            Debug.Log("1");
             currentCharacter = characterItems.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCharacterItem);
         }
         else
         {
-            Debug.Log("2");
             currentCharacter = defaultCharacter;
         }
 
@@ -57,5 +55,20 @@ public class PlayerLoad : MonoBehaviour
             currentCarModel = carModelsItems.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCarModelItem);
         else
             currentCarModel = defaultCarModel;
+    }
+
+    private void OnDestroy()
+    {
+        currentCharacter = null;
+        currentCarColor = null;
+        currentCarModel = null;
+
+        defaultCharacter = null;
+        defaultCarColor = null;
+        defaultCarModel= null;
+
+        characterItems= null;
+        carColorsItems= null;
+        carModelsItems= null;
     }
 }
