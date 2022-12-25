@@ -99,6 +99,15 @@ public class PlayerSave : MonoBehaviour
         YandexGame.SaveProgress();
     }
 
+    public void AddCharacter()
+    {
+        List<CharacterModelSO> characters = CollectibleLoader.LoadCollectiblesByType<CharacterModelSO>();
+        int rand = Random.Range(0, characters.Count);
+        YandexGame.savesData.playerWrapper.collectibles.Add(characters[rand].Name);
+        Debug.Log("Получен персонаж "+ characters[rand].Name);
+        YandexGame.SaveProgress();
+    }
+
     public void ShowOurCollectibles()
     {
         foreach (string str in YandexGame.savesData.playerWrapper.collectibles)
