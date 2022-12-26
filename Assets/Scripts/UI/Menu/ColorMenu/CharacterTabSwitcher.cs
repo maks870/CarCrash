@@ -14,7 +14,7 @@ public class CharacterTabSwitcher : MonoBehaviour
 
     private void Awake()
     {
-        List<CharacterModelSO> characters = CollectibleLoader.LoadCollectiblesByType<CharacterModelSO>();
+        List<CharacterModelSO> characters = SOLoader.LoadSOByType<CharacterModelSO>();
 
         for (int i = 0; i < switchers.Count; i++)
         {
@@ -27,7 +27,6 @@ public class CharacterTabSwitcher : MonoBehaviour
     {
         for (int i = 0; i < switchers.Count; i++)
         {
-            switchers[i].TabSwitcher = this;
             switchers[i].InitializeUI();
 
             if (switchers[i].FindStartCharacter(characterSO))

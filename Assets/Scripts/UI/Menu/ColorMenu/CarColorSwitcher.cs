@@ -10,8 +10,8 @@ public class CarColorSwitcher : MonoBehaviour
     [SerializeField] private MeshRenderer currentRenderer;
     [SerializeField] private GameObject button;
     [SerializeField] private PurchaseColor purchaseColor;
+    [SerializeField] private CarTabSwitcher carTabSwitcher;
     private CollectibleSO currentCarColor;
-    private CarTabSwitcher carTabSwitcher;
 
     private bool isFirstLoad = true;
     private List<CarColorSO> carColorsSO = new List<CarColorSO>();
@@ -21,7 +21,6 @@ public class CarColorSwitcher : MonoBehaviour
 
     public CollectibleSO CurrentCarColor => currentCarColor;
     public PurchaseColor PurchaseColor => purchaseColor;
-    public CarTabSwitcher CarTabSwitcher { set => carTabSwitcher = value; }
 
     private void Awake()
     {

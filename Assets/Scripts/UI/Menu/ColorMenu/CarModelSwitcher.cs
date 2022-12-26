@@ -12,10 +12,10 @@ public class CarModelSwitcher : MonoBehaviour
     [SerializeField] private float maxHandleability;
     [SerializeField] private Image accelerationImage;
     [SerializeField] private Image handleability;
+    [SerializeField] private CarTabSwitcher carTabSwitcher;
 
     private bool isFirstLoad = true;
     private CollectibleSO currentCarModel;
-    private CarTabSwitcher carTabSwitcher;
     private List<CarModelSO> carModelsSO = new List<CarModelSO>();
     private List<CarModelSO> openedCarModels = new List<CarModelSO>();
     private List<CarModelSO> closedCarModels = new List<CarModelSO>();
@@ -23,7 +23,6 @@ public class CarModelSwitcher : MonoBehaviour
 
     public CollectibleSO CurrentCarModel => currentCarModel;
     public GameObject CarStatWindow => carStatWindow;
-    public CarTabSwitcher CarTabSwitcher { set => carTabSwitcher = value; }
 
     private void CreateButtons()
     {
@@ -90,13 +89,14 @@ public class CarModelSwitcher : MonoBehaviour
     public void SelectCurrentButton()
     {
         Transform buttonTransform = buttons[0].transform;
+        Debug.Log(buttons.Count);
 
         for (int i = 0; i < openedCarModels.Count; i++)
         {
             if (openedCarModels[i] == (CarModelSO)currentCarModel)
                 buttonTransform = buttons[i].transform;
         }
-
+        Debug.Log(carTabSwitcher);
         carTabSwitcher.SelectButton(buttonTransform);
     }
 

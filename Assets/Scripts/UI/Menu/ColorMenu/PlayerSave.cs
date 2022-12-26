@@ -7,10 +7,13 @@ public class PlayerSave : MonoBehaviour
 {
     [SerializeField] private CarTabSwitcher carTabSwitcher;
     [SerializeField] private CharacterTabSwitcher characterTabSwitcher;
-
+    [SerializeField] private MapSwitcher mapSwitcher;
     [SerializeField] private PlayerLoad playerLoad;
+    [SerializeField] private GameObject customizeRoom;
+    [SerializeField] private List<GameObject> gamemodsPanels;
 
     private bool isInitializeProcess = false;
+    private bool isStartLoad = true;
 
     private void Awake()
     {
@@ -36,46 +39,63 @@ public class PlayerSave : MonoBehaviour
     {
         characterTabSwitcher.SetSavedCharacter(playerLoad.CurrentCharacter);
         carTabSwitcher.SetSavedCar(playerLoad.CurrentCarColor, playerLoad.CurrentCarModel);
+        //mapSwitcher.InitializeUI();
 
         isInitializeProcess = false;
     }
 
     private void SaveDefaultSO()
     {
-        CollectibleSO characterItem = playerLoad.CurrentCharacter;
-        CollectibleSO carColorItem = playerLoad.CurrentCarColor;
-        CollectibleSO carModelItem = playerLoad.CurrentCarModel;
+        CollectibleSO character = playerLoad.DefaultCharacter;
+        CollectibleSO carColor = playerLoad.DefaultCarColor;
+        CollectibleSO carModel = playerLoad.DefaultCarModel;
+        //MapSO map = playerLoad.DefaultMap;
 
-        YandexGame.savesData.playerWrapper.collectibles.Add(characterItem.Name);
-        YandexGame.savesData.playerWrapper.collectibles.Add(carColorItem.Name);
-        YandexGame.savesData.playerWrapper.collectibles.Add(carModelItem.Name);
 
-        YandexGame.savesData.playerWrapper.currentCharacterItem = characterItem.Name;
-        YandexGame.savesData.playerWrapper.currentCarColorItem = carColorItem.Name;
-        YandexGame.savesData.playerWrapper.currentCarModelItem = carModelItem.Name;
+        YandexGame.savesData.playerWrapper.collectibles.Add(character.Name);
+        YandexGame.savesData.playerWrapper.collectibles.Add(carColor.Name);
+        YandexGame.savesData.playerWrapper.collectibles.Add(carModel.Name);
 
-        Debug.Log(characterItem.Name);
-        Debug.Log(YandexGame.savesData.playerWrapper.collectibles[0]);
+        YandexGame.savesData.playerWrapper.currentCharacterItem = character.Name;
+        YandexGame.savesData.playerWrapper.currentCarColorItem = carColor.Name;
+        YandexGame.savesData.playerWrapper.currentCarModelItem = carModel.Name;
+
+        //MapInfo mapInfo = new MapInfo(map.Name);
+
+        //YandexGame.savesData.playerWrapper.maps.Add(mapInfo);
+
+
         YandexGame.SaveProgress();
     }
 
     public void InitializeSO()
     {
-        Debug.Log(isInitializeProcess);
-
         if (isInitializeProcess)
             return;
 
         isInitializeProcess = true;
-        playerLoad.LoadPlayerItems();
 
         if (YandexGame.savesData.isFirstSession2)
         {
+            Debug.Log("Первая загрузка");
             SaveDefaultSO();
             YandexGame.savesData.isFirstSession2 = false;
         }
 
+        playerLoad.LoadPlayerItems();
         SetSavedSO();
+
+        if (isStartLoad)
+        {
+            customizeRoom.SetActive(false);
+
+            for (int i = 0; i < gamemodsPanels.Count; i++)
+            {
+                gamemodsPanels[i].SetActive(false);
+            }
+
+            isStartLoad = false;
+        }
     }
 
     public void SavePlayer()
@@ -95,10 +115,10 @@ public class PlayerSave : MonoBehaviour
 
     public void AddCharacter()
     {
-        List<CharacterModelSO> characters = CollectibleLoader.LoadCollectiblesByType<CharacterModelSO>();
+        List<CharacterModelSO> characters = SOLoader.LoadSOByType<CharacterModelSO>();
         int rand = Random.Range(0, characters.Count);
         YandexGame.savesData.playerWrapper.collectibles.Add(characters[rand].Name);
-        Debug.Log("Получен персонаж "+ characters[rand].Name);
+        Debug.Log("Получен персонаж " + characters[rand].Name);
         YandexGame.SaveProgress();
     }
 

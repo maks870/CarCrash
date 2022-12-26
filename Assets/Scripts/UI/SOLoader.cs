@@ -3,21 +3,21 @@ using System.IO;
 using System.Linq;
 using UnityEngine;
 
-public class CollectibleLoader
+public class SOLoader
 {
-    public static List<T> LoadCollectiblesByType<T>()
+    public static List<T> LoadSOByType<T>()
     {
         string resourcesPath = Application.dataPath + "/Resources/ScriptableObjects";
         DirectoryInfo dirInfo = new DirectoryInfo(resourcesPath);
-        List<T> collectible = new List<T>();
+        List<T> sctriptableObjects = new List<T>();
 
         foreach (DirectoryInfo dir in dirInfo.GetDirectories())
         {
             T[] objects = Resources.LoadAll("ScriptableObjects/" + dir.Name, typeof(T)).Cast<T>().ToArray();
-            collectible.AddRange(objects);
+            sctriptableObjects.AddRange(objects);
         }
 
-        return collectible;
+        return sctriptableObjects;
     }
 
     public static List<CollectibleSO> LoadAllCollectibles()

@@ -6,7 +6,7 @@ public class CharacterModelSwitcher : MonoBehaviour
 {
     [SerializeField] private GameObject button;
     [SerializeField] private CharacterType characterType;
-    private CharacterTabSwitcher tabSwitcher;
+    [SerializeField] private CharacterTabSwitcher tabSwitcher;
     private CollectibleSO currentCharacter;
 
     private bool isFirstLoad = true;
@@ -19,7 +19,6 @@ public class CharacterModelSwitcher : MonoBehaviour
     private List<ButtonCollectibleUI> buttons = new List<ButtonCollectibleUI>();
 
     public CollectibleSO CurrentCharacter { get => currentCharacter; }
-    public CharacterTabSwitcher TabSwitcher { set => tabSwitcher = value; }
     public Transform CurrentButton { get => currentButton; set => currentButton = value; }
     public Transform CurrentCharacterTransform { set => currentCharacterTransform = value; }
 

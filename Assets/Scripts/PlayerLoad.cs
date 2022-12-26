@@ -13,48 +13,44 @@ public class PlayerLoad : MonoBehaviour
     [SerializeField] private CharacterModelSO defaultCharacter;
     [SerializeField] private CarColorSO defaultCarColor;
     [SerializeField] private CarModelSO defaultCarModel;
+    [SerializeField] private MapSO defaultMap;
 
-    [SerializeField] private List<CharacterModelSO> characterItems;
-    [SerializeField] private List<CarColorSO> carColorsItems;
-    [SerializeField] private List<CarModelSO> carModelsItems;
+    private List<CharacterModelSO> characters;
+    private List<CarColorSO> carColors;
+    private List<CarModelSO> carModels;
 
     public CharacterModelSO CurrentCharacter => currentCharacter;
     public CarColorSO CurrentCarColor => currentCarColor;
     public CarModelSO CurrentCarModel => currentCarModel;
-    public CharacterModelSO DefaultCharacter { get => defaultCharacter; }
-    public CarColorSO DefaultCarColor { get => defaultCarColor; }
-    public CarModelSO DefaultCarModel { get => defaultCarModel; }
+    public CharacterModelSO DefaultCharacter => defaultCharacter;
+    public CarColorSO DefaultCarColor => defaultCarColor;
+    public CarModelSO DefaultCarModel => defaultCarModel;
+    public MapSO DefaultMap => defaultMap;
 
     private void Awake()
     {
-        List<CharacterModelSO> characterSO = CollectibleLoader.LoadCollectiblesByType<CharacterModelSO>();
-        List<CarColorSO> carColorsSO = CollectibleLoader.LoadCollectiblesByType<CarColorSO>();
-        List<CarModelSO> carModelsSO = CollectibleLoader.LoadCollectiblesByType<CarModelSO>();
+        List<CharacterModelSO> charactersSO = SOLoader.LoadSOByType<CharacterModelSO>();
+        List<CarColorSO> carColorsSO = SOLoader.LoadSOByType<CarColorSO>();
+        List<CarModelSO> carModelsSO = SOLoader.LoadSOByType<CarModelSO>();
 
-        characterItems.AddRange(characterSO);
-        carColorsItems.AddRange(carColorsSO);
-        carModelsItems.AddRange(carModelsSO);
+        characters.AddRange(charactersSO);
+        carColors.AddRange(carColorsSO);
+        carModels.AddRange(carModelsSO);
     }
     public void LoadPlayerItems()
     {
-        if (YandexGame.savesData.playerWrapper.currentCharacterItem != null)
-        {
-            currentCharacter = characterItems.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCharacterItem);
-        }
-        else
-        {
-            currentCharacter = defaultCharacter;
-        }
 
-        if (YandexGame.savesData.playerWrapper.currentCarColorItem != null)
-            currentCarColor = carColorsItems.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCarColorItem);
-        else
-            currentCarColor = defaultCarColor;
 
-        if (YandexGame.savesData.playerWrapper.currentCarModelItem != null)
-            currentCarModel = carModelsItems.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCarModelItem);
-        else
-            currentCarModel = defaultCarModel;
+        currentCharacter = characters.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCharacterItem);
+
+
+
+        currentCarColor = carColors.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCarColorItem);
+
+
+
+        currentCarModel = carModels.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCarModelItem);
+
     }
 
     private void OnDestroy()
@@ -67,8 +63,8 @@ public class PlayerLoad : MonoBehaviour
         defaultCarColor = null;
         defaultCarModel = null;
 
-        characterItems = null;
-        carColorsItems = null;
-        carModelsItems = null;
+        characters = null;
+        carColors = null;
+        carModels = null;
     }
 }

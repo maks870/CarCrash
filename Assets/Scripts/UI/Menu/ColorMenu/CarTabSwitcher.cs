@@ -17,11 +17,9 @@ public class CarTabSwitcher : MonoBehaviour
 
     private void Awake()
     {
-        List<CarColorSO> carColors = CollectibleLoader.LoadCollectiblesByType<CarColorSO>();
-        List<CarModelSO> carModels = CollectibleLoader.LoadCollectiblesByType<CarModelSO>();
+        List<CarColorSO> carColors = SOLoader.LoadSOByType<CarColorSO>();
+        List<CarModelSO> carModels = SOLoader.LoadSOByType<CarModelSO>();
 
-        carColorSwitcher.CarTabSwitcher = this;
-        carModelSwitcher.CarTabSwitcher = this;
         carColorSwitcher.FillListBySO(carColors);
         carModelSwitcher.FillListBySO(carModels);
     }
