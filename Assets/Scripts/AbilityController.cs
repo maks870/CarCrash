@@ -9,11 +9,11 @@ public class AbilityController : MonoBehaviour
     [SerializeField] private Transform spawnPointForward;
     [SerializeField] private Transform spawnPointMiddle;
     [SerializeField] private Transform spawnPointBack;
-    [SerializeField] private GameObject target;
     [SerializeField] private ShieldProjectile shield;
     [SerializeField] private List<GameObject> possibleTargets = new List<GameObject>();
     [SerializeField] private List<AbilitySO> abilities = new List<AbilitySO>();
 
+    private GameObject target;
     private bool isDamaged;
     private int haveTargetWeapon = 0;
     private int mineWarning = 0;

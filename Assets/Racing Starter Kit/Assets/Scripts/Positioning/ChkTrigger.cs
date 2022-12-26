@@ -10,7 +10,7 @@ public class ChkTrigger : MonoBehaviour
     private int nCheckpointNumber, kPos, CurrentChk, NextChk;
     public int CarPosListNumber;
 
-    public Transform lastCheckpoint;
+    [HideInInspector] public Transform lastCheckpoint;
 
     private void Start()
     {
