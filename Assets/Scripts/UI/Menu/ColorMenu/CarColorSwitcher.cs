@@ -96,7 +96,6 @@ public class CarColorSwitcher : MonoBehaviour
         {
             if (imageComponents[i] != colorButton.ClosedImage.GetComponent<Image>() && imageComponents[i] != colorButton.Image)
             {
-                Debug.Log("добавили цвет " + i);
                 images.Add(imageComponents[i]);
             }
         }

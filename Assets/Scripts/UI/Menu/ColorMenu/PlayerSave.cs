@@ -39,7 +39,7 @@ public class PlayerSave : MonoBehaviour
     {
         characterTabSwitcher.SetSavedCharacter(playerLoad.CurrentCharacter);
         carTabSwitcher.SetSavedCar(playerLoad.CurrentCarColor, playerLoad.CurrentCarModel);
-        //mapSwitcher.InitializeUI();
+        mapSwitcher.InitializeUI();
 
         isInitializeProcess = false;
     }
@@ -49,7 +49,7 @@ public class PlayerSave : MonoBehaviour
         CollectibleSO character = playerLoad.DefaultCharacter;
         CollectibleSO carColor = playerLoad.DefaultCarColor;
         CollectibleSO carModel = playerLoad.DefaultCarModel;
-        //MapSO map = playerLoad.DefaultMap;
+        MapSO map = playerLoad.DefaultMap;
 
 
         YandexGame.savesData.playerWrapper.collectibles.Add(character.Name);
@@ -60,10 +60,10 @@ public class PlayerSave : MonoBehaviour
         YandexGame.savesData.playerWrapper.currentCarColorItem = carColor.Name;
         YandexGame.savesData.playerWrapper.currentCarModelItem = carModel.Name;
 
-        //MapInfo mapInfo = new MapInfo(map.Name);
-
-        //YandexGame.savesData.playerWrapper.maps.Add(mapInfo);
-
+        MapInfo mapInfo = new MapInfo(map.Name);
+        YandexGame.savesData.playerWrapper.maps.Add(mapInfo);
+        Debug.Log(mapInfo.mapName);
+        Debug.Log(YandexGame.savesData.playerWrapper.maps[0].mapName);
 
         YandexGame.SaveProgress();
     }
@@ -87,6 +87,7 @@ public class PlayerSave : MonoBehaviour
 
         if (isStartLoad)
         {
+            Debug.Log("Прячкем панелтьки");
             customizeRoom.SetActive(false);
 
             for (int i = 0; i < gamemodsPanels.Count; i++)
@@ -96,6 +97,7 @@ public class PlayerSave : MonoBehaviour
 
             isStartLoad = false;
         }
+
     }
 
     public void SavePlayer()

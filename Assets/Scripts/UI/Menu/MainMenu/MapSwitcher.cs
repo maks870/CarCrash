@@ -15,6 +15,12 @@ public class MapSwitcher : MonoBehaviour
     private List<MapSO> closedMaps = new List<MapSO>();
     private List<ButtonMapUI> buttons = new List<ButtonMapUI>();
 
+    private void Awake()
+    {
+        List<MapSO> maps = SOLoader.LoadSOByType<MapSO>();
+        FillListBySO(maps);
+    }
+
     private void CreateButtons()
     {
         buttons.Add(button.GetComponent<ButtonMapUI>());
@@ -91,6 +97,7 @@ public class MapSwitcher : MonoBehaviour
 
     public void FillListBySO(List<MapSO> maps)
     {
+        Debug.Log("Добавляем карты " + maps.Count);
         mapsSO.AddRange(maps);
     }
 

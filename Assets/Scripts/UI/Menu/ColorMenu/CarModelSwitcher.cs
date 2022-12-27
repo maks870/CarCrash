@@ -89,14 +89,12 @@ public class CarModelSwitcher : MonoBehaviour
     public void SelectCurrentButton()
     {
         Transform buttonTransform = buttons[0].transform;
-        Debug.Log(buttons.Count);
 
         for (int i = 0; i < openedCarModels.Count; i++)
         {
             if (openedCarModels[i] == (CarModelSO)currentCarModel)
                 buttonTransform = buttons[i].transform;
         }
-        Debug.Log(carTabSwitcher);
         carTabSwitcher.SelectButton(buttonTransform);
     }
 

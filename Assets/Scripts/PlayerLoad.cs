@@ -15,9 +15,9 @@ public class PlayerLoad : MonoBehaviour
     [SerializeField] private CarModelSO defaultCarModel;
     [SerializeField] private MapSO defaultMap;
 
-    private List<CharacterModelSO> characters;
-    private List<CarColorSO> carColors;
-    private List<CarModelSO> carModels;
+    private List<CharacterModelSO> characters = new List<CharacterModelSO>();
+    private List<CarColorSO> carColors = new List<CarColorSO>();
+    private List<CarModelSO> carModels = new List<CarModelSO>();
 
     public CharacterModelSO CurrentCharacter => currentCharacter;
     public CarColorSO CurrentCarColor => currentCarColor;
@@ -40,16 +40,14 @@ public class PlayerLoad : MonoBehaviour
     public void LoadPlayerItems()
     {
 
+        if (characters.Count != 0)
+            currentCharacter = characters.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCharacterItem);
 
-        currentCharacter = characters.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCharacterItem);
+        if (carColors.Count != 0)
+            currentCarColor = carColors.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCarColorItem);
 
-
-
-        currentCarColor = carColors.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCarColorItem);
-
-
-
-        currentCarModel = carModels.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCarModelItem);
+        if (carModels.Count != 0)
+            currentCarModel = carModels.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCarModelItem);
 
     }
 
