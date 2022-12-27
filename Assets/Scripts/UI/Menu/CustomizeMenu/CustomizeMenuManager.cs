@@ -3,44 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using YG;
 
-public class PlayerSave : MonoBehaviour
+public class CustomizeMenuManager : MonoBehaviour
 {
     [SerializeField] private CarTabSwitcher carTabSwitcher;
     [SerializeField] private CharacterTabSwitcher characterTabSwitcher;
-    [SerializeField] private MapSwitcher mapSwitcher;
     [SerializeField] private PlayerLoad playerLoad;
-    [SerializeField] private GameObject customizeRoom;
-    [SerializeField] private List<GameObject> gamemodsPanels;
+    [SerializeField] private GameObject objectUI;
 
     private bool isInitializeProcess = false;
     private bool isStartLoad = true;
 
-    private void Awake()
-    {
-    }
-
     private void OnEnable()
     {
-        YandexGame.GetDataEvent += InitializeSO;
+        YandexGame.GetDataEvent += InitializeMenu;
     }
 
     private void OnDisable()
     {
-        YandexGame.GetDataEvent -= InitializeSO;
+        YandexGame.GetDataEvent -= InitializeMenu;
     }
 
     void Start()
     {
         if (YandexGame.SDKEnabled == true)
-            InitializeSO();
+            InitializeMenu();
     }
 
     private void SetSavedSO()
     {
         characterTabSwitcher.SetSavedCharacter(playerLoad.CurrentCharacter);
         carTabSwitcher.SetSavedCar(playerLoad.CurrentCarColor, playerLoad.CurrentCarModel);
-        mapSwitcher.InitializeUI();
-
         isInitializeProcess = false;
     }
 
@@ -49,8 +41,6 @@ public class PlayerSave : MonoBehaviour
         CollectibleSO character = playerLoad.DefaultCharacter;
         CollectibleSO carColor = playerLoad.DefaultCarColor;
         CollectibleSO carModel = playerLoad.DefaultCarModel;
-        MapSO map = playerLoad.DefaultMap;
-
 
         YandexGame.savesData.playerWrapper.collectibles.Add(character.Name);
         YandexGame.savesData.playerWrapper.collectibles.Add(carColor.Name);
@@ -60,15 +50,12 @@ public class PlayerSave : MonoBehaviour
         YandexGame.savesData.playerWrapper.currentCarColorItem = carColor.Name;
         YandexGame.savesData.playerWrapper.currentCarModelItem = carModel.Name;
 
-        MapInfo mapInfo = new MapInfo(map.Name);
-        YandexGame.savesData.playerWrapper.maps.Add(mapInfo);
-        Debug.Log(mapInfo.mapName);
-        Debug.Log(YandexGame.savesData.playerWrapper.maps[0].mapName);
+        YandexGame.savesData.isFirstSession2 = false;
 
         YandexGame.SaveProgress();
     }
 
-    public void InitializeSO()
+    public void InitializeMenu()
     {
         if (isInitializeProcess)
             return;
@@ -76,28 +63,16 @@ public class PlayerSave : MonoBehaviour
         isInitializeProcess = true;
 
         if (YandexGame.savesData.isFirstSession2)
-        {
-            Debug.Log("Первая загрузка");
             SaveDefaultSO();
-            YandexGame.savesData.isFirstSession2 = false;
-        }
 
         playerLoad.LoadPlayerItems();
         SetSavedSO();
 
-        if (isStartLoad)
-        {
-            Debug.Log("Прячкем панелтьки");
-            customizeRoom.SetActive(false);
+        if (!isStartLoad)
+            return;
 
-            for (int i = 0; i < gamemodsPanels.Count; i++)
-            {
-                gamemodsPanels[i].SetActive(false);
-            }
-
-            isStartLoad = false;
-        }
-
+        objectUI.SetActive(false);
+        isStartLoad = false;
     }
 
     public void SavePlayer()
@@ -115,7 +90,7 @@ public class PlayerSave : MonoBehaviour
         YandexGame.SaveProgress();
     }
 
-    public void AddCharacter()
+    public void AddCharacter()//тестовый метод
     {
         List<CharacterModelSO> characters = SOLoader.LoadSOByType<CharacterModelSO>();
         int rand = Random.Range(0, characters.Count);
@@ -124,7 +99,7 @@ public class PlayerSave : MonoBehaviour
         YandexGame.SaveProgress();
     }
 
-    public void ShowOurCollectibles()
+    public void ShowOurCollectibles()//тестовый метод
     {
         Debug.Log($"В нашей коллекции {YandexGame.savesData.playerWrapper.collectibles.Count} элементов");
         foreach (string str in YandexGame.savesData.playerWrapper.collectibles)
@@ -133,7 +108,7 @@ public class PlayerSave : MonoBehaviour
         }
     }
 
-    public void ResetProgress()
+    public void ResetProgress()//тестовый метод
     {
         YandexGame.ResetSaveProgress();
         YandexGame.SaveProgress();
