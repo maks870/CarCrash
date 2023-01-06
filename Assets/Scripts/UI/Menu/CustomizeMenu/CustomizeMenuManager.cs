@@ -3,40 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using YG;
 
-public class CustomizeMenuManager : MonoBehaviour
+public class CustomizeMenuManager : MenuManager
 {
     [SerializeField] private CarTabSwitcher carTabSwitcher;
     [SerializeField] private CharacterTabSwitcher characterTabSwitcher;
-    [SerializeField] private PlayerLoad playerLoad;
-    [SerializeField] private GameObject objectUI;
 
-    private bool isInitializeProcess = false;
-    private bool isStartLoad = true;
-
-    private void OnEnable()
-    {
-        YandexGame.GetDataEvent += InitializeMenu;
-    }
-
-    private void OnDisable()
-    {
-        YandexGame.GetDataEvent -= InitializeMenu;
-    }
-
-    void Start()
-    {
-        if (YandexGame.SDKEnabled == true)
-            InitializeMenu();
-    }
 
     private void SetSavedSO()
     {
         characterTabSwitcher.SetSavedCharacter(playerLoad.CurrentCharacter);
         carTabSwitcher.SetSavedCar(playerLoad.CurrentCarColor, playerLoad.CurrentCarModel);
-        isInitializeProcess = false;
     }
 
-    private void SaveDefaultSO()
+    private void SavePlayer()
+    {
+        CollectibleSO characterItem = characterTabSwitcher.CurrentSwitcher.CurrentCharacter;
+        CollectibleSO carColorItem = carTabSwitcher.CarColorSwitcher.CurrentCarColor;
+        CollectibleSO carModelItem = carTabSwitcher.CarModelSwitcher.CurrentCarModel;
+
+        YandexGame.savesData.playerWrapper.currentCharacterItem = characterItem.Name;
+        YandexGame.savesData.playerWrapper.currentCarColorItem = carColorItem.Name;
+        YandexGame.savesData.playerWrapper.currentCarModelItem = carModelItem.Name;
+
+        YandexGame.SaveProgress();
+    }
+
+    public override void SaveDefaultSO()
     {
         CollectibleSO character = playerLoad.DefaultCharacter;
         CollectibleSO carColor = playerLoad.DefaultCarColor;
@@ -49,45 +41,23 @@ public class CustomizeMenuManager : MonoBehaviour
         YandexGame.savesData.playerWrapper.currentCharacterItem = character.Name;
         YandexGame.savesData.playerWrapper.currentCarColorItem = carColor.Name;
         YandexGame.savesData.playerWrapper.currentCarModelItem = carModel.Name;
-
-        YandexGame.savesData.isFirstSession2 = false;
-
-        YandexGame.SaveProgress();
     }
 
-    public void InitializeMenu()
+    public override void OpenMenu()
     {
-        if (isInitializeProcess)
-            return;
+        base.OpenMenu();
+        InitializeMenu();
+    }
+    public override void CloseMenu()
+    {
+        SavePlayer();
+        base.CloseMenu();
+    }
 
-        isInitializeProcess = true;
-
-        if (YandexGame.savesData.isFirstSession2)
-            SaveDefaultSO();
-
+    public override void InitializeMenu()
+    {
         playerLoad.LoadPlayerItems();
         SetSavedSO();
-
-        if (!isStartLoad)
-            return;
-
-        objectUI.SetActive(false);
-        isStartLoad = false;
-    }
-
-    public void SavePlayer()
-    {
-
-        CollectibleSO characterItem = characterTabSwitcher.CurrentSwitcher.CurrentCharacter;
-        CollectibleSO carColorItem = carTabSwitcher.CarColorSwitcher.CurrentCarColor;
-        CollectibleSO carModelItem = carTabSwitcher.CarModelSwitcher.CurrentCarModel;
-
-
-        YandexGame.savesData.playerWrapper.currentCharacterItem = characterItem.Name;
-        YandexGame.savesData.playerWrapper.currentCarColorItem = carColorItem.Name;
-        YandexGame.savesData.playerWrapper.currentCarModelItem = carModelItem.Name;
-
-        YandexGame.SaveProgress();
     }
 
     public void AddCharacter()//тестовый метод
@@ -106,6 +76,13 @@ public class CustomizeMenuManager : MonoBehaviour
         {
             Debug.Log("У нас есть " + str);
         }
+
+        Debug.Log($"В нашей коллекции {YandexGame.savesData.playerWrapper.maps.Count} карт");
+        foreach (MapInfo map in YandexGame.savesData.playerWrapper.maps)
+        {
+            Debug.Log($"У нас есть карта {map.mapName}");
+        }
+        
     }
 
     public void ResetProgress()//тестовый метод
