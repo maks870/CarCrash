@@ -10878,7 +10878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerLoad: {fileID: 1115926559}
-  objectUI: {fileID: 278135577}
+  objectUI: {fileID: 945202523}
   mapSwitcher: {fileID: 278135584}
   gamemodePanels:
   - {fileID: 482717454}
