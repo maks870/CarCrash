@@ -7,7 +7,7 @@ public abstract class CarControl : MonoBehaviour
 {
     [SerializeField] protected AbilityController abilityController;
     [SerializeField] protected CarController carController;
-    [SerializeField] protected CarTrack carTrack;
+    protected CarTrack carTrack;
 
     public CarTrack CarTrack { set => carTrack = value; }
 

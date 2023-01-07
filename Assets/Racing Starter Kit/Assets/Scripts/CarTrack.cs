@@ -8,7 +8,7 @@ public class CarTrack : MonoBehaviour
     private int currentPoint;
     private List<Transform> points;
     private BoxCollider boxCollider;
-    private CarControl carControl;
+    [SerializeField] private CarControl carControl;
 
     private void Awake()
     {
