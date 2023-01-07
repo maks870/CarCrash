@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityStandardAssets.Vehicles.Car;
 
 public class CarTrack : MonoBehaviour
 {
@@ -39,6 +37,9 @@ public class CarTrack : MonoBehaviour
 
     private void NextPointMove()
     {
+        if (currentPoint >= points.Count)
+            currentPoint = 0;
+
         transform.position = points[currentPoint].position;
         currentPoint++;
     }
