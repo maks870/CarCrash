@@ -5,10 +5,10 @@ using UnityStandardAssets.Vehicles.Car;
 
 public class CarTrack : MonoBehaviour
 {
-    private int currentPoint;
-    private List<Transform> points;
-    private BoxCollider boxCollider;
     [SerializeField] private CarControl carControl;
+    private int currentPoint;
+    private List<Transform> points = new List<Transform>();
+    private BoxCollider boxCollider;
 
     private void Awake()
     {
