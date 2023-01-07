@@ -4,18 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ChkManager : MonoBehaviour
-{
-    //UI Label to show the player position or player 2 position in split-screen mode
-    [SerializeField] private GameObject PositionDisplay;
-    //Race finish trigger (used when the player completed all the laps)
-    [SerializeField] private GameObject RaceFinishTrigger;
-    //Update the laps done in the game UI
-    [SerializeField] private GameObject LapCounter;
-    //How many laps have been selected for the race
+{ 
+    [SerializeField] private Text PositionDisplay; 
+    [SerializeField] private GameObject RaceFinishTrigger;  
+    [SerializeField] private Text LapCounter;
+    [SerializeField] private Transform cars;
     private int LapsSelected;
-    private GameObject[] CarPosListGameObjects;
-    //player values & car pos game object
-    public static List<int> nChk = new List<int>();
+
+    
+    public static List<int> nChk = new List<int>();//player values & car pos game object
     public static List<int> nLapsP = new List<int>();
     public static List<double> nDistP = new List<double>();
     public static List<GameObject> UnsortedCarPosList = new List<GameObject>();
@@ -24,7 +21,8 @@ public class ChkManager : MonoBehaviour
     public static List<double> scoreP = new List<double>();
     public static List<int> pNum = new List<int>();
     public static int posMax;
-    bool added = false;
+    public static int nBots;
+    private bool added = false;
 
     //IMPORTANT NOTE: if you change the player's car, remember to have a gameobject called CarPos
     //If you change or add AI bots cars, those need a gameobject called CarPosAI with a box collider and IsTrigger checked
@@ -33,9 +31,13 @@ public class ChkManager : MonoBehaviour
 
     private GameObject[] UnparentChks;
 
+    private void Awake()
+    {
+        nBots = cars.childCount - 1;
+    }
+
     public void Start()
     {
-        //clear previous races values when starting a new race
         scoreP.Clear();
         pNum.Clear();
         nChk.Clear();
@@ -46,15 +48,12 @@ public class ChkManager : MonoBehaviour
         PublicCarPosList.Clear();
         //when the race starts:
         ChkTrigger.startDis = false;//distance isn't measured because no one has passed checkpoints yet
-        PositionDisplay.GetComponent<Text>().text = "--";//so we won't show player's position until it triggers a checkpoint
+        PositionDisplay.text = "--";//so we won't show player's position until it triggers a checkpoint
 
-        CarPosListGameObjects = FindObjectsOfType(typeof(GameObject)) as GameObject[];
-        foreach (GameObject go in CarPosListGameObjects)
+
+        foreach (Transform go in cars)
         {
-            if (go.name.Contains("CarPos"))
-            {
-                UnsortedCarPosList.Add(go);
-            }
+            UnsortedCarPosList.Add(go.gameObject);
         }
 
         for (int i = 0; i < UnsortedCarPosList.Count; i++)
@@ -90,7 +89,7 @@ public class ChkManager : MonoBehaviour
         }
 
         //here we add a checkpoint, distance, laps, score and player number position for all cars in the scene
-        for (int i = 0; i <= BotSelector.nBots; i++) // Player 1 included
+        for (int i = 0; i <= nBots; i++) // Player 1 included
         {
             nChk.Add(0);
             nDistP.Add(0);
@@ -112,7 +111,7 @@ public class ChkManager : MonoBehaviour
         LapsSelected = LapSelector.nLaps;
 
         //final score comparison between all players:
-        for (int i = 0; i <= BotSelector.nBots; i++) // Player 1 included
+        for (int i = 0; i <= nBots; i++) // Player 1 included
         {
             scoreP[i] = nDistP[i] + (nChk[i] * 100) + (nLapsP[i] * 10000);
         }
@@ -121,7 +120,7 @@ public class ChkManager : MonoBehaviour
         if (ChkTrigger.startDis)
         {
             posPlayer(1);
-            PositionDisplay.GetComponent<Text>().text = (posMax) + CardinalPos(posMax) + " Place";
+            PositionDisplay.text = (posMax) + CardinalPos(posMax) + " Place";
         }
 
         //if the player completes all the selected laps
@@ -130,7 +129,7 @@ public class ChkManager : MonoBehaviour
             RaceFinishTrigger.SetActive(true);//the race finish will trigger, ending the race
         }
         //show the amount of completed laps in the game UI
-        LapCounter.GetComponent<Text>().text = Convert.ToString(nLapsP[0]);
+        LapCounter.text = Convert.ToString(nLapsP[0]);
     }
     public string CardinalPos(int i)
     {
