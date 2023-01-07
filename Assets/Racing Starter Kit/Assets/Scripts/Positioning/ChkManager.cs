@@ -108,7 +108,7 @@ public class ChkManager : MonoBehaviour
     public void Update()
     {
         //detect how many laps the player has selected for the race
-        LapsSelected = LapSelector.nLaps;
+        LapsSelected = LapsSelectedManager.nLaps;
 
         //final score comparison between all players:
         for (int i = 0; i <= nBots; i++) // Player 1 included
