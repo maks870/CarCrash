@@ -30,7 +30,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 9f4e8ee6232c52d488f40b80e1915356,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 50.00001
+      value: 40.00001
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9f4e8ee6232c52d488f40b80e1915356,
         type: 3}
@@ -40,12 +40,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 9f4e8ee6232c52d488f40b80e1915356,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -36.666668
+      value: -76.66667
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9f4e8ee6232c52d488f40b80e1915356,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9f4e8ee6232c52d488f40b80e1915356,
         type: 3}
@@ -55,7 +55,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 9f4e8ee6232c52d488f40b80e1915356,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9f4e8ee6232c52d488f40b80e1915356,
         type: 3}
@@ -70,7 +70,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 9f4e8ee6232c52d488f40b80e1915356,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9f4e8ee6232c52d488f40b80e1915356,
         type: 3}
@@ -95,12 +95,17 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9f4e8ee6232c52d488f40b80e1915356,
         type: 3}
       propertyPath: m_Name
-      value: roadRampLongCurvedWall
+      value: roadRampLongCurvedWall (1)
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9f4e8ee6232c52d488f40b80e1915356,
         type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9f4e8ee6232c52d488f40b80e1915356,
+        type: 3}
+      propertyPath: m_TagString
+      value: Lift
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f4e8ee6232c52d488f40b80e1915356, type: 3}
