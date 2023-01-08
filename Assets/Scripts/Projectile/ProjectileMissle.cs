@@ -18,6 +18,9 @@ public class ProjectileMissle : Projectile
         if (other.gameObject.layer == LayerMask.NameToLayer("Detected"))
             return;
 
+        if (other.gameObject.tag == "Lift")
+            return;
+
         if (other.GetComponent<AbilityController>() != null)
         {
             if (other.GetComponent<AbilityController>() == launcher)
@@ -49,6 +52,8 @@ public class ProjectileMissle : Projectile
 
         rb.velocity = transform.forward * maxSpeed;
 
+        //rb.AddForce(transform.forward * maxSpeed, ForceMode.Force);
+
         //if (rb.velocity.magnitude < maxSpeed)
         //    rb.AddForce(transform.forward * missleAccel, ForceMode.Force);
 
@@ -58,6 +63,9 @@ public class ProjectileMissle : Projectile
 
     private void RotateRocket()
     {
+        //Vector3 moveDir = target.transform.position - transform.position;
+        //Quaternion rotation = Quaternion.FromToRotation(transform.forward, moveDir);
+
         Quaternion rotation = Quaternion.LookRotation(target.transform.position - transform.position);
         rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, rotation, rotateSpeed * Time.deltaTime));
     }
