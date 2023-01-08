@@ -8,6 +8,8 @@ TagManager:
   - PlayerCar
   - AICarCollider
   - AICarTrigger
+  - FxTemporaire
+  - Lift
   layers:
   - Default
   - TransparentFX

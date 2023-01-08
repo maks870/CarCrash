@@ -27,4 +27,14 @@ public class MobileInput : BaseInput
         //verticalAxis = Input.GetAxis("Vertical");
         //horizontalAxis = Input.GetAxis("Horizontal");  
     }
+
+    public void SetVerticalAxis(int y) 
+    {
+        verticalAxis = y;
+    }
+
+    public void SetHorizontalAxis(int x) 
+    {
+        horizontalAxis = x;
+    }
 }
