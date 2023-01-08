@@ -10,6 +10,7 @@ namespace UnityStandardAssets.Vehicles.Car
         [SerializeField] private UIPlayerManager uiManager;
         [SerializeField] [Range(0, 1)] private float taxiingHelper;
         [SerializeField] private float m_SteerSensitivity = 0.05f;
+        [SerializeField] PlayerCarTracker taxiingCarTracker;
         [SerializeField] private float targetMarkHeight = 1f;
         private float taxiingSteer;
         private BaseInput input;
@@ -67,7 +68,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void CalculateTaxiingSteer()
         {
-            Vector3 localTarget = transform.InverseTransformPoint(carTrack.transform.position);
+            Vector3 localTarget = transform.InverseTransformPoint(taxiingCarTracker.transform.position);
             float targetAngle = Mathf.Atan2(localTarget.x, localTarget.z) * Mathf.Rad2Deg;
             float steer = Mathf.Clamp(targetAngle * m_SteerSensitivity, -1, 1) * Mathf.Sign(carController.CurrentSpeed);
 

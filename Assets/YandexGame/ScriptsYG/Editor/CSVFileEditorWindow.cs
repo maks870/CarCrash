@@ -6,7 +6,7 @@ namespace YG
 {
     public class CSVFileEditorWindow : EditorWindow
     {
-        [MenuItem("Tools/PluginYG/Localization/Import\\Export Language Translations")]
+        [MenuItem("YG/Localization/Import\\Export Language Translations")]
         public static void ShowWindow()
         {
             GetWindow<CSVFileEditorWindow>("Import\\Export Language Translations");

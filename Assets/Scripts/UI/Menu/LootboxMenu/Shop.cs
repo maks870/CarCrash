@@ -16,6 +16,9 @@ public class Shop : MonoBehaviour
 
     public void OpenLootbox(int lootboxIndex)
     {
+        if (YandexGame.savesData.lootboxes == 0)
+            return;
+
         LootBox lootbox = lootboxes[lootboxIndex];
 
         if (!EarningManager.SpendGem(lootbox.Cost))

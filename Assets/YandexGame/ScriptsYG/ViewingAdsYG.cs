@@ -1,62 +1,11 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityToolbag;
-using static YG.ViewingAdsYG;
 
 namespace YG
 {
     public class ViewingAdsYG : MonoBehaviour
     {
-        //[Serializable]
-        //public class AudioPause
-        //{
-        //    public bool audioPauseActive;
-            
-        //    public enum PauseMethod { RememberPreviousState, CustomState };
-        //    [Tooltip("RememberPreviousState - Ставить звук на паузу при открытии рекламы. После закрытия рекламы звук перейдёт в изначальное значение (до открытия рекламы).\n CustomState - Укажите свои значения, которые будут выставляться при открытии и закрытии рекламы")]
-        //    public PauseMethod pauseMethod;
-
-        //    [ConditionallyVisible(nameof(audioPauseActive))]
-        //    public bool AudioPauseByOpenAd = true, AudioPauseByCloseAd;
-        //}
-
-        //[Serializable]
-        //public class TimeScalePause
-        //{
-        //    public enum PauseMethod { RememberPreviousState, CustomState };
-        //    [Tooltip("RememberPreviousState - Ставить паузу при открытии рекламы. После закрытия рекламы временная шкала перейдёт в изначальное значение (до открытия рекламы).\n CustomState - Укажите свои значения, которые будут выставляться при открытии и закрытии рекламы")]
-        //    public PauseMethod pauseMethod;
-
-        //    [ConditionallyVisible(nameof(pauseMethod))]
-        //    public float timeScaleByOpenAd, TimeScaleByCloseAd = 1;
-        //}
-
-        //[Serializable]
-        //public class CursorVisible
-        //{
-        //    public enum PauseMethod { RememberPreviousState, CustomState };
-        //    [Tooltip("RememberPreviousState - Ставить паузу при открытии рекламы. После закрытия рекламы курсор перейдёт в изначальное значение (до открытия рекламы).\n CustomState - Укажите свои значения, которые будут выставляться при закрытии рекламы")]
-        //    public PauseMethod pauseMethod;
-
-        //    public enum CursorVisibleByCloseAd { ShowCursor, HideCursor };
-        //    [ConditionallyVisible(nameof(pauseMethod))]
-        //    public CursorVisibleByCloseAd cursorVisibleByCloseAd;
-        //}
-
-        ////public bool audioPauseActive;
-        ////[ConditionallyVisible(nameof(audioPauseActive))]
-        //public AudioPause audioPause;
-
-        //public bool timeScalePauseActive;
-        //[ConditionallyVisible(nameof(timeScalePauseActive))]
-        //public TimeScalePause timeScalePause;
-
-        //public bool cursorVisibleActive;
-        //[ConditionallyVisible(nameof(cursorVisibleActive))]
-        //public CursorVisible cursorVisible;
-
-
-        public enum PauseType { AudioPause, TimeScalePause, CursorActivity, All };
+        public enum PauseType { AudioPause, TimeScalePause, All };
         [Tooltip("Данный скрипт будет ставить звук или верменную шкалу на паузу при просмотре рекламы взависимости от выбранной настройки PauseType.\n AudioPause - Ставить звук на паузу.\n TimeScalePause - Останавливать время.\n All - Ставить на паузу и звук и время.")]
         public PauseType pauseType;
 
@@ -64,38 +13,13 @@ namespace YG
         [Tooltip("RememberPreviousState - Ставить паузу при открытии рекламы. После закрытия рекламы звук и/или временная шкала придут в изначальное значение (до открытия рекламы).\n CustomState - Укажите свои значения, которые будут выставляться при открытии и закрытии рекламы")]
         public PauseMethod pauseMethod;
 
-        [Header("Значения при открытии рекламы")]
         [ConditionallyVisible(nameof(pauseMethod))]
-        public bool openAudioPause = true;
+        public bool openAudioPause = true, closeAudioPause;
         [ConditionallyVisible(nameof(pauseMethod))]
-        public float openTimeScale;
-
-        [Header("Значения при закрытии рекламы")]
-        [ConditionallyVisible(nameof(pauseMethod))]
-        public bool closeAudioPause;
-        [ConditionallyVisible(nameof(pauseMethod))]
-        public float closeTimeScale = 1;
-        public enum CursorVisible
-        {
-            [InspectorName("Show Cursor")] Show,
-            [InspectorName("Hide Cursor")] Hide
-        };
-        [Tooltip("Показать или скрыть курсор при закрытии рекламы?")]
-        [ConditionallyVisible(nameof(pauseMethod))]
-        public CursorVisible cursorVisible;
-        [ConditionallyVisible(nameof(pauseMethod))]
-        public CursorLockMode cursorLockMode;
-
-
-        //[Space(7)]
-        //public bool cursorActivate;
-        //public enum CursorAfterViewingAdMethod { RememberPreviousState, CustomState };
-        //public PauseMethod pauseMethod;
+        public float openTimeScale, closeTimeScale = 1;
 
         static bool audioPauseOnAd;
         static float timeScaleOnAd;
-        static bool cursorVisibleOnAd;
-        static CursorLockMode cursorLockModeOnAd;
         static bool start;
 
         private void Start()
@@ -105,8 +29,6 @@ namespace YG
                 start = true;
                 audioPauseOnAd = AudioListener.pause;
                 timeScaleOnAd = Time.timeScale;
-                cursorVisibleOnAd = Cursor.visible;
-                cursorLockModeOnAd = Cursor.lockState;
             }
         }
 
@@ -180,34 +102,6 @@ namespace YG
                         Time.timeScale = 0;
                     }
                     else Time.timeScale = timeScaleOnAd;
-                }
-            }
-
-            if (pauseType == PauseType.CursorActivity || pauseType == PauseType.All)
-            {
-                if (pause)
-                {
-                    cursorVisibleOnAd = Cursor.visible;
-                    cursorLockModeOnAd = Cursor.lockState;
-
-                    Cursor.visible = true;
-                    Cursor.lockState = CursorLockMode.None;
-                }
-                else
-                {
-                    if (pauseMethod == PauseMethod.CustomState)
-                    {
-                        if (cursorVisible == CursorVisible.Hide)
-                            Cursor.visible = false;
-                        else Cursor.visible = true;
-
-                        Cursor.lockState = cursorLockMode;
-                    }
-                    else
-                    {
-                        Cursor.visible = cursorVisibleOnAd;
-                        Cursor.lockState = cursorLockModeOnAd;
-                    }
                 }
             }
         }
