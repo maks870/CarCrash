@@ -53,7 +53,8 @@ public class ChkManager : MonoBehaviour
 
         foreach (Transform go in cars)
         {
-            UnsortedCarPosList.Add(go.gameObject);
+            GameObject car = go.GetComponentInChildren<ChkTrigger>().gameObject;
+            UnsortedCarPosList.Add(car);
         }
 
         for (int i = 0; i < UnsortedCarPosList.Count; i++)
