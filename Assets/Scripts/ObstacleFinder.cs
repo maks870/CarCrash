@@ -18,7 +18,7 @@ public class ObstacleFinder : MonoBehaviour
         {
             other.GetComponent<ProjectileMine>().warningCars.Add(abilityController);
             abilityController.IsMineWarning = true;
-            carAIControl.AvoidMineAction(other.gameObject);
+            carAIControl.AvoidMineAction(other.gameObject);//оепехлеммнбюрэ
         }
         if (other.GetComponent<CarController>() != null)
         {
@@ -50,7 +50,7 @@ public class ObstacleFinder : MonoBehaviour
 
     private void Update()
     {
-        foreach (CarController car in carControllers)
+        foreach (CarController car in carControllers)//ме йнмрпнккеп ю кчане опеоърярбхъ
         {
             if (car != null && car.CurrentSpeed < carToAvoidMinSpeed)
             {
