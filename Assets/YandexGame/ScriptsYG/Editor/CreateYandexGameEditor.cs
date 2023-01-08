@@ -5,7 +5,7 @@ namespace YG
 {
     public class CreateYandexGameEditor
     {
-        [MenuItem("Tools/PluginYG/Create YandexGame Object", false, 101)]
+        [MenuItem("YG/Create YandexGame Object", false, 101)]
         public static void InsertPrefab()
         {
             string fileLocation = "Assets/YandexGame/Prefabs/YandexGame.prefab";
@@ -17,7 +17,6 @@ namespace YG
             {
                 PrefabUtility.InstantiatePrefab(prefab);
                 prefab.transform.position = new Vector3(0f, 0f, 0f);
-                Undo.RegisterCreatedObjectUndo(SceneAsset.FindObjectOfType<YandexGame>().gameObject, "Create YandexGame");
             }
         }
     }
