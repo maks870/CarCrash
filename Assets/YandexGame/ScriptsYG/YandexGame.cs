@@ -12,7 +12,6 @@ namespace YG
     public class YandexGame : MonoBehaviour
     {
         public InfoYG infoYG;
-        public bool singleton;
         [Space(10)]
         public UnityEvent ResolvedAuthorization;
         public UnityEvent RejectedAuthorization;
@@ -59,36 +58,29 @@ namespace YG
         static string _playerName = "unauthorized";
         static string _playerId;
         static string _playerPhoto;
+        static bool _adBlock;
         static string _photoSize;
         static bool _leaderboardEnable;
         static bool _debug;
         static bool _scopes;
         public static bool nowFullAd;
         public static bool nowVideoAd;
-        public static SavesYG savesData = new SavesYG();
-        public static JsonEnvironmentData EnvironmentData = new JsonEnvironmentData();
-        public static JsonPayments PaymentsData = new JsonPayments();
-        public static YandexGame Instance;
-        static string pathSaves;
+        public static SavesYG savesData = new();
+        public static JsonEnvironmentData EnvironmentData = new();
+        public static JsonPayments PaymentsData = new();
         #endregion Data Fields
 
         #region Methods
         private void Awake()
         {
-            pathSaves = Application.dataPath + "/YandexGame/WorkingData/saveyg.yg";
             transform.SetParent(null);
             gameObject.name = "YandexGame";
 
-            if (singleton)
-            {
-                if (Instance != null) Destroy(gameObject);
-                else
-                {
-                    Instance = this;
-                    DontDestroyOnLoad(gameObject);
-                }
-            } 
-            else Instance = this;
+            onFullAdShow = null;
+            onFullAdShow += _FullscreenShow;
+
+            onRewAdShow = null;
+            onRewAdShow += _RewardedShow;
         }
 
         [DllImport("__Internal")]
@@ -140,138 +132,90 @@ namespace YG
         #region Player Data
         public static Action GetDataEvent;
 
-        public static void SaveEditor()
+#if UNITY_EDITOR
+
+        public static void SaveLocal()
         {
-            Message("Save Editor");
-            FileStream fs = new FileStream(pathSaves, FileMode.Create);
+            string path = Application.dataPath + "/YandexGame/WorkingData/";
+
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+                Message("Save Unity Editor: Create New Directory");
+            }
+            else Message("Save Unity Editor");
+
+            FileStream fs = new FileStream(path + "saveyg.yg", FileMode.Create);
             BinaryFormatter formatter = new BinaryFormatter();
             formatter.Serialize(fs, savesData);
             fs.Close();
         }
 
-        [DllImport("__Internal")]
-        private static extern void SaveToLocalStorage(string key, string value);
-        public static void SaveLocal()
+        public static void LoadLocal()
         {
-            Message("Save Local");
-#if !UNITY_EDITOR
-            SaveToLocalStorage("savesData", JsonUtility.ToJson(savesData));
-#endif
-        }
+            string path = Application.dataPath + "/YandexGame/WorkingData/";
+            Message("Load Unity Editor");
 
-        public static void LoadEditor()
-        {
-            Message("Load Editor");
-            if (File.Exists(pathSaves))
+            if (File.Exists(path + "saveyg.yg")) // если файл есть
             {
-                FileStream fs = new FileStream(pathSaves, FileMode.Open);
+                FileStream fs = new FileStream(path + "saveyg.yg", FileMode.Open);
                 BinaryFormatter formatter = new BinaryFormatter();
-                try
+                try // загрузка
                 {
                     savesData = (SavesYG)formatter.Deserialize(fs);
-                    AfterLoading();
+                    _SDKEnabled = true;
+                    GetDataEvent?.Invoke();
+                    SwitchLangEvent?.Invoke(savesData.language);
                 }
-                catch (Exception e)
+                catch (Exception e) // если файл поломан
                 {
-                    Debug.LogError(e.Message);
+                    Debug.Log(e.Message);
                     ResetSaveProgress();
                 }
                 finally
                 {
                     fs.Close();
-                } 
+                }
             }
             else ResetSaveProgress();
         }
+#endif
 
-        [DllImport("__Internal")]
-        private static extern string LoadFromLocalStorage(string key);
-        public static void LoadLocal()
-        {
-            Message("Load Local");
-
-            if (!HasKey("savesData"))
-                ResetSaveProgress();
-            else savesData = JsonUtility.FromJson<SavesYG>(LoadFromLocalStorage("savesData"));
-
-            AfterLoading();
-        }
-
-
-        [DllImport("__Internal")]
-        private static extern int HasKeyInLocalStorage(string key);
-        public static bool HasKey(string key)
-        {
-            return HasKeyInLocalStorage(key) == 1;
-        }
-
-        [DllImport("__Internal")]
-        private static extern void RemoveFromLocalStorage(string key);
-        public void RemoveLocalSaves() => RemoveFromLocalStorage("savesData");
-
-        static void AfterLoading()
-        {
-            _SDKEnabled = true;
-            GetDataEvent?.Invoke();
-
-            if (Instance.infoYG.LocalizationEnable &&
-                Instance.infoYG.callingLanguageCheck == InfoYG.CallingLanguageCheck.EveryGameLaunch)
-                LanguageRequest();
-            else SwitchLangEvent?.Invoke(savesData.language);
-        }
-
-        public static Action onResetProgress;
-        public void _ResetSaveProgress()
+        public static void ResetSaveProgress()
         {
             Message("Reset Save Progress");
+#if UNITY_EDITOR
             savesData = new SavesYG { isFirstSession = false };
+
             _SDKEnabled = true;
-
-            if (infoYG.LocalizationEnable &&
-                (infoYG.callingLanguageCheck == InfoYG.CallingLanguageCheck.FirstLaunchOnly ||
-                infoYG.callingLanguageCheck == InfoYG.CallingLanguageCheck.EveryGameLaunch))
-                LanguageRequest();
-
+            SwitchLangEvent?.Invoke(savesData.language);
             GetDataEvent?.Invoke();
-            onResetProgress?.Invoke();
-
+#else
+            GameObject.Find("YandexGame").GetComponent<YandexGame>().ResetSaveCloud();
+#endif
         }
-        public static void ResetSaveProgress() => Instance._ResetSaveProgress();
+        public void _ResetSaveProgress() => ResetSaveProgress();
 
-        public void _SaveProgress()
+        public static void SaveProgress()
         {
             if (_SDKEnabled)
             {
-                savesData.idSave++;
 #if !UNITY_EDITOR
-                SaveLocal();
-                if (infoYG.saveCloud && timerSaveCloud >= infoYG.saveCloudInterval + 1)
-                {
-                    timerSaveCloud = 0;
-                    SaveCloud();
-                }
+                SaveCloud(false);
 #else
-                SaveEditor();
+                SaveLocal();
 #endif
             }
-            else Debug.LogError("Данные не могут быть сохранены до инициализации SDK!");
         }
-        public static void SaveProgress() => Instance._SaveProgress();
 
-        public void _LoadProgress()
+        public static void LoadProgress()
         {
 #if !UNITY_EDITOR
-            if (!infoYG.saveCloud)
-            {
-                LoadLocal();
-            }
-            else LoadCloud();
+            LoadCloud();
 #else
-            LoadEditor();
+            LoadLocal();
 #endif
         }
-        public static void LoadProgress() => Instance._LoadProgress();
-
         #endregion Player Data        
 
         #region SiteLock
@@ -280,7 +224,7 @@ namespace YG
 
         void SiteLock()
         {
-            try 
+            try
             {
                 string urlOrig = GetURLFromPage();
 
@@ -380,10 +324,10 @@ namespace YG
         [DllImport("__Internal")]
         private static extern void SaveYG(string jsonData, bool flush);
 
-        public static void SaveCloud()
+        public static void SaveCloud(bool flush)
         {
-            Message("Save Cloud");
-            SaveYG(JsonUtility.ToJson(savesData), Instance.infoYG.flush);
+            Message("Load YG");
+            SaveYG(JsonUtility.ToJson(savesData), flush);
         }
 
         [DllImport("__Internal")]
@@ -391,7 +335,7 @@ namespace YG
 
         public static void LoadCloud()
         {
-            Message("Load Cloud");
+            Message("Load YG");
             LoadYG();
         }
         #endregion Save end Load Cloud
@@ -414,10 +358,14 @@ namespace YG
                 StartCoroutine(CloseFullAdInEditor());
 #endif
             }
-            else Message($"До показа Fullscreen рекламы {infoYG.fullscreenAdInterval + 1 - timerShowAd} сек.");
+            else Message("(ru) Отображение полноэкранной рекламы заблокировано! Еще рано.  (en) The display of full-screen ads is blocked! It's still early.");
         }
 
-        public static void FullscreenShow() => Instance._FullscreenShow();
+        static Action onFullAdShow;
+        public static void FullscreenShow()
+        {
+            onFullAdShow?.Invoke();
+        }
 
 #if UNITY_EDITOR
         IEnumerator CloseFullAdInEditor()
@@ -456,7 +404,11 @@ namespace YG
             }
         }
 
-        public static void RewVideoShow(int id) => Instance._RewardedShow(id);
+        static Action<int> onRewAdShow;
+        public static void RewVideoShow(int id)
+        {
+            onRewAdShow?.Invoke(id);
+        }
 
 #if UNITY_EDITOR
         IEnumerator CloseVideoInEditor(int id)
@@ -479,30 +431,34 @@ namespace YG
 
         #region Language
         [DllImport("__Internal")]
-        private static extern void LanguageRequestInternal();
+        private static extern void LanguageRequest();
 
         public void _LanguageRequest()
         {
 #if !UNITY_EDITOR
-            LanguageRequestInternal();
-#else
+            LanguageRequest();
+#endif
+#if UNITY_EDITOR
             SetLanguage("ru");
 #endif
         }
-        public static void LanguageRequest() => Instance._LanguageRequest();
 
         public static Action<string> SwitchLangEvent;
+
+        public void _SwitchLanguage(string language)
+        {
+            savesData.language = language;
+            SaveProgress();
+
+            SwitchLangEvent?.Invoke(language);
+        }
 
         public static void SwitchLanguage(string language)
         {
             savesData.language = language;
-            SwitchLangEvent?.Invoke(language);
-        }
-
-        public void _SwitchLanguage(string language)
-        {
-            SwitchLanguage(language);
             SaveProgress();
+
+            SwitchLangEvent?.Invoke(language);
         }
         #endregion Language
 
@@ -515,6 +471,7 @@ namespace YG
 #if !UNITY_EDITOR
             RequestingEnvironmentData();
 #endif
+            Message("Requesting Envirolopment Data");
         }
         #endregion Requesting Environment Data
 
@@ -551,32 +508,6 @@ namespace YG
                 Message("New Scores Leaderboard " + nameLB + ": " + score);
         }
 
-        public static void NewLBScoreTimeConvert(string nameLB, float secondsScore)
-        {
-            int result;
-            int indexComma = secondsScore.ToString().IndexOf(",");
-
-            if (secondsScore < 1)
-            {
-                Debug.LogError("You can't record a record below zero!");
-                return;
-            }
-            else if (indexComma <= 0) result = (int)(secondsScore * 1000f);
-            else
-            {
-                string rec = secondsScore.ToString();
-                string sec = rec.Remove(indexComma);
-                string milSec = rec.Remove(0, indexComma + 1);
-                if (milSec.Length > 3) milSec = milSec.Remove(3);
-                else if (milSec.Length == 2) milSec += "0";
-                else if (milSec.Length == 1) milSec += "00";
-                rec = sec + milSec;
-                result = int.Parse(rec);
-            }
-
-            NewLeaderboardScores(nameLB, result);
-        }
-
         [DllImport("__Internal")]
         private static extern void GetLeaderboardScores(string nameLB, int maxQuantityPlayers, int quantityTop, int quantityAround, string photoSizeLB, bool auth);
 
@@ -607,10 +538,10 @@ namespace YG
             {
                 rank[0] = 1; rank[1] = 2; rank[2] = 3;
                 photo[0] = "https://drive.google.com/u/0/uc?id=1TCoEwiiUvIiQwAMbKcBssneWkmsoofuI&export=download";
-                photo[1] = "https://drive.google.com/u/0/uc?id=1MlVQuyQTKMjoX3FDJYnsLKhEb4_M9FQB&export=download"; 
+                photo[1] = "https://drive.google.com/u/0/uc?id=1MlVQuyQTKMjoX3FDJYnsLKhEb4_M9FQB&export=download";
                 photo[2] = "https://drive.google.com/u/0/uc?id=11ZwzHDXm_UNxqnMke2ONo6oJaGVp7VgP&export=download";
                 playersName[0] = "Player"; playersName[1] = "Ivan"; playersName[2] = "Maria";
-                scorePlayers[0] = 23101; scorePlayers[1] = 115202; scorePlayers[2] = 185303;
+                scorePlayers[0] = 23; scorePlayers[1] = 115; scorePlayers[2] = 1053;
 
                 UpdateLbEvent?.Invoke(nameLB, $"Test LeaderBoard\nName: {nameLB}\n1. Player: 10\n2. Ivan: 15\n3. Maria: 23",
                     rank, photo, playersName, scorePlayers, true);
@@ -638,7 +569,7 @@ namespace YG
 #if !UNITY_EDITOR
             BuyPaymentsInternal(id);
 #else
-            Instance.OnPurchaseSuccess(id);
+            GameObject.Find("YandexGame").GetComponent<YandexGame>().OnPurchaseSuccess(id);
             GetPayments();
 #endif
         }
@@ -665,7 +596,7 @@ namespace YG
         {
             Purchase purchase = null;
 
-            for(int i = 0; i < PaymentsData.id.Length; i++)
+            for (int i = 0; i < PaymentsData.id.Length; i++)
             {
                 if (PaymentsData.id[i] == ID)
                 {
@@ -747,7 +678,7 @@ namespace YG
 
         public static void ReviewShow(bool authDialog)
         {
-            Instance._ReviewShow(authDialog);
+            GameObject.Find("YandexGame").GetComponent<YandexGame>()._ReviewShow(authDialog);
         }
         #endregion Review Show
 
@@ -764,7 +695,7 @@ namespace YG
             savesData.promptDone = true;
             SaveProgress();
 
-            Instance.PromptDo?.Invoke();
+            GameObject.Find("YandexGame").GetComponent<YandexGame>().PromptDo?.Invoke();
             PromptSuccessEvent?.Invoke();
 #endif
         }
@@ -821,7 +752,7 @@ namespace YG
         public void CloseVideo()
         {
             nowVideoAd = false;
-            
+
             CloseVideoAd.Invoke();
             CloseVideoEvent?.Invoke();
         }
@@ -885,96 +816,36 @@ namespace YG
         #endregion Set Authorization
 
         #region Loading progress
-        enum DataState { Exist, NotExist, Broken };
         public void SetLoadSaves(string data)
         {
-            DataState cloudDataState = DataState.Exist;
-            DataState localDataState = DataState.Exist;
-            SavesYG cloudData = new SavesYG();
-            SavesYG localData = new SavesYG();
+            data = data.Remove(0, 2);
+            data = data.Remove(data.Length - 2, 2);
+            data = data.Replace(@"\", "");
 
-            if (data != "noData")
-            {
-                data = data.Remove(0, 2);
-                data = data.Remove(data.Length - 2, 2);
-                data = data.Replace(@"\", "");
-                try
-                {
-                    cloudData = JsonUtility.FromJson<SavesYG>(data);
-                }
-                catch (Exception e)
-                {
-                    Debug.LogError("Cloud Load Error: " + e.Message);
-                    cloudDataState = DataState.Broken;
-                }
-            }
-            else cloudDataState = DataState.NotExist;
+            savesData = JsonUtility.FromJson<SavesYG>(data);
+            Message("Load YG Complete");
 
-            if (HasKey("savesData"))
-            {
-                try
-                {
-                    localData = JsonUtility.FromJson<SavesYG>(LoadFromLocalStorage("savesData"));
-                }
-                catch (Exception e)
-                {
-                    Debug.LogError("Local Load Error: " + e.Message);
-                    localDataState = DataState.Broken;
-                }
-            }
-            else localDataState = DataState.NotExist;
+            _SDKEnabled = true;
+            GetDataEvent?.Invoke();
 
-
-            if (cloudDataState == DataState.Exist && localDataState == DataState.Exist)
-            {
-                if (cloudData.idSave >= localData.idSave)
-                {
-                    Message($"Load Cloud Complete! ID Cloud Save: {cloudData.idSave}, ID Local Save: {localData.idSave}");
-                    savesData = cloudData;
-                }
-                else
-                {
-                    Message($"Load Local Complete! ID Cloud Save: {cloudData.idSave}, ID Local Save: {localData.idSave}");
-                    savesData = localData;
-                }
-                AfterLoading();
-            }
-            else if (cloudDataState == DataState.Exist)
-            {
-                savesData = cloudData;
-                Message("Load Cloud Complete! Local Data - " + localDataState);
-                AfterLoading();
-            }
-            else if (localDataState == DataState.Exist)
-            {
-                savesData = localData;
-                Message("Load Local Complete! Cloud Data - " + cloudDataState);
-                AfterLoading();
-            }
-            else if (cloudDataState == DataState.Broken || 
-                (cloudDataState == DataState.Broken && localDataState == DataState.Broken))
-            {
-                Message("Local Saves - " + localDataState);
-                Message("Cloud Saves - Broken! Data Recovering...");
-                ResetSaveProgress();
-                savesData = JsonUtility.FromJson<SavesYG>(data);
-                Message("Cloud Saves Partially Restored!");
-                AfterLoading();
-            }
-            else if (localDataState == DataState.Broken)
-            {
-                Message("Cloud Saves - " + cloudDataState);
-                Message("Local Saves - Broken! Data Recovering...");
-                ResetSaveProgress();
-                savesData = JsonUtility.FromJson<SavesYG>(LoadFromLocalStorage("savesData"));
-                Message("Local Saves Partially Restored!");
-                AfterLoading();
-            }
+            if (infoYG.LocalizationEnable && infoYG.callingLanguageCheck == InfoYG.CallingLanguageCheck.EveryGameLaunch)
+                _LanguageRequest();
             else
-            {
-                Message("No Saves");
-                ResetSaveProgress();
-            }
+                SwitchLangEvent?.Invoke(savesData.language);
+        }
+
+        public void ResetSaveCloud()
+        {
+            Message("Reset Save Progress");
+            savesData = new SavesYG();
+
+            if (infoYG.LocalizationEnable &&
+                (infoYG.callingLanguageCheck == InfoYG.CallingLanguageCheck.FirstLaunchOnly ||
+                infoYG.callingLanguageCheck == InfoYG.CallingLanguageCheck.EveryGameLaunch))
+                _LanguageRequest();
+
+            _SDKEnabled = true;
+            GetDataEvent?.Invoke();
         }
         #endregion Loading progress
 
@@ -1129,7 +1000,9 @@ namespace YG
                 lang = "en";
 
             Message("Language Request: Lang - " + lang);
+
             savesData.language = lang;
+
             SwitchLangEvent?.Invoke(lang);
         }
         #endregion Language
@@ -1275,7 +1148,6 @@ namespace YG
         #region Update
         int delayFirstCalls = -1;
         static float timerShowAd;
-        static float timerSaveCloud = 62;
 
         private void Update()
         {
@@ -1289,14 +1161,8 @@ namespace YG
                 if (delayFirstCalls == infoYG.SDKStartDelay)
                     FirstСalls();
             }
-
-            // Таймер для облачных сохранений
-#if !UNITY_EDITOR
-            if (infoYG.saveCloud)
-                timerSaveCloud += Time.unscaledDeltaTime;
-#endif
         }
-#endregion Update
+        #endregion Update
 
         #region Json
         public class JsonAuth

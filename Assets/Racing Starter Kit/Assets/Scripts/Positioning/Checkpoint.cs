@@ -24,7 +24,7 @@ public class Checkpoint : MonoBehaviour
         
         nDistChk.Clear();//clear all distances used in previous races
 
-        for (int i = 0; i <= ChkManager.nBots; i++)
+        for (int i = 0; i <= BotSelector.nBots; i++)
         {
             nDistChk.Add(0);//add a distance meter check for each bot that you add to the race
         }       
@@ -32,7 +32,7 @@ public class Checkpoint : MonoBehaviour
 
     void Update()
     {
-        for (int i = 0; i <= ChkManager.nBots; i++)
+        for (int i = 0; i <= BotSelector.nBots; i++)
         {
             if (ChkManager.nChk[i] == nCheckpointNumber)
             {

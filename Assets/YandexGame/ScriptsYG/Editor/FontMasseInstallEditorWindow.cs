@@ -6,7 +6,7 @@ namespace YG
 {
     public class FontMasseInstallEditorWindow : EditorWindow
     {
-        [MenuItem("Tools/PluginYG/Localization/Font Default Masse")]
+        [MenuItem("YG/Localization/Font Default Masse")]
         public static void ShowWindow()
         {
             GetWindow<FontMasseInstallEditorWindow>("Font Default Masse");

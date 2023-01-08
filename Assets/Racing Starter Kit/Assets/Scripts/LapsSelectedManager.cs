@@ -5,13 +5,10 @@ using UnityEngine.UI;
 public class LapsSelectedManager : MonoBehaviour
 {
     [SerializeField] private GameObject LapRequirement;//declare the lap requirement label of the Canvas
-    [SerializeField] private int laps;
-    public static int nLaps;
     
     private void Start()
     {
-        nLaps = laps;
         LapRequirement.SetActive(true);//turn on the label
-        LapRequirement.GetComponent<Text>().text = Convert.ToString(nLaps);//and apply the amount of laps selected as text
+        LapRequirement.GetComponent<Text>().text = Convert.ToString(LapSelector.nLaps);//and apply the amount of laps selected as text
     }
 }
