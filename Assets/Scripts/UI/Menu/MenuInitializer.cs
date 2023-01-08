@@ -30,7 +30,7 @@ public class MenuInitializer : MonoBehaviour
             return;
 
         isInitializeProcess = true;
-        MainMenuManager mainMenu = new MainMenuManager();
+        MenuManager mainMenu = menuManagers[0];
 
         for (int i = 0; i < menuManagers.Count; i++)
         {

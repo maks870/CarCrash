@@ -47,7 +47,7 @@ public class CarTabSwitcher : MonoBehaviour
 
     public void SelectButton(Transform buttonTransform)
     {
-        selectFrame.transform.parent = buttonTransform;
+        selectFrame.transform.SetParent(buttonTransform);
         selectFrame.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
     }
 }
