@@ -26,11 +26,6 @@ public class EarningManagerUI : MonoBehaviour
         EarningManager.lackGems -= ShowLackGemsWarning;
     }
 
-    private void Start()
-    {
-        UpdateEarnings();
-    }
-
     public void UpdateEarnings()
     {
 

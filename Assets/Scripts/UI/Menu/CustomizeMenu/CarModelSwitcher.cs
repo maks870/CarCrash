@@ -114,6 +114,7 @@ public class CarModelSwitcher : MonoBehaviour
 
     public void SetCurrentModel(CarModelSO characterCollectible)
     {
+        Debug.Log("Наш перс" + characterCollectible.Name);
         currentMeshFilter.mesh = characterCollectible.Mesh;
         currentCarModel = characterCollectible;
         SelectCurrentButton();

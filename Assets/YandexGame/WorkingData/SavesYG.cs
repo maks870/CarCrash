@@ -9,6 +9,7 @@
         public string language = "ru";
         public bool feedbackDone;
         public bool promptDone;
+        public int lootboxes = 0;
 
         // Ваши сохранения
         public int money = 1;
