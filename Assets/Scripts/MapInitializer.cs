@@ -5,8 +5,7 @@ using YG;
 
 public class MapInitializer : MonoBehaviour
 {
-    [SerializeField] private MeshRenderer characterRenderer;
-    [SerializeField] private MeshFilter characterFilter;
+    [SerializeField] private GameObject characterObj;
     [SerializeField] private MeshRenderer carRenderer;
     [SerializeField] private MeshFilter carFilter;
 
@@ -21,8 +20,11 @@ public class MapInitializer : MonoBehaviour
         CarColorSO carColor = (CarColorSO)SOLoader.LoadCollectibleByName(YandexGame.savesData.playerWrapper.currentCarColorItem);
         CarModelSO carModel = (CarModelSO)SOLoader.LoadCollectibleByName(YandexGame.savesData.playerWrapper.currentCarModelItem);
 
-        characterRenderer.materials = character.Prefab.GetComponent<MeshRenderer>().materials;
-        characterFilter.mesh = character.Prefab.GetComponent<MeshFilter>().mesh;
+        Instantiate(character.Prefab, characterObj.transform.parent);
+        Destroy(characterObj.gameObject);
+
+        //characterRenderer.materials = character.Prefab.GetComponent<MeshRenderer>().materials;
+        //characterFilter.mesh = character.Prefab.GetComponent<MeshFilter>().mesh;
 
         carRenderer.material.mainTexture = carColor.Texture;
         carFilter.mesh = carModel.Mesh;

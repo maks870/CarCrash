@@ -41,7 +41,7 @@ public class SOLoader
             if (obj.Name == name)
                 scriptableObj = obj;
         }
-
+        Debug.Log(scriptableObj.Name);
         return scriptableObj;
     }
 
