@@ -21,22 +21,22 @@ public class SOLoader
         return scriptableObjects;
     }
 
-    public static CollectibleSO LoadCollectibleByName(string name)
+    public static T LoadCollectibleByName<T>(string name) where T : CollectibleSO
     {
         string resourcesPath = Application.dataPath + "/Resources/ScriptableObjects";
         DirectoryInfo dirInfo = new DirectoryInfo(resourcesPath);
-        List<CollectibleSO> sctriptableObjects = new List<CollectibleSO>();
-        CollectibleSO scriptableObj;
+        List<T> sctriptableObjects = new List<T>();
+        T scriptableObj;
 
         foreach (DirectoryInfo dir in dirInfo.GetDirectories())
         {
-            CollectibleSO[] objects = Resources.LoadAll("ScriptableObjects/" + dir.Name, typeof(CollectibleSO)).Cast<CollectibleSO>().ToArray();
+            T[] objects = Resources.LoadAll("ScriptableObjects/" + dir.Name, typeof(T)).Cast<T>().ToArray();
             sctriptableObjects.AddRange(objects);
         }
 
         scriptableObj = sctriptableObjects[0];
 
-        foreach (CollectibleSO obj in sctriptableObjects)
+        foreach (T obj in sctriptableObjects)
         {
             if (obj.Name == name)
                 scriptableObj = obj;
