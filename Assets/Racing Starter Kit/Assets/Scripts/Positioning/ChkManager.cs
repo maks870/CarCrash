@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ChkManager : MonoBehaviour
 { 
     [SerializeField] private Text PositionDisplay; 
-    [SerializeField] private GameObject RaceFinishTrigger;  
+    [SerializeField] private RaceFinish raceFinish;  
     [SerializeField] private Text LapCounter;
     [SerializeField] private Transform cars;
     private int LapsSelected;
@@ -127,7 +127,7 @@ public class ChkManager : MonoBehaviour
         //if the player completes all the selected laps
         if (LapsSelected < nLapsP[0])
         {
-            RaceFinishTrigger.SetActive(true);//the race finish will trigger, ending the race
+            raceFinish.Finish();//the race finish will trigger, ending the race
         }
         //show the amount of completed laps in the game UI
         LapCounter.text = Convert.ToString(nLapsP[0]);
@@ -135,7 +135,7 @@ public class ChkManager : MonoBehaviour
     public string CardinalPos(int i)
     {
         //depending the race position, the display in the canvas will show these letters
-        string s = "";
+        string s;
         switch (i)
         {
             case 1:
@@ -156,14 +156,12 @@ public class ChkManager : MonoBehaviour
     //get the maximum position comparing cars scores
     public static void posPlayer(int nPlayer)
     {
-        double max = 0;
         posMax = 1;
 
         for (int i = 0; i < scoreP.Count; i++)
         {
             if (scoreP[nPlayer - 1] < scoreP[i])
             {
-                max = scoreP[i];
                 posMax = posMax + 1;
             }
         }
