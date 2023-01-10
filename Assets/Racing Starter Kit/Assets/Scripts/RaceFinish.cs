@@ -2,7 +2,7 @@
 
 public class RaceFinish : MonoBehaviour
 {
-    [SerializeField] private MapAward mapAward;
+    [SerializeField] private AwardPresenter awardPresenter;
     [SerializeField] private GameObject FinishCam;
     [SerializeField] private GameObject ViewModes;
     [SerializeField] private GameObject PosDisplay, PauseButton, Panel1, Panel2;
@@ -10,7 +10,7 @@ public class RaceFinish : MonoBehaviour
 
     public void Finish()
     {
-        mapAward.GetAward();
+        awardPresenter.GetAward();
         FinishCam.SetActive(true);
         PauseButton.SetActive(false);  
         Panel1.SetActive(false);     
