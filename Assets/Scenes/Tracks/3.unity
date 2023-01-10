@@ -19322,7 +19322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f022510bdfeeea443ad82d744fecbf69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapAward: {fileID: 1785194001}
+  awardPresenter: {fileID: 1785194001}
   FinishCam: {fileID: 253057500}
   ViewModes: {fileID: 1645230116}
   PosDisplay: {fileID: 2084173449}
@@ -21971,7 +21971,7 @@ GameObject:
   - component: {fileID: 1785194000}
   - component: {fileID: 1785194001}
   m_Layer: 0
-  m_Name: MapAwards
+  m_Name: awardPresenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22004,6 +22004,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e546285bee935ac4c954d103c4d2b577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  awards:
+  - gems: 0
+    coins: 3
+  - gems: 4
+    coins: 15
+  - gems: 3
+    coins: 10
+  - gems: 1
+    coins: 5
+  car: {fileID: 11400000, guid: 29fb4ce114bfab24e85fda017c377086, type: 2}
 --- !u!1001 &1792075609
 PrefabInstance:
   m_ObjectHideFlags: 0
