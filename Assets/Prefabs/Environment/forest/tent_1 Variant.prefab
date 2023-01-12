@@ -95,7 +95,12 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0c2db1ae44b2e4f4c8db3372257a32ad,
         type: 3}
       propertyPath: m_Name
-      value: tent_1
+      value: tent_1 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0c2db1ae44b2e4f4c8db3372257a32ad,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 126
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c2db1ae44b2e4f4c8db3372257a32ad, type: 3}

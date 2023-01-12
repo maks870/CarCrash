@@ -18,7 +18,11 @@ namespace UnityStandardAssets.Vehicles.Car
         private void Update()
         {
             // enable the Renderer when the car is braking, disable it otherwise.
-            m_Renderer.enabled = car.BrakeInput > 0f;
+            if (car.BrakeInput > 0f || car.HandbrakeOn)       
+                m_Renderer.enabled = true;
+            else
+                m_Renderer.enabled = false;
+
         }
     }
 }

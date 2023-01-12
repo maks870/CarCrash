@@ -51,7 +51,7 @@ namespace UnityStandardAssets.Vehicles.Car
         private const float k_ReversingThreshold = 0.01f;
         private bool handbrakeOn = false;
 
-        public bool HandbrakeOn { set => handbrakeOn = value; }
+        public bool HandbrakeOn { get => handbrakeOn; set => handbrakeOn = value; }
         public bool Skidding { get; private set; }
         public float BrakeInput { get; private set; }
         public float CurrentSteerAngle { get => m_SteerAngle; set => m_SteerAngle = value; }

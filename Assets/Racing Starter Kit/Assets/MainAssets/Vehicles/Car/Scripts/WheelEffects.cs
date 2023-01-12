@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace UnityStandardAssets.Vehicles.Car
 {
-    [RequireComponent(typeof (AudioSource))]
+    [RequireComponent(typeof(AudioSource))]
     public class WheelEffects : MonoBehaviour
     {
         public Transform SkidTrailPrefab;
@@ -16,7 +16,6 @@ namespace UnityStandardAssets.Vehicles.Car
         private AudioSource m_AudioSource;
         private Transform m_SkidTrail;
         private WheelCollider m_WheelCollider;
-
 
         private void Start()
         {
@@ -42,14 +41,13 @@ namespace UnityStandardAssets.Vehicles.Car
 
         public void EmitTyreSmoke()
         {
-            skidParticles.transform.position = transform.position - transform.up*m_WheelCollider.radius;
+            skidParticles.transform.position = transform.position - transform.up * m_WheelCollider.radius;
             skidParticles.Emit(1);
             if (!skidding)
             {
                 StartCoroutine(StartSkidTrail());
             }
         }
-
 
         public void PlayAudio()
         {
@@ -69,12 +67,17 @@ namespace UnityStandardAssets.Vehicles.Car
         {
             skidding = true;
             m_SkidTrail = Instantiate(SkidTrailPrefab);
+
             while (m_SkidTrail == null)
             {
                 yield return null;
             }
+
             m_SkidTrail.parent = transform;
-            m_SkidTrail.localPosition = -Vector3.up*m_WheelCollider.radius;
+            m_SkidTrail.localPosition = -Vector3.up * m_WheelCollider.radius;
+
+            if (!m_WheelCollider.isGrounded)
+                skidding = true;
         }
 
 

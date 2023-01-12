@@ -30,7 +30,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 160e9fd3d9c26314a879f07603ba2eb2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 40.00001
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 160e9fd3d9c26314a879f07603ba2eb2,
         type: 3}
@@ -79,6 +79,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 160e9fd3d9c26314a879f07603ba2eb2,
         type: 3}
+      propertyPath: m_ReceiveGI
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 160e9fd3d9c26314a879f07603ba2eb2,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f9db7451324bb8d43aa225c4bfe3a1ec, type: 2}
@@ -86,16 +91,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: f9ac0268f98fd304bad8b4e299518513, type: 2}
+      objectReference: {fileID: 2100000, guid: af6d26adc4bf82e4ab3b7d1d5b8343cd, type: 2}
     - target: {fileID: -7511558181221131132, guid: 160e9fd3d9c26314a879f07603ba2eb2,
         type: 3}
       propertyPath: m_Materials.Array.data[2]
       value: 
-      objectReference: {fileID: 2100000, guid: af6d26adc4bf82e4ab3b7d1d5b8343cd, type: 2}
+      objectReference: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+    - target: {fileID: -7511558181221131132, guid: 160e9fd3d9c26314a879f07603ba2eb2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: f9ac0268f98fd304bad8b4e299518513, type: 2}
     - target: {fileID: 919132149155446097, guid: 160e9fd3d9c26314a879f07603ba2eb2,
         type: 3}
       propertyPath: m_Name
-      value: roadStraightBridge
+      value: roadStraightBridge Variant
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 160e9fd3d9c26314a879f07603ba2eb2,
         type: 3}
@@ -106,6 +116,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Lift
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 160e9fd3d9c26314a879f07603ba2eb2,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 126
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 160e9fd3d9c26314a879f07603ba2eb2, type: 3}
