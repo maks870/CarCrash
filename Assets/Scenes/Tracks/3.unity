@@ -3130,12 +3130,12 @@ PrefabInstance:
     - target: {fileID: 8930885862814177750, guid: 13dd10d6717971d4ea9125d158299b1e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.595
+      value: 1.743
       objectReference: {fileID: 0}
     - target: {fileID: 8930885862814177750, guid: 13dd10d6717971d4ea9125d158299b1e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.7556572
+      value: -1.722
       objectReference: {fileID: 0}
     - target: {fileID: 8930885862814177750, guid: 13dd10d6717971d4ea9125d158299b1e,
         type: 3}
@@ -4523,6 +4523,7 @@ MonoBehaviour:
   posY: 37.57
   posZ: 14.03
   rotX: 0
+  cam: {fileID: 0}
   rotationThreshold: 1
   cameraStickiness: 49
   cameraRotationSpeed: 10
@@ -8300,12 +8301,12 @@ PrefabInstance:
     - target: {fileID: 1778994357615247706, guid: ef62619642b0df743b22dd5120c6ac4d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.85458374
+      value: 2.803
       objectReference: {fileID: 0}
     - target: {fileID: 1778994357615247706, guid: ef62619642b0df743b22dd5120c6ac4d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.7556565
+      value: -1.692
       objectReference: {fileID: 0}
     - target: {fileID: 1778994357615247706, guid: ef62619642b0df743b22dd5120c6ac4d,
         type: 3}
@@ -10563,17 +10564,17 @@ PrefabInstance:
     - target: {fileID: 8930885862814177750, guid: 13dd10d6717971d4ea9125d158299b1e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.25
+      value: 1.952
       objectReference: {fileID: 0}
     - target: {fileID: 8930885862814177750, guid: 13dd10d6717971d4ea9125d158299b1e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.7556572
+      value: -1.633
       objectReference: {fileID: 0}
     - target: {fileID: 8930885862814177750, guid: 13dd10d6717971d4ea9125d158299b1e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -19.19
+      value: -19.458
       objectReference: {fileID: 0}
     - target: {fileID: 8930885862814177750, guid: 13dd10d6717971d4ea9125d158299b1e,
         type: 3}
@@ -16071,6 +16072,7 @@ MonoBehaviour:
   posY: 12.9
   posZ: -136.3
   rotX: 4.35
+  cam: {fileID: 1185270765}
   rotationThreshold: 0.1
   cameraStickiness: 49
   cameraRotationSpeed: 10
@@ -21647,37 +21649,37 @@ PrefabInstance:
     - target: {fileID: 1490849379766892529, guid: b8217b9c1183a5144b666d1dd63980c4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.7558365
+      value: 3.213
       objectReference: {fileID: 0}
     - target: {fileID: 1490849379766892529, guid: b8217b9c1183a5144b666d1dd63980c4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.7556565
+      value: -1.44
       objectReference: {fileID: 0}
     - target: {fileID: 1490849379766892529, guid: b8217b9c1183a5144b666d1dd63980c4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20.790405
+      value: -20.087
       objectReference: {fileID: 0}
     - target: {fileID: 1490849379766892529, guid: b8217b9c1183a5144b666d1dd63980c4,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.95489055
       objectReference: {fileID: 0}
     - target: {fileID: 1490849379766892529, guid: b8217b9c1183a5144b666d1dd63980c4,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0000000074505815
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1490849379766892529, guid: b8217b9c1183a5144b666d1dd63980c4,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000074505815
+      value: 0.29695818
       objectReference: {fileID: 0}
     - target: {fileID: 1490849379766892529, guid: b8217b9c1183a5144b666d1dd63980c4,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000033527616
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1490849379766892529, guid: b8217b9c1183a5144b666d1dd63980c4,
         type: 3}
@@ -21687,7 +21689,7 @@ PrefabInstance:
     - target: {fileID: 1490849379766892529, guid: b8217b9c1183a5144b666d1dd63980c4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 34.55
       objectReference: {fileID: 0}
     - target: {fileID: 1490849379766892529, guid: b8217b9c1183a5144b666d1dd63980c4,
         type: 3}
@@ -26429,6 +26431,7 @@ MonoBehaviour:
   posY: 48.2
   posZ: -140.2
   rotX: 2.9
+  cam: {fileID: 0}
   rotationThreshold: 0.1
   cameraStickiness: 49
   cameraRotationSpeed: 10
@@ -30181,6 +30184,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SteerHelper
       value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4650270483354694014, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
+        type: 3}
+      propertyPath: m_MaximumSteerAngle
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 6892028588079702721, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
         type: 3}

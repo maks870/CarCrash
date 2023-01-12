@@ -8,6 +8,7 @@ public class CarCamera : MonoBehaviour
     private GameObject PlayerCar;
     public float posX, posY, posZ;
     public float rotX;
+    public Camera cam;
 
     [Tooltip("If car speed is below this value, then the camera will default to looking forwards.")]
     public float rotationThreshold = 1f;
@@ -21,17 +22,22 @@ public class CarCamera : MonoBehaviour
     private void Start()
     {
         PlayerCar = GameObject.FindGameObjectWithTag("PlayerCar");
+        cam = GetComponent<Camera>();
+        
+        carPhysics = PlayerCar.GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        GetComponent<Camera>().transform.Translate(posX, posY, posZ);
-        float rotZ = GetComponent<Camera>().transform.eulerAngles.z;
-        GetComponent<Camera>().transform.Rotate(rotX, 0, -rotZ);
-        rootNode = GetComponent<Transform>();
-        car = PlayerCar.GetComponent<Transform>();
-        carPhysics = PlayerCar.GetComponent<Rigidbody>();
+        cam.transform.Translate(posX, posY, posZ);
+        float rotZ = cam.transform.eulerAngles.z;
+        cam.transform.Rotate(rotX, 0, -rotZ);
+        rootNode = transform;
+        
+        
         Quaternion look;
+
+        car = PlayerCar.transform;
 
         // Moves the camera to match the car's position.
         rootNode.position = Vector3.Lerp(rootNode.position, car.position, cameraStickiness * Time.fixedDeltaTime);
