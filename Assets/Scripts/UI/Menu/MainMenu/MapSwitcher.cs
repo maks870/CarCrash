@@ -97,12 +97,13 @@ public class MapSwitcher : MonoBehaviour
 
     public void FillListBySO(List<MapSO> maps)
     {
-        Debug.Log("Добавляем карты " + maps.Count);
         mapsSO.AddRange(maps);
     }
 
     public void StartLvl(MapSO map)
     {
+        YandexGame.savesData.playerWrapper.lastMap = map.Name;
+        YandexGame.SaveProgress();
         SceneManager.LoadScene(map.Scene.name);
     }
 }

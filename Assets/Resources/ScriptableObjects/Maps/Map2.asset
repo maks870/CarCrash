@@ -12,7 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf8c7cc39c7cc5f47be7860a7c421cbd, type: 3}
   m_Name: Map2
   m_EditorClassIdentifier: 
-  mapName: Map2
-  gemAward: 00000000010000000200000003000000
-  sprite: {fileID: 21300000, guid: f307396585eb05c46ac7fb04fc991826, type: 3}
+  car: {fileID: 11400000, guid: e9e806e50d6003949b1f420876eee380, type: 2}
+  nextMap: {fileID: 11400000, guid: da316d7976e203147ae1e86dfe9ebf01, type: 2}
+  sprite: {fileID: 21300000, guid: 96ed996461e54a24f8960e13399b415c, type: 3}
   scene: {fileID: 102900000, guid: cff822cf29bb91f45bfcd26d9123f4ce, type: 3}
+  awards:
+  - gems: 7
+    coins: 7
+  - gems: 30
+    coins: 30
+  - gems: 20
+    coins: 20
+  - gems: 10
+    coins: 10

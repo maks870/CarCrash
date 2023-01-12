@@ -21,6 +21,30 @@ public class SOLoader
         return scriptableObjects;
     }
 
+    public static MapSO LoadMapByName(string name)
+    {
+        string resourcesPath = Application.dataPath + "/Resources/ScriptableObjects";
+        DirectoryInfo dirInfo = new DirectoryInfo(resourcesPath);
+        List<MapSO> sctriptableObjects = new List<MapSO>();
+        MapSO scriptableObj;
+
+        foreach (DirectoryInfo dir in dirInfo.GetDirectories())
+        {
+            MapSO[] maps = Resources.LoadAll("ScriptableObjects/" + dir.Name, typeof(MapSO)).Cast<MapSO>().ToArray();
+            sctriptableObjects.AddRange(maps);
+        }
+
+        scriptableObj = sctriptableObjects[0];
+
+        foreach (MapSO maps in sctriptableObjects)
+        {
+            if (maps.Name == name)
+                scriptableObj = maps;
+        }
+
+        return scriptableObj;
+    }
+
     public static T LoadCollectibleByName<T>(string name) where T : CollectibleSO
     {
         string resourcesPath = Application.dataPath + "/Resources/ScriptableObjects";

@@ -5,7 +5,6 @@ using YG;
 
 public class MenuInitializer : MonoBehaviour
 {
-
     [SerializeField] private List<MenuManager> menuManagers = new List<MenuManager>();
     private bool isInitializeProcess = false;
     private void OnEnable()
@@ -42,7 +41,11 @@ public class MenuInitializer : MonoBehaviour
         }
 
         if (YandexGame.savesData.isFirstSession2)
+        {
+            YandexGame.savesData.playerWrapper.lastMap = "";
+            YandexGame.savesData.playerWrapper.lastPlayedPlace = 0;
             YandexGame.savesData.isFirstSession2 = false;
+        }
 
         mainMenu.InitializeMenu();
     }

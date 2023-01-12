@@ -87,7 +87,7 @@ namespace YG
                     Instance = this;
                     DontDestroyOnLoad(gameObject);
                 }
-            } 
+            }
             else Instance = this;
         }
 
@@ -139,6 +139,7 @@ namespace YG
 
         #region Player Data
         public static Action GetDataEvent;
+        public static Action EndDataLoadingEvent; //Событие окончания загрузки пользовательских данных
 
         public static void SaveEditor()
         {
@@ -179,7 +180,8 @@ namespace YG
                 finally
                 {
                     fs.Close();
-                } 
+                    EndDataLoadingEvent?.Invoke();
+                }
             }
             else ResetSaveProgress();
         }
@@ -266,6 +268,8 @@ namespace YG
                 LoadLocal();
             }
             else LoadCloud();
+
+            EndDataLoadingEvent?.Invoke();
 #else
             LoadEditor();
 #endif
@@ -280,7 +284,7 @@ namespace YG
 
         void SiteLock()
         {
-            try 
+            try
             {
                 string urlOrig = GetURLFromPage();
 
@@ -607,7 +611,7 @@ namespace YG
             {
                 rank[0] = 1; rank[1] = 2; rank[2] = 3;
                 photo[0] = "https://drive.google.com/u/0/uc?id=1TCoEwiiUvIiQwAMbKcBssneWkmsoofuI&export=download";
-                photo[1] = "https://drive.google.com/u/0/uc?id=1MlVQuyQTKMjoX3FDJYnsLKhEb4_M9FQB&export=download"; 
+                photo[1] = "https://drive.google.com/u/0/uc?id=1MlVQuyQTKMjoX3FDJYnsLKhEb4_M9FQB&export=download";
                 photo[2] = "https://drive.google.com/u/0/uc?id=11ZwzHDXm_UNxqnMke2ONo6oJaGVp7VgP&export=download";
                 playersName[0] = "Player"; playersName[1] = "Ivan"; playersName[2] = "Maria";
                 scorePlayers[0] = 23101; scorePlayers[1] = 115202; scorePlayers[2] = 185303;
@@ -665,7 +669,7 @@ namespace YG
         {
             Purchase purchase = null;
 
-            for(int i = 0; i < PaymentsData.id.Length; i++)
+            for (int i = 0; i < PaymentsData.id.Length; i++)
             {
                 if (PaymentsData.id[i] == ID)
                 {
@@ -821,7 +825,7 @@ namespace YG
         public void CloseVideo()
         {
             nowVideoAd = false;
-            
+
             CloseVideoAd.Invoke();
             CloseVideoEvent?.Invoke();
         }
@@ -951,7 +955,7 @@ namespace YG
                 Message("Load Local Complete! Cloud Data - " + cloudDataState);
                 AfterLoading();
             }
-            else if (cloudDataState == DataState.Broken || 
+            else if (cloudDataState == DataState.Broken ||
                 (cloudDataState == DataState.Broken && localDataState == DataState.Broken))
             {
                 Message("Local Saves - " + localDataState);
@@ -1296,7 +1300,7 @@ namespace YG
                 timerSaveCloud += Time.unscaledDeltaTime;
 #endif
         }
-#endregion Update
+        #endregion Update
 
         #region Json
         public class JsonAuth

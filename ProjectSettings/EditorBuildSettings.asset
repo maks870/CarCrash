@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tracks/2.unity
     guid: cff822cf29bb91f45bfcd26d9123f4ce
+  - enabled: 1
+    path: Assets/Scenes/Tracks/3.unity
+    guid: e7f1067456a6cbd4aa072ad4de030820
   m_configObjects: {}

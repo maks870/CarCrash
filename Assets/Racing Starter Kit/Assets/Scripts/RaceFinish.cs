@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using YG;
 
 public class RaceFinish : MonoBehaviour
 {
@@ -8,12 +9,27 @@ public class RaceFinish : MonoBehaviour
     [SerializeField] private GameObject PosDisplay, PauseButton, Panel1, Panel2;
     [SerializeField] private GameObject FinishPanelWin, FinishPanelLose;
 
+    private void WriteRecords()
+    {
+        //записываем рекорды если есть
+    }
+
+    private void ShowRecords()
+    {
+        //записываем рекорды если есть
+    }
+
     public void Finish()
     {
-        awardPresenter.GetAward();
+        WriteRecords();
+        ShowRecords();
+
+        YandexGame.savesData.playerWrapper.lastPlayedPlace = ChkManager.posMax;
+        YandexGame.SaveProgress();
+
         FinishCam.SetActive(true);
-        PauseButton.SetActive(false);  
-        Panel1.SetActive(false);     
+        PauseButton.SetActive(false);
+        Panel1.SetActive(false);
         Panel2.SetActive(false);
         ViewModes.SetActive(false);
 

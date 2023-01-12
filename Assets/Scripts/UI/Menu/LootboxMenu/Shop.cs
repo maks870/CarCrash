@@ -6,7 +6,7 @@ using YG;
 public class Shop : MonoBehaviour
 {
     [SerializeField] private List<LootBox> lootboxes = new List<LootBox>();
-    [SerializeField] private LootBoxAwardUI lootboxAwardUI;
+    [SerializeField] private AwardUI lootboxAwardUI;
     [SerializeField] private EarningManagerUI earningManagerUI;
 
     private void Start()
