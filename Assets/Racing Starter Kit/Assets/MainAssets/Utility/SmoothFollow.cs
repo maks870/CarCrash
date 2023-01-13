@@ -20,12 +20,20 @@ namespace UnityStandardAssets.Utility
 		[SerializeField]
 		private float heightDamping;
 
-		// Use this for initialization
-		void Start() { }
+		private float rotationDampingMax;
 
-		// Update is called once per frame
-		void LateUpdate()
+		// Use this for initialization
+		void Start() 
 		{
+			rotationDampingMax = rotationDamping;
+			rotationDamping = 0;
+		}
+
+        // Update is called once per frame
+        void LateUpdate()
+		{
+			if (rotationDamping < rotationDampingMax)
+				rotationDamping = rotationDamping + Time.deltaTime * 2f;
 			// Early out if we don't have a target
 			if (!target)
 				return;
