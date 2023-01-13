@@ -16,19 +16,19 @@ public class DesktopInput : BaseInput
         {
            GameObject imageAbility  = Instantiate(imageAbilityPref, container);
             if (i == 0) 
-                imageAbility.GetComponentInChildren<Text>().text = "Z";
-            if(i == 1)
-                imageAbility.GetComponentInChildren<Text>().text = "X";
-            if (i == 2)
-                imageAbility.GetComponentInChildren<Text>().text = "C";
+                imageAbility.GetComponentInChildren<Text>().text = "E";
+            //if(i == 1)
+            //    imageAbility.GetComponentInChildren<Text>().text = "X";
+            //if (i == 2)
+            //    imageAbility.GetComponentInChildren<Text>().text = "C";
             imageAbility.GetComponent<Image>().sprite = abilities[i].Icon;
         }
     }
 
     private void Update()
     {
-        verticalAxis = Input.GetAxis("Vertical");
-        horizontalAxis = Input.GetAxis("Horizontal");
+        verticalAxis = Input.GetAxis("VerticalP2");
+        horizontalAxis = Input.GetAxis("HorizontalP2");
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -39,17 +39,17 @@ public class DesktopInput : BaseInput
             handbrake = 0;
         }
 
-       if (Input.GetKeyDown(KeyCode.Z))
+       if (Input.GetKeyDown(KeyCode.E))
         {
             PressButtonAbilityEvent.Invoke(0);
         }
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            PressButtonAbilityEvent.Invoke(1);
-        }
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            PressButtonAbilityEvent.Invoke(2);
-        }
+        //if (Input.GetKeyDown(KeyCode.X))
+        //{
+        //    PressButtonAbilityEvent.Invoke(1);
+        //}
+        //if (Input.GetKeyDown(KeyCode.C))
+        //{
+        //    PressButtonAbilityEvent.Invoke(2);
+        //}
     }
 }

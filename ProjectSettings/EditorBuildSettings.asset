@@ -9,10 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/General.unity
     guid: 570666e4e7b37ee439f425b1e1dce1ba
   - enabled: 1
-    path: Assets/Scenes/Tracks/1.unity
+    path: Assets/Scenes/Tracks/Old/1.unity
     guid: f0b638cc1b4fa624789edc3b131a5b47
   - enabled: 1
-    path: Assets/Scenes/Tracks/2.unity
+    path: Assets/Scenes/Tracks/Old/2.unity
     guid: cff822cf29bb91f45bfcd26d9123f4ce
   - enabled: 1
     path: Assets/Scenes/Tracks/3.unity

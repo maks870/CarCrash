@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slowTime: 1
-  maxAbilities: 3
+  maxAbilities: 1
   spawnPointForward: {fileID: 6542769434582307756}
   spawnPointMiddle: {fileID: 0}
   spawnPointBack: {fileID: 1039006956092193445}
@@ -675,7 +675,7 @@ MonoBehaviour:
   m_MaximumSteerAngle: 25
   m_SteerHelper: 1
   m_TractionControl: 1
-  m_FullTorqueOverAllWheels: 365
+  m_FullTorqueOverAllWheels: 265
   m_ReverseTorque: 150
   m_MaxHandbrakeTorque: 100000000
   m_Downforce: 100

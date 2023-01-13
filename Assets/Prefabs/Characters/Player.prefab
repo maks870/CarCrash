@@ -845,7 +845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slowTime: 1
-  maxAbilities: 3
+  maxAbilities: 1
   spawnPointForward: {fileID: 4650270482631645526}
   spawnPointMiddle: {fileID: 0}
   spawnPointBack: {fileID: 4650270482405887505}
@@ -2110,10 +2110,10 @@ MonoBehaviour:
   - {fileID: 4650270483147351888}
   - {fileID: 4650270482638940143}
   m_CentreOfMassOffset: {x: 0, y: 0, z: 0}
-  m_MaximumSteerAngle: 25
-  m_SteerHelper: 0.35
+  m_MaximumSteerAngle: 20
+  m_SteerHelper: 0.3
   m_TractionControl: 0
-  m_FullTorqueOverAllWheels: 465
+  m_FullTorqueOverAllWheels: 365
   m_ReverseTorque: 100
   m_MaxHandbrakeTorque: 0
   m_Downforce: 100
@@ -2139,9 +2139,12 @@ MonoBehaviour:
   inputManager: {fileID: 0}
   targetMark: {fileID: 1919448871}
   uiManager: {fileID: 0}
-  taxiingHelper: 0
+  hardSteerHelper: 0
+  taxiingHelper: 0.35
   m_SteerSensitivity: 0.05
   targetMarkHeight: 1
+  normalSteerAngle: 15
+  turnSteerAngle: 25
 --- !u!114 &4650270483354694012
 MonoBehaviour:
   m_ObjectHideFlags: 0
