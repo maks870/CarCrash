@@ -8,6 +8,7 @@ namespace UnityStandardAssets.Vehicles.Car
         [SerializeField] private InputManager inputManager;
         [SerializeField] private GameObject targetMark;
         [SerializeField] private UIPlayerManager uiManager;
+        [SerializeField] private bool hardSteerHelper = false;
         [SerializeField] [Range(0, 1)] private float taxiingHelper;
         [SerializeField] private float m_SteerSensitivity = 0.05f;
         [SerializeField] private float targetMarkHeight = 1f;
@@ -34,19 +35,24 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void FixedUpdate()
         {
-            //CalculateTaxiingSteer();
-            //float currentSteer = Mathf.Lerp(input.HorizontalAxis, taxiingSteer, taxiingHelper);
-            //ControlMove(currentSteer, input.VerticalAxis, input.VerticalAxis, input.HandBrake);
+            if (hardSteerHelper)
+            {
+                float currentSteer = input.HorizontalAxis;
 
+                if (input.HorizontalAxis != 0 && abilityController.IsMineWarning == false)
+                {
+                    CalculateTaxiingSteer();
+                    currentSteer = Mathf.Lerp(input.HorizontalAxis, taxiingSteer, taxiingHelper);
+                }
 
-            SteerChanger();
+                ControlMove(currentSteer, input.VerticalAxis, input.VerticalAxis, input.HandBrake);
 
-
-
-            ControlMove(input.HorizontalAxis, input.VerticalAxis, input.VerticalAxis, input.HandBrake);
-
-
-
+            }
+            else
+            {
+                SteerChanger();
+                ControlMove(input.HorizontalAxis, input.VerticalAxis, input.VerticalAxis, input.HandBrake); // ¬¿Õ»Õ ¬¿–»¿Õ“ œŒÃŒÿÕ» ¿ œŒ¬Œ–Œ“¿
+            }
         }
 
         private void Update()

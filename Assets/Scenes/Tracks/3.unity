@@ -30107,7 +30107,7 @@ PrefabInstance:
     - target: {fileID: 4650270483354694013, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
         type: 3}
       propertyPath: taxiingHelper
-      value: 0.662
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 4650270483354694014, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
         type: 3}
