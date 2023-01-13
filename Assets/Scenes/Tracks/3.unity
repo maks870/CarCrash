@@ -4519,14 +4519,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 106e7ea40c6a9eb45971fe1e95a7eac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posX: 0
-  posY: 37.57
-  posZ: 14.03
+  offset: {x: 0, y: 0, z: 0}
   rotX: 0
   cam: {fileID: 0}
   rotationThreshold: 1
   cameraStickiness: 49
-  cameraRotationSpeed: 10
+  smoothSpeed: 5
 --- !u!4 &365113223 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6868908512111470147, guid: aad040fe358cb8a43940ae0cde5d87ab,
@@ -15415,6 +15413,12 @@ MonoBehaviour:
   CarControls: {fileID: 1290346688}
   GetReady: {fileID: 14593706}
   GoAudio: {fileID: 1738777427}
+--- !u!4 &1118925908 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4650270483154986801, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
+    type: 3}
+  m_PrefabInstance: {fileID: 4650270482241498784}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1124226047 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2821150737163985533, guid: 61cfa08c76e42dc4a919c6ba0f15f6e5,
@@ -15928,6 +15932,7 @@ GameObject:
   - component: {fileID: 1185270764}
   - component: {fileID: 1185270763}
   - component: {fileID: 1185270762}
+  - component: {fileID: 1185270767}
   m_Layer: 0
   m_Name: NormalCamera
   m_TagString: MainCamera
@@ -16063,19 +16068,34 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185270760}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 106e7ea40c6a9eb45971fe1e95a7eac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posX: 0
-  posY: 12.9
-  posZ: -136.3
+  offset: {x: -2.2, y: 1.51, z: 0}
   rotX: 4.35
   cam: {fileID: 1185270765}
   rotationThreshold: 0.1
   cameraStickiness: 49
-  cameraRotationSpeed: 10
+  smoothSpeed: 3.45
+--- !u!114 &1185270767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1185270760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f76806479d916a64aa03f8e3eba7912f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1118925908}
+  distance: 3.39
+  height: 1.21
+  rotationDamping: 5.93
+  heightDamping: 1.88
 --- !u!4 &1186559430 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2878115679624053768, guid: 0c0c540b5da4846448b7136dd96cb91b,
@@ -26427,14 +26447,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 106e7ea40c6a9eb45971fe1e95a7eac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  posX: 0
-  posY: 48.2
-  posZ: -140.2
+  offset: {x: 0, y: 0, z: 0}
   rotX: 2.9
   cam: {fileID: 0}
   rotationThreshold: 0.1
   cameraStickiness: 49
-  cameraRotationSpeed: 10
+  smoothSpeed: 5
 --- !u!4 &1983101862 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 183280540522151768, guid: 615b22b283e38284f84df240052f4b19,

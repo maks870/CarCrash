@@ -2,11 +2,9 @@
 
 public class CarCamera : MonoBehaviour
 {
-    Transform rootNode;
     Transform car;
-    Rigidbody carPhysics;
     private GameObject PlayerCar;
-    public float posX, posY, posZ;
+    public Vector3 offset;
     public float rotX;
     public Camera cam;
 
@@ -17,39 +15,37 @@ public class CarCamera : MonoBehaviour
     public float cameraStickiness = 10.0f;
 
     [Tooltip("How closely the camera matches the car's velocity vector. The lower the value, the smoother the camera rotations, but too much results in not being able to see where you're going.")]
-    public float cameraRotationSpeed = 5.0f;
+    public float smoothSpeed = 5.0f;
 
     private void Start()
     {
         PlayerCar = GameObject.FindGameObjectWithTag("PlayerCar");
         cam = GetComponent<Camera>();
-        
-        carPhysics = PlayerCar.GetComponent<Rigidbody>();
     }
 
-    void Update()
+    void LateUpdate()
     {
-        cam.transform.Translate(posX, posY, posZ);
-        float rotZ = cam.transform.eulerAngles.z;
-        cam.transform.Rotate(rotX, 0, -rotZ);
-        rootNode = transform;
-        
-        
-        Quaternion look;
+        SmoothFollow();
+    }
 
-        car = PlayerCar.transform;
+    private void SmoothFollow() 
+    {
+        Vector3 offsetPos  = PlayerCar.transform.position + offset;
+        Vector3 smoothFollow = Vector3.Lerp(transform.position, offsetPos, smoothSpeed * Time.deltaTime);
+        //float rotZ = cam.transform.eulerAngles.z;
+        //cam.transform.Rotate(rotX, 0, -rotZ);
 
-        // Moves the camera to match the car's position.
-        rootNode.position = Vector3.Lerp(rootNode.position, car.position, cameraStickiness * Time.fixedDeltaTime);
 
-        // If the car isn't moving, default to looking forwards. Prevents camera from freaking out with a zero velocity getting put into a Quaternion.LookRotation
-        //if (carPhysics.velocity.magnitude < rotationThreshold)
-            look = Quaternion.LookRotation(car.forward);
-        //else
-           // look = Quaternion.LookRotation(carPhysics.velocity.normalized);
+       
 
-        // Rotate the camera towards the velocity vector.
-        look = Quaternion.Slerp(rootNode.rotation, look, cameraRotationSpeed * Time.fixedDeltaTime);
-        rootNode.rotation = look;
+        transform.position = smoothFollow;
+        //Quaternion look;
+
+        //car = PlayerCar.transform;
+        //look = Quaternion.LookRotation(car.forward);
+
+        //look = Quaternion.Slerp(transform.rotation, look, smoothSpeed * Time.fixedDeltaTime);
+        transform.LookAt(PlayerCar.transform);
+        //transform.rotation = look;
     }
 }
