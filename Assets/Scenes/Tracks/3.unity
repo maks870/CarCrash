@@ -29626,16 +29626,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3267986177311911661, guid: 2b476568fc8796e449d5aabb8168b58c,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.6999999
-      objectReference: {fileID: 0}
-    - target: {fileID: 3267986177311911661, guid: 2b476568fc8796e449d5aabb8168b58c,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.6999999
-      objectReference: {fileID: 0}
-    - target: {fileID: 3267986177311911661, guid: 2b476568fc8796e449d5aabb8168b58c,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: -74.501495
       objectReference: {fileID: 0}
@@ -30118,11 +30108,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1415762430}
     m_Modifications:
-    - target: {fileID: 1027026812937430100, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4650270482510969136, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
         type: 3}
       propertyPath: m_Name
@@ -30193,30 +30178,10 @@ PrefabInstance:
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 1321064512}
-    - target: {fileID: 4650270483354694013, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
-        type: 3}
-      propertyPath: taxiingHelper
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4650270483354694014, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
-        type: 3}
-      propertyPath: m_SteerHelper
-      value: 0.35
-      objectReference: {fileID: 0}
     - target: {fileID: 4650270483354694014, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
         type: 3}
       propertyPath: m_MaximumSteerAngle
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 6892028588079702721, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8357418709172749278, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f1eb3c36ea419147bcf9fc8a44e4380, type: 3}
