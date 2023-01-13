@@ -26,6 +26,7 @@ public class LootBox : MonoBehaviour
         List<string> collectedItems = YandexGame.savesData.playerWrapper.collectibles;
         List<CollectibleSO> tempItems = new List<CollectibleSO>();
 
+
         gemValue = 0;
         coinValue = 0;
         tempItems.AddRange(items);

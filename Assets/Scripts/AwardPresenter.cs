@@ -19,25 +19,23 @@ public class AwardPresenter : MonoBehaviour
         MapAward mapAward;
 
         string mapName = YandexGame.savesData.playerWrapper.lastMap;
-        MapSO map = SOLoader.LoadMapByName(mapName);
-
         int pos = YandexGame.savesData.playerWrapper.lastPlayedPlace;
-        MapInfo mapInfo = YandexGame.savesData.playerWrapper.GetMapInfo(mapName);
+        int mapIndex = YandexGame.savesData.playerWrapper.GetMapInfoIndex(mapName);
+        MapSO map = SOLoader.LoadMapByName(mapName);
 
         mapAward = pos > 4
             ? map.Awards[0]
             : map.Awards[pos];
 
-        if (mapInfo.isPassed == false)
+        if (YandexGame.savesData.playerWrapper.maps[mapIndex].isPassed == false)
         {
             carSO = map.Car;
             mapSO = map.NextMap;
             MapInfo newMapInfo = new MapInfo(map.NextMap.Name);
-            mapInfo.isPassed = true;
 
             YandexGame.savesData.playerWrapper.collectibles.Add(map.Car.Name);
             YandexGame.savesData.playerWrapper.maps.Add(newMapInfo);
-            //Debug.Log(YandexGame.savesData.playerWrapper.GetMapInfo(mapName).isPassed);
+            YandexGame.savesData.playerWrapper.maps[mapIndex].isPassed = true;
 
             awardUI.ShowAwards(mapAward.coins, mapAward.gems, carSO, mapSO);
         }

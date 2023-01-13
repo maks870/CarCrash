@@ -20,33 +20,20 @@ public class GemPresenter : MonoBehaviour
 
     private void OnEnable()
     {
-        YandexGame.RewardVideoEvent += Rewarded;
-        YandexGame.GetDataEvent += LoadUI;
+        YandexGame.RewardVideoEvent += GetAdReward;
+        YandexGame.GetDataEvent += InitializeUI;
     }
 
     // Отписываемся от события открытия рекламы в OnDisable
     private void OnDisable()
     {
-        YandexGame.RewardVideoEvent -= Rewarded;
-        YandexGame.GetDataEvent -= LoadUI;
+        YandexGame.RewardVideoEvent -= GetAdReward;
     }
 
-    void Start()
-    {
-        if (YandexGame.SDKEnabled == true)
-        {
-            LoadUI();
-        }
-    }
-
-    private void LoadUI()
-    {
-        gemPresenterUI.LoadValuesUI(exchangeCoinCost, exchangeGemReward, smallAdReward, mediumAdReward, mediumAdViews);
-    }
-
-    private void Rewarded(int index)
+    private void GetAdReward(int index)
     {
         AdvertisementType type = (AdvertisementType)index;
+
         switch (type)
         {
             case AdvertisementType.SingleAd:
@@ -57,18 +44,23 @@ public class GemPresenter : MonoBehaviour
                 if (YandexGame.savesData.mediumGemAdViewed < mediumAdViews - 1)
                 {
                     YandexGame.savesData.mediumGemAdViewed++;
-                    YandexGame.SaveProgress();
                 }
                 else
                 {
                     YandexGame.savesData.mediumGemAdViewed = 0;
                     EarningManager.AddGem(mediumAdReward);
-                    YandexGame.SaveProgress();
-                };
+                }
 
                 gemPresenterUI.UpdateDoubleAdUI();
                 break;
         }
+
+        YandexGame.SaveProgress();
+    }
+
+    public void InitializeUI()
+    {
+        gemPresenterUI.LoadValuesUI(exchangeCoinCost, exchangeGemReward, smallAdReward, mediumAdReward, mediumAdViews);
     }
 
     public void Exchange()

@@ -1,5 +1,5 @@
 [System.Serializable]
-public struct MapInfo
+public class MapInfo
 {
     public string mapName;
     public int highestPlace;

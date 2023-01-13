@@ -20,7 +20,7 @@ public class GemPresenterUI : MonoBehaviour
         this.smallGemAd.text = smallGemAd.ToString();
         this.mediumGemAd.text = mediumGemAd.ToString();
         this.mediumAdViews.text = mediumAdViews.ToString();
-        mediumAdViewed.text = YandexGame.savesData.mediumGemAdViewed.ToString();
+        UpdateDoubleAdUI();
     }
     public void UpdateDoubleAdUI()
     {

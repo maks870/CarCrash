@@ -15,7 +15,7 @@ public class CustomizeMenuManager : MenuManager
         carTabSwitcher.SetSavedCar(playerLoad.CurrentCarColor, playerLoad.CurrentCarModel);
     }
 
-    private void SavePlayer()
+    protected override void SavePlayer()
     {
         CollectibleSO characterItem = characterTabSwitcher.CurrentSwitcher.CurrentCharacter;
         CollectibleSO carColorItem = carTabSwitcher.CarColorSwitcher.CurrentCarColor;
@@ -82,7 +82,7 @@ public class CustomizeMenuManager : MenuManager
         {
             Debug.Log($"У нас есть карта {map.mapName}");
         }
-        
+
     }
 
     public void ResetProgress()//тестовый метод

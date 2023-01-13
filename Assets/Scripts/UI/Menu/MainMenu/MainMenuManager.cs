@@ -30,18 +30,15 @@ public class MainMenuManager : MenuManager
 
     public override void InitializeMenu()
     {
-        Debug.Log("InitializeMainMenu");
-        for (int i = 0; i < gamemodePanels.Count; i++)
-        {
-            gamemodePanels[i].SetActive(true);
-        }
-
-        string lastMapName = YandexGame.savesData.playerWrapper.lastMap;
-        MapInfo mapInfo = YandexGame.savesData.playerWrapper.GetMapInfo(lastMapName);
 
         if (YandexGame.savesData.playerWrapper.lastMap != "" && YandexGame.savesData.playerWrapper.lastPlayedPlace != 0)
         {
             YandexGame.EndDataLoadingEvent += GetAwardsAfterMap;
+        }
+
+        for (int i = 0; i < gamemodePanels.Count; i++)
+        {
+            gamemodePanels[i].SetActive(true);
         }
 
         SetSavedSO();

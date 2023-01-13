@@ -32,8 +32,9 @@ namespace UnityStandardAssets.Vehicles.Car
         private void FixedUpdate()
         {
             CalculateTaxiingSteer();
-            float currentSteer = Mathf.Lerp(input.HorizontalAxis, taxiingSteer, taxiingHelper);
-            ControlMove(currentSteer, input.VerticalAxis, input.VerticalAxis, input.HandBrake);
+            //float currentSteer = Mathf.Lerp(input.HorizontalAxis, taxiingSteer, taxiingHelper);
+            ControlMove(input.HorizontalAxis, input.VerticalAxis, input.VerticalAxis, input.HandBrake);
+            //ControlMove(currentSteer, input.VerticalAxis, input.VerticalAxis, input.HandBrake);
         }
 
         private void Update()

@@ -11,16 +11,20 @@ public class PlayerWrapper
     public List<string> collectibles = new List<string>();
     public List<MapInfo> maps = new List<MapInfo>();
 
-    public MapInfo GetMapInfo(string mapName)
+    public int GetMapInfoIndex(string mapName)
     {
-        MapInfo map = maps[0];
+        int index = 0;
+
         for (int i = 0; i < maps.Count; i++)
         {
             if (maps[i].mapName == mapName)
-                map = maps[i];
+            {
+                index = i;
+                return index;
+            }
         }
 
-        return map;
+        return index;
     }
 
     public float GetFastestTime(string mapName)
@@ -30,7 +34,10 @@ public class PlayerWrapper
         for (int i = 0; i < maps.Count; i++)
         {
             if (maps[i].mapName == mapName)
+            {
                 fastestTime = maps[i].fastestTime;
+                return fastestTime;
+            }
         }
 
         return fastestTime;
@@ -43,7 +50,11 @@ public class PlayerWrapper
         for (int i = 0; i < maps.Count; i++)
         {
             if (maps[i].mapName == mapName)
+            {
                 highestPlace = maps[i].highestPlace;
+                return highestPlace;
+            }
+
         }
 
         return highestPlace;
