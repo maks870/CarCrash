@@ -30178,10 +30178,10 @@ PrefabInstance:
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 1321064512}
-    - target: {fileID: 4650270483354694014, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
+    - target: {fileID: 4650270483354694013, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
         type: 3}
-      propertyPath: m_MaximumSteerAngle
-      value: 25
+      propertyPath: normalSteerAngle
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f1eb3c36ea419147bcf9fc8a44e4380, type: 3}

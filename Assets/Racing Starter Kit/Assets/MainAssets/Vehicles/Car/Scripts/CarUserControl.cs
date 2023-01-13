@@ -11,6 +11,9 @@ namespace UnityStandardAssets.Vehicles.Car
         [SerializeField] [Range(0, 1)] private float taxiingHelper;
         [SerializeField] private float m_SteerSensitivity = 0.05f;
         [SerializeField] private float targetMarkHeight = 1f;
+
+        [SerializeField] private float normalSteerAngle = 15f;
+        [SerializeField] private float turnSteerAngle = 25f;
         private float taxiingSteer;
         private BaseInput input;
 
@@ -31,10 +34,19 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void FixedUpdate()
         {
-            CalculateTaxiingSteer();
+            //CalculateTaxiingSteer();
             //float currentSteer = Mathf.Lerp(input.HorizontalAxis, taxiingSteer, taxiingHelper);
-            ControlMove(input.HorizontalAxis, input.VerticalAxis, input.VerticalAxis, input.HandBrake);
             //ControlMove(currentSteer, input.VerticalAxis, input.VerticalAxis, input.HandBrake);
+
+
+            SteerChanger();
+
+
+
+            ControlMove(input.HorizontalAxis, input.VerticalAxis, input.VerticalAxis, input.HandBrake);
+
+
+
         }
 
         private void Update()
@@ -73,6 +85,26 @@ namespace UnityStandardAssets.Vehicles.Car
             float steer = Mathf.Clamp(targetAngle * m_SteerSensitivity, -1, 1) * Mathf.Sign(carController.CurrentSpeed);
 
             taxiingSteer = steer;
+        }
+
+        private void SteerChanger()
+        {
+            Vector3 localTarget = transform.InverseTransformPoint(carTrack.transform.position);
+            float targetAngle = Mathf.Atan2(localTarget.x, localTarget.z) * Mathf.Rad2Deg;
+            float steer = Mathf.Clamp(targetAngle * m_SteerSensitivity, -1, 1) * Mathf.Sign(carController.CurrentSpeed);
+
+            if (steer > 0 && input.HorizontalAxis > 0)
+            {
+                carController.m_MaximumSteerAngle = turnSteerAngle;
+            }
+            else if (steer < 0 && input.HorizontalAxis < 0)
+            {
+                carController.m_MaximumSteerAngle = turnSteerAngle;
+            }
+            else
+            {
+                carController.m_MaximumSteerAngle = normalSteerAngle;
+            }
         }
     }
 }
