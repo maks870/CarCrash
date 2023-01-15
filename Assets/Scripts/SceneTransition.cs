@@ -3,17 +3,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneTransition : MonoBehaviour
 {
+    [SerializeField] private Image loadingImage;
+    [SerializeField] private GameObject panel;
+    private bool endAnimation = false;
     private Animator animator;
     private AsyncOperation sceneOperation;
     public static SceneTransition instance;
 
+
     private void Update()
     {
-        if (sceneOperation != null && sceneOperation.progress > 0.8)
-            instance.sceneOperation.allowSceneActivation = true;
+        if (sceneOperation != null)
+        {
+            loadingImage.fillAmount = instance.sceneOperation.progress;
+
+            if (instance.sceneOperation.progress >= 0.85 && endAnimation) 
+            {
+                EndLoadScene();
+            }  
+        }          
     }
 
     private void Start()
@@ -23,13 +35,19 @@ public class SceneTransition : MonoBehaviour
         else
             Destroy(this);
 
-        //  animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     private void StartLoadScene()
     {
         instance.sceneOperation.allowSceneActivation = false;
-        //   instance.animator.SetTrigger("sceneClosing");
+        panel.SetActive(true);
+        instance.animator.SetTrigger("sceneClosing");
+    }
+
+    private void EndLoadScene() 
+    {
+        instance.sceneOperation.allowSceneActivation = true;
     }
 
     public static void SwitchScene(string sceneName)
@@ -46,7 +64,11 @@ public class SceneTransition : MonoBehaviour
 
     public void EndPreload()
     {
+    }
 
+    public void EndAnimation() 
+    {
+        endAnimation = true;
     }
 
 }
