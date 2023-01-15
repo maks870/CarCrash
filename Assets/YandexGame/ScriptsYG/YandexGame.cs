@@ -1327,7 +1327,7 @@ namespace YG
             public string domain;
             public string deviceType = "desktop";
             public bool isMobile;
-            public bool isDesktop;
+            public bool isDesktop = true;
             public bool isTablet;
             public bool isTV;
             public string appID;
