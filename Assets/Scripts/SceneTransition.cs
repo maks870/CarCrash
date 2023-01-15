@@ -29,7 +29,6 @@ public class SceneTransition : MonoBehaviour
             Destroy(this);
 
       //  animator = GetComponent<Animator>();
-        DontDestroyOnLoad(this.gameObject);
     }
 
     public static void SwitchScene(int idScene)
