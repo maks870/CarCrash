@@ -104,6 +104,6 @@ public class MapSwitcher : MonoBehaviour
     {
         YandexGame.savesData.playerWrapper.lastMap = map.Name;
         YandexGame.SaveProgress();
-        SceneManager.LoadScene(map.Scene.name);
+        SceneTransition.SwitchScene(map.Scene.name);
     }
 }

@@ -25,6 +25,6 @@ public class Menu : MonoBehaviour
 
     public void Exit()
     {
-        SceneManager.LoadScene(0);//so it will restart the game's scene
+        SceneTransition.SwitchScene(0);//so it will restart the game's scene
     }
 }
