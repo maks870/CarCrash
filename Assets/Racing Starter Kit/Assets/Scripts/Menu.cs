@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 //this script is used in the Play button from the first menu and the Continue button when you finish the race
-public class Continue : MonoBehaviour
+public class Menu : MonoBehaviour
 {
     [SerializeField] private GameObject RaceUI, Countdown, FinishCamera, Checkpoints, LapsSelected;
     //also, it is used if we hit restart in the pause menu
@@ -21,5 +21,10 @@ public class Continue : MonoBehaviour
         Checkpoints.SetActive(true); //racetrack checkpoints
         LapsSelected.SetActive(true); //turn on the lap requirement race-UI text
         FinishCamera.SetActive(false); //and the camera goes off too, to use the one in the player car
+    }
+
+    public void Exit()
+    {
+        SceneManager.LoadScene(0);//so it will restart the game's scene
     }
 }

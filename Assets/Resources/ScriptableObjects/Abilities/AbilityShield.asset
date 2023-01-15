@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 1254017168727422581, guid: b9e3282157f8bd1479a3a911befc81ec,
     type: 3}
-  icon: {fileID: 21300000, guid: 6a2e96d257b9da244bea826f85e2a255, type: 3}
+  icon: {fileID: 21300000, guid: 3fa0acc36cb9d4e46b1a8b79b446b779, type: 3}
   shieldLifetime: 5

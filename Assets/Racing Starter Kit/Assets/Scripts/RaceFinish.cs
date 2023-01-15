@@ -13,6 +13,7 @@ public class RaceFinish : MonoBehaviour
     [SerializeField] private Image cup;
     [SerializeField] private Sprite[] spritesCup;
     [SerializeField] private Text posText;
+    private bool finish = false;
 
     private void WriteRecords()
     {
@@ -26,6 +27,10 @@ public class RaceFinish : MonoBehaviour
 
     public void Finish()
     {
+        if (finish)
+            return;
+
+        finish = true;
         WriteRecords();
         ShowRecords();
 
