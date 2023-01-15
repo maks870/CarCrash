@@ -31,7 +31,7 @@ public class MainMenuManager : MenuManager
     public override void InitializeMenu()
     {
 
-        if (YandexGame.savesData.playerWrapper.lastMap != "" && YandexGame.savesData.playerWrapper.lastPlayedPlace != 0)
+        if (YandexGame.savesData.playerWrapper.lastMap != "" && YandexGame.savesData.playerWrapper.lastMapPlaces.Count == 0)
         {
             YandexGame.EndDataLoadingEvent += GetAwardsAfterMap;
         }
@@ -53,7 +53,7 @@ public class MainMenuManager : MenuManager
     {
         presenter.GetAward();
         YandexGame.savesData.playerWrapper.lastMap = "";
-        YandexGame.savesData.playerWrapper.lastPlayedPlace = 0;
+        YandexGame.savesData.playerWrapper.lastMapPlaces.Clear();
         YandexGame.SaveProgress();
         YandexGame.EndDataLoadingEvent -= GetAwardsAfterMap;
     }

@@ -3,10 +3,17 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [System.Serializable]
-public struct MapAward
+public class MapAward
 {
-    public int gems;
-    public int coins;
+    public int coins = 0;
+    public int gems = 0;
+
+    public MapAward AddAward(MapAward award)
+    {
+        coins += award.coins;
+        gems += award.gems;
+        return this;
+    }
 }
 
 [CreateAssetMenu(fileName = "Map", menuName = "ScriptableObject/Map")]

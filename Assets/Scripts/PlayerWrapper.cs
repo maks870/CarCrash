@@ -3,11 +3,11 @@ using System.Collections.Generic;
 [System.Serializable]
 public class PlayerWrapper
 {
-    public int lastPlayedPlace;
     public string lastMap;
     public string currentCharacterItem;
     public string currentCarColorItem;
     public string currentCarModelItem;
+    public List<int> lastMapPlaces = new List<int>();
     public List<string> collectibles = new List<string>();
     public List<MapInfo> maps = new List<MapInfo>();
 
