@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneTransition : MonoBehaviour
 {
     private static SceneTransition instance;
-   // private Animator animator;
+    private Animator animator;
     private AsyncOperation sceneOperation;
 
     public static void SwitchScene(string sceneName)
