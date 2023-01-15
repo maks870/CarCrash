@@ -29,7 +29,7 @@ public class RaceFinish : MonoBehaviour
         WriteRecords();
         ShowRecords();
 
-        YandexGame.savesData.playerWrapper.lastPlayedPlace = ChkManager.posMax;
+        YandexGame.savesData.playerWrapper.lastMapPlaces.Add(ChkManager.posMax);
         YandexGame.SaveProgress();
 
         FinishCam.SetActive(true);
@@ -42,7 +42,7 @@ public class RaceFinish : MonoBehaviour
 
         if (ChkManager.posMax < 4)
         {
-            cup.sprite = spritesCup[ChkManager.posMax-1];
+            cup.sprite = spritesCup[ChkManager.posMax - 1];
             FinishPanelWin.SetActive(true);//win panel turns on
             FinishPanelLose.SetActive(false);//lose panel turns off
         }

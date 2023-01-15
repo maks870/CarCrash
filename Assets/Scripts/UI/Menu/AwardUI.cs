@@ -42,10 +42,12 @@ public class AwardUI : MonoBehaviour
             awards.Add(gemAwardUI);
         }
 
-        CharacterModelSO characterCollectible = (CharacterModelSO)collectibleItem;
-        collectbileAwardUI.GetComponent<Image>().sprite = characterCollectible.Sprite;
-        awards.Add(collectbileAwardUI);
-
+        if (collectibleItem != null)
+        {
+            CharacterModelSO characterCollectible = (CharacterModelSO)collectibleItem;
+            collectbileAwardUI.GetComponent<Image>().sprite = characterCollectible.Sprite;
+            awards.Add(collectbileAwardUI);
+        }
         currentAward = 0;
 
         SwitchAward();

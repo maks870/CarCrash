@@ -43,7 +43,7 @@ public class MenuInitializer : MonoBehaviour
         if (YandexGame.savesData.isFirstSession2)
         {
             YandexGame.savesData.playerWrapper.lastMap = "";
-            YandexGame.savesData.playerWrapper.lastPlayedPlace = 0;
+            YandexGame.savesData.playerWrapper.lastMapPlaces.Clear();
             YandexGame.savesData.isFirstSession2 = false;
         }
 
