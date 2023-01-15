@@ -12,7 +12,7 @@ public class RaceFinish : MonoBehaviour
     [SerializeField] private GameObject finishPanels;
     [SerializeField] private Image cup;
     [SerializeField] private Sprite[] spritesCup;
-    [SerializeField] private Text pos;
+    [SerializeField] private Text posText;
 
     private void WriteRecords()
     {
@@ -38,7 +38,7 @@ public class RaceFinish : MonoBehaviour
         Panel2.SetActive(false);
         ViewModes.SetActive(false);
         finishPanels.SetActive(true);
-        pos.text = ChkManager.posMax.ToString();
+        posText.text = ChkManager.posMax.ToString();
 
         if (ChkManager.posMax < 4)
         {

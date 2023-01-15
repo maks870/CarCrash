@@ -2140,7 +2140,7 @@ MonoBehaviour:
   targetMark: {fileID: 1919448871}
   uiManager: {fileID: 0}
   hardSteerHelper: 0
-  taxiingHelper: 0.35
+  taxiingHelper: 0
   m_SteerSensitivity: 0.05
   targetMarkHeight: 1
   normalSteerAngle: 15
