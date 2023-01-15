@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using YG;
 
 public class RaceFinish : MonoBehaviour
@@ -8,6 +9,10 @@ public class RaceFinish : MonoBehaviour
     [SerializeField] private GameObject ViewModes;
     [SerializeField] private GameObject PosDisplay, PauseButton, Panel1, Panel2;
     [SerializeField] private GameObject FinishPanelWin, FinishPanelLose;
+    [SerializeField] private GameObject finishPanels;
+    [SerializeField] private Image cup;
+    [SerializeField] private Sprite[] spritesCup;
+    [SerializeField] private Text pos;
 
     private void WriteRecords()
     {
@@ -32,10 +37,12 @@ public class RaceFinish : MonoBehaviour
         Panel1.SetActive(false);
         Panel2.SetActive(false);
         ViewModes.SetActive(false);
+        finishPanels.SetActive(true);
+        pos.text = ChkManager.posMax.ToString();
 
-        //if you win (you finish 1st position)
-        if (ChkManager.posMax == 1)
+        if (ChkManager.posMax < 4)
         {
+            cup.sprite = spritesCup[ChkManager.posMax-1];
             FinishPanelWin.SetActive(true);//win panel turns on
             FinishPanelLose.SetActive(false);//lose panel turns off
         }
