@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class MenuManager : MonoBehaviour
 {
     [SerializeField] protected PlayerLoad playerLoad;
-    [SerializeField] protected GameObject objectUI;
+    [SerializeField] public GameObject objectUI;
 
     protected virtual void SavePlayer()
     {

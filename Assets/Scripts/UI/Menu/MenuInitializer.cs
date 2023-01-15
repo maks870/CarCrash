@@ -52,7 +52,7 @@ public class MenuInitializer : MonoBehaviour
             menuManagers[i].OpenMenu();
 
             if (menuManagers[i] != mainMenu)
-                menuManagers[i].CloseMenu();
+                menuManagers[i].objectUI.SetActive(false);
         }
 
         SceneTransition.instance.EndPreload();
