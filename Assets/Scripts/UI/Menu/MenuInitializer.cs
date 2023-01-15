@@ -47,6 +47,14 @@ public class MenuInitializer : MonoBehaviour
             YandexGame.savesData.isFirstSession2 = false;
         }
 
-        mainMenu.InitializeMenu();
+        for (int i = 0; i < menuManagers.Count; i++)
+        {
+            menuManagers[i].OpenMenu();
+
+            if (menuManagers[i] != mainMenu)
+                menuManagers[i].CloseMenu();
+        }
+
+        SceneTransition.instance.EndPreload();
     }
 }
