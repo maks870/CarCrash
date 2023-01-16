@@ -121,7 +121,7 @@ public class ChkManager : MonoBehaviour
         if (ChkTrigger.startDis)
         {
             posPlayer(1);
-            PositionDisplay.text = (posMax) + CardinalPos(posMax) + " Place";
+            PositionDisplay.text = "#" + posMax; //+ CardinalPos(posMax)
         }
 
         //if the player completes all the selected laps
