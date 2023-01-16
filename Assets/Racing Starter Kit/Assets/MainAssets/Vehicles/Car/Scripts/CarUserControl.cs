@@ -73,7 +73,15 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void SetTargetMark()
         {
-            if (abilityController.Target != null)
+            bool hasMissle = false;
+
+            for (int i = 0; i < abilityController.Abilities.Count; i++)
+            {
+                if (abilityController.Abilities[i].Type == AbilityType.Missle)
+                    hasMissle = true;
+            }
+
+            if (abilityController.Target != null && hasMissle)
                 targetPointer.Target = abilityController.Target.transform;
             else
                 targetPointer.Target = null;
