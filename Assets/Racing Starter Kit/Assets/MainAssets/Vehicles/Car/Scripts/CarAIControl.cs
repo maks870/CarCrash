@@ -73,8 +73,14 @@ namespace UnityStandardAssets.Vehicles.Car
             maxSpeed = carController.MaxSpeed;
             m_RandomPerlin = Random.value * 10;
             m_Rigidbody = GetComponent<Rigidbody>();
+        
+        }
 
+        private void Start()
+        {
+            Debug.Log(carTrack.transform);
             m_Target = carTrack.transform;
+            Debug.Log(m_Target);
             oldTarget = m_Target;
         }
 
