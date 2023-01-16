@@ -2138,7 +2138,6 @@ MonoBehaviour:
   abilityController: {fileID: 4650270482181886636}
   carController: {fileID: 4650270483354694014}
   inputManager: {fileID: 0}
-  targetMark: {fileID: 1919448871}
   uiManager: {fileID: 0}
   hardSteerHelper: 0
   taxiingHelper: 0
@@ -2208,11 +2207,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
-  Target: {fileID: 0}
-  PointerUI: {fileID: 0}
-  PointerIcon: {fileID: 0}
-  OutOfScreenIcon: {fileID: 0}
-  InterfaceScale: 100
+  pointerUI: {fileID: 0}
+  pointerIcon: {fileID: 21300000, guid: 1fa973feda0253143837e3d4eada18dc, type: 3}
+  outOfScreenIcon: {fileID: 0}
+  interfaceScale: 100
 --- !u!65 &4650270483154986804
 BoxCollider:
   m_ObjectHideFlags: 0

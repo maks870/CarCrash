@@ -78,9 +78,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void Start()
         {
-            Debug.Log(carTrack.transform);
             m_Target = carTrack.transform;
-            Debug.Log(m_Target);
             oldTarget = m_Target;
         }
 

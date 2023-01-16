@@ -51,7 +51,7 @@ namespace UnityStandardAssets.Vehicles.Car
             else
             {
                 SteerChanger();
-                ControlMove(input.HorizontalAxis, input.VerticalAxis, input.VerticalAxis, input.HandBrake); // ÂÀÍÈÍ ÂÀĞÈÀÍÒ ÏÎÌÎØÍÈÊÀ ÏÎÂÎĞÎÒÀ
+                ControlMove(input.HorizontalAxis, input.VerticalAxis, input.VerticalAxis, input.HandBrake); // 2é âàğèàíò ÏÎÌÎØÍÈÊÀ ÏÎÂÎĞÎÒÀ
             }
         }
 
