@@ -73,7 +73,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void SetTargetMark()
         {
-            if (abilityController.Target != null)
+            if (abilityController.Target != null && abilityController.Abilities[0].Type == AbilityType.Missle)
             {
                 targetMark.SetActive(true);
                 targetMark.transform.position = abilityController.Target.transform.position + Vector3.up * targetMarkHeight;
