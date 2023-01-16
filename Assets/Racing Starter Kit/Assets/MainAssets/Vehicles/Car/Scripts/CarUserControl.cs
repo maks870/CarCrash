@@ -6,7 +6,6 @@ namespace UnityStandardAssets.Vehicles.Car
     public class CarUserControl : CarControl
     {
         [SerializeField] private InputManager inputManager;
-        [SerializeField] private GameObject targetMark;
         [SerializeField] private UIPlayerManager uiManager;
         [SerializeField] private bool hardSteerHelper = false;
         [SerializeField] [Range(0, 1)] private float taxiingHelper;
@@ -17,11 +16,12 @@ namespace UnityStandardAssets.Vehicles.Car
         [SerializeField] private float turnSteerAngle = 25f;
         private float taxiingSteer;
         private BaseInput input;
+        private TargetPointer targetPointer;
 
 
         private void Awake()
         {
-            targetMark.SetActive(false);
+            targetPointer = GetComponent<TargetPointer>();
             carController = GetComponent<CarController>();
             uiManager = GameObject.Find("UIPlayerManager").GetComponent<UIPlayerManager>();
         }
@@ -74,14 +74,9 @@ namespace UnityStandardAssets.Vehicles.Car
         private void SetTargetMark()
         {
             if (abilityController.Target != null)
-            {
-                targetMark.SetActive(true);
-                targetMark.transform.position = abilityController.Target.transform.position + Vector3.up * targetMarkHeight;
-            }
+                targetPointer.Target = abilityController.Target.transform;
             else
-            {
-                targetMark.SetActive(false);
-            }
+                targetPointer.Target = null;
         }
 
         private void CalculateTaxiingSteer()

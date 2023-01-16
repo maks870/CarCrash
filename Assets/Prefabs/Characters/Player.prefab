@@ -2032,6 +2032,7 @@ GameObject:
   - component: {fileID: 4650270483354694012}
   - component: {fileID: 4650270483354693953}
   - component: {fileID: 4650270483354693952}
+  - component: {fileID: 8986477186411742623}
   - component: {fileID: 4650270483154986804}
   - component: {fileID: 1676254439}
   m_Layer: 3
@@ -2194,6 +2195,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1097fb71545b1340a9237378a549b72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8986477186411742623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4650270483354694011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b14b1e8374a89c64faacf7a2a449de52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
+  Target: {fileID: 0}
+  PointerUI: {fileID: 0}
+  PointerIcon: {fileID: 0}
+  OutOfScreenIcon: {fileID: 0}
+  InterfaceScale: 100
 --- !u!65 &4650270483154986804
 BoxCollider:
   m_ObjectHideFlags: 0
