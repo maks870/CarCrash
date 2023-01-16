@@ -21,7 +21,7 @@ public class TargetPointer : MonoBehaviour
         startPointerSize = pointerUI.sizeDelta;
         pointerUI.gameObject.SetActive(true);
     }
-    private void LateUpdate()
+    private void Update()
     {
         if (target != null)
         {
