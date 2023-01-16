@@ -7,6 +7,7 @@ public class CharacterModelSwitcher : MonoBehaviour
     [SerializeField] private GameObject button;
     [SerializeField] private CharacterType characterType;
     [SerializeField] private CharacterTabSwitcher tabSwitcher;
+    [SerializeField] private GameObject newCollectiblesWarning;
     private CollectibleSO currentCharacter;
 
     private bool isFirstLoad = true;
@@ -16,12 +17,25 @@ public class CharacterModelSwitcher : MonoBehaviour
     private List<CharacterModelSO> charactersSO = new List<CharacterModelSO>();
     private List<CharacterModelSO> openedCharacters = new List<CharacterModelSO>();
     private List<CharacterModelSO> closedCharacters = new List<CharacterModelSO>();
+    private List<CollectibleSO> newCollectibles = new List<CollectibleSO>();
     private List<ButtonCollectibleUI> buttons = new List<ButtonCollectibleUI>();
 
+
+    public bool HaveNewCollectibles => newCollectibles.Count != 0 ? true : false;
     public CollectibleSO CurrentCharacter { get => currentCharacter; }
     public Transform CurrentButton { get => currentButton; set => currentButton = value; }
     public Transform CurrentCharacterTransform { set => currentCharacterTransform = value; }
 
+    //private void Awake()
+    //{
+    //    AwardPresenter.AddedNewCollectibles += UpdateNewCollectibles;
+    //}
+
+    //private void UpdateNewCollectibles(List<CollectibleSO> newCollectibles)
+    //{
+    //    this.newCollectibles.Clear();
+    //    this.newCollectibles.AddRange(newCollectibles);
+    //}
 
     private void CreateButtons()
     {
@@ -37,12 +51,16 @@ public class CharacterModelSwitcher : MonoBehaviour
 
     private void UpdateUI(List<CharacterModelSO> openCharacters, List<CharacterModelSO> closedCharacters)
     {
+        newCollectiblesWarning.SetActive(HaveNewCollectibles);
+
         for (int i = 0; i < openCharacters.Count; i++)
         {
             buttons[i].Image.sprite = openCharacters[i].Sprite;
             buttons[i].ClosedImage.gameObject.SetActive(false);
             buttons[i].CollectibleSO = openCharacters[i];
             buttons[i].Button.onClick.RemoveAllListeners();
+            CheckNewCollectible(buttons[i]);
+
             CharacterModelSO characterModel = (CharacterModelSO)buttons[i].CollectibleSO;
             buttons[i].Button.onClick.AddListener(() => SetCurrentCharacter(characterModel));
         }
@@ -61,8 +79,20 @@ public class CharacterModelSwitcher : MonoBehaviour
     {
         openedCharacters.Clear();
         closedCharacters.Clear();
+        newCollectibles.Clear();
+
         List<string> collectedItems = YandexGame.savesData.playerWrapper.collectibles;
+        List<string> newItems = YandexGame.savesData.playerWrapper.newCollectibles;
+
         closedCharacters.AddRange(charactersSO);
+
+        foreach (string itemName in newItems)
+        {
+            CollectibleSO newCollectible = charactersSO.Find(item => item.Name == itemName);
+
+            if (newCollectible != null)
+                newCollectibles.Add(newCollectible);
+        }
 
         foreach (string itemName in collectedItems)
         {
@@ -76,6 +106,28 @@ public class CharacterModelSwitcher : MonoBehaviour
         }
 
         UpdateUI(openedCharacters, closedCharacters);
+    }
+
+    private void CheckNewCollectible(ButtonCollectibleUI button)
+    {
+        for (int i = 0; i < newCollectibles.Count; i++)
+        {
+            if (button.CollectibleSO == newCollectibles[i])
+            {
+                button.NewCollectibleWarning.SetActive(true);
+                button.Button.onClick.AddListener(() => RemoveNewCollectibleWarning(button));
+                break;
+            }
+        }
+    }
+
+    private void RemoveNewCollectibleWarning(ButtonCollectibleUI button)
+    {
+        button.NewCollectibleWarning.SetActive(false);
+        newCollectibles.Remove(button.CollectibleSO);
+        YandexGame.savesData.playerWrapper.newCollectibles.Remove(button.CollectibleSO.Name);
+        newCollectiblesWarning.SetActive(HaveNewCollectibles);
+        button.Button.onClick.RemoveListener(() => RemoveNewCollectibleWarning(button));
     }
 
     public void InitializeUI()

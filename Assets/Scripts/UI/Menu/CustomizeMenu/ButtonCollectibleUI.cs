@@ -5,13 +5,13 @@ public class ButtonCollectibleUI : MonoBehaviour//типа структура
 {
     [SerializeField] private Image image;
     [SerializeField] private Image closedImage;
-
+    [SerializeField] private GameObject newCollectibleWarning;
     [SerializeField] private Button button;
     private CollectibleSO collectibleSO;
 
     public Image Image { get => image; set => image = value; }
     public Image ClosedImage { get => closedImage; }
+    public GameObject NewCollectibleWarning => newCollectibleWarning;
     public Button Button { get => button; set => button = value; }
     public CollectibleSO CollectibleSO { get => collectibleSO; set => collectibleSO = value; }
-
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using YG;
@@ -8,7 +9,6 @@ public class AwardPresenter : MonoBehaviour
 
     private CarModelSO carSO;
     private MapSO mapSO;
-
     public CarModelSO CarSO => carSO;
     public MapSO MapSO => mapSO;
 
@@ -18,6 +18,7 @@ public class AwardPresenter : MonoBehaviour
         mapSO = null;
         int pos;
         MapAward mapAward = new MapAward();
+        List<CollectibleSO> awardCollectibles = new List<CollectibleSO>();
 
         string mapName = YandexGame.savesData.playerWrapper.lastMap;
         int mapIndex = YandexGame.savesData.playerWrapper.GetMapInfoIndex(mapName);
@@ -40,8 +41,11 @@ public class AwardPresenter : MonoBehaviour
             MapInfo newMapInfo = new MapInfo(map.NextMap.Name);
 
             YandexGame.savesData.playerWrapper.collectibles.Add(map.Car.Name);
+            YandexGame.savesData.playerWrapper.newCollectibles.Add(map.Car.Name);
             YandexGame.savesData.playerWrapper.maps.Add(newMapInfo);
             YandexGame.savesData.playerWrapper.maps[mapIndex].isPassed = true;
+
+            awardCollectibles.Add(map.Car);
 
             awardUI.ShowAwards(mapAward.coins, mapAward.gems, carSO, mapSO);
         }
@@ -50,11 +54,10 @@ public class AwardPresenter : MonoBehaviour
             awardUI.ShowAwards(mapAward.coins, mapAward.gems, carSO);
         }
 
-
-        OpenAwards(mapAward);
+        OpenEarnings(mapAward);
     }
 
-    private void OpenAwards(MapAward award)
+    private void OpenEarnings(MapAward award)
     {
         EarningManager.AddCoin(award.coins);
         EarningManager.AddGem(award.gems);

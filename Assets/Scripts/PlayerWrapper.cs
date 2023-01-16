@@ -9,6 +9,7 @@ public class PlayerWrapper
     public string currentCarModelItem;
     public List<int> lastMapPlaces = new List<int>();
     public List<string> collectibles = new List<string>();
+    public List<string> newCollectibles = new List<string>();
     public List<MapInfo> maps = new List<MapInfo>();
 
     public int GetMapInfoIndex(string mapName)

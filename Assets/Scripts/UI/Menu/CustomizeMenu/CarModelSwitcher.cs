@@ -8,6 +8,7 @@ public class CarModelSwitcher : MonoBehaviour
     [SerializeField] private MeshFilter currentMeshFilter;
     [SerializeField] private GameObject button;
     [SerializeField] private GameObject carStatWindow;
+    [SerializeField] private GameObject newCollectiblesWarning;
     [SerializeField] private float maxAcceleration;
     [SerializeField] private float maxHandleability;
     [SerializeField] private Image accelerationImage;
@@ -19,10 +20,23 @@ public class CarModelSwitcher : MonoBehaviour
     private List<CarModelSO> carModelsSO = new List<CarModelSO>();
     private List<CarModelSO> openedCarModels = new List<CarModelSO>();
     private List<CarModelSO> closedCarModels = new List<CarModelSO>();
+    private List<CollectibleSO> newCollectibles = new List<CollectibleSO>();
     private List<ButtonCollectibleUI> buttons = new List<ButtonCollectibleUI>();
 
+    public bool HaveNewCollectibles => newCollectibles.Count != 0 ? true : false;
     public CollectibleSO CurrentCarModel => currentCarModel;
     public GameObject CarStatWindow => carStatWindow;
+
+    //private void Awake()
+    //{
+    //    AwardPresenter.AddedNewCollectibles += UpdateNewCollectibles;
+    //}
+
+    //private void UpdateNewCollectibles(List<CollectibleSO> newCollectibles)
+    //{
+    //    this.newCollectibles.Clear();
+    //    this.newCollectibles.AddRange(newCollectibles);
+    //}
 
     private void CreateButtons()
     {
@@ -38,12 +52,16 @@ public class CarModelSwitcher : MonoBehaviour
 
     private void UpdateUI(List<CarModelSO> openCarModels, List<CarModelSO> closedCarModels)
     {
+        newCollectiblesWarning.SetActive(HaveNewCollectibles);
+
         for (int i = 0; i < openCarModels.Count; i++)
         {
             buttons[i].Image.sprite = openCarModels[i].Sprite;
             buttons[i].ClosedImage.gameObject.SetActive(false);
             buttons[i].CollectibleSO = openCarModels[i];
             buttons[i].Button.onClick.RemoveAllListeners();
+            CheckNewCollectible(buttons[i]);
+
             CarModelSO carModel = (CarModelSO)buttons[i].CollectibleSO;
             buttons[i].Button.onClick.AddListener(() => SetCurrentModel(carModel));
         }
@@ -62,8 +80,19 @@ public class CarModelSwitcher : MonoBehaviour
     {
         openedCarModels.Clear();
         closedCarModels.Clear();
+        newCollectibles.Clear();
         List<string> collectedItems = YandexGame.savesData.playerWrapper.collectibles;
+        List<string> newItems = YandexGame.savesData.playerWrapper.newCollectibles;
+
         closedCarModels.AddRange(carModelsSO);
+
+        foreach (string itemName in newItems)
+        {
+            CollectibleSO newCollectible = carModelsSO.Find(item => item.Name == itemName);
+
+            if (newCollectible != null)
+                newCollectibles.Add(newCollectible);
+        }
 
         foreach (string itemName in collectedItems)
         {
@@ -79,6 +108,29 @@ public class CarModelSwitcher : MonoBehaviour
         UpdateUI(openedCarModels, closedCarModels);
     }
 
+    private void CheckNewCollectible(ButtonCollectibleUI button)
+    {
+        for (int i = 0; i < newCollectibles.Count; i++)
+        {
+            if (button.CollectibleSO == newCollectibles[i])
+            {
+                button.NewCollectibleWarning.SetActive(true);
+                button.Button.onClick.AddListener(() => RemoveNewCollectibleWarning(button));
+                break;
+            }
+        }
+    }
+
+    private void RemoveNewCollectibleWarning(ButtonCollectibleUI button)
+    {
+        button.NewCollectibleWarning.SetActive(false);
+        newCollectibles.Remove(button.CollectibleSO);
+        YandexGame.savesData.playerWrapper.newCollectibles.Remove(button.CollectibleSO.Name);
+        newCollectiblesWarning.SetActive(HaveNewCollectibles);
+        button.Button.onClick.RemoveListener(() => RemoveNewCollectibleWarning(button));
+        Debug.Log("<KZZZ");
+    }
+
     public void InitializeUI()
     {
         if (isFirstLoad)
@@ -86,6 +138,7 @@ public class CarModelSwitcher : MonoBehaviour
 
         LoadCarModelsSO();
     }
+
     public void SelectCurrentButton()
     {
         Transform buttonTransform = buttons[0].transform;

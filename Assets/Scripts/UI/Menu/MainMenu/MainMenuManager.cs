@@ -7,11 +7,23 @@ public class MainMenuManager : MenuManager
 {
     [SerializeField] private MapSwitcher mapSwitcher;
     [SerializeField] private AwardPresenter presenter;
+    [SerializeField] private GameObject newCollectiblesWarning;
     [SerializeField] private List<GameObject> gamemodePanels;
 
     private void SetSavedSO()
     {
         mapSwitcher.InitializeUI();
+    }
+
+    private void GetAwardsAfterMap()
+    {
+        Debug.Log("RewardAction");
+        presenter.GetAward();
+        YandexGame.savesData.playerWrapper.lastMap = "";
+        YandexGame.savesData.playerWrapper.lastMapPlaces.Clear();
+        YandexGame.SaveProgress();
+        UpdateNewCollectiblesWarnings();
+        YandexGame.EndDataLoadingEvent -= GetAwardsAfterMap;
     }
 
     public override void SaveDefaultSO()
@@ -30,9 +42,13 @@ public class MainMenuManager : MenuManager
 
     public override void InitializeMenu()
     {
+        Debug.Log("openMainMenu");
 
-        if (YandexGame.savesData.playerWrapper.lastMap != "" && YandexGame.savesData.playerWrapper.lastMapPlaces.Count == 0)
+        Debug.Log("LastMap " + YandexGame.savesData.playerWrapper.lastMap);
+        Debug.Log("LastMapplacesCount " + YandexGame.savesData.playerWrapper.lastMapPlaces.Count);
+        if (YandexGame.savesData.playerWrapper.lastMap != "" && YandexGame.savesData.playerWrapper.lastMapPlaces.Count != 0)
         {
+            Debug.Log("AddRewardEvent");
             YandexGame.EndDataLoadingEvent += GetAwardsAfterMap;
         }
 
@@ -47,16 +63,18 @@ public class MainMenuManager : MenuManager
         {
             gamemodePanels[i].SetActive(false);
         }
+
+        UpdateNewCollectiblesWarnings();
     }
 
-    private void GetAwardsAfterMap()
+    public void UpdateNewCollectiblesWarnings()
     {
-        presenter.GetAward();
-        YandexGame.savesData.playerWrapper.lastMap = "";
-        YandexGame.savesData.playerWrapper.lastMapPlaces.Clear();
-        YandexGame.SaveProgress();
-        YandexGame.EndDataLoadingEvent -= GetAwardsAfterMap;
+        if (YandexGame.savesData.playerWrapper.newCollectibles.Count != 0)
+            newCollectiblesWarning.SetActive(true);
+        else
+            newCollectiblesWarning.SetActive(false);
     }
+
 
 
 }

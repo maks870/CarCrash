@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657737, g: 0.49641168, b: 0.5748162, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657767, g: 0.49641216, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -772,6 +772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1957354564}
   closedImage: {fileID: 1084720244}
+  newCollectibleWarning: {fileID: 1369344855}
   button: {fileID: 61085940}
 --- !u!114 &61085942
 MonoBehaviour:
@@ -1496,6 +1497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 784978731}
   closedImage: {fileID: 1125014248}
+  newCollectibleWarning: {fileID: 1432333264}
   button: {fileID: 168677002}
 --- !u!114 &168677004
 MonoBehaviour:
@@ -1864,7 +1866,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &248744785
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1940,7 +1942,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &274092244
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2016,7 +2018,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &277491840
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2976,6 +2978,7 @@ MonoBehaviour:
   button: {fileID: 1414470893}
   characterType: 2
   tabSwitcher: {fileID: 9195801924458302651}
+  newCollectiblesWarning: {fileID: 1371725531}
 --- !u!222 &369768371
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5027,6 +5030,7 @@ MonoBehaviour:
   button: {fileID: 61085938}
   characterType: 0
   tabSwitcher: {fileID: 9195801924458302651}
+  newCollectiblesWarning: {fileID: 1397711798}
 --- !u!222 &667855759
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5469,6 +5473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1405457127}
   closedImage: {fileID: 1077341508}
+  newCollectibleWarning: {fileID: 2032079797}
   button: {fileID: 695168758}
 --- !u!114 &695168760
 MonoBehaviour:
@@ -5961,7 +5966,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 116184167}
-  - {fileID: 1801835837}
   m_Father: {fileID: 1612796309}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6670,6 +6674,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 836866157}
   closedImage: {fileID: 764983381}
+  newCollectibleWarning: {fileID: 0}
   button: {fileID: 836866155}
 --- !u!1 &857116158
 GameObject:
@@ -8468,7 +8473,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1108341532
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9392,6 +9397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1176621136}
   closedImage: {fileID: 48484563}
+  newCollectibleWarning: {fileID: 1108341531}
   button: {fileID: 1176621134}
 --- !u!1 &1181240407
 GameObject:
@@ -10007,6 +10013,7 @@ MonoBehaviour:
   button: {fileID: 695168756}
   characterType: 3
   tabSwitcher: {fileID: 9195801924458302651}
+  newCollectiblesWarning: {fileID: 1899849098}
 --- !u!222 &1214228208
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10656,7 +10663,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1271526174
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11071,7 +11078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1369344856
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11147,7 +11154,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1371725532
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11270,7 +11277,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1397711799
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11637,6 +11644,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1540731021}
   closedImage: {fileID: 1004895303}
+  newCollectibleWarning: {fileID: 1423738997}
   button: {fileID: 1414470895}
 --- !u!114 &1414470897
 MonoBehaviour:
@@ -11856,7 +11864,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1423738998
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12029,7 +12037,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1432333265
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12465,6 +12473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 1572209543}
   closedImage: {fileID: 2136770786}
+  newCollectibleWarning: {fileID: 274092243}
   button: {fileID: 1485755041}
 --- !u!114 &1485755043
 MonoBehaviour:
@@ -13018,7 +13027,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1173372617}
   m_HandleRect: {fileID: 1173372616}
   m_Direction: 3
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -13110,6 +13119,7 @@ MonoBehaviour:
   objectUI: {fileID: 945202523}
   mapSwitcher: {fileID: 278135584}
   presenter: {fileID: 579660019}
+  newCollectiblesWarning: {fileID: 248744784}
   gamemodePanels:
   - {fileID: 482717454}
 --- !u!1 &1572187916
@@ -14624,7 +14634,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1737514706
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14955,82 +14965,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1761435324}
   m_Mesh: {fileID: -7513297493162946847, guid: e6fb32438e0a8e145b7a0b174b5251f2, type: 3}
---- !u!1 &1801835836
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1801835837}
-  - component: {fileID: 1801835839}
-  - component: {fileID: 1801835838}
-  m_Layer: 5
-  m_Name: ReminderImage (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1801835837
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1801835836}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 780878577}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 23.12883, y: 21}
-  m_SizeDelta: {x: 101.2471, y: 101.2471}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1801835838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1801835836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 88cc0a5563008074c8aa2434feb28417, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 1
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1801835839
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1801835836}
-  m_CullTransparentMesh: 1
 --- !u!1 &1802165449
 GameObject:
   m_ObjectHideFlags: 0
@@ -15609,6 +15543,7 @@ MonoBehaviour:
   button: {fileID: 1485755039}
   characterType: 1
   tabSwitcher: {fileID: 9195801924458302651}
+  newCollectiblesWarning: {fileID: 2070299428}
 --- !u!222 &1848134959
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16171,7 +16106,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1899849099
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17580,7 +17515,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2032079798
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18059,6 +17994,7 @@ MonoBehaviour:
   button: {fileID: 168677000}
   characterType: 4
   tabSwitcher: {fileID: 9195801924458302651}
+  newCollectiblesWarning: {fileID: 1271526173}
 --- !u!222 &2060799290
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18160,7 +18096,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2070299429
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18383,6 +18319,7 @@ MonoBehaviour:
   currentMeshFilter: {fileID: 649088751}
   button: {fileID: 1176621132}
   carStatWindow: {fileID: 4348207466390242160}
+  newCollectiblesWarning: {fileID: 277491839}
   maxAcceleration: 100
   maxHandleability: 100
   accelerationImage: {fileID: 4399459909973512593}

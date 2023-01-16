@@ -11,7 +11,7 @@ public class CarTabSwitcher : MonoBehaviour
 
     private ButtonCollectibleUI choosenButton;
 
-
+    public bool HaveNewCollectibles => carModelSwitcher.HaveNewCollectibles;
     public CarColorSwitcher CarColorSwitcher { get => carColorSwitcher; set => carColorSwitcher = value; }
     public CarModelSwitcher CarModelSwitcher { get => carModelSwitcher; set => carModelSwitcher = value; }
 

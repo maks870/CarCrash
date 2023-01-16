@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,8 +8,7 @@ public class CustomizeMenuManager : MenuManager
 {
     [SerializeField] private CarTabSwitcher carTabSwitcher;
     [SerializeField] private CharacterTabSwitcher characterTabSwitcher;
-
-
+    public static Action<bool> ExitCustomizeMenu;
     private void SetSavedSO()
     {
         characterTabSwitcher.SetSavedCharacter(playerLoad.CurrentCharacter);
@@ -48,6 +48,7 @@ public class CustomizeMenuManager : MenuManager
         base.OpenMenu();
         InitializeMenu();
     }
+
     public override void CloseMenu()
     {
         SavePlayer();
@@ -63,7 +64,7 @@ public class CustomizeMenuManager : MenuManager
     public void AddCharacter()//тестовый метод
     {
         List<CharacterModelSO> characters = SOLoader.LoadSOByType<CharacterModelSO>();
-        int rand = Random.Range(0, characters.Count);
+        int rand = UnityEngine.Random.Range(0, characters.Count);
         YandexGame.savesData.playerWrapper.collectibles.Add(characters[rand].Name);
         Debug.Log("Получен персонаж " + characters[rand].Name);
         YandexGame.SaveProgress();
@@ -82,7 +83,6 @@ public class CustomizeMenuManager : MenuManager
         {
             Debug.Log($"У нас есть карта {map.mapName}");
         }
-
     }
 
     public void ResetProgress()//тестовый метод

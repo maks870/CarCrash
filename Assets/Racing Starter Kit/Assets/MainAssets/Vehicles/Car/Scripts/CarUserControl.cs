@@ -75,11 +75,8 @@ namespace UnityStandardAssets.Vehicles.Car
         {
             bool hasMissle = false;
 
-            for (int i = 0; i < abilityController.Abilities.Count; i++)
-            {
-                if (abilityController.Abilities[i].Type == AbilityType.Missle)
-                    hasMissle = true;
-            }
+            if (abilityController.Abilities.Count != 0 && abilityController.Abilities[0].Type == AbilityType.Missle)
+                hasMissle = true;
 
             if (abilityController.Target != null && hasMissle)
                 targetPointer.Target = abilityController.Target.transform;

@@ -11,6 +11,19 @@ public class CharacterTabSwitcher : MonoBehaviour
     private ButtonCollectibleUI choosenButton;
 
     public CharacterModelSwitcher CurrentSwitcher { get => currentSwitcher; set => currentSwitcher = value; }
+    public bool HaveNewCollectibles
+    {
+        get
+        {
+            foreach (CharacterModelSwitcher switcher in switchers)
+            {
+                if (switcher.HaveNewCollectibles)
+                    return true;
+            }
+
+            return false;
+        }
+    }
 
     private void Awake()
     {
@@ -50,4 +63,5 @@ public class CharacterTabSwitcher : MonoBehaviour
         selectFrame.transform.SetParent(buttonTransform);
         selectFrame.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
     }
+
 }
