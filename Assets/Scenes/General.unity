@@ -1129,7 +1129,7 @@ GameObject:
   - component: {fileID: 129786408}
   - component: {fileID: 129786407}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: CountText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1324,6 +1324,7 @@ MonoBehaviour:
   - {fileID: 156512659}
   - {fileID: 156512657}
   - {fileID: 156512658}
+  earningUIController: {fileID: 982961180}
 --- !u!114 &156512657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1759,7 +1760,7 @@ GameObject:
   - component: {fileID: 175885140}
   - component: {fileID: 175885139}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: CountText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2087,7 +2088,7 @@ Transform:
   - {fileID: 317735915}
   - {fileID: 459259964}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &274092243
 GameObject:
@@ -4785,7 +4786,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &623588762
 GameObject:
@@ -4986,7 +4987,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &647926399
 GameObject:
@@ -7860,7 +7861,7 @@ RectTransform:
   - {fileID: 1538510453}
   - {fileID: 1633973475}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8025,9 +8026,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a637a327c62699149b253364bff23953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 129786407}
-  gemText: {fileID: 1664844574}
-  lootboxText: {fileID: 0}
+  coinCountText: {fileID: 129786407}
+  gemCountText: {fileID: 1664844574}
+  lootboxCountText: {fileID: 175885139}
   lackCoinsWarning: {fileID: 10332284}
   lackGemsWarning: {fileID: 1538510449}
 --- !u!4 &982961181
@@ -9445,7 +9446,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.6311159}
+  m_AnchorMax: {x: 1, y: 0.5523681}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -10116,8 +10117,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1160675675}
   m_HandleRect: {fileID: 1160675674}
   m_Direction: 2
-  m_Value: -0.0000006750762
-  m_Size: 0.6311159
+  m_Value: -0.00000051657935
+  m_Size: 0.5523681
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -11228,7 +11229,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1314157857
 GameObject:
@@ -11335,7 +11336,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1332603363
 GameObject:
@@ -14590,7 +14591,7 @@ GameObject:
   - component: {fileID: 1664844575}
   - component: {fileID: 1664844574}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: CountText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16895,7 +16896,7 @@ Transform:
   m_Children:
   - {fileID: 1942103842}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1897420067
 GameObject:
@@ -17151,6 +17152,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2211564899198745196, guid: caf9732433f4dc044845763962493607,
+        type: 3}
+      propertyPath: singleton
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2211564899198745197, guid: caf9732433f4dc044845763962493607,
         type: 3}
       propertyPath: m_Name
@@ -17159,7 +17165,7 @@ PrefabInstance:
     - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2211564899198745199, guid: caf9732433f4dc044845763962493607,
         type: 3}
@@ -18919,7 +18925,7 @@ Transform:
   - {fileID: 156512655}
   - {fileID: 581943005}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2060799283
 GameObject:
@@ -20359,7 +20365,7 @@ PrefabInstance:
     - target: {fileID: 3792633865187448101, guid: e62e745ea1540974fb8457b0c98c6068,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3792633865187448101, guid: e62e745ea1540974fb8457b0c98c6068,
         type: 3}
@@ -24821,7 +24827,7 @@ Transform:
   - {fileID: 1846097034}
   - {fileID: 1668473707}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &6990829155162043236
 MeshRenderer:

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using YG;
@@ -6,6 +5,7 @@ using YG;
 public class MenuInitializer : MonoBehaviour
 {
     [SerializeField] private List<MenuManager> menuManagers = new List<MenuManager>();
+    [SerializeField] private EarningUIController earningUIController;
     private bool isInitializeProcess = false;
     private void OnEnable()
     {
@@ -50,10 +50,12 @@ public class MenuInitializer : MonoBehaviour
         for (int i = 0; i < menuManagers.Count; i++)
         {
             menuManagers[i].OpenMenu();
+
             if (menuManagers[i] != mainMenu)
                 menuManagers[i].objectUI.SetActive(false);
         }
 
+        earningUIController.UpdateEarnings();
         SceneTransition.instance.EndPreload();
     }
 }

@@ -4,16 +4,15 @@ using YG;
 
 public class EarningUIController : MonoBehaviour
 {
-    [SerializeField] private Text coinText;
-    [SerializeField] private Text gemText;
-    [SerializeField] private Text lootboxText;
+    [SerializeField] private Text coinCountText;
+    [SerializeField] private Text gemCountText;
+    [SerializeField] private Text lootboxCountText;
 
     [SerializeField] private GameObject lackCoinsWarning;
     [SerializeField] private GameObject lackGemsWarning;
 
     private void OnEnable()
     {
-        YandexGame.EndDataLoadingEvent += UpdateEarnings;
         EarningManager.changeEarnings += UpdateEarnings;
         EarningManager.lackCoins += ShowLackCoinsWarning;
         EarningManager.lackGems += ShowLackGemsWarning;
@@ -21,7 +20,6 @@ public class EarningUIController : MonoBehaviour
 
     private void OnDisable()
     {
-        YandexGame.EndDataLoadingEvent -= UpdateEarnings;
         EarningManager.changeEarnings -= UpdateEarnings;
         EarningManager.lackCoins -= ShowLackCoinsWarning;
         EarningManager.lackGems -= ShowLackGemsWarning;
@@ -30,14 +28,14 @@ public class EarningUIController : MonoBehaviour
     public void UpdateEarnings()
     {
 
-        if (coinText != null)
-            coinText.text = YandexGame.savesData.coins.ToString();
+        if (coinCountText != null)
+            coinCountText.text = YandexGame.savesData.coins.ToString();
 
-        if (gemText != null)
-            gemText.text = YandexGame.savesData.gems.ToString();
+        if (gemCountText != null)
+            gemCountText.text = YandexGame.savesData.gems.ToString();
 
-        if (lootboxText != null)
-            lootboxText.text = YandexGame.savesData.lootboxes.ToString();
+        if (lootboxCountText != null)
+            lootboxCountText.text = YandexGame.savesData.lootboxes.ToString();
     }
 
     public void ShowLackCoinsWarning()

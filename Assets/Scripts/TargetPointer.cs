@@ -28,15 +28,15 @@ public class TargetPointer : MonoBehaviour
             pointerUI.gameObject.SetActive(true);
             MovePointer(target.position + offset);
         }
-        else 
+        else
         {
             pointerUI.gameObject.SetActive(false);
-        }       
+        }
     }
 
     private void MovePointer(Vector3 posVector)
     {
-        Vector3 realPos = mainCamera.WorldToScreenPoint(posVector)/ canvas.localScale.x; // получениее экранных координат объекта
+        Vector3 realPos = mainCamera.WorldToScreenPoint(posVector) / canvas.localScale.x; // получениее экранных координат объекта
 
         if (IsBehind(posVector)) // если цель сзади
         {
@@ -65,8 +65,13 @@ public class TargetPointer : MonoBehaviour
 
     private void OnDisable()
     {
-        pointerUI.anchorMax = oldAnchorMax;
-        pointerUI.anchorMin = oldAnchorMin;
-        pointerUI.anchoredPosition = oldPos;
+        if (oldAnchorMax != null)
+            pointerUI.anchorMax = oldAnchorMax;
+
+        if (oldAnchorMin != null)
+            pointerUI.anchorMin = oldAnchorMin;
+
+        if (oldAnchorMin != null)
+            pointerUI.anchoredPosition = oldPos;
     }
 }

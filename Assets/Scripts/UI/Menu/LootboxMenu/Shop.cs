@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using YG;
 
@@ -21,7 +19,12 @@ public class Shop : MonoBehaviour
     private void OnEnable()
     {
         YandexGame.RewardVideoEvent += GetAdReward;
-        YandexGame.GetDataEvent += InitializeUI;
+
+        //YandexGame.CheaterVideoEvent
+        //YandexGame.ErrorVideoEvent
+
+        //YandexGame.OpenVideoEvent
+        //YandexGame.CloseVideoEvent
     }
 
     // Отписываемся от события открытия рекламы в OnDisable

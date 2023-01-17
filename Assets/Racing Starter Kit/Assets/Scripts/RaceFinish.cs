@@ -4,7 +4,7 @@ using YG;
 
 public class RaceFinish : MonoBehaviour
 {
-    [SerializeField] private AwardPresenter awardPresenter;
+    [SerializeField] private InputManager inputManager;
     [SerializeField] private GameObject FinishCam;
     [SerializeField] private GameObject ViewModes;
     [SerializeField] private GameObject PosDisplay, PauseButton, Panel1, Panel2;
@@ -43,6 +43,8 @@ public class RaceFinish : MonoBehaviour
         Panel2.SetActive(false);
         ViewModes.SetActive(false);
         finishPanels.SetActive(true);
+        inputManager.CurrentInput.gameObject.SetActive(false);
+
         posText.text = ChkManager.posMax.ToString();
 
         if (ChkManager.posMax < 4)

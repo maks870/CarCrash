@@ -180,7 +180,6 @@ namespace YG
                 finally
                 {
                     fs.Close();
-                    EndDataLoadingEvent?.Invoke();
                 }
             }
             else ResetSaveProgress();
@@ -268,11 +267,11 @@ namespace YG
                 LoadLocal();
             }
             else LoadCloud();
-
-            EndDataLoadingEvent?.Invoke();
+            
 #else
             LoadEditor();
 #endif
+            EndDataLoadingEvent?.Invoke();
         }
         public static void LoadProgress() => Instance._LoadProgress();
 
