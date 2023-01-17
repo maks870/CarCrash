@@ -48,6 +48,7 @@ public class SceneTransition : MonoBehaviour
     private void EndLoadScene() 
     {
         instance.sceneOperation.allowSceneActivation = true;
+        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
     }
 
     public static void SwitchScene(string sceneName)
