@@ -26,17 +26,6 @@ public class CharacterModelSwitcher : MonoBehaviour
     public Transform CurrentButton { get => currentButton; set => currentButton = value; }
     public Transform CurrentCharacterTransform { set => currentCharacterTransform = value; }
 
-    //private void Awake()
-    //{
-    //    AwardPresenter.AddedNewCollectibles += UpdateNewCollectibles;
-    //}
-
-    //private void UpdateNewCollectibles(List<CollectibleSO> newCollectibles)
-    //{
-    //    this.newCollectibles.Clear();
-    //    this.newCollectibles.AddRange(newCollectibles);
-    //}
-
     private void CreateButtons()
     {
         buttons.Add(button.GetComponent<ButtonCollectibleUI>());

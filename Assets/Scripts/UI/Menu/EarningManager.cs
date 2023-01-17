@@ -10,7 +10,21 @@ public static class EarningManager
     public static Action changeEarnings;
 
 
+    public static void AddLootbox()
+    {
+        YandexGame.savesData.lootboxes += 1;
+        changeEarnings.Invoke();
+    }
 
+    public static bool SpendLootbox()
+    {
+        if (YandexGame.savesData.lootboxes <= 0)
+            return false;
+
+        YandexGame.savesData.lootboxes -= 1;
+        changeEarnings.Invoke();
+        return true;
+    }
 
     public static void AddCoin(int count)
     {

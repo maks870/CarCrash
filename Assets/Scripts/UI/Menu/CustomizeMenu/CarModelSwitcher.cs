@@ -128,7 +128,6 @@ public class CarModelSwitcher : MonoBehaviour
         YandexGame.savesData.playerWrapper.newCollectibles.Remove(button.CollectibleSO.Name);
         newCollectiblesWarning.SetActive(HaveNewCollectibles);
         button.Button.onClick.RemoveListener(() => RemoveNewCollectibleWarning(button));
-        Debug.Log("<KZZZ");
     }
 
     public void InitializeUI()
@@ -167,7 +166,6 @@ public class CarModelSwitcher : MonoBehaviour
 
     public void SetCurrentModel(CarModelSO characterCollectible)
     {
-        Debug.Log("Наш перс" + characterCollectible.Name);
         currentMeshFilter.mesh = characterCollectible.Mesh;
         currentCarModel = characterCollectible;
         SelectCurrentButton();

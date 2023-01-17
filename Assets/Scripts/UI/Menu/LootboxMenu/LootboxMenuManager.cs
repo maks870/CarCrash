@@ -53,14 +53,11 @@ public class LootboxMenuManager : MenuManager
 
     public void OpenLootbox()
     {
-        if (YandexGame.savesData.lootboxes == 0)
+        if (!EarningManager.SpendLootbox())
         {
             //вывести сообщение об нехватке лутбоксов
             return;
         }
-
-        //if (!EarningManager.SpendGem(lootbox.Cost))
-        //    return;
 
         int coinValue;
         int gemValue;
@@ -74,7 +71,6 @@ public class LootboxMenuManager : MenuManager
         if (gemValue != 0)
             YandexGame.savesData.gems += gemValue;
 
-        YandexGame.savesData.lootboxes -= 1;
         YandexGame.savesData.playerWrapper.collectibles.Add(collectibleItem.Name);
         YandexGame.savesData.playerWrapper.newCollectibles.Add(collectibleItem.Name);
 

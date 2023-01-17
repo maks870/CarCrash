@@ -40,10 +40,6 @@ public class MenuInitializer : MonoBehaviour
                 menuManagers[i].SaveDefaultSO();
         }
 
-        Debug.Log("ISFIRSTSESSION " + YandexGame.savesData.isFirstSession2);
-        Debug.Log("LastMap " + YandexGame.savesData.playerWrapper.lastMap);
-        Debug.Log("LastMapplacesCount " + YandexGame.savesData.playerWrapper.lastMapPlaces.Count);
-
         if (YandexGame.savesData.isFirstSession2)
         {
             YandexGame.savesData.playerWrapper.lastMap = "";

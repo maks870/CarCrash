@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using YG;
@@ -18,7 +17,6 @@ public class MainMenuManager : MenuManager
 
     private void GetAwardsAfterMap()
     {
-        Debug.Log("RewardAction");
         presenter.GetAward();
         YandexGame.savesData.playerWrapper.lastMap = "";
         YandexGame.savesData.playerWrapper.lastMapPlaces.Clear();
@@ -30,7 +28,6 @@ public class MainMenuManager : MenuManager
     public override void SaveDefaultSO()
     {
         MapSO map = playerLoad.DefaultMap;
-        Debug.Log(map.Name + " savedMap");
         MapInfo mapInfo = new MapInfo(map.Name);
         YandexGame.savesData.playerWrapper.maps.Add(mapInfo);
     }
@@ -43,15 +40,9 @@ public class MainMenuManager : MenuManager
 
     public override void InitializeMenu()
     {
-        Debug.Log("openMainMenu");
-
-        Debug.Log("LastMap " + YandexGame.savesData.playerWrapper.lastMap);
-        Debug.Log("LastMapplacesCount " + YandexGame.savesData.playerWrapper.lastMapPlaces.Count);
         if (YandexGame.savesData.playerWrapper.lastMap != "" && YandexGame.savesData.playerWrapper.lastMapPlaces.Count != 0)
-        {
-            Debug.Log("AddRewardEvent");
             YandexGame.EndDataLoadingEvent += GetAwardsAfterMap;
-        }
+
 
         for (int i = 0; i < gamemodePanels.Count; i++)
         {
@@ -76,7 +67,9 @@ public class MainMenuManager : MenuManager
             newCollectiblesWarning.SetActive(false);
 
         if (YandexGame.savesData.lootboxes > 0)
+        {
             newLootbloxesWarning.SetActive(true);
+        }
         else
             newLootbloxesWarning.SetActive(false);
     }

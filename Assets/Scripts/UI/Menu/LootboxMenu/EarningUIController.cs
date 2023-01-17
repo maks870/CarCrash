@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using YG;
@@ -8,12 +6,14 @@ public class EarningUIController : MonoBehaviour
 {
     [SerializeField] private Text coinText;
     [SerializeField] private Text gemText;
+    [SerializeField] private Text lootboxText;
 
     [SerializeField] private GameObject lackCoinsWarning;
     [SerializeField] private GameObject lackGemsWarning;
 
     private void OnEnable()
     {
+        YandexGame.EndDataLoadingEvent += UpdateEarnings;
         EarningManager.changeEarnings += UpdateEarnings;
         EarningManager.lackCoins += ShowLackCoinsWarning;
         EarningManager.lackGems += ShowLackGemsWarning;
@@ -21,6 +21,7 @@ public class EarningUIController : MonoBehaviour
 
     private void OnDisable()
     {
+        YandexGame.EndDataLoadingEvent -= UpdateEarnings;
         EarningManager.changeEarnings -= UpdateEarnings;
         EarningManager.lackCoins -= ShowLackCoinsWarning;
         EarningManager.lackGems -= ShowLackGemsWarning;
@@ -34,6 +35,9 @@ public class EarningUIController : MonoBehaviour
 
         if (gemText != null)
             gemText.text = YandexGame.savesData.gems.ToString();
+
+        if (lootboxText != null)
+            lootboxText.text = YandexGame.savesData.lootboxes.ToString();
     }
 
     public void ShowLackCoinsWarning()
