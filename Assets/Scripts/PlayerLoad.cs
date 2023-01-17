@@ -1,19 +1,17 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using YG;
 
 public class PlayerLoad : MonoBehaviour
 {
-
-    [SerializeField] private CharacterModelSO currentCharacter;
-    [SerializeField] private CarColorSO currentCarColor;
-    [SerializeField] private CarModelSO currentCarModel;
-
     [SerializeField] private CharacterModelSO defaultCharacter;
     [SerializeField] private CarColorSO defaultCarColor;
     [SerializeField] private CarModelSO defaultCarModel;
     [SerializeField] private MapSO defaultMap;
+    private CharacterModelSO currentCharacter;
+    private CarColorSO currentCarColor;
+    private CarModelSO currentCarModel;
+
 
     private List<CharacterModelSO> characters = new List<CharacterModelSO>();
     private List<CarColorSO> carColors = new List<CarColorSO>();

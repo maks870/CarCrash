@@ -6,7 +6,7 @@ using YG;
 public class LootboxMenuManager : MenuManager
 {
     [SerializeField] private LootBox lootbox;
-    [SerializeField] private AwardUI lootboxAwardUI;
+    [SerializeField] private AwardUIController lootboxAwardUI;
     [SerializeField] private EarningManagerUI earningManagerUI;
     [SerializeField] private GemPresenter gemPresenter;
 
@@ -50,9 +50,11 @@ public class LootboxMenuManager : MenuManager
             return;
         }
 
-        if (!EarningManager.SpendGem(lootbox.Cost))
-            return;
+        //if (!EarningManager.SpendGem(lootbox.Cost))
+        //    return;
 
+
+        lootbox.GetComponent<Animator>().SetTrigger("Open");
         int coinValue;
         int gemValue;
         CollectibleSO collectibleItem;

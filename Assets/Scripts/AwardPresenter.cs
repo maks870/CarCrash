@@ -5,7 +5,7 @@ using YG;
 
 public class AwardPresenter : MonoBehaviour
 {
-    [SerializeField] private AwardUI awardUI;
+    [SerializeField] private AwardUIController awardUI;
 
     private CarModelSO carSO;
     private MapSO mapSO;

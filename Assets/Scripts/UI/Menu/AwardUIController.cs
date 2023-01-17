@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AwardUI : MonoBehaviour
+public class AwardUIController : MonoBehaviour
 {
 
     [SerializeField] private GameObject coinAwardUI;
