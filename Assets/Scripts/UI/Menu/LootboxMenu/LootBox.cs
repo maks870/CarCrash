@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using YG;
@@ -17,6 +16,7 @@ public class LootBox : MonoBehaviour
     [SerializeField] private int maxDropGem = 10;
 
     [SerializeField] private int cost;
+    public System.Action endAnimation;
 
     public int Cost => cost;
 
@@ -46,5 +46,10 @@ public class LootBox : MonoBehaviour
 
         if (rand <= coinDropChance)
             coinValue = Random.Range(minDropCoin, maxDropCoin);
+    }
+
+    public void EndAnimation() 
+    {
+        endAnimation.Invoke();
     }
 }
