@@ -76,6 +76,7 @@ public class LootboxMenuManager : MenuManager
 
         YandexGame.savesData.lootboxes -= 1;
         YandexGame.savesData.playerWrapper.collectibles.Add(collectibleItem.Name);
+        YandexGame.savesData.playerWrapper.newCollectibles.Add(collectibleItem.Name);
 
         YandexGame.SaveProgress();
 
