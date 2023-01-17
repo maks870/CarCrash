@@ -826,7 +826,7 @@ GameObject:
   - component: {fileID: 114400573}
   - component: {fileID: 114400575}
   m_Layer: 5
-  m_Name: CarAward
+  m_Name: CollectibleAward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -933,19 +933,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114400573}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 579660018}
-        m_TargetAssemblyTypeName: AwardUI, Assembly-CSharp
-        m_MethodName: SwitchAward
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &116184166
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,8 +1252,11 @@ GameObject:
   m_Component:
   - component: {fileID: 156512655}
   - component: {fileID: 156512656}
+  - component: {fileID: 156512659}
+  - component: {fileID: 156512658}
+  - component: {fileID: 156512657}
   m_Layer: 0
-  m_Name: Menu
+  m_Name: MenuManagers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1282,10 +1273,7 @@ Transform:
   m_LocalPosition: {x: 0.27188587, y: -0.12978679, z: -0.7734456}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1558384134}
-  - {fileID: 1346679556}
-  - {fileID: 392116530}
+  m_Children: []
   m_Father: {fileID: 2053750248}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1302,8 +1290,61 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuManagers:
-  - {fileID: 1558384135}
-  - {fileID: 392116529}
+  - {fileID: 156512659}
+  - {fileID: 156512657}
+--- !u!114 &156512657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156512654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe98a65e6436304faa42106f5d9da7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLoad: {fileID: 1115926559}
+  objectUI: {fileID: 521474740}
+  carTabSwitcher: {fileID: 1422958518}
+  characterTabSwitcher: {fileID: 9195801924458302651}
+--- !u!114 &156512658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156512654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7851882dba325584fb174c6a95e11769, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLoad: {fileID: 1115926559}
+  objectUI: {fileID: 1737514705}
+  lootbox: {fileID: 1892954304}
+  lootboxAwardUI: {fileID: 982961183}
+  earningManagerUI: {fileID: 982961180}
+  shop: {fileID: 581943004}
+--- !u!114 &156512659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156512654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0a07c3d32409f64aa88022d3b4976f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLoad: {fileID: 1115926559}
+  objectUI: {fileID: 945202523}
+  mapSwitcher: {fileID: 278135584}
+  presenter: {fileID: 579660019}
+  newCollectiblesWarning: {fileID: 248744784}
+  gamemodePanels:
+  - {fileID: 482717454}
 --- !u!1 &159758894
 GameObject:
   m_ObjectHideFlags: 0
@@ -2540,7 +2581,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 392116529}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerSave, Assembly-CSharp
         m_MethodName: InitializeSO
         m_Mode: 1
@@ -3047,54 +3088,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378661655}
   m_Mesh: {fileID: 3081054552321405321, guid: e6fb32438e0a8e145b7a0b174b5251f2, type: 3}
---- !u!1 &392116528
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 392116530}
-  - component: {fileID: 392116529}
-  m_Layer: 0
-  m_Name: CustomizeMenu
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &392116529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 392116528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fe98a65e6436304faa42106f5d9da7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerLoad: {fileID: 1115926559}
-  objectUI: {fileID: 521474740}
-  carTabSwitcher: {fileID: 1422958518}
-  characterTabSwitcher: {fileID: 9195801924458302651}
---- !u!4 &392116530
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 392116528}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 156512655}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &423969091
 GameObject:
   m_ObjectHideFlags: 0
@@ -3820,19 +3813,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 496067305}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 579660018}
-        m_TargetAssemblyTypeName: AwardUI, Assembly-CSharp
-        m_MethodName: SwitchAward
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &521474740
 GameObject:
   m_ObjectHideFlags: 0
@@ -4046,7 +4027,6 @@ GameObject:
   m_Component:
   - component: {fileID: 579660020}
   - component: {fileID: 579660019}
-  - component: {fileID: 579660018}
   m_Layer: 0
   m_Name: AwardPresenter
   m_TagString: Untagged
@@ -4054,22 +4034,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &579660018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 579660017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c829403251b0c043864aa942be3a5a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinAwardUI: {fileID: 496067303}
-  gemAwardUI: {fileID: 1096175380}
-  collectbileAwardUI: {fileID: 114400571}
-  mapAwardUI: {fileID: 1947071382}
 --- !u!114 &579660019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4082,7 +4046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e546285bee935ac4c954d103c4d2b577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  awardUI: {fileID: 579660018}
+  awardUI: {fileID: 982961183}
 --- !u!4 &579660020
 Transform:
   m_ObjectHideFlags: 0
@@ -4109,7 +4073,7 @@ GameObject:
   - component: {fileID: 581943005}
   - component: {fileID: 581943004}
   m_Layer: 0
-  m_Name: GemPresenter
+  m_Name: Shop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4132,7 +4096,7 @@ MonoBehaviour:
   smallAdReward: 1
   mediumAdReward: 2
   mediumAdViews: 2
-  gemPresenterUI: {fileID: 0}
+  gemPresenterUI: {fileID: 982961182}
 --- !u!4 &581943005
 Transform:
   m_ObjectHideFlags: 0
@@ -4448,7 +4412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 621344325}
   m_Layer: 0
-  m_Name: Target1
+  m_Name: TargetCam1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6666,7 +6630,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1558384135}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: CloseMenu
         m_Mode: 1
@@ -6678,7 +6642,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 392116529}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CustomizeMenuManager, Assembly-CSharp
         m_MethodName: OpenMenu
         m_Mode: 1
@@ -7054,7 +7018,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1558384135}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: CloseMenu
         m_Mode: 1
@@ -7445,7 +7409,6 @@ RectTransform:
   - {fileID: 10332285}
   - {fileID: 1538510453}
   - {fileID: 1633973475}
-  - {fileID: 1414294920}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7591,8 +7554,10 @@ GameObject:
   m_Component:
   - component: {fileID: 982961181}
   - component: {fileID: 982961180}
+  - component: {fileID: 982961183}
+  - component: {fileID: 982961182}
   m_Layer: 0
-  m_Name: EarningManager
+  m_Name: UIControllers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7607,7 +7572,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 982961179}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6705656084d5f294fa7e8e5a2629d833, type: 3}
+  m_Script: {fileID: 11500000, guid: a637a327c62699149b253364bff23953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   coinText: {fileID: 129786407}
@@ -7629,6 +7594,40 @@ Transform:
   m_Father: {fileID: 2053750248}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &982961182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982961179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e45e564f1b670542b1f278b86c74bdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exchangeCoinCost: {fileID: 0}
+  exchangeGemReward: {fileID: 0}
+  smallGemAd: {fileID: 0}
+  mediumGemAd: {fileID: 0}
+  mediumAdViewed: {fileID: 0}
+  mediumAdViews: {fileID: 0}
+--- !u!114 &982961183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982961179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c829403251b0c043864aa942be3a5a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinAwardUI: {fileID: 496067303}
+  gemAwardUI: {fileID: 1096175380}
+  collectbileAwardUI: {fileID: 114400571}
+  mapAwardUI: {fileID: 1947071382}
 --- !u!1 &984797902
 GameObject:
   m_ObjectHideFlags: 0
@@ -8434,19 +8433,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1096175382}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 579660018}
-        m_TargetAssemblyTypeName: AwardUI, Assembly-CSharp
-        m_MethodName: SwitchAward
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1108341531
 GameObject:
   m_ObjectHideFlags: 0
@@ -8552,9 +8539,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8f49cb09828d384f8d9890ef04cf762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCharacter: {fileID: 0}
-  currentCarColor: {fileID: 0}
-  currentCarModel: {fileID: 0}
   defaultCharacter: {fileID: 11400000, guid: 5e5fd033b6bcd6047961a263e1e3ffdf, type: 2}
   defaultCarColor: {fileID: 11400000, guid: e669f1b151ab75e419caaceb86b61995, type: 2}
   defaultCarModel: {fileID: 11400000, guid: 948b7f7278c9cb54d990209d3bb5ed28, type: 2}
@@ -9726,8 +9710,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1160675675}
   m_HandleRect: {fileID: 1160675674}
   m_Direction: 2
-  m_Value: 1.0000012
-  m_Size: 0.56571
+  m_Value: -0.0000005760965
+  m_Size: 0.62948936
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10043,7 +10027,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a1b9ab039c0997f41b725e2a0d060731,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 7.25
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a1b9ab039c0997f41b725e2a0d060731,
         type: 3}
@@ -10053,7 +10037,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a1b9ab039c0997f41b725e2a0d060731,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 4.3041077
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a1b9ab039c0997f41b725e2a0d060731,
         type: 3}
@@ -10723,7 +10707,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1275576086}
   m_Layer: 0
-  m_Name: Target2
+  m_Name: TargetCam2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10830,7 +10814,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1323187639}
   m_Layer: 0
-  m_Name: Target3
+  m_Name: TargetCam3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10900,75 +10884,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1332603363}
   m_CullTransparentMesh: 1
---- !u!1 &1346679555
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1346679556}
-  - component: {fileID: 1346679558}
-  - component: {fileID: 1346679557}
-  m_Layer: 0
-  m_Name: LootboxMenu
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1346679556
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1346679555}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 156512655}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1346679557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1346679555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9f9445c95ed81f41afe675804f068ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  items: []
-  minDropCoin: 5
-  maxDropCoin: 40
-  minDropGem: 1
-  maxDropGem: 10
-  cost: 0
---- !u!114 &1346679558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1346679555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7851882dba325584fb174c6a95e11769, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerLoad: {fileID: 0}
-  objectUI: {fileID: 0}
-  lootbox: {fileID: 0}
-  lootboxAwardUI: {fileID: 0}
-  earningManagerUI: {fileID: 0}
-  gemPresenter: {fileID: 0}
 --- !u!1 &1347172554
 GameObject:
   m_ObjectHideFlags: 0
@@ -11479,61 +11394,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405681856}
   m_CullTransparentMesh: 1
---- !u!1 &1414294919
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1414294920}
-  - component: {fileID: 1414294921}
-  m_Layer: 5
-  m_Name: GemPresenterUI
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1414294920
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1414294919}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 950510234}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1414294921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1414294919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e45e564f1b670542b1f278b86c74bdd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  exchangeCoinCost: {fileID: 0}
-  exchangeGemReward: {fileID: 0}
-  smallGemAd: {fileID: 0}
-  mediumGemAd: {fileID: 0}
-  mediumAdViewed: {fileID: 0}
-  mediumAdViews: {fileID: 0}
 --- !u!1 &1414470893
 GameObject:
   m_ObjectHideFlags: 0
@@ -13254,57 +13114,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557242811}
   m_CullTransparentMesh: 1
---- !u!1 &1558384133
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1558384134}
-  - component: {fileID: 1558384135}
-  m_Layer: 0
-  m_Name: MainMenu
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1558384134
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558384133}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 156512655}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1558384135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558384133}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0a07c3d32409f64aa88022d3b4976f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerLoad: {fileID: 1115926559}
-  objectUI: {fileID: 945202523}
-  mapSwitcher: {fileID: 278135584}
-  presenter: {fileID: 579660019}
-  newCollectiblesWarning: {fileID: 248744784}
-  gamemodePanels:
-  - {fileID: 482717454}
 --- !u!1 &1572187916
 GameObject:
   m_ObjectHideFlags: 0
@@ -13893,7 +13702,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1633973475}
   m_Layer: 5
-  m_Name: AwardUI
+  m_Name: AwardPresenterUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13920,7 +13729,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -69, y: 73}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1643379818
@@ -14437,7 +14246,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1673411893}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: LootboxMenuManager, Assembly-CSharp
+        m_MethodName: OpenLootbox
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1673411893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15614,7 +15435,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 392116529}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerSave, Assembly-CSharp
         m_MethodName: AddCharacter
         m_Mode: 1
@@ -16128,7 +15949,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 392116529}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerSave, Assembly-CSharp
         m_MethodName: ShowOurCollectibles
         m_Mode: 1
@@ -16384,6 +16205,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1892954303}
+  - component: {fileID: 1892954304}
   m_Layer: 0
   m_Name: LootBox
   m_TagString: Untagged
@@ -16399,7 +16221,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1892954302}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.25, y: 0, z: 4.3041077}
+  m_LocalPosition: {x: 7.25, y: 0.024, z: 4.3041077}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16407,6 +16229,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1892954304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892954302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9f9445c95ed81f41afe675804f068ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items: []
+  minDropCoin: 5
+  maxDropCoin: 40
+  minDropGem: 1
+  maxDropGem: 10
+  cost: 0
 --- !u!1 &1897420067
 GameObject:
   m_ObjectHideFlags: 0
@@ -17456,19 +17296,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1947071383}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 579660018}
-        m_TargetAssemblyTypeName: AwardUI, Assembly-CSharp
-        m_MethodName: SwitchAward
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &1948430326
 GameObject:
   m_ObjectHideFlags: 0
@@ -18989,7 +18817,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -10.448784, y: 112.7361}
+  m_AnchoredPosition: {x: -10.448784, y: 857.83856}
   m_SizeDelta: {x: 300.08, y: 1715.6764}
   m_Pivot: {x: 0.5000001, y: 0.5}
 --- !u!114 &2105906124
@@ -19275,7 +19103,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 392116529}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerSave, Assembly-CSharp
         m_MethodName: ResetProgress
         m_Mode: 1
@@ -22057,7 +21885,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 392116529}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CustomizeMenuManager, Assembly-CSharp
         m_MethodName: CloseMenu
         m_Mode: 1
@@ -22069,7 +21897,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1558384135}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: OpenMenu
         m_Mode: 1

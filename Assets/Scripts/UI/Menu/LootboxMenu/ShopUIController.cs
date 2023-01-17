@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using YG;
 
-public class GemPresenterUI : MonoBehaviour
+public class ShopUIController : MonoBehaviour
 {
     [SerializeField] private Text exchangeCoinCost;
     [SerializeField] private Text exchangeGemReward;

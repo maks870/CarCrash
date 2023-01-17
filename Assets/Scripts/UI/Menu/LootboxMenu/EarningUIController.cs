@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using YG;
 
-public class EarningManagerUI : MonoBehaviour
+public class EarningUIController : MonoBehaviour
 {
     [SerializeField] private Text coinText;
     [SerializeField] private Text gemText;

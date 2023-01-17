@@ -9,14 +9,14 @@ enum AdvertisementType
     DoubleAd = 2
 }
 
-public class GemPresenter : MonoBehaviour
+public class Shop : MonoBehaviour
 {
     [SerializeField] private int exchangeCoinCost = 50;
     [SerializeField] private int exchangeGemReward = 1;
     [SerializeField] private int smallAdReward = 1;
     [SerializeField] private int mediumAdReward = 2;
     [SerializeField] private int mediumAdViews = 2;
-    [SerializeField] private GemPresenterUI gemPresenterUI;
+    [SerializeField] private ShopUIController gemPresenterUI;
 
     private void OnEnable()
     {

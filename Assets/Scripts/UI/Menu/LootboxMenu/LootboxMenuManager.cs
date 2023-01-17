@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using YG;
 
@@ -7,12 +5,12 @@ public class LootboxMenuManager : MenuManager
 {
     [SerializeField] private LootBox lootbox;
     [SerializeField] private AwardUIController lootboxAwardUI;
-    [SerializeField] private EarningManagerUI earningManagerUI;
-    [SerializeField] private GemPresenter gemPresenter;
+    [SerializeField] private EarningUIController earningManagerUI;
+    [SerializeField] private Shop shop;
 
     private void SetSavedSO()
     {
-        gemPresenter.InitializeUI();
+        shop.InitializeUI();
     }
 
     protected override void SavePlayer()
@@ -53,8 +51,6 @@ public class LootboxMenuManager : MenuManager
         //if (!EarningManager.SpendGem(lootbox.Cost))
         //    return;
 
-
-        lootbox.GetComponent<Animator>().SetTrigger("Open");
         int coinValue;
         int gemValue;
         CollectibleSO collectibleItem;
