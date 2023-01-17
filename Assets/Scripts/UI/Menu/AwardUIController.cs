@@ -14,6 +14,14 @@ public class AwardUIController : MonoBehaviour
     private List<GameObject> awards = new List<GameObject>();
     private int currentAward = 0;
 
+    private void SwitchLootboxAward(bool isLootboxAward)
+    {
+        foreach (GameObject awardUI in awards)
+        {
+            awardUI.GetComponent<TargetPointer>().enabled = isLootboxAward;
+        }
+    }
+
     public void SwitchAward()
     {
         if (currentAward != 0)
@@ -49,7 +57,7 @@ public class AwardUIController : MonoBehaviour
             awards.Add(collectbileAwardUI);
         }
         currentAward = 0;
-
+        SwitchLootboxAward(true);
         SwitchAward();
     }
 
@@ -84,6 +92,8 @@ public class AwardUIController : MonoBehaviour
 
         currentAward = 0;
         Debug.Log("ShowAwardsEnd");
+
+        SwitchLootboxAward(false);
         SwitchAward();
     }
 }

@@ -8,6 +8,7 @@ public class MainMenuManager : MenuManager
     [SerializeField] private MapSwitcher mapSwitcher;
     [SerializeField] private AwardPresenter presenter;
     [SerializeField] private GameObject newCollectiblesWarning;
+    [SerializeField] private GameObject newLootbloxesWarning;
     [SerializeField] private List<GameObject> gamemodePanels;
 
     private void SetSavedSO()
@@ -22,7 +23,7 @@ public class MainMenuManager : MenuManager
         YandexGame.savesData.playerWrapper.lastMap = "";
         YandexGame.savesData.playerWrapper.lastMapPlaces.Clear();
         YandexGame.SaveProgress();
-        UpdateNewCollectiblesWarnings();
+        UpdateNewPossibilitiyWarnings();
         YandexGame.EndDataLoadingEvent -= GetAwardsAfterMap;
     }
 
@@ -64,15 +65,20 @@ public class MainMenuManager : MenuManager
             gamemodePanels[i].SetActive(false);
         }
 
-        UpdateNewCollectiblesWarnings();
+        UpdateNewPossibilitiyWarnings();
     }
 
-    public void UpdateNewCollectiblesWarnings()
+    public void UpdateNewPossibilitiyWarnings()
     {
         if (YandexGame.savesData.playerWrapper.newCollectibles.Count != 0)
             newCollectiblesWarning.SetActive(true);
         else
             newCollectiblesWarning.SetActive(false);
+
+        if (YandexGame.savesData.lootboxes > 0)
+            newLootbloxesWarning.SetActive(true);
+        else
+            newLootbloxesWarning.SetActive(false);
     }
 
 
