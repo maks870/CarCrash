@@ -22,13 +22,27 @@ public class AwardUIController : MonoBehaviour
         }
     }
 
+    public void CloseAwards()
+    {
+        foreach (GameObject award in awards)
+        {
+            award.SetActive(false);
+        }
+
+        currentAward = 0;
+        awards.Clear();
+    }
+
     public void SwitchAward()
     {
         if (currentAward != 0)
             awards[currentAward - 1].SetActive(false);
 
         if (currentAward >= awards.Count)
+        {
+            CloseAwards();
             return;
+        }
 
         awards[currentAward].SetActive(true);
         currentAward++;
@@ -56,6 +70,7 @@ public class AwardUIController : MonoBehaviour
             collectbileAwardUI.GetComponent<Image>().sprite = characterCollectible.Sprite;
             awards.Add(collectbileAwardUI);
         }
+
         currentAward = 0;
         SwitchLootboxAward(true);
         SwitchAward();
@@ -90,7 +105,6 @@ public class AwardUIController : MonoBehaviour
         }
 
         currentAward = 0;
-
         SwitchLootboxAward(false);
         SwitchAward();
     }
