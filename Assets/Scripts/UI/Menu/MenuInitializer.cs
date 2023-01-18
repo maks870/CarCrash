@@ -11,17 +11,21 @@ public class MenuInitializer : MonoBehaviour
     private void OnEnable()
     {
         YandexGame.GetDataEvent += StartInitialize;
+        YandexGame.EndDataLoadingEvent+= soundController.Initialize;
     }
 
     private void OnDisable()
     {
         YandexGame.GetDataEvent -= StartInitialize;
+        YandexGame.EndDataLoadingEvent -= soundController.Initialize;
     }
 
     void Start()
     {
-        if (YandexGame.SDKEnabled == true)
-            StartInitialize();
+        if (YandexGame.SDKEnabled == true) 
+        {
+            YandexGame.LoadProgress();
+        }
     }
 
     private void StartInitialize()
@@ -56,7 +60,6 @@ public class MenuInitializer : MonoBehaviour
                 menuManagers[i].objectUI.SetActive(false);
         }
 
-        soundController.Initialize();
         earningUIController.UpdateEarnings();
         SceneTransition.instance.EndPreload();
     }
