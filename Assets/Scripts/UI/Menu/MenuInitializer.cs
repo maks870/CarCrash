@@ -6,6 +6,7 @@ public class MenuInitializer : MonoBehaviour
 {
     [SerializeField] private List<MenuManager> menuManagers = new List<MenuManager>();
     [SerializeField] private EarningUIController earningUIController;
+    [SerializeField] private SoundController soundController;
     private bool isInitializeProcess = false;
     private void OnEnable()
     {
@@ -55,6 +56,7 @@ public class MenuInitializer : MonoBehaviour
                 menuManagers[i].objectUI.SetActive(false);
         }
 
+        soundController.Initialize();
         earningUIController.UpdateEarnings();
         SceneTransition.instance.EndPreload();
     }

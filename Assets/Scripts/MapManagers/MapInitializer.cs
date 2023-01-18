@@ -8,6 +8,7 @@ public class MapInitializer : MonoBehaviour
     [SerializeField] private GameObject characterObj;
     [SerializeField] private MeshRenderer carRenderer;
     [SerializeField] private MeshFilter carFilter;
+    [SerializeField] private SoundController soundController;
 
     void Start()
     {
@@ -28,5 +29,6 @@ public class MapInitializer : MonoBehaviour
 
         carRenderer.material.mainTexture = carColor.Texture;
         carFilter.mesh = carModel.Mesh;
+        soundController.Initialize();
     }
 }
