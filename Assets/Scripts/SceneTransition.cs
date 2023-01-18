@@ -40,7 +40,6 @@ public class SceneTransition : MonoBehaviour
 
     private void StartLoadScene()
     {
-        instance.sceneOperation.allowSceneActivation = false;
         panel.SetActive(true);
         instance.animator.SetTrigger("sceneClosing");
     }
@@ -48,19 +47,21 @@ public class SceneTransition : MonoBehaviour
     private void EndLoadScene() 
     {
         instance.sceneOperation.allowSceneActivation = true;
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
     }
 
     public static void SwitchScene(string sceneName)
     {
-        instance.sceneOperation = SceneManager.LoadSceneAsync(sceneName);
         instance.StartLoadScene();
+        instance.sceneOperation = SceneManager.LoadSceneAsync(sceneName);
+        instance.sceneOperation.allowSceneActivation = false;
     }
 
     public static void SwitchScene(int idScene)
     {
-        instance.sceneOperation = SceneManager.LoadSceneAsync(idScene);
-        instance.StartLoadScene();
+        string scenePath = SceneUtility.GetScenePathByBuildIndex(idScene);
+        string sceneName = System.IO.Path.GetFileNameWithoutExtension(scenePath);
+        SwitchScene(sceneName);
     }
 
     public void EndPreload()

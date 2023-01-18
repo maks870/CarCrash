@@ -65,13 +65,10 @@ public class TargetPointer : MonoBehaviour
 
     private void OnDisable()
     {
-        if (oldAnchorMax != null)
-            pointerUI.anchorMax = oldAnchorMax;
-
-        if (oldAnchorMin != null)
-            pointerUI.anchorMin = oldAnchorMin;
-
-        if (oldAnchorMin != null)
-            pointerUI.anchoredPosition = oldPos;
+        if (pointerUI == null)
+            return;
+        pointerUI.anchorMax = oldAnchorMax;
+        pointerUI.anchorMin = oldAnchorMin;
+        pointerUI.anchoredPosition = oldPos;
     }
 }
