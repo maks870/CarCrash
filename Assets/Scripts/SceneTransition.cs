@@ -1,7 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -9,6 +7,7 @@ public class SceneTransition : MonoBehaviour
 {
     [SerializeField] private Image loadingImage;
     [SerializeField] private GameObject panel;
+    [SerializeField] private AudioMixer audioMixer;
     private bool endAnimation = false;
     private Animator animator;
     private AsyncOperation sceneOperation;
@@ -28,6 +27,15 @@ public class SceneTransition : MonoBehaviour
         }          
     }
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
     private void Start()
     {
         if (instance == null)
@@ -35,19 +43,28 @@ public class SceneTransition : MonoBehaviour
         else
             Destroy(this);
 
+        DontDestroyOnLoad(this.gameObject);
         animator = GetComponent<Animator>();
     }
 
     private void StartLoadScene()
     {
         panel.SetActive(true);
+        audioMixer.SetFloat("Master", -80);
         instance.animator.SetTrigger("sceneClosing");
     }
 
     private void EndLoadScene() 
     {
         instance.sceneOperation.allowSceneActivation = true;
+        
         //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        panel.SetActive(false);
+        endAnimation = false;
     }
 
     public static void SwitchScene(string sceneName)
@@ -72,5 +89,4 @@ public class SceneTransition : MonoBehaviour
     {
         endAnimation = true;
     }
-
 }
