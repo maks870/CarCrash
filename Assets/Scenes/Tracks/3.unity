@@ -21098,6 +21098,7 @@ MonoBehaviour:
   Checkpoints: {fileID: 1426963010}
   LapsSelected: {fileID: 1264593701}
   PauseMenu: {fileID: 620923897}
+  soundController: {fileID: 1581644305}
 --- !u!224 &1472464807
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22427,10 +22428,22 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 6281161236910001332, guid: f0ed7ca5b31f2ab4eac20cb79db79c9e,
         type: 3}
+      propertyPath: normalSnapshot
+      value: 
+      objectReference: {fileID: 24500006, guid: 850e70d2481079c4aa83930d686ef4c4,
+        type: 2}
+    - target: {fileID: 6281161236910001332, guid: f0ed7ca5b31f2ab4eac20cb79db79c9e,
+        type: 3}
       propertyPath: buttonOffSprite
       value: 
       objectReference: {fileID: 21300000, guid: ab7cfd7120996224ebb4ffecbe50ca27,
         type: 3}
+    - target: {fileID: 6281161236910001332, guid: f0ed7ca5b31f2ab4eac20cb79db79c9e,
+        type: 3}
+      propertyPath: distortionSnapshot
+      value: 
+      objectReference: {fileID: -4055110338326135166, guid: 850e70d2481079c4aa83930d686ef4c4,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0ed7ca5b31f2ab4eac20cb79db79c9e, type: 3}
 --- !u!114 &1581644305 stripped

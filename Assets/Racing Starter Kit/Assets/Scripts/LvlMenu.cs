@@ -6,6 +6,7 @@ public class LvlMenu : MonoBehaviour
     [SerializeField] private GameObject RaceUI, Countdown, FinishCamera, Checkpoints, LapsSelected;
     //also, it is used if we hit restart in the pause menu
     [SerializeField] private GameObject PauseMenu;
+    [SerializeField] SoundController soundController;
 
     private void Start()
     {
@@ -41,12 +42,13 @@ public class LvlMenu : MonoBehaviour
     {
         if (paused)
         {
-            //pausing will turn off audio and stop time
+            soundController.SoundDistortion(true);
             Time.timeScale = 0;
             PauseMenu.SetActive(true); //show the pause menu (to resume or restart race)
         }
         else
         {
+            soundController.SoundDistortion(false);
             //unpausing reactivates audio and resumes normal time
             Time.timeScale = 1;
             PauseMenu.SetActive(false); //turn off the pause menu

@@ -6,6 +6,8 @@ using YG;
 public class SoundController : MonoBehaviour
 {
     [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private AudioMixerSnapshot normalSnapshot;
+    [SerializeField] private AudioMixerSnapshot distortionSnapshot;
     [SerializeField] private Button buttonSound;
     [SerializeField] private Sprite buttonOnSprite;
     [SerializeField] private Sprite buttonOffSprite;
@@ -23,9 +25,17 @@ public class SoundController : MonoBehaviour
             audioMixer.SetFloat("Master", -80);
         }
 
-        buttonSound.onClick.AddListener(() => SoundChange(!on));       
+        buttonSound.onClick.AddListener(() => SoundChange(!on));
         YandexGame.savesData.sound = on;
         YandexGame.SaveProgress();
+    }
+
+    public void SoundDistortion(bool on)
+    {
+        if (on)
+            distortionSnapshot.TransitionTo(0.3f);
+        else
+            normalSnapshot.TransitionTo(0.3f);
     }
 
     public void Initialize()
