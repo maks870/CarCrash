@@ -64,34 +64,32 @@ public class AwardUIController : MonoBehaviour
     public void ShowAwards(int coinValue, int gemValue, CarModelSO carSO, MapSO mapSO)
     {
         awards.Clear();
-        Debug.Log("ShowAwards");
 
         if (coinValue != 0)
         {
             coinAwardUI.GetComponentInChildren<Text>().text = coinValue.ToString();
             awards.Add(coinAwardUI);
         }
-        Debug.Log("First");
+
         if (gemValue != 0)
         {
             gemAwardUI.GetComponentInChildren<Text>().text = gemValue.ToString();
             awards.Add(gemAwardUI);
         }
-        Debug.Log("second");
 
-        CarModelSO carModel = carSO;
-        collectbileAwardUI.GetComponent<Image>().sprite = carModel.Sprite;
-        awards.Add(collectbileAwardUI);
+        if (carSO != null)
+        {
+            collectbileAwardUI.GetComponent<Image>().sprite = carSO.Sprite;
+            awards.Add(collectbileAwardUI);
+        }
 
-        Debug.Log("Third");
-
-        MapSO map = mapSO;
-        mapAwardUI.GetComponent<Image>().sprite = map.Sprite;
-        awards.Add(mapAwardUI);
-        Debug.Log("Fourth");
+        if (mapSO != null)
+        {
+            mapAwardUI.GetComponent<Image>().sprite = mapSO.Sprite;
+            awards.Add(mapAwardUI);
+        }
 
         currentAward = 0;
-        Debug.Log("ShowAwardsEnd");
 
         SwitchLootboxAward(false);
         SwitchAward();

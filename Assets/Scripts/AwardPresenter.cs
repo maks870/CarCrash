@@ -46,14 +46,9 @@ public class AwardPresenter : MonoBehaviour
             YandexGame.savesData.playerWrapper.maps[mapIndex].isPassed = true;
 
             awardCollectibles.Add(map.Car);
-
-            awardUI.ShowAwards(mapAward.coins, mapAward.gems, carSO, mapSO);
-        }
-        else
-        {
-            awardUI.ShowAwards(mapAward.coins, mapAward.gems, carSO);
         }
 
+        awardUI.ShowAwards(mapAward.coins, mapAward.gems, carSO, mapSO);
         OpenEarnings(mapAward);
     }
 

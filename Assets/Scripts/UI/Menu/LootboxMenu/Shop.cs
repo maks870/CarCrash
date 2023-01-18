@@ -14,6 +14,11 @@ public class Shop : MonoBehaviour
     [SerializeField] private int smallAdReward = 1;
     [SerializeField] private int mediumAdReward = 2;
     [SerializeField] private int mediumAdViews = 2;
+    [SerializeField] private int lootboxCost = 5;
+    [SerializeField] private GameObject openLootboxButton;
+    [SerializeField] private GameObject noLootboxImage;
+    [SerializeField] private LootBox lootbox;
+    [SerializeField] private AwardUIController lootboxAwardUI;
     [SerializeField] private ShopUIController gemPresenterUI;
 
     private void OnEnable()
@@ -25,6 +30,11 @@ public class Shop : MonoBehaviour
 
         //YandexGame.OpenVideoEvent
         //YandexGame.CloseVideoEvent
+    }
+
+    private void Awake()
+    {
+        lootbox.endAnimation += OpenLootbox;
     }
 
     // Отписываемся от события открытия рекламы в OnDisable
@@ -78,4 +88,52 @@ public class Shop : MonoBehaviour
     {
         YandexGame.RewVideoShow(AdIndex);
     }
+
+    public void BuyLootbox()
+    {
+        if (!EarningManager.SpendGem(lootboxCost))
+        {
+            //сообзение о нехватке гемов
+            return;
+        }
+
+        EarningManager.AddLootbox();
+    }
+
+    public void OpenLootbox()
+    {
+        if (!EarningManager.SpendLootbox())
+        {
+            //вывести сообщение об нехватке лутбоксов
+            return;
+        }
+
+        int coinValue;
+        int gemValue;
+        CollectibleSO collectibleItem;
+
+        lootbox.GetReward(out coinValue, out gemValue, out collectibleItem);
+
+        if (coinValue != 0)
+            EarningManager.AddCoin(coinValue);
+
+        if (gemValue != 0)
+            EarningManager.AddGem(gemValue);
+
+        YandexGame.savesData.playerWrapper.collectibles.Add(collectibleItem.Name);
+        YandexGame.savesData.playerWrapper.newCollectibles.Add(collectibleItem.Name);
+
+        YandexGame.SaveProgress();
+
+        lootboxAwardUI.ShowAwards(coinValue, gemValue, collectibleItem);
+        UpdateUI();
+    }
+
+    public void UpdateUI()
+    {
+        bool haveLootbox = YandexGame.savesData.lootboxes > 0;
+        openLootboxButton.SetActive(haveLootbox);
+        noLootboxImage.SetActive(!haveLootbox);
+    }
+
 }
