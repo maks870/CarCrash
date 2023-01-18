@@ -58,8 +58,7 @@ public class RaceFinish : MonoBehaviour
         {
             FinishPanelWin.SetActive(false);//win panel turns off
             FinishPanelLose.SetActive(true);//lose panel turns on
-            AudioListener.volume = 0f;//audio turns off
-            Time.timeScale = 0;//time stops
         }
+        AudioListener.volume = 0f;//audio turns off
     }
 }

@@ -5,14 +5,15 @@ using UnityEngine;
 public class AbilityBox : MonoBehaviour
 {
     [SerializeField] private List<AbilityObj> ablitities = new List<AbilityObj>();
-    [SerializeField] private AudioSource audioSource;
     [SerializeField] private MeshRenderer meshRenderer;
+    private AudioSource audioSource;
     private BoxCollider boxCollider;
     private AbilityBoxSpawner spawner;
 
     private void Awake()
     {
         boxCollider = GetComponent<BoxCollider>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public AbilityBoxSpawner Spawner { set => spawner = value; }

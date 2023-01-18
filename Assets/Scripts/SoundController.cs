@@ -1,21 +1,29 @@
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 using YG;
 
 public class SoundController : MonoBehaviour
 {
     [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private Button buttonSound;
+    [SerializeField] private Sprite buttonOnSprite;
+    [SerializeField] private Sprite buttonOffSprite;
 
-    public void SoundChange(bool on)
+    private void SoundChange(bool on)
     {
-        int soundInt;
-
         if (on)
-            soundInt = 0;
+        {
+            buttonSound.image.sprite = buttonOnSprite;
+            audioMixer.SetFloat("Master", 0);
+        }
         else
-            soundInt = -80;
+        {
+            buttonSound.image.sprite = buttonOffSprite;
+            audioMixer.SetFloat("Master", -80);
+        }
 
-        audioMixer.SetFloat("Master", soundInt);
+        buttonSound.onClick.AddListener(() => SoundChange(!on));       
         YandexGame.savesData.sound = on;
         YandexGame.SaveProgress();
     }

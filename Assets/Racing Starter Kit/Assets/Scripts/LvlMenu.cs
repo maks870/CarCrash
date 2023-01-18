@@ -42,14 +42,12 @@ public class LvlMenu : MonoBehaviour
         if (paused)
         {
             //pausing will turn off audio and stop time
-            AudioListener.volume = 0f;
             Time.timeScale = 0;
             PauseMenu.SetActive(true); //show the pause menu (to resume or restart race)
         }
         else
         {
             //unpausing reactivates audio and resumes normal time
-            AudioListener.volume = 1f;
             Time.timeScale = 1;
             PauseMenu.SetActive(false); //turn off the pause menu
         }
