@@ -17,7 +17,23 @@ public class RaceFinish : MonoBehaviour
 
     private void WriteRecords()
     {
-        //записываем рекорды если есть
+        int currentMapIndex = YandexGame.savesData.playerWrapper.GetMapInfoIndex(YandexGame.savesData.playerWrapper.lastMap);
+        MapInfo currentMap = YandexGame.savesData.playerWrapper.maps[currentMapIndex];
+
+        float currentTimeInSeconds = LapTimeManager.MinuteCount * 60 + LapTimeManager.SecondCount;
+
+        if (currentMap.fastestTime == 0 || currentMap.fastestTime > currentTimeInSeconds)
+        {
+            currentMap.fastestTime = currentTimeInSeconds;
+            currentMap.newRecordTime = true;
+        }
+
+        if (currentMap.highestPlace == 0 || currentMap.highestPlace > ChkManager.posMax)
+        {
+            currentMap.highestPlace = ChkManager.posMax;
+            currentMap.newRecordPlace = true;
+        }
+
     }
 
     private void ShowRecords()
