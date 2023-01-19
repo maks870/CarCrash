@@ -20,7 +20,7 @@ public class RaceFinish : MonoBehaviour
         int currentMapIndex = YandexGame.savesData.playerWrapper.GetMapInfoIndex(YandexGame.savesData.playerWrapper.lastMap);
         MapInfo currentMap = YandexGame.savesData.playerWrapper.maps[currentMapIndex];
 
-        int currentTimeInSeconds = LapTimeManager.MinuteCount * 60 + LapTimeManager.SecondCount;
+        int currentTimeInSeconds =   LapTimeManager.MinuteCount * 60 + LapTimeManager.SecondCount;
         int currentTimeInMiliSeconds = (int)(LapTimeManager.MilliCount * 10);
 
         if (currentMap.fastestTime == 0 || currentMap.fastestTime > currentTimeInSeconds)
