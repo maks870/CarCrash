@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberLvl: {fileID: 337915187306974013}
-  fastestTime: {fileID: 0}
+  fastestTime: {fileID: 8642266488399811831}
   image: {fileID: 3485788244621633919}
   closedImage: {fileID: 2046927234069909042}
   cupImage: {fileID: 5015174405954172508}
