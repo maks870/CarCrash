@@ -41,8 +41,8 @@ public class CarTabSwitcher : MonoBehaviour
     {
         carColorSwitcher.InitializeUI();
         carModelSwitcher.InitializeUI();
-        carModelSwitcher.SetCurrentModel(carModel);
-        carColorSwitcher.SetCurrentColor(carColor);// устанавливаем цвет после установки модели из за рамки выбора
+        carColorSwitcher.SetCurrentColor(carColor);
+        carModelSwitcher.SetCurrentModel(carModel);// устанавливаем цвет после установки модели из за рамки выбора
     }
 
     public void SelectButton(Transform buttonTransform)
