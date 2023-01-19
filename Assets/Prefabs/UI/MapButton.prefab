@@ -632,19 +632,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02f7341a6d87ad747a719a892c6306a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberLvl: {fileID: 337915187306974013}
   fastestTime: {fileID: 8642266488399811831}
-  bestTimeObj: {fileID: 0}
-  bestPlace: {fileID: 0}
+  bestTimeObj: {fileID: 5137801773743160640}
+  bestPlace: {fileID: 337915187306974013}
   image: {fileID: 3485788244621633919}
   closedImage: {fileID: 2046927234069909042}
   cupImage: {fileID: 5015174405954172508}
   button: {fileID: 8618696275721181464}
   cupSprites:
   - {fileID: 21300000, guid: ae230b884f3a4e94e92e1cd3f645bad8, type: 3}
-  - {fileID: 21300000, guid: 128337c5475655844b0fb7832e2d581f, type: 3}
-  - {fileID: 21300000, guid: efe26f84271154449a1639ba1095489a, type: 3}
   - {fileID: 21300000, guid: 47800e6530887e64094c75d7978abb3e, type: 3}
+  - {fileID: 21300000, guid: efe26f84271154449a1639ba1095489a, type: 3}
+  - {fileID: 21300000, guid: 128337c5475655844b0fb7832e2d581f, type: 3}
 --- !u!114 &8618696275721181465
 MonoBehaviour:
   m_ObjectHideFlags: 0
