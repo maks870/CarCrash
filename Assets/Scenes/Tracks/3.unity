@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.5
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.320546, g: 0.3578544, b: 0.41669923, a: 0.5}
+  m_IndirectSpecularColor: {r: 0.3205463, g: 0.35785455, b: 0.41669983, a: 0.5}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11651,7 +11651,7 @@ PrefabInstance:
     - target: {fileID: 3267986177610925942, guid: 2b476568fc8796e449d5aabb8168b58c,
         type: 3}
       propertyPath: m_FullTorqueOverAllWheels
-      value: 265
+      value: 230
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b476568fc8796e449d5aabb8168b58c, type: 3}
@@ -24730,7 +24730,7 @@ PrefabInstance:
     - target: {fileID: 3267986177610925942, guid: 2b476568fc8796e449d5aabb8168b58c,
         type: 3}
       propertyPath: m_FullTorqueOverAllWheels
-      value: 265
+      value: 230
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b476568fc8796e449d5aabb8168b58c, type: 3}
@@ -35632,6 +35632,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AICar1
       objectReference: {fileID: 0}
+    - target: {fileID: 3267986177610925942, guid: 2b476568fc8796e449d5aabb8168b58c,
+        type: 3}
+      propertyPath: m_FullTorqueOverAllWheels
+      value: 230
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b476568fc8796e449d5aabb8168b58c, type: 3}
 --- !u!1 &4029816312376706340 stripped
@@ -36131,6 +36136,26 @@ PrefabInstance:
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 1321064512}
+    - target: {fileID: 4650270483354694013, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
+        type: 3}
+      propertyPath: taxiingHelper
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4650270483354694013, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
+        type: 3}
+      propertyPath: turnSteerAngle
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4650270483354694013, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
+        type: 3}
+      propertyPath: hardSteerHelper
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4650270483354694014, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
+        type: 3}
+      propertyPath: m_FullTorqueOverAllWheels
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 8986477186411742623, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
         type: 3}
       propertyPath: canvas

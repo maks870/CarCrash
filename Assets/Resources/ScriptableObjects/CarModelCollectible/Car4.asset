@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Car4
   m_EditorClassIdentifier: 
   quality: 0
-  acceleration: 40
-  handleability: 40
+  acceleration: 300
+  handleability: 25
   sprite: {fileID: 21300000, guid: c42e88745dd7e874a8506c4aad0a422f, type: 3}
   mesh: {fileID: -8545447256379345787, guid: 64ad674b60353844884a4b72d11997af, type: 3}
