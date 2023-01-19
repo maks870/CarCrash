@@ -7,6 +7,7 @@ public class ButtonMapUI : MonoBehaviour
 {
     [SerializeField] private Text numberLvl;
     [SerializeField] private Text fastestTime;
+    [SerializeField] private GameObject bestTimeObj;
     [SerializeField] private Text bestPlace;
     [SerializeField] private Image image;
     [SerializeField] private Image closedImage;
@@ -16,11 +17,13 @@ public class ButtonMapUI : MonoBehaviour
     private MapSO mapSO;
 
     public Text NumberLvl { get => numberLvl; }
-    public Text FastestTime { get => fastestTime; set => fastestTime = value; }
+    public Text FastestTime { get => fastestTime; }
+    public Text BestPlace { get => bestPlace; }
     public Image Image { get => image; }
     public Image ClosedImage { get => closedImage; }
     public Image CupImage { get => cupImage; }
-    public Button Button { get => button; set => button = value; }
+    public Button Button { get => button; }
     public List<Sprite> CupSprites { get => cupSprites; }
     public MapSO MapSO { get => mapSO; set => mapSO = value; }
+    public GameObject BestTimeObj { get => bestTimeObj; }
 }

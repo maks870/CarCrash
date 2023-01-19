@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -40,9 +41,31 @@ public class MapSwitcher : MonoBehaviour
             buttons[i].Image.sprite = openMaps[i].Sprite;
             buttons[i].NumberLvl.text = openMaps[i].Name;
             buttons[i].ClosedImage.gameObject.SetActive(false);
+
             int highestPlace = YandexGame.savesData.playerWrapper.GetHighestPlace(openMaps[i].Name);
-            buttons[i].CupImage.gameObject.SetActive(true);
+            int fastestTime = YandexGame.savesData.playerWrapper.GetFastestTime(openMaps[i].Name);
+            int fastestTimeSec = 0;
+            float fastestTimeMin = Math.DivRem(fastestTime, 60, out fastestTimeSec);
+
+            buttons[i].BestPlace.text = highestPlace.ToString();
+
+            if (fastestTime != 0)
+            {
+                buttons[i].FastestTime.text = fastestTimeMin + ":" + fastestTimeSec;
+                buttons[i].FastestTime.gameObject.SetActive(true);
+            }
+            else
+            {
+                buttons[i].FastestTime.gameObject.SetActive(false);
+            }
+
+            if (highestPlace != 0)
+                highestPlace = highestPlace > 3 ? 0 : highestPlace;
+            else
+                buttons[i].BestPlace.text = "";
+
             buttons[i].CupImage.sprite = buttons[i].CupSprites[highestPlace];
+            buttons[i].CupImage.gameObject.SetActive(true);
             buttons[i].MapSO = openMaps[i];
 
             buttons[i].Button.onClick.RemoveAllListeners();
@@ -56,7 +79,15 @@ public class MapSwitcher : MonoBehaviour
             buttons[j].Image.sprite = closedMaps[i].Sprite;
             buttons[j].NumberLvl.text = closedMaps[i].Name;
             buttons[j].ClosedImage.gameObject.SetActive(true);
-            buttons[i].CupImage.gameObject.SetActive(false);
+
+
+            buttons[i].FastestTime.text = "";
+            buttons[i].FastestTime.gameObject.SetActive(false);
+            buttons[i].BestPlace.text = "";
+
+            buttons[i].CupImage.sprite = buttons[i].CupSprites[0];
+            buttons[i].CupImage.gameObject.SetActive(true);
+
             buttons[i].MapSO = closedMaps[i];
             buttons[j].Button.onClick.RemoveAllListeners();
         }

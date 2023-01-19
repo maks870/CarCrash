@@ -3,7 +3,7 @@ public class MapInfo
 {
     public string mapName;
     public int highestPlace;
-    public float fastestTime;
+    public int fastestTime;
     public bool isPassed;
 
     public bool newRecordPlace;

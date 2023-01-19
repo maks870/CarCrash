@@ -28,9 +28,9 @@ public class PlayerWrapper
         return index;
     }
 
-    public float GetFastestTime(string mapName)
+    public int GetFastestTime(string mapName)
     {
-        float fastestTime = maps[0].fastestTime;
+        int fastestTime = maps[0].fastestTime;
 
         for (int i = 0; i < maps.Count; i++)
         {
