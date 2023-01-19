@@ -74,9 +74,9 @@ public class ChkTrigger : MonoBehaviour
                     if (CarPosListNumber == 0)//if trigchk it's located in player 1
                     {
                         //the lap time will reset to 0 to make a new one
-                        LapTimeManager.MinuteCount = 0;
-                        LapTimeManager.SecondCount = 0;
-                        LapTimeManager.MilliCount = 0;
+                        //LapTimeManager.MinuteCount = 0;
+                        //LapTimeManager.SecondCount = 0;
+                        //LapTimeManager.MilliCount = 0;
                     }
                 }
             }

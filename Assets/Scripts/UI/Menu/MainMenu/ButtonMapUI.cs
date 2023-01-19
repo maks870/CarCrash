@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class ButtonMapUI : MonoBehaviour
 {
-    [SerializeField] private Text numberLvl;
     [SerializeField] private Text fastestTime;
     [SerializeField] private GameObject bestTimeObj;
     [SerializeField] private Text bestPlace;
@@ -16,7 +15,6 @@ public class ButtonMapUI : MonoBehaviour
     [SerializeField] private List<Sprite> cupSprites = new List<Sprite>();
     private MapSO mapSO;
 
-    public Text NumberLvl { get => numberLvl; }
     public Text FastestTime { get => fastestTime; }
     public Text BestPlace { get => bestPlace; }
     public Image Image { get => image; }

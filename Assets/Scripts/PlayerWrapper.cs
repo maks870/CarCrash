@@ -28,8 +28,9 @@ public class PlayerWrapper
         return index;
     }
 
-    public int GetFastestTime(string mapName)
+    public int GetFastestTime(string mapName, out int miliSec)
     {
+        miliSec = maps[0].fastestTimeMiliSec;
         int fastestTime = maps[0].fastestTime;
 
         for (int i = 0; i < maps.Count; i++)
@@ -37,6 +38,7 @@ public class PlayerWrapper
             if (maps[i].mapName == mapName)
             {
                 fastestTime = maps[i].fastestTime;
+                miliSec = maps[i].fastestTimeMiliSec;
                 return fastestTime;
             }
         }

@@ -21,10 +21,12 @@ public class RaceFinish : MonoBehaviour
         MapInfo currentMap = YandexGame.savesData.playerWrapper.maps[currentMapIndex];
 
         int currentTimeInSeconds = LapTimeManager.MinuteCount * 60 + LapTimeManager.SecondCount;
+        int currentTimeInMiliSeconds = (int)(LapTimeManager.MilliCount * 10);
 
         if (currentMap.fastestTime == 0 || currentMap.fastestTime > currentTimeInSeconds)
         {
             currentMap.fastestTime = currentTimeInSeconds;
+            YandexGame.savesData.playerWrapper.maps[currentMapIndex].fastestTimeMiliSec = currentTimeInMiliSeconds;
             currentMap.newRecordTime = true;
         }
 
