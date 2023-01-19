@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657737, g: 0.49641168, b: 0.5748162, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657767, g: 0.49641216, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7481,6 +7481,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 892908403}
   m_Mesh: {fileID: -7195098213795894485, guid: 5c101b85eb5859b46afafcd7a40cf7bb, type: 3}
+--- !u!1 &893030689 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5137801773743160640, guid: 18dc337049bcb6745a9fa2a71685a329,
+    type: 3}
+  m_PrefabInstance: {fileID: 8618696274869029388}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &901601620
 GameObject:
   m_ObjectHideFlags: 0
@@ -18542,6 +18548,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1957354562}
   m_CullTransparentMesh: 1
+--- !u!114 &1959438445 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 337915187306974013, guid: 18dc337049bcb6745a9fa2a71685a329,
+    type: 3}
+  m_PrefabInstance: {fileID: 8618696274869029388}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1978099349
 GameObject:
   m_ObjectHideFlags: 0
@@ -25702,6 +25720,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8627143975855440637, guid: 18dc337049bcb6745a9fa2a71685a329,
+        type: 3}
+      propertyPath: bestPlace
+      value: 
+      objectReference: {fileID: 1959438445}
+    - target: {fileID: 8627143975855440637, guid: 18dc337049bcb6745a9fa2a71685a329,
+        type: 3}
+      propertyPath: bestTimeObj
+      value: 
+      objectReference: {fileID: 893030689}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18dc337049bcb6745a9fa2a71685a329, type: 3}
 --- !u!4 &8623147428920073912
