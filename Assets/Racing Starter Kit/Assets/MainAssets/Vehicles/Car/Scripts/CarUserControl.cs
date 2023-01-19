@@ -18,6 +18,7 @@ namespace UnityStandardAssets.Vehicles.Car
         private BaseInput input;
         private TargetPointer targetPointer;
 
+        public float TurnSteerAngle { get => turnSteerAngle; set => turnSteerAngle = value; }
 
         private void Awake()
         {

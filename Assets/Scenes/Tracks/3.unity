@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.5
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.320546, g: 0.3578544, b: 0.41669923, a: 0.5}
+  m_IndirectSpecularColor: {r: 0.3205463, g: 0.35785455, b: 0.41669983, a: 0.5}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11651,7 +11651,7 @@ PrefabInstance:
     - target: {fileID: 3267986177610925942, guid: 2b476568fc8796e449d5aabb8168b58c,
         type: 3}
       propertyPath: m_FullTorqueOverAllWheels
-      value: 265
+      value: 230
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b476568fc8796e449d5aabb8168b58c, type: 3}
@@ -21007,7 +21007,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7ef77b1d0e5761469826d79475c09c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterObj: {fileID: 4029816312376706340}
+  carObj: {fileID: 2064726575}
+  characterModel: {fileID: 4029816312376706340}
   carRenderer: {fileID: 473837261784882058}
   carFilter: {fileID: 5194197874813754576}
   soundController: {fileID: 1581644305}
@@ -24730,7 +24731,7 @@ PrefabInstance:
     - target: {fileID: 3267986177610925942, guid: 2b476568fc8796e449d5aabb8168b58c,
         type: 3}
       propertyPath: m_FullTorqueOverAllWheels
-      value: 265
+      value: 230
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b476568fc8796e449d5aabb8168b58c, type: 3}
@@ -29265,6 +29266,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2948955149378614209, guid: a726d7a7f66a2044ba204a1aa47d5693,
     type: 3}
   m_PrefabInstance: {fileID: 2062641696}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2064726575 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4650270483354694011, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
+    type: 3}
+  m_PrefabInstance: {fileID: 4650270482241498784}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2066472393
 PrefabInstance:
@@ -35632,6 +35639,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AICar1
       objectReference: {fileID: 0}
+    - target: {fileID: 3267986177610925942, guid: 2b476568fc8796e449d5aabb8168b58c,
+        type: 3}
+      propertyPath: m_FullTorqueOverAllWheels
+      value: 230
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b476568fc8796e449d5aabb8168b58c, type: 3}
 --- !u!1 &4029816312376706340 stripped
@@ -36131,6 +36143,26 @@ PrefabInstance:
       propertyPath: inputManager
       value: 
       objectReference: {fileID: 1321064512}
+    - target: {fileID: 4650270483354694013, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
+        type: 3}
+      propertyPath: taxiingHelper
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4650270483354694013, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
+        type: 3}
+      propertyPath: turnSteerAngle
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4650270483354694013, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
+        type: 3}
+      propertyPath: hardSteerHelper
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4650270483354694014, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
+        type: 3}
+      propertyPath: m_FullTorqueOverAllWheels
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 8986477186411742623, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
         type: 3}
       propertyPath: canvas
