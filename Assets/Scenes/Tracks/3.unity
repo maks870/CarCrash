@@ -21007,7 +21007,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7ef77b1d0e5761469826d79475c09c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterObj: {fileID: 4029816312376706340}
+  carObj: {fileID: 2064726575}
+  characterModel: {fileID: 4029816312376706340}
   carRenderer: {fileID: 473837261784882058}
   carFilter: {fileID: 5194197874813754576}
   soundController: {fileID: 1581644305}
@@ -29265,6 +29266,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2948955149378614209, guid: a726d7a7f66a2044ba204a1aa47d5693,
     type: 3}
   m_PrefabInstance: {fileID: 2062641696}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2064726575 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4650270483354694011, guid: 0f1eb3c36ea419147bcf9fc8a44e4380,
+    type: 3}
+  m_PrefabInstance: {fileID: 4650270482241498784}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2066472393
 PrefabInstance:
