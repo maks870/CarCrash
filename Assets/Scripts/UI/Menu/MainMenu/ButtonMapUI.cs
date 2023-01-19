@@ -7,6 +7,7 @@ public class ButtonMapUI : MonoBehaviour
 {
     [SerializeField] private Text numberLvl;
     [SerializeField] private Text fastestTime;
+    [SerializeField] private Text bestPlace;
     [SerializeField] private Image image;
     [SerializeField] private Image closedImage;
     [SerializeField] private Image cupImage;
