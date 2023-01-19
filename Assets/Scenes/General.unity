@@ -17106,7 +17106,7 @@ GameObject:
   - component: {fileID: 1897420070}
   - component: {fileID: 1897420069}
   m_Layer: 5
-  m_Name: Mask
+  m_Name: MapMask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25592,31 +25592,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 278135578}
     m_Modifications:
-    - target: {fileID: 7420502865266348621, guid: 18dc337049bcb6745a9fa2a71685a329,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8618696275721181465, guid: 18dc337049bcb6745a9fa2a71685a329,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8618696275721181465, guid: 18dc337049bcb6745a9fa2a71685a329,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8618696275721181465, guid: 18dc337049bcb6745a9fa2a71685a329,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8618696275721181465, guid: 18dc337049bcb6745a9fa2a71685a329,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8618696275721181470, guid: 18dc337049bcb6745a9fa2a71685a329,
         type: 3}
       propertyPath: m_Name
