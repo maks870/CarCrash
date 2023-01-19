@@ -51,7 +51,20 @@ public class MapSwitcher : MonoBehaviour
 
             if (fastestTime != 0)
             {
-                buttons[i].FastestTime.text = $"{fastestTimeMin}:{fastestTimeSec}.{fastestTimeMiliSec}";
+                string minNull = "";
+                string secNull = "";
+                string miliSecNull = "";
+
+                if (fastestTimeMin < 10)
+                    minNull = "0";
+
+                if (fastestTimeSec < 10)
+                    secNull = "0";
+
+                if (fastestTimeMiliSec < 10)
+                    miliSecNull = "0";
+
+                buttons[i].FastestTime.text = $"{minNull}{fastestTimeMin}:{secNull}{fastestTimeSec}.{miliSecNull}{fastestTimeMiliSec}";
                 buttons[i].BestTimeObj.gameObject.SetActive(true);
             }
             else
