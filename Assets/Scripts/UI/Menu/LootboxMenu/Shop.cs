@@ -98,6 +98,7 @@ public class Shop : MonoBehaviour
         }
 
         EarningManager.AddLootbox();
+        UpdateUI();
     }
 
     public void OpenLootbox()
