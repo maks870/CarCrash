@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +13,8 @@ public class AwardUIController : MonoBehaviour
 
     private List<GameObject> awards = new List<GameObject>();
     private int currentAward = 0;
+
+    public Action OnAwardsEnd;
 
     private void SwitchLootboxAward(bool isLootboxAward)
     {
@@ -41,6 +43,7 @@ public class AwardUIController : MonoBehaviour
         if (currentAward >= awards.Count)
         {
             CloseAwards();
+            OnAwardsEnd?.Invoke();
             return;
         }
 

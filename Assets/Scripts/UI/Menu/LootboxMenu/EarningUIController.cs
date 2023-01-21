@@ -13,16 +13,16 @@ public class EarningUIController : MonoBehaviour
 
     private void OnEnable()
     {
-        EarningManager.changeEarnings += UpdateEarnings;
-        EarningManager.lackCoins += ShowLackCoinsWarning;
-        EarningManager.lackGems += ShowLackGemsWarning;
+        EarningManager.OnChangeEarnings += UpdateEarnings;
+        EarningManager.OnLackCoins += ShowLackCoinsWarning;
+        EarningManager.OnLackGems += ShowLackGemsWarning;
     }
 
     private void OnDisable()
     {
-        EarningManager.changeEarnings -= UpdateEarnings;
-        EarningManager.lackCoins -= ShowLackCoinsWarning;
-        EarningManager.lackGems -= ShowLackGemsWarning;
+        EarningManager.OnChangeEarnings -= UpdateEarnings;
+        EarningManager.OnLackCoins -= ShowLackCoinsWarning;
+        EarningManager.OnLackGems -= ShowLackGemsWarning;
     }
 
     public void UpdateEarnings()

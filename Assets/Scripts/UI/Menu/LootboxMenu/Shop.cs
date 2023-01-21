@@ -34,7 +34,8 @@ public class Shop : MonoBehaviour
 
     private void Awake()
     {
-        lootbox.endAnimation += OpenLootbox;
+        lootbox.OnEndAnimation += OpenLootbox;
+        lootboxAwardUI.OnAwardsEnd += lootbox.Close;
     }
 
     // Отписываемся от события открытия рекламы в OnDisable

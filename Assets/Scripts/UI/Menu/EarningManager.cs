@@ -5,15 +5,15 @@ public static class EarningManager
 {
     private static EarningUIController earningManagerUI;
 
-    public static Action lackCoins;
-    public static Action lackGems;
-    public static Action changeEarnings;
+    public static Action OnLackCoins;
+    public static Action OnLackGems;
+    public static Action OnChangeEarnings;
 
 
     public static void AddLootbox()
     {
         YandexGame.savesData.lootboxes += 1;
-        changeEarnings.Invoke();
+        OnChangeEarnings.Invoke();
     }
 
     public static bool SpendLootbox()
@@ -22,14 +22,14 @@ public static class EarningManager
             return false;
 
         YandexGame.savesData.lootboxes -= 1;
-        changeEarnings.Invoke();
+        OnChangeEarnings.Invoke();
         return true;
     }
 
     public static void AddCoin(int count)
     {
         YandexGame.savesData.coins += count;
-        changeEarnings.Invoke();
+        OnChangeEarnings.Invoke();
     }
 
     public static bool SpendCoin(int count)
@@ -38,19 +38,19 @@ public static class EarningManager
 
         if (balance < 0)
         {
-            lackCoins.Invoke();
+            OnLackCoins.Invoke();
             return false;
         }
 
         YandexGame.savesData.coins = balance;
-        changeEarnings.Invoke();
+        OnChangeEarnings.Invoke();
         return true;
     }
 
     public static void AddGem(int count)
     {
         YandexGame.savesData.gems += count;
-        changeEarnings.Invoke();
+        OnChangeEarnings.Invoke();
     }
 
     public static bool SpendGem(int count)
@@ -59,12 +59,12 @@ public static class EarningManager
 
         if (balance < 0)
         {
-            lackGems.Invoke();
+            OnLackGems.Invoke();
             return false;
         }
 
-        YandexGame.savesData.coins += balance;
-        changeEarnings.Invoke();
+        YandexGame.savesData.gems = balance;
+        OnChangeEarnings.Invoke();
         return true;
     }
 }
