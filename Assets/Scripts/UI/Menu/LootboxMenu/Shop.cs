@@ -80,7 +80,7 @@ public class Shop : MonoBehaviour
 
     public void InitializeUI()
     {
-        gemPresenterUI.LoadValuesUI(exchangeCoinCost, exchangeGemReward, smallAdReward, mediumAdReward, mediumAdViews);
+        gemPresenterUI.LoadValuesUI(exchangeCoinCost, exchangeGemReward, smallAdReward, mediumAdReward, mediumAdViews, lootboxCost);
     }
 
     public void Exchange()
