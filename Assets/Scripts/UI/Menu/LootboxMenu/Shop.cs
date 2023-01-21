@@ -34,7 +34,7 @@ public class Shop : MonoBehaviour
 
     private void Awake()
     {
-        lootbox.OnEndAnimation += OpenLootbox;
+        lootbox.ActionEndOpenAnimation += OpenLootbox;
         lootboxAwardUI.OnAwardsEnd += lootbox.Close;
     }
 
