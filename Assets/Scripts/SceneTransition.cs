@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
@@ -10,23 +11,7 @@ public class SceneTransition : MonoBehaviour
     [SerializeField] private AudioMixer audioMixer;
     private bool endAnimation = false;
     private Animator animator;
-    private AsyncOperation sceneOperation;
     public static SceneTransition instance;
-
-
-    private void Update()
-    {
-        if (sceneOperation != null)
-        {
-            loadingImage.fillAmount = instance.sceneOperation.progress;
-
-            if (instance.sceneOperation.progress >= 0.85 && endAnimation) 
-            {
-                EndLoadScene();
-            }  
-        }          
-    }
-
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -47,20 +32,6 @@ public class SceneTransition : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    private void StartLoadScene()
-    {
-        panel.SetActive(true);
-        audioMixer.SetFloat("Master", -80);
-        instance.animator.SetTrigger("sceneClosing");
-    }
-
-    private void EndLoadScene() 
-    {
-        instance.sceneOperation.allowSceneActivation = true;
-        
-        //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
-    }
-
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         panel.SetActive(false);
@@ -69,9 +40,7 @@ public class SceneTransition : MonoBehaviour
 
     public static void SwitchScene(string sceneName)
     {
-        instance.StartLoadScene();
-        instance.sceneOperation = SceneManager.LoadSceneAsync(sceneName);
-        instance.sceneOperation.allowSceneActivation = false;
+        instance.StartCoroutine(instance.StartLoadScene(sceneName));
     }
 
     public static void SwitchScene(int idScene)
@@ -81,11 +50,27 @@ public class SceneTransition : MonoBehaviour
         SwitchScene(sceneName);
     }
 
+    private IEnumerator StartLoadScene(string sceneName)
+    {
+        panel.SetActive(true);
+        audioMixer.SetFloat("Master", -80);
+        instance.animator.SetTrigger("sceneClosing");
+
+        AsyncOperation sceneOperation = SceneManager.LoadSceneAsync(sceneName);
+        sceneOperation.allowSceneActivation = false;
+
+        while (sceneOperation.progress <= 85 && !endAnimation)
+        {
+            yield return null;
+        }
+
+        sceneOperation.allowSceneActivation = true;
+    }
     public void EndPreload()
     {
     }
 
-    public void EndAnimation() 
+    public void EndAnimation()
     {
         endAnimation = true;
     }
