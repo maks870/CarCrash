@@ -34,7 +34,13 @@ public class Shop : MonoBehaviour
 
     private void Awake()
     {
-        lootbox.ActionEndOpenAnimation += OpenLootbox;
+        lootbox.ActionEndOpen += OpenLootbox;
+        lootbox.ActionEndClose += () =>
+        {
+            openLootboxButton.SetActive(true);
+            UpdateUI();
+        };
+
         lootboxAwardUI.OnAwardsEnd += lootbox.Close;
     }
 
@@ -128,7 +134,6 @@ public class Shop : MonoBehaviour
         YandexGame.SaveProgress();
 
         lootboxAwardUI.ShowAwards(coinValue, gemValue, collectibleItem);
-        UpdateUI();
     }
 
     public void UpdateUI()

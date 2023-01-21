@@ -18,8 +18,8 @@ public class LootBox : MonoBehaviour
     [SerializeField] private int cost;
     private Animator animator;
 
-    public System.Action ActionEndOpenAnimation;
-    public System.Action ActionEndCloseAnimation;
+    public System.Action ActionEndOpen;
+    public System.Action ActionEndClose;
 
     public int Cost => cost;
 
@@ -68,11 +68,11 @@ public class LootBox : MonoBehaviour
 
     public void EndOpenAnimation()
     {
-        ActionEndOpenAnimation.Invoke();
+        ActionEndOpen.Invoke();
     }
 
     public void EndCloseAnimation()
     {
-        ActionEndCloseAnimation.Invoke();
+        ActionEndClose.Invoke();
     }
 }
