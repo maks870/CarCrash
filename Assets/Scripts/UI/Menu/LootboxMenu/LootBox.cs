@@ -16,9 +16,16 @@ public class LootBox : MonoBehaviour
     [SerializeField] private int maxDropGem = 10;
 
     [SerializeField] private int cost;
+    private Animator animator;
+
     public System.Action endAnimation;
 
     public int Cost => cost;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     public void GetReward(out int coinValue, out int gemValue, out CollectibleSO collectibleItem)
     {
@@ -46,6 +53,16 @@ public class LootBox : MonoBehaviour
 
         if (rand <= coinDropChance)
             coinValue = Random.Range(minDropCoin, maxDropCoin);
+    }
+
+    public void Open() 
+    {
+        animator.SetTrigger("Open");
+    }
+
+    public void Close() 
+    {
+        animator.SetTrigger("Close");
     }
 
     public void EndAnimation() 
