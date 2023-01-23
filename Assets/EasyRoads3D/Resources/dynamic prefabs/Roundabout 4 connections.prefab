@@ -31,6 +31,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 427.80496, y: 0.74, z: 737.1742}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4216092546443446}
   m_Father: {fileID: 0}
@@ -937,7 +938,7 @@ MonoBehaviour:
   - {x: 10.170126, y: 0, z: 2.6112332}
   - {x: 10.417207, y: 0, z: 1.3159827}
   - {x: 10.5, y: 0, z: 0}
-  ODQQOCQODO: []
+  ODOQCDODOC: []
   mainRightPointsUVs:
   - {x: 1, y: 0}
   - {x: 1, y: 0.072}
@@ -1094,7 +1095,7 @@ MonoBehaviour:
   - {x: 0, y: 3.4560006}
   - {x: 0, y: 3.5280008}
   - {x: 0, y: 3.6000009}
-  ODQQOCQODOUVs: []
+  ODOQCDODOCUVs: []
   innerRoundaboutSidewalkV3: []
   innerRoundaboutSidewalUV: []
   innerRoundaboutSidewalTris: 
@@ -1937,6 +1938,8 @@ MonoBehaviour:
     rightSurroundingV3: {x: 0, y: 0, z: 0}
     leftRoadpoint: {x: 0, y: 0, z: 0}
     rightRoadpoint: {x: 0, y: 0, z: 0}
+    leftRoundingPoints: []
+    rightRoundingPoints: []
     leftCornerInt: -1
     rightCornerInt: -1
     leftIndentInt: 0
@@ -1949,10 +1952,11 @@ MonoBehaviour:
     additionalIndentDistance: 0
     connectionAngle: 0
     alignmentHandleVecRotationGizmo: {x: 0, y: 0, z: 0}
+    inwards: 0
     roadType: 0
     roadTypeTimestamp: 0
   baseScript: {fileID: 0}
-  isSceneObject: 0
+  isSceneObject: 1
   guiChanged: 1
   crossingName: Roundabout 4 connections
   activeSidewalks: 1
@@ -2019,6 +2023,11 @@ MonoBehaviour:
     sidewalks: 0
     sidewalkHeight: 0.2
     sidewalkWidth: 2
+    crosswalks: 0
+    crosswalkIntervals: 0
+    crosswalksIntersections: 0
+    crosswalkPrefab: {fileID: 0}
+    crosswalkType: 0
     roadMaterial: {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
     roadMaterials: []
     roadPhysicsMaterial: {fileID: 0}
@@ -2073,7 +2082,16 @@ MonoBehaviour:
     fixedDistance: 0
     connectionAngle: 0
     connectionRadius: 0
+    oneWay: 0
+    cornerRadiusMainRoad: 0
+    cornerSementsMainRoad: 0
+    cornerRadiusSecondaryRoad: 0
+    cornerRadiusSecondaryCurvature: 0
+    cornerSementsSecondaryRoad: 0
+    mainRoadsOnly: 0
     isRoadShape: 0
+    controlType: 0
+    vertexColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114375241053949056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2169,6 +2187,8 @@ MonoBehaviour:
     rightSurroundingV3: {x: 19.982178, y: -0.74, z: -0.27496338}
     leftRoadpoint: {x: 0, y: 0, z: 0}
     rightRoadpoint: {x: 0, y: 0, z: 0}
+    leftRoundingPoints: []
+    rightRoundingPoints: []
     leftCornerInt: -1
     rightCornerInt: -1
     leftIndentInt: 0
@@ -2181,6 +2201,7 @@ MonoBehaviour:
     additionalIndentDistance: 0
     connectionAngle: 133.2
     alignmentHandleVecRotationGizmo: {x: 7.6541705, y: 0, z: -7.187745}
+    inwards: 0
     roadType: 1
     roadTypeTimestamp: 1541537165.16953
   - centerPoint: {x: -9.974962, y: 0, z: -9.367123}
@@ -2265,6 +2286,8 @@ MonoBehaviour:
     rightSurroundingV3: {x: -1.5291138, y: -0.74, z: -19.925476}
     leftRoadpoint: {x: 0, y: 0, z: 0}
     rightRoadpoint: {x: 0, y: 0, z: 0}
+    leftRoundingPoints: []
+    rightRoundingPoints: []
     leftCornerInt: -1
     rightCornerInt: -1
     leftIndentInt: 0
@@ -2277,6 +2300,7 @@ MonoBehaviour:
     additionalIndentDistance: 0
     connectionAngle: 226.79997
     alignmentHandleVecRotationGizmo: {x: -7.654167, y: 0, z: -7.187748}
+    inwards: 0
     roadType: 1
     roadTypeTimestamp: 1541537165.16953
   - centerPoint: {x: -9.9749775, y: 0, z: 9.3671055}
@@ -2361,6 +2385,8 @@ MonoBehaviour:
     rightSurroundingV3: {x: -19.982178, y: -0.74, z: 0.27496338}
     leftRoadpoint: {x: 0, y: 0, z: 0}
     rightRoadpoint: {x: 0, y: 0, z: 0}
+    leftRoundingPoints: []
+    rightRoundingPoints: []
     leftCornerInt: -1
     rightCornerInt: -1
     leftIndentInt: 0
@@ -2373,6 +2399,7 @@ MonoBehaviour:
     additionalIndentDistance: 0
     connectionAngle: 313.19995
     alignmentHandleVecRotationGizmo: {x: -7.654178, y: 0, z: 7.1877365}
+    inwards: 0
     roadType: 1
     roadTypeTimestamp: 1541537165.16953
   - centerPoint: {x: 9.97497, y: 0, z: 9.367115}
@@ -2457,6 +2484,8 @@ MonoBehaviour:
     rightSurroundingV3: {x: 1.5291138, y: -0.74, z: 19.925476}
     leftRoadpoint: {x: 0, y: 0, z: 0}
     rightRoadpoint: {x: 0, y: 0, z: 0}
+    leftRoundingPoints: []
+    rightRoundingPoints: []
     leftCornerInt: -1
     rightCornerInt: -1
     leftIndentInt: 0
@@ -2469,6 +2498,7 @@ MonoBehaviour:
     additionalIndentDistance: 0
     connectionAngle: 46.800022
     alignmentHandleVecRotationGizmo: {x: 7.654173, y: 0, z: 7.1877418}
+    inwards: 0
     roadType: 1
     roadTypeTimestamp: 1541537165.16953
   sidewalkControlElements:
@@ -5702,9 +5732,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5718,6 +5751,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -5730,6 +5764,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &33645710751335618
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5748,9 +5783,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!1 &1202700207338538
 GameObject:
@@ -5782,6 +5817,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4715120521428944}
   m_RootOrder: 0
@@ -5805,9 +5841,12 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5819,6 +5858,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -5831,6 +5871,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!64 &64025893730315574
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5841,9 +5882,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 0
-  serializedVersion: 3
+  serializedVersion: 4
   m_Convex: 0
-  m_CookingOptions: 14
+  m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!114 &114958421352689456
 MonoBehaviour:
