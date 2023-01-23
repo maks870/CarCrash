@@ -59,7 +59,7 @@ public class SceneTransition : MonoBehaviour
         AsyncOperation sceneOperation = SceneManager.LoadSceneAsync(sceneName);
         sceneOperation.allowSceneActivation = false;
 
-        while (sceneOperation.progress <= 85 && !endAnimation)
+        while (sceneOperation.progress < 90 && !endAnimation)
         {
             yield return null;
         }
