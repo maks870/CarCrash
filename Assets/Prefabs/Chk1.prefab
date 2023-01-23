@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 216984356493102322}
   - component: {fileID: 216984356493102321}
   - component: {fileID: 216984356493102220}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Chk1
   m_TagString: chk
   m_Icon: {fileID: 0}
@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216984356493102327}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -83.519, y: 1, z: -26.01}
-  m_LocalScale: {x: 7, y: 2, z: 0.25}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 8.41, y: 2, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8139017272402471535}
@@ -120,7 +120,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8139017272402471535}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ReturnDirection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
