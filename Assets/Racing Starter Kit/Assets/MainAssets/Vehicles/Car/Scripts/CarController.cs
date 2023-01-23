@@ -50,6 +50,7 @@ namespace UnityStandardAssets.Vehicles.Car
         private Rigidbody m_Rigidbody;
         private const float k_ReversingThreshold = 0.01f;
         private bool handbrakeOn = false;
+        private bool isAccelerated = false;
 
         public bool HandbrakeOn { get => handbrakeOn; set => handbrakeOn = value; }
         public bool Skidding { get; private set; }
@@ -59,6 +60,7 @@ namespace UnityStandardAssets.Vehicles.Car
         public float MaxSpeed { get { return m_Topspeed; } set => m_Topspeed = value; }
         public float Revs { get; private set; }
         public float AccelInput { get; private set; }
+        public bool IsAccelerated { get => isAccelerated; set => isAccelerated = value; }
 
         // Use this for initialization
         private void Start()
@@ -210,6 +212,8 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void ApplyDrive(float accel, float footbrake)
         {
+            if (isAccelerated)
+                accel = 2f;
 
             float thrustTorque;
             switch (m_CarDriveType)
