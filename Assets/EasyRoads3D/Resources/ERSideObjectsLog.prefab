@@ -48,7 +48,7 @@ MonoBehaviour:
   - version: 2.0.0
     name: ForestBarrier
     id: 1674488577.6198108
-    timestamp: 1674496418.8204284
+    timestamp: 1674555354.554337
     objectType: 2
     gameobjectGUID: 
     textureGUID: 
@@ -281,7 +281,7 @@ MonoBehaviour:
   - version: 2.0.0
     name: CheckPoint
     id: 1674496660.8983088
-    timestamp: 1674502613.3106341
+    timestamp: 1674555212.271045
     objectType: 0
     gameobjectGUID: 
     textureGUID: 
@@ -512,9 +512,9 @@ MonoBehaviour:
     xf2Total: 0
     y1: 1.05
   - version: 2.0.0
-    name: Point
+    name: Points
     id: 1674497149.5651634
-    timestamp: 1674505565.2669275
+    timestamp: 1674555276.1836627
     objectType: 0
     gameobjectGUID: 
     textureGUID: 
@@ -668,7 +668,7 @@ MonoBehaviour:
     heightMaxStartThreshold: 0
     heightMaxEndThreshold: 1
     xThresholdDistance: 5
-    angleThreshold: 1
+    angleThreshold: 10
     connectionRatio: 1
     retainingWall: 0
     surroundingControl: 0
@@ -1217,7 +1217,7 @@ MonoBehaviour:
   roadPresets:
   - roadTypeName: ForestRoad
     id: 1
-    timestamp: 1674505808.4739604
+    timestamp: 1674555718.8239195
     roadWidth: 9
     faceDistance: 7
     angleTreshold: 45
@@ -1294,17 +1294,17 @@ MonoBehaviour:
     soData: []
     soDataExt: []
     soDataLog:
-    - id: 1674496660.8983088
-      active: 1
-    - id: 1674498000.8008091
-      active: 0
     - id: 1674488577.6198108
+      active: 1
+    - id: 1674496660.8983088
       active: 1
     - id: 1674497149.5651634
       active: 1
+    - id: 1674498000.8008091
+      active: 0
     - id: 1674492789.5935428
       active: 0
-    layer: 5
+    layer: 6
     isStatic: 0
     tag: Untagged
     splatMapActive: 0
