@@ -14,9 +14,14 @@ public class CarTrack : MonoBehaviour
         carControl.CarTrack = this;
         GameObject pointsObj = GameObject.Find("Points");
 
-        foreach (Transform child in pointsObj.transform)
+
+        for (int i = 0; i < pointsObj.transform.childCount; i++)
         {
-            points.Add(child);
+            Transform child = pointsObj.transform.GetChild(i);
+            for (int j = 0; j < child.transform.childCount; j++)
+            {
+                points.Add(child.transform.GetChild(j));
+            }
         }
 
         boxCollider.enabled = false;
