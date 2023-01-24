@@ -99,11 +99,11 @@ public class ChkManager : MonoBehaviour
             pNum.Add(i + 1); // This sets the number of player in the race
         }
         //unparent checkpoints gameobject so we can get precise transforms values to compare later
-        UnparentChks = GameObject.FindGameObjectsWithTag("chk");
-        foreach (GameObject go in UnparentChks)
-        {
-            go.transform.parent = null;
-        }
+        //UnparentChks = GameObject.FindGameObjectsWithTag("chk");
+        //foreach (GameObject go in UnparentChks)
+        //{
+        //    go.transform.parent = null;
+        //}
     }
 
     public void Update()

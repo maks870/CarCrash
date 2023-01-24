@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 //this script is used in the Play button from the first menu and the Continue button when you finish the race
 public class LvlMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject RaceUI, Countdown, FinishCamera, Checkpoints, LapsSelected;
+    [SerializeField] private GameObject RaceUI, Countdown, FinishCamera, LapsSelected;
     //also, it is used if we hit restart in the pause menu
     [SerializeField] private GameObject PauseMenu;
     [SerializeField] SoundController soundController;
@@ -21,7 +21,6 @@ public class LvlMenu : MonoBehaviour
     {   //all the racing stuff turns on
         RaceUI.SetActive(true); //racing UI
         Countdown.SetActive(true);  //countdown UI (3,2,1,go)
-        Checkpoints.SetActive(true); //racetrack checkpoints
         LapsSelected.SetActive(true); //turn on the lap requirement race-UI text
         FinishCamera.SetActive(false); //and the camera goes off too, to use the one in the player car
         SetPause(false);
