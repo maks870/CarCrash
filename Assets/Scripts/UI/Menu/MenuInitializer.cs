@@ -7,11 +7,12 @@ public class MenuInitializer : MonoBehaviour
     [SerializeField] private List<MenuManager> menuManagers = new List<MenuManager>();
     [SerializeField] private EarningUIController earningUIController;
     [SerializeField] private SoundController soundController;
+    [SerializeField] private StartingTraining startingTraining;
     private bool isInitializeProcess = false;
     private void OnEnable()
     {
         YandexGame.GetDataEvent += StartInitialize;
-        YandexGame.EndDataLoadingEvent+= soundController.Initialize;
+        YandexGame.EndDataLoadingEvent += soundController.Initialize;
     }
 
     private void OnDisable()
@@ -22,7 +23,7 @@ public class MenuInitializer : MonoBehaviour
 
     void Start()
     {
-        if (YandexGame.SDKEnabled == true) 
+        if (YandexGame.SDKEnabled == true)
         {
             YandexGame.LoadProgress();
         }
@@ -50,6 +51,7 @@ public class MenuInitializer : MonoBehaviour
             YandexGame.savesData.playerWrapper.lastMap = "";
             YandexGame.savesData.playerWrapper.lastMapPlaces.Clear();
             YandexGame.savesData.isFirstSession2 = false;
+            startingTraining.StartTraining();
         }
 
         for (int i = 0; i < menuManagers.Count; i++)
