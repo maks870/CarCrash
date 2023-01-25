@@ -48,7 +48,7 @@ MonoBehaviour:
   - version: 2.0.0
     name: ForestBarriers
     id: 1674488577.6198108
-    timestamp: 1674559193.9785743
+    timestamp: 1674667256.5462503
     objectType: 2
     gameobjectGUID: 
     textureGUID: 
@@ -79,7 +79,7 @@ MonoBehaviour:
     weld: 1
     combine: 1
     combineInstantiated: 1
-    markerActive: 1
+    markerActive: 0
     uvType: 0
     uv: 1
     randomObjects: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
     xPosition: 0
     xPosition2: 0
     relativeTo: 1
-    yPosition: 0
+    yPosition: -0.06
     yRotation: -90
     oldSidwaysDistance: 0
     sidewaysDistanceUpdate: 0
@@ -108,7 +108,7 @@ MonoBehaviour:
     collider: 0
     boxcollider: 1
     tangents: 0
-    sourceObject: {fileID: 5546995891413465251, guid: 735984314e579304698f70db5c868143,
+    sourceObject: {fileID: 6921361516699532864, guid: c567174a30d3cf14488e9949a7e4ff4c,
       type: 3}
     flipMesh: 1
     startObject: {fileID: 0}
@@ -116,8 +116,8 @@ MonoBehaviour:
     connectionObject: {fileID: 0}
     material: {fileID: 0}
     meshObjects: []
-    boxSize: {x: 0.26624414, y: 0.540555}
-    boxOffset: {x: -0.0000009536743, y: 0.60089535}
+    boxSize: {x: 0.29326499, y: 0.60156876}
+    boxOffset: {x: 0.010333061, y: 0.60089546}
     includeStartSegment: 0
     startSegmentOffset: 0
     includeStartEdgeTris: 0
@@ -130,14 +130,14 @@ MonoBehaviour:
     endOffset: 0
     defaultStartOffset: 0
     defaultEndOffset: 0
-    totalZDistance: 8.253551
-    middleZDistance: 8.253551
+    totalZDistance: 3.8462806
+    middleZDistance: 3.8462806
     startZDistance: -2000
     endZDistance: -2000
     minStartZ: 1000
     maxStartZ: -1000
     minMiddleZ: 0
-    maxMiddleZ: 8.253551
+    maxMiddleZ: 3.8462806
     minEndZ: 1000
     maxEndZ: -1000
     smoothStart: 0
@@ -271,13 +271,13 @@ MonoBehaviour:
     selectedTag: 0
     doubleSidedBendFlag: 0
     recalculateNormals: 0
-    x1: -0.13312225
-    x2: 0.1331219
+    x1: -0.14615934
+    x2: 0.14710563
     xf1: 0
     xf2: 0
     xf1Total: 0
     xf2Total: 0
-    y1: 0.594589
+    y1: 0.65109557
   - version: 2.0.0
     name: Checkpoints
     id: 1674496660.8983088
@@ -514,11 +514,11 @@ MonoBehaviour:
   - version: 2.0.0
     name: Points
     id: 1674497149.5651634
-    timestamp: 1674555276.1836627
+    timestamp: 1674667494.4095082
     objectType: 0
     gameobjectGUID: 
     textureGUID: 
-    m_distance: 1
+    m_distance: 11
     uvx: 0.1
     uvy: 1
     position: 0
@@ -543,7 +543,7 @@ MonoBehaviour:
     align: 0
     alignPoint: 0
     weld: 1
-    combine: 1
+    combine: 0
     combineInstantiated: 1
     markerActive: 0
     uvType: 0
@@ -597,7 +597,7 @@ MonoBehaviour:
     defaultStartOffset: 0
     defaultEndOffset: 0
     totalZDistance: 0
-    middleZDistance: 20
+    middleZDistance: 11
     startZDistance: 0
     endZDistance: 0
     minStartZ: 10000
@@ -668,7 +668,7 @@ MonoBehaviour:
     heightMaxStartThreshold: 0
     heightMaxEndThreshold: 1
     xThresholdDistance: 5
-    angleThreshold: 10
+    angleThreshold: 6
     connectionRatio: 1
     retainingWall: 0
     surroundingControl: 0
@@ -722,7 +722,7 @@ MonoBehaviour:
     buildOtherSideObject2: 0
     defaultOtherSoId2: 0
     buildOtherSideObjects: []
-    averageDistance: 1
+    averageDistance: 0
     randomUVx: 0
     isUsedAsChild: 0
     relativeToCenter: 0
@@ -978,13 +978,13 @@ MonoBehaviour:
     xf2Total: 0
     y1: 0
   - version: 2.0.0
-    name: Side Object 3
-    id: 1674492789.5935428
-    timestamp: 1674492907.1776834
-    objectType: 2
+    name: Flags
+    id: 1674659048.2718844
+    timestamp: 1674660316.94147
+    objectType: 0
     gameobjectGUID: 
     textureGUID: 
-    m_distance: 10
+    m_distance: 2
     uvx: 0.1
     uvy: 1
     position: 0
@@ -1028,31 +1028,28 @@ MonoBehaviour:
     childOrderActive: 0
     childOrder: 0
     meshBoundsAlignment: 0
-    xPosition: 0
+    xPosition: -0.5
     xPosition2: 0
     relativeTo: 1
     yPosition: 0
-    yRotation: 0
+    yRotation: -90
     oldSidwaysDistance: 0
     sidewaysDistanceUpdate: 0
     uvYRound: 0
     adjustUV: 1
     collider: 0
-    boxcollider: 0
+    boxcollider: 1
     tangents: 0
-    sourceObject: {fileID: 9020576616164838128, guid: 54b1b8d9a16f3894c9f0defebf18b88a,
+    sourceObject: {fileID: 2014858220694421683, guid: 9cb83c92e4f0f5f4da0e28b8c83499de,
       type: 3}
-    flipMesh: 0
-    startObject: {fileID: 9020576616164838128, guid: 54b1b8d9a16f3894c9f0defebf18b88a,
-      type: 3}
-    endObject: {fileID: 5890493293771684417, guid: 148d75fdff3bd1a4abf7989490b52c1c,
-      type: 3}
-    connectionObject: {fileID: 838877817560887565, guid: 84f5253327f9be7409847c8db8068175,
-      type: 3}
+    flipMesh: 1
+    startObject: {fileID: 0}
+    endObject: {fileID: 0}
+    connectionObject: {fileID: 0}
     material: {fileID: 0}
     meshObjects: []
-    boxSize: {x: 0.2712533, y: 0.16851854}
-    boxOffset: {x: 0.009631455, y: 0.1426806}
+    boxSize: {x: 0.13236877, y: 1.2203811}
+    boxOffset: {x: 0.0084999995, y: 0.060999997}
     includeStartSegment: 0
     startSegmentOffset: 0
     includeStartEdgeTris: 0
@@ -1065,16 +1062,249 @@ MonoBehaviour:
     endOffset: 0
     defaultStartOffset: 0
     defaultEndOffset: 0
-    totalZDistance: 0.24829891
-    middleZDistance: 0.24829891
+    totalZDistance: 0.16279136
+    middleZDistance: 2
     startZDistance: -2000
     endZDistance: -2000
     minStartZ: 1000
     maxStartZ: -1000
     minMiddleZ: 0
-    maxMiddleZ: 0.24829891
+    maxMiddleZ: 0.16279136
     minEndZ: 1000
     maxEndZ: -1000
+    smoothStart: 0
+    smoothMiddle: 0
+    smoothEnd: 0
+    targetObject: {fileID: 0}
+    bridgeObject: 0
+    tunnelObject: 0
+    snapToTerrain: 0
+    layer: 6
+    deformationObject: 0
+    isStatic: 0
+    castShadows: 1
+    scaleToRoad: 1
+    splitInBatches: 0
+    randomRotation: {x: 0, y: 0, z: 0}
+    randomMinRotation: 0
+    randomMaxRotation: 0
+    minRandomRotationDistance: 0
+    maxRandomRotationDistance: 0
+    randomXPosition: 0
+    randomMinXPosition: 0
+    randomMaxXPosition: 0
+    minRandomXPositionDistance: 0
+    maxRandomXPositionDistance: 0
+    boxColliderScale: {x: 1, y: 3, z: 1}
+    randomYPosition: 0
+    randomMinYPosition: 0
+    randomMaxYPosition: 0
+    minRandomYPositionDistance: 0
+    maxRandomYPositionDistance: 0
+    bridgeHeight: 5
+    markerSplineController: 2
+    bridgeLength: 20
+    deformationOffset: 0
+    markerIndent: 0
+    markerSurrounding: 0
+    indentController: 0
+    excludeTerrainSplats: 0
+    scale: {x: 1, y: 1, z: 1}
+    indentExt: 0
+    category: 0
+    densityMap: {fileID: 0}
+    densitySize: 50
+    densitySize2: 50
+    densityStrength: 0.5
+    densityStrength2: 0.5
+    terrainNormal: 0
+    terrainNormal2: 1
+    childObjects: []
+    autoGenerate: 1
+    heightThreshold: 0.2
+    autogenerateStartOffset: 0
+    autogenerateEndOffset: 0
+    snapIndents: 0
+    snapIndentWidth: 1
+    cutHoles: 1
+    innerStartOffset: 0
+    innerEndOffset: 0
+    ignoredForRetainingWalls: 0
+    heightMaxThreshold: 100
+    heightMaxStartThreshold: 0
+    heightMaxEndThreshold: 1
+    xThresholdDistance: 5
+    angleThreshold: 20
+    connectionRatio: 1
+    retainingWall: 0
+    surroundingControl: 0
+    indentControl: 0
+    nodeListMirrored: []
+    uvsMirrored: []
+    snapWeightListMirrored: []
+    colorListMirrored: []
+    hasVertexColors: 0
+    deformationOffsetForward: 0
+    deformationOffsetSideways: 0
+    connectionObjectRotation: 0
+    subMesh: 1
+    acceptBarriers: 1
+    activeOnBridges: 1
+    dualSided: 1
+    mirrorType: 1
+    snapVertexColors: 0
+    minSnapRange: 0
+    maxSnapRange: 0
+    clampUV4: 0
+    geoStartOffset: 0
+    geoEndOffset: 0
+    strictRules: 0
+    startOverlapOffset: 0
+    endOverlapOffset: 0
+    lodLevels: 0
+    hardEdge: 
+    hardEdgePadding: 0
+    startEndCaps: 0
+    endCapUVs: []
+    startCapUVs: []
+    startCapTris: 
+    startCapTrisMirrored: 
+    startCapUVOffset: {x: 0.5, y: 0.5}
+    endCapUVOffset: {x: 0.5, y: 0.5}
+    startCapUVScale: 1
+    endCapUVScale: 1
+    startCapUVRotation: 0
+    endCapUVRotation: 0
+    namedChilds: 0
+    startSection: 0
+    endSection: 0
+    stepDown: 0
+    stepUp: 0
+    stepDistance: 0
+    startDirZOffset: 1000
+    endDirZOffset: 0
+    buildOtherSideObject1: 0
+    defaultOtherSoId1: 0
+    buildOtherSideObject2: 0
+    defaultOtherSoId2: 0
+    buildOtherSideObjects: []
+    averageDistance: 0
+    randomUVx: 0
+    isUsedAsChild: 0
+    relativeToCenter: 0
+    shapeWeightsRelativeX: 0
+    easeInOutDistanceTerrainSnap: 0
+    startBoundsZ: 0
+    endBoundsZ: 0
+    buildOtherSideObjectChilds: []
+    minSectionLength: 50
+    maxSlope: 45
+    tag: Untagged
+    selectedTag: 0
+    doubleSidedBendFlag: 0
+    recalculateNormals: 0
+    x1: -0.014375816
+    x2: 0.11799296
+    xf1: 0
+    xf2: 0
+    xf1Total: 0
+    xf2Total: 0
+    y1: 1.2699999
+  - version: 2.0.0
+    name: LootBoxes
+    id: 1674646013.9533343
+    timestamp: 1674646429.5700288
+    objectType: 0
+    gameobjectGUID: 
+    textureGUID: 
+    m_distance: 50
+    uvx: 0.1
+    uvy: 1
+    position: 0
+    splinePosition: 0
+    selectedRotation: 0
+    randomYAxisMinRotation: 0
+    randomYAxisMaxRotation: 0
+    nodeList: []
+    uvs: []
+    uvDistances: []
+    clampUVs: 1
+    clampUVY: 1
+    clampUVYValue: 1
+    terrainUVs: 0
+    reverseUVs: 0
+    totalDistance: 0
+    snapList: 
+    snapWeightList: []
+    colorList: []
+    gameobjectStartGUID: 
+    gameobjectEndGUID: 
+    align: 0
+    alignPoint: 0
+    weld: 1
+    combine: 0
+    combineInstantiated: 1
+    markerActive: 1
+    uvType: 0
+    uv: 1
+    randomObjects: 0
+    forwardStartOffset: 0
+    sidewaysOffset: 0
+    density: 0
+    goPath: 
+    startPath: 
+    endPath: 
+    texturePath: 
+    terrainTree: 0
+    minScale: 1
+    maxScale: 1
+    childOrderActive: 1
+    childOrder: 0
+    meshBoundsAlignment: 0
+    xPosition: 0
+    xPosition2: 0
+    relativeTo: 0
+    yPosition: 0
+    yRotation: 0
+    oldSidwaysDistance: 0
+    sidewaysDistanceUpdate: 0
+    uvYRound: 0
+    adjustUV: 1
+    collider: 0
+    boxcollider: 0
+    tangents: 0
+    sourceObject: {fileID: 8467908726143135526, guid: 0b0c82b0151b6b94899991df6390b9a9,
+      type: 3}
+    flipMesh: 0
+    startObject: {fileID: 0}
+    endObject: {fileID: 0}
+    connectionObject: {fileID: 0}
+    material: {fileID: 0}
+    meshObjects: []
+    boxSize: {x: 0, y: 0}
+    boxOffset: {x: 0, y: 0}
+    includeStartSegment: 0
+    startSegmentOffset: 0
+    includeStartEdgeTris: 0
+    includeEndSegment: 0
+    endSegmentOffset: 0
+    includeEndEdgeTris: 0
+    adjustToRoadWidth: 0
+    xOffset: 0
+    startOffset: 0
+    endOffset: 0
+    defaultStartOffset: 0
+    defaultEndOffset: 0
+    totalZDistance: 0
+    middleZDistance: 50
+    startZDistance: 0
+    endZDistance: 0
+    minStartZ: 10000
+    maxStartZ: -10000
+    minMiddleZ: 10000
+    maxMiddleZ: -10000
+    minEndZ: 10000
+    maxEndZ: -10000
     smoothStart: 0
     smoothMiddle: 0
     smoothEnd: 0
@@ -1114,7 +1344,7 @@ MonoBehaviour:
     excludeTerrainSplats: 0
     scale: {x: 1, y: 1, z: 1}
     indentExt: 0
-    category: 0
+    category: 6
     densityMap: {fileID: 0}
     densitySize: 50
     densitySize2: 50
@@ -1123,7 +1353,7 @@ MonoBehaviour:
     terrainNormal: 0
     terrainNormal2: 1
     childObjects: []
-    autoGenerate: 1
+    autoGenerate: 0
     heightThreshold: 10
     autogenerateStartOffset: 0
     autogenerateEndOffset: 0
@@ -1153,7 +1383,7 @@ MonoBehaviour:
     subMesh: 0
     acceptBarriers: 1
     activeOnBridges: 1
-    dualSided: 1
+    dualSided: 0
     mirrorType: 0
     snapVertexColors: 0
     minSnapRange: 0
@@ -1184,7 +1414,7 @@ MonoBehaviour:
     stepDown: 0
     stepUp: 0
     stepDistance: 0
-    startDirZOffset: 1000
+    startDirZOffset: 0
     endDirZOffset: 0
     buildOtherSideObject1: 0
     defaultOtherSoId1: 0
@@ -1212,14 +1442,14 @@ MonoBehaviour:
     xf2: 0
     xf1Total: 0
     xf2Total: 0
-    y1: 0.05
+    y1: 0
   ints: 
   roadPresets:
   - roadTypeName: ForestRoad
     id: 1
-    timestamp: 1674559211.9151428
+    timestamp: 1674667159.169591
     roadWidth: 9
-    faceDistance: 7
+    faceDistance: 2.07
     angleTreshold: 45
     uvTiling: 1
     uv4Type: 0
@@ -1300,10 +1530,10 @@ MonoBehaviour:
       active: 0
     - id: 1674488577.6198108
       active: 1
+    - id: 1674646013.9533343
+      active: 1
     - id: 1674497149.5651634
       active: 1
-    - id: 1674492789.5935428
-      active: 0
     layer: 6
     isStatic: 0
     tag: Untagged
