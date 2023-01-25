@@ -47,6 +47,7 @@ namespace UnityStandardAssets.Vehicles.Car
         private Rigidbody m_Rigidbody;
         private Transform oldTarget;
         private Transform abilityTarget;
+        private Transform accelTarget;
         private bool randomMove = false;
 
         [SerializeField] private float avoidNearAngle = 60f;
@@ -73,7 +74,7 @@ namespace UnityStandardAssets.Vehicles.Car
             maxSpeed = carController.MaxSpeed;
             m_RandomPerlin = Random.value * 10;
             m_Rigidbody = GetComponent<Rigidbody>();
-        
+
         }
 
         private void Start()
@@ -269,17 +270,14 @@ namespace UnityStandardAssets.Vehicles.Car
                         abilitiesPoints.RemoveAt(0);
                         return;
                     }
+
                     float distAbility = Vector3.Distance(abilitiesPoints[0].position, transform.position);
                     float distTarget = Vector3.Distance(oldTarget.position, transform.position);
 
                     if (distAbility < distTarget) //если способность ближе, то устанавливаем ее как текущую цель
-                    {
                         SetAbilityTarget(abilitiesPoints[0]);
-                    }
                     else if (m_Target == null)
-                    {
                         ResetAbilityTarget();
-                    }
                 }
                 else if (oldTarget != m_Target)
                 {
@@ -382,6 +380,10 @@ namespace UnityStandardAssets.Vehicles.Car
         public void DetectAbility(Transform ability)
         {
             abilitiesPoints.Add(ability);
+        }
+        public void DetectAcceleration(Transform acceleration)
+        {
+            accelTarget = acceleration;
         }
 
         private void SetAbilityTarget(Transform abilityTarget)
