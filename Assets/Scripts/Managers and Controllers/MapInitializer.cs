@@ -23,6 +23,8 @@ public class MapInitializer : MonoBehaviour
         CarColorSO carColor = SOLoader.LoadCollectibleByName<CarColorSO>(YandexGame.savesData.playerWrapper.currentCarColorItem);
         CarModelSO carModel = SOLoader.LoadCollectibleByName<CarModelSO>(YandexGame.savesData.playerWrapper.currentCarModelItem);
 
+
+
         Instantiate(character.Prefab, characterModel.transform.parent);
         Destroy(characterModel.gameObject);
 
