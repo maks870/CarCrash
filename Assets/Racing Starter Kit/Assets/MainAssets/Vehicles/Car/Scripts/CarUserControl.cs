@@ -7,6 +7,7 @@ namespace UnityStandardAssets.Vehicles.Car
     {
         [SerializeField] private InputManager inputManager;
         [SerializeField] private UIPlayerManager uiManager;
+        [SerializeField] private bool simpleSteerHelper = false;
         [SerializeField] private bool hardSteerHelper = false;
         [SerializeField] [Range(0, 1)] private float taxiingHelper;
         [SerializeField] private float m_SteerSensitivity = 0.05f;
@@ -51,7 +52,9 @@ namespace UnityStandardAssets.Vehicles.Car
             }
             else
             {
-                SteerChanger();
+                if (simpleSteerHelper)
+                    SteerChanger();
+
                 ControlMove(input.HorizontalAxis, input.VerticalAxis, input.VerticalAxis, input.HandBrake); // 2é âàğèàíò ÏÎÌÎØÍÈÊÀ ÏÎÂÎĞÎÒÀ
             }
         }

@@ -1899,10 +1899,10 @@ MonoBehaviour:
   - {fileID: 4650270483147351888}
   - {fileID: 4650270482638940143}
   m_CentreOfMassOffset: {x: 0, y: 0, z: 0}
-  m_MaximumSteerAngle: 20
+  m_MaximumSteerAngle: 15
   m_SteerHelper: 0.3
   m_TractionControl: 0
-  m_FullTorqueOverAllWheels: 365
+  m_FullTorqueOverAllWheels: 300
   m_ReverseTorque: 100
   m_MaxHandbrakeTorque: 0
   m_Downforce: 100
@@ -1927,8 +1927,9 @@ MonoBehaviour:
   carController: {fileID: 4650270483354694014}
   inputManager: {fileID: 0}
   uiManager: {fileID: 0}
+  simpleSteerHelper: 1
   hardSteerHelper: 0
-  taxiingHelper: 0
+  taxiingHelper: 0.25
   m_SteerSensitivity: 0.05
   targetMarkHeight: 1
   normalSteerAngle: 15
