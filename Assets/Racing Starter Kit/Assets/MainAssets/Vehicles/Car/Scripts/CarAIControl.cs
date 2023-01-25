@@ -263,7 +263,7 @@ namespace UnityStandardAssets.Vehicles.Car
         {
             if (abilityTarget == null || !abilityTarget.gameObject.activeInHierarchy)
             {
-                if (abilitiesPoints.Count != 0 || accelTarget != null)
+                if (abilitiesPoints.Count != 0)
                 {
                     if (abilitiesPoints[0] == null)
                     {
