@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Vehicles.Car;
 //this script is attached to all the checkpoints in the race and measures the car position to the checkpoint
 public class Checkpoint : MonoBehaviour
 {
@@ -12,6 +13,14 @@ public class Checkpoint : MonoBehaviour
     public int CurrentChkPoint { get => currentChkPoint; set => currentChkPoint = value; }
     public int NextChkPoint { get => nextChkPoint; set => nextChkPoint = value; }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (currentChkPoint == 1 && other.GetComponentInChildren<CarUserControl>())
+        {
+            if (!LapTimeManager.isTimerActive)
+                LapTimeManager.isTimerActive = true;
+        }
+    }
     private void Start()
     {
         nDistChk.Clear();

@@ -10,6 +10,9 @@ public class RaceFinish : MonoBehaviour
     [SerializeField] private GameObject PosDisplay, PauseButton, Panel1, Panel2;
     [SerializeField] private GameObject FinishPanelWin, FinishPanelLose;
     [SerializeField] private GameObject finishPanels;
+    [SerializeField] private GameObject recordPanels;
+    [SerializeField] private Text currentTime;
+    [SerializeField] private GameObject newRecordObj;
     [SerializeField] private Image cup;
     [SerializeField] private Sprite[] spritesCup;
     [SerializeField] private Text posText;
@@ -20,7 +23,7 @@ public class RaceFinish : MonoBehaviour
         int currentMapIndex = YandexGame.savesData.playerWrapper.GetMapInfoIndex(YandexGame.savesData.playerWrapper.lastMap);
         MapInfo currentMap = YandexGame.savesData.playerWrapper.maps[currentMapIndex];
 
-        int currentTimeInSeconds =   LapTimeManager.MinuteCount * 60 + LapTimeManager.SecondCount;
+        int currentTimeInSeconds = LapTimeManager.MinuteCount * 60 + LapTimeManager.SecondCount;
         int currentTimeInMiliSeconds = (int)(LapTimeManager.MilliCount * 10);
 
         if (currentMap.fastestTime == 0 || currentMap.fastestTime > currentTimeInSeconds)
@@ -40,7 +43,20 @@ public class RaceFinish : MonoBehaviour
 
     private void ShowRecords()
     {
-        //записываем рекорды если есть
+        int currentMapIndex = YandexGame.savesData.playerWrapper.GetMapInfoIndex(YandexGame.savesData.playerWrapper.lastMap);
+        MapInfo currentMap = YandexGame.savesData.playerWrapper.maps[currentMapIndex];
+
+        if (currentMap.newRecordTime == true)
+            newRecordObj.SetActive(true);
+
+        string minNull = LapTimeManager.MinuteCount < 10 ? "" : "0";
+        string secNull = LapTimeManager.SecondCount < 10 ? "" : "0";
+        string miliSecNull = LapTimeManager.MilliCount < 10 ? "" : "0";
+
+        currentTime.text = $"{minNull}{LapTimeManager.MinuteCount}.{secNull}{LapTimeManager.SecondCount}:{miliSecNull}{(int)(LapTimeManager.MilliCount * 10)}";
+
+        recordPanels.SetActive(true);
+        newRecordObj.SetActive(currentMap.newRecordTime);
     }
 
     public void Finish()
@@ -49,6 +65,7 @@ public class RaceFinish : MonoBehaviour
             return;
 
         finish = true;
+
         WriteRecords();
         ShowRecords();
 

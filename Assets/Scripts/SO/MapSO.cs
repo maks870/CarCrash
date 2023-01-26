@@ -22,13 +22,11 @@ public class MapSO : ScriptableObject
     [SerializeField] private CarModelSO car;
     [SerializeField] private MapSO nextMap;
     [SerializeField] private Sprite sprite;
-    [SerializeField] private SceneAsset scene;
     [SerializeField] private MapAward[] awards;
 
     public string Name => name;
     public CarModelSO Car => car;
     public MapSO NextMap => nextMap;
     public Sprite Sprite => sprite;
-    public SceneAsset Scene => scene;
     public MapAward[] Awards => awards;
 }

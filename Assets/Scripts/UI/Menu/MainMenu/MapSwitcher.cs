@@ -51,18 +51,9 @@ public class MapSwitcher : MonoBehaviour
 
             if (fastestTime != 0)
             {
-                string minNull = "";
-                string secNull = "";
-                string miliSecNull = "";
-
-                if (fastestTimeMin < 10)
-                    minNull = "0";
-
-                if (fastestTimeSec < 10)
-                    secNull = "0";
-
-                if (fastestTimeMiliSec < 10)
-                    miliSecNull = "0";
+                string minNull = fastestTimeMin < 10 ? "" : "0";
+                string secNull = fastestTimeSec < 10 ? "" : "0";
+                string miliSecNull = fastestTimeMiliSec < 10 ? "" : "0";
 
                 buttons[i].FastestTime.text = $"{minNull}{fastestTimeMin}:{secNull}{fastestTimeSec}.{miliSecNull}{fastestTimeMiliSec}";
                 buttons[i].BestTimeObj.gameObject.SetActive(true);
@@ -145,6 +136,6 @@ public class MapSwitcher : MonoBehaviour
     {
         YandexGame.savesData.playerWrapper.lastMap = map.Name;
         YandexGame.SaveProgress();
-        SceneTransition.SwitchScene(map.Scene.name);
+        SceneTransition.SwitchScene(map.name);
     }
 }
