@@ -5,12 +5,25 @@ using UnityEngine;
 public class ShieldProjectile : MonoBehaviour
 {
     private Animator animator;
-    private bool isProtected;
+    private int isProtected = 0;
     private MeshRenderer meshRenderer;
     private float lifeTime;
 
     public float Lifetime { set => lifeTime = value; }
-    public bool IsProtected => isProtected;
+    public bool IsProtected
+    {
+        get
+        {
+            return isProtected > 0;
+        }
+        set
+        {
+            if (IsProtected)
+                isProtected++;
+            else if (isProtected > 0)
+                isProtected--;
+        }
+    }
 
     private void Awake()
     {
@@ -28,22 +41,22 @@ public class ShieldProjectile : MonoBehaviour
     }
     private void ShieldOff()
     {
-        meshRenderer.enabled = false;
-        isProtected = false;
-        animator.SetBool(0, false);
+        IsProtected = false;
+        if (isProtected == 0)
+        {
+            meshRenderer.enabled = false;
+            animator.SetBool(0, false);
+        }
     }
 
     private void ShieldOn()
     {
         meshRenderer.enabled = true;
-        isProtected = true;
+        IsProtected = true;
     }
 
     IEnumerator ShieldTimer(float time)
     {
-        if (isProtected)
-            ShieldOff();
-
         ShieldOn();
         yield return new WaitForSeconds(time);
         ShieldOff();
