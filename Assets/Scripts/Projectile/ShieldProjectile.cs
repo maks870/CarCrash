@@ -18,7 +18,7 @@ public class ShieldProjectile : MonoBehaviour
         }
         set
         {
-            if (IsProtected)
+            if (value)
                 isProtected++;
             else if (isProtected > 0)
                 isProtected--;
