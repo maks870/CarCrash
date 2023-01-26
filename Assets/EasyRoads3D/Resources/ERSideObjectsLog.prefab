@@ -1213,7 +1213,7 @@ MonoBehaviour:
   - version: 2.0.0
     name: LootBoxes
     id: 1674646013.9533343
-    timestamp: 1674646429.5700288
+    timestamp: 1674726264.2774208
     objectType: 0
     gameobjectGUID: 
     textureGUID: 
@@ -1250,7 +1250,7 @@ MonoBehaviour:
     randomObjects: 0
     forwardStartOffset: 0
     sidewaysOffset: 0
-    density: 0
+    density: 10
     goPath: 
     startPath: 
     endPath: 
@@ -1293,7 +1293,7 @@ MonoBehaviour:
     xOffset: 0
     startOffset: 0
     endOffset: 0
-    defaultStartOffset: 0
+    defaultStartOffset: 10
     defaultEndOffset: 0
     totalZDistance: 0
     middleZDistance: 50
@@ -1447,7 +1447,7 @@ MonoBehaviour:
   roadPresets:
   - roadTypeName: ForestRoad
     id: 1
-    timestamp: 1674723348.4979408
+    timestamp: 1674726124.153628
     roadWidth: 9
     faceDistance: 2.07
     angleTreshold: 45
@@ -1525,15 +1525,17 @@ MonoBehaviour:
     soDataExt: []
     soDataLog:
     - id: 1674496660.8983088
-      active: 1
+      active: 0
     - id: 1674498000.8008091
       active: 0
     - id: 1674659048.2718844
       active: 0
     - id: 1674488577.6198108
-      active: 1
+      active: 0
     - id: 1674646013.9533343
-      active: 1
+      active: 0
+    - id: 1674497149.5651634
+      active: 0
     layer: 6
     isStatic: 0
     tag: Untagged
@@ -1588,8 +1590,8 @@ MonoBehaviour:
     vertexColor: {r: 0, g: 0, b: 0, a: 0}
   - roadTypeName: Road Type 2
     id: 1674483413.3253927
-    timestamp: 1674493826.8647327
-    roadWidth: 6
+    timestamp: 1674727896.2826936
+    roadWidth: 8
     faceDistance: 2
     angleTreshold: 45
     uvTiling: 1
@@ -1627,8 +1629,8 @@ MonoBehaviour:
     maxSpeed: 55
     speedLimit: 50
     roadShape:
-    - {x: -3, y: 0}
-    - {x: 3, y: 0}
+    - {x: 4, y: 0}
+    - {x: -4, y: 0}
     roadShapeExt: []
     roadShapeExt2: []
     doConnectionTri: 
@@ -1653,7 +1655,8 @@ MonoBehaviour:
     crosswalksIntersections: 0
     crosswalkPrefab: {fileID: 0}
     crosswalkType: 1
-    roadMaterial: {fileID: 2100000, guid: af6d26adc4bf82e4ab3b7d1d5b8343cd, type: 2}
+    roadMaterial: {fileID: -7015027346690320248, guid: d0aef7b18e5d1514489b02177a9af450,
+      type: 3}
     roadMaterials: []
     roadPhysicsMaterial: {fileID: 0}
     roadPhysicsMaterials: []
@@ -1664,8 +1667,18 @@ MonoBehaviour:
     soData: []
     soDataExt: []
     soDataLog:
+    - id: 1674496660.8983088
+      active: 0
+    - id: 1674498000.8008091
+      active: 0
+    - id: 1674659048.2718844
+      active: 0
     - id: 1674488577.6198108
-      active: 1
+      active: 0
+    - id: 1674646013.9533343
+      active: 0
+    - id: 1674497149.5651634
+      active: 0
     layer: 0
     isStatic: 1
     tag: Untagged
