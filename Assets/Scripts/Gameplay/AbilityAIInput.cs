@@ -109,7 +109,7 @@ public class AbilityAIInput : MonoBehaviour
         }
 
         Vector3 targetDist = target.transform.position - transform.position;
-        Vector3 forwardDist = transform.forward /** missleDesicionDistance*/;
+        Vector3 forwardDist = transform.forward;
 
         float currentForwardDistance = Vector3.Dot(forwardDist, targetDist);
 
@@ -132,12 +132,7 @@ public class AbilityAIInput : MonoBehaviour
         bool decision = FinalDecision((int)abilityIndex);
 
         if (decision)
-        {
-            Debug.Log("currentForwardDistance " + currentForwardDistance);
-            Debug.Log("missleDesicionDistance " + missleDesicionDistance);
-            Debug.Log("targetDist " + targetDist.magnitude);
             currentTarget = target;
-        }
     }
 
     private void MineDesicion()//Логика для мины
