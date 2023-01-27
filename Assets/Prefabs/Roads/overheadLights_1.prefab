@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 4733325224825357302}
   - component: {fileID: 8511800701537717331}
   - component: {fileID: 5907327336700934297}
+  - component: {fileID: 543450651819442744}
   m_Layer: 0
   m_Name: overheadLights_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 126
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4733325224825357302
 Transform:
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 5403183319828191564}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -78.08, y: 0.06775379, z: 28.44}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.08, y: 1.008, z: 1.008}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -85,3 +86,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &543450651819442744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5403183319828191564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a95bb8af58b6ac8488474509e61c8ea6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  matIndexInRenderer: 2
+  redMat: {fileID: 2100000, guid: d9d481556c239f047b097c980001497e, type: 2}
+  yellowMat: {fileID: 2100000, guid: af67e846df2d57d41abb103cc773a422, type: 2}
+  greenMat: {fileID: 2100000, guid: ecd313b9b4c404c489e83c1cf0210d82, type: 2}
