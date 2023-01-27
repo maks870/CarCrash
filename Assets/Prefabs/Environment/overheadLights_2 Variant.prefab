@@ -30,7 +30,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 49b418fdd364e554eb914e427f898acd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -91.38825
+      value: -65.17
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 49b418fdd364e554eb914e427f898acd,
         type: 3}
@@ -40,7 +40,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 49b418fdd364e554eb914e427f898acd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -85.87749
+      value: -85.88
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 49b418fdd364e554eb914e427f898acd,
         type: 3}
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a95bb8af58b6ac8488474509e61c8ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  matIndexInRenderer: 4
+  matIndexInRenderer: 3
   redMat: {fileID: 2100000, guid: d9d481556c239f047b097c980001497e, type: 2}
   yellowMat: {fileID: 2100000, guid: af67e846df2d57d41abb103cc773a422, type: 2}
   greenMat: {fileID: 2100000, guid: ecd313b9b4c404c489e83c1cf0210d82, type: 2}
