@@ -2595,7 +2595,7 @@ MonoBehaviour:
     vertexColor: {r: 1, g: 1, b: 1, a: 1}
   - roadTypeName: SnowRoad
     id: 1674808589.9511838
-    timestamp: 1674828508.352621
+    timestamp: 1674824882.5578077
     roadWidth: 9
     faceDistance: 2.07
     angleTreshold: 45
