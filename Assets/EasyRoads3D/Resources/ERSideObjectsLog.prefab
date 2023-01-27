@@ -2595,7 +2595,7 @@ MonoBehaviour:
     vertexColor: {r: 1, g: 1, b: 1, a: 1}
   - roadTypeName: SnowRoad
     id: 1674808589.9511838
-    timestamp: 1674824882.5578077
+    timestamp: 1674828508.352621
     roadWidth: 9
     faceDistance: 2.07
     angleTreshold: 45
@@ -2672,22 +2672,22 @@ MonoBehaviour:
     soData: []
     soDataExt: []
     soDataLog:
-    - id: 1674488577.6198108
-      active: 0
     - id: 1674496660.8983088
-      active: 1
-    - id: 1674497149.5651634
-      active: 1
-    - id: 1674498000.8008091
-      active: 0
-    - id: 1674659048.2718844
-      active: 0
-    - id: 1674646013.9533343
       active: 1
     - id: 1674808624.6666818
       active: 0
+    - id: 1674498000.8008091
+      active: 0
+    - id: 1674488577.6198108
+      active: 0
+    - id: 1674646013.9533343
+      active: 1
+    - id: 1674497149.5651634
+      active: 1
     - id: 1674808629.7271607
       active: 1
+    - id: 1674659048.2718844
+      active: 0
     layer: 6
     isStatic: 0
     tag: Untagged
