@@ -61,16 +61,19 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private Vector3 avoidingPos;
         private GameObject obstacleTarget;
+        private AbilityAIInput abilityAIInput;
         private bool isAvoidObstacle;
 
 
         [SerializeField] private List<Transform> abilitiesPoints = new List<Transform>();
 
+        public bool GoToAbility => m_Target == abilityTarget ? true : false;
 
         private void Awake()
         {
             carController = GetComponent<CarController>();
-
+            abilityAIInput = GetComponent<AbilityAIInput>();
+            abilityAIInput.CarAIControl = this;
             maxSpeed = carController.MaxSpeed;
             m_RandomPerlin = Random.value * 10;
             m_Rigidbody = GetComponent<Rigidbody>();

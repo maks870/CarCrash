@@ -1900,7 +1900,7 @@ MonoBehaviour:
   - {fileID: 4650270482638940143}
   m_CentreOfMassOffset: {x: 0, y: 0, z: 0}
   m_MaximumSteerAngle: 15
-  m_SteerHelper: 0.3
+  m_SteerHelper: 0.35
   m_TractionControl: 0
   m_FullTorqueOverAllWheels: 300
   m_ReverseTorque: 100
@@ -1929,7 +1929,7 @@ MonoBehaviour:
   uiManager: {fileID: 0}
   simpleSteerHelper: 1
   hardSteerHelper: 0
-  taxiingHelper: 0.25
+  taxiingHelper: 0.5
   m_SteerSensitivity: 0.05
   targetMarkHeight: 1
   normalSteerAngle: 15

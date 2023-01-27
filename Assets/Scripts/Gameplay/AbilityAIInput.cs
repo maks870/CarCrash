@@ -1,23 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Vehicles.Car;
 
 public class AbilityAIInput : MonoBehaviour
 {
     const float maxAbilityUseTimer = 3;
     const float minAbilityUseTimer = 1;
 
+    const float maxMissleDistance = 7;
+    const float minMissleDistance = 4;
+
+
+
 
     [SerializeField] [Range(0, 100)] private int complexity;
     [SerializeField] private AbilityController abilityController;
 
     private float abilityUseTimer;
-    //private List<bool> abilityOnCooldown;
-    private List<AbilityType> abilityUseType;
-    private List<YieldInstruction> abilityCorutine = new List<YieldInstruction>();
+    private float missleDesicionDistance;
     private GameObject currentTarget;
+    private CarAIControl carAIControl;
+    private List<AbilityType> abilityUseType;
+    private List<YieldInstruction> abilityCorutines = new List<YieldInstruction>();
 
-
+    public CarAIControl CarAIControl { set => carAIControl = value; }
 
     public delegate void AbilityUseDecision(int numberAbility);
     public event AbilityUseDecision UseDecisionEvent;
@@ -25,17 +32,17 @@ public class AbilityAIInput : MonoBehaviour
     private void Start()
     {
         abilityController.RefreshAbilityEvent += SetAbilities;
-        abilityUseTimer = Mathf.Lerp(3, 1, complexity);
+        abilityUseTimer = Mathf.Lerp(3, 1, (complexity / 100f));
+        missleDesicionDistance = Mathf.Lerp(8, 5, (complexity / 100f));
+        Debug.Log("Ability use timer = " + abilityUseTimer);
+        Debug.Log("millseDesicionDistance = " + missleDesicionDistance);
     }
 
     private void Update()
     {
         if (abilityController.Abilities.Count > 0)
         {
-            if (abilityController.IsMissleWarning)
-                ShieldDesicion();
-
-            if (abilityController.IsMineWarning)
+            if (abilityController.IsMineWarning || carAIControl.GoToAbility || abilityController.IsMissleWarning)
                 ShieldDesicion();
 
             MineDesicion();
@@ -51,7 +58,7 @@ public class AbilityAIInput : MonoBehaviour
 
         for (int i = 0; i < abilities.Count; i++)
         {
-            bool abilityCooldown = abilityCorutine[i] != null;
+            bool abilityCooldown = abilityCorutines[i] != null;
             bool cooldown—ondition = isConsiderCooldown ? !abilityCooldown : true;
 
             if (abilities[i].Type == abilityType && cooldown—ondition)
@@ -75,20 +82,20 @@ public class AbilityAIInput : MonoBehaviour
     {
         if (DecisionPossibility())
         {
-            if (abilityCorutine[abilityNumber] != null)
+            if (abilityCorutines[abilityNumber] != null)
             {
-                Coroutine coroutine = (Coroutine)abilityCorutine[abilityNumber];
+                Coroutine coroutine = (Coroutine)abilityCorutines[abilityNumber];
                 StopCoroutine(coroutine);
             }
 
-            abilityCorutine.RemoveAt(abilityNumber);
+            abilityCorutines.RemoveAt(abilityNumber);
             abilityController.UseAbility(abilityNumber);
             return true;
         }
         else
         {
             Coroutine coroutine = StartCoroutine(AbilityUseTimer(abilityNumber));
-            abilityCorutine[abilityNumber] = coroutine;
+            abilityCorutines[abilityNumber] = coroutine;
             return false;
         }
     }
@@ -100,6 +107,14 @@ public class AbilityAIInput : MonoBehaviour
             currentTarget = null;
             return;
         }
+
+        Vector3 targetDist = target.transform.position - transform.position;
+        Vector3 forwardDist = transform.forward /** missleDesicionDistance*/;
+
+        float currentForwardDistance = Vector3.Dot(forwardDist, targetDist);
+
+        if (currentForwardDistance < missleDesicionDistance)
+            return;
 
         int? abilityIndex = FindAvailableAbilityIndex(AbilityType.Missle, false);
 
@@ -117,8 +132,12 @@ public class AbilityAIInput : MonoBehaviour
         bool decision = FinalDecision((int)abilityIndex);
 
         if (decision)
+        {
+            Debug.Log("currentForwardDistance " + currentForwardDistance);
+            Debug.Log("missleDesicionDistance " + missleDesicionDistance);
+            Debug.Log("targetDist " + targetDist.magnitude);
             currentTarget = target;
-
+        }
     }
 
     private void MineDesicion()//ÀÓ„ËÍ‡ ‰Îˇ ÏËÌ˚
@@ -144,9 +163,9 @@ public class AbilityAIInput : MonoBehaviour
 
     public void SetAbilities(List<AbilitySO> abilities)//ÕÓ‚˚È
     {
-        for (int i = abilityCorutine.Count; i < abilities.Count; i++)
+        for (int i = abilityCorutines.Count; i < abilities.Count; i++)
         {
-            abilityCorutine.Add(null);
+            abilityCorutines.Add(null);
         }
     }
 
@@ -154,7 +173,7 @@ public class AbilityAIInput : MonoBehaviour
     {
         yield return new WaitForSeconds(abilityUseTimer);
 
-        if (abilityCorutine.Count > abilityNumber)
-            abilityCorutine[abilityNumber] = null;
+        if (abilityCorutines.Count > abilityNumber)
+            abilityCorutines[abilityNumber] = null;
     }
 }
