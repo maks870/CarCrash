@@ -16,6 +16,7 @@ public class SceneTransition : MonoBehaviour
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
+
     private void OnDisable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
