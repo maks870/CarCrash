@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tracks/Forest/12.unity
     guid: 84884edfa8cb0cc458be679588835c78
+  - enabled: 1
+    path: Assets/Scenes/Tracks/Forest/13.unity
+    guid: a00eb35d3f4a37448817292bf0676c93
   m_configObjects: {}
