@@ -26,8 +26,12 @@ public class SoundController : MonoBehaviour
         }
 
         buttonSound.onClick.AddListener(() => SoundChange(!on));
-        YandexGame.savesData.sound = on;
-        YandexGame.SaveProgress();
+
+        if (on != YandexGame.savesData.sound) 
+        {
+            YandexGame.savesData.sound = on;
+            YandexGame.SaveProgress();
+        }
     }
 
     public void SoundDistortion(bool on)

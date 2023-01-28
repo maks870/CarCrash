@@ -5,82 +5,103 @@ using UnityEngine;
 
 public class SOLoader
 {
-
-    public static List<T> LoadSOByType<T>()
+    public static T[] LoadAllSOByType<T>() where T : ScriptableObject
     {
-        string resourcesPath = Application.dataPath + "/Resources/ScriptableObjects";
-        DirectoryInfo dirInfo = new DirectoryInfo(resourcesPath);
-        List<T> scriptableObjects = new List<T>();
+        T[] scriptableObjects;
 
-        foreach (DirectoryInfo dir in dirInfo.GetDirectories())
-        {
-            T[] objects = Resources.LoadAll("ScriptableObjects/" + dir.Name, typeof(T)).Cast<T>().ToArray();
-            scriptableObjects.AddRange(objects);
-        }
+        scriptableObjects = (T[])Resources.LoadAll("ScriptableObjects", typeof(T));
 
         return scriptableObjects;
     }
 
-    public static MapSO LoadMapByName(string name)
+    public static T LoadSOByType<T>(string name) where T : ScriptableObject
     {
-        string resourcesPath = Application.dataPath + "/Resources/ScriptableObjects";
-        DirectoryInfo dirInfo = new DirectoryInfo(resourcesPath);
-        List<MapSO> sctriptableObjects = new List<MapSO>();
-        MapSO scriptableObj;
-
-        foreach (DirectoryInfo dir in dirInfo.GetDirectories())
+        foreach (T scriptableObject in LoadAllSOByType<T>())
         {
-            MapSO[] maps = Resources.LoadAll("ScriptableObjects/" + dir.Name, typeof(MapSO)).Cast<MapSO>().ToArray();
-            sctriptableObjects.AddRange(maps);
+            if (scriptableObject.name == name)
+                return scriptableObject;
         }
 
-        scriptableObj = sctriptableObjects[0];
-
-        foreach (MapSO maps in sctriptableObjects)
-        {
-            if (maps.Name == name)
-                scriptableObj = maps;
-        }
-
-        return scriptableObj;
+        return null;
     }
 
-    public static T LoadCollectibleByName<T>(string name) where T : CollectibleSO
-    {
-        string resourcesPath = Application.dataPath + "/Resources/ScriptableObjects";
-        DirectoryInfo dirInfo = new DirectoryInfo(resourcesPath);
-        List<T> sctriptableObjects = new List<T>();
-        T scriptableObj;
 
-        foreach (DirectoryInfo dir in dirInfo.GetDirectories())
-        {
-            T[] objects = Resources.LoadAll("ScriptableObjects/" + dir.Name, typeof(T)).Cast<T>().ToArray();
-            sctriptableObjects.AddRange(objects);
-        }
 
-        scriptableObj = sctriptableObjects[0];
+    //public static List<T> LoadSOByType<T>()
+    //{
+    //    string resourcesPath = Application.dataPath + "/Resources/ScriptableObjects";
+    //    DirectoryInfo dirInfo = new DirectoryInfo(resourcesPath);
+    //    List<T> scriptableObjects = new List<T>();
 
-        foreach (T obj in sctriptableObjects)
-        {
-            if (obj.Name == name)
-                scriptableObj = obj;
-        }
+    //    foreach (DirectoryInfo dir in dirInfo.GetDirectories())
+    //    {
+    //        T[] objects = Resources.LoadAll("ScriptableObjects/" + dir.Name, typeof(T)).Cast<T>().ToArray();
+    //        scriptableObjects.AddRange(objects);
+    //    }
 
-        return scriptableObj;
-    }
+    //    return scriptableObjects;
+    //}
 
-    public static List<CollectibleSO> LoadAllCollectibles()
-    {
-        string resourcesPath = Application.dataPath + "/Resources/ScriptableObjects";
-        DirectoryInfo dirInfo = new DirectoryInfo(resourcesPath);
-        List<CollectibleSO> collectible = new List<CollectibleSO>();
+    //public static MapSO LoadMapByName(string name)
+    //{
+    //    string resourcesPath = Application.dataPath + "/Resources/ScriptableObjects";
+    //    DirectoryInfo dirInfo = new DirectoryInfo(resourcesPath);
+    //    List<MapSO> sctriptableObjects = new List<MapSO>();
+    //    MapSO scriptableObj;
 
-        foreach (DirectoryInfo dir in dirInfo.GetDirectories())
-        {
-            CollectibleSO[] objects = Resources.LoadAll("ScriptableObjects/" + dir.Name, typeof(CollectibleSO)).Cast<CollectibleSO>().ToArray();
-            collectible.AddRange(objects);
-        }
+    //    foreach (DirectoryInfo dir in dirInfo.GetDirectories())
+    //    {
+    //        MapSO[] maps = Resources.LoadAll("ScriptableObjects/" + dir.Name, typeof(MapSO)).Cast<MapSO>().ToArray();
+    //        sctriptableObjects.AddRange(maps);
+    //    }
 
-        return collectible;
-    }
+    //    scriptableObj = sctriptableObjects[0];
+
+    //    foreach (MapSO maps in sctriptableObjects)
+    //    {
+    //        if (maps.Name == name)
+    //            scriptableObj = maps;
+    //    }
+
+    //    return scriptableObj;
+    //}
+
+    //public static T LoadCollectibleByName<T>(string name) where T : CollectibleSO
+    //{
+    //    string resourcesPath = Application.dataPath + "/Resources/ScriptableObjects";
+    //    DirectoryInfo dirInfo = new DirectoryInfo(resourcesPath);
+    //    List<T> sctriptableObjects = new List<T>();
+    //    T scriptableObj;
+
+    //    foreach (DirectoryInfo dir in dirInfo.GetDirectories())
+    //    {
+    //        T[] objects = Resources.LoadAll("ScriptableObjects/" + dir.Name, typeof(T)).Cast<T>().ToArray();
+    //        sctriptableObjects.AddRange(objects);
+    //    }
+
+    //    scriptableObj = sctriptableObjects[0];
+
+    //    foreach (T obj in sctriptableObjects)
+    //    {
+    //        if (obj.Name == name)
+    //            scriptableObj = obj;
+    //    }
+
+    //    return scriptableObj;
+    //}
+
+    //public static List<CollectibleSO> LoadAllCollectibles()
+    //{
+    //    string resourcesPath = Application.dataPath + "/Resources/ScriptableObjects";
+    //    DirectoryInfo dirInfo = new DirectoryInfo(resourcesPath);
+    //    List<CollectibleSO> collectible = new List<CollectibleSO>();
+
+    //    foreach (DirectoryInfo dir in dirInfo.GetDirectories())
+    //    {
+    //        CollectibleSO[] objects = Resources.LoadAll("ScriptableObjects/" + dir.Name, typeof(CollectibleSO)).Cast<CollectibleSO>().ToArray();
+    //        collectible.AddRange(objects);
+    //    }
+
+    //    return collectible;
+    //}
 }

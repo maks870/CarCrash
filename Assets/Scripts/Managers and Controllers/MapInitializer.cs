@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Vehicles.Car;
 using YG;
@@ -22,8 +20,6 @@ public class MapInitializer : MonoBehaviour
         CharacterModelSO character = SOLoader.LoadCollectibleByName<CharacterModelSO>(YandexGame.savesData.playerWrapper.currentCharacterItem);
         CarColorSO carColor = SOLoader.LoadCollectibleByName<CarColorSO>(YandexGame.savesData.playerWrapper.currentCarColorItem);
         CarModelSO carModel = SOLoader.LoadCollectibleByName<CarModelSO>(YandexGame.savesData.playerWrapper.currentCarModelItem);
-
-
 
         Instantiate(character.Prefab, characterModel.transform.parent);
         Destroy(characterModel.gameObject);

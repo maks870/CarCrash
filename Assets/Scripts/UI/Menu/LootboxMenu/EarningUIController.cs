@@ -27,7 +27,6 @@ public class EarningUIController : MonoBehaviour
 
     public void UpdateEarnings()
     {
-
         if (coinCountText != null)
             coinCountText.text = YandexGame.savesData.coins.ToString();
 

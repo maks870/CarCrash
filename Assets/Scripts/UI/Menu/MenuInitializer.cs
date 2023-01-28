@@ -25,7 +25,7 @@ public class MenuInitializer : MonoBehaviour
     {
         if (YandexGame.SDKEnabled == true)
         {
-            YandexGame.LoadProgress();
+            StartInitialize();
         }
     }
 

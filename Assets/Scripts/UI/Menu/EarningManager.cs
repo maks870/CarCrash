@@ -3,8 +3,6 @@ using YG;
 
 public static class EarningManager
 {
-    private static EarningUIController earningManagerUI;
-
     public static Action OnLackCoins;
     public static Action OnLackGems;
     public static Action OnChangeEarnings;
