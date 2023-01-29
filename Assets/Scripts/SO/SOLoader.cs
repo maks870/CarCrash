@@ -6,13 +6,15 @@ using UnityEngine;
 
 public class SOLoader
 {
-    public static T[] LoadAllSOByType<T>() where T : ScriptableObject
+    public static List<T> LoadAllSOByType<T>() where T : ScriptableObject
     {
-        T[] scriptableObjects;
+        List<T> LoadedSO = new List<T>();
         Type t = typeof(T);
 
-        scriptableObjects = (T[])Resources.LoadAll("ScriptableObjects/" + t.Name, t);
-        return scriptableObjects;
+        T[] scriptableObjects = (T[])Resources.LoadAll("ScriptableObjects/" + t.Name, t);
+        LoadedSO.AddRange(scriptableObjects);
+
+        return LoadedSO;
     }
 
     public static T LoadSOByType<T>(string name) where T : ScriptableObject
