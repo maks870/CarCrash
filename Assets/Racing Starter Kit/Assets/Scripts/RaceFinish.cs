@@ -24,7 +24,7 @@ public class RaceFinish : MonoBehaviour
         MapInfo currentMap = YandexGame.savesData.playerWrapper.maps[currentMapIndex];
 
         int currentTimeInSeconds = LapTimeManager.MinuteCount * 60 + LapTimeManager.SecondCount;
-        int currentTimeInMiliSeconds = (int)(LapTimeManager.MilliCount * 10);
+        int currentTimeInMiliSeconds = (int)LapTimeManager.MilliCount;
 
         if (currentMap.fastestTime == 0 || currentMap.fastestTime > currentTimeInSeconds)
         {
@@ -49,11 +49,11 @@ public class RaceFinish : MonoBehaviour
         if (currentMap.newRecordTime == true)
             newRecordObj.SetActive(true);
 
-        string minNull = LapTimeManager.MinuteCount < 10 ? "" : "0";
-        string secNull = LapTimeManager.SecondCount < 10 ? "" : "0";
-        string miliSecNull = LapTimeManager.MilliCount < 10 ? "" : "0";
+        string minNull = LapTimeManager.MinuteCount > 10 ? "" : "0";
+        string secNull = LapTimeManager.SecondCount > 10 ? "" : "0";
+        string miliSecNull = LapTimeManager.MilliCount > 10 ? "" : "0";
 
-        currentTime.text = $"{minNull}{LapTimeManager.MinuteCount}.{secNull}{LapTimeManager.SecondCount}:{miliSecNull}{(int)(LapTimeManager.MilliCount * 10)}";
+        currentTime.text = $"{minNull}{LapTimeManager.MinuteCount}:{secNull}{LapTimeManager.SecondCount}.{miliSecNull}{(int)LapTimeManager.MilliCount}";
 
         recordPanels.SetActive(true);
         newRecordObj.SetActive(currentMap.newRecordTime);
