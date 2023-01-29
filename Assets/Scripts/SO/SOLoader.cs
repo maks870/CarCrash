@@ -8,13 +8,13 @@ public class SOLoader
 {
     public static List<T> LoadAllSO<T>() where T : ScriptableObject
     {
-        List<T> LoadedSO = new List<T>();
+        List<T> loadedSO = new List<T>();
         Type t = typeof(T);
 
-        T[] scriptableObjects = (T[])Resources.LoadAll("ScriptableObjects/" + t.Name, t);
-        LoadedSO.AddRange(scriptableObjects);
+        T[] scriptableObjects = (T[])Resources.LoadAll("ScriptableObjects/" + t.Name, t).Cast<T>().ToArray();
+        loadedSO.AddRange(scriptableObjects);
 
-        return LoadedSO;
+        return loadedSO;
     }
 
     public static T LoadSO<T>(string name) where T : ScriptableObject
