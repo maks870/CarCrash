@@ -11,9 +11,6 @@ public class AbilityAIInput : MonoBehaviour
     const float maxMissleDistance = 7;
     const float minMissleDistance = 4;
 
-
-
-
     [SerializeField] [Range(0, 100)] private int complexity;
     [SerializeField] private AbilityController abilityController;
 
@@ -21,7 +18,6 @@ public class AbilityAIInput : MonoBehaviour
     private float missleDesicionDistance;
     private GameObject currentTarget;
     private CarAIControl carAIControl;
-    private List<AbilityType> abilityUseType;
     private List<YieldInstruction> abilityCorutines = new List<YieldInstruction>();
 
     public CarAIControl CarAIControl { set => carAIControl = value; }
@@ -32,10 +28,8 @@ public class AbilityAIInput : MonoBehaviour
     private void Start()
     {
         abilityController.RefreshAbilityEvent += SetAbilities;
-        abilityUseTimer = Mathf.Lerp(3, 1, (complexity / 100f));
-        missleDesicionDistance = Mathf.Lerp(8, 5, (complexity / 100f));
-        Debug.Log("Ability use timer = " + abilityUseTimer);
-        Debug.Log("millseDesicionDistance = " + missleDesicionDistance);
+        abilityUseTimer = Mathf.Lerp(maxAbilityUseTimer, minAbilityUseTimer, (complexity / 100f));
+        missleDesicionDistance = Mathf.Lerp(maxMissleDistance, minMissleDistance, (complexity / 100f));
     }
 
     private void Update()
@@ -51,7 +45,7 @@ public class AbilityAIInput : MonoBehaviour
         }
     }
 
-    private int? FindAvailableAbilityIndex(AbilityType abilityType, bool isConsiderCooldown)//новый методж
+    private int? FindAvailableAbilityIndex(AbilityType abilityType, bool isConsiderCooldown)
     {
         int? abilityNumber = null;
         List<AbilitySO> abilities = abilityController.Abilities;
@@ -156,7 +150,7 @@ public class AbilityAIInput : MonoBehaviour
 
     }
 
-    public void SetAbilities(List<AbilitySO> abilities)//Новый
+    public void SetAbilities(List<AbilitySO> abilities)
     {
         for (int i = abilityCorutines.Count; i < abilities.Count; i++)
         {
@@ -164,7 +158,7 @@ public class AbilityAIInput : MonoBehaviour
         }
     }
 
-    IEnumerator AbilityUseTimer(int abilityNumber)//новый
+    IEnumerator AbilityUseTimer(int abilityNumber)
     {
         yield return new WaitForSeconds(abilityUseTimer);
 

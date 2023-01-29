@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using UnityEngine;
 
@@ -11,7 +10,7 @@ public class SOLoader
         List<T> loadedSO = new List<T>();
         Type t = typeof(T);
 
-        T[] scriptableObjects = (T[])Resources.LoadAll("ScriptableObjects/" + t.Name, t).Cast<T>().ToArray();
+        T[] scriptableObjects = Resources.LoadAll("ScriptableObjects/" + t.Name, t).Cast<T>().ToArray();
         loadedSO.AddRange(scriptableObjects);
 
         return loadedSO;

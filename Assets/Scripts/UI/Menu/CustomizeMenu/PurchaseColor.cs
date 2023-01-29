@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using YG;
@@ -17,11 +15,9 @@ public class PurchaseColor : MonoBehaviour
     {
         if (!EarningManager.SpendCoin(currentCarColorSO.Cost))
             return;
-        Debug.Log("ÏÎÊÓÏÎ×ÊÀ");
 
         YandexGame.savesData.playerWrapper.collectibles.Add(currentCarColorSO.Name);
         YandexGame.SaveProgress();
-        Debug.Log("Ïîêóïêà - " + currentCarColorSO.Name);
 
         carColorSwitcher.InitializeUI();
         carColorSwitcher.SetCurrentColor(currentCarColorSO);

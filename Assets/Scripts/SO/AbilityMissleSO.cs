@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityStandardAssets.Vehicles.Car;
 
 [CreateAssetMenu(fileName = "AbilityMissle", menuName = "ScriptableObject/Ability/AbilityMissle")]
 public class AbilityMissleSO : AbilitySO

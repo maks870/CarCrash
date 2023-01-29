@@ -1,6 +1,4 @@
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class MapAward

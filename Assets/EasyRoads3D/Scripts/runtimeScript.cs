@@ -24,7 +24,6 @@
 
 
 using UnityEngine;
-using System.Collections;
 using EasyRoads3Dv3;
 
 public class runtimeScript : MonoBehaviour {
