@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -8,9 +9,9 @@ public class SOLoader
     public static T[] LoadAllSOByType<T>() where T : ScriptableObject
     {
         T[] scriptableObjects;
+        Type t = typeof(T);
 
-        scriptableObjects = (T[])Resources.LoadAll("ScriptableObjects", typeof(T));
-
+        scriptableObjects = (T[])Resources.LoadAll("ScriptableObjects/" + t.Name, t);
         return scriptableObjects;
     }
 
