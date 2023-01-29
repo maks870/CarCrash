@@ -17,9 +17,9 @@ public class MapInitializer : MonoBehaviour
 
     private void InitializePlayerPrefab()
     {
-        CharacterModelSO character = SOLoader.LoadCollectibleByName<CharacterModelSO>(YandexGame.savesData.playerWrapper.currentCharacterItem);
-        CarColorSO carColor = SOLoader.LoadCollectibleByName<CarColorSO>(YandexGame.savesData.playerWrapper.currentCarColorItem);
-        CarModelSO carModel = SOLoader.LoadCollectibleByName<CarModelSO>(YandexGame.savesData.playerWrapper.currentCarModelItem);
+        CharacterModelSO character = SOLoader.LoadSO<CharacterModelSO>(YandexGame.savesData.playerWrapper.currentCharacterItem);
+        CarColorSO carColor = SOLoader.LoadSO<CarColorSO>(YandexGame.savesData.playerWrapper.currentCarColorItem);
+        CarModelSO carModel = SOLoader.LoadSO<CarModelSO>(YandexGame.savesData.playerWrapper.currentCarModelItem);
 
         Instantiate(character.Prefab, characterModel.transform.parent);
         Destroy(characterModel.gameObject);

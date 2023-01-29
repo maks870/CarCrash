@@ -22,7 +22,7 @@ public class AwardPresenter : MonoBehaviour
 
         string mapName = YandexGame.savesData.playerWrapper.lastMap;
         int mapIndex = YandexGame.savesData.playerWrapper.GetMapInfoIndex(mapName);
-        MapSO map = SOLoader.LoadMapByName(mapName);
+        MapSO map = SOLoader.LoadSO<MapSO>(mapName);
 
 
         for (int i = 0; i < YandexGame.savesData.playerWrapper.lastMapPlaces.Count; i++)

@@ -62,7 +62,7 @@ public class CustomizeMenuManager : MenuManager
 
     public void AddCharacter()//тестовый метод
     {
-        List<CharacterModelSO> characters = SOLoader.LoadSOByType<CharacterModelSO>();
+        List<CharacterModelSO> characters = SOLoader.LoadAllSO<CharacterModelSO>();
         int rand = UnityEngine.Random.Range(0, characters.Count);
         YandexGame.savesData.playerWrapper.collectibles.Add(characters[rand].Name);
         Debug.Log("Получен персонаж " + characters[rand].Name);

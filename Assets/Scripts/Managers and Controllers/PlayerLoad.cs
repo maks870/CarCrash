@@ -27,9 +27,9 @@ public class PlayerLoad : MonoBehaviour
 
     private void Awake()
     {
-        List<CharacterModelSO> charactersSO = SOLoader.LoadSOByType<CharacterModelSO>();
-        List<CarColorSO> carColorsSO = SOLoader.LoadSOByType<CarColorSO>();
-        List<CarModelSO> carModelsSO = SOLoader.LoadSOByType<CarModelSO>();
+        List<CharacterModelSO> charactersSO = SOLoader.LoadAllSO<CharacterModelSO>();
+        List<CarColorSO> carColorsSO = SOLoader.LoadAllSO<CarColorSO>();
+        List<CarModelSO> carModelsSO = SOLoader.LoadAllSO<CarModelSO>();
 
         characters.AddRange(charactersSO);
         carColors.AddRange(carColorsSO);

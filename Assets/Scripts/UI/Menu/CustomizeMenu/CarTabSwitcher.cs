@@ -17,8 +17,8 @@ public class CarTabSwitcher : MonoBehaviour
 
     private void Awake()
     {
-        List<CarColorSO> carColors = SOLoader.LoadSOByType<CarColorSO>();
-        List<CarModelSO> carModels = SOLoader.LoadSOByType<CarModelSO>();
+        List<CarColorSO> carColors = SOLoader.LoadAllSO<CarColorSO>();
+        List<CarModelSO> carModels = SOLoader.LoadAllSO<CarModelSO>();
 
         carColorSwitcher.FillListBySO(carColors);
         carModelSwitcher.FillListBySO(carModels);

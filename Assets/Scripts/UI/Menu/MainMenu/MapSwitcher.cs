@@ -18,7 +18,7 @@ public class MapSwitcher : MonoBehaviour
 
     private void Awake()
     {
-        List<MapSO> maps = SOLoader.LoadSOByType<MapSO>();
+        List<MapSO> maps = SOLoader.LoadAllSO<MapSO>();
         FillListBySO(maps);
     }
 
