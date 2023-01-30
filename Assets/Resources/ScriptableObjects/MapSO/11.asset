@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf8c7cc39c7cc5f47be7860a7c421cbd, type: 3}
   m_Name: 11
   m_EditorClassIdentifier: 
-  car: {fileID: 11400000, guid: 948b7f7278c9cb54d990209d3bb5ed28, type: 2}
+  car: {fileID: 11400000, guid: 29fb4ce114bfab24e85fda017c377086, type: 2}
   nextMap: {fileID: 11400000, guid: 01646824a0eb5a044b4ee5f24d1877d1, type: 2}
   sprite: {fileID: 21300000, guid: f307396585eb05c46ac7fb04fc991826, type: 3}
   awards:
