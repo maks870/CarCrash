@@ -19,8 +19,6 @@ public class OverheadLightsSwitcher : MonoBehaviour
 
     public void SwitchLight()
     {
-        Debug.Log("Switch");
-        Debug.Log(counter);
         switch (counter)
         {
             case 0:
