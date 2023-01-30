@@ -12,19 +12,10 @@ public class MobileInput : BaseInput
     {
         ClearButton();
 
-        for (int i = 0; i < abilities.Count; i++)
-        {
-            GameObject buttonAbilityObj = Instantiate(buttonAbilityPref, container);
-            Button buttonAbility = buttonAbilityObj.GetComponent<Button>();
-            buttonAbility.image.sprite = abilities[i].Icon;
-            buttonAbility.onClick.AddListener(() => PressButtonAbilityEvent.Invoke(i));
-        }
-    }
-
-    private void Update()
-    {
-        //verticalAxis = Input.GetAxis("Vertical");
-        //horizontalAxis = Input.GetAxis("Horizontal");  
+        GameObject buttonAbilityObj = Instantiate(buttonAbilityPref, container);
+        Button buttonAbility = buttonAbilityObj.GetComponent<Button>();
+        buttonAbility.image.sprite = abilities[0].Icon;
+        buttonAbility.onClick.AddListener(() => PressButtonAbilityEvent.Invoke(0));
     }
 
     public void SetVerticalAxis(int y) 

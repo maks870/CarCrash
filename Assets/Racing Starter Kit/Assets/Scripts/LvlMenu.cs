@@ -41,13 +41,13 @@ public class LvlMenu : MonoBehaviour
     {
         if (paused)
         {
-            soundController.SoundDistortion(true);
+            //soundController.SoundDistortion(true);
             Time.timeScale = 0;
             PauseMenu.SetActive(true); //show the pause menu (to resume or restart race)
         }
         else
         {
-            soundController.SoundDistortion(false);
+            //soundController.SoundDistortion(false);
             //unpausing reactivates audio and resumes normal time
             Time.timeScale = 1;
             PauseMenu.SetActive(false); //turn off the pause menu
