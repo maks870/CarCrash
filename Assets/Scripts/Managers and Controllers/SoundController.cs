@@ -17,7 +17,7 @@ public class SoundController : MonoBehaviour
         if (on)
         {
             buttonSound.image.sprite = buttonOnSprite;
-            audioMixer.SetFloat("Master", 0);
+            audioMixer.SetFloat("Master", -10);
         }
         else
         {

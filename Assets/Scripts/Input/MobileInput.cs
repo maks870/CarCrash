@@ -16,6 +16,7 @@ public class MobileInput : BaseInput
         Button buttonAbility = buttonAbilityObj.GetComponent<Button>();
         buttonAbility.image.sprite = abilities[0].Icon;
         buttonAbility.onClick.AddListener(() => PressButtonAbilityEvent.Invoke(0));
+        buttonAbility.onClick.AddListener(() => Destroy(buttonAbilityObj));
     }
 
     public void SetVerticalAxis(int y) 
