@@ -10,6 +10,7 @@ public class AwardUIController : MonoBehaviour
     [SerializeField] private GameObject gemAwardUI;
     [SerializeField] private GameObject collectbileAwardUI;
     [SerializeField] private GameObject mapAwardUI;
+    [SerializeField] private GameObject AwardPresenterUI;
 
     private List<GameObject> awards = new List<GameObject>();
     private int currentAward = 0;
@@ -20,7 +21,7 @@ public class AwardUIController : MonoBehaviour
     {
         foreach (GameObject awardUI in awards)
         {
-            awardUI.GetComponent<TargetPointer>().enabled = isLootboxAward;
+            awardUI.transform.parent.GetComponent<TargetPointer>().enabled = isLootboxAward;
         }
     }
 
