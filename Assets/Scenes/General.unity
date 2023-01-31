@@ -9025,7 +9025,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1545806602296978, guid: 9e4577abe56a95f4a91d29a0473cd30c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1545806602296978, guid: 9e4577abe56a95f4a91d29a0473cd30c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -16051,6 +16051,7 @@ GameObject:
   - component: {fileID: 1633973476}
   - component: {fileID: 1633973478}
   - component: {fileID: 1633973479}
+  - component: {fileID: 1633973480}
   m_Layer: 5
   m_Name: AwardPresenterUI
   m_TagString: Untagged
@@ -16133,7 +16134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 1118996456}
-  pointerUI: {fileID: 950510234}
+  pointerUI: {fileID: 1633973475}
   interfaceScale: 100
   canvas: {fileID: 950510234}
   target: {fileID: 1405799536}
@@ -16194,6 +16195,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!95 &1633973480
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1633973474}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6220c5d542b321e4fb03a91310f29ffd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1643379818
 GameObject:
   m_ObjectHideFlags: 0

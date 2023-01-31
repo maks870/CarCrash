@@ -17,13 +17,13 @@ public class AwardUIController : MonoBehaviour
 
     public Action OnAwardsEnd;
 
-    private void SwitchLootboxAward(bool isLootboxAward)
-    {
-        foreach (GameObject awardUI in awards)
-        {
-            awardUI.transform.parent.GetComponent<TargetPointer>().enabled = isLootboxAward;
-        }
-    }
+    //private void SwitchLootboxAward(bool isLootboxAward)
+    //{
+    //    foreach (GameObject awardUI in awards)
+    //    {
+    //        awardUI.transform.parent.GetComponent<TargetPointer>().enabled = isLootboxAward;
+    //    }
+    //}
 
     public void CloseAwards()
     {
@@ -34,6 +34,7 @@ public class AwardUIController : MonoBehaviour
 
         currentAward = 0;
         awards.Clear();
+        AwardPresenterUI.SetActive(false);
     }
 
     public void SwitchAward()
@@ -54,33 +55,14 @@ public class AwardUIController : MonoBehaviour
 
     public void ShowAwards(int coinValue, int gemValue, CollectibleSO collectibleItem)
     {
-        awards.Clear();
-
-        if (coinValue != 0)
-        {
-            coinAwardUI.GetComponentInChildren<Text>().text = coinValue.ToString();
-            awards.Add(coinAwardUI);
-        }
-
-        if (gemValue != 0)
-        {
-            gemAwardUI.GetComponentInChildren<Text>().text = gemValue.ToString();
-            awards.Add(gemAwardUI);
-        }
-
-        if (collectibleItem != null)
-        {
-            CharacterModelSO characterCollectible = (CharacterModelSO)collectibleItem;
-            collectbileAwardUI.GetComponent<Image>().sprite = characterCollectible.Sprite;
-            awards.Add(collectbileAwardUI);
-        }
-
-        currentAward = 0;
-        SwitchLootboxAward(true);
-        SwitchAward();
+        ShowAwards(coinValue, gemValue, null, null, collectibleItem, true);
     }
 
     public void ShowAwards(int coinValue, int gemValue, CarModelSO carSO, MapSO mapSO)
+    {
+        ShowAwards(coinValue, gemValue, carSO, mapSO, null, false);
+    }
+    public void ShowAwards(int coinValue, int gemValue, CarModelSO carSO, MapSO mapSO, CollectibleSO collectibleItem, bool isLootboxAward)
     {
         awards.Clear();
 
@@ -108,8 +90,16 @@ public class AwardUIController : MonoBehaviour
             awards.Add(mapAwardUI);
         }
 
+        if (collectibleItem != null)
+        {
+            CharacterModelSO characterCollectible = (CharacterModelSO)collectibleItem;
+            collectbileAwardUI.GetComponent<Image>().sprite = characterCollectible.Sprite;
+            awards.Add(collectbileAwardUI);
+        }
+
         currentAward = 0;
-        SwitchLootboxAward(false);
+        AwardPresenterUI.GetComponent<TargetPointer>().enabled = isLootboxAward;
         SwitchAward();
+        AwardPresenterUI.SetActive(true);
     }
 }
