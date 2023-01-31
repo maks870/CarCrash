@@ -10,9 +10,9 @@ public class InputManager : MonoBehaviour
 
     private void Awake()
     {
-        //if (YG.YandexGame.EnvironmentData.isDesktop)
-        //    currentInput = Instantiate(desktopInputObj).GetComponent<BaseInput>();
-        //else
+        if (YG.YandexGame.EnvironmentData.isDesktop)
+            currentInput = Instantiate(desktopInputObj).GetComponent<BaseInput>();
+        else
             currentInput = Instantiate(mobileInputObj).GetComponent<BaseInput>();
 
     }
