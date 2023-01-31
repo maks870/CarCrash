@@ -12,7 +12,7 @@ public class RaceFinish : MonoBehaviour
     [SerializeField] private GameObject finishPanels;
     [SerializeField] private GameObject recordPanels;
     [SerializeField] private Text currentTime;
-    [SerializeField] private GameObject newRecordObj;
+    [SerializeField] private GameObject newRecord;
     [SerializeField] private Image cup;
     [SerializeField] private Sprite[] spritesCup;
     [SerializeField] private Text posText;
@@ -47,7 +47,7 @@ public class RaceFinish : MonoBehaviour
         MapInfo currentMap = YandexGame.savesData.playerWrapper.maps[currentMapIndex];
 
         if (currentMap.newRecordTime == true)
-            newRecordObj.SetActive(true);
+            newRecord.SetActive(true);
 
         string minNull = LapTimeManager.MinuteCount > 10 ? "" : "0";
         string secNull = LapTimeManager.SecondCount > 10 ? "" : "0";
@@ -56,7 +56,7 @@ public class RaceFinish : MonoBehaviour
         currentTime.text = $"{minNull}{LapTimeManager.MinuteCount}:{secNull}{LapTimeManager.SecondCount}.{miliSecNull}{(int)LapTimeManager.MilliCount}";
 
         recordPanels.SetActive(true);
-        newRecordObj.SetActive(currentMap.newRecordTime);
+        newRecord.SetActive(currentMap.newRecordTime);
     }
 
     public void Finish()
