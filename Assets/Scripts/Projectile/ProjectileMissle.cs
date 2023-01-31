@@ -21,6 +21,9 @@ public class ProjectileMissle : Projectile
         if (other.gameObject.tag == "Lift")
             return;
 
+        if (other.GetComponent<ProjectileMissle>() == true)
+            return;
+
         if (other.GetComponent<GroundAcceleration>() != null)
             return;
 

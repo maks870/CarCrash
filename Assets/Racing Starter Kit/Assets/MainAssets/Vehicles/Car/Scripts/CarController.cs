@@ -147,7 +147,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
             //clamp input values
             steering = Mathf.Clamp(steering, -1, 1);
-            AccelInput = accel = Mathf.Clamp(accel, 0, 1);
+            AccelInput = accel = IsAccelerated == false ? Mathf.Clamp(accel, 0, 1) : 1;
             BrakeInput = footbrake = -1 * Mathf.Clamp(footbrake, -1, 0);
             handbrake = Mathf.Clamp(handbrake, 0, 1);
 
@@ -213,7 +213,7 @@ namespace UnityStandardAssets.Vehicles.Car
         private void ApplyDrive(float accel, float footbrake)
         {
             if (isAccelerated)
-                accel = 2f;
+                accel = 2.5f;
 
             float thrustTorque;
             switch (m_CarDriveType)
