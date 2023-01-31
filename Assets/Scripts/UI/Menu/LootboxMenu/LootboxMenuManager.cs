@@ -22,7 +22,6 @@ public class LootboxMenuManager : MenuManager
 
     public override void SaveDefaultSO()
     {
-        YandexGame.savesData.lootboxes += 1;
     }
 
     public override void OpenMenu()

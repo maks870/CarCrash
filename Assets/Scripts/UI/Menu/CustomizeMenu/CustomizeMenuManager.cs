@@ -60,16 +60,39 @@ public class CustomizeMenuManager : MenuManager
         SetSavedSO();
     }
 
-    public void AddCharacter()//тестовый метод
+    public void AddLootboxTEST()//тестовый метод
     {
-        List<CharacterModelSO> characters = SOLoader.LoadAllSO<CharacterModelSO>();
-        int rand = UnityEngine.Random.Range(0, characters.Count);
-        YandexGame.savesData.playerWrapper.collectibles.Add(characters[rand].Name);
-        Debug.Log("Получен персонаж " + characters[rand].Name);
+        EarningManager.AddLootbox();
         YandexGame.SaveProgress();
     }
 
-    public void ShowOurCollectibles()//тестовый метод
+    public void OpenAllMapsTEST()//тестовый метод
+    {
+        List<MapSO> maps = SOLoader.LoadAllSO<MapSO>();
+
+        foreach (MapSO map in maps)
+        {
+            MapInfo mapInfo = new MapInfo(map.name);
+            YandexGame.savesData.playerWrapper.maps.Add(mapInfo);
+            Debug.Log("Получена карта " + mapInfo.mapName);
+        }
+        YandexGame.SaveProgress();
+    }
+
+    public void OpenAllCarModelsTEST()//тестовый метод
+    {
+        List<CarModelSO> cars = SOLoader.LoadAllSO<CarModelSO>();
+
+        foreach (CarModelSO car in cars)
+        {
+            YandexGame.savesData.playerWrapper.collectibles.Add(car.Name);
+            Debug.Log("Получен автомобиль " + car.Name);
+        }
+        YandexGame.SaveProgress();
+        InitializeMenu();
+    }
+
+    public void ShowOurCollectiblesTEST()//тестовый метод
     {
         Debug.Log($"В нашей коллекции {YandexGame.savesData.playerWrapper.collectibles.Count} элементов");
         foreach (string str in YandexGame.savesData.playerWrapper.collectibles)
@@ -82,11 +105,5 @@ public class CustomizeMenuManager : MenuManager
         {
             Debug.Log($"У нас есть карта {map.mapName}");
         }
-    }
-
-    public void ResetProgress()//тестовый метод
-    {
-        YandexGame.ResetSaveProgress();
-        YandexGame.SaveProgress();
     }
 }
