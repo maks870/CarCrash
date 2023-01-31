@@ -86,8 +86,9 @@ namespace UnityStandardAssets.Vehicles.Car
             oldTarget = m_Target;
         }
 
-        private void Update()
+        protected override void Update()
         {
+            base.Update();
             NewPosition();
         }
 

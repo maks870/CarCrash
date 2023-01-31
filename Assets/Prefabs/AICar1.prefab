@@ -10135,6 +10135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilityController: {fileID: 3642407526396612701}
   carController: {fileID: 3267986177610925942}
+  accelerationEffect: {fileID: 6186503465767606720}
   m_CautiousSpeedFactor: 0.5
   m_CautiousMaxAngle: 20
   m_CautiousMaxDistance: 100

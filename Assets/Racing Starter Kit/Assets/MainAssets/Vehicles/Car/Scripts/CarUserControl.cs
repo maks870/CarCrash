@@ -59,8 +59,10 @@ namespace UnityStandardAssets.Vehicles.Car
             }
         }
 
-        private void Update()
+        protected override void Update()
         {
+            base.Update();
+            SetTargetMark();
             SetTargetMark();
             ReportMissle();
         }
