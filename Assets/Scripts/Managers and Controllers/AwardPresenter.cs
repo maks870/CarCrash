@@ -46,7 +46,10 @@ public class AwardPresenter : MonoBehaviour
 
             awardCollectibles.Add(map.Car);
         }
-
+        Debug.Log(mapAward.coins);
+        Debug.Log(mapAward.gems);
+        Debug.Log(carSO);
+        Debug.Log(mapSO);
         awardUI.ShowAwards(mapAward.coins, mapAward.gems, carSO, mapSO);
         OpenEarnings(mapAward);
     }

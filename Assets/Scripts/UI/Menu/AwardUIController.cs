@@ -9,6 +9,7 @@ public class AwardUIController : MonoBehaviour
     [SerializeField] private GameObject coinAwardUI;
     [SerializeField] private GameObject gemAwardUI;
     [SerializeField] private GameObject collectbileAwardUI;
+    [SerializeField] private GameObject carAwardUI;
     [SerializeField] private GameObject mapAwardUI;
     [SerializeField] private GameObject AwardPresenterUI;
 
@@ -80,8 +81,8 @@ public class AwardUIController : MonoBehaviour
 
         if (carSO != null)
         {
-            collectbileAwardUI.GetComponent<Image>().sprite = carSO.Sprite;
-            awards.Add(collectbileAwardUI);
+            carAwardUI.GetComponent<Image>().sprite = carSO.Sprite;
+            awards.Add(carAwardUI);
         }
 
         if (mapSO != null)
