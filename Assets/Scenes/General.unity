@@ -14502,14 +14502,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   permanentsElements: []
-  advices:
-  - adviceObj: {fileID: 168173478}
-    button: {fileID: 1197263943}
-  - adviceObj: {fileID: 1845840012}
-    button: {fileID: 1720589125}
-  - adviceObj: {fileID: 779674196}
-    button: {fileID: 623588764}
-  trainingTransform: {fileID: 0}
+  trainigStages:
+  - trainingUI: {fileID: 1672095989}
+    nonTrainingUI: {fileID: 0}
+    nextStage: {fileID: 650189732}
+  - trainingUI: {fileID: 128107297}
+    nonTrainingUI: {fileID: 1811230576}
+    nextStage: {fileID: 293459263}
+  - trainingUI: {fileID: 805125005}
+    nonTrainingUI: {fileID: 857116159}
+    nextStage: {fileID: 857116160}
+  trainingTransform: {fileID: 1606281309}
 --- !u!1 &1397711798
 GameObject:
   m_ObjectHideFlags: 0
@@ -18238,7 +18241,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1672095989
 RectTransform:
   m_ObjectHideFlags: 0

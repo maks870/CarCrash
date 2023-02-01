@@ -24,7 +24,7 @@ public class Shop : MonoBehaviour
     private void OnEnable()
     {
         YandexGame.RewardVideoEvent += GetAdReward;
-
+        lootboxAwardUI.OnAwardsEnd += lootbox.Close;
         //YandexGame.CheaterVideoEvent
         //YandexGame.ErrorVideoEvent
 
@@ -40,13 +40,12 @@ public class Shop : MonoBehaviour
             openLootboxButton.SetActive(true);
             UpdateUI();
         };
-
-        lootboxAwardUI.OnAwardsEnd += lootbox.Close;
     }
 
     // Отписываемся от события открытия рекламы в OnDisable
     private void OnDisable()
     {
+        lootboxAwardUI.OnAwardsEnd -= lootbox.Close;
         YandexGame.RewardVideoEvent -= GetAdReward;
     }
 
@@ -141,5 +140,6 @@ public class Shop : MonoBehaviour
         openLootboxButton.SetActive(haveLootbox);
         noLootboxImage.SetActive(!haveLootbox);
     }
+
 
 }
