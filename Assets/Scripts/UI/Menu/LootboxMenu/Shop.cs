@@ -100,7 +100,6 @@ public class Shop : MonoBehaviour
     {
         if (!EarningManager.SpendGem(lootboxCost))
         {
-            //сообзение о нехватке гемов
             return;
         }
 
