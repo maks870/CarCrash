@@ -24,11 +24,9 @@ public class TrainingStage
 
 public class StartingTraining : MonoBehaviour
 {
-    [SerializeField] private RectTransform[] permanentsElements;
     [SerializeField] private TrainingStage[] trainigStages;
     [SerializeField] private RectTransform trainingTransform;
     private Transform oldTransfrom;
-    private List<Transform> oldTransforms = new List<Transform>();
 
     private int currentAdvice;
 
@@ -36,12 +34,6 @@ public class StartingTraining : MonoBehaviour
 
     public void StartTraining()
     {
-        foreach (RectTransform rectTransform in permanentsElements)
-        {
-            oldTransforms.Add(rectTransform.parent);
-            rectTransform.parent = trainingTransform;
-        }
-
         currentAdvice = 0;
         NextStageAction += OnNextAdvice;
         OnNextAdvice();
@@ -52,7 +44,7 @@ public class StartingTraining : MonoBehaviour
         if (currentAdvice > 0 && currentAdvice <= trainigStages.Length)
         {
             if (trainigStages[currentAdvice - 1].nonTrainingUI != null)
-                trainigStages[currentAdvice - 1].nonTrainingUI.parent = oldTransfrom;
+                trainigStages[currentAdvice - 1].nonTrainingUI.SetParent(oldTransfrom);
 
             trainigStages[currentAdvice - 1].trainingUI.gameObject.SetActive(false);
             trainigStages[currentAdvice - 1].Unsubscribe();
@@ -63,7 +55,7 @@ public class StartingTraining : MonoBehaviour
             if (trainigStages[currentAdvice].nonTrainingUI != null)
             {
                 oldTransfrom = trainigStages[currentAdvice].nonTrainingUI.parent;
-                trainigStages[currentAdvice].nonTrainingUI.parent = trainingTransform;
+                trainigStages[currentAdvice].nonTrainingUI.SetParent(trainingTransform);
             }
 
             trainigStages[currentAdvice].trainingUI.gameObject.SetActive(true);
@@ -78,9 +70,5 @@ public class StartingTraining : MonoBehaviour
 
     private void EndTraining()
     {
-        for (int i = 0; i < permanentsElements.Length; i++)
-        {
-            permanentsElements[i].parent = oldTransforms[i]; ;
-        }
     }
 }
