@@ -10675,6 +10675,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3267986178154526935}
+  - component: {fileID: 2016940447281418932}
   m_Layer: 3
   m_Name: CarParts
   m_TagString: Untagged
@@ -10699,6 +10700,23 @@ Transform:
   m_Father: {fileID: 3267986177311911661}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2016940447281418932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3267986178154526932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cf856f44d897554ab971d6cae380a21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carModel: {fileID: 11400000, guid: 948b7f7278c9cb54d990209d3bb5ed28, type: 2}
+  carObj: {fileID: 3267986177610925930}
+  characterModel: {fileID: 4081177816384723945}
+  carRenderer: {fileID: 1829770298976767522}
+  carFilter: {fileID: 6332819106139916664}
 --- !u!1 &3267986178310421108
 GameObject:
   m_ObjectHideFlags: 0
@@ -16095,6 +16113,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3774623728447383224}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4081177816384723945 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7fa2498b4f6b89b4284a3222b8a38bd1,
+    type: 3}
+  m_PrefabInstance: {fileID: 3774623728447383224}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6015283345785374861
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16485,6 +16509,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7791452579902649502}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &1829770298976767522 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8449996119470504636, guid: 952d3bda5262d2146a71979c27c0b918,
+    type: 3}
+  m_PrefabInstance: {fileID: 7791452579902649502}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2868912787986519068 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5472049658881040514, guid: 952d3bda5262d2146a71979c27c0b918,
@@ -16500,6 +16530,12 @@ GameObject:
 --- !u!1 &4939402425148296595 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2930863154693880077, guid: 952d3bda5262d2146a71979c27c0b918,
+    type: 3}
+  m_PrefabInstance: {fileID: 7791452579902649502}
+  m_PrefabAsset: {fileID: 0}
+--- !u!33 &6332819106139916664 stripped
+MeshFilter:
+  m_CorrespondingSourceObject: {fileID: 4306142438199868902, guid: 952d3bda5262d2146a71979c27c0b918,
     type: 3}
   m_PrefabInstance: {fileID: 7791452579902649502}
   m_PrefabAsset: {fileID: 0}
