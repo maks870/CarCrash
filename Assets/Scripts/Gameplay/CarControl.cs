@@ -12,6 +12,9 @@ public abstract class CarControl : MonoBehaviour
 
     protected virtual void Update()
     {
+        if (abilityController.IsDamaged)
+            carController.IsAccelerated = false;
+
         if (carController.IsAccelerated && !accelerationEffect.isPlaying)
             accelerationEffect.Play();
 
