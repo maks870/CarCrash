@@ -6,7 +6,6 @@ using YG;
 public class SoundController : MonoBehaviour
 {
     [SerializeField] private AudioMixer audioMixer;
-    [SerializeField] private AudioMixerSnapshot normalSnapshot;
     [SerializeField] private Button buttonSound;
     [SerializeField] private Sprite buttonOnSprite;
     [SerializeField] private Sprite buttonOffSprite;
