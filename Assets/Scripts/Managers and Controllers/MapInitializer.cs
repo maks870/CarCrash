@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Vehicles.Car;
 using YG;
@@ -8,18 +9,27 @@ public class MapInitializer : MonoBehaviour
     [SerializeField] private GameObject characterModel;
     [SerializeField] private MeshRenderer carRenderer;
     [SerializeField] private MeshFilter carFilter;
+    [SerializeField] private List<CarColorSO> carColors = new List<CarColorSO>();
+    [SerializeField] private List<CharacterModelSO> characterModels = new List<CharacterModelSO>();
     [SerializeField] private SoundController soundController;
+
+    private CharacterModelSO character;
+    private CarColorSO carColor;
+    private CarModelSO carModel;
+
+    public List<BotInitializer> botInitializers = new List<BotInitializer>();
 
     void Start()
     {
-        InitializePlayerPrefab();
+        botInitializers.AddRange(FindObjectsOfType<BotInitializer>());
+        InitializePrefabs();
     }
 
     private void InitializePlayerPrefab()
     {
-        CharacterModelSO character = SOLoader.LoadSO<CharacterModelSO>(YandexGame.savesData.playerWrapper.currentCharacterItem);
-        CarColorSO carColor = SOLoader.LoadSO<CarColorSO>(YandexGame.savesData.playerWrapper.currentCarColorItem);
-        CarModelSO carModel = SOLoader.LoadSO<CarModelSO>(YandexGame.savesData.playerWrapper.currentCarModelItem);
+        character = SOLoader.LoadSO<CharacterModelSO>(YandexGame.savesData.playerWrapper.currentCharacterItem);
+        carColor = SOLoader.LoadSO<CarColorSO>(YandexGame.savesData.playerWrapper.currentCarColorItem);
+        carModel = SOLoader.LoadSO<CarModelSO>(YandexGame.savesData.playerWrapper.currentCarModelItem);
 
         Instantiate(character.Prefab, characterModel.transform.parent);
         Destroy(characterModel.gameObject);
@@ -30,4 +40,31 @@ public class MapInitializer : MonoBehaviour
         carFilter.mesh = carModel.Mesh;
         soundController.Initialize();
     }
+
+    private void InitializePrefabs()
+    {
+        InitializePlayerPrefab();
+
+        foreach (BotInitializer bot in botInitializers)
+        {
+            CharacterModelSO characterBot = GetRandomItem(characterModels, character);
+            CarColorSO carColorBot = GetRandomItem(carColors, carColor);
+            bot.InitializeBot(characterBot, carColorBot);
+        }
+    }
+
+    private T GetRandomItem<T>(List<T> items, T existingItem)
+    {
+        T result = default(T);
+
+        do
+        {
+            result = items[Random.Range(0, items.Count)];
+        }
+        while (ReferenceEquals(result, existingItem));
+
+        return result;
+    }
+
+
 }
