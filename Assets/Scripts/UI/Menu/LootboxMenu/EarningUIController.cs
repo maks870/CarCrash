@@ -8,8 +8,8 @@ public class EarningUIController : MonoBehaviour
     [SerializeField] private Text gemCountText;
     [SerializeField] private Text lootboxCountText;
 
-    [SerializeField] private GameObject lackCoinsWarning;
-    [SerializeField] private GameObject lackGemsWarning;
+    [SerializeField] private Animator lackCoinsAnim;
+    [SerializeField] private Animator lackGemsAnim;
 
     private void OnEnable()
     {
@@ -39,21 +39,21 @@ public class EarningUIController : MonoBehaviour
 
     public void ShowLackCoinsWarning()
     {
-        lackCoinsWarning.SetActive(true);
+        lackCoinsAnim.SetTrigger("On");
     }
 
     public void ShowLackGemsWarning()
     {
-        lackGemsWarning.SetActive(true);
+        lackGemsAnim.SetTrigger("On");
     }
 
-    public void CloseLackCoinWarning()
-    {
-        lackCoinsWarning.SetActive(false);
-    }
+    //public void CloseLackCoinWarning()
+    //{
+    //    lackCoinsWarning.SetActive(false);
+    //}
 
-    public void CloseLackGemsWarning()
-    {
-        lackGemsWarning.SetActive(false);
-    }
+    //public void CloseLackGemsWarning()
+    //{
+    //    lackGemsWarning.SetActive(false);
+    //}
 }
