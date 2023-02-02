@@ -1,8 +1,9 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using YG;
 
-public class LootBox : MonoBehaviour
+public class LootBox : MonoBehaviour, ITrainingWaiter
 {
     [SerializeField] private List<CollectibleSO> items = new List<CollectibleSO>();
 
@@ -18,8 +19,8 @@ public class LootBox : MonoBehaviour
     [SerializeField] private int cost;
     private Animator animator;
 
-    public System.Action ActionEndOpen;
-    public System.Action ActionEndClose;
+    public Action ActionEndOpen;
+    public Action ActionEndClose;
 
     public int Cost => cost;
 
@@ -28,9 +29,19 @@ public class LootBox : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    public void SubscribeWaitAction(Action endWaitAction)
+    {
+        ActionEndClose += endWaitAction;
+    }
+
+    public void UnsubscribeWaitAction(Action endWaitAction)
+    {
+        ActionEndClose -= endWaitAction;
+    }
+
     public void GetReward(out int coinValue, out int gemValue, out CollectibleSO collectibleItem)
     {
-        int rand = Random.Range(0, 100);
+        int rand = UnityEngine.Random.Range(0, 100);
         List<string> collectedItems = YandexGame.savesData.playerWrapper.collectibles;
         List<CollectibleSO> tempItems = new List<CollectibleSO>();
 
@@ -44,24 +55,24 @@ public class LootBox : MonoBehaviour
             tempItems.RemoveAll(item => item.Name == itemName);
         }
 
-        int randItemIndex = Random.Range(0, tempItems.Count);
+        int randItemIndex = UnityEngine.Random.Range(0, tempItems.Count);
         collectibleItem = tempItems[randItemIndex];
 
         if (rand <= gemDropChance)
-            gemValue = Random.Range(minDropGem, maxDropGem);
+            gemValue = UnityEngine.Random.Range(minDropGem, maxDropGem);
 
-        rand = Random.Range(0, 100);
+        rand = UnityEngine.Random.Range(0, 100);
 
         if (rand <= coinDropChance)
-            coinValue = Random.Range(minDropCoin, maxDropCoin);
+            coinValue = UnityEngine.Random.Range(minDropCoin, maxDropCoin);
     }
 
-    public void Open() 
+    public void Open()
     {
         animator.SetTrigger("Open");
     }
 
-    public void Close() 
+    public void Close()
     {
         animator.SetTrigger("Close");
     }
