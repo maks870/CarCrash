@@ -4942,7 +4942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb4bf64413a54c44cab1a99925f6c169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slowTime: 1
+  slowTime: 1.3
   maxAbilities: 1
   spawnPointForward: {fileID: 6542769434582307756}
   spawnPointMiddle: {fileID: 0}
@@ -10094,10 +10094,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carModel: {fileID: 11400000, guid: 948b7f7278c9cb54d990209d3bb5ed28, type: 2}
-  carObj: {fileID: 3267986177610925930}
   characterModel: {fileID: 4081177816384723945}
   carRenderer: {fileID: 1829770298976767522}
   carFilter: {fileID: 6332819106139916664}
+  complexity: 50
+  accelerationSpeed: 230
 --- !u!114 &3267986177610925942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10237,7 +10238,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96d84bf1f56ae824dbe14f1799d83011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  complexity: 50
   abilityController: {fileID: 3642407526396612701}
 --- !u!65 &3273841503141795992
 BoxCollider:

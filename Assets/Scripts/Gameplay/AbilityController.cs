@@ -11,6 +11,7 @@ public class AbilityController : MonoBehaviour
     [SerializeField] private Transform spawnPointBack;
     [SerializeField] private ShieldProjectile shield;
     [SerializeField] private List<GameObject> possibleTargets = new List<GameObject>();
+    [SerializeField] private List<GameObject> forwardMines = new List<GameObject>();
     [SerializeField] private List<AbilitySO> abilities = new List<AbilitySO>();
 
     private GameObject target;
@@ -68,6 +69,8 @@ public class AbilityController : MonoBehaviour
     public ShieldProjectile Shield => shield;
 
     public List<AbilitySO> Abilities => abilities;
+
+    public List<GameObject> ForwardMines => forwardMines;
 
     public delegate void AbilityListHandler(List<AbilitySO> abilitySO);
     public event AbilityListHandler RefreshAbilityEvent;

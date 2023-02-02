@@ -4,13 +4,18 @@ using UnityEngine.UI;
 public class UIPlayerManager : MonoBehaviour
 {
     [SerializeField] private Image WarningUI;
+    [SerializeField] private TargetPointer missleTarget;
+    [SerializeField] private TargetPointer mineWarning;
 
-    public void WarningActivate() 
+    public TargetPointer MisslePointer => missleTarget;
+    public TargetPointer MinePointer => mineWarning;
+
+    public void WarningActivate()
     {
         WarningUI.gameObject.SetActive(true);
     }
 
-    public void WarningDeactivate() 
+    public void WarningDeactivate()
     {
         WarningUI.gameObject.SetActive(false);
     }

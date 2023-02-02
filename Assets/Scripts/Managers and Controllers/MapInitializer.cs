@@ -17,11 +17,11 @@ public class MapInitializer : MonoBehaviour
     private CarColorSO carColor;
     private CarModelSO carModel;
 
-    public List<BotInitializer> botInitializers = new List<BotInitializer>();
+    public List<BotSettings> botInitializers = new List<BotSettings>();
 
     void Start()
     {
-        botInitializers.AddRange(FindObjectsOfType<BotInitializer>());
+        botInitializers.AddRange(FindObjectsOfType<BotSettings>());
         InitializePrefabs();
     }
 
@@ -45,7 +45,7 @@ public class MapInitializer : MonoBehaviour
     {
         InitializePlayerPrefab();
 
-        foreach (BotInitializer bot in botInitializers)
+        foreach (BotSettings bot in botInitializers)
         {
             CharacterModelSO characterBot = GetRandomItem(characterModels, character);
             CarColorSO carColorBot = GetRandomItem(carColors, carColor);

@@ -11,15 +11,16 @@ public class AbilityAIInput : MonoBehaviour
     const float maxMissleDistance = 7;
     const float minMissleDistance = 4;
 
-    [SerializeField] [Range(0, 100)] private int complexity;
     [SerializeField] private AbilityController abilityController;
 
+    private int complexity;
     private float abilityUseTimer;
     private float missleDesicionDistance;
     private GameObject currentTarget;
     private CarAIControl carAIControl;
     private List<YieldInstruction> abilityCorutines = new List<YieldInstruction>();
 
+    public int Complexity { set => complexity = value; }
     public CarAIControl CarAIControl { set => carAIControl = value; }
 
     public delegate void AbilityUseDecision(int numberAbility);

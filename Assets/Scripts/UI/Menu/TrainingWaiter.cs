@@ -1,5 +1,4 @@
 using System;
-
 public interface ITrainingWaiter
 {
     public void SubscribeWaitAction(Action endWaitAction);
