@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf8c7cc39c7cc5f47be7860a7c421cbd, type: 3}
   m_Name: 21
   m_EditorClassIdentifier: 
+  maxPoints: 0
   car: {fileID: 0}
   nextMap: {fileID: 0}
-  sprite: {fileID: 21300000, guid: f3bb8034242f03a48bf8cad3d4f05a05, type: 3}
+  sprite: {fileID: 21300000, guid: 69b0004609f12fe42a147af43010661a, type: 3}
   awards:
   - coins: 5
     gems: 0
