@@ -17,12 +17,14 @@ public class MapAward
 [CreateAssetMenu(fileName = "Map", menuName = "ScriptableObject/Map")]
 public class MapSO : ScriptableObject
 {
+    [SerializeField] private int maxPoints;
     [SerializeField] private CarModelSO car;
     [SerializeField] private MapSO nextMap;
     [SerializeField] private Sprite sprite;
     [SerializeField] private MapAward[] awards;
 
     public string Name => name;
+    public int MaxPoints => maxPoints;
     public CarModelSO Car => car;
     public MapSO NextMap => nextMap;
     public Sprite Sprite => sprite;

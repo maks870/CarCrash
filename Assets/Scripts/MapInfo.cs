@@ -5,14 +5,16 @@ public class MapInfo
     public int highestPlace;
     public int fastestTime;
     public int fastestTimeMiliSec;
+    public int maxPoints;
     public bool isPassed;
 
     public bool newRecordPlace;
     public bool newRecordTime;
 
-    public MapInfo(string mapName)
+    public MapInfo(string mapName, int maxPoints)
     {
         this.mapName = mapName;
+        this.maxPoints = maxPoints;
         highestPlace = 0;
         fastestTime = 0;
         fastestTimeMiliSec = 0;

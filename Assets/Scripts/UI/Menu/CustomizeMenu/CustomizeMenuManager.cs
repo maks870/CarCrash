@@ -72,7 +72,7 @@ public class CustomizeMenuManager : MenuManager
 
         foreach (MapSO map in maps)
         {
-            MapInfo mapInfo = new MapInfo(map.name);
+            MapInfo mapInfo = new MapInfo(map.name, map.MaxPoints);
             YandexGame.savesData.playerWrapper.maps.Add(mapInfo);
             Debug.Log("Получена карта " + mapInfo.mapName);
         }

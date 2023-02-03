@@ -28,7 +28,7 @@ public class MainMenuManager : MenuManager
     public override void SaveDefaultSO()
     {
         MapSO map = playerLoad.DefaultMap;
-        MapInfo mapInfo = new MapInfo(map.Name);
+        MapInfo mapInfo = new MapInfo(map.Name, map.MaxPoints);
         YandexGame.savesData.playerWrapper.maps.Add(mapInfo);
     }
 

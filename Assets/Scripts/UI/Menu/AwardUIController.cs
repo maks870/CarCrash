@@ -25,45 +25,7 @@ public class AwardUIController : MonoBehaviour
     //        awardUI.transform.parent.GetComponent<TargetPointer>().enabled = isLootboxAward;
     //    }
     //}
-
-    public void CloseAwards()
-    {
-        foreach (GameObject award in awards)
-        {
-            award.SetActive(false);
-        }
-
-        currentAward = 0;
-        awards.Clear();
-        AwardPresenterUI.SetActive(false);
-    }
-
-    public void SwitchAward()
-    {
-        if (currentAward != 0)
-            awards[currentAward - 1].SetActive(false);
-
-        if (currentAward >= awards.Count)
-        {
-            CloseAwards();
-            OnAwardsEnd?.Invoke();
-            return;
-        }
-
-        awards[currentAward].SetActive(true);
-        currentAward++;
-    }
-
-    public void ShowAwards(int coinValue, int gemValue, CollectibleSO collectibleItem)
-    {
-        ShowAwards(coinValue, gemValue, null, null, collectibleItem, true);
-    }
-
-    public void ShowAwards(int coinValue, int gemValue, CarModelSO carSO, MapSO mapSO)
-    {
-        ShowAwards(coinValue, gemValue, carSO, mapSO, null, false);
-    }
-    public void ShowAwards(int coinValue, int gemValue, CarModelSO carSO, MapSO mapSO, CollectibleSO collectibleItem, bool isLootboxAward)
+    private void ShowAwards(int coinValue, int gemValue, CarModelSO carSO, MapSO mapSO, CollectibleSO collectibleItem, bool isLootboxAward)
     {
         awards.Clear();
 
@@ -102,5 +64,42 @@ public class AwardUIController : MonoBehaviour
         AwardPresenterUI.GetComponent<TargetPointer>().enabled = isLootboxAward;
         SwitchAward();
         AwardPresenterUI.SetActive(true);
+    }
+    public void CloseAwards()
+    {
+        foreach (GameObject award in awards)
+        {
+            award.SetActive(false);
+        }
+
+        currentAward = 0;
+        awards.Clear();
+        AwardPresenterUI.SetActive(false);
+    }
+
+    public void SwitchAward()
+    {
+        if (currentAward != 0)
+            awards[currentAward - 1].SetActive(false);
+
+        if (currentAward >= awards.Count)
+        {
+            CloseAwards();
+            OnAwardsEnd?.Invoke();
+            return;
+        }
+
+        awards[currentAward].SetActive(true);
+        currentAward++;
+    }
+
+    public void ShowAwards(int coinValue, int gemValue, CollectibleSO collectibleItem)
+    {
+        ShowAwards(coinValue, gemValue, null, null, collectibleItem, true);
+    }
+
+    public void ShowAwards(int coinValue, int gemValue, CarModelSO carSO, MapSO mapSO)
+    {
+        ShowAwards(coinValue, gemValue, carSO, mapSO, null, false);
     }
 }
