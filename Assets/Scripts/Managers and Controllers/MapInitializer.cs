@@ -35,7 +35,7 @@ public class MapInitializer : MonoBehaviour
         Destroy(characterModel.gameObject);
 
         carObj.GetComponent<CarController>().m_FullTorqueOverAllWheels = carModel.Acceleration;
-        carObj.GetComponent<CarUserControl>().TurnSteerAngle = carModel.Handleability;
+        carObj.GetComponent<CarController>().Handability = carModel.Handleability;
         carRenderer.material.mainTexture = carColor.Texture;
         carFilter.mesh = carModel.Mesh;
         soundController.Initialize();

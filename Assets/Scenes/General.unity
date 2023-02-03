@@ -18016,7 +18016,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1173372617}
   m_HandleRect: {fileID: 1173372616}
   m_Direction: 3
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -25081,8 +25081,10 @@ MonoBehaviour:
   button: {fileID: 1176621132}
   carStatWindow: {fileID: 4348207466390242160}
   newCollectiblesWarning: {fileID: 277491839}
-  maxAcceleration: 500
-  maxHandleability: 25
+  minAcceleration: 275
+  maxAcceleration: 375
+  minHandleability: 0.25
+  maxHandleability: 0.5
   accelerationImage: {fileID: 4399459909973512593}
   handleability: {fileID: 2877162335835201523}
   carTabSwitcher: {fileID: 1422958518}

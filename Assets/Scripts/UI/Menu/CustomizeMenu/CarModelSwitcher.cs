@@ -9,7 +9,9 @@ public class CarModelSwitcher : MonoBehaviour
     [SerializeField] private GameObject button;
     [SerializeField] private GameObject carStatWindow;
     [SerializeField] private GameObject newCollectiblesWarning;
+    [SerializeField] private float minAcceleration;
     [SerializeField] private float maxAcceleration;
+    [SerializeField] private float minHandleability;
     [SerializeField] private float maxHandleability;
     [SerializeField] private Image accelerationImage;
     [SerializeField] private Image handleability;
@@ -158,8 +160,8 @@ public class CarModelSwitcher : MonoBehaviour
     public void UpdateCarStatWindow()
     {
         CarModelSO carModelSO = (CarModelSO)currentCarModel;
-        float currentAccel = carModelSO.Acceleration / maxAcceleration;
-        float currentHandleability = carModelSO.Handleability / maxHandleability;
+        float currentAccel = Mathf.InverseLerp(minAcceleration, maxAcceleration, carModelSO.Acceleration);
+        float currentHandleability = Mathf.InverseLerp(minHandleability, maxHandleability, carModelSO.Handleability);
         accelerationImage.fillAmount = currentAccel;
         handleability.fillAmount = currentHandleability;
     }

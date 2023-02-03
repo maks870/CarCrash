@@ -61,6 +61,7 @@ namespace UnityStandardAssets.Vehicles.Car
         public float Revs { get; private set; }
         public float AccelInput { get; private set; }
         public bool IsAccelerated { get => isAccelerated; set => isAccelerated = value; }
+        public float Handability { set => m_SteerHelper = value; }
 
         // Use this for initialization
         private void Start()
