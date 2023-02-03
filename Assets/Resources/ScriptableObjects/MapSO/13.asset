@@ -15,7 +15,7 @@ MonoBehaviour:
   maxPoints: 0
   car: {fileID: 11400000, guid: 037cf8e7a9ed2df4fa4bbba940436c37, type: 2}
   nextMap: {fileID: 11400000, guid: e5944e0f766d1084195d033e7f780d82, type: 2}
-  sprite: {fileID: 21300000, guid: 74d82dd2e5da1df4b93cb837676c091d, type: 3}
+  sprite: {fileID: 21300000, guid: 9580f99637f387d478426f28e325aadc, type: 3}
   awards:
   - coins: 5
     gems: 0
