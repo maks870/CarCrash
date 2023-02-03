@@ -17,6 +17,8 @@ public class LootBox : MonoBehaviour, ITrainingWaiter
     [SerializeField] private int maxDropGem = 10;
 
     [SerializeField] private int cost;
+
+    [SerializeField] private GameObject roomUI;
     private Animator animator;
 
     public Action ActionEndOpen;
@@ -85,5 +87,6 @@ public class LootBox : MonoBehaviour, ITrainingWaiter
     public void EndCloseAnimation()
     {
         ActionEndClose.Invoke();
+        roomUI.SetActive(true);
     }
 }
