@@ -4,20 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ChkManager : MonoBehaviour
-{ 
-    [SerializeField] private Text PositionDisplay; 
-    [SerializeField] private RaceFinish raceFinish;  
+{
+    [SerializeField] private Text PositionDisplay;
+    [SerializeField] private RaceFinish raceFinish;
     [SerializeField] private Text LapCounter;
     [SerializeField] private Transform cars;
     private int LapsSelected;
 
-    
+
     public static List<int> nChk = new List<int>();//player values & car pos game object
     public static List<int> nLapsP = new List<int>();
     public static List<double> nDistP = new List<double>();
     public static List<GameObject> UnsortedCarPosList = new List<GameObject>();
     public static List<GameObject> CarPosList = new List<GameObject>();
-    public  List<GameObject> PublicCarPosList = new List<GameObject>();
+    public List<GameObject> PublicCarPosList = new List<GameObject>();
     public static List<double> scoreP = new List<double>();
     public static List<int> pNum = new List<int>();
     public static int posMax;
@@ -50,11 +50,14 @@ public class ChkManager : MonoBehaviour
         ChkTrigger.startDis = false;//distance isn't measured because no one has passed checkpoints yet
         PositionDisplay.text = "--";//so we won't show player's position until it triggers a checkpoint
 
-
+        int carPosNumber = 0;
         foreach (Transform go in cars)
         {
-            GameObject car = go.GetComponentInChildren<ChkTrigger>().gameObject;
+            ChkTrigger chkTrigger = go.GetComponentInChildren<ChkTrigger>();
+            GameObject car = chkTrigger.gameObject;
+            chkTrigger.CarPosListNumber = carPosNumber;
             UnsortedCarPosList.Add(car);
+            carPosNumber++;
         }
 
         for (int i = 0; i < UnsortedCarPosList.Count; i++)

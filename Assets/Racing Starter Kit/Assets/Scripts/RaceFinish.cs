@@ -31,6 +31,7 @@ public class RaceFinish : MonoBehaviour
             currentMap.fastestTime = currentTimeInSeconds;
             YandexGame.savesData.playerWrapper.maps[currentMapIndex].fastestTimeMiliSec = currentTimeInMiliSeconds;
             currentMap.newRecordTime = true;
+            LeaderboardWriter.WriteLeaderboardPoints();
         }
 
         if (currentMap.highestPlace == 0 || currentMap.highestPlace > ChkManager.posMax)
