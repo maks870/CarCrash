@@ -10376,7 +10376,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3103854571908569341}
   serializedVersion: 2
-  m_Mass: 600
+  m_Mass: 800
   m_Drag: 0.1
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -10401,7 +10401,7 @@ MonoBehaviour:
   carRenderer: {fileID: 2246598232839147957}
   carFilter: {fileID: 5884958108483131119}
   complexity: 50
-  accelerationSpeed: 270
+  accelerationSpeed: 305
 --- !u!114 &3103854571908569313
 MonoBehaviour:
   m_ObjectHideFlags: 0
