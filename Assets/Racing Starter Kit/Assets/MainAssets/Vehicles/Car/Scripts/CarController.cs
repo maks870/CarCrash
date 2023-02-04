@@ -51,6 +51,7 @@ namespace UnityStandardAssets.Vehicles.Car
         private const float k_ReversingThreshold = 0.01f;
         private bool handbrakeOn = false;
         private bool isAccelerated = false;
+        private bool isOvertaking = false;
 
         public bool HandbrakeOn { get => handbrakeOn; set => handbrakeOn = value; }
         public bool Skidding { get; private set; }
@@ -61,6 +62,7 @@ namespace UnityStandardAssets.Vehicles.Car
         public float Revs { get; private set; }
         public float AccelInput { get; private set; }
         public bool IsAccelerated { get => isAccelerated; set => isAccelerated = value; }
+        public bool IsOvertaking { set => isOvertaking = value; }
         public float Handability { set => m_SteerHelper = value; }
 
         // Use this for initialization
@@ -134,6 +136,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
         public void Move(float steering, float accel, float footbrake, float handbrake)
         {
+
             if (handbrakeOn)
                 handbrake = 1;
 
@@ -213,6 +216,11 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void ApplyDrive(float accel, float footbrake)
         {
+            if (isOvertaking)
+            {
+                accel = 1.5f;
+            }
+
             if (isAccelerated)
                 accel = 2.5f;
 
