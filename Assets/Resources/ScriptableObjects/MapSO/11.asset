@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 11
   m_EditorClassIdentifier: 
   maxPoints: 0
-  car: {fileID: 11400000, guid: 29fb4ce114bfab24e85fda017c377086, type: 2}
+  car: {fileID: 0}
   nextMap: {fileID: 11400000, guid: 01646824a0eb5a044b4ee5f24d1877d1, type: 2}
   sprite: {fileID: 21300000, guid: 9580f99637f387d478426f28e325aadc, type: 3}
   awards:

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxPoints: 0
   car: {fileID: 0}
-  nextMap: {fileID: 0}
+  nextMap: {fileID: 11400000, guid: af3ca91b6f2bacd4bb87473fb1d9fedc, type: 2}
   sprite: {fileID: 21300000, guid: 637288d24092c454e9b70bfd9b1a5c9b, type: 3}
   awards:
   - coins: 5
