@@ -14756,6 +14756,7 @@ MonoBehaviour:
   spawnPointBack: {fileID: 4650270482405887505}
   shield: {fileID: 781813624}
   possibleTargets: []
+  forwardMines: []
   abilities: []
 --- !u!65 &4650270482181886635
 BoxCollider:
@@ -16024,7 +16025,7 @@ MonoBehaviour:
   m_MaxHandbrakeTorque: 0
   m_Downforce: 100
   m_SpeedType: 0
-  m_Topspeed: 50
+  m_Topspeed: 90
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.9
   m_BrakeTorque: 20000

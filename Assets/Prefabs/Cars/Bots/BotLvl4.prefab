@@ -10401,7 +10401,7 @@ MonoBehaviour:
   carRenderer: {fileID: 2246598232839147957}
   carFilter: {fileID: 5884958108483131119}
   complexity: 80
-  accelerationSpeed: 320
+  accelerationSpeed: 325
 --- !u!114 &3103854571908569313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10439,7 +10439,7 @@ MonoBehaviour:
   m_MaxHandbrakeTorque: 100000000
   m_Downforce: 100
   m_SpeedType: 0
-  m_Topspeed: 50
+  m_Topspeed: 65
   m_RevRangeBoundary: 1
   m_SlipLimit: 0.4
   m_BrakeTorque: 20000

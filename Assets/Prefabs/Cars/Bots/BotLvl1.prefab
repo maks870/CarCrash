@@ -10401,7 +10401,7 @@ MonoBehaviour:
   carRenderer: {fileID: 2246598232839147957}
   carFilter: {fileID: 5884958108483131119}
   complexity: 35
-  accelerationSpeed: 230
+  accelerationSpeed: 240
 --- !u!114 &3103854571908569313
 MonoBehaviour:
   m_ObjectHideFlags: 0
