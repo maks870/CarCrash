@@ -3,9 +3,6 @@ using UnityEngine;
 public class Looker : MonoBehaviour
 {
     public Transform target;
-    public bool xLock = false;
-    public bool yLock = false;
-    public bool zLock = false;
 
     private Vector3 targetVector;
 
@@ -13,9 +10,9 @@ public class Looker : MonoBehaviour
     {
         targetVector = target.position;
 
-        targetVector.x = xLock ? 0 : targetVector.x;
-        targetVector.y = yLock ? 0 : targetVector.y;
-        targetVector.z = zLock ? 0 : targetVector.z;
+        targetVector.x = 0;
+        targetVector.y = 1;
+        targetVector.z = 0;
        
         transform.LookAt(targetVector);
 
