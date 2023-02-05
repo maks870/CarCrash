@@ -2146,7 +2146,7 @@ MonoBehaviour:
   roadPresets:
   - roadTypeName: ForestRoad
     id: 1
-    timestamp: 1674738845.8595045
+    timestamp: 1675588360.9459567
     roadWidth: 9
     faceDistance: 2.07
     angleTreshold: 45
@@ -2215,7 +2215,7 @@ MonoBehaviour:
     roadMaterials: []
     roadPhysicsMaterial: {fileID: 0}
     roadPhysicsMaterials: []
-    connectionMaterial: {fileID: 2100000, guid: 3c555588afad81d428ad1704d5d015a7,
+    connectionMaterial: {fileID: 2100000, guid: af6d26adc4bf82e4ab3b7d1d5b8343cd,
       type: 2}
     isSideObject: 0
     isCustomRoad: 0
@@ -2225,14 +2225,20 @@ MonoBehaviour:
     soDataLog:
     - id: 1674496660.8983088
       active: 1
+    - id: 1674808624.6666818
+      active: 0
     - id: 1674498000.8008091
       active: 0
     - id: 1674488577.6198108
       active: 1
+    - id: 1675425081.431936
+      active: 0
     - id: 1674646013.9533343
       active: 1
     - id: 1674497149.5651634
       active: 1
+    - id: 1674808629.7271607
+      active: 0
     - id: 1674659048.2718844
       active: 0
     layer: 6
@@ -2287,9 +2293,9 @@ MonoBehaviour:
     isRoadShape: 1
     controlType: 0
     vertexColor: {r: 0, g: 0, b: 0, a: 0}
-  - roadTypeName: Road Type 2
+  - roadTypeName: CityRoad
     id: 1674483413.3253927
-    timestamp: 1674727896.2826936
+    timestamp: 1675588144.170538
     roadWidth: 8
     faceDistance: 2
     angleTreshold: 45
@@ -2354,8 +2360,7 @@ MonoBehaviour:
     crosswalksIntersections: 0
     crosswalkPrefab: {fileID: 0}
     crosswalkType: 1
-    roadMaterial: {fileID: -7015027346690320248, guid: d0aef7b18e5d1514489b02177a9af450,
-      type: 3}
+    roadMaterial: {fileID: 2100000, guid: af6d26adc4bf82e4ab3b7d1d5b8343cd, type: 2}
     roadMaterials: []
     roadPhysicsMaterial: {fileID: 0}
     roadPhysicsMaterials: []
@@ -2368,15 +2373,21 @@ MonoBehaviour:
     soDataLog:
     - id: 1674496660.8983088
       active: 0
+    - id: 1674808624.6666818
+      active: 0
     - id: 1674498000.8008091
       active: 0
-    - id: 1674659048.2718844
-      active: 0
     - id: 1674488577.6198108
+      active: 0
+    - id: 1675425081.431936
       active: 0
     - id: 1674646013.9533343
       active: 0
     - id: 1674497149.5651634
+      active: 0
+    - id: 1674808629.7271607
+      active: 0
+    - id: 1674659048.2718844
       active: 0
     layer: 0
     isStatic: 1
