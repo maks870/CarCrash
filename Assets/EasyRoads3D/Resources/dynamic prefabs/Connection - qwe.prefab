@@ -167,44 +167,44 @@ MonoBehaviour:
     position: {x: 0, y: 0, z: 0}
   uvArrayFront:
   - 0
-  - 0.083333336
+  - 0.055555556
   - 0.5
-  - 0.9166667
+  - 0.9444444
   - 1
   uvArrayBack:
   - 0
-  - 0.083333336
+  - 0.055555556
   - 0.5
-  - 0.9166667
+  - 0.9444444
   - 1
   uvArrayLeft:
   - 0
-  - 0.083333336
+  - 0.055555556
   - 0.5
-  - 0.9166667
+  - 0.9444444
   - 1
   uvArrayRight:
   - 0
-  - 0.083333336
+  - 0.055555556
   - 0.5
-  - 0.9166667
+  - 0.9444444
   - 1
-  ODDCQOOCOO: 
-  OQDDDDOOCC: 
-  ODCQOQQDQO: 
-  OCCDOCOQOD: 
-  OCDQDQOQQD: 
-  ODDDDOQDQO: 
-  ODCQQOOQDD: 
-  OCOOOQDQDO: 
-  ODDCQOOCOOStart: 
-  OQDDDDOOCCStart: 
-  ODCQOQQDQOStart: 
-  OCCDOCOQODStart: 
-  OCDQDQOQQDStart: 
-  ODDDDOQDQOStart: 
-  ODCQQOOQDDStart: 
-  OCOOOQDQDOStart: 
+  ODDCQOOCOO: 690000006e000000730000007500000077000000
+  OQDDDDOOCC: 8f00000094000000990000009b0000009d000000
+  ODCQOQQDQO: db000000e0000000e5000000e7000000e9000000
+  OCCDOCOQOD: b5000000ba000000bf000000c1000000c3000000
+  OCDQDQOQQD: ee000000f3000000f8000000fa000000fc000000
+  ODDDDOQDQO: 7c0000008100000086000000880000008a000000
+  ODCQQOOQDD: a2000000a7000000ac000000ae000000b0000000
+  OCOOOQDQDO: c8000000cd000000d2000000d4000000d6000000
+  ODDCQOOCOOStart: 650000006a0000006f0000007400000076000000
+  OQDDDDOOCCStart: 8b00000090000000950000009a0000009c000000
+  ODCQOQQDQOStart: d7000000dc000000e1000000e6000000e8000000
+  OCCDOCOQODStart: b1000000b6000000bb000000c0000000c2000000
+  OCDQDQOQQDStart: ea000000ef000000f4000000f9000000fb000000
+  ODDDDOQDQOStart: 780000007d000000820000008700000089000000
+  ODCQQOOQDDStart: 9e000000a3000000a8000000ad000000af000000
+  OCOOOQDQDOStart: c4000000c9000000ce000000d3000000d5000000
   frontLeftRoadInts: 
   frontRightRoadInts: 
   backLeftRoadInts: 
@@ -272,32 +272,1179 @@ MonoBehaviour:
   defaultSidewalkEnabledStatus: 0
   planarUVs: 0
   planarTiling: 1
-  isSceneObject: 0
+  isSceneObject: 1
   connectionHandling: 0
-  roadTypesDynamic: []
-  frontRoadTypeInt: 0
-  frontRoadTypeID: 1674488234.9710236
-  frontRoadWidth: 6
-  frontMaterial: {fileID: 2100000, guid: 3c555588afad81d428ad1704d5d015a7, type: 2}
-  frontRoadMaterial: {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
+  roadTypesDynamic:
+  - roadTypeName: ForestRoad
+    id: 1
+    timestamp: 1675588360.9459567
+    roadWidth: 9
+    faceDistance: 2.07
+    angleTreshold: 45
+    uvTiling: 1
+    uv4Type: 0
+    type: 0
+    detailDistance: 0
+    planarUVs: 0
+    outerIndent: 0
+    roadShapeDataActive: 0
+    roadShapeData:
+      nodes:
+      - {x: -3, y: 0}
+      - {x: 3, y: 0}
+      hardEdge: 0000
+      priorityNodeIndexLeft: 0
+      priorityNodeIndexRight: 1
+      nodesV3: []
+      lanes: []
+      leftLanes: -1
+      rightLanes: -1
+      symmetrical: 1
+      leftSidewalkOffset: 0
+      rightSidewalkOffset: 0
+      outerLaneMarkingLeftIndex: -1
+      includeOuterlaneLeftInShape: 0
+      includeOuterlaneRightInShape: 0
+      outerLaneMarkingRightIndex: -1
+      outerOuterLaneMarkingLeftIndex: 0
+      outerOuterLaneMarkingRightIndex: 0
+      selectedNode: 0
+      selectedLaneNode: 0
+      isSymmetrical: 0
+      isset: 1
+    minSpeed: 0
+    maxSpeed: 0
+    speedLimit: 0
+    roadShape:
+    - {x: 4.5, y: 0}
+    - {x: -4.5, y: 0}
+    roadShapeExt: []
+    roadShapeExt2: []
+    doConnectionTri: 
+    doConnectionTriExt: 
+    roadShapeUVs:
+    - 0
+    - 1
+    roadShapeExtUVs: []
+    roadShapeExtUVs2: []
+    roadShapeUVs2:
+    - 0
+    - 1
+    preserveUVs: 0
+    hardEdge: 
+    roadShapeVecsString: 
+    defaultSidewalk: 0
+    sidewalks: 0
+    sidewalkHeight: 0.2
+    sidewalkWidth: 2
+    crosswalks: 0
+    crosswalkIntervals: 0
+    crosswalksIntersections: 0
+    crosswalkPrefab: {fileID: 0}
+    crosswalkType: 0
+    roadMaterial: {fileID: 2100000, guid: af6d26adc4bf82e4ab3b7d1d5b8343cd, type: 2}
+    roadMaterials: []
+    roadPhysicsMaterial: {fileID: 0}
+    roadPhysicsMaterials: []
+    connectionMaterial: {fileID: 2100000, guid: af6d26adc4bf82e4ab3b7d1d5b8343cd,
+      type: 2}
+    isSideObject: 0
+    isCustomRoad: 0
+    subSegments: 1
+    soData: []
+    soDataExt: []
+    soDataLog:
+    - id: 1674496660.8983088
+      active: 1
+    - id: 1674808624.6666818
+      active: 0
+    - id: 1674498000.8008091
+      active: 0
+    - id: 1674488577.6198108
+      active: 1
+    - id: 1675425081.431936
+      active: 0
+    - id: 1674646013.9533343
+      active: 1
+    - id: 1674497149.5651634
+      active: 1
+    - id: 1674808629.7271607
+      active: 0
+    - id: 1674659048.2718844
+      active: 0
+    layer: 6
+    isStatic: 0
+    tag: Untagged
+    splatMapActive: 0
+    splatIndex: 0
+    expandLevel: 0
+    smoothLevel: 0
+    splatOpacity: 0
+    followTerrainContours: 0
+    terrainContoursOffset: 5
+    terrainDeformation: 0
+    defaultIndent: 2
+    defaultSurrounding: 2
+    castShadow: 0
+    randomnessFlag: 0
+    randomYPosition: 0
+    randomMinYPosition: 0.5
+    randomMaxYPosition: 0.5
+    minRandomYPositionDistance: 0
+    maxRandomYPositionDistance: 0
+    randomMinRotation: 0
+    randomMaxRotation: 0
+    minRandomRotationDistance: 0
+    maxRandomRotationDistance: 0
+    vegetationStudioMaskLineActive: 0
+    vegetationStudioGrassPerimeter: 0
+    vegetationStudioPlantPerimeter: 0
+    vegetationStudioTreePerimeter: 0
+    vegetationStudioObjectPerimeter: 0
+    vegetationStudioLargeObjectPerimeter: 0
+    vegetationStudioBiomeMaskActive: 0
+    vegetationStudioBiomeMaskDistance: 0
+    vegetationStudioBiomeMaskBlendDistance: 0
+    vegetationStudioBiomeMaskNoiseScale: 0
+    decalPresets: []
+    decalClassPresets: []
+    defaultRamp: 0
+    extrusionType: 0
+    extrusionDistance: 0
+    fixedDistance: 0
+    connectionAngle: 0
+    connectionRadius: 0
+    oneWay: 0
+    cornerRadiusMainRoad: 0
+    cornerSementsMainRoad: 0
+    cornerRadiusSecondaryRoad: 0
+    cornerRadiusSecondaryCurvature: 0
+    cornerSementsSecondaryRoad: 0
+    mainRoadsOnly: 0
+    isRoadShape: 1
+    controlType: 0
+    vertexColor: {r: 0, g: 0, b: 0, a: 0}
+  - roadTypeName: CityRoad
+    id: 1674483413.3253927
+    timestamp: 1675588144.170538
+    roadWidth: 8
+    faceDistance: 2
+    angleTreshold: 45
+    uvTiling: 1
+    uv4Type: 0
+    type: 1
+    detailDistance: 50
+    planarUVs: 0
+    outerIndent: 0.5
+    roadShapeDataActive: 0
+    roadShapeData:
+      nodes:
+      - {x: -3, y: 0}
+      - {x: 3, y: 0}
+      hardEdge: 0000
+      priorityNodeIndexLeft: 0
+      priorityNodeIndexRight: 1
+      nodesV3: []
+      lanes: []
+      leftLanes: -1
+      rightLanes: -1
+      symmetrical: 1
+      leftSidewalkOffset: 0
+      rightSidewalkOffset: 0
+      outerLaneMarkingLeftIndex: -1
+      includeOuterlaneLeftInShape: 0
+      includeOuterlaneRightInShape: 0
+      outerLaneMarkingRightIndex: -1
+      outerOuterLaneMarkingLeftIndex: -1
+      outerOuterLaneMarkingRightIndex: -1
+      selectedNode: 0
+      selectedLaneNode: 0
+      isSymmetrical: 0
+      isset: 1
+    minSpeed: 45
+    maxSpeed: 55
+    speedLimit: 50
+    roadShape:
+    - {x: 4, y: 0}
+    - {x: -4, y: 0}
+    roadShapeExt: []
+    roadShapeExt2: []
+    doConnectionTri: 
+    doConnectionTriExt: 
+    roadShapeUVs:
+    - 0
+    - 1
+    roadShapeExtUVs: []
+    roadShapeExtUVs2: []
+    roadShapeUVs2:
+    - 0
+    - 1
+    preserveUVs: 0
+    hardEdge: 
+    roadShapeVecsString: 
+    defaultSidewalk: 0
+    sidewalks: 0
+    sidewalkHeight: 0.2
+    sidewalkWidth: 2
+    crosswalks: 0
+    crosswalkIntervals: 100
+    crosswalksIntersections: 0
+    crosswalkPrefab: {fileID: 0}
+    crosswalkType: 1
+    roadMaterial: {fileID: 2100000, guid: af6d26adc4bf82e4ab3b7d1d5b8343cd, type: 2}
+    roadMaterials: []
+    roadPhysicsMaterial: {fileID: 0}
+    roadPhysicsMaterials: []
+    connectionMaterial: {fileID: 0}
+    isSideObject: 0
+    isCustomRoad: 0
+    subSegments: 1
+    soData: []
+    soDataExt: []
+    soDataLog:
+    - id: 1674496660.8983088
+      active: 0
+    - id: 1674808624.6666818
+      active: 0
+    - id: 1674498000.8008091
+      active: 0
+    - id: 1674488577.6198108
+      active: 0
+    - id: 1675425081.431936
+      active: 0
+    - id: 1674646013.9533343
+      active: 0
+    - id: 1674497149.5651634
+      active: 0
+    - id: 1674808629.7271607
+      active: 0
+    - id: 1674659048.2718844
+      active: 0
+    layer: 0
+    isStatic: 1
+    tag: Untagged
+    splatMapActive: 0
+    splatIndex: 0
+    expandLevel: 0
+    smoothLevel: 1
+    splatOpacity: 1
+    followTerrainContours: 0
+    terrainContoursOffset: 5
+    terrainDeformation: 0
+    defaultIndent: 2
+    defaultSurrounding: 2
+    castShadow: 0
+    randomnessFlag: 0
+    randomYPosition: 0
+    randomMinYPosition: 0
+    randomMaxYPosition: 0
+    minRandomYPositionDistance: 15
+    maxRandomYPositionDistance: 35
+    randomMinRotation: 0
+    randomMaxRotation: 0
+    minRandomRotationDistance: 15
+    maxRandomRotationDistance: 30
+    vegetationStudioMaskLineActive: 1
+    vegetationStudioGrassPerimeter: 2
+    vegetationStudioPlantPerimeter: 3
+    vegetationStudioTreePerimeter: 4
+    vegetationStudioObjectPerimeter: 3
+    vegetationStudioLargeObjectPerimeter: 4
+    vegetationStudioBiomeMaskActive: 0
+    vegetationStudioBiomeMaskDistance: 0
+    vegetationStudioBiomeMaskBlendDistance: 0
+    vegetationStudioBiomeMaskNoiseScale: 0
+    decalPresets: []
+    decalClassPresets: []
+    defaultRamp: 0
+    extrusionType: 0
+    extrusionDistance: 10
+    fixedDistance: 5
+    connectionAngle: 25
+    connectionRadius: 10
+    oneWay: 0
+    cornerRadiusMainRoad: 3
+    cornerSementsMainRoad: 6
+    cornerRadiusSecondaryRoad: 3
+    cornerRadiusSecondaryCurvature: 0.5
+    cornerSementsSecondaryRoad: 6
+    mainRoadsOnly: 0
+    isRoadShape: 1
+    controlType: 0
+    vertexColor: {r: 1, g: 1, b: 1, a: 1}
+  - roadTypeName: Road Type 3
+    id: 1674483705.3082652
+    timestamp: 1674483705.3082652
+    roadWidth: 6
+    faceDistance: 2
+    angleTreshold: 45
+    uvTiling: 1
+    uv4Type: 0
+    type: 1
+    detailDistance: 50
+    planarUVs: 0
+    outerIndent: 0.5
+    roadShapeDataActive: 0
+    roadShapeData:
+      nodes:
+      - {x: -3, y: 0}
+      - {x: 3, y: 0}
+      hardEdge: 0000
+      priorityNodeIndexLeft: 0
+      priorityNodeIndexRight: 1
+      nodesV3: []
+      lanes: []
+      leftLanes: -1
+      rightLanes: -1
+      symmetrical: 1
+      leftSidewalkOffset: 0
+      rightSidewalkOffset: 0
+      outerLaneMarkingLeftIndex: -1
+      includeOuterlaneLeftInShape: 0
+      includeOuterlaneRightInShape: 0
+      outerLaneMarkingRightIndex: -1
+      outerOuterLaneMarkingLeftIndex: -1
+      outerOuterLaneMarkingRightIndex: -1
+      selectedNode: 0
+      selectedLaneNode: 0
+      isSymmetrical: 0
+      isset: 1
+    minSpeed: 45
+    maxSpeed: 55
+    speedLimit: 50
+    roadShape:
+    - {x: -3, y: 0}
+    - {x: 3, y: 0}
+    roadShapeExt: []
+    roadShapeExt2: []
+    doConnectionTri: 
+    doConnectionTriExt: 
+    roadShapeUVs:
+    - 0
+    - 1
+    roadShapeExtUVs: []
+    roadShapeExtUVs2: []
+    roadShapeUVs2:
+    - 0
+    - 1
+    preserveUVs: 0
+    hardEdge: 
+    roadShapeVecsString: 
+    defaultSidewalk: 0
+    sidewalks: 0
+    sidewalkHeight: 0.2
+    sidewalkWidth: 2
+    crosswalks: 0
+    crosswalkIntervals: 100
+    crosswalksIntersections: 0
+    crosswalkPrefab: {fileID: 0}
+    crosswalkType: 1
+    roadMaterial: {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
+    roadMaterials: []
+    roadPhysicsMaterial: {fileID: 0}
+    roadPhysicsMaterials: []
+    connectionMaterial: {fileID: 0}
+    isSideObject: 0
+    isCustomRoad: 0
+    subSegments: 1
+    soData: []
+    soDataExt: []
+    soDataLog: []
+    layer: 0
+    isStatic: 1
+    tag: Untagged
+    splatMapActive: 0
+    splatIndex: 0
+    expandLevel: 0
+    smoothLevel: 1
+    splatOpacity: 1
+    followTerrainContours: 0
+    terrainContoursOffset: 5
+    terrainDeformation: 1
+    defaultIndent: 2
+    defaultSurrounding: 2
+    castShadow: 0
+    randomnessFlag: 0
+    randomYPosition: 0
+    randomMinYPosition: -0.02
+    randomMaxYPosition: 0.02
+    minRandomYPositionDistance: 15
+    maxRandomYPositionDistance: 35
+    randomMinRotation: -1
+    randomMaxRotation: 1
+    minRandomRotationDistance: 15
+    maxRandomRotationDistance: 30
+    vegetationStudioMaskLineActive: 1
+    vegetationStudioGrassPerimeter: 2
+    vegetationStudioPlantPerimeter: 3
+    vegetationStudioTreePerimeter: 4
+    vegetationStudioObjectPerimeter: 3
+    vegetationStudioLargeObjectPerimeter: 4
+    vegetationStudioBiomeMaskActive: 0
+    vegetationStudioBiomeMaskDistance: 0
+    vegetationStudioBiomeMaskBlendDistance: 0
+    vegetationStudioBiomeMaskNoiseScale: 0
+    decalPresets: []
+    decalClassPresets: []
+    defaultRamp: 0
+    extrusionType: 0
+    extrusionDistance: 10
+    fixedDistance: 5
+    connectionAngle: 25
+    connectionRadius: 10
+    oneWay: 0
+    cornerRadiusMainRoad: 3
+    cornerSementsMainRoad: 6
+    cornerRadiusSecondaryRoad: 3
+    cornerRadiusSecondaryCurvature: 0.5
+    cornerSementsSecondaryRoad: 6
+    mainRoadsOnly: 0
+    isRoadShape: 1
+    controlType: 0
+    vertexColor: {r: 1, g: 1, b: 1, a: 1}
+  - roadTypeName: qwe
+    id: 1674488234.9710236
+    timestamp: 1674488282.0938392
+    roadWidth: 6
+    faceDistance: 2
+    angleTreshold: 45
+    uvTiling: 1
+    uv4Type: 0
+    type: 1
+    detailDistance: 50
+    planarUVs: 0
+    outerIndent: 0.5
+    roadShapeDataActive: 0
+    roadShapeData:
+      nodes:
+      - {x: -3, y: 0}
+      - {x: 3, y: 0}
+      hardEdge: 0000
+      priorityNodeIndexLeft: 0
+      priorityNodeIndexRight: 1
+      nodesV3: []
+      lanes: []
+      leftLanes: -1
+      rightLanes: -1
+      symmetrical: 1
+      leftSidewalkOffset: 0
+      rightSidewalkOffset: 0
+      outerLaneMarkingLeftIndex: -1
+      includeOuterlaneLeftInShape: 0
+      includeOuterlaneRightInShape: 0
+      outerLaneMarkingRightIndex: -1
+      outerOuterLaneMarkingLeftIndex: -1
+      outerOuterLaneMarkingRightIndex: -1
+      selectedNode: 0
+      selectedLaneNode: 0
+      isSymmetrical: 0
+      isset: 1
+    minSpeed: 45
+    maxSpeed: 55
+    speedLimit: 50
+    roadShape:
+    - {x: -3, y: 0}
+    - {x: 3, y: 0}
+    roadShapeExt: []
+    roadShapeExt2: []
+    doConnectionTri: 
+    doConnectionTriExt: 
+    roadShapeUVs:
+    - 0
+    - 1
+    roadShapeExtUVs: []
+    roadShapeExtUVs2: []
+    roadShapeUVs2:
+    - 0
+    - 1
+    preserveUVs: 0
+    hardEdge: 
+    roadShapeVecsString: 
+    defaultSidewalk: 0
+    sidewalks: 0
+    sidewalkHeight: 0.2
+    sidewalkWidth: 2
+    crosswalks: 0
+    crosswalkIntervals: 100
+    crosswalksIntersections: 0
+    crosswalkPrefab: {fileID: 0}
+    crosswalkType: 1
+    roadMaterial: {fileID: -7015027346690320248, guid: f89ada25e9460ea48b770597d2461d47,
+      type: 3}
+    roadMaterials: []
+    roadPhysicsMaterial: {fileID: 0}
+    roadPhysicsMaterials: []
+    connectionMaterial: {fileID: 0}
+    isSideObject: 0
+    isCustomRoad: 0
+    subSegments: 1
+    soData: []
+    soDataExt: []
+    soDataLog:
+    - id: 1674488577.6198108
+      active: 0
+    layer: 0
+    isStatic: 1
+    tag: Untagged
+    splatMapActive: 0
+    splatIndex: 0
+    expandLevel: 0
+    smoothLevel: 1
+    splatOpacity: 1
+    followTerrainContours: 0
+    terrainContoursOffset: 5
+    terrainDeformation: 1
+    defaultIndent: 2
+    defaultSurrounding: 2
+    castShadow: 0
+    randomnessFlag: 0
+    randomYPosition: 0
+    randomMinYPosition: -0.02
+    randomMaxYPosition: 0.02
+    minRandomYPositionDistance: 15
+    maxRandomYPositionDistance: 35
+    randomMinRotation: -1
+    randomMaxRotation: 1
+    minRandomRotationDistance: 15
+    maxRandomRotationDistance: 30
+    vegetationStudioMaskLineActive: 1
+    vegetationStudioGrassPerimeter: 2
+    vegetationStudioPlantPerimeter: 3
+    vegetationStudioTreePerimeter: 4
+    vegetationStudioObjectPerimeter: 3
+    vegetationStudioLargeObjectPerimeter: 4
+    vegetationStudioBiomeMaskActive: 0
+    vegetationStudioBiomeMaskDistance: 0
+    vegetationStudioBiomeMaskBlendDistance: 0
+    vegetationStudioBiomeMaskNoiseScale: 0
+    decalPresets: []
+    decalClassPresets: []
+    defaultRamp: 0
+    extrusionType: 0
+    extrusionDistance: 10
+    fixedDistance: 5
+    connectionAngle: 25
+    connectionRadius: 10
+    oneWay: 0
+    cornerRadiusMainRoad: 3
+    cornerSementsMainRoad: 6
+    cornerRadiusSecondaryRoad: 3
+    cornerRadiusSecondaryCurvature: 0.5
+    cornerSementsSecondaryRoad: 6
+    mainRoadsOnly: 0
+    isRoadShape: 1
+    controlType: 0
+    vertexColor: {r: 1, g: 1, b: 1, a: 1}
+  - roadTypeName: Road Type 5
+    id: 1674488350.5090804
+    timestamp: 1674488354.287056
+    roadWidth: 6
+    faceDistance: 2
+    angleTreshold: 45
+    uvTiling: 1
+    uv4Type: 0
+    type: 1
+    detailDistance: 50
+    planarUVs: 0
+    outerIndent: 0.5
+    roadShapeDataActive: 0
+    roadShapeData:
+      nodes:
+      - {x: -3, y: 0}
+      - {x: 3, y: 0}
+      hardEdge: 0000
+      priorityNodeIndexLeft: 0
+      priorityNodeIndexRight: 1
+      nodesV3: []
+      lanes: []
+      leftLanes: -1
+      rightLanes: -1
+      symmetrical: 1
+      leftSidewalkOffset: 0
+      rightSidewalkOffset: 0
+      outerLaneMarkingLeftIndex: -1
+      includeOuterlaneLeftInShape: 0
+      includeOuterlaneRightInShape: 0
+      outerLaneMarkingRightIndex: -1
+      outerOuterLaneMarkingLeftIndex: -1
+      outerOuterLaneMarkingRightIndex: -1
+      selectedNode: 0
+      selectedLaneNode: 0
+      isSymmetrical: 0
+      isset: 1
+    minSpeed: 45
+    maxSpeed: 55
+    speedLimit: 50
+    roadShape:
+    - {x: -3, y: 0}
+    - {x: 3, y: 0}
+    roadShapeExt: []
+    roadShapeExt2: []
+    doConnectionTri: 
+    doConnectionTriExt: 
+    roadShapeUVs:
+    - 0
+    - 1
+    roadShapeExtUVs: []
+    roadShapeExtUVs2: []
+    roadShapeUVs2:
+    - 0
+    - 1
+    preserveUVs: 0
+    hardEdge: 
+    roadShapeVecsString: 
+    defaultSidewalk: 0
+    sidewalks: 0
+    sidewalkHeight: 0.2
+    sidewalkWidth: 2
+    crosswalks: 0
+    crosswalkIntervals: 100
+    crosswalksIntersections: 0
+    crosswalkPrefab: {fileID: 0}
+    crosswalkType: 1
+    roadMaterial: {fileID: -7015027346690320248, guid: f89ada25e9460ea48b770597d2461d47,
+      type: 3}
+    roadMaterials: []
+    roadPhysicsMaterial: {fileID: 0}
+    roadPhysicsMaterials: []
+    connectionMaterial: {fileID: 0}
+    isSideObject: 0
+    isCustomRoad: 0
+    subSegments: 1
+    soData: []
+    soDataExt: []
+    soDataLog:
+    - id: 1674488577.6198108
+      active: 0
+    layer: 0
+    isStatic: 1
+    tag: Untagged
+    splatMapActive: 0
+    splatIndex: 0
+    expandLevel: 0
+    smoothLevel: 1
+    splatOpacity: 1
+    followTerrainContours: 0
+    terrainContoursOffset: 5
+    terrainDeformation: 1
+    defaultIndent: 2
+    defaultSurrounding: 2
+    castShadow: 0
+    randomnessFlag: 0
+    randomYPosition: 0
+    randomMinYPosition: -0.02
+    randomMaxYPosition: 0.02
+    minRandomYPositionDistance: 15
+    maxRandomYPositionDistance: 35
+    randomMinRotation: -1
+    randomMaxRotation: 1
+    minRandomRotationDistance: 15
+    maxRandomRotationDistance: 30
+    vegetationStudioMaskLineActive: 1
+    vegetationStudioGrassPerimeter: 2
+    vegetationStudioPlantPerimeter: 3
+    vegetationStudioTreePerimeter: 4
+    vegetationStudioObjectPerimeter: 3
+    vegetationStudioLargeObjectPerimeter: 4
+    vegetationStudioBiomeMaskActive: 0
+    vegetationStudioBiomeMaskDistance: 0
+    vegetationStudioBiomeMaskBlendDistance: 0
+    vegetationStudioBiomeMaskNoiseScale: 0
+    decalPresets: []
+    decalClassPresets: []
+    defaultRamp: 0
+    extrusionType: 0
+    extrusionDistance: 10
+    fixedDistance: 5
+    connectionAngle: 25
+    connectionRadius: 10
+    oneWay: 0
+    cornerRadiusMainRoad: 3
+    cornerSementsMainRoad: 6
+    cornerRadiusSecondaryRoad: 3
+    cornerRadiusSecondaryCurvature: 0.5
+    cornerSementsSecondaryRoad: 6
+    mainRoadsOnly: 0
+    isRoadShape: 1
+    controlType: 0
+    vertexColor: {r: 1, g: 1, b: 1, a: 1}
+  - roadTypeName: SnowRoad
+    id: 1674808589.9511838
+    timestamp: 1674828508.352621
+    roadWidth: 9
+    faceDistance: 2.07
+    angleTreshold: 45
+    uvTiling: 1
+    uv4Type: 0
+    type: 0
+    detailDistance: 50
+    planarUVs: 0
+    outerIndent: 0
+    roadShapeDataActive: 0
+    roadShapeData:
+      nodes:
+      - {x: -3, y: 0}
+      - {x: 3, y: 0}
+      hardEdge: 0000
+      priorityNodeIndexLeft: 0
+      priorityNodeIndexRight: 1
+      nodesV3: []
+      lanes: []
+      leftLanes: -1
+      rightLanes: -1
+      symmetrical: 1
+      leftSidewalkOffset: 0
+      rightSidewalkOffset: 0
+      outerLaneMarkingLeftIndex: -1
+      includeOuterlaneLeftInShape: 0
+      includeOuterlaneRightInShape: 0
+      outerLaneMarkingRightIndex: -1
+      outerOuterLaneMarkingLeftIndex: 0
+      outerOuterLaneMarkingRightIndex: 0
+      selectedNode: 0
+      selectedLaneNode: 0
+      isSymmetrical: 0
+      isset: 1
+    minSpeed: 45
+    maxSpeed: 55
+    speedLimit: 50
+    roadShape:
+    - {x: 4.5, y: 0}
+    - {x: -4.5, y: 0}
+    roadShapeExt: []
+    roadShapeExt2: []
+    doConnectionTri: 
+    doConnectionTriExt: 
+    roadShapeUVs:
+    - 0
+    - 1
+    roadShapeExtUVs: []
+    roadShapeExtUVs2: []
+    roadShapeUVs2:
+    - 0
+    - 1
+    preserveUVs: 0
+    hardEdge: 
+    roadShapeVecsString: 
+    defaultSidewalk: 0
+    sidewalks: 0
+    sidewalkHeight: 0.2
+    sidewalkWidth: 2
+    crosswalks: 0
+    crosswalkIntervals: 0
+    crosswalksIntersections: 0
+    crosswalkPrefab: {fileID: 0}
+    crosswalkType: 1
+    roadMaterial: {fileID: 2100000, guid: 756d18fa69ce1a84eb49d79bf4e98ffd, type: 2}
+    roadMaterials: []
+    roadPhysicsMaterial: {fileID: 0}
+    roadPhysicsMaterials: []
+    connectionMaterial: {fileID: 2100000, guid: 3c555588afad81d428ad1704d5d015a7,
+      type: 2}
+    isSideObject: 0
+    isCustomRoad: 0
+    subSegments: 1
+    soData: []
+    soDataExt: []
+    soDataLog:
+    - id: 1674496660.8983088
+      active: 1
+    - id: 1674808624.6666818
+      active: 0
+    - id: 1674498000.8008091
+      active: 0
+    - id: 1674488577.6198108
+      active: 0
+    - id: 1674646013.9533343
+      active: 1
+    - id: 1674497149.5651634
+      active: 1
+    - id: 1674808629.7271607
+      active: 1
+    - id: 1674659048.2718844
+      active: 0
+    layer: 6
+    isStatic: 0
+    tag: Untagged
+    splatMapActive: 0
+    splatIndex: 0
+    expandLevel: 0
+    smoothLevel: 0
+    splatOpacity: 0
+    followTerrainContours: 0
+    terrainContoursOffset: 5
+    terrainDeformation: 0
+    defaultIndent: 2
+    defaultSurrounding: 2
+    castShadow: 0
+    randomnessFlag: 0
+    randomYPosition: 0
+    randomMinYPosition: 0.5
+    randomMaxYPosition: 0.5
+    minRandomYPositionDistance: 0
+    maxRandomYPositionDistance: 0
+    randomMinRotation: 0
+    randomMaxRotation: 0
+    minRandomRotationDistance: 0
+    maxRandomRotationDistance: 0
+    vegetationStudioMaskLineActive: 0
+    vegetationStudioGrassPerimeter: 0
+    vegetationStudioPlantPerimeter: 0
+    vegetationStudioTreePerimeter: 0
+    vegetationStudioObjectPerimeter: 0
+    vegetationStudioLargeObjectPerimeter: 0
+    vegetationStudioBiomeMaskActive: 0
+    vegetationStudioBiomeMaskDistance: 0
+    vegetationStudioBiomeMaskBlendDistance: 0
+    vegetationStudioBiomeMaskNoiseScale: 0
+    decalPresets: []
+    decalClassPresets: []
+    defaultRamp: 0
+    extrusionType: 0
+    extrusionDistance: 0
+    fixedDistance: 0
+    connectionAngle: 0
+    connectionRadius: 0
+    oneWay: 0
+    cornerRadiusMainRoad: 0
+    cornerSementsMainRoad: 0
+    cornerRadiusSecondaryRoad: 0
+    cornerRadiusSecondaryCurvature: 0
+    cornerSementsSecondaryRoad: 0
+    mainRoadsOnly: 0
+    isRoadShape: 1
+    controlType: 0
+    vertexColor: {r: 0, g: 0, b: 0, a: 0}
+  - roadTypeName: HellRoad
+    id: 1675425020.0106983
+    timestamp: 1675433473.909478
+    roadWidth: 9
+    faceDistance: 2.07
+    angleTreshold: 45
+    uvTiling: 1
+    uv4Type: 0
+    type: 0
+    detailDistance: 50
+    planarUVs: 0
+    outerIndent: 0
+    roadShapeDataActive: 0
+    roadShapeData:
+      nodes:
+      - {x: -3, y: 0}
+      - {x: 3, y: 0}
+      hardEdge: 0000
+      priorityNodeIndexLeft: 0
+      priorityNodeIndexRight: 1
+      nodesV3: []
+      lanes: []
+      leftLanes: -1
+      rightLanes: -1
+      symmetrical: 1
+      leftSidewalkOffset: 0
+      rightSidewalkOffset: 0
+      outerLaneMarkingLeftIndex: -1
+      includeOuterlaneLeftInShape: 0
+      includeOuterlaneRightInShape: 0
+      outerLaneMarkingRightIndex: -1
+      outerOuterLaneMarkingLeftIndex: 0
+      outerOuterLaneMarkingRightIndex: 0
+      selectedNode: 0
+      selectedLaneNode: 0
+      isSymmetrical: 0
+      isset: 1
+    minSpeed: 45
+    maxSpeed: 55
+    speedLimit: 50
+    roadShape:
+    - {x: 4.5, y: 0}
+    - {x: -4.5, y: 0}
+    roadShapeExt: []
+    roadShapeExt2: []
+    doConnectionTri: 
+    doConnectionTriExt: 
+    roadShapeUVs:
+    - 0
+    - 1
+    roadShapeExtUVs: []
+    roadShapeExtUVs2: []
+    roadShapeUVs2:
+    - 0
+    - 1
+    preserveUVs: 0
+    hardEdge: 
+    roadShapeVecsString: 
+    defaultSidewalk: 0
+    sidewalks: 0
+    sidewalkHeight: 0.2
+    sidewalkWidth: 2
+    crosswalks: 0
+    crosswalkIntervals: 0
+    crosswalksIntersections: 0
+    crosswalkPrefab: {fileID: 0}
+    crosswalkType: 1
+    roadMaterial: {fileID: 2100000, guid: 756d18fa69ce1a84eb49d79bf4e98ffd, type: 2}
+    roadMaterials: []
+    roadPhysicsMaterial: {fileID: 0}
+    roadPhysicsMaterials: []
+    connectionMaterial: {fileID: 2100000, guid: 3c555588afad81d428ad1704d5d015a7,
+      type: 2}
+    isSideObject: 0
+    isCustomRoad: 0
+    subSegments: 1
+    soData: []
+    soDataExt: []
+    soDataLog:
+    - id: 1674496660.8983088
+      active: 1
+    - id: 1674808624.6666818
+      active: 0
+    - id: 1674498000.8008091
+      active: 0
+    - id: 1674488577.6198108
+      active: 0
+    - id: 1675425081.431936
+      active: 1
+    - id: 1674646013.9533343
+      active: 1
+    - id: 1674497149.5651634
+      active: 1
+    - id: 1674808629.7271607
+      active: 0
+    - id: 1674659048.2718844
+      active: 0
+    layer: 6
+    isStatic: 0
+    tag: Untagged
+    splatMapActive: 0
+    splatIndex: 0
+    expandLevel: 0
+    smoothLevel: 0
+    splatOpacity: 0
+    followTerrainContours: 0
+    terrainContoursOffset: 5
+    terrainDeformation: 0
+    defaultIndent: 2
+    defaultSurrounding: 2
+    castShadow: 0
+    randomnessFlag: 0
+    randomYPosition: 0
+    randomMinYPosition: 0.5
+    randomMaxYPosition: 0.5
+    minRandomYPositionDistance: 0
+    maxRandomYPositionDistance: 0
+    randomMinRotation: 0
+    randomMaxRotation: 0
+    minRandomRotationDistance: 0
+    maxRandomRotationDistance: 0
+    vegetationStudioMaskLineActive: 0
+    vegetationStudioGrassPerimeter: 0
+    vegetationStudioPlantPerimeter: 0
+    vegetationStudioTreePerimeter: 0
+    vegetationStudioObjectPerimeter: 0
+    vegetationStudioLargeObjectPerimeter: 0
+    vegetationStudioBiomeMaskActive: 0
+    vegetationStudioBiomeMaskDistance: 0
+    vegetationStudioBiomeMaskBlendDistance: 0
+    vegetationStudioBiomeMaskNoiseScale: 0
+    decalPresets: []
+    decalClassPresets: []
+    defaultRamp: 0
+    extrusionType: 0
+    extrusionDistance: 0
+    fixedDistance: 0
+    connectionAngle: 0
+    connectionRadius: 0
+    oneWay: 0
+    cornerRadiusMainRoad: 0
+    cornerSementsMainRoad: 0
+    cornerRadiusSecondaryRoad: 0
+    cornerRadiusSecondaryCurvature: 0
+    cornerSementsSecondaryRoad: 0
+    mainRoadsOnly: 0
+    isRoadShape: 1
+    controlType: 0
+    vertexColor: {r: 0, g: 0, b: 0, a: 0}
+  - roadTypeName: CityRoad 2
+    id: 1675590117.420269
+    timestamp: 1675594326.7257926
+    roadWidth: 9
+    faceDistance: 2.07
+    angleTreshold: 45
+    uvTiling: 1
+    uv4Type: 0
+    type: 0
+    detailDistance: 50
+    planarUVs: 0
+    outerIndent: 0
+    roadShapeDataActive: 0
+    roadShapeData:
+      nodes:
+      - {x: -3, y: 0}
+      - {x: 3, y: 0}
+      hardEdge: 0000
+      priorityNodeIndexLeft: 0
+      priorityNodeIndexRight: 1
+      nodesV3: []
+      lanes: []
+      leftLanes: -1
+      rightLanes: -1
+      symmetrical: 1
+      leftSidewalkOffset: 0
+      rightSidewalkOffset: 0
+      outerLaneMarkingLeftIndex: -1
+      includeOuterlaneLeftInShape: 0
+      includeOuterlaneRightInShape: 0
+      outerLaneMarkingRightIndex: -1
+      outerOuterLaneMarkingLeftIndex: 0
+      outerOuterLaneMarkingRightIndex: 0
+      selectedNode: 0
+      selectedLaneNode: 0
+      isSymmetrical: 0
+      isset: 1
+    minSpeed: 45
+    maxSpeed: 55
+    speedLimit: 50
+    roadShape:
+    - {x: 4.5, y: 0}
+    - {x: -4.5, y: 0}
+    roadShapeExt: []
+    roadShapeExt2: []
+    doConnectionTri: 
+    doConnectionTriExt: 
+    roadShapeUVs:
+    - 0
+    - 1
+    roadShapeExtUVs: []
+    roadShapeExtUVs2: []
+    roadShapeUVs2:
+    - 0
+    - 1
+    preserveUVs: 0
+    hardEdge: 
+    roadShapeVecsString: 
+    defaultSidewalk: 0
+    sidewalks: 0
+    sidewalkHeight: 0.2
+    sidewalkWidth: 2
+    crosswalks: 0
+    crosswalkIntervals: 0
+    crosswalksIntersections: 0
+    crosswalkPrefab: {fileID: 0}
+    crosswalkType: 1
+    roadMaterial: {fileID: 2100000, guid: af6d26adc4bf82e4ab3b7d1d5b8343cd, type: 2}
+    roadMaterials: []
+    roadPhysicsMaterial: {fileID: 0}
+    roadPhysicsMaterials: []
+    connectionMaterial: {fileID: 2100000, guid: af6d26adc4bf82e4ab3b7d1d5b8343cd,
+      type: 2}
+    isSideObject: 0
+    isCustomRoad: 0
+    subSegments: 1
+    soData: []
+    soDataExt:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    soDataLog:
+    - id: 1674496660.8983088
+      active: 0
+    - id: 1674808624.6666818
+      active: 0
+    - id: 1674498000.8008091
+      active: 0
+    - id: 1674488577.6198108
+      active: 0
+    - id: 1675425081.431936
+      active: 0
+    - id: 1674646013.9533343
+      active: 0
+    - id: 1674497149.5651634
+      active: 0
+    - id: 1674808629.7271607
+      active: 0
+    - id: 1674659048.2718844
+      active: 0
+    layer: 6
+    isStatic: 0
+    tag: Untagged
+    splatMapActive: 0
+    splatIndex: 0
+    expandLevel: 0
+    smoothLevel: 0
+    splatOpacity: 0
+    followTerrainContours: 0
+    terrainContoursOffset: 5
+    terrainDeformation: 0
+    defaultIndent: 2
+    defaultSurrounding: 2
+    castShadow: 0
+    randomnessFlag: 0
+    randomYPosition: 0
+    randomMinYPosition: 0.5
+    randomMaxYPosition: 0.5
+    minRandomYPositionDistance: 0
+    maxRandomYPositionDistance: 0
+    randomMinRotation: 0
+    randomMaxRotation: 0
+    minRandomRotationDistance: 0
+    maxRandomRotationDistance: 0
+    vegetationStudioMaskLineActive: 0
+    vegetationStudioGrassPerimeter: 0
+    vegetationStudioPlantPerimeter: 0
+    vegetationStudioTreePerimeter: 0
+    vegetationStudioObjectPerimeter: 0
+    vegetationStudioLargeObjectPerimeter: 0
+    vegetationStudioBiomeMaskActive: 0
+    vegetationStudioBiomeMaskDistance: 0
+    vegetationStudioBiomeMaskBlendDistance: 0
+    vegetationStudioBiomeMaskNoiseScale: 0
+    decalPresets: []
+    decalClassPresets: []
+    defaultRamp: 0
+    extrusionType: 0
+    extrusionDistance: 0
+    fixedDistance: 0
+    connectionAngle: 0
+    connectionRadius: 0
+    oneWay: 0
+    cornerRadiusMainRoad: 0
+    cornerSementsMainRoad: 0
+    cornerRadiusSecondaryRoad: 0
+    cornerRadiusSecondaryCurvature: 0
+    cornerSementsSecondaryRoad: 0
+    mainRoadsOnly: 0
+    isRoadShape: 1
+    controlType: 0
+    vertexColor: {r: 0, g: 0, b: 0, a: 0}
+  frontRoadTypeInt: 8
+  frontRoadTypeID: 1675590117.420269
+  frontRoadWidth: 9
+  frontMaterial: {fileID: 2100000, guid: af6d26adc4bf82e4ab3b7d1d5b8343cd, type: 2}
+  frontRoadMaterial: {fileID: 2100000, guid: af6d26adc4bf82e4ab3b7d1d5b8343cd, type: 2}
   frontRoadUVTiling: 1
-  backRoadTypeInt: 0
-  backRoadTypeID: 1674488234.9710236
-  backRoadWidth: 6
-  backMaterial: {fileID: 2100000, guid: 3c555588afad81d428ad1704d5d015a7, type: 2}
-  backRoadMaterial: {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
+  backRoadTypeInt: 8
+  backRoadTypeID: 1675590117.420269
+  backRoadWidth: 9
+  backMaterial: {fileID: 2100000, guid: af6d26adc4bf82e4ab3b7d1d5b8343cd, type: 2}
+  backRoadMaterial: {fileID: 2100000, guid: af6d26adc4bf82e4ab3b7d1d5b8343cd, type: 2}
   backRoadUVTiling: 1
-  leftRoadTypeInt: 0
-  leftRoadTypeID: 1674488234.9710236
-  leftRoadWidth: 6
-  leftMaterial: {fileID: 2100000, guid: 3c555588afad81d428ad1704d5d015a7, type: 2}
-  leftRoadMaterial: {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
+  leftRoadTypeInt: 8
+  leftRoadTypeID: 1675590117.420269
+  leftRoadWidth: 9
+  leftMaterial: {fileID: 2100000, guid: af6d26adc4bf82e4ab3b7d1d5b8343cd, type: 2}
+  leftRoadMaterial: {fileID: 2100000, guid: af6d26adc4bf82e4ab3b7d1d5b8343cd, type: 2}
   leftRoadUVTiling: 1
-  rightRoadTypeInt: 0
-  rightRoadTypeID: 1674488234.9710236
-  rightRoadWidth: 6
-  rightMaterial: {fileID: 2100000, guid: 3c555588afad81d428ad1704d5d015a7, type: 2}
-  rightRoadMaterial: {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
+  rightRoadTypeInt: 8
+  rightRoadTypeID: 1675590117.420269
+  rightRoadWidth: 9
+  rightMaterial: {fileID: 2100000, guid: af6d26adc4bf82e4ab3b7d1d5b8343cd, type: 2}
+  rightRoadMaterial: {fileID: 2100000, guid: af6d26adc4bf82e4ab3b7d1d5b8343cd, type: 2}
   rightRoadUVTiling: 1
   selectedRoadType: 0
   uniformCornersFlag: 1
@@ -307,19 +1454,19 @@ MonoBehaviour:
   selectedSidewalkPreset: 0
   sidewalkPresetName: 
   OOCDDOOQCQCorner: 0
-  leftBottom: {x: -3.2928934, y: 0.5, z: -3.2928932}
-  rightBottom: {x: 3.2928934, y: 0.5, z: -3.2928932}
-  leftTop: {x: -3.2928934, y: 0.5, z: 3.2928932}
-  rightTop: {x: 3.2928934, y: 0.5, z: 3.2928932}
-  frontCenter: {x: 0, y: 0, z: -5.5}
-  backCenter: {x: 0, y: 0, z: 5.5}
-  leftCenter: {x: -5.5, y: 0, z: 0}
-  rightCenter: {x: 5.5, y: 0, z: 0}
+  leftBottom: {x: -4.7928934, y: 0.5, z: -4.7928934}
+  rightBottom: {x: 4.7928934, y: 0.5, z: -4.7928934}
+  leftTop: {x: -4.7928934, y: 0.5, z: 4.7928934}
+  rightTop: {x: 4.7928934, y: 0.5, z: 4.7928934}
+  frontCenter: {x: 0, y: 0, z: -7}
+  backCenter: {x: 0, y: 0, z: 7}
+  leftCenter: {x: -7, y: 0, z: 0}
+  rightCenter: {x: 7, y: 0, z: 0}
   prefabId: 0
   prefabScript: {fileID: 3229627319973642291}
   connectionElement:
-    centerPoint: {x: 0, y: 0, z: -5.5}
-    tmpCenterPoint: {x: 0, y: 0, z: -5.5}
+    centerPoint: {x: 0, y: 0, z: -7}
+    tmpCenterPoint: {x: 0, y: 0, z: -7}
     stageCenterPoint: {x: 0, y: 0, z: 0}
     tmpStageCenterPoint: {x: 0, y: 0, z: 0}
     blendData: []
@@ -334,10 +1481,11 @@ MonoBehaviour:
     blendRatio: 1
     curveStrength: 0
     roadShapeVecs:
-    - {x: -3, y: 0}
-    - {x: 3, y: 0}
-    roadShapeVecsString: 
-    roadShapeMatchCount: 0
+    - {x: -4.5, y: 0}
+    - {x: 4.5, y: 0}
+    roadShapeVecsString: -6, 0,3;-5,8, 0,3;-4,8, 0,3;-4,5, 0,3;-4,5, 0;4,5, 0;4,5,
+      0,3;4,8, 0,3;5,8, 0,3;6, 0,3;
+    roadShapeMatchCount: 10
     roadShapeUVY:
     - 0
     - 1
@@ -345,11 +1493,11 @@ MonoBehaviour:
     hardEdge: 
     roadShapeMaterialInts: 010000000100000001000000010000000100000000000000000000000100000001000000010000000100000001000000
     sidewalkLeftVecs:
+    - {x: -6, y: 0.25}
+    - {x: -5.75, y: 0.25}
+    - {x: -4.75, y: 0.25}
     - {x: -4.5, y: 0.25}
-    - {x: -4.25, y: 0.25}
-    - {x: -3.25, y: 0.25}
-    - {x: -3, y: 0.25}
-    - {x: -3, y: 0}
+    - {x: -4.5, y: 0}
     sidewalkLeftUVY:
     - 1
     - 0.85714287
@@ -358,11 +1506,11 @@ MonoBehaviour:
     - 0
     sidewalkLeftMaterialInts: 
     sidewalkRightVecs:
-    - {x: 3, y: 0}
-    - {x: 3, y: 0.25}
-    - {x: 3.25, y: 0.25}
-    - {x: 4.25, y: 0.25}
+    - {x: 4.5, y: 0}
     - {x: 4.5, y: 0.25}
+    - {x: 4.75, y: 0.25}
+    - {x: 5.75, y: 0.25}
+    - {x: 6, y: 0.25}
     sidewalkRightUVY:
     - 0
     - 0.14285715
@@ -372,7 +1520,7 @@ MonoBehaviour:
     sidewalkRightMaterialInts: 
     connectionVecs: []
     connectionVecInts: 76000000740000006f0000006a0000006500000001000000150000008b00000090000000950000009a0000009c000000
-    fullConnectionVecInts: 
+    fullConnectionVecInts: 76000000740000006f0000006a0000006500000001000000150000008b00000090000000950000009a0000009c000000
     sidewalkLeftConnectionVecInts: 76000000740000006f0000006a00000065000000
     sidewalkRightConnectionVecInts: 8b00000090000000950000009a0000009c000000
     doConnectionTri: 
@@ -384,9 +1532,9 @@ MonoBehaviour:
     connectedRoadGO: {fileID: 0}
     includeLeftSidewalk: 1
     includeRightSidewalk: 1
-    roadMaterial: {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
+    roadMaterial: {fileID: 2100000, guid: af6d26adc4bf82e4ab3b7d1d5b8343cd, type: 2}
     roadMaterials:
-    - {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
+    - {fileID: 2100000, guid: af6d26adc4bf82e4ab3b7d1d5b8343cd, type: 2}
     - {fileID: 2100000, guid: d74dc327ca3fad8408eeeaf8ad54a110, type: 2}
     centerPointPercentage: 0.5
     leftIndent: 2
@@ -397,27 +1545,37 @@ MonoBehaviour:
     leftSurroundingV3: {x: -10.252136, y: 0, z: -10.252129}
     rightIndentV3: {x: 7.4296875, y: -0.02, z: -7.4296875}
     rightSurroundingV3: {x: 10.252136, y: 0, z: -10.252129}
-    leftRoadpoint: {x: 0, y: 0, z: 0}
-    rightRoadpoint: {x: 0, y: 0, z: 0}
-    leftRoundingPoints: []
-    rightRoundingPoints: []
+    leftRoadpoint: {x: -4.5, y: 0, z: -7}
+    rightRoadpoint: {x: 4.5, y: 0, z: -7}
+    leftRoundingPoints:
+    - {x: -4.5, y: 0, z: -7}
+    - {x: -4.5, y: 0, z: -6}
+    - {x: -4.5, y: 0, z: -5.5}
+    - {x: -4.5761204, y: 0, z: -5.1173167}
+    - {x: -4.7928934, y: 0, z: -4.7928934}
+    rightRoundingPoints:
+    - {x: 4.5, y: 0, z: -7}
+    - {x: 4.5, y: 0, z: -6}
+    - {x: 4.5, y: 0, z: -5.5}
+    - {x: 4.5761204, y: 0, z: -5.1173167}
+    - {x: 4.7928934, y: 0, z: -4.7928934}
     leftCornerInt: -1
     rightCornerInt: -1
     leftIndentInt: 0
     rightIndentInt: 0
     leftInt: 0
-    rightInt: 0
+    rightInt: 11
     leftIntFull: 0
-    rightIntFull: 0
-    alignmentHandleVec: {x: 0, y: 0, z: -2.75}
+    rightIntFull: 11
+    alignmentHandleVec: {x: 0, y: 0, z: -3.5}
     additionalIndentDistance: 1.948485
     connectionAngle: 0
     alignmentHandleVecRotationGizmo: {x: 0, y: 0, z: 0}
     inwards: 0
-    roadType: 0
-    roadTypeTimestamp: 0
+    roadType: 1675590117.420269
+    roadTypeTimestamp: 1675594326.7257926
   crossingOuterElement: 0
-  crossingName: dynamic X crossing
+  crossingName: Connection - qwe
   guiChanged: 1
   includeSidewalkChangeFlag: 0
   debugVecs: []
@@ -1479,8 +2637,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   crossingElements:
-  - centerPoint: {x: 0, y: 0, z: -5.5}
-    tmpCenterPoint: {x: 0, y: 0, z: -5.5}
+  - centerPoint: {x: 0, y: 0, z: -7}
+    tmpCenterPoint: {x: 0, y: 0, z: -7}
     stageCenterPoint: {x: 0, y: 0, z: 0}
     tmpStageCenterPoint: {x: 0, y: 0, z: 0}
     blendData: []
@@ -1495,10 +2653,11 @@ MonoBehaviour:
     blendRatio: 1
     curveStrength: 0
     roadShapeVecs:
-    - {x: -3, y: 0}
-    - {x: 3, y: 0}
-    roadShapeVecsString: 
-    roadShapeMatchCount: 0
+    - {x: -4.5, y: 0}
+    - {x: 4.5, y: 0}
+    roadShapeVecsString: -6, 0,3;-5,8, 0,3;-4,8, 0,3;-4,5, 0,3;-4,5, 0;4,5, 0;4,5,
+      0,3;4,8, 0,3;5,8, 0,3;6, 0,3;
+    roadShapeMatchCount: 10
     roadShapeUVY:
     - 0
     - 1
@@ -1506,11 +2665,11 @@ MonoBehaviour:
     hardEdge: 
     roadShapeMaterialInts: 010000000100000001000000010000000100000000000000000000000100000001000000010000000100000001000000
     sidewalkLeftVecs:
+    - {x: -6, y: 0.25}
+    - {x: -5.75, y: 0.25}
+    - {x: -4.75, y: 0.25}
     - {x: -4.5, y: 0.25}
-    - {x: -4.25, y: 0.25}
-    - {x: -3.25, y: 0.25}
-    - {x: -3, y: 0.25}
-    - {x: -3, y: 0}
+    - {x: -4.5, y: 0}
     sidewalkLeftUVY:
     - 1
     - 0.85714287
@@ -1519,11 +2678,11 @@ MonoBehaviour:
     - 0
     sidewalkLeftMaterialInts: 
     sidewalkRightVecs:
-    - {x: 3, y: 0}
-    - {x: 3, y: 0.25}
-    - {x: 3.25, y: 0.25}
-    - {x: 4.25, y: 0.25}
+    - {x: 4.5, y: 0}
     - {x: 4.5, y: 0.25}
+    - {x: 4.75, y: 0.25}
+    - {x: 5.75, y: 0.25}
+    - {x: 6, y: 0.25}
     sidewalkRightUVY:
     - 0
     - 0.14285715
@@ -1533,7 +2692,7 @@ MonoBehaviour:
     sidewalkRightMaterialInts: 
     connectionVecs: []
     connectionVecInts: 76000000740000006f0000006a0000006500000001000000150000008b00000090000000950000009a0000009c000000
-    fullConnectionVecInts: 
+    fullConnectionVecInts: 76000000740000006f0000006a0000006500000001000000150000008b00000090000000950000009a0000009c000000
     sidewalkLeftConnectionVecInts: 76000000740000006f0000006a00000065000000
     sidewalkRightConnectionVecInts: 8b00000090000000950000009a0000009c000000
     doConnectionTri: 
@@ -1545,9 +2704,9 @@ MonoBehaviour:
     connectedRoadGO: {fileID: 0}
     includeLeftSidewalk: 1
     includeRightSidewalk: 1
-    roadMaterial: {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
+    roadMaterial: {fileID: 2100000, guid: af6d26adc4bf82e4ab3b7d1d5b8343cd, type: 2}
     roadMaterials:
-    - {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
+    - {fileID: 2100000, guid: af6d26adc4bf82e4ab3b7d1d5b8343cd, type: 2}
     - {fileID: 2100000, guid: d74dc327ca3fad8408eeeaf8ad54a110, type: 2}
     centerPointPercentage: 0.5
     leftIndent: 2
@@ -1558,27 +2717,37 @@ MonoBehaviour:
     leftSurroundingV3: {x: -10.252136, y: 0, z: -10.252129}
     rightIndentV3: {x: 7.4296875, y: -0.02, z: -7.4296875}
     rightSurroundingV3: {x: 10.252136, y: 0, z: -10.252129}
-    leftRoadpoint: {x: 0, y: 0, z: 0}
-    rightRoadpoint: {x: 0, y: 0, z: 0}
-    leftRoundingPoints: []
-    rightRoundingPoints: []
+    leftRoadpoint: {x: -4.5, y: 0, z: -7}
+    rightRoadpoint: {x: 4.5, y: 0, z: -7}
+    leftRoundingPoints:
+    - {x: -4.5, y: 0, z: -7}
+    - {x: -4.5, y: 0, z: -6}
+    - {x: -4.5, y: 0, z: -5.5}
+    - {x: -4.5761204, y: 0, z: -5.1173167}
+    - {x: -4.7928934, y: 0, z: -4.7928934}
+    rightRoundingPoints:
+    - {x: 4.5, y: 0, z: -7}
+    - {x: 4.5, y: 0, z: -6}
+    - {x: 4.5, y: 0, z: -5.5}
+    - {x: 4.5761204, y: 0, z: -5.1173167}
+    - {x: 4.7928934, y: 0, z: -4.7928934}
     leftCornerInt: -1
     rightCornerInt: -1
     leftIndentInt: 0
     rightIndentInt: 0
     leftInt: 0
-    rightInt: 0
+    rightInt: 11
     leftIntFull: 0
-    rightIntFull: 0
-    alignmentHandleVec: {x: 0, y: 0, z: -2.75}
+    rightIntFull: 11
+    alignmentHandleVec: {x: 0, y: 0, z: -3.5}
     additionalIndentDistance: 1.948485
     connectionAngle: 0
     alignmentHandleVecRotationGizmo: {x: 0, y: 0, z: 0}
     inwards: 0
-    roadType: 1674488234.9710236
-    roadTypeTimestamp: 0
-  - centerPoint: {x: 0, y: 0, z: 5.5}
-    tmpCenterPoint: {x: 0, y: 0, z: 5.5}
+    roadType: 1675590117.420269
+    roadTypeTimestamp: 1675594326.7257926
+  - centerPoint: {x: 0, y: 0, z: 7}
+    tmpCenterPoint: {x: 0, y: 0, z: 7}
     stageCenterPoint: {x: 0, y: 0, z: 0}
     tmpStageCenterPoint: {x: 0, y: 0, z: 0}
     blendData: []
@@ -1593,10 +2762,11 @@ MonoBehaviour:
     blendRatio: 1
     curveStrength: 0
     roadShapeVecs:
-    - {x: -3, y: 0}
-    - {x: 3, y: 0}
-    roadShapeVecsString: 
-    roadShapeMatchCount: 0
+    - {x: -4.5, y: 0}
+    - {x: 4.5, y: 0}
+    roadShapeVecsString: -6, 0,3;-5,8, 0,3;-4,8, 0,3;-4,5, 0,3;-4,5, 0;4,5, 0;4,5,
+      0,3;4,8, 0,3;5,8, 0,3;6, 0,3;
+    roadShapeMatchCount: 10
     roadShapeUVY:
     - 1
     - 0
@@ -1604,11 +2774,11 @@ MonoBehaviour:
     hardEdge: 
     roadShapeMaterialInts: 010000000100000001000000010000000100000000000000000000000100000001000000010000000100000001000000
     sidewalkLeftVecs:
+    - {x: -6, y: 0.25}
+    - {x: -5.75, y: 0.25}
+    - {x: -4.75, y: 0.25}
     - {x: -4.5, y: 0.25}
-    - {x: -4.25, y: 0.25}
-    - {x: -3.25, y: 0.25}
-    - {x: -3, y: 0.25}
-    - {x: -3, y: 0}
+    - {x: -4.5, y: 0}
     sidewalkLeftUVY:
     - 1
     - 0.85714287
@@ -1617,11 +2787,11 @@ MonoBehaviour:
     - 0
     sidewalkLeftMaterialInts: 
     sidewalkRightVecs:
-    - {x: 3, y: 0}
-    - {x: 3, y: 0.25}
-    - {x: 3.25, y: 0.25}
-    - {x: 4.25, y: 0.25}
+    - {x: 4.5, y: 0}
     - {x: 4.5, y: 0.25}
+    - {x: 4.75, y: 0.25}
+    - {x: 5.75, y: 0.25}
+    - {x: 6, y: 0.25}
     sidewalkRightUVY:
     - 0
     - 0.14285715
@@ -1631,7 +2801,7 @@ MonoBehaviour:
     sidewalkRightMaterialInts: 
     connectionVecs: []
     connectionVecInts: c2000000c0000000bb000000b6000000b10000001a0000002e000000d7000000dc000000e1000000e6000000e8000000
-    fullConnectionVecInts: 
+    fullConnectionVecInts: c2000000c0000000bb000000b6000000b10000001a0000002e000000d7000000dc000000e1000000e6000000e8000000
     sidewalkLeftConnectionVecInts: c2000000c0000000bb000000b6000000b1000000
     sidewalkRightConnectionVecInts: d7000000dc000000e1000000e6000000e8000000
     doConnectionTri: 
@@ -1643,9 +2813,9 @@ MonoBehaviour:
     connectedRoadGO: {fileID: 0}
     includeLeftSidewalk: 1
     includeRightSidewalk: 1
-    roadMaterial: {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
+    roadMaterial: {fileID: 2100000, guid: af6d26adc4bf82e4ab3b7d1d5b8343cd, type: 2}
     roadMaterials:
-    - {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
+    - {fileID: 2100000, guid: af6d26adc4bf82e4ab3b7d1d5b8343cd, type: 2}
     - {fileID: 2100000, guid: d74dc327ca3fad8408eeeaf8ad54a110, type: 2}
     centerPointPercentage: 0.5
     leftIndent: 6
@@ -1656,27 +2826,37 @@ MonoBehaviour:
     leftSurroundingV3: {x: 10.252136, y: 0, z: 10.252129}
     rightIndentV3: {x: -7.4296875, y: -0.02, z: 7.4296875}
     rightSurroundingV3: {x: -10.252136, y: 0, z: 10.252129}
-    leftRoadpoint: {x: 0, y: 0, z: 0}
-    rightRoadpoint: {x: 0, y: 0, z: 0}
-    leftRoundingPoints: []
-    rightRoundingPoints: []
+    leftRoadpoint: {x: 4.5, y: 0, z: 7}
+    rightRoadpoint: {x: -4.5, y: 0, z: 7}
+    leftRoundingPoints:
+    - {x: 4.5, y: 0, z: 7}
+    - {x: 4.5, y: 0, z: 6}
+    - {x: 4.5, y: 0, z: 5.5}
+    - {x: 4.5761204, y: 0, z: 5.1173167}
+    - {x: 4.7928934, y: 0, z: 4.7928934}
+    rightRoundingPoints:
+    - {x: -4.5, y: 0, z: 7}
+    - {x: -4.5, y: 0, z: 6}
+    - {x: -4.5, y: 0, z: 5.5}
+    - {x: -4.5761204, y: 0, z: 5.1173167}
+    - {x: -4.7928934, y: 0, z: 4.7928934}
     leftCornerInt: -1
     rightCornerInt: -1
     leftIndentInt: 0
     rightIndentInt: 0
     leftInt: 0
-    rightInt: 0
+    rightInt: 11
     leftIntFull: 0
-    rightIntFull: 0
-    alignmentHandleVec: {x: 0, y: 0, z: 2.75}
+    rightIntFull: 11
+    alignmentHandleVec: {x: 0, y: 0, z: 3.5}
     additionalIndentDistance: 1.948485
     connectionAngle: 0
     alignmentHandleVecRotationGizmo: {x: 0, y: 0, z: 0}
     inwards: 0
-    roadType: 1674488234.9710236
-    roadTypeTimestamp: 0
-  - centerPoint: {x: -5.5, y: 0, z: 0}
-    tmpCenterPoint: {x: -5.5, y: 0, z: 0}
+    roadType: 1675590117.420269
+    roadTypeTimestamp: 1675594326.7257926
+  - centerPoint: {x: -7, y: 0, z: 0}
+    tmpCenterPoint: {x: -7, y: 0, z: 0}
     stageCenterPoint: {x: 0, y: 0, z: 0}
     tmpStageCenterPoint: {x: 0, y: 0, z: 0}
     blendData: []
@@ -1691,10 +2871,11 @@ MonoBehaviour:
     blendRatio: 1
     curveStrength: 0
     roadShapeVecs:
-    - {x: -3, y: 0}
-    - {x: 3, y: 0}
-    roadShapeVecsString: 
-    roadShapeMatchCount: 0
+    - {x: -4.5, y: 0}
+    - {x: 4.5, y: 0}
+    roadShapeVecsString: -6, 0,3;-5,8, 0,3;-4,8, 0,3;-4,5, 0,3;-4,5, 0;4,5, 0;4,5,
+      0,3;4,8, 0,3;5,8, 0,3;6, 0,3;
+    roadShapeMatchCount: 10
     roadShapeUVY:
     - 0
     - 1
@@ -1702,11 +2883,11 @@ MonoBehaviour:
     hardEdge: 
     roadShapeMaterialInts: 010000000100000001000000010000000100000000000000000000000100000001000000010000000100000001000000
     sidewalkLeftVecs:
+    - {x: -6, y: 0.25}
+    - {x: -5.75, y: 0.25}
+    - {x: -4.75, y: 0.25}
     - {x: -4.5, y: 0.25}
-    - {x: -4.25, y: 0.25}
-    - {x: -3.25, y: 0.25}
-    - {x: -3, y: 0.25}
-    - {x: -3, y: 0}
+    - {x: -4.5, y: 0}
     sidewalkLeftUVY:
     - 1
     - 0.85714287
@@ -1715,11 +2896,11 @@ MonoBehaviour:
     - 0
     sidewalkLeftMaterialInts: 
     sidewalkRightVecs:
-    - {x: 3, y: 0}
-    - {x: 3, y: 0.25}
-    - {x: 3.25, y: 0.25}
-    - {x: 4.25, y: 0.25}
+    - {x: 4.5, y: 0}
     - {x: 4.5, y: 0.25}
+    - {x: 4.75, y: 0.25}
+    - {x: 5.75, y: 0.25}
+    - {x: 6, y: 0.25}
     sidewalkRightUVY:
     - 0
     - 0.14285715
@@ -1729,7 +2910,7 @@ MonoBehaviour:
     sidewalkRightMaterialInts: 
     connectionVecs: []
     connectionVecInts: fb000000f9000000f4000000ef000000ea0000003300000047000000780000007d000000820000008700000089000000
-    fullConnectionVecInts: 
+    fullConnectionVecInts: fb000000f9000000f4000000ef000000ea0000003300000047000000780000007d000000820000008700000089000000
     sidewalkLeftConnectionVecInts: fb000000f9000000f4000000ef000000ea000000
     sidewalkRightConnectionVecInts: 780000007d000000820000008700000089000000
     doConnectionTri: 
@@ -1741,9 +2922,9 @@ MonoBehaviour:
     connectedRoadGO: {fileID: 0}
     includeLeftSidewalk: 1
     includeRightSidewalk: 1
-    roadMaterial: {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
+    roadMaterial: {fileID: 2100000, guid: af6d26adc4bf82e4ab3b7d1d5b8343cd, type: 2}
     roadMaterials:
-    - {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
+    - {fileID: 2100000, guid: af6d26adc4bf82e4ab3b7d1d5b8343cd, type: 2}
     - {fileID: 2100000, guid: d74dc327ca3fad8408eeeaf8ad54a110, type: 2}
     centerPointPercentage: 0.5
     leftIndent: 4
@@ -1754,27 +2935,37 @@ MonoBehaviour:
     leftSurroundingV3: {x: -10.252136, y: 0, z: 10.252129}
     rightIndentV3: {x: -7.4296875, y: -0.02, z: -7.4296875}
     rightSurroundingV3: {x: -10.252136, y: 0, z: -10.252129}
-    leftRoadpoint: {x: 0, y: 0, z: 0}
-    rightRoadpoint: {x: 0, y: 0, z: 0}
-    leftRoundingPoints: []
-    rightRoundingPoints: []
+    leftRoadpoint: {x: -7, y: 0, z: 4.5}
+    rightRoadpoint: {x: -7, y: 0, z: -4.5}
+    leftRoundingPoints:
+    - {x: -7, y: 0, z: 4.5}
+    - {x: -6, y: 0, z: 4.5}
+    - {x: -5.5, y: 0, z: 4.5}
+    - {x: -5.1173167, y: 0, z: 4.5761204}
+    - {x: -4.7928934, y: 0, z: 4.7928934}
+    rightRoundingPoints:
+    - {x: -7, y: 0, z: -4.5}
+    - {x: -6, y: 0, z: -4.5}
+    - {x: -5.5, y: 0, z: -4.5}
+    - {x: -5.1173167, y: 0, z: -4.5761204}
+    - {x: -4.7928934, y: 0, z: -4.7928934}
     leftCornerInt: -1
     rightCornerInt: -1
     leftIndentInt: 0
     rightIndentInt: 0
     leftInt: 0
-    rightInt: 0
+    rightInt: 11
     leftIntFull: 0
-    rightIntFull: 0
-    alignmentHandleVec: {x: -2.75, y: 0, z: 0}
+    rightIntFull: 11
+    alignmentHandleVec: {x: -3.5, y: 0, z: 0}
     additionalIndentDistance: 1.948485
     connectionAngle: 0
     alignmentHandleVecRotationGizmo: {x: 0, y: 0, z: 0}
     inwards: 0
-    roadType: 1674488234.9710236
-    roadTypeTimestamp: 0
-  - centerPoint: {x: 5.5, y: 0, z: 0}
-    tmpCenterPoint: {x: 5.5, y: 0, z: 0}
+    roadType: 1675590117.420269
+    roadTypeTimestamp: 1675594326.7257926
+  - centerPoint: {x: 7, y: 0, z: 0}
+    tmpCenterPoint: {x: 7, y: 0, z: 0}
     stageCenterPoint: {x: 0, y: 0, z: 0}
     tmpStageCenterPoint: {x: 0, y: 0, z: 0}
     blendData: []
@@ -1789,10 +2980,11 @@ MonoBehaviour:
     blendRatio: 1
     curveStrength: 0
     roadShapeVecs:
-    - {x: -3, y: 0}
-    - {x: 3, y: 0}
-    roadShapeVecsString: 
-    roadShapeMatchCount: 0
+    - {x: -4.5, y: 0}
+    - {x: 4.5, y: 0}
+    roadShapeVecsString: -6, 0,3;-5,8, 0,3;-4,8, 0,3;-4,5, 0,3;-4,5, 0;4,5, 0;4,5,
+      0,3;4,8, 0,3;5,8, 0,3;6, 0,3;
+    roadShapeMatchCount: 10
     roadShapeUVY:
     - 1
     - 0
@@ -1800,11 +2992,11 @@ MonoBehaviour:
     hardEdge: 
     roadShapeMaterialInts: 010000000100000001000000010000000100000000000000000000000100000001000000010000000100000001000000
     sidewalkLeftVecs:
+    - {x: -6, y: 0.25}
+    - {x: -5.75, y: 0.25}
+    - {x: -4.75, y: 0.25}
     - {x: -4.5, y: 0.25}
-    - {x: -4.25, y: 0.25}
-    - {x: -3.25, y: 0.25}
-    - {x: -3, y: 0.25}
-    - {x: -3, y: 0}
+    - {x: -4.5, y: 0}
     sidewalkLeftUVY:
     - 1
     - 0.85714287
@@ -1813,11 +3005,11 @@ MonoBehaviour:
     - 0
     sidewalkLeftMaterialInts: 
     sidewalkRightVecs:
-    - {x: 3, y: 0}
-    - {x: 3, y: 0.25}
-    - {x: 3.25, y: 0.25}
-    - {x: 4.25, y: 0.25}
+    - {x: 4.5, y: 0}
     - {x: 4.5, y: 0.25}
+    - {x: 4.75, y: 0.25}
+    - {x: 5.75, y: 0.25}
+    - {x: 6, y: 0.25}
     sidewalkRightUVY:
     - 0
     - 0.14285715
@@ -1827,7 +3019,7 @@ MonoBehaviour:
     sidewalkRightMaterialInts: 
     connectionVecs: []
     connectionVecInts: af000000ad000000a8000000a30000009e0000004c00000060000000c4000000c9000000ce000000d3000000d5000000
-    fullConnectionVecInts: 
+    fullConnectionVecInts: af000000ad000000a8000000a30000009e0000004c00000060000000c4000000c9000000ce000000d3000000d5000000
     sidewalkLeftConnectionVecInts: af000000ad000000a8000000a30000009e000000
     sidewalkRightConnectionVecInts: c4000000c9000000ce000000d3000000d5000000
     doConnectionTri: 
@@ -1839,9 +3031,9 @@ MonoBehaviour:
     connectedRoadGO: {fileID: 0}
     includeLeftSidewalk: 1
     includeRightSidewalk: 1
-    roadMaterial: {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
+    roadMaterial: {fileID: 2100000, guid: af6d26adc4bf82e4ab3b7d1d5b8343cd, type: 2}
     roadMaterials:
-    - {fileID: 2100000, guid: f182e2714eb8a714a99ed091081ce16c, type: 2}
+    - {fileID: 2100000, guid: af6d26adc4bf82e4ab3b7d1d5b8343cd, type: 2}
     - {fileID: 2100000, guid: d74dc327ca3fad8408eeeaf8ad54a110, type: 2}
     centerPointPercentage: 0.5
     leftIndent: 8
@@ -1852,32 +3044,42 @@ MonoBehaviour:
     leftSurroundingV3: {x: 10.252136, y: 0, z: -10.252129}
     rightIndentV3: {x: 7.4296875, y: -0.02, z: 7.4296875}
     rightSurroundingV3: {x: 10.252136, y: 0, z: 10.252129}
-    leftRoadpoint: {x: 0, y: 0, z: 0}
-    rightRoadpoint: {x: 0, y: 0, z: 0}
-    leftRoundingPoints: []
-    rightRoundingPoints: []
+    leftRoadpoint: {x: 7, y: 0, z: -4.5}
+    rightRoadpoint: {x: 7, y: 0, z: 4.5}
+    leftRoundingPoints:
+    - {x: 7, y: 0, z: -4.5}
+    - {x: 6, y: 0, z: -4.5}
+    - {x: 5.5, y: 0, z: -4.5}
+    - {x: 5.1173167, y: 0, z: -4.5761204}
+    - {x: 4.7928934, y: 0, z: -4.7928934}
+    rightRoundingPoints:
+    - {x: 7, y: 0, z: 4.5}
+    - {x: 6, y: 0, z: 4.5}
+    - {x: 5.5, y: 0, z: 4.5}
+    - {x: 5.1173167, y: 0, z: 4.5761204}
+    - {x: 4.7928934, y: 0, z: 4.7928934}
     leftCornerInt: -1
     rightCornerInt: -1
     leftIndentInt: 0
     rightIndentInt: 0
     leftInt: 0
-    rightInt: 0
+    rightInt: 11
     leftIntFull: 0
-    rightIntFull: 0
-    alignmentHandleVec: {x: 2.75, y: 0, z: 0}
+    rightIntFull: 11
+    alignmentHandleVec: {x: 3.5, y: 0, z: 0}
     additionalIndentDistance: 1.948485
     connectionAngle: 0
     alignmentHandleVecRotationGizmo: {x: 0, y: 0, z: 0}
     inwards: 0
-    roadType: 1674488234.9710236
-    roadTypeTimestamp: 0
+    roadType: 1675590117.420269
+    roadTypeTimestamp: 1675594326.7257926
   sidewalkControlElements:
   - crossingElementLeftIndex: 3
     crossingElementRightIndex: 0
-    centerHandleV3: {x: 4.5, y: 0.25, z: -4.5}
+    centerHandleV3: {x: 6, y: 0.25, z: -6}
     centerHandleV3_2: {x: 0, y: 0, z: 0}
-    leftHandleV3: {x: 5.5, y: 0.25, z: -4.5}
-    rightHandleV3: {x: 4.5, y: 0.25, z: -5.5}
+    leftHandleV3: {x: 7, y: 0.25, z: -6}
+    rightHandleV3: {x: 6, y: 0.25, z: -7}
     renderFlag: 1
     leftConnectionHandle: 1
     rightConnectionHandle: 1
@@ -1906,10 +3108,10 @@ MonoBehaviour:
     startAngle: 0
   - crossingElementLeftIndex: 0
     crossingElementRightIndex: 2
-    centerHandleV3: {x: -4.5, y: 0.25, z: -4.5}
+    centerHandleV3: {x: -6, y: 0.25, z: -6}
     centerHandleV3_2: {x: 0, y: 0, z: 0}
-    leftHandleV3: {x: -4.5, y: 0.25, z: -5.5}
-    rightHandleV3: {x: -5.5, y: 0.25, z: -4.5}
+    leftHandleV3: {x: -6, y: 0.25, z: -7}
+    rightHandleV3: {x: -7, y: 0.25, z: -6}
     renderFlag: 1
     leftConnectionHandle: 1
     rightConnectionHandle: 1
@@ -1938,10 +3140,10 @@ MonoBehaviour:
     startAngle: 0
   - crossingElementLeftIndex: 2
     crossingElementRightIndex: 1
-    centerHandleV3: {x: -4.5, y: 0.25, z: 4.5}
+    centerHandleV3: {x: -6, y: 0.25, z: 6}
     centerHandleV3_2: {x: 0, y: 0, z: 0}
-    leftHandleV3: {x: -5.5, y: 0.25, z: 4.5}
-    rightHandleV3: {x: -4.5, y: 0.25, z: 5.5}
+    leftHandleV3: {x: -7, y: 0.25, z: 6}
+    rightHandleV3: {x: -6, y: 0.25, z: 7}
     renderFlag: 1
     leftConnectionHandle: 1
     rightConnectionHandle: 1
@@ -1970,10 +3172,10 @@ MonoBehaviour:
     startAngle: 0
   - crossingElementLeftIndex: 1
     crossingElementRightIndex: 3
-    centerHandleV3: {x: 4.5, y: 0.25, z: 4.5}
+    centerHandleV3: {x: 6, y: 0.25, z: 6}
     centerHandleV3_2: {x: 0, y: 0, z: 0}
-    leftHandleV3: {x: 4.5, y: 0.25, z: 5.5}
-    rightHandleV3: {x: 5.5, y: 0.25, z: 4.5}
+    leftHandleV3: {x: 6, y: 0.25, z: 7}
+    rightHandleV3: {x: 7, y: 0.25, z: 6}
     renderFlag: 1
     leftConnectionHandle: 1
     rightConnectionHandle: 1
@@ -2003,520 +3205,2039 @@ MonoBehaviour:
   siblings: []
   meshVecs:
   - {x: 0, y: 0, z: 0}
-  - {x: -3, y: 0, z: -5.5}
-  - {x: -3, y: 0, z: -4.5}
-  - {x: -3, y: 0, z: -4}
-  - {x: -3.0761204, y: 0, z: -3.6173165}
-  - {x: -3.2928934, y: 0, z: -3.2928932}
-  - {x: -2.5, y: 0, z: -5.5}
-  - {x: -2.5, y: 0, z: -4.5}
-  - {x: -2.501849, y: 0, z: -3.9570408}
-  - {x: -2.6141806, y: 0, z: -3.4259746}
-  - {x: -2.93934, y: 0, z: -2.9393399}
-  - {x: 0, y: 0, z: -5.5}
-  - {x: 0, y: 0, z: -4.5}
-  - {x: 0, y: 0, z: -3.9570408}
-  - {x: 0, y: 0, z: -3.4259746}
-  - {x: 0, y: 0, z: -2.9393399}
-  - {x: 2.5, y: 0, z: -5.5}
-  - {x: 2.5, y: 0, z: -4.5}
-  - {x: 2.501849, y: 0, z: -3.9570408}
-  - {x: 2.6141806, y: 0, z: -3.4259746}
-  - {x: 2.93934, y: 0, z: -2.9393399}
-  - {x: 3, y: 0, z: -5.5}
-  - {x: 3, y: 0, z: -4.5}
-  - {x: 3, y: 0, z: -4}
-  - {x: 3.0761204, y: 0, z: -3.6173165}
-  - {x: 3.2928934, y: 0, z: -3.2928932}
-  - {x: 3, y: 0, z: 5.5}
-  - {x: 3, y: 0, z: 4.5}
-  - {x: 3, y: 0, z: 4}
-  - {x: 3.0761204, y: 0, z: 3.6173165}
-  - {x: 3.2928934, y: 0, z: 3.2928932}
-  - {x: 2.5, y: 0, z: 5.5}
-  - {x: 2.5, y: 0, z: 4.5}
-  - {x: 2.501849, y: 0, z: 3.9570408}
-  - {x: 2.6141806, y: 0, z: 3.4259746}
-  - {x: 2.93934, y: 0, z: 2.9393399}
-  - {x: 0, y: 0, z: 5.5}
-  - {x: 0, y: 0, z: 4.5}
-  - {x: 0, y: 0, z: 3.9570408}
-  - {x: 0, y: 0, z: 3.4259746}
-  - {x: 0, y: 0, z: 2.9393399}
-  - {x: -2.5, y: 0, z: 5.5}
-  - {x: -2.5, y: 0, z: 4.5}
-  - {x: -2.501849, y: 0, z: 3.9570408}
-  - {x: -2.6141806, y: 0, z: 3.4259746}
-  - {x: -2.93934, y: 0, z: 2.9393399}
-  - {x: -3, y: 0, z: 5.5}
-  - {x: -3, y: 0, z: 4.5}
-  - {x: -3, y: 0, z: 4}
-  - {x: -3.0761204, y: 0, z: 3.6173165}
-  - {x: -3.2928934, y: 0, z: 3.2928932}
-  - {x: -5.5, y: 0, z: 3}
-  - {x: -4.5, y: 0, z: 3}
-  - {x: -4, y: 0, z: 3}
-  - {x: -3.6173167, y: 0, z: 3.0761204}
-  - {x: -3.2928934, y: 0, z: 3.2928932}
-  - {x: -5.5, y: 0, z: 2.5}
-  - {x: -4.5, y: 0, z: 2.5}
-  - {x: -3.9570408, y: 0, z: 2.501849}
-  - {x: -3.425975, y: 0, z: 2.6141806}
-  - {x: -2.93934, y: 0, z: 2.9393399}
-  - {x: -5.5, y: 0, z: 0}
-  - {x: -4.5, y: 0, z: 0}
-  - {x: -3.9570408, y: 0, z: 0}
-  - {x: -3.425975, y: 0, z: 0}
-  - {x: -2.93934, y: 0, z: 0}
-  - {x: -5.5, y: 0, z: -2.5}
-  - {x: -4.5, y: 0, z: -2.5}
-  - {x: -3.9570408, y: 0, z: -2.501849}
-  - {x: -3.425975, y: 0, z: -2.6141806}
-  - {x: -2.93934, y: 0, z: -2.9393399}
-  - {x: -5.5, y: 0, z: -3}
-  - {x: -4.5, y: 0, z: -3}
-  - {x: -4, y: 0, z: -3}
-  - {x: -3.6173167, y: 0, z: -3.0761204}
-  - {x: -3.2928934, y: 0, z: -3.2928932}
-  - {x: 5.5, y: 0, z: -3}
-  - {x: 4.5, y: 0, z: -3}
-  - {x: 4, y: 0, z: -3}
-  - {x: 3.6173167, y: 0, z: -3.0761204}
-  - {x: 3.2928934, y: 0, z: -3.2928932}
-  - {x: 5.5, y: 0, z: -2.5}
-  - {x: 4.5, y: 0, z: -2.5}
-  - {x: 3.9570408, y: 0, z: -2.501849}
-  - {x: 3.425975, y: 0, z: -2.6141806}
-  - {x: 2.93934, y: 0, z: -2.9393399}
-  - {x: 5.5, y: 0, z: 0}
-  - {x: 4.5, y: 0, z: 0}
-  - {x: 3.9570408, y: 0, z: 0}
-  - {x: 3.425975, y: 0, z: 0}
-  - {x: 2.93934, y: 0, z: 0}
-  - {x: 5.5, y: 0, z: 2.5}
-  - {x: 4.5, y: 0, z: 2.5}
-  - {x: 3.9570408, y: 0, z: 2.501849}
-  - {x: 3.425975, y: 0, z: 2.6141806}
-  - {x: 2.93934, y: 0, z: 2.9393399}
-  - {x: 5.5, y: 0, z: 3}
-  - {x: 4.5, y: 0, z: 3}
-  - {x: 4, y: 0, z: 3}
-  - {x: 3.6173167, y: 0, z: 3.0761204}
-  - {x: 3.2928934, y: 0, z: 3.2928932}
-  - {x: -3, y: 0, z: -5.5}
-  - {x: -3, y: 0, z: -4.5}
-  - {x: -3, y: 0, z: -4}
-  - {x: -3.0761204, y: 0, z: -3.6173165}
-  - {x: -3.2928934, y: 0, z: -3.2928932}
-  - {x: -3, y: 0.25, z: -5.5}
-  - {x: -3, y: 0.25, z: -4.5}
-  - {x: -3, y: 0.25, z: -4}
-  - {x: -3.0761204, y: 0.25, z: -3.6173165}
-  - {x: -3.2928934, y: 0.25, z: -3.2928932}
-  - {x: -3.25, y: 0.25, z: -5.5}
-  - {x: -3.25, y: 0.25, z: -4.5}
-  - {x: -3.2490757, y: 0.25, z: -4.0214796}
-  - {x: -3.3070903, y: 0.25, z: -3.7129874}
-  - {x: -3.46967, y: 0.25, z: -3.4696698}
-  - {x: -4.25, y: 0.25, z: -5.5}
-  - {x: -4.25, y: 0.25, z: -4.25}
+  - {x: -4.5, y: 0, z: -7}
+  - {x: -4.5, y: 0, z: -6}
+  - {x: -4.5, y: 0, z: -5.5}
+  - {x: -4.5761204, y: 0, z: -5.1173167}
+  - {x: -4.7928934, y: 0, z: -4.7928934}
+  - {x: -4, y: 0, z: -7}
+  - {x: -4, y: 0, z: -6}
+  - {x: -4.0018487, y: 0, z: -5.457041}
+  - {x: -4.1141806, y: 0, z: -4.925975}
+  - {x: -4.43934, y: 0, z: -4.43934}
+  - {x: 0, y: 0, z: -7}
+  - {x: 0, y: 0, z: -6}
+  - {x: 0, y: 0, z: -5.457041}
+  - {x: 0, y: 0, z: -4.925975}
+  - {x: 0, y: 0, z: -4.43934}
+  - {x: 4, y: 0, z: -7}
+  - {x: 4, y: 0, z: -6}
+  - {x: 4.0018487, y: 0, z: -5.457041}
+  - {x: 4.1141806, y: 0, z: -4.925975}
+  - {x: 4.43934, y: 0, z: -4.43934}
+  - {x: 4.5, y: 0, z: -7}
+  - {x: 4.5, y: 0, z: -6}
+  - {x: 4.5, y: 0, z: -5.5}
+  - {x: 4.5761204, y: 0, z: -5.1173167}
+  - {x: 4.7928934, y: 0, z: -4.7928934}
+  - {x: 4.5, y: 0, z: 7}
+  - {x: 4.5, y: 0, z: 6}
+  - {x: 4.5, y: 0, z: 5.5}
+  - {x: 4.5761204, y: 0, z: 5.1173167}
+  - {x: 4.7928934, y: 0, z: 4.7928934}
+  - {x: 4, y: 0, z: 7}
+  - {x: 4, y: 0, z: 6}
+  - {x: 4.0018487, y: 0, z: 5.457041}
+  - {x: 4.1141806, y: 0, z: 4.925975}
+  - {x: 4.43934, y: 0, z: 4.43934}
+  - {x: 0, y: 0, z: 7}
+  - {x: 0, y: 0, z: 6}
+  - {x: 0, y: 0, z: 5.457041}
+  - {x: 0, y: 0, z: 4.925975}
+  - {x: 0, y: 0, z: 4.43934}
+  - {x: -4, y: 0, z: 7}
+  - {x: -4, y: 0, z: 6}
+  - {x: -4.0018487, y: 0, z: 5.457041}
+  - {x: -4.1141806, y: 0, z: 4.925975}
+  - {x: -4.43934, y: 0, z: 4.43934}
+  - {x: -4.5, y: 0, z: 7}
+  - {x: -4.5, y: 0, z: 6}
+  - {x: -4.5, y: 0, z: 5.5}
+  - {x: -4.5761204, y: 0, z: 5.1173167}
+  - {x: -4.7928934, y: 0, z: 4.7928934}
+  - {x: -7, y: 0, z: 4.5}
+  - {x: -6, y: 0, z: 4.5}
+  - {x: -5.5, y: 0, z: 4.5}
+  - {x: -5.1173167, y: 0, z: 4.5761204}
+  - {x: -4.7928934, y: 0, z: 4.7928934}
+  - {x: -7, y: 0, z: 4}
+  - {x: -6, y: 0, z: 4}
+  - {x: -5.457041, y: 0, z: 4.0018487}
+  - {x: -4.925975, y: 0, z: 4.1141806}
+  - {x: -4.43934, y: 0, z: 4.43934}
+  - {x: -7, y: 0, z: 0}
+  - {x: -6, y: 0, z: 0}
+  - {x: -5.457041, y: 0, z: 0}
+  - {x: -4.925975, y: 0, z: 0}
+  - {x: -4.43934, y: 0, z: 0}
+  - {x: -7, y: 0, z: -4}
+  - {x: -6, y: 0, z: -4}
+  - {x: -5.457041, y: 0, z: -4.0018487}
+  - {x: -4.925975, y: 0, z: -4.1141806}
+  - {x: -4.43934, y: 0, z: -4.43934}
+  - {x: -7, y: 0, z: -4.5}
+  - {x: -6, y: 0, z: -4.5}
+  - {x: -5.5, y: 0, z: -4.5}
+  - {x: -5.1173167, y: 0, z: -4.5761204}
+  - {x: -4.7928934, y: 0, z: -4.7928934}
+  - {x: 7, y: 0, z: -4.5}
+  - {x: 6, y: 0, z: -4.5}
+  - {x: 5.5, y: 0, z: -4.5}
+  - {x: 5.1173167, y: 0, z: -4.5761204}
+  - {x: 4.7928934, y: 0, z: -4.7928934}
+  - {x: 7, y: 0, z: -4}
+  - {x: 6, y: 0, z: -4}
+  - {x: 5.457041, y: 0, z: -4.0018487}
+  - {x: 4.925975, y: 0, z: -4.1141806}
+  - {x: 4.43934, y: 0, z: -4.43934}
+  - {x: 7, y: 0, z: 0}
+  - {x: 6, y: 0, z: 0}
+  - {x: 5.457041, y: 0, z: 0}
+  - {x: 4.925975, y: 0, z: 0}
+  - {x: 4.43934, y: 0, z: 0}
+  - {x: 7, y: 0, z: 4}
+  - {x: 6, y: 0, z: 4}
+  - {x: 5.457041, y: 0, z: 4.0018487}
+  - {x: 4.925975, y: 0, z: 4.1141806}
+  - {x: 4.43934, y: 0, z: 4.43934}
+  - {x: 7, y: 0, z: 4.5}
+  - {x: 6, y: 0, z: 4.5}
+  - {x: 5.5, y: 0, z: 4.5}
+  - {x: 5.1173167, y: 0, z: 4.5761204}
+  - {x: 4.7928934, y: 0, z: 4.7928934}
+  - {x: -4.5, y: 0, z: -7}
+  - {x: -4.5, y: 0, z: -6}
+  - {x: -4.5, y: 0, z: -5.5}
+  - {x: -4.5761204, y: 0, z: -5.1173167}
+  - {x: -4.7928934, y: 0, z: -4.7928934}
+  - {x: -4.5, y: 0.25, z: -7}
+  - {x: -4.5, y: 0.25, z: -6}
   - {x: -4.5, y: 0.25, z: -5.5}
-  - {x: -4.5, y: 0.25, z: -4.5}
-  - {x: -5.5, y: 0, z: -3}
-  - {x: -4.5, y: 0, z: -3}
-  - {x: -4, y: 0, z: -3}
-  - {x: -3.6173167, y: 0, z: -3.0761204}
-  - {x: -3.2928934, y: 0, z: -3.2928932}
-  - {x: -5.5, y: 0.25, z: -3}
-  - {x: -4.5, y: 0.25, z: -3}
-  - {x: -4, y: 0.25, z: -3}
-  - {x: -3.6173167, y: 0.25, z: -3.0761204}
-  - {x: -3.2928934, y: 0.25, z: -3.2928932}
-  - {x: -5.5, y: 0.25, z: -3.25}
-  - {x: -4.5, y: 0.25, z: -3.25}
-  - {x: -4.0214796, y: 0.25, z: -3.2490754}
-  - {x: -3.7129877, y: 0.25, z: -3.3070903}
-  - {x: -3.46967, y: 0.25, z: -3.4696698}
-  - {x: -5.5, y: 0.25, z: -4.25}
-  - {x: -4.25, y: 0.25, z: -4.25}
+  - {x: -4.5761204, y: 0.25, z: -5.1173167}
+  - {x: -4.7928934, y: 0.25, z: -4.7928934}
+  - {x: -4.75, y: 0.25, z: -7}
+  - {x: -4.75, y: 0.25, z: -6}
+  - {x: -4.7490754, y: 0.25, z: -5.5214796}
+  - {x: -4.8070903, y: 0.25, z: -5.212988}
+  - {x: -4.9696703, y: 0.25, z: -4.9696703}
+  - {x: -5.75, y: 0.25, z: -7}
+  - {x: -5.75, y: 0.25, z: -5.75}
+  - {x: -6, y: 0.25, z: -7}
+  - {x: -6, y: 0.25, z: -6}
+  - {x: -7, y: 0, z: -4.5}
+  - {x: -6, y: 0, z: -4.5}
+  - {x: -5.5, y: 0, z: -4.5}
+  - {x: -5.1173167, y: 0, z: -4.5761204}
+  - {x: -4.7928934, y: 0, z: -4.7928934}
+  - {x: -7, y: 0.25, z: -4.5}
+  - {x: -6, y: 0.25, z: -4.5}
   - {x: -5.5, y: 0.25, z: -4.5}
-  - {x: -4.5, y: 0.25, z: -4.5}
-  - {x: 3, y: 0, z: -5.5}
-  - {x: 3, y: 0, z: -4.5}
-  - {x: 3, y: 0, z: -4}
-  - {x: 3.0761204, y: 0, z: -3.6173165}
-  - {x: 3.2928934, y: 0, z: -3.2928932}
-  - {x: 3, y: 0.25, z: -5.5}
-  - {x: 3, y: 0.25, z: -4.5}
-  - {x: 3, y: 0.25, z: -4}
-  - {x: 3.0761204, y: 0.25, z: -3.6173165}
-  - {x: 3.2928934, y: 0.25, z: -3.2928932}
-  - {x: 3.25, y: 0.25, z: -5.5}
-  - {x: 3.25, y: 0.25, z: -4.5}
-  - {x: 3.2490757, y: 0.25, z: -4.0214796}
-  - {x: 3.3070903, y: 0.25, z: -3.7129874}
-  - {x: 3.46967, y: 0.25, z: -3.4696698}
-  - {x: 4.25, y: 0.25, z: -5.5}
-  - {x: 4.25, y: 0.25, z: -4.25}
+  - {x: -5.1173167, y: 0.25, z: -4.5761204}
+  - {x: -4.7928934, y: 0.25, z: -4.7928934}
+  - {x: -7, y: 0.25, z: -4.75}
+  - {x: -6, y: 0.25, z: -4.75}
+  - {x: -5.5214796, y: 0.25, z: -4.7490754}
+  - {x: -5.212988, y: 0.25, z: -4.8070903}
+  - {x: -4.9696703, y: 0.25, z: -4.9696703}
+  - {x: -7, y: 0.25, z: -5.75}
+  - {x: -5.75, y: 0.25, z: -5.75}
+  - {x: -7, y: 0.25, z: -6}
+  - {x: -6, y: 0.25, z: -6}
+  - {x: 4.5, y: 0, z: -7}
+  - {x: 4.5, y: 0, z: -6}
+  - {x: 4.5, y: 0, z: -5.5}
+  - {x: 4.5761204, y: 0, z: -5.1173167}
+  - {x: 4.7928934, y: 0, z: -4.7928934}
+  - {x: 4.5, y: 0.25, z: -7}
+  - {x: 4.5, y: 0.25, z: -6}
   - {x: 4.5, y: 0.25, z: -5.5}
-  - {x: 4.5, y: 0.25, z: -4.5}
-  - {x: 5.5, y: 0, z: -3}
-  - {x: 4.5, y: 0, z: -3}
-  - {x: 4, y: 0, z: -3}
-  - {x: 3.6173167, y: 0, z: -3.0761204}
-  - {x: 3.2928934, y: 0, z: -3.2928932}
-  - {x: 5.5, y: 0.25, z: -3}
-  - {x: 4.5, y: 0.25, z: -3}
-  - {x: 4, y: 0.25, z: -3}
-  - {x: 3.6173167, y: 0.25, z: -3.0761204}
-  - {x: 3.2928934, y: 0.25, z: -3.2928932}
-  - {x: 5.5, y: 0.25, z: -3.25}
-  - {x: 4.5, y: 0.25, z: -3.25}
-  - {x: 4.0214796, y: 0.25, z: -3.2490754}
-  - {x: 3.7129877, y: 0.25, z: -3.3070903}
-  - {x: 3.46967, y: 0.25, z: -3.4696698}
-  - {x: 5.5, y: 0.25, z: -4.25}
-  - {x: 4.25, y: 0.25, z: -4.25}
+  - {x: 4.5761204, y: 0.25, z: -5.1173167}
+  - {x: 4.7928934, y: 0.25, z: -4.7928934}
+  - {x: 4.75, y: 0.25, z: -7}
+  - {x: 4.75, y: 0.25, z: -6}
+  - {x: 4.7490754, y: 0.25, z: -5.5214796}
+  - {x: 4.8070903, y: 0.25, z: -5.212988}
+  - {x: 4.9696703, y: 0.25, z: -4.9696703}
+  - {x: 5.75, y: 0.25, z: -7}
+  - {x: 5.75, y: 0.25, z: -5.75}
+  - {x: 6, y: 0.25, z: -7}
+  - {x: 6, y: 0.25, z: -6}
+  - {x: 7, y: 0, z: -4.5}
+  - {x: 6, y: 0, z: -4.5}
+  - {x: 5.5, y: 0, z: -4.5}
+  - {x: 5.1173167, y: 0, z: -4.5761204}
+  - {x: 4.7928934, y: 0, z: -4.7928934}
+  - {x: 7, y: 0.25, z: -4.5}
+  - {x: 6, y: 0.25, z: -4.5}
   - {x: 5.5, y: 0.25, z: -4.5}
-  - {x: 4.5, y: 0.25, z: -4.5}
-  - {x: 3, y: 0, z: 5.5}
-  - {x: 3, y: 0, z: 4.5}
-  - {x: 3, y: 0, z: 4}
-  - {x: 3.0761204, y: 0, z: 3.6173165}
-  - {x: 3.2928934, y: 0, z: 3.2928932}
-  - {x: 3, y: 0.25, z: 5.5}
-  - {x: 3, y: 0.25, z: 4.5}
-  - {x: 3, y: 0.25, z: 4}
-  - {x: 3.0761204, y: 0.25, z: 3.6173165}
-  - {x: 3.2928934, y: 0.25, z: 3.2928932}
-  - {x: 3.25, y: 0.25, z: 5.5}
-  - {x: 3.25, y: 0.25, z: 4.5}
-  - {x: 3.2490757, y: 0.25, z: 4.0214796}
-  - {x: 3.3070903, y: 0.25, z: 3.7129874}
-  - {x: 3.46967, y: 0.25, z: 3.4696698}
-  - {x: 4.25, y: 0.25, z: 5.5}
-  - {x: 4.25, y: 0.25, z: 4.25}
+  - {x: 5.1173167, y: 0.25, z: -4.5761204}
+  - {x: 4.7928934, y: 0.25, z: -4.7928934}
+  - {x: 7, y: 0.25, z: -4.75}
+  - {x: 6, y: 0.25, z: -4.75}
+  - {x: 5.5214796, y: 0.25, z: -4.7490754}
+  - {x: 5.212988, y: 0.25, z: -4.8070903}
+  - {x: 4.9696703, y: 0.25, z: -4.9696703}
+  - {x: 7, y: 0.25, z: -5.75}
+  - {x: 5.75, y: 0.25, z: -5.75}
+  - {x: 7, y: 0.25, z: -6}
+  - {x: 6, y: 0.25, z: -6}
+  - {x: 4.5, y: 0, z: 7}
+  - {x: 4.5, y: 0, z: 6}
+  - {x: 4.5, y: 0, z: 5.5}
+  - {x: 4.5761204, y: 0, z: 5.1173167}
+  - {x: 4.7928934, y: 0, z: 4.7928934}
+  - {x: 4.5, y: 0.25, z: 7}
+  - {x: 4.5, y: 0.25, z: 6}
   - {x: 4.5, y: 0.25, z: 5.5}
-  - {x: 4.5, y: 0.25, z: 4.5}
-  - {x: 5.5, y: 0, z: 3}
-  - {x: 4.5, y: 0, z: 3}
-  - {x: 4, y: 0, z: 3}
-  - {x: 3.6173167, y: 0, z: 3.0761204}
-  - {x: 3.2928934, y: 0, z: 3.2928932}
-  - {x: 5.5, y: 0.25, z: 3}
-  - {x: 4.5, y: 0.25, z: 3}
-  - {x: 4, y: 0.25, z: 3}
-  - {x: 3.6173167, y: 0.25, z: 3.0761204}
-  - {x: 3.2928934, y: 0.25, z: 3.2928932}
-  - {x: 5.5, y: 0.25, z: 3.25}
-  - {x: 4.5, y: 0.25, z: 3.25}
-  - {x: 4.0214796, y: 0.25, z: 3.2490754}
-  - {x: 3.7129877, y: 0.25, z: 3.3070903}
-  - {x: 3.46967, y: 0.25, z: 3.4696698}
-  - {x: 5.5, y: 0.25, z: 4.25}
-  - {x: 4.25, y: 0.25, z: 4.25}
+  - {x: 4.5761204, y: 0.25, z: 5.1173167}
+  - {x: 4.7928934, y: 0.25, z: 4.7928934}
+  - {x: 4.75, y: 0.25, z: 7}
+  - {x: 4.75, y: 0.25, z: 6}
+  - {x: 4.7490754, y: 0.25, z: 5.5214796}
+  - {x: 4.8070903, y: 0.25, z: 5.212988}
+  - {x: 4.9696703, y: 0.25, z: 4.9696703}
+  - {x: 5.75, y: 0.25, z: 7}
+  - {x: 5.75, y: 0.25, z: 5.75}
+  - {x: 6, y: 0.25, z: 7}
+  - {x: 6, y: 0.25, z: 6}
+  - {x: 7, y: 0, z: 4.5}
+  - {x: 6, y: 0, z: 4.5}
+  - {x: 5.5, y: 0, z: 4.5}
+  - {x: 5.1173167, y: 0, z: 4.5761204}
+  - {x: 4.7928934, y: 0, z: 4.7928934}
+  - {x: 7, y: 0.25, z: 4.5}
+  - {x: 6, y: 0.25, z: 4.5}
   - {x: 5.5, y: 0.25, z: 4.5}
-  - {x: 4.5, y: 0.25, z: 4.5}
-  - {x: -3, y: 0, z: 5.5}
-  - {x: -3, y: 0, z: 4.5}
-  - {x: -3, y: 0, z: 4}
-  - {x: -3.0761204, y: 0, z: 3.6173165}
-  - {x: -3.2928934, y: 0, z: 3.2928932}
-  - {x: -3, y: 0.25, z: 5.5}
-  - {x: -3, y: 0.25, z: 4.5}
-  - {x: -3, y: 0.25, z: 4}
-  - {x: -3.0761204, y: 0.25, z: 3.6173165}
-  - {x: -3.2928934, y: 0.25, z: 3.2928932}
-  - {x: -3.25, y: 0.25, z: 5.5}
-  - {x: -3.25, y: 0.25, z: 4.5}
-  - {x: -3.2490757, y: 0.25, z: 4.0214796}
-  - {x: -3.3070903, y: 0.25, z: 3.7129874}
-  - {x: -3.46967, y: 0.25, z: 3.4696698}
-  - {x: -4.25, y: 0.25, z: 5.5}
-  - {x: -4.25, y: 0.25, z: 4.25}
+  - {x: 5.1173167, y: 0.25, z: 4.5761204}
+  - {x: 4.7928934, y: 0.25, z: 4.7928934}
+  - {x: 7, y: 0.25, z: 4.75}
+  - {x: 6, y: 0.25, z: 4.75}
+  - {x: 5.5214796, y: 0.25, z: 4.7490754}
+  - {x: 5.212988, y: 0.25, z: 4.8070903}
+  - {x: 4.9696703, y: 0.25, z: 4.9696703}
+  - {x: 7, y: 0.25, z: 5.75}
+  - {x: 5.75, y: 0.25, z: 5.75}
+  - {x: 7, y: 0.25, z: 6}
+  - {x: 6, y: 0.25, z: 6}
+  - {x: -4.5, y: 0, z: 7}
+  - {x: -4.5, y: 0, z: 6}
+  - {x: -4.5, y: 0, z: 5.5}
+  - {x: -4.5761204, y: 0, z: 5.1173167}
+  - {x: -4.7928934, y: 0, z: 4.7928934}
+  - {x: -4.5, y: 0.25, z: 7}
+  - {x: -4.5, y: 0.25, z: 6}
   - {x: -4.5, y: 0.25, z: 5.5}
-  - {x: -4.5, y: 0.25, z: 4.5}
-  - {x: -5.5, y: 0, z: 3}
-  - {x: -4.5, y: 0, z: 3}
-  - {x: -4, y: 0, z: 3}
-  - {x: -3.6173167, y: 0, z: 3.0761204}
-  - {x: -3.2928934, y: 0, z: 3.2928932}
-  - {x: -5.5, y: 0.25, z: 3}
-  - {x: -4.5, y: 0.25, z: 3}
-  - {x: -4, y: 0.25, z: 3}
-  - {x: -3.6173167, y: 0.25, z: 3.0761204}
-  - {x: -3.2928934, y: 0.25, z: 3.2928932}
-  - {x: -5.5, y: 0.25, z: 3.25}
-  - {x: -4.5, y: 0.25, z: 3.25}
-  - {x: -4.0214796, y: 0.25, z: 3.2490754}
-  - {x: -3.7129877, y: 0.25, z: 3.3070903}
-  - {x: -3.46967, y: 0.25, z: 3.4696698}
-  - {x: -5.5, y: 0.25, z: 4.25}
-  - {x: -4.25, y: 0.25, z: 4.25}
+  - {x: -4.5761204, y: 0.25, z: 5.1173167}
+  - {x: -4.7928934, y: 0.25, z: 4.7928934}
+  - {x: -4.75, y: 0.25, z: 7}
+  - {x: -4.75, y: 0.25, z: 6}
+  - {x: -4.7490754, y: 0.25, z: 5.5214796}
+  - {x: -4.8070903, y: 0.25, z: 5.212988}
+  - {x: -4.9696703, y: 0.25, z: 4.9696703}
+  - {x: -5.75, y: 0.25, z: 7}
+  - {x: -5.75, y: 0.25, z: 5.75}
+  - {x: -6, y: 0.25, z: 7}
+  - {x: -6, y: 0.25, z: 6}
+  - {x: -7, y: 0, z: 4.5}
+  - {x: -6, y: 0, z: 4.5}
+  - {x: -5.5, y: 0, z: 4.5}
+  - {x: -5.1173167, y: 0, z: 4.5761204}
+  - {x: -4.7928934, y: 0, z: 4.7928934}
+  - {x: -7, y: 0.25, z: 4.5}
+  - {x: -6, y: 0.25, z: 4.5}
   - {x: -5.5, y: 0.25, z: 4.5}
-  - {x: -4.5, y: 0.25, z: 4.5}
-  fullMeshVecs: []
+  - {x: -5.1173167, y: 0.25, z: 4.5761204}
+  - {x: -4.7928934, y: 0.25, z: 4.7928934}
+  - {x: -7, y: 0.25, z: 4.75}
+  - {x: -6, y: 0.25, z: 4.75}
+  - {x: -5.5214796, y: 0.25, z: 4.7490754}
+  - {x: -5.212988, y: 0.25, z: 4.8070903}
+  - {x: -4.9696703, y: 0.25, z: 4.9696703}
+  - {x: -7, y: 0.25, z: 5.75}
+  - {x: -5.75, y: 0.25, z: 5.75}
+  - {x: -7, y: 0.25, z: 6}
+  - {x: -6, y: 0.25, z: 6}
+  fullMeshVecs:
+  - {x: 0, y: 0, z: 0}
+  - {x: -4.5, y: 0, z: -7}
+  - {x: -4.5, y: 0, z: -6}
+  - {x: -4.5, y: 0, z: -5.5}
+  - {x: -4.5761204, y: 0, z: -5.1173167}
+  - {x: -4.7928934, y: 0, z: -4.7928934}
+  - {x: -4, y: 0, z: -7}
+  - {x: -4, y: 0, z: -6}
+  - {x: -4.0018487, y: 0, z: -5.457041}
+  - {x: -4.1141806, y: 0, z: -4.925975}
+  - {x: -4.43934, y: 0, z: -4.43934}
+  - {x: 0, y: 0, z: -7}
+  - {x: 0, y: 0, z: -6}
+  - {x: 0, y: 0, z: -5.457041}
+  - {x: 0, y: 0, z: -4.925975}
+  - {x: 0, y: 0, z: -4.43934}
+  - {x: 4, y: 0, z: -7}
+  - {x: 4, y: 0, z: -6}
+  - {x: 4.0018487, y: 0, z: -5.457041}
+  - {x: 4.1141806, y: 0, z: -4.925975}
+  - {x: 4.43934, y: 0, z: -4.43934}
+  - {x: 4.5, y: 0, z: -7}
+  - {x: 4.5, y: 0, z: -6}
+  - {x: 4.5, y: 0, z: -5.5}
+  - {x: 4.5761204, y: 0, z: -5.1173167}
+  - {x: 4.7928934, y: 0, z: -4.7928934}
+  - {x: 4.5, y: 0, z: 7}
+  - {x: 4.5, y: 0, z: 6}
+  - {x: 4.5, y: 0, z: 5.5}
+  - {x: 4.5761204, y: 0, z: 5.1173167}
+  - {x: 4.7928934, y: 0, z: 4.7928934}
+  - {x: 4, y: 0, z: 7}
+  - {x: 4, y: 0, z: 6}
+  - {x: 4.0018487, y: 0, z: 5.457041}
+  - {x: 4.1141806, y: 0, z: 4.925975}
+  - {x: 4.43934, y: 0, z: 4.43934}
+  - {x: 0, y: 0, z: 7}
+  - {x: 0, y: 0, z: 6}
+  - {x: 0, y: 0, z: 5.457041}
+  - {x: 0, y: 0, z: 4.925975}
+  - {x: 0, y: 0, z: 4.43934}
+  - {x: -4, y: 0, z: 7}
+  - {x: -4, y: 0, z: 6}
+  - {x: -4.0018487, y: 0, z: 5.457041}
+  - {x: -4.1141806, y: 0, z: 4.925975}
+  - {x: -4.43934, y: 0, z: 4.43934}
+  - {x: -4.5, y: 0, z: 7}
+  - {x: -4.5, y: 0, z: 6}
+  - {x: -4.5, y: 0, z: 5.5}
+  - {x: -4.5761204, y: 0, z: 5.1173167}
+  - {x: -4.7928934, y: 0, z: 4.7928934}
+  - {x: -7, y: 0, z: 4.5}
+  - {x: -6, y: 0, z: 4.5}
+  - {x: -5.5, y: 0, z: 4.5}
+  - {x: -5.1173167, y: 0, z: 4.5761204}
+  - {x: -4.7928934, y: 0, z: 4.7928934}
+  - {x: -7, y: 0, z: 4}
+  - {x: -6, y: 0, z: 4}
+  - {x: -5.457041, y: 0, z: 4.0018487}
+  - {x: -4.925975, y: 0, z: 4.1141806}
+  - {x: -4.43934, y: 0, z: 4.43934}
+  - {x: -7, y: 0, z: 0}
+  - {x: -6, y: 0, z: 0}
+  - {x: -5.457041, y: 0, z: 0}
+  - {x: -4.925975, y: 0, z: 0}
+  - {x: -4.43934, y: 0, z: 0}
+  - {x: -7, y: 0, z: -4}
+  - {x: -6, y: 0, z: -4}
+  - {x: -5.457041, y: 0, z: -4.0018487}
+  - {x: -4.925975, y: 0, z: -4.1141806}
+  - {x: -4.43934, y: 0, z: -4.43934}
+  - {x: -7, y: 0, z: -4.5}
+  - {x: -6, y: 0, z: -4.5}
+  - {x: -5.5, y: 0, z: -4.5}
+  - {x: -5.1173167, y: 0, z: -4.5761204}
+  - {x: -4.7928934, y: 0, z: -4.7928934}
+  - {x: 7, y: 0, z: -4.5}
+  - {x: 6, y: 0, z: -4.5}
+  - {x: 5.5, y: 0, z: -4.5}
+  - {x: 5.1173167, y: 0, z: -4.5761204}
+  - {x: 4.7928934, y: 0, z: -4.7928934}
+  - {x: 7, y: 0, z: -4}
+  - {x: 6, y: 0, z: -4}
+  - {x: 5.457041, y: 0, z: -4.0018487}
+  - {x: 4.925975, y: 0, z: -4.1141806}
+  - {x: 4.43934, y: 0, z: -4.43934}
+  - {x: 7, y: 0, z: 0}
+  - {x: 6, y: 0, z: 0}
+  - {x: 5.457041, y: 0, z: 0}
+  - {x: 4.925975, y: 0, z: 0}
+  - {x: 4.43934, y: 0, z: 0}
+  - {x: 7, y: 0, z: 4}
+  - {x: 6, y: 0, z: 4}
+  - {x: 5.457041, y: 0, z: 4.0018487}
+  - {x: 4.925975, y: 0, z: 4.1141806}
+  - {x: 4.43934, y: 0, z: 4.43934}
+  - {x: 7, y: 0, z: 4.5}
+  - {x: 6, y: 0, z: 4.5}
+  - {x: 5.5, y: 0, z: 4.5}
+  - {x: 5.1173167, y: 0, z: 4.5761204}
+  - {x: 4.7928934, y: 0, z: 4.7928934}
+  - {x: -4.5, y: 0, z: -7}
+  - {x: -4.5, y: 0, z: -6}
+  - {x: -4.5, y: 0, z: -5.5}
+  - {x: -4.5761204, y: 0, z: -5.1173167}
+  - {x: -4.7928934, y: 0, z: -4.7928934}
+  - {x: -4.5, y: 0.25, z: -7}
+  - {x: -4.5, y: 0.25, z: -6}
+  - {x: -4.5, y: 0.25, z: -5.5}
+  - {x: -4.5761204, y: 0.25, z: -5.1173167}
+  - {x: -4.7928934, y: 0.25, z: -4.7928934}
+  - {x: -4.75, y: 0.25, z: -7}
+  - {x: -4.75, y: 0.25, z: -6}
+  - {x: -4.7490754, y: 0.25, z: -5.5214796}
+  - {x: -4.8070903, y: 0.25, z: -5.212988}
+  - {x: -4.9696703, y: 0.25, z: -4.9696703}
+  - {x: -5.75, y: 0.25, z: -7}
+  - {x: -5.75, y: 0.25, z: -5.75}
+  - {x: -6, y: 0.25, z: -7}
+  - {x: -6, y: 0.25, z: -6}
+  - {x: -7, y: 0, z: -4.5}
+  - {x: -6, y: 0, z: -4.5}
+  - {x: -5.5, y: 0, z: -4.5}
+  - {x: -5.1173167, y: 0, z: -4.5761204}
+  - {x: -4.7928934, y: 0, z: -4.7928934}
+  - {x: -7, y: 0.25, z: -4.5}
+  - {x: -6, y: 0.25, z: -4.5}
+  - {x: -5.5, y: 0.25, z: -4.5}
+  - {x: -5.1173167, y: 0.25, z: -4.5761204}
+  - {x: -4.7928934, y: 0.25, z: -4.7928934}
+  - {x: -7, y: 0.25, z: -4.75}
+  - {x: -6, y: 0.25, z: -4.75}
+  - {x: -5.5214796, y: 0.25, z: -4.7490754}
+  - {x: -5.212988, y: 0.25, z: -4.8070903}
+  - {x: -4.9696703, y: 0.25, z: -4.9696703}
+  - {x: -7, y: 0.25, z: -5.75}
+  - {x: -5.75, y: 0.25, z: -5.75}
+  - {x: -7, y: 0.25, z: -6}
+  - {x: -6, y: 0.25, z: -6}
+  - {x: 4.5, y: 0, z: -7}
+  - {x: 4.5, y: 0, z: -6}
+  - {x: 4.5, y: 0, z: -5.5}
+  - {x: 4.5761204, y: 0, z: -5.1173167}
+  - {x: 4.7928934, y: 0, z: -4.7928934}
+  - {x: 4.5, y: 0.25, z: -7}
+  - {x: 4.5, y: 0.25, z: -6}
+  - {x: 4.5, y: 0.25, z: -5.5}
+  - {x: 4.5761204, y: 0.25, z: -5.1173167}
+  - {x: 4.7928934, y: 0.25, z: -4.7928934}
+  - {x: 4.75, y: 0.25, z: -7}
+  - {x: 4.75, y: 0.25, z: -6}
+  - {x: 4.7490754, y: 0.25, z: -5.5214796}
+  - {x: 4.8070903, y: 0.25, z: -5.212988}
+  - {x: 4.9696703, y: 0.25, z: -4.9696703}
+  - {x: 5.75, y: 0.25, z: -7}
+  - {x: 5.75, y: 0.25, z: -5.75}
+  - {x: 6, y: 0.25, z: -7}
+  - {x: 6, y: 0.25, z: -6}
+  - {x: 7, y: 0, z: -4.5}
+  - {x: 6, y: 0, z: -4.5}
+  - {x: 5.5, y: 0, z: -4.5}
+  - {x: 5.1173167, y: 0, z: -4.5761204}
+  - {x: 4.7928934, y: 0, z: -4.7928934}
+  - {x: 7, y: 0.25, z: -4.5}
+  - {x: 6, y: 0.25, z: -4.5}
+  - {x: 5.5, y: 0.25, z: -4.5}
+  - {x: 5.1173167, y: 0.25, z: -4.5761204}
+  - {x: 4.7928934, y: 0.25, z: -4.7928934}
+  - {x: 7, y: 0.25, z: -4.75}
+  - {x: 6, y: 0.25, z: -4.75}
+  - {x: 5.5214796, y: 0.25, z: -4.7490754}
+  - {x: 5.212988, y: 0.25, z: -4.8070903}
+  - {x: 4.9696703, y: 0.25, z: -4.9696703}
+  - {x: 7, y: 0.25, z: -5.75}
+  - {x: 5.75, y: 0.25, z: -5.75}
+  - {x: 7, y: 0.25, z: -6}
+  - {x: 6, y: 0.25, z: -6}
+  - {x: 4.5, y: 0, z: 7}
+  - {x: 4.5, y: 0, z: 6}
+  - {x: 4.5, y: 0, z: 5.5}
+  - {x: 4.5761204, y: 0, z: 5.1173167}
+  - {x: 4.7928934, y: 0, z: 4.7928934}
+  - {x: 4.5, y: 0.25, z: 7}
+  - {x: 4.5, y: 0.25, z: 6}
+  - {x: 4.5, y: 0.25, z: 5.5}
+  - {x: 4.5761204, y: 0.25, z: 5.1173167}
+  - {x: 4.7928934, y: 0.25, z: 4.7928934}
+  - {x: 4.75, y: 0.25, z: 7}
+  - {x: 4.75, y: 0.25, z: 6}
+  - {x: 4.7490754, y: 0.25, z: 5.5214796}
+  - {x: 4.8070903, y: 0.25, z: 5.212988}
+  - {x: 4.9696703, y: 0.25, z: 4.9696703}
+  - {x: 5.75, y: 0.25, z: 7}
+  - {x: 5.75, y: 0.25, z: 5.75}
+  - {x: 6, y: 0.25, z: 7}
+  - {x: 6, y: 0.25, z: 6}
+  - {x: 7, y: 0, z: 4.5}
+  - {x: 6, y: 0, z: 4.5}
+  - {x: 5.5, y: 0, z: 4.5}
+  - {x: 5.1173167, y: 0, z: 4.5761204}
+  - {x: 4.7928934, y: 0, z: 4.7928934}
+  - {x: 7, y: 0.25, z: 4.5}
+  - {x: 6, y: 0.25, z: 4.5}
+  - {x: 5.5, y: 0.25, z: 4.5}
+  - {x: 5.1173167, y: 0.25, z: 4.5761204}
+  - {x: 4.7928934, y: 0.25, z: 4.7928934}
+  - {x: 7, y: 0.25, z: 4.75}
+  - {x: 6, y: 0.25, z: 4.75}
+  - {x: 5.5214796, y: 0.25, z: 4.7490754}
+  - {x: 5.212988, y: 0.25, z: 4.8070903}
+  - {x: 4.9696703, y: 0.25, z: 4.9696703}
+  - {x: 7, y: 0.25, z: 5.75}
+  - {x: 5.75, y: 0.25, z: 5.75}
+  - {x: 7, y: 0.25, z: 6}
+  - {x: 6, y: 0.25, z: 6}
+  - {x: -4.5, y: 0, z: 7}
+  - {x: -4.5, y: 0, z: 6}
+  - {x: -4.5, y: 0, z: 5.5}
+  - {x: -4.5761204, y: 0, z: 5.1173167}
+  - {x: -4.7928934, y: 0, z: 4.7928934}
+  - {x: -4.5, y: 0.25, z: 7}
+  - {x: -4.5, y: 0.25, z: 6}
+  - {x: -4.5, y: 0.25, z: 5.5}
+  - {x: -4.5761204, y: 0.25, z: 5.1173167}
+  - {x: -4.7928934, y: 0.25, z: 4.7928934}
+  - {x: -4.75, y: 0.25, z: 7}
+  - {x: -4.75, y: 0.25, z: 6}
+  - {x: -4.7490754, y: 0.25, z: 5.5214796}
+  - {x: -4.8070903, y: 0.25, z: 5.212988}
+  - {x: -4.9696703, y: 0.25, z: 4.9696703}
+  - {x: -5.75, y: 0.25, z: 7}
+  - {x: -5.75, y: 0.25, z: 5.75}
+  - {x: -6, y: 0.25, z: 7}
+  - {x: -6, y: 0.25, z: 6}
+  - {x: -7, y: 0, z: 4.5}
+  - {x: -6, y: 0, z: 4.5}
+  - {x: -5.5, y: 0, z: 4.5}
+  - {x: -5.1173167, y: 0, z: 4.5761204}
+  - {x: -4.7928934, y: 0, z: 4.7928934}
+  - {x: -7, y: 0.25, z: 4.5}
+  - {x: -6, y: 0.25, z: 4.5}
+  - {x: -5.5, y: 0.25, z: 4.5}
+  - {x: -5.1173167, y: 0.25, z: 4.5761204}
+  - {x: -4.7928934, y: 0.25, z: 4.7928934}
+  - {x: -7, y: 0.25, z: 4.75}
+  - {x: -6, y: 0.25, z: 4.75}
+  - {x: -5.5214796, y: 0.25, z: 4.7490754}
+  - {x: -5.212988, y: 0.25, z: 4.8070903}
+  - {x: -4.9696703, y: 0.25, z: 4.9696703}
+  - {x: -7, y: 0.25, z: 5.75}
+  - {x: -5.75, y: 0.25, z: 5.75}
+  - {x: -7, y: 0.25, z: 6}
+  - {x: -6, y: 0.25, z: 6}
   tmpMeshVecs:
   - {x: 0, y: 0, z: 0}
-  - {x: -3, y: 0, z: -5.5}
-  - {x: -3, y: 0, z: -4.5}
-  - {x: -3, y: 0, z: -4}
-  - {x: -3.0761204, y: 0, z: -3.6173165}
-  - {x: -3.2928934, y: 0, z: -3.2928932}
-  - {x: -2.5, y: 0, z: -5.5}
-  - {x: -2.5, y: 0, z: -4.5}
-  - {x: -2.501849, y: 0, z: -3.9570408}
-  - {x: -2.6141806, y: 0, z: -3.4259746}
-  - {x: -2.93934, y: 0, z: -2.9393399}
-  - {x: 0, y: 0, z: -5.5}
-  - {x: 0, y: 0, z: -4.5}
-  - {x: 0, y: 0, z: -3.9570408}
-  - {x: 0, y: 0, z: -3.4259746}
-  - {x: 0, y: 0, z: -2.9393399}
-  - {x: 2.5, y: 0, z: -5.5}
-  - {x: 2.5, y: 0, z: -4.5}
-  - {x: 2.501849, y: 0, z: -3.9570408}
-  - {x: 2.6141806, y: 0, z: -3.4259746}
-  - {x: 2.93934, y: 0, z: -2.9393399}
-  - {x: 3, y: 0, z: -5.5}
-  - {x: 3, y: 0, z: -4.5}
-  - {x: 3, y: 0, z: -4}
-  - {x: 3.0761204, y: 0, z: -3.6173165}
-  - {x: 3.2928934, y: 0, z: -3.2928932}
-  - {x: 3, y: 0, z: 5.5}
-  - {x: 3, y: 0, z: 4.5}
-  - {x: 3, y: 0, z: 4}
-  - {x: 3.0761204, y: 0, z: 3.6173165}
-  - {x: 3.2928934, y: 0, z: 3.2928932}
-  - {x: 2.5, y: 0, z: 5.5}
-  - {x: 2.5, y: 0, z: 4.5}
-  - {x: 2.501849, y: 0, z: 3.9570408}
-  - {x: 2.6141806, y: 0, z: 3.4259746}
-  - {x: 2.93934, y: 0, z: 2.9393399}
-  - {x: 0, y: 0, z: 5.5}
-  - {x: 0, y: 0, z: 4.5}
-  - {x: 0, y: 0, z: 3.9570408}
-  - {x: 0, y: 0, z: 3.4259746}
-  - {x: 0, y: 0, z: 2.9393399}
-  - {x: -2.5, y: 0, z: 5.5}
-  - {x: -2.5, y: 0, z: 4.5}
-  - {x: -2.501849, y: 0, z: 3.9570408}
-  - {x: -2.6141806, y: 0, z: 3.4259746}
-  - {x: -2.93934, y: 0, z: 2.9393399}
-  - {x: -3, y: 0, z: 5.5}
-  - {x: -3, y: 0, z: 4.5}
-  - {x: -3, y: 0, z: 4}
-  - {x: -3.0761204, y: 0, z: 3.6173165}
-  - {x: -3.2928934, y: 0, z: 3.2928932}
-  - {x: -5.5, y: 0, z: 3}
-  - {x: -4.5, y: 0, z: 3}
-  - {x: -4, y: 0, z: 3}
-  - {x: -3.6173167, y: 0, z: 3.0761204}
-  - {x: -3.2928934, y: 0, z: 3.2928932}
-  - {x: -5.5, y: 0, z: 2.5}
-  - {x: -4.5, y: 0, z: 2.5}
-  - {x: -3.9570408, y: 0, z: 2.501849}
-  - {x: -3.425975, y: 0, z: 2.6141806}
-  - {x: -2.93934, y: 0, z: 2.9393399}
-  - {x: -5.5, y: 0, z: 0}
-  - {x: -4.5, y: 0, z: 0}
-  - {x: -3.9570408, y: 0, z: 0}
-  - {x: -3.425975, y: 0, z: 0}
-  - {x: -2.93934, y: 0, z: 0}
-  - {x: -5.5, y: 0, z: -2.5}
-  - {x: -4.5, y: 0, z: -2.5}
-  - {x: -3.9570408, y: 0, z: -2.501849}
-  - {x: -3.425975, y: 0, z: -2.6141806}
-  - {x: -2.93934, y: 0, z: -2.9393399}
-  - {x: -5.5, y: 0, z: -3}
-  - {x: -4.5, y: 0, z: -3}
-  - {x: -4, y: 0, z: -3}
-  - {x: -3.6173167, y: 0, z: -3.0761204}
-  - {x: -3.2928934, y: 0, z: -3.2928932}
-  - {x: 5.5, y: 0, z: -3}
-  - {x: 4.5, y: 0, z: -3}
-  - {x: 4, y: 0, z: -3}
-  - {x: 3.6173167, y: 0, z: -3.0761204}
-  - {x: 3.2928934, y: 0, z: -3.2928932}
-  - {x: 5.5, y: 0, z: -2.5}
-  - {x: 4.5, y: 0, z: -2.5}
-  - {x: 3.9570408, y: 0, z: -2.501849}
-  - {x: 3.425975, y: 0, z: -2.6141806}
-  - {x: 2.93934, y: 0, z: -2.9393399}
-  - {x: 5.5, y: 0, z: 0}
-  - {x: 4.5, y: 0, z: 0}
-  - {x: 3.9570408, y: 0, z: 0}
-  - {x: 3.425975, y: 0, z: 0}
-  - {x: 2.93934, y: 0, z: 0}
-  - {x: 5.5, y: 0, z: 2.5}
-  - {x: 4.5, y: 0, z: 2.5}
-  - {x: 3.9570408, y: 0, z: 2.501849}
-  - {x: 3.425975, y: 0, z: 2.6141806}
-  - {x: 2.93934, y: 0, z: 2.9393399}
-  - {x: 5.5, y: 0, z: 3}
-  - {x: 4.5, y: 0, z: 3}
-  - {x: 4, y: 0, z: 3}
-  - {x: 3.6173167, y: 0, z: 3.0761204}
-  - {x: 3.2928934, y: 0, z: 3.2928932}
-  - {x: -3, y: 0, z: -5.5}
-  - {x: -3, y: 0, z: -4.5}
-  - {x: -3, y: 0, z: -4}
-  - {x: -3.0761204, y: 0, z: -3.6173165}
-  - {x: -3.2928934, y: 0, z: -3.2928932}
-  - {x: -3, y: 0.25, z: -5.5}
-  - {x: -3, y: 0.25, z: -4.5}
-  - {x: -3, y: 0.25, z: -4}
-  - {x: -3.0761204, y: 0.25, z: -3.6173165}
-  - {x: -3.2928934, y: 0.25, z: -3.2928932}
-  - {x: -3.25, y: 0.25, z: -5.5}
-  - {x: -3.25, y: 0.25, z: -4.5}
-  - {x: -3.2490757, y: 0.25, z: -4.0214796}
-  - {x: -3.3070903, y: 0.25, z: -3.7129874}
-  - {x: -3.46967, y: 0.25, z: -3.4696698}
-  - {x: -4.25, y: 0.25, z: -5.5}
-  - {x: -4.25, y: 0.25, z: -4.25}
+  - {x: -4.5, y: 0, z: -7}
+  - {x: -4.5, y: 0, z: -6}
+  - {x: -4.5, y: 0, z: -5.5}
+  - {x: -4.5761204, y: 0, z: -5.1173167}
+  - {x: -4.7928934, y: 0, z: -4.7928934}
+  - {x: -4, y: 0, z: -7}
+  - {x: -4, y: 0, z: -6}
+  - {x: -4.0018487, y: 0, z: -5.457041}
+  - {x: -4.1141806, y: 0, z: -4.925975}
+  - {x: -4.43934, y: 0, z: -4.43934}
+  - {x: 0, y: 0, z: -7}
+  - {x: 0, y: 0, z: -6}
+  - {x: 0, y: 0, z: -5.457041}
+  - {x: 0, y: 0, z: -4.925975}
+  - {x: 0, y: 0, z: -4.43934}
+  - {x: 4, y: 0, z: -7}
+  - {x: 4, y: 0, z: -6}
+  - {x: 4.0018487, y: 0, z: -5.457041}
+  - {x: 4.1141806, y: 0, z: -4.925975}
+  - {x: 4.43934, y: 0, z: -4.43934}
+  - {x: 4.5, y: 0, z: -7}
+  - {x: 4.5, y: 0, z: -6}
+  - {x: 4.5, y: 0, z: -5.5}
+  - {x: 4.5761204, y: 0, z: -5.1173167}
+  - {x: 4.7928934, y: 0, z: -4.7928934}
+  - {x: 4.5, y: 0, z: 7}
+  - {x: 4.5, y: 0, z: 6}
+  - {x: 4.5, y: 0, z: 5.5}
+  - {x: 4.5761204, y: 0, z: 5.1173167}
+  - {x: 4.7928934, y: 0, z: 4.7928934}
+  - {x: 4, y: 0, z: 7}
+  - {x: 4, y: 0, z: 6}
+  - {x: 4.0018487, y: 0, z: 5.457041}
+  - {x: 4.1141806, y: 0, z: 4.925975}
+  - {x: 4.43934, y: 0, z: 4.43934}
+  - {x: 0, y: 0, z: 7}
+  - {x: 0, y: 0, z: 6}
+  - {x: 0, y: 0, z: 5.457041}
+  - {x: 0, y: 0, z: 4.925975}
+  - {x: 0, y: 0, z: 4.43934}
+  - {x: -4, y: 0, z: 7}
+  - {x: -4, y: 0, z: 6}
+  - {x: -4.0018487, y: 0, z: 5.457041}
+  - {x: -4.1141806, y: 0, z: 4.925975}
+  - {x: -4.43934, y: 0, z: 4.43934}
+  - {x: -4.5, y: 0, z: 7}
+  - {x: -4.5, y: 0, z: 6}
+  - {x: -4.5, y: 0, z: 5.5}
+  - {x: -4.5761204, y: 0, z: 5.1173167}
+  - {x: -4.7928934, y: 0, z: 4.7928934}
+  - {x: -7, y: 0, z: 4.5}
+  - {x: -6, y: 0, z: 4.5}
+  - {x: -5.5, y: 0, z: 4.5}
+  - {x: -5.1173167, y: 0, z: 4.5761204}
+  - {x: -4.7928934, y: 0, z: 4.7928934}
+  - {x: -7, y: 0, z: 4}
+  - {x: -6, y: 0, z: 4}
+  - {x: -5.457041, y: 0, z: 4.0018487}
+  - {x: -4.925975, y: 0, z: 4.1141806}
+  - {x: -4.43934, y: 0, z: 4.43934}
+  - {x: -7, y: 0, z: 0}
+  - {x: -6, y: 0, z: 0}
+  - {x: -5.457041, y: 0, z: 0}
+  - {x: -4.925975, y: 0, z: 0}
+  - {x: -4.43934, y: 0, z: 0}
+  - {x: -7, y: 0, z: -4}
+  - {x: -6, y: 0, z: -4}
+  - {x: -5.457041, y: 0, z: -4.0018487}
+  - {x: -4.925975, y: 0, z: -4.1141806}
+  - {x: -4.43934, y: 0, z: -4.43934}
+  - {x: -7, y: 0, z: -4.5}
+  - {x: -6, y: 0, z: -4.5}
+  - {x: -5.5, y: 0, z: -4.5}
+  - {x: -5.1173167, y: 0, z: -4.5761204}
+  - {x: -4.7928934, y: 0, z: -4.7928934}
+  - {x: 7, y: 0, z: -4.5}
+  - {x: 6, y: 0, z: -4.5}
+  - {x: 5.5, y: 0, z: -4.5}
+  - {x: 5.1173167, y: 0, z: -4.5761204}
+  - {x: 4.7928934, y: 0, z: -4.7928934}
+  - {x: 7, y: 0, z: -4}
+  - {x: 6, y: 0, z: -4}
+  - {x: 5.457041, y: 0, z: -4.0018487}
+  - {x: 4.925975, y: 0, z: -4.1141806}
+  - {x: 4.43934, y: 0, z: -4.43934}
+  - {x: 7, y: 0, z: 0}
+  - {x: 6, y: 0, z: 0}
+  - {x: 5.457041, y: 0, z: 0}
+  - {x: 4.925975, y: 0, z: 0}
+  - {x: 4.43934, y: 0, z: 0}
+  - {x: 7, y: 0, z: 4}
+  - {x: 6, y: 0, z: 4}
+  - {x: 5.457041, y: 0, z: 4.0018487}
+  - {x: 4.925975, y: 0, z: 4.1141806}
+  - {x: 4.43934, y: 0, z: 4.43934}
+  - {x: 7, y: 0, z: 4.5}
+  - {x: 6, y: 0, z: 4.5}
+  - {x: 5.5, y: 0, z: 4.5}
+  - {x: 5.1173167, y: 0, z: 4.5761204}
+  - {x: 4.7928934, y: 0, z: 4.7928934}
+  - {x: -4.5, y: 0, z: -7}
+  - {x: -4.5, y: 0, z: -6}
+  - {x: -4.5, y: 0, z: -5.5}
+  - {x: -4.5761204, y: 0, z: -5.1173167}
+  - {x: -4.7928934, y: 0, z: -4.7928934}
+  - {x: -4.5, y: 0.25, z: -7}
+  - {x: -4.5, y: 0.25, z: -6}
   - {x: -4.5, y: 0.25, z: -5.5}
-  - {x: -4.5, y: 0.25, z: -4.5}
-  - {x: -5.5, y: 0, z: -3}
-  - {x: -4.5, y: 0, z: -3}
-  - {x: -4, y: 0, z: -3}
-  - {x: -3.6173167, y: 0, z: -3.0761204}
-  - {x: -3.2928934, y: 0, z: -3.2928932}
-  - {x: -5.5, y: 0.25, z: -3}
-  - {x: -4.5, y: 0.25, z: -3}
-  - {x: -4, y: 0.25, z: -3}
-  - {x: -3.6173167, y: 0.25, z: -3.0761204}
-  - {x: -3.2928934, y: 0.25, z: -3.2928932}
-  - {x: -5.5, y: 0.25, z: -3.25}
-  - {x: -4.5, y: 0.25, z: -3.25}
-  - {x: -4.0214796, y: 0.25, z: -3.2490754}
-  - {x: -3.7129877, y: 0.25, z: -3.3070903}
-  - {x: -3.46967, y: 0.25, z: -3.4696698}
-  - {x: -5.5, y: 0.25, z: -4.25}
-  - {x: -4.25, y: 0.25, z: -4.25}
+  - {x: -4.5761204, y: 0.25, z: -5.1173167}
+  - {x: -4.7928934, y: 0.25, z: -4.7928934}
+  - {x: -4.75, y: 0.25, z: -7}
+  - {x: -4.75, y: 0.25, z: -6}
+  - {x: -4.7490754, y: 0.25, z: -5.5214796}
+  - {x: -4.8070903, y: 0.25, z: -5.212988}
+  - {x: -4.9696703, y: 0.25, z: -4.9696703}
+  - {x: -5.75, y: 0.25, z: -7}
+  - {x: -5.75, y: 0.25, z: -5.75}
+  - {x: -6, y: 0.25, z: -7}
+  - {x: -6, y: 0.25, z: -6}
+  - {x: -7, y: 0, z: -4.5}
+  - {x: -6, y: 0, z: -4.5}
+  - {x: -5.5, y: 0, z: -4.5}
+  - {x: -5.1173167, y: 0, z: -4.5761204}
+  - {x: -4.7928934, y: 0, z: -4.7928934}
+  - {x: -7, y: 0.25, z: -4.5}
+  - {x: -6, y: 0.25, z: -4.5}
   - {x: -5.5, y: 0.25, z: -4.5}
-  - {x: -4.5, y: 0.25, z: -4.5}
-  - {x: 3, y: 0, z: -5.5}
-  - {x: 3, y: 0, z: -4.5}
-  - {x: 3, y: 0, z: -4}
-  - {x: 3.0761204, y: 0, z: -3.6173165}
-  - {x: 3.2928934, y: 0, z: -3.2928932}
-  - {x: 3, y: 0.25, z: -5.5}
-  - {x: 3, y: 0.25, z: -4.5}
-  - {x: 3, y: 0.25, z: -4}
-  - {x: 3.0761204, y: 0.25, z: -3.6173165}
-  - {x: 3.2928934, y: 0.25, z: -3.2928932}
-  - {x: 3.25, y: 0.25, z: -5.5}
-  - {x: 3.25, y: 0.25, z: -4.5}
-  - {x: 3.2490757, y: 0.25, z: -4.0214796}
-  - {x: 3.3070903, y: 0.25, z: -3.7129874}
-  - {x: 3.46967, y: 0.25, z: -3.4696698}
-  - {x: 4.25, y: 0.25, z: -5.5}
-  - {x: 4.25, y: 0.25, z: -4.25}
+  - {x: -5.1173167, y: 0.25, z: -4.5761204}
+  - {x: -4.7928934, y: 0.25, z: -4.7928934}
+  - {x: -7, y: 0.25, z: -4.75}
+  - {x: -6, y: 0.25, z: -4.75}
+  - {x: -5.5214796, y: 0.25, z: -4.7490754}
+  - {x: -5.212988, y: 0.25, z: -4.8070903}
+  - {x: -4.9696703, y: 0.25, z: -4.9696703}
+  - {x: -7, y: 0.25, z: -5.75}
+  - {x: -5.75, y: 0.25, z: -5.75}
+  - {x: -7, y: 0.25, z: -6}
+  - {x: -6, y: 0.25, z: -6}
+  - {x: 4.5, y: 0, z: -7}
+  - {x: 4.5, y: 0, z: -6}
+  - {x: 4.5, y: 0, z: -5.5}
+  - {x: 4.5761204, y: 0, z: -5.1173167}
+  - {x: 4.7928934, y: 0, z: -4.7928934}
+  - {x: 4.5, y: 0.25, z: -7}
+  - {x: 4.5, y: 0.25, z: -6}
   - {x: 4.5, y: 0.25, z: -5.5}
-  - {x: 4.5, y: 0.25, z: -4.5}
-  - {x: 5.5, y: 0, z: -3}
-  - {x: 4.5, y: 0, z: -3}
-  - {x: 4, y: 0, z: -3}
-  - {x: 3.6173167, y: 0, z: -3.0761204}
-  - {x: 3.2928934, y: 0, z: -3.2928932}
-  - {x: 5.5, y: 0.25, z: -3}
-  - {x: 4.5, y: 0.25, z: -3}
-  - {x: 4, y: 0.25, z: -3}
-  - {x: 3.6173167, y: 0.25, z: -3.0761204}
-  - {x: 3.2928934, y: 0.25, z: -3.2928932}
-  - {x: 5.5, y: 0.25, z: -3.25}
-  - {x: 4.5, y: 0.25, z: -3.25}
-  - {x: 4.0214796, y: 0.25, z: -3.2490754}
-  - {x: 3.7129877, y: 0.25, z: -3.3070903}
-  - {x: 3.46967, y: 0.25, z: -3.4696698}
-  - {x: 5.5, y: 0.25, z: -4.25}
-  - {x: 4.25, y: 0.25, z: -4.25}
+  - {x: 4.5761204, y: 0.25, z: -5.1173167}
+  - {x: 4.7928934, y: 0.25, z: -4.7928934}
+  - {x: 4.75, y: 0.25, z: -7}
+  - {x: 4.75, y: 0.25, z: -6}
+  - {x: 4.7490754, y: 0.25, z: -5.5214796}
+  - {x: 4.8070903, y: 0.25, z: -5.212988}
+  - {x: 4.9696703, y: 0.25, z: -4.9696703}
+  - {x: 5.75, y: 0.25, z: -7}
+  - {x: 5.75, y: 0.25, z: -5.75}
+  - {x: 6, y: 0.25, z: -7}
+  - {x: 6, y: 0.25, z: -6}
+  - {x: 7, y: 0, z: -4.5}
+  - {x: 6, y: 0, z: -4.5}
+  - {x: 5.5, y: 0, z: -4.5}
+  - {x: 5.1173167, y: 0, z: -4.5761204}
+  - {x: 4.7928934, y: 0, z: -4.7928934}
+  - {x: 7, y: 0.25, z: -4.5}
+  - {x: 6, y: 0.25, z: -4.5}
   - {x: 5.5, y: 0.25, z: -4.5}
-  - {x: 4.5, y: 0.25, z: -4.5}
-  - {x: 3, y: 0, z: 5.5}
-  - {x: 3, y: 0, z: 4.5}
-  - {x: 3, y: 0, z: 4}
-  - {x: 3.0761204, y: 0, z: 3.6173165}
-  - {x: 3.2928934, y: 0, z: 3.2928932}
-  - {x: 3, y: 0.25, z: 5.5}
-  - {x: 3, y: 0.25, z: 4.5}
-  - {x: 3, y: 0.25, z: 4}
-  - {x: 3.0761204, y: 0.25, z: 3.6173165}
-  - {x: 3.2928934, y: 0.25, z: 3.2928932}
-  - {x: 3.25, y: 0.25, z: 5.5}
-  - {x: 3.25, y: 0.25, z: 4.5}
-  - {x: 3.2490757, y: 0.25, z: 4.0214796}
-  - {x: 3.3070903, y: 0.25, z: 3.7129874}
-  - {x: 3.46967, y: 0.25, z: 3.4696698}
-  - {x: 4.25, y: 0.25, z: 5.5}
-  - {x: 4.25, y: 0.25, z: 4.25}
+  - {x: 5.1173167, y: 0.25, z: -4.5761204}
+  - {x: 4.7928934, y: 0.25, z: -4.7928934}
+  - {x: 7, y: 0.25, z: -4.75}
+  - {x: 6, y: 0.25, z: -4.75}
+  - {x: 5.5214796, y: 0.25, z: -4.7490754}
+  - {x: 5.212988, y: 0.25, z: -4.8070903}
+  - {x: 4.9696703, y: 0.25, z: -4.9696703}
+  - {x: 7, y: 0.25, z: -5.75}
+  - {x: 5.75, y: 0.25, z: -5.75}
+  - {x: 7, y: 0.25, z: -6}
+  - {x: 6, y: 0.25, z: -6}
+  - {x: 4.5, y: 0, z: 7}
+  - {x: 4.5, y: 0, z: 6}
+  - {x: 4.5, y: 0, z: 5.5}
+  - {x: 4.5761204, y: 0, z: 5.1173167}
+  - {x: 4.7928934, y: 0, z: 4.7928934}
+  - {x: 4.5, y: 0.25, z: 7}
+  - {x: 4.5, y: 0.25, z: 6}
   - {x: 4.5, y: 0.25, z: 5.5}
-  - {x: 4.5, y: 0.25, z: 4.5}
-  - {x: 5.5, y: 0, z: 3}
-  - {x: 4.5, y: 0, z: 3}
-  - {x: 4, y: 0, z: 3}
-  - {x: 3.6173167, y: 0, z: 3.0761204}
-  - {x: 3.2928934, y: 0, z: 3.2928932}
-  - {x: 5.5, y: 0.25, z: 3}
-  - {x: 4.5, y: 0.25, z: 3}
-  - {x: 4, y: 0.25, z: 3}
-  - {x: 3.6173167, y: 0.25, z: 3.0761204}
-  - {x: 3.2928934, y: 0.25, z: 3.2928932}
-  - {x: 5.5, y: 0.25, z: 3.25}
-  - {x: 4.5, y: 0.25, z: 3.25}
-  - {x: 4.0214796, y: 0.25, z: 3.2490754}
-  - {x: 3.7129877, y: 0.25, z: 3.3070903}
-  - {x: 3.46967, y: 0.25, z: 3.4696698}
-  - {x: 5.5, y: 0.25, z: 4.25}
-  - {x: 4.25, y: 0.25, z: 4.25}
+  - {x: 4.5761204, y: 0.25, z: 5.1173167}
+  - {x: 4.7928934, y: 0.25, z: 4.7928934}
+  - {x: 4.75, y: 0.25, z: 7}
+  - {x: 4.75, y: 0.25, z: 6}
+  - {x: 4.7490754, y: 0.25, z: 5.5214796}
+  - {x: 4.8070903, y: 0.25, z: 5.212988}
+  - {x: 4.9696703, y: 0.25, z: 4.9696703}
+  - {x: 5.75, y: 0.25, z: 7}
+  - {x: 5.75, y: 0.25, z: 5.75}
+  - {x: 6, y: 0.25, z: 7}
+  - {x: 6, y: 0.25, z: 6}
+  - {x: 7, y: 0, z: 4.5}
+  - {x: 6, y: 0, z: 4.5}
+  - {x: 5.5, y: 0, z: 4.5}
+  - {x: 5.1173167, y: 0, z: 4.5761204}
+  - {x: 4.7928934, y: 0, z: 4.7928934}
+  - {x: 7, y: 0.25, z: 4.5}
+  - {x: 6, y: 0.25, z: 4.5}
   - {x: 5.5, y: 0.25, z: 4.5}
-  - {x: 4.5, y: 0.25, z: 4.5}
-  - {x: -3, y: 0, z: 5.5}
-  - {x: -3, y: 0, z: 4.5}
-  - {x: -3, y: 0, z: 4}
-  - {x: -3.0761204, y: 0, z: 3.6173165}
-  - {x: -3.2928934, y: 0, z: 3.2928932}
-  - {x: -3, y: 0.25, z: 5.5}
-  - {x: -3, y: 0.25, z: 4.5}
-  - {x: -3, y: 0.25, z: 4}
-  - {x: -3.0761204, y: 0.25, z: 3.6173165}
-  - {x: -3.2928934, y: 0.25, z: 3.2928932}
-  - {x: -3.25, y: 0.25, z: 5.5}
-  - {x: -3.25, y: 0.25, z: 4.5}
-  - {x: -3.2490757, y: 0.25, z: 4.0214796}
-  - {x: -3.3070903, y: 0.25, z: 3.7129874}
-  - {x: -3.46967, y: 0.25, z: 3.4696698}
-  - {x: -4.25, y: 0.25, z: 5.5}
-  - {x: -4.25, y: 0.25, z: 4.25}
+  - {x: 5.1173167, y: 0.25, z: 4.5761204}
+  - {x: 4.7928934, y: 0.25, z: 4.7928934}
+  - {x: 7, y: 0.25, z: 4.75}
+  - {x: 6, y: 0.25, z: 4.75}
+  - {x: 5.5214796, y: 0.25, z: 4.7490754}
+  - {x: 5.212988, y: 0.25, z: 4.8070903}
+  - {x: 4.9696703, y: 0.25, z: 4.9696703}
+  - {x: 7, y: 0.25, z: 5.75}
+  - {x: 5.75, y: 0.25, z: 5.75}
+  - {x: 7, y: 0.25, z: 6}
+  - {x: 6, y: 0.25, z: 6}
+  - {x: -4.5, y: 0, z: 7}
+  - {x: -4.5, y: 0, z: 6}
+  - {x: -4.5, y: 0, z: 5.5}
+  - {x: -4.5761204, y: 0, z: 5.1173167}
+  - {x: -4.7928934, y: 0, z: 4.7928934}
+  - {x: -4.5, y: 0.25, z: 7}
+  - {x: -4.5, y: 0.25, z: 6}
   - {x: -4.5, y: 0.25, z: 5.5}
-  - {x: -4.5, y: 0.25, z: 4.5}
-  - {x: -5.5, y: 0, z: 3}
-  - {x: -4.5, y: 0, z: 3}
-  - {x: -4, y: 0, z: 3}
-  - {x: -3.6173167, y: 0, z: 3.0761204}
-  - {x: -3.2928934, y: 0, z: 3.2928932}
-  - {x: -5.5, y: 0.25, z: 3}
-  - {x: -4.5, y: 0.25, z: 3}
-  - {x: -4, y: 0.25, z: 3}
-  - {x: -3.6173167, y: 0.25, z: 3.0761204}
-  - {x: -3.2928934, y: 0.25, z: 3.2928932}
-  - {x: -5.5, y: 0.25, z: 3.25}
-  - {x: -4.5, y: 0.25, z: 3.25}
-  - {x: -4.0214796, y: 0.25, z: 3.2490754}
-  - {x: -3.7129877, y: 0.25, z: 3.3070903}
-  - {x: -3.46967, y: 0.25, z: 3.4696698}
-  - {x: -5.5, y: 0.25, z: 4.25}
-  - {x: -4.25, y: 0.25, z: 4.25}
+  - {x: -4.5761204, y: 0.25, z: 5.1173167}
+  - {x: -4.7928934, y: 0.25, z: 4.7928934}
+  - {x: -4.75, y: 0.25, z: 7}
+  - {x: -4.75, y: 0.25, z: 6}
+  - {x: -4.7490754, y: 0.25, z: 5.5214796}
+  - {x: -4.8070903, y: 0.25, z: 5.212988}
+  - {x: -4.9696703, y: 0.25, z: 4.9696703}
+  - {x: -5.75, y: 0.25, z: 7}
+  - {x: -5.75, y: 0.25, z: 5.75}
+  - {x: -6, y: 0.25, z: 7}
+  - {x: -6, y: 0.25, z: 6}
+  - {x: -7, y: 0, z: 4.5}
+  - {x: -6, y: 0, z: 4.5}
+  - {x: -5.5, y: 0, z: 4.5}
+  - {x: -5.1173167, y: 0, z: 4.5761204}
+  - {x: -4.7928934, y: 0, z: 4.7928934}
+  - {x: -7, y: 0.25, z: 4.5}
+  - {x: -6, y: 0.25, z: 4.5}
   - {x: -5.5, y: 0.25, z: 4.5}
-  - {x: -4.5, y: 0.25, z: 4.5}
-  tmpFullMeshVecs: []
-  tCrossingTmpFullMeshVecs: []
+  - {x: -5.1173167, y: 0.25, z: 4.5761204}
+  - {x: -4.7928934, y: 0.25, z: 4.7928934}
+  - {x: -7, y: 0.25, z: 4.75}
+  - {x: -6, y: 0.25, z: 4.75}
+  - {x: -5.5214796, y: 0.25, z: 4.7490754}
+  - {x: -5.212988, y: 0.25, z: 4.8070903}
+  - {x: -4.9696703, y: 0.25, z: 4.9696703}
+  - {x: -7, y: 0.25, z: 5.75}
+  - {x: -5.75, y: 0.25, z: 5.75}
+  - {x: -7, y: 0.25, z: 6}
+  - {x: -6, y: 0.25, z: 6}
+  tmpFullMeshVecs:
+  - {x: 0, y: 0, z: 0}
+  - {x: -4.5, y: 0, z: -7}
+  - {x: -4.5, y: 0, z: -6}
+  - {x: -4.5, y: 0, z: -5.5}
+  - {x: -4.5761204, y: 0, z: -5.1173167}
+  - {x: -4.7928934, y: 0, z: -4.7928934}
+  - {x: -4, y: 0, z: -7}
+  - {x: -4, y: 0, z: -6}
+  - {x: -4.0018487, y: 0, z: -5.457041}
+  - {x: -4.1141806, y: 0, z: -4.925975}
+  - {x: -4.43934, y: 0, z: -4.43934}
+  - {x: 0, y: 0, z: -7}
+  - {x: 0, y: 0, z: -6}
+  - {x: 0, y: 0, z: -5.457041}
+  - {x: 0, y: 0, z: -4.925975}
+  - {x: 0, y: 0, z: -4.43934}
+  - {x: 4, y: 0, z: -7}
+  - {x: 4, y: 0, z: -6}
+  - {x: 4.0018487, y: 0, z: -5.457041}
+  - {x: 4.1141806, y: 0, z: -4.925975}
+  - {x: 4.43934, y: 0, z: -4.43934}
+  - {x: 4.5, y: 0, z: -7}
+  - {x: 4.5, y: 0, z: -6}
+  - {x: 4.5, y: 0, z: -5.5}
+  - {x: 4.5761204, y: 0, z: -5.1173167}
+  - {x: 4.7928934, y: 0, z: -4.7928934}
+  - {x: 4.5, y: 0, z: 7}
+  - {x: 4.5, y: 0, z: 6}
+  - {x: 4.5, y: 0, z: 5.5}
+  - {x: 4.5761204, y: 0, z: 5.1173167}
+  - {x: 4.7928934, y: 0, z: 4.7928934}
+  - {x: 4, y: 0, z: 7}
+  - {x: 4, y: 0, z: 6}
+  - {x: 4.0018487, y: 0, z: 5.457041}
+  - {x: 4.1141806, y: 0, z: 4.925975}
+  - {x: 4.43934, y: 0, z: 4.43934}
+  - {x: 0, y: 0, z: 7}
+  - {x: 0, y: 0, z: 6}
+  - {x: 0, y: 0, z: 5.457041}
+  - {x: 0, y: 0, z: 4.925975}
+  - {x: 0, y: 0, z: 4.43934}
+  - {x: -4, y: 0, z: 7}
+  - {x: -4, y: 0, z: 6}
+  - {x: -4.0018487, y: 0, z: 5.457041}
+  - {x: -4.1141806, y: 0, z: 4.925975}
+  - {x: -4.43934, y: 0, z: 4.43934}
+  - {x: -4.5, y: 0, z: 7}
+  - {x: -4.5, y: 0, z: 6}
+  - {x: -4.5, y: 0, z: 5.5}
+  - {x: -4.5761204, y: 0, z: 5.1173167}
+  - {x: -4.7928934, y: 0, z: 4.7928934}
+  - {x: -7, y: 0, z: 4.5}
+  - {x: -6, y: 0, z: 4.5}
+  - {x: -5.5, y: 0, z: 4.5}
+  - {x: -5.1173167, y: 0, z: 4.5761204}
+  - {x: -4.7928934, y: 0, z: 4.7928934}
+  - {x: -7, y: 0, z: 4}
+  - {x: -6, y: 0, z: 4}
+  - {x: -5.457041, y: 0, z: 4.0018487}
+  - {x: -4.925975, y: 0, z: 4.1141806}
+  - {x: -4.43934, y: 0, z: 4.43934}
+  - {x: -7, y: 0, z: 0}
+  - {x: -6, y: 0, z: 0}
+  - {x: -5.457041, y: 0, z: 0}
+  - {x: -4.925975, y: 0, z: 0}
+  - {x: -4.43934, y: 0, z: 0}
+  - {x: -7, y: 0, z: -4}
+  - {x: -6, y: 0, z: -4}
+  - {x: -5.457041, y: 0, z: -4.0018487}
+  - {x: -4.925975, y: 0, z: -4.1141806}
+  - {x: -4.43934, y: 0, z: -4.43934}
+  - {x: -7, y: 0, z: -4.5}
+  - {x: -6, y: 0, z: -4.5}
+  - {x: -5.5, y: 0, z: -4.5}
+  - {x: -5.1173167, y: 0, z: -4.5761204}
+  - {x: -4.7928934, y: 0, z: -4.7928934}
+  - {x: 7, y: 0, z: -4.5}
+  - {x: 6, y: 0, z: -4.5}
+  - {x: 5.5, y: 0, z: -4.5}
+  - {x: 5.1173167, y: 0, z: -4.5761204}
+  - {x: 4.7928934, y: 0, z: -4.7928934}
+  - {x: 7, y: 0, z: -4}
+  - {x: 6, y: 0, z: -4}
+  - {x: 5.457041, y: 0, z: -4.0018487}
+  - {x: 4.925975, y: 0, z: -4.1141806}
+  - {x: 4.43934, y: 0, z: -4.43934}
+  - {x: 7, y: 0, z: 0}
+  - {x: 6, y: 0, z: 0}
+  - {x: 5.457041, y: 0, z: 0}
+  - {x: 4.925975, y: 0, z: 0}
+  - {x: 4.43934, y: 0, z: 0}
+  - {x: 7, y: 0, z: 4}
+  - {x: 6, y: 0, z: 4}
+  - {x: 5.457041, y: 0, z: 4.0018487}
+  - {x: 4.925975, y: 0, z: 4.1141806}
+  - {x: 4.43934, y: 0, z: 4.43934}
+  - {x: 7, y: 0, z: 4.5}
+  - {x: 6, y: 0, z: 4.5}
+  - {x: 5.5, y: 0, z: 4.5}
+  - {x: 5.1173167, y: 0, z: 4.5761204}
+  - {x: 4.7928934, y: 0, z: 4.7928934}
+  - {x: -4.5, y: 0, z: -7}
+  - {x: -4.5, y: 0, z: -6}
+  - {x: -4.5, y: 0, z: -5.5}
+  - {x: -4.5761204, y: 0, z: -5.1173167}
+  - {x: -4.7928934, y: 0, z: -4.7928934}
+  - {x: -4.5, y: 0.25, z: -7}
+  - {x: -4.5, y: 0.25, z: -6}
+  - {x: -4.5, y: 0.25, z: -5.5}
+  - {x: -4.5761204, y: 0.25, z: -5.1173167}
+  - {x: -4.7928934, y: 0.25, z: -4.7928934}
+  - {x: -4.75, y: 0.25, z: -7}
+  - {x: -4.75, y: 0.25, z: -6}
+  - {x: -4.7490754, y: 0.25, z: -5.5214796}
+  - {x: -4.8070903, y: 0.25, z: -5.212988}
+  - {x: -4.9696703, y: 0.25, z: -4.9696703}
+  - {x: -5.75, y: 0.25, z: -7}
+  - {x: -5.75, y: 0.25, z: -5.75}
+  - {x: -6, y: 0.25, z: -7}
+  - {x: -6, y: 0.25, z: -6}
+  - {x: -7, y: 0, z: -4.5}
+  - {x: -6, y: 0, z: -4.5}
+  - {x: -5.5, y: 0, z: -4.5}
+  - {x: -5.1173167, y: 0, z: -4.5761204}
+  - {x: -4.7928934, y: 0, z: -4.7928934}
+  - {x: -7, y: 0.25, z: -4.5}
+  - {x: -6, y: 0.25, z: -4.5}
+  - {x: -5.5, y: 0.25, z: -4.5}
+  - {x: -5.1173167, y: 0.25, z: -4.5761204}
+  - {x: -4.7928934, y: 0.25, z: -4.7928934}
+  - {x: -7, y: 0.25, z: -4.75}
+  - {x: -6, y: 0.25, z: -4.75}
+  - {x: -5.5214796, y: 0.25, z: -4.7490754}
+  - {x: -5.212988, y: 0.25, z: -4.8070903}
+  - {x: -4.9696703, y: 0.25, z: -4.9696703}
+  - {x: -7, y: 0.25, z: -5.75}
+  - {x: -5.75, y: 0.25, z: -5.75}
+  - {x: -7, y: 0.25, z: -6}
+  - {x: -6, y: 0.25, z: -6}
+  - {x: 4.5, y: 0, z: -7}
+  - {x: 4.5, y: 0, z: -6}
+  - {x: 4.5, y: 0, z: -5.5}
+  - {x: 4.5761204, y: 0, z: -5.1173167}
+  - {x: 4.7928934, y: 0, z: -4.7928934}
+  - {x: 4.5, y: 0.25, z: -7}
+  - {x: 4.5, y: 0.25, z: -6}
+  - {x: 4.5, y: 0.25, z: -5.5}
+  - {x: 4.5761204, y: 0.25, z: -5.1173167}
+  - {x: 4.7928934, y: 0.25, z: -4.7928934}
+  - {x: 4.75, y: 0.25, z: -7}
+  - {x: 4.75, y: 0.25, z: -6}
+  - {x: 4.7490754, y: 0.25, z: -5.5214796}
+  - {x: 4.8070903, y: 0.25, z: -5.212988}
+  - {x: 4.9696703, y: 0.25, z: -4.9696703}
+  - {x: 5.75, y: 0.25, z: -7}
+  - {x: 5.75, y: 0.25, z: -5.75}
+  - {x: 6, y: 0.25, z: -7}
+  - {x: 6, y: 0.25, z: -6}
+  - {x: 7, y: 0, z: -4.5}
+  - {x: 6, y: 0, z: -4.5}
+  - {x: 5.5, y: 0, z: -4.5}
+  - {x: 5.1173167, y: 0, z: -4.5761204}
+  - {x: 4.7928934, y: 0, z: -4.7928934}
+  - {x: 7, y: 0.25, z: -4.5}
+  - {x: 6, y: 0.25, z: -4.5}
+  - {x: 5.5, y: 0.25, z: -4.5}
+  - {x: 5.1173167, y: 0.25, z: -4.5761204}
+  - {x: 4.7928934, y: 0.25, z: -4.7928934}
+  - {x: 7, y: 0.25, z: -4.75}
+  - {x: 6, y: 0.25, z: -4.75}
+  - {x: 5.5214796, y: 0.25, z: -4.7490754}
+  - {x: 5.212988, y: 0.25, z: -4.8070903}
+  - {x: 4.9696703, y: 0.25, z: -4.9696703}
+  - {x: 7, y: 0.25, z: -5.75}
+  - {x: 5.75, y: 0.25, z: -5.75}
+  - {x: 7, y: 0.25, z: -6}
+  - {x: 6, y: 0.25, z: -6}
+  - {x: 4.5, y: 0, z: 7}
+  - {x: 4.5, y: 0, z: 6}
+  - {x: 4.5, y: 0, z: 5.5}
+  - {x: 4.5761204, y: 0, z: 5.1173167}
+  - {x: 4.7928934, y: 0, z: 4.7928934}
+  - {x: 4.5, y: 0.25, z: 7}
+  - {x: 4.5, y: 0.25, z: 6}
+  - {x: 4.5, y: 0.25, z: 5.5}
+  - {x: 4.5761204, y: 0.25, z: 5.1173167}
+  - {x: 4.7928934, y: 0.25, z: 4.7928934}
+  - {x: 4.75, y: 0.25, z: 7}
+  - {x: 4.75, y: 0.25, z: 6}
+  - {x: 4.7490754, y: 0.25, z: 5.5214796}
+  - {x: 4.8070903, y: 0.25, z: 5.212988}
+  - {x: 4.9696703, y: 0.25, z: 4.9696703}
+  - {x: 5.75, y: 0.25, z: 7}
+  - {x: 5.75, y: 0.25, z: 5.75}
+  - {x: 6, y: 0.25, z: 7}
+  - {x: 6, y: 0.25, z: 6}
+  - {x: 7, y: 0, z: 4.5}
+  - {x: 6, y: 0, z: 4.5}
+  - {x: 5.5, y: 0, z: 4.5}
+  - {x: 5.1173167, y: 0, z: 4.5761204}
+  - {x: 4.7928934, y: 0, z: 4.7928934}
+  - {x: 7, y: 0.25, z: 4.5}
+  - {x: 6, y: 0.25, z: 4.5}
+  - {x: 5.5, y: 0.25, z: 4.5}
+  - {x: 5.1173167, y: 0.25, z: 4.5761204}
+  - {x: 4.7928934, y: 0.25, z: 4.7928934}
+  - {x: 7, y: 0.25, z: 4.75}
+  - {x: 6, y: 0.25, z: 4.75}
+  - {x: 5.5214796, y: 0.25, z: 4.7490754}
+  - {x: 5.212988, y: 0.25, z: 4.8070903}
+  - {x: 4.9696703, y: 0.25, z: 4.9696703}
+  - {x: 7, y: 0.25, z: 5.75}
+  - {x: 5.75, y: 0.25, z: 5.75}
+  - {x: 7, y: 0.25, z: 6}
+  - {x: 6, y: 0.25, z: 6}
+  - {x: -4.5, y: 0, z: 7}
+  - {x: -4.5, y: 0, z: 6}
+  - {x: -4.5, y: 0, z: 5.5}
+  - {x: -4.5761204, y: 0, z: 5.1173167}
+  - {x: -4.7928934, y: 0, z: 4.7928934}
+  - {x: -4.5, y: 0.25, z: 7}
+  - {x: -4.5, y: 0.25, z: 6}
+  - {x: -4.5, y: 0.25, z: 5.5}
+  - {x: -4.5761204, y: 0.25, z: 5.1173167}
+  - {x: -4.7928934, y: 0.25, z: 4.7928934}
+  - {x: -4.75, y: 0.25, z: 7}
+  - {x: -4.75, y: 0.25, z: 6}
+  - {x: -4.7490754, y: 0.25, z: 5.5214796}
+  - {x: -4.8070903, y: 0.25, z: 5.212988}
+  - {x: -4.9696703, y: 0.25, z: 4.9696703}
+  - {x: -5.75, y: 0.25, z: 7}
+  - {x: -5.75, y: 0.25, z: 5.75}
+  - {x: -6, y: 0.25, z: 7}
+  - {x: -6, y: 0.25, z: 6}
+  - {x: -7, y: 0, z: 4.5}
+  - {x: -6, y: 0, z: 4.5}
+  - {x: -5.5, y: 0, z: 4.5}
+  - {x: -5.1173167, y: 0, z: 4.5761204}
+  - {x: -4.7928934, y: 0, z: 4.7928934}
+  - {x: -7, y: 0.25, z: 4.5}
+  - {x: -6, y: 0.25, z: 4.5}
+  - {x: -5.5, y: 0.25, z: 4.5}
+  - {x: -5.1173167, y: 0.25, z: 4.5761204}
+  - {x: -4.7928934, y: 0.25, z: 4.7928934}
+  - {x: -7, y: 0.25, z: 4.75}
+  - {x: -6, y: 0.25, z: 4.75}
+  - {x: -5.5214796, y: 0.25, z: 4.7490754}
+  - {x: -5.212988, y: 0.25, z: 4.8070903}
+  - {x: -4.9696703, y: 0.25, z: 4.9696703}
+  - {x: -7, y: 0.25, z: 5.75}
+  - {x: -5.75, y: 0.25, z: 5.75}
+  - {x: -7, y: 0.25, z: 6}
+  - {x: -6, y: 0.25, z: 6}
+  tCrossingTmpFullMeshVecs:
+  - {x: 0, y: 0, z: 0}
+  - {x: -4.5, y: 0, z: -7}
+  - {x: -4.5, y: 0, z: -6}
+  - {x: -4.5, y: 0, z: -5.5}
+  - {x: -4.5761204, y: 0, z: -5.1173167}
+  - {x: -4.7928934, y: 0, z: -4.7928934}
+  - {x: -4, y: 0, z: -7}
+  - {x: -4, y: 0, z: -6}
+  - {x: -4.0018487, y: 0, z: -5.457041}
+  - {x: -4.1141806, y: 0, z: -4.925975}
+  - {x: -4.43934, y: 0, z: -4.43934}
+  - {x: 0, y: 0, z: -7}
+  - {x: 0, y: 0, z: -6}
+  - {x: 0, y: 0, z: -5.457041}
+  - {x: 0, y: 0, z: -4.925975}
+  - {x: 0, y: 0, z: -4.43934}
+  - {x: 4, y: 0, z: -7}
+  - {x: 4, y: 0, z: -6}
+  - {x: 4.0018487, y: 0, z: -5.457041}
+  - {x: 4.1141806, y: 0, z: -4.925975}
+  - {x: 4.43934, y: 0, z: -4.43934}
+  - {x: 4.5, y: 0, z: -7}
+  - {x: 4.5, y: 0, z: -6}
+  - {x: 4.5, y: 0, z: -5.5}
+  - {x: 4.5761204, y: 0, z: -5.1173167}
+  - {x: 4.7928934, y: 0, z: -4.7928934}
+  - {x: 4.5, y: 0, z: 7}
+  - {x: 4.5, y: 0, z: 6}
+  - {x: 4.5, y: 0, z: 5.5}
+  - {x: 4.5761204, y: 0, z: 5.1173167}
+  - {x: 4.7928934, y: 0, z: 4.7928934}
+  - {x: 4, y: 0, z: 7}
+  - {x: 4, y: 0, z: 6}
+  - {x: 4.0018487, y: 0, z: 5.457041}
+  - {x: 4.1141806, y: 0, z: 4.925975}
+  - {x: 4.43934, y: 0, z: 4.43934}
+  - {x: 0, y: 0, z: 7}
+  - {x: 0, y: 0, z: 6}
+  - {x: 0, y: 0, z: 5.457041}
+  - {x: 0, y: 0, z: 4.925975}
+  - {x: 0, y: 0, z: 4.43934}
+  - {x: -4, y: 0, z: 7}
+  - {x: -4, y: 0, z: 6}
+  - {x: -4.0018487, y: 0, z: 5.457041}
+  - {x: -4.1141806, y: 0, z: 4.925975}
+  - {x: -4.43934, y: 0, z: 4.43934}
+  - {x: -4.5, y: 0, z: 7}
+  - {x: -4.5, y: 0, z: 6}
+  - {x: -4.5, y: 0, z: 5.5}
+  - {x: -4.5761204, y: 0, z: 5.1173167}
+  - {x: -4.7928934, y: 0, z: 4.7928934}
+  - {x: -7, y: 0, z: 4.5}
+  - {x: -6, y: 0, z: 4.5}
+  - {x: -5.5, y: 0, z: 4.5}
+  - {x: -5.1173167, y: 0, z: 4.5761204}
+  - {x: -4.7928934, y: 0, z: 4.7928934}
+  - {x: -7, y: 0, z: 4}
+  - {x: -6, y: 0, z: 4}
+  - {x: -5.457041, y: 0, z: 4.0018487}
+  - {x: -4.925975, y: 0, z: 4.1141806}
+  - {x: -4.43934, y: 0, z: 4.43934}
+  - {x: -7, y: 0, z: 0}
+  - {x: -6, y: 0, z: 0}
+  - {x: -5.457041, y: 0, z: 0}
+  - {x: -4.925975, y: 0, z: 0}
+  - {x: -4.43934, y: 0, z: 0}
+  - {x: -7, y: 0, z: -4}
+  - {x: -6, y: 0, z: -4}
+  - {x: -5.457041, y: 0, z: -4.0018487}
+  - {x: -4.925975, y: 0, z: -4.1141806}
+  - {x: -4.43934, y: 0, z: -4.43934}
+  - {x: -7, y: 0, z: -4.5}
+  - {x: -6, y: 0, z: -4.5}
+  - {x: -5.5, y: 0, z: -4.5}
+  - {x: -5.1173167, y: 0, z: -4.5761204}
+  - {x: -4.7928934, y: 0, z: -4.7928934}
+  - {x: 7, y: 0, z: -4.5}
+  - {x: 6, y: 0, z: -4.5}
+  - {x: 5.5, y: 0, z: -4.5}
+  - {x: 5.1173167, y: 0, z: -4.5761204}
+  - {x: 4.7928934, y: 0, z: -4.7928934}
+  - {x: 7, y: 0, z: -4}
+  - {x: 6, y: 0, z: -4}
+  - {x: 5.457041, y: 0, z: -4.0018487}
+  - {x: 4.925975, y: 0, z: -4.1141806}
+  - {x: 4.43934, y: 0, z: -4.43934}
+  - {x: 7, y: 0, z: 0}
+  - {x: 6, y: 0, z: 0}
+  - {x: 5.457041, y: 0, z: 0}
+  - {x: 4.925975, y: 0, z: 0}
+  - {x: 4.43934, y: 0, z: 0}
+  - {x: 7, y: 0, z: 4}
+  - {x: 6, y: 0, z: 4}
+  - {x: 5.457041, y: 0, z: 4.0018487}
+  - {x: 4.925975, y: 0, z: 4.1141806}
+  - {x: 4.43934, y: 0, z: 4.43934}
+  - {x: 7, y: 0, z: 4.5}
+  - {x: 6, y: 0, z: 4.5}
+  - {x: 5.5, y: 0, z: 4.5}
+  - {x: 5.1173167, y: 0, z: 4.5761204}
+  - {x: 4.7928934, y: 0, z: 4.7928934}
+  - {x: -4.5, y: 0, z: -7}
+  - {x: -4.5, y: 0, z: -6}
+  - {x: -4.5, y: 0, z: -5.5}
+  - {x: -4.5761204, y: 0, z: -5.1173167}
+  - {x: -4.7928934, y: 0, z: -4.7928934}
+  - {x: -4.5, y: 0.25, z: -7}
+  - {x: -4.5, y: 0.25, z: -6}
+  - {x: -4.5, y: 0.25, z: -5.5}
+  - {x: -4.5761204, y: 0.25, z: -5.1173167}
+  - {x: -4.7928934, y: 0.25, z: -4.7928934}
+  - {x: -4.75, y: 0.25, z: -7}
+  - {x: -4.75, y: 0.25, z: -6}
+  - {x: -4.7490754, y: 0.25, z: -5.5214796}
+  - {x: -4.8070903, y: 0.25, z: -5.212988}
+  - {x: -4.9696703, y: 0.25, z: -4.9696703}
+  - {x: -5.75, y: 0.25, z: -7}
+  - {x: -5.75, y: 0.25, z: -5.75}
+  - {x: -6, y: 0.25, z: -7}
+  - {x: -6, y: 0.25, z: -6}
+  - {x: -7, y: 0, z: -4.5}
+  - {x: -6, y: 0, z: -4.5}
+  - {x: -5.5, y: 0, z: -4.5}
+  - {x: -5.1173167, y: 0, z: -4.5761204}
+  - {x: -4.7928934, y: 0, z: -4.7928934}
+  - {x: -7, y: 0.25, z: -4.5}
+  - {x: -6, y: 0.25, z: -4.5}
+  - {x: -5.5, y: 0.25, z: -4.5}
+  - {x: -5.1173167, y: 0.25, z: -4.5761204}
+  - {x: -4.7928934, y: 0.25, z: -4.7928934}
+  - {x: -7, y: 0.25, z: -4.75}
+  - {x: -6, y: 0.25, z: -4.75}
+  - {x: -5.5214796, y: 0.25, z: -4.7490754}
+  - {x: -5.212988, y: 0.25, z: -4.8070903}
+  - {x: -4.9696703, y: 0.25, z: -4.9696703}
+  - {x: -7, y: 0.25, z: -5.75}
+  - {x: -5.75, y: 0.25, z: -5.75}
+  - {x: -7, y: 0.25, z: -6}
+  - {x: -6, y: 0.25, z: -6}
+  - {x: 4.5, y: 0, z: -7}
+  - {x: 4.5, y: 0, z: -6}
+  - {x: 4.5, y: 0, z: -5.5}
+  - {x: 4.5761204, y: 0, z: -5.1173167}
+  - {x: 4.7928934, y: 0, z: -4.7928934}
+  - {x: 4.5, y: 0.25, z: -7}
+  - {x: 4.5, y: 0.25, z: -6}
+  - {x: 4.5, y: 0.25, z: -5.5}
+  - {x: 4.5761204, y: 0.25, z: -5.1173167}
+  - {x: 4.7928934, y: 0.25, z: -4.7928934}
+  - {x: 4.75, y: 0.25, z: -7}
+  - {x: 4.75, y: 0.25, z: -6}
+  - {x: 4.7490754, y: 0.25, z: -5.5214796}
+  - {x: 4.8070903, y: 0.25, z: -5.212988}
+  - {x: 4.9696703, y: 0.25, z: -4.9696703}
+  - {x: 5.75, y: 0.25, z: -7}
+  - {x: 5.75, y: 0.25, z: -5.75}
+  - {x: 6, y: 0.25, z: -7}
+  - {x: 6, y: 0.25, z: -6}
+  - {x: 7, y: 0, z: -4.5}
+  - {x: 6, y: 0, z: -4.5}
+  - {x: 5.5, y: 0, z: -4.5}
+  - {x: 5.1173167, y: 0, z: -4.5761204}
+  - {x: 4.7928934, y: 0, z: -4.7928934}
+  - {x: 7, y: 0.25, z: -4.5}
+  - {x: 6, y: 0.25, z: -4.5}
+  - {x: 5.5, y: 0.25, z: -4.5}
+  - {x: 5.1173167, y: 0.25, z: -4.5761204}
+  - {x: 4.7928934, y: 0.25, z: -4.7928934}
+  - {x: 7, y: 0.25, z: -4.75}
+  - {x: 6, y: 0.25, z: -4.75}
+  - {x: 5.5214796, y: 0.25, z: -4.7490754}
+  - {x: 5.212988, y: 0.25, z: -4.8070903}
+  - {x: 4.9696703, y: 0.25, z: -4.9696703}
+  - {x: 7, y: 0.25, z: -5.75}
+  - {x: 5.75, y: 0.25, z: -5.75}
+  - {x: 7, y: 0.25, z: -6}
+  - {x: 6, y: 0.25, z: -6}
+  - {x: 4.5, y: 0, z: 7}
+  - {x: 4.5, y: 0, z: 6}
+  - {x: 4.5, y: 0, z: 5.5}
+  - {x: 4.5761204, y: 0, z: 5.1173167}
+  - {x: 4.7928934, y: 0, z: 4.7928934}
+  - {x: 4.5, y: 0.25, z: 7}
+  - {x: 4.5, y: 0.25, z: 6}
+  - {x: 4.5, y: 0.25, z: 5.5}
+  - {x: 4.5761204, y: 0.25, z: 5.1173167}
+  - {x: 4.7928934, y: 0.25, z: 4.7928934}
+  - {x: 4.75, y: 0.25, z: 7}
+  - {x: 4.75, y: 0.25, z: 6}
+  - {x: 4.7490754, y: 0.25, z: 5.5214796}
+  - {x: 4.8070903, y: 0.25, z: 5.212988}
+  - {x: 4.9696703, y: 0.25, z: 4.9696703}
+  - {x: 5.75, y: 0.25, z: 7}
+  - {x: 5.75, y: 0.25, z: 5.75}
+  - {x: 6, y: 0.25, z: 7}
+  - {x: 6, y: 0.25, z: 6}
+  - {x: 7, y: 0, z: 4.5}
+  - {x: 6, y: 0, z: 4.5}
+  - {x: 5.5, y: 0, z: 4.5}
+  - {x: 5.1173167, y: 0, z: 4.5761204}
+  - {x: 4.7928934, y: 0, z: 4.7928934}
+  - {x: 7, y: 0.25, z: 4.5}
+  - {x: 6, y: 0.25, z: 4.5}
+  - {x: 5.5, y: 0.25, z: 4.5}
+  - {x: 5.1173167, y: 0.25, z: 4.5761204}
+  - {x: 4.7928934, y: 0.25, z: 4.7928934}
+  - {x: 7, y: 0.25, z: 4.75}
+  - {x: 6, y: 0.25, z: 4.75}
+  - {x: 5.5214796, y: 0.25, z: 4.7490754}
+  - {x: 5.212988, y: 0.25, z: 4.8070903}
+  - {x: 4.9696703, y: 0.25, z: 4.9696703}
+  - {x: 7, y: 0.25, z: 5.75}
+  - {x: 5.75, y: 0.25, z: 5.75}
+  - {x: 7, y: 0.25, z: 6}
+  - {x: 6, y: 0.25, z: 6}
+  - {x: -4.5, y: 0, z: 7}
+  - {x: -4.5, y: 0, z: 6}
+  - {x: -4.5, y: 0, z: 5.5}
+  - {x: -4.5761204, y: 0, z: 5.1173167}
+  - {x: -4.7928934, y: 0, z: 4.7928934}
+  - {x: -4.5, y: 0.25, z: 7}
+  - {x: -4.5, y: 0.25, z: 6}
+  - {x: -4.5, y: 0.25, z: 5.5}
+  - {x: -4.5761204, y: 0.25, z: 5.1173167}
+  - {x: -4.7928934, y: 0.25, z: 4.7928934}
+  - {x: -4.75, y: 0.25, z: 7}
+  - {x: -4.75, y: 0.25, z: 6}
+  - {x: -4.7490754, y: 0.25, z: 5.5214796}
+  - {x: -4.8070903, y: 0.25, z: 5.212988}
+  - {x: -4.9696703, y: 0.25, z: 4.9696703}
+  - {x: -5.75, y: 0.25, z: 7}
+  - {x: -5.75, y: 0.25, z: 5.75}
+  - {x: -6, y: 0.25, z: 7}
+  - {x: -6, y: 0.25, z: 6}
+  - {x: -7, y: 0, z: 4.5}
+  - {x: -6, y: 0, z: 4.5}
+  - {x: -5.5, y: 0, z: 4.5}
+  - {x: -5.1173167, y: 0, z: 4.5761204}
+  - {x: -4.7928934, y: 0, z: 4.7928934}
+  - {x: -7, y: 0.25, z: 4.5}
+  - {x: -6, y: 0.25, z: 4.5}
+  - {x: -5.5, y: 0.25, z: 4.5}
+  - {x: -5.1173167, y: 0.25, z: 4.5761204}
+  - {x: -4.7928934, y: 0.25, z: 4.7928934}
+  - {x: -7, y: 0.25, z: 4.75}
+  - {x: -6, y: 0.25, z: 4.75}
+  - {x: -5.5214796, y: 0.25, z: 4.7490754}
+  - {x: -5.212988, y: 0.25, z: 4.8070903}
+  - {x: -4.9696703, y: 0.25, z: 4.9696703}
+  - {x: -7, y: 0.25, z: 5.75}
+  - {x: -5.75, y: 0.25, z: 5.75}
+  - {x: -7, y: 0.25, z: 6}
+  - {x: -6, y: 0.25, z: 6}
   outerVecInts: 
   surfaceVecs: []
   surfaceVecType: 
   surfaceConnectionInt: 
-  tCrossingBlendData: []
+  tCrossingBlendData:
+  - verticeIndex: 0
+    meshIndex: 0
+    blendWeight: 1
+    connection: 0
+    blendType: 0
+  - verticeIndex: 1
+    meshIndex: 0
+    blendWeight: 1
+    connection: 0
+    blendType: 0
+  - verticeIndex: 2
+    meshIndex: 0
+    blendWeight: 1
+    connection: 0
+    blendType: 0
+  - verticeIndex: 3
+    meshIndex: 0
+    blendWeight: 1
+    connection: 0
+    blendType: 0
+  - verticeIndex: 4
+    meshIndex: 0
+    blendWeight: 1
+    connection: 0
+    blendType: 0
+  - verticeIndex: 5
+    meshIndex: 0
+    blendWeight: 1
+    connection: 0
+    blendType: 0
+  - verticeIndex: 6
+    meshIndex: 0
+    blendWeight: 1
+    connection: 0
+    blendType: 0
+  - verticeIndex: 7
+    meshIndex: 0
+    blendWeight: 1
+    connection: 0
+    blendType: 0
+  - verticeIndex: 8
+    meshIndex: 0
+    blendWeight: 1
+    connection: 0
+    blendType: 0
+  - verticeIndex: 9
+    meshIndex: 0
+    blendWeight: 1
+    connection: 0
+    blendType: 0
+  - verticeIndex: 10
+    meshIndex: 0
+    blendWeight: 1
+    connection: 0
+    blendType: 0
+  - verticeIndex: 11
+    meshIndex: 0
+    blendWeight: 1
+    connection: 0
+    blendType: 0
+  - verticeIndex: 12
+    meshIndex: 0
+    blendWeight: 1
+    connection: 0
+    blendType: 0
+  - verticeIndex: 13
+    meshIndex: 0
+    blendWeight: 1
+    connection: 0
+    blendType: 0
+  - verticeIndex: 14
+    meshIndex: 0
+    blendWeight: 1
+    connection: 0
+    blendType: 0
+  - verticeIndex: 15
+    meshIndex: 0
+    blendWeight: 1
+    connection: 0
+    blendType: 0
+  - verticeIndex: 16
+    meshIndex: 0
+    blendWeight: 1
+    connection: 0
+    blendType: 0
+  - verticeIndex: 17
+    meshIndex: 0
+    blendWeight: 1
+    connection: 0
+    blendType: 0
+  - verticeIndex: 18
+    meshIndex: 0
+    blendWeight: 1
+    connection: 0
+    blendType: 0
+  - verticeIndex: 19
+    meshIndex: 0
+    blendWeight: 0
+    connection: 2
+    blendType: 0
+  - verticeIndex: 20
+    meshIndex: 0
+    blendWeight: 0
+    connection: 2
+    blendType: 0
+  - verticeIndex: 21
+    meshIndex: 0
+    blendWeight: 0
+    connection: 2
+    blendType: 0
+  - verticeIndex: 22
+    meshIndex: 0
+    blendWeight: 1
+    connection: 2
+    blendType: 0
+  - verticeIndex: 23
+    meshIndex: 0
+    blendWeight: 1
+    connection: 2
+    blendType: 0
+  - verticeIndex: 24
+    meshIndex: 0
+    blendWeight: 0
+    connection: 2
+    blendType: 0
+  - verticeIndex: 25
+    meshIndex: 0
+    blendWeight: 0
+    connection: 2
+    blendType: 0
+  - verticeIndex: 26
+    meshIndex: 0
+    blendWeight: 0
+    connection: 2
+    blendType: 0
+  - verticeIndex: 27
+    meshIndex: 0
+    blendWeight: 1
+    connection: 2
+    blendType: 0
+  - verticeIndex: 28
+    meshIndex: 0
+    blendWeight: 1
+    connection: 2
+    blendType: 0
+  - verticeIndex: 29
+    meshIndex: 0
+    blendWeight: 0
+    connection: 2
+    blendType: 0
+  - verticeIndex: 30
+    meshIndex: 0
+    blendWeight: 0
+    connection: 2
+    blendType: 0
+  - verticeIndex: 31
+    meshIndex: 0
+    blendWeight: 0
+    connection: 2
+    blendType: 0
+  - verticeIndex: 32
+    meshIndex: 0
+    blendWeight: 1
+    connection: 2
+    blendType: 0
+  - verticeIndex: 33
+    meshIndex: 0
+    blendWeight: 1
+    connection: 2
+    blendType: 0
+  - verticeIndex: 34
+    meshIndex: 0
+    blendWeight: 0
+    connection: 2
+    blendType: 0
+  - verticeIndex: 35
+    meshIndex: 0
+    blendWeight: 0
+    connection: 2
+    blendType: 0
+  - verticeIndex: 36
+    meshIndex: 0
+    blendWeight: 0
+    connection: 2
+    blendType: 0
+  - verticeIndex: 37
+    meshIndex: 0
+    blendWeight: 0
+    connection: 2
+    blendType: 0
+  - verticeIndex: 38
+    meshIndex: 0
+    blendWeight: 1
+    connection: 0
+    blendType: 0
+  - verticeIndex: 39
+    meshIndex: 0
+    blendWeight: 0.6
+    connection: 0
+    blendType: 0
+  - verticeIndex: 40
+    meshIndex: 0
+    blendWeight: 0.4
+    connection: 0
+    blendType: 0
+  - verticeIndex: 41
+    meshIndex: 0
+    blendWeight: 0.2469267
+    connection: 0
+    blendType: 0
+  - verticeIndex: 42
+    meshIndex: 0
+    blendWeight: 0.11715736
+    connection: 0
+    blendType: 0
+  - verticeIndex: 43
+    meshIndex: 0
+    blendWeight: 1
+    connection: 0
+    blendType: 0
+  - verticeIndex: 44
+    meshIndex: 0
+    blendWeight: 0.6
+    connection: 0
+    blendType: 0
+  - verticeIndex: 45
+    meshIndex: 0
+    blendWeight: 0.4
+    connection: 0
+    blendType: 0
+  - verticeIndex: 46
+    meshIndex: 0
+    blendWeight: 0.2469267
+    connection: 0
+    blendType: 0
+  - verticeIndex: 47
+    meshIndex: 0
+    blendWeight: 0.11715736
+    connection: 0
+    blendType: 0
+  - verticeIndex: 48
+    meshIndex: 0
+    blendWeight: 1
+    connection: 0
+    blendType: 0
+  - verticeIndex: 49
+    meshIndex: 0
+    blendWeight: 0.6
+    connection: 0
+    blendType: 0
+  - verticeIndex: 50
+    meshIndex: 0
+    blendWeight: 0.40859184
+    connection: 0
+    blendType: 0
+  - verticeIndex: 51
+    meshIndex: 0
+    blendWeight: 0.28519517
+    connection: 0
+    blendType: 0
+  - verticeIndex: 52
+    meshIndex: 0
+    blendWeight: 0.18786812
+    connection: 0
+    blendType: 0
+  - verticeIndex: 53
+    meshIndex: 0
+    blendWeight: 1
+    connection: 0
+    blendType: 0
+  - verticeIndex: 54
+    meshIndex: 0
+    blendWeight: -1
+    connection: 0
+    blendType: 0
+  - verticeIndex: 55
+    meshIndex: 0
+    blendWeight: 1
+    connection: 0
+    blendType: 0
+  - verticeIndex: 56
+    meshIndex: 0
+    blendWeight: -1
+    connection: 0
+    blendType: 0
+  - verticeIndex: 57
+    meshIndex: 0
+    blendWeight: 0
+    connection: 3
+    blendType: 0
+  - verticeIndex: 58
+    meshIndex: 0
+    blendWeight: 0
+    connection: 3
+    blendType: 0
+  - verticeIndex: 59
+    meshIndex: 0
+    blendWeight: 0
+    connection: 3
+    blendType: 0
+  - verticeIndex: 60
+    meshIndex: 0
+    blendWeight: 0.010874339
+    connection: 3
+    blendType: 0
+  - verticeIndex: 61
+    meshIndex: 0
+    blendWeight: 0.041841917
+    connection: 3
+    blendType: 0
+  - verticeIndex: 62
+    meshIndex: 0
+    blendWeight: 0
+    connection: 3
+    blendType: 0
+  - verticeIndex: 63
+    meshIndex: 0
+    blendWeight: 0
+    connection: 3
+    blendType: 0
+  - verticeIndex: 64
+    meshIndex: 0
+    blendWeight: 0
+    connection: 3
+    blendType: 0
+  - verticeIndex: 65
+    meshIndex: 0
+    blendWeight: 0.010874339
+    connection: 3
+    blendType: 0
+  - verticeIndex: 66
+    meshIndex: 0
+    blendWeight: 0.041841917
+    connection: 3
+    blendType: 0
+  - verticeIndex: 67
+    meshIndex: 0
+    blendWeight: 0
+    connection: 3
+    blendType: 0
+  - verticeIndex: 68
+    meshIndex: 0
+    blendWeight: 0
+    connection: 3
+    blendType: 0
+  - verticeIndex: 69
+    meshIndex: 0
+    blendWeight: 0
+    connection: 3
+    blendType: 0
+  - verticeIndex: 70
+    meshIndex: 0
+    blendWeight: 0.04387004
+    connection: 3
+    blendType: 0
+  - verticeIndex: 71
+    meshIndex: 0
+    blendWeight: 0.06709576
+    connection: 3
+    blendType: 0
+  - verticeIndex: 72
+    meshIndex: 0
+    blendWeight: 0
+    connection: 3
+    blendType: 0
+  - verticeIndex: 73
+    meshIndex: 0
+    blendWeight: 0
+    connection: 3
+    blendType: 0
+  - verticeIndex: 74
+    meshIndex: 0
+    blendWeight: 0
+    connection: 3
+    blendType: 0
+  - verticeIndex: 75
+    meshIndex: 0
+    blendWeight: 0
+    connection: 3
+    blendType: 0
+  - verticeIndex: 76
+    meshIndex: 0
+    blendWeight: 1
+    connection: 1
+    blendType: 0
+  - verticeIndex: 77
+    meshIndex: 0
+    blendWeight: 0.6
+    connection: 1
+    blendType: 0
+  - verticeIndex: 78
+    meshIndex: 0
+    blendWeight: 0.4
+    connection: 1
+    blendType: 0
+  - verticeIndex: 79
+    meshIndex: 0
+    blendWeight: 0.2469267
+    connection: 1
+    blendType: 0
+  - verticeIndex: 80
+    meshIndex: 0
+    blendWeight: 0.11715736
+    connection: 1
+    blendType: 0
+  - verticeIndex: 81
+    meshIndex: 0
+    blendWeight: 1
+    connection: 1
+    blendType: 0
+  - verticeIndex: 82
+    meshIndex: 0
+    blendWeight: 0.6
+    connection: 1
+    blendType: 0
+  - verticeIndex: 83
+    meshIndex: 0
+    blendWeight: 0.4
+    connection: 1
+    blendType: 0
+  - verticeIndex: 84
+    meshIndex: 0
+    blendWeight: 0.2469267
+    connection: 1
+    blendType: 0
+  - verticeIndex: 85
+    meshIndex: 0
+    blendWeight: 0.11715736
+    connection: 1
+    blendType: 0
+  - verticeIndex: 86
+    meshIndex: 0
+    blendWeight: 1
+    connection: 1
+    blendType: 0
+  - verticeIndex: 87
+    meshIndex: 0
+    blendWeight: 0.6
+    connection: 1
+    blendType: 0
+  - verticeIndex: 88
+    meshIndex: 0
+    blendWeight: 0.40859184
+    connection: 1
+    blendType: 0
+  - verticeIndex: 89
+    meshIndex: 0
+    blendWeight: 0.28519517
+    connection: 1
+    blendType: 0
+  - verticeIndex: 90
+    meshIndex: 0
+    blendWeight: 0.18786812
+    connection: 1
+    blendType: 0
+  - verticeIndex: 91
+    meshIndex: 0
+    blendWeight: 1
+    connection: 1
+    blendType: 0
+  - verticeIndex: 92
+    meshIndex: 0
+    blendWeight: -1
+    connection: 1
+    blendType: 0
+  - verticeIndex: 93
+    meshIndex: 0
+    blendWeight: 1
+    connection: 1
+    blendType: 0
+  - verticeIndex: 94
+    meshIndex: 0
+    blendWeight: -1
+    connection: 1
+    blendType: 0
+  - verticeIndex: 95
+    meshIndex: 0
+    blendWeight: 0
+    connection: 3
+    blendType: 0
+  - verticeIndex: 96
+    meshIndex: 0
+    blendWeight: 0
+    connection: 3
+    blendType: 0
+  - verticeIndex: 97
+    meshIndex: 0
+    blendWeight: 0
+    connection: 3
+    blendType: 0
+  - verticeIndex: 98
+    meshIndex: 0
+    blendWeight: 0.010874339
+    connection: 3
+    blendType: 0
+  - verticeIndex: 99
+    meshIndex: 0
+    blendWeight: 0.041841917
+    connection: 3
+    blendType: 0
+  - verticeIndex: 100
+    meshIndex: 0
+    blendWeight: 0
+    connection: 3
+    blendType: 0
+  - verticeIndex: 101
+    meshIndex: 0
+    blendWeight: 0
+    connection: 3
+    blendType: 0
+  - verticeIndex: 102
+    meshIndex: 0
+    blendWeight: 0
+    connection: 3
+    blendType: 0
+  - verticeIndex: 103
+    meshIndex: 0
+    blendWeight: 0.010874339
+    connection: 3
+    blendType: 0
+  - verticeIndex: 104
+    meshIndex: 0
+    blendWeight: 0.041841917
+    connection: 3
+    blendType: 0
+  - verticeIndex: 105
+    meshIndex: 0
+    blendWeight: 0
+    connection: 3
+    blendType: 0
+  - verticeIndex: 106
+    meshIndex: 0
+    blendWeight: 0
+    connection: 3
+    blendType: 0
+  - verticeIndex: 107
+    meshIndex: 0
+    blendWeight: 0
+    connection: 3
+    blendType: 0
+  - verticeIndex: 108
+    meshIndex: 0
+    blendWeight: 0.04387004
+    connection: 3
+    blendType: 0
+  - verticeIndex: 109
+    meshIndex: 0
+    blendWeight: 0.06709576
+    connection: 3
+    blendType: 0
+  - verticeIndex: 110
+    meshIndex: 0
+    blendWeight: 0
+    connection: 3
+    blendType: 0
+  - verticeIndex: 111
+    meshIndex: 0
+    blendWeight: 0
+    connection: 3
+    blendType: 0
+  - verticeIndex: 112
+    meshIndex: 0
+    blendWeight: 0
+    connection: 3
+    blendType: 0
+  - verticeIndex: 113
+    meshIndex: 0
+    blendWeight: 0
+    connection: 3
+    blendType: 0
+  - verticeIndex: 114
+    meshIndex: 0
+    blendWeight: 1
+    connection: 1
+    blendType: 0
+  - verticeIndex: 115
+    meshIndex: 0
+    blendWeight: 1
+    connection: 1
+    blendType: 0
+  - verticeIndex: 116
+    meshIndex: 0
+    blendWeight: 1
+    connection: 1
+    blendType: 0
+  - verticeIndex: 117
+    meshIndex: 0
+    blendWeight: 1
+    connection: 1
+    blendType: 0
+  - verticeIndex: 118
+    meshIndex: 0
+    blendWeight: 1
+    connection: 1
+    blendType: 0
+  - verticeIndex: 119
+    meshIndex: 0
+    blendWeight: 1
+    connection: 1
+    blendType: 0
+  - verticeIndex: 120
+    meshIndex: 0
+    blendWeight: 1
+    connection: 1
+    blendType: 0
+  - verticeIndex: 121
+    meshIndex: 0
+    blendWeight: 1
+    connection: 1
+    blendType: 0
+  - verticeIndex: 122
+    meshIndex: 0
+    blendWeight: 1
+    connection: 1
+    blendType: 0
+  - verticeIndex: 123
+    meshIndex: 0
+    blendWeight: 1
+    connection: 1
+    blendType: 0
+  - verticeIndex: 124
+    meshIndex: 0
+    blendWeight: 1
+    connection: 1
+    blendType: 0
+  - verticeIndex: 125
+    meshIndex: 0
+    blendWeight: 1
+    connection: 1
+    blendType: 0
+  - verticeIndex: 126
+    meshIndex: 0
+    blendWeight: 1
+    connection: 1
+    blendType: 0
+  - verticeIndex: 127
+    meshIndex: 0
+    blendWeight: 1
+    connection: 1
+    blendType: 0
+  - verticeIndex: 128
+    meshIndex: 0
+    blendWeight: 1
+    connection: 1
+    blendType: 0
+  - verticeIndex: 129
+    meshIndex: 0
+    blendWeight: 1
+    connection: 1
+    blendType: 0
+  - verticeIndex: 130
+    meshIndex: 0
+    blendWeight: 1
+    connection: 1
+    blendType: 0
+  - verticeIndex: 131
+    meshIndex: 0
+    blendWeight: 1
+    connection: 1
+    blendType: 0
+  - verticeIndex: 132
+    meshIndex: 0
+    blendWeight: 1
+    connection: 1
+    blendType: 0
+  - verticeIndex: 133
+    meshIndex: 0
+    blendWeight: 0
+    connection: 2
+    blendType: 0
+  - verticeIndex: 134
+    meshIndex: 0
+    blendWeight: 0
+    connection: 2
+    blendType: 0
+  - verticeIndex: 135
+    meshIndex: 0
+    blendWeight: 0
+    connection: 2
+    blendType: 0
+  - verticeIndex: 136
+    meshIndex: 0
+    blendWeight: 1
+    connection: 2
+    blendType: 0
+  - verticeIndex: 137
+    meshIndex: 0
+    blendWeight: 1
+    connection: 2
+    blendType: 0
+  - verticeIndex: 138
+    meshIndex: 0
+    blendWeight: 0
+    connection: 2
+    blendType: 0
+  - verticeIndex: 139
+    meshIndex: 0
+    blendWeight: 0
+    connection: 2
+    blendType: 0
+  - verticeIndex: 140
+    meshIndex: 0
+    blendWeight: 0
+    connection: 2
+    blendType: 0
+  - verticeIndex: 141
+    meshIndex: 0
+    blendWeight: 1
+    connection: 2
+    blendType: 0
+  - verticeIndex: 142
+    meshIndex: 0
+    blendWeight: 1
+    connection: 2
+    blendType: 0
+  - verticeIndex: 143
+    meshIndex: 0
+    blendWeight: 0
+    connection: 2
+    blendType: 0
+  - verticeIndex: 144
+    meshIndex: 0
+    blendWeight: 0
+    connection: 2
+    blendType: 0
+  - verticeIndex: 145
+    meshIndex: 0
+    blendWeight: 0
+    connection: 2
+    blendType: 0
+  - verticeIndex: 146
+    meshIndex: 0
+    blendWeight: 1
+    connection: 2
+    blendType: 0
+  - verticeIndex: 147
+    meshIndex: 0
+    blendWeight: 1
+    connection: 2
+    blendType: 0
+  - verticeIndex: 148
+    meshIndex: 0
+    blendWeight: 0
+    connection: 2
+    blendType: 0
+  - verticeIndex: 149
+    meshIndex: 0
+    blendWeight: 0
+    connection: 2
+    blendType: 0
+  - verticeIndex: 150
+    meshIndex: 0
+    blendWeight: 0
+    connection: 2
+    blendType: 0
+  - verticeIndex: 151
+    meshIndex: 0
+    blendWeight: 0
+    connection: 2
+    blendType: 0
   indentVecs: []
   sourcePrefab: {fileID: 0}
   prefabId: 237846875
@@ -2534,7 +5255,7 @@ MonoBehaviour:
   - Connection 3
   deformTerrain: 1
   isRoundabout: 0
-  isERCrossing: 0
+  isERCrossing: 1
   isYConnector: 0
   isIConnector: 0
   isFlexConnector: 0
@@ -2550,8 +5271,8 @@ MonoBehaviour:
   recalculateNormals: 0
   planarUVs: 0
   planarTiling: 1
-  lastVecRoadIndex: 0
-  isSceneObject: 0
+  lastVecRoadIndex: 100
+  isSceneObject: 1
   surfaceObject: {fileID: 3177468749793765411}
   surfaceMeshVecs:
   - {x: 0, y: 0, z: 0}
@@ -2572,7 +5293,24 @@ MonoBehaviour:
   - {x: 10.252136, y: 0, z: 10.252129}
   - {x: 10.252136, y: 0, z: -10.252129}
   tmpSurfaceMeshVecs: []
-  tmpSurfaceVecsTCrossings: []
+  tmpSurfaceVecsTCrossings:
+  - {x: 0, y: 0, z: 0}
+  - {x: 7.4296875, y: -0.02, z: -7.4296875}
+  - {x: -7.4296875, y: -0.02, z: -7.4296875}
+  - {x: -7.4296875, y: -0.02, z: -7.4296875}
+  - {x: -7.4296875, y: -0.02, z: 7.4296875}
+  - {x: -7.4296875, y: -0.02, z: 7.4296875}
+  - {x: 7.4296875, y: -0.02, z: 7.4296875}
+  - {x: 7.4296875, y: -0.02, z: 7.4296875}
+  - {x: 7.4296875, y: -0.02, z: -7.4296875}
+  - {x: 10.252136, y: 0, z: -10.252129}
+  - {x: -10.252136, y: 0, z: -10.252129}
+  - {x: -10.252136, y: 0, z: -10.252129}
+  - {x: -10.252136, y: 0, z: 10.252129}
+  - {x: -10.252136, y: 0, z: 10.252129}
+  - {x: 10.252136, y: 0, z: 10.252129}
+  - {x: 10.252136, y: 0, z: 10.252129}
+  - {x: 10.252136, y: 0, z: -10.252129}
   surfaceInts: 77000000760000009d0000009c000000e9000000e8000000c3000000c2000000fc000000fb0000008a00000089000000b0000000af000000d6000000d5000000
   leftBottomCorner: {x: 0, y: 0, z: 0}
   leftTopCorner: {x: 0, y: 0, z: 0}
@@ -2583,18 +5321,18 @@ MonoBehaviour:
   tCrossingLeftRight: 1
   tMainRoadWidth: 0
   tConnectionRoadWidth: 0
-  bottomLeftSidewalkWidth: 0
-  bottomLeftSidewalkOuterOffset: 0
-  bottomLeftSidewalkCurbDepth: 0
-  bottomRightSidewalkWidth: 0
-  bottomRightSidewalkOuterOffset: 0
-  bottomRightSidewalkCurbDepth: 0
-  topLeftSidewalkWidth: 0
-  topLeftSidewalkOuterOffset: 0
-  topLeftSidewalkCurbDepth: 0
-  topRightSidewalkWidth: 0
-  topRightSidewalkOuterOffset: 0
-  topRightSidewalkCurbDepth: 0
+  bottomLeftSidewalkWidth: 1.5
+  bottomLeftSidewalkOuterOffset: 1.25
+  bottomLeftSidewalkCurbDepth: 0.25
+  bottomRightSidewalkWidth: 1.5
+  bottomRightSidewalkOuterOffset: 1.25
+  bottomRightSidewalkCurbDepth: 0.25
+  topLeftSidewalkWidth: 1.5
+  topLeftSidewalkOuterOffset: 1.25
+  topLeftSidewalkCurbDepth: 0.25
+  topRightSidewalkWidth: 1.5
+  topRightSidewalkOuterOffset: 1.25
+  topRightSidewalkCurbDepth: 0.25
   testVec: {x: 0, y: 0, z: 0}
   surfaceSurroundingInts: 090000000a0000000b0000000c0000000d0000000e0000000f00000010000000
   rotationPriorityElement: -1
@@ -2639,7 +5377,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6172800109473784386}
-  m_Mesh: {fileID: 4300000, guid: c4569c49a62b2d84f8ae31b78830fcc3, type: 2}
+  m_Mesh: {fileID: 0}
 --- !u!23 &8611739751003480566
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2660,7 +5398,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3c555588afad81d428ad1704d5d015a7, type: 2}
+  - {fileID: 2100000, guid: af6d26adc4bf82e4ab3b7d1d5b8343cd, type: 2}
   - {fileID: 2100000, guid: d74dc327ca3fad8408eeeaf8ad54a110, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -2674,7 +5412,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
