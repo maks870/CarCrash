@@ -20,6 +20,7 @@
         public int coins = 100;
         public int gems = 0;
         public int lootboxes = 1;
+        public int currentMission = 0;
 
         public PlayerWrapper playerWrapper = new PlayerWrapper();
 

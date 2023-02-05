@@ -15,9 +15,13 @@ namespace UnityStandardAssets.Vehicles.Car
 
         [SerializeField] private float normalSteerAngle = 15f;
         [SerializeField] private float turnSteerAngle = 25f;
+        [SerializeField] private float normalFOV = 80f;
+        [SerializeField] private float acceleratedFOV = 120f;
+        [SerializeField] private float changeFOVStep;
         private float taxiingSteer;
         private BaseInput input;
         private TargetPointer targetPointer;
+        private Camera cam;
 
         public float TurnSteerAngle { get => turnSteerAngle; set => turnSteerAngle = value; }
 
@@ -30,6 +34,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void Start()
         {
+            cam = Camera.main;
             input = inputManager.CurrentInput;
             abilityController.RefreshAbilityEvent += input.SetAbilities;
             input.PressButtonAbilityEvent += abilityController.UseAbility;
@@ -65,6 +70,22 @@ namespace UnityStandardAssets.Vehicles.Car
             SetTargetMark();
             SetTargetMark();
             ReportMissle();
+            SetCameraFOV();
+        }
+
+        private void SetCameraFOV()
+        {
+            if (carController.IsAccelerated)
+            {
+                if (cam.fieldOfView < acceleratedFOV)
+                    cam.fieldOfView += changeFOVStep;
+
+            }
+            else
+            {
+                if (cam.fieldOfView > normalFOV)
+                    cam.fieldOfView -= changeFOVStep;
+            }
         }
 
         private void ReportMissle()
