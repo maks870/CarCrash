@@ -37,7 +37,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void FixedUpdate()
         {
-            if (hardSteerHelper)
+            if (hardSteerHelper)// 2é âàğèàíò ÏÎÌÎØÍÈÊÀ ÏÎÂÎĞÎÒÀ
             {
                 float currentSteer = input.HorizontalAxis;
 
@@ -55,7 +55,7 @@ namespace UnityStandardAssets.Vehicles.Car
                 if (simpleSteerHelper)
                     SteerChanger();
 
-                ControlMove(input.HorizontalAxis, input.VerticalAxis, input.VerticalAxis, input.HandBrake); // 2é âàğèàíò ÏÎÌÎØÍÈÊÀ ÏÎÂÎĞÎÒÀ
+                ControlMove(input.HorizontalAxis, input.VerticalAxis, input.VerticalAxis, input.HandBrake);
             }
         }
 
