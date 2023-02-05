@@ -7,7 +7,7 @@ public class LvlMenu : MonoBehaviour
     //also, it is used if we hit restart in the pause menu
     [SerializeField] private GameObject PauseMenu;
     [SerializeField] SoundController soundController;
-
+    [SerializeField] private bool isFreeplayMode = false;
     private void Start()
     {
         Play();
@@ -18,12 +18,21 @@ public class LvlMenu : MonoBehaviour
     }
     //if we hit play in the menu at the start of the scene we will use the Play void:
     public void Play()
-    {   //all the racing stuff turns on
+    {
         RaceUI.SetActive(true); //racing UI
-        Countdown.SetActive(true);  //countdown UI (3,2,1,go)
-        LapsSelected.SetActive(true); //turn on the lap requirement race-UI text
-        FinishCamera.SetActive(false); //and the camera goes off too, to use the one in the player car
-        SetPause(false);
+
+        if (!isFreeplayMode)
+        {
+            //all the racing stuff turns on
+            LapsSelected.SetActive(true); //turn on the lap requirement race-UI text
+            FinishCamera.SetActive(false); //and the camera goes off too, to use the one in the player car
+            SetPause(false);
+            Countdown?.SetActive(true);  //countdown UI (3,2,1,go)
+        }
+        else
+        {
+
+        }
     }
 
     public void Exit()
@@ -32,12 +41,12 @@ public class LvlMenu : MonoBehaviour
         SceneTransition.SwitchScene(0);//so it will restart the game's scene
     }
 
-    public void Pause() 
+    public void Pause()
     {
         SetPause(true);
     }
 
-    private void SetPause(bool paused) 
+    private void SetPause(bool paused)
     {
         if (paused)
         {

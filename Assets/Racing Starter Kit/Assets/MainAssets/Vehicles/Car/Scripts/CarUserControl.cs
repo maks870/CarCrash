@@ -25,7 +25,7 @@ namespace UnityStandardAssets.Vehicles.Car
         {
             targetPointer = GetComponent<TargetPointer>();
             carController = GetComponent<CarController>();
-            uiManager = GameObject.Find("UIPlayerManager").GetComponent<UIPlayerManager>();
+            uiManager = GameObject.Find("UIPlayerManager")?.GetComponent<UIPlayerManager>();
         }
 
         private void Start()
