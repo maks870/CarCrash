@@ -40,21 +40,7 @@ public class StartingTraining : MonoBehaviour
 
     private void OnNextAdvice()
     {
-
-        if (currentAdvice > 0 && currentAdvice <= trainigStages.Length)
-        {
-            if (trainigStages[currentAdvice - 1].trainingWaiter != null)
-                trainigStages[currentAdvice - 1].trainingWaiter.GetComponent<ITrainingWaiter>().UnsubscribeWaitAction(OnNextAdvice);
-
-            if (trainigStages[currentAdvice - 1].nonTrainingUI != null)
-                trainigStages[currentAdvice - 1].nonTrainingUI.SetParent(oldTransfrom);
-
-            if (trainigStages[currentAdvice - 1].trainingUI != null)
-            {
-                trainigStages[currentAdvice - 1].trainingUI?.gameObject.SetActive(false);
-                trainigStages[currentAdvice - 1].Unsubscribe();
-            }
-        }
+        CloseAdvice();
 
         if (currentAdvice >= 0 && currentAdvice < trainigStages.Length)
         {
@@ -69,7 +55,7 @@ public class StartingTraining : MonoBehaviour
 
             if (trainigStages[currentAdvice].trainingUI != null)
             {
-                trainigStages[currentAdvice].trainingUI?.gameObject.SetActive(true);
+                trainigStages[currentAdvice].trainingUI.gameObject.SetActive(true);
                 trainigStages[currentAdvice].Subscribe();
             }
         }
@@ -78,6 +64,26 @@ public class StartingTraining : MonoBehaviour
 
         if (currentAdvice >= trainigStages.Length)
             EndTraining();
+    }
+
+    private void CloseAdvice() 
+    {
+        if (currentAdvice > 0 && currentAdvice <= trainigStages.Length)
+        {
+            int advice = currentAdvice - 1;
+
+            if (trainigStages[advice].trainingWaiter != null)
+                trainigStages[advice].trainingWaiter.GetComponent<ITrainingWaiter>().UnsubscribeWaitAction(OnNextAdvice);
+                           
+            if (trainigStages[advice].nonTrainingUI != null)
+                trainigStages[advice].nonTrainingUI.SetParent(oldTransfrom);
+                          
+            if (trainigStages[advice].trainingUI != null)
+            {                 
+                trainigStages[advice].trainingUI.gameObject.SetActive(false);
+                trainigStages[advice].Unsubscribe();
+            }
+        }
     }
 
     private void EndTraining()

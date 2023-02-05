@@ -7,20 +7,20 @@ public class Looker : MonoBehaviour
     public bool yLock = false;
     public bool zLock = false;
 
-    private Quaternion lockedRotation;
-    private void Start()
-    {
-        lockedRotation = transform.rotation;
-    }
+    private Vector3 targetVector;
 
     void Update()
     {
-        transform.LookAt(target);
+        targetVector = target.position;
 
-        float xRot = xLock ? lockedRotation.x : transform.rotation.x;
-        float yRot = yLock ? lockedRotation.y : transform.rotation.y;
-        float zRot = zLock ? lockedRotation.z : transform.rotation.z;
+        targetVector.x = xLock ? 0 : targetVector.x;
+        targetVector.y = yLock ? 0 : targetVector.y;
+        targetVector.z = zLock ? 0 : targetVector.z;
+       
+        transform.LookAt(targetVector);
 
-        transform.rotation.Set(xRot, yRot, zRot, 1);
+        
+
+        //transform.rotation.Set(xRot, yRot, zRot, 1);
     }
 }
