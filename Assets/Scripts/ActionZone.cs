@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityStandardAssets.Vehicles.Car;
 
+[RequireComponent(typeof(Collider))]
 public class ActionZone : MonoBehaviour
 {
     [SerializeField] private UnityEvent StayZoneEvent = new UnityEvent();
