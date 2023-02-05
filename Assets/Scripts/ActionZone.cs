@@ -7,10 +7,10 @@ using UnityStandardAssets.Vehicles.Car;
 [RequireComponent(typeof(Collider))]
 public class ActionZone : MonoBehaviour
 {
-    [SerializeField] private UnityEvent StayZoneEvent = new UnityEvent();
     [SerializeField] private float zoneEventDelay = 1;
     private Collider userCollider;
     private float time;
+    public UnityEvent StayZoneEvent = new UnityEvent();
 
     private void OnTriggerEnter(Collider other)
     {
