@@ -16,7 +16,7 @@ public class MissionManager : MonoBehaviour
 
     private void Start()
     {
-
+        InitializeMissions();
         InitializeCurrentMission();
         SwitchMissionPointer(true);
     }
