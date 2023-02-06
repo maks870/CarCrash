@@ -26,13 +26,10 @@ public class LvlMenu : MonoBehaviour
             //all the racing stuff turns on
             LapsSelected.SetActive(true); //turn on the lap requirement race-UI text
             FinishCamera.SetActive(false); //and the camera goes off too, to use the one in the player car
-            SetPause(false);
             Countdown?.SetActive(true);  //countdown UI (3,2,1,go)
         }
-        else
-        {
 
-        }
+        SetPause(false);
     }
 
     public void Exit()
