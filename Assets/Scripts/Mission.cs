@@ -7,6 +7,7 @@ public class Mission : MonoBehaviour
 {
     [SerializeField] private MapSO map;
     [SerializeField] public GameObject goalText;
+    [SerializeField] public GameObject endGoalText;
     private Dialogue dialogue;
     private ActionZone missionZone;
 
@@ -14,7 +15,7 @@ public class Mission : MonoBehaviour
     public StartingTraining StartingTraining => dialogue;
     public Transform MissionZoine => missionZone.transform;
 
-    private void Start()
+    public void Initialize()
     {
         dialogue = GetComponent<Dialogue>();
         missionZone = GetComponent<ActionZone>();

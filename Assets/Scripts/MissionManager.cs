@@ -16,24 +16,36 @@ public class MissionManager : MonoBehaviour
 
     private void Start()
     {
-        InitializeMission();
+
+        InitializeCurrentMission();
         SwitchMissionPointer(true);
     }
 
-    public void InitializeMission()
+    private void InitializeMissions()
+    {
+        foreach (Mission mission in missions)
+        {
+            mission.gameObject.SetActive(true);
+            mission.Initialize();
+            mission.gameObject.SetActive(false);
+        }
+
+    }
+
+    public void InitializeCurrentMission()
     {
         int currentMissionIndex = YandexGame.savesData.currentMission;
         currentMission = missions[currentMissionIndex];
         missionPointer.target = currentMission.MissionZoine;
-        currentMission.goalText.SetActive(true);
+        currentMission.gameObject.SetActive(true);
 
     }
 
     public void NextMission()
     {
-        currentMission.goalText.SetActive(false);
+        currentMission.gameObject.SetActive(false);
         YandexGame.savesData.currentMission += 1;
         YandexGame.SaveProgress();
-        InitializeMission();
+        InitializeCurrentMission();
     }
 }
