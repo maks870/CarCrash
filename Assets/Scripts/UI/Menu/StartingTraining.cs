@@ -30,9 +30,8 @@ public class StartingTraining : MonoBehaviour
     private int currentAdvice;
 
     public static Action NextStageAction;
-
-
-    private void OnNextAdvice()
+    public Action EndDialogueAction;
+    public void OnNextAdvice()
     {
         CloseAdvice();
 
@@ -80,8 +79,9 @@ public class StartingTraining : MonoBehaviour
         }
     }
 
-    protected virtual void EndDialogue()
+    private void EndDialogue()
     {
+        EndDialogueAction.Invoke();
     }
 
     public void StartTraining()

@@ -12,7 +12,7 @@ public class Mission : MonoBehaviour
     private ActionZone missionZone;
 
     public MapSO Map => map;
-    public StartingTraining StartingTraining => dialogue;
+    public Dialogue Dialogue => dialogue;
     public Transform MissionZoine => missionZone.transform;
 
     public void Initialize()
