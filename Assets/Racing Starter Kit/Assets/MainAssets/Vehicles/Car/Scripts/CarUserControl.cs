@@ -68,7 +68,6 @@ namespace UnityStandardAssets.Vehicles.Car
         {
             base.Update();
             SetTargetMark();
-            SetTargetMark();
             ReportMissle();
             SetCameraFOV();
         }
@@ -90,6 +89,9 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void ReportMissle()
         {
+            if (uiManager == null)
+                return;
+
             if (abilityController.IsMissleWarning)
             {
                 uiManager.WarningActivate();
