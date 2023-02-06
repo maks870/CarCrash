@@ -23,20 +23,14 @@ public class TrainingStage
 
 public class StartingTraining : MonoBehaviour
 {
-    [SerializeField] private TrainingStage[] trainigStages;
     [SerializeField] private RectTransform trainingTransform;
+    [SerializeField] protected TrainingStage[] trainigStages;
     private Transform oldTransfrom;
 
     private int currentAdvice;
 
     public static Action NextStageAction;
 
-    public void StartTraining()
-    {
-        currentAdvice = 0;
-        NextStageAction += OnNextAdvice;
-        OnNextAdvice();
-    }
 
     private void OnNextAdvice()
     {
@@ -63,10 +57,10 @@ public class StartingTraining : MonoBehaviour
         currentAdvice++;
 
         if (currentAdvice >= trainigStages.Length)
-            EndTraining();
+            EndDialogue();
     }
 
-    private void CloseAdvice() 
+    private void CloseAdvice()
     {
         if (currentAdvice > 0 && currentAdvice <= trainigStages.Length)
         {
@@ -74,19 +68,26 @@ public class StartingTraining : MonoBehaviour
 
             if (trainigStages[advice].trainingWaiter != null)
                 trainigStages[advice].trainingWaiter.GetComponent<ITrainingWaiter>().UnsubscribeWaitAction(OnNextAdvice);
-                           
+
             if (trainigStages[advice].nonTrainingUI != null)
                 trainigStages[advice].nonTrainingUI.SetParent(oldTransfrom);
-                          
+
             if (trainigStages[advice].trainingUI != null)
-            {                 
+            {
                 trainigStages[advice].trainingUI.gameObject.SetActive(false);
                 trainigStages[advice].Unsubscribe();
             }
         }
     }
 
-    private void EndTraining()
+    protected virtual void EndDialogue()
     {
+    }
+
+    public void StartTraining()
+    {
+        currentAdvice = 0;
+        NextStageAction += OnNextAdvice;
+        OnNextAdvice();
     }
 }

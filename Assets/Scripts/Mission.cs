@@ -5,17 +5,21 @@ using YG;
 
 public class Mission : MonoBehaviour
 {
-    [SerializeField] private StartingTraining startingTraining;
-    [SerializeField] private ActionZone missionZone;
     [SerializeField] private MapSO map;
     [SerializeField] public GameObject goalText;
+    private Dialogue dialogue;
+    private ActionZone missionZone;
+
+    public MapSO Map => map;
+    public StartingTraining StartingTraining => dialogue;
     public Transform MissionZoine => missionZone.transform;
 
     private void Start()
     {
-        startingTraining = GetComponent<StartingTraining>();
-        missionZone = GetComponentInChildren<ActionZone>();
-        missionZone.StayZoneEvent.AddListener(startingTraining.StartTraining);
+        dialogue = GetComponent<Dialogue>();
+        missionZone = GetComponent<ActionZone>();
+        missionZone.StayZoneEvent.AddListener(dialogue.StartTraining);
+        dialogue.EndDialogueAction += StartMap;
     }
 
     public void StartMap()
