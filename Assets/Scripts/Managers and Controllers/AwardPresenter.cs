@@ -11,6 +11,12 @@ public class AwardPresenter : MonoBehaviour
     public CarModelSO CarSO => carSO;
     public MapSO MapSO => mapSO;
 
+    private void OpenEarnings(MapAward award)
+    {
+        EarningManager.AddCoin(award.coins);
+        EarningManager.AddGem(award.gems);
+    }
+
     public void GetAward()
     {
         carSO = null;
@@ -22,7 +28,7 @@ public class AwardPresenter : MonoBehaviour
         string mapName = YandexGame.savesData.playerWrapper.lastMap;
         int mapIndex = YandexGame.savesData.playerWrapper.GetMapInfoIndex(mapName);
         MapSO map = SOLoader.LoadSO<MapSO>(mapName);
-
+        MapInfo mapInfo = YandexGame.savesData.playerWrapper.maps[mapIndex];
 
         for (int i = 0; i < YandexGame.savesData.playerWrapper.lastMapPlaces.Count; i++)
         {
@@ -33,33 +39,30 @@ public class AwardPresenter : MonoBehaviour
                 : mapAward.AddAward(map.Awards[pos]);
         }
 
-        if (YandexGame.savesData.playerWrapper.maps[mapIndex].isPassed == false)
+        if (mapInfo.isPassed == false)
         {
-            if (map.NextMap != null)
-            {
-                mapSO = map.NextMap;
-                MapInfo newMapInfo = new MapInfo(map.NextMap.Name, map.NextMap.MaxPoints);
-                YandexGame.savesData.playerWrapper.maps.Add(newMapInfo);
-            }
+            //if (map.NextMap != null)
+            //{
+            //    mapSO = map.NextMap;
+            //    MapInfo newMapInfo = new MapInfo(map.NextMap.Name, map.NextMap.MaxPoints);
+            //    YandexGame.savesData.playerWrapper.maps.Add(newMapInfo);
+            //}
 
-            if (map.Car != null)
+            if (mapInfo.highestPlace < 4 && mapInfo.highestPlace != 0)
             {
-                carSO = map.Car;
-                YandexGame.savesData.playerWrapper.collectibles.Add(map.Car.Name);
-                YandexGame.savesData.playerWrapper.newCollectibles.Add(map.Car.Name);
-                awardCollectibles.Add(map.Car);
+                if (map.Car != null)
+                {
+                    carSO = map.Car;
+                    YandexGame.savesData.playerWrapper.collectibles.Add(map.Car.Name);
+                    YandexGame.savesData.playerWrapper.newCollectibles.Add(map.Car.Name);
+                    awardCollectibles.Add(map.Car);
+                }
+                YandexGame.savesData.currentMission += 1;
+                mapInfo.isPassed = true;
             }
-
-            YandexGame.savesData.playerWrapper.maps[mapIndex].isPassed = true;
         }
 
         awardUI.ShowAwards(mapAward.coins, mapAward.gems, carSO, mapSO);
         OpenEarnings(mapAward);
-    }
-
-    private void OpenEarnings(MapAward award)
-    {
-        EarningManager.AddCoin(award.coins);
-        EarningManager.AddGem(award.gems);
     }
 }

@@ -8,8 +8,6 @@ public class MissionManager : MonoBehaviour
     [SerializeField] private List<Mission> missions = new List<Mission>();
     [SerializeField] private Looker missionPointer;
     private Mission currentMission;
-    private bool isPointerEnabled = false;
-    public bool IsPointerEnabled { set => isPointerEnabled = value; }
 
     public void SwitchMissionPointer(bool isEnable)
     {
@@ -27,11 +25,13 @@ public class MissionManager : MonoBehaviour
         int currentMissionIndex = YandexGame.savesData.currentMission;
         currentMission = missions[currentMissionIndex];
         missionPointer.target = currentMission.MissionZoine;
+        currentMission.goalText.SetActive(true);
 
     }
 
     public void NextMission()
     {
+        currentMission.goalText.SetActive(false);
         YandexGame.savesData.currentMission += 1;
         YandexGame.SaveProgress();
         InitializeMission();

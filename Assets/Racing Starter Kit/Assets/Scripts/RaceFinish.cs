@@ -39,7 +39,6 @@ public class RaceFinish : MonoBehaviour
             currentMap.highestPlace = ChkManager.posMax;
             currentMap.newRecordPlace = true;
         }
-
     }
 
     private void ShowRecords()

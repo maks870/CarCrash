@@ -27,9 +27,9 @@ public class MainMenuManager : MenuManager
 
     public override void SaveDefaultSO()
     {
-        MapSO map = playerLoad.DefaultMap;
-        MapInfo mapInfo = new MapInfo(map.Name, map.MaxPoints);
-        YandexGame.savesData.playerWrapper.maps.Add(mapInfo);
+        //MapSO map = playerLoad.DefaultMap;
+        //MapInfo mapInfo = new MapInfo(map.Name, map.MaxPoints);
+        //YandexGame.savesData.playerWrapper.maps.Add(mapInfo);
     }
 
     public override void OpenMenu()
