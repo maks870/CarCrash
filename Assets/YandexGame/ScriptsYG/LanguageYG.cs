@@ -11,6 +11,19 @@ using System.Net;
 
 namespace YG
 {
+    public class LanguageBody 
+    {
+        public string folderid = "b1g4sfub2o5ejcr20d4s";
+        public string[] texts;
+        public string targetLanguageCode;
+
+        public LanguageBody(string[] texts, string targetLanguageCode)
+        {
+            this.texts = texts;
+            this.targetLanguageCode = targetLanguageCode;
+        }
+    }
+
     public class LanguageYG : MonoBehaviour
     {
         public Text textUIComponent;
@@ -226,14 +239,23 @@ namespace YG
                 return null;
             }
 
-            var url = String.Format("http://translate.google." + infoYG.domainAutoLocalization + "/translate_a/single?client=gtx&dt=t&sl={0}&tl={1}&q={2}",
-                "auto", translationTo, WebUtility.UrlEncode(text));
-            UnityWebRequest www = UnityWebRequest.Get(url);
+            string[] texts = new string[] {"Hello", "World" };
+            LanguageBody languageBody = new LanguageBody(texts, translationTo);
+            string obj = JsonUtility.ToJson(languageBody);
+
+            UnityWebRequest www = UnityWebRequest.Post("https://translate.api.cloud.yandex.net/translate/v2/translate", obj);
+
+            www.SetRequestHeader("Content-Type", "application/json");
+            www.SetRequestHeader("Authorization", "Bearer y0_AgAAAABUkA-LAATuw");
+
             www.SendWebRequest();
+
             while (!www.isDone)
             {
 
             }
+            Debug.Log(www.result);
+            Debug.Log(www.responseCode);
             string response = www.downloadHandler.text;
 
             try
