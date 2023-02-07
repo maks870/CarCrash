@@ -4,7 +4,6 @@ using System.IO;
 
 #if UNITY_EDITOR
 using System.Collections;
-using Newtonsoft.Json.Linq;
 using System.Net;
 #endif
 
@@ -22,6 +21,7 @@ namespace YG
         public int fontNumber;
         public Font uniqueFont;
         int baseFontSize;
+        private string token = "t1.9euelZqQypeWzpOJjI2XksqZx52Mnu3rnpWalo2OlpnGzZKJz5LLmZuXiZnl8_c4InVg-e8BIXNZ_t3z93hQcmD57wEhc1n-.s3ugHY9-KDGQ83O2tAZwMb_Hpc2mE1eE-E4Vsp6N6fJ8rGscoqW5NAzdJrsqfXoiRhj_NV2BLFjO6RVPJKEiCw"
 
         private void Awake()
         {
@@ -231,7 +231,7 @@ namespace YG
             httpRequest.Method = "POST";
 
             httpRequest.Accept = "application/json";
-            httpRequest.Headers["Authorization"] = "Bearer t1.9euelZqQypeWzpOJjI2XksqZx52Mnu3rnpWalo2OlpnGzZKJz5LLmZuXiZnl8_c4InVg-e8BIXNZ_t3z93hQcmD57wEhc1n-.s3ugHY9-KDGQ83O2tAZwMb_Hpc2mE1eE-E4Vsp6N6fJ8rGscoqW5NAzdJrsqfXoiRhj_NV2BLFjO6RVPJKEiCw";
+            httpRequest.Headers["Authorization"] = "Bearer " + token;
             httpRequest.ContentType = "application/json";
 
 
@@ -254,9 +254,9 @@ namespace YG
             using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
             {
                 result = streamReader.ReadToEnd();
-            }          
+            }
 
-            string response = JsonUtility.FromJson<>(result);
+            string response = result;
 
 
             //try
