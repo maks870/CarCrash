@@ -1,11 +1,10 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 
 #if UNITY_EDITOR
 using System.Collections;
-using UnityEngine.Networking;
 using Newtonsoft.Json.Linq;
-using System;
 using System.Net;
 #endif
 
@@ -239,24 +238,39 @@ namespace YG
                 return null;
             }
 
-            string[] texts = new string[] {"Hello", "World" };
-            LanguageBody languageBody = new LanguageBody(texts, translationTo);
-            string obj = JsonUtility.ToJson(languageBody);
+            var url = "https://translate.api.cloud.yandex.net/translate/v2/translate";
 
-            UnityWebRequest www = UnityWebRequest.Post("https://translate.api.cloud.yandex.net/translate/v2/translate", obj);
+            var httpRequest = (HttpWebRequest)WebRequest.Create(url);
+            httpRequest.Method = "POST";
 
-            www.SetRequestHeader("Content-Type", "application/json");
-            www.SetRequestHeader("Authorization", "Bearer y0_AgAAAABUkA-LAATuw");
+            httpRequest.Accept = "application/json";
+            httpRequest.Headers["Authorization"] = "Bearer t1.9euelZqQypeWzpOJjI2XksqZx52Mnu3rnpWalo2OlpnGzZKJz5LLmZuXiZnl8_c4InVg-e8BIXNZ_t3z93hQcmD57wEhc1n-.s3ugHY9-KDGQ83O2tAZwMb_Hpc2mE1eE-E4Vsp6N6fJ8rGscoqW5NAzdJrsqfXoiRhj_NV2BLFjO6RVPJKEiCw";
+            httpRequest.ContentType = "application/json";
 
-            www.SendWebRequest();
 
-            while (!www.isDone)
+            var data = @"{ 
+  ""folderId"": ""b1g4sfub2o5ejcr20d4s"",
+    ""texts"": [""Hello World""],
+    ""targetLanguageCode"": ""ru""
+}";
+
+
+            using (StreamWriter streamWriter = new StreamWriter(httpRequest.GetRequestStream()))
             {
-
+                streamWriter.Write(data);
             }
-            Debug.Log(www.result);
-            Debug.Log(www.responseCode);
-            string response = www.downloadHandler.text;
+
+            HttpWebResponse httpResponse = (HttpWebResponse)httpRequest.GetResponse();
+
+            string result;
+
+            using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            {
+                result = streamReader.ReadToEnd();
+            }
+
+            string response = result;
+            Debug.Log(response);
 
             try
             {
