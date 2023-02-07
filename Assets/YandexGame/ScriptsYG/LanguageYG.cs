@@ -10,19 +10,6 @@ using System.Net;
 
 namespace YG
 {
-    public class LanguageBody 
-    {
-        public string folderid = "b1g4sfub2o5ejcr20d4s";
-        public string[] texts;
-        public string targetLanguageCode;
-
-        public LanguageBody(string[] texts, string targetLanguageCode)
-        {
-            this.texts = texts;
-            this.targetLanguageCode = targetLanguageCode;
-        }
-    }
-
     public class LanguageYG : MonoBehaviour
     {
         public Text textUIComponent;
@@ -248,11 +235,11 @@ namespace YG
             httpRequest.ContentType = "application/json";
 
 
-            var data = @"{ 
-  ""folderId"": ""b1g4sfub2o5ejcr20d4s"",
-    ""texts"": [""Hello World""],
-    ""targetLanguageCode"": ""ru""
-}";
+            string data = @"{ 
+            ""folderId"": ""b1g4sfub2o5ejcr20d4s"",
+            ""texts"" : ["""+ text + @"""],
+            ""targetLanguageCode"": """ + translationTo + @"""
+             }";
 
 
             using (StreamWriter streamWriter = new StreamWriter(httpRequest.GetRequestStream()))
@@ -267,25 +254,24 @@ namespace YG
             using (StreamReader streamReader = new StreamReader(httpResponse.GetResponseStream()))
             {
                 result = streamReader.ReadToEnd();
-            }
+            }          
 
-            string response = result;
-            Debug.Log(response);
+            string response = JsonUtility.FromJson<>(result);
 
-            try
-            {
-                JArray jsonArray = JArray.Parse(response);
-                response = jsonArray[0][0][0].ToString();
-            }
-            catch
-            {
-                response = "process error";
-                StopAllCoroutines();
-                processTranslateLabel = processTranslateLabel + " error";
 
-                Debug.LogError("(ruСообщение) Процесс не завершён! Вероятно, Вы делали слишком много запросов. В таком случае, API Google Translate блокирует доступ к переводу на некоторое время.  Пожалуйста, попробуйте позже. Не переводите текст слишком часто, чтобы Google не посчитал Ваши действия за спам" +
-                            "\n" + "(enMessage) The process is not completed! Most likely, you made too many requests. In this case, the Google Translate API blocks access to the translation for a while.  Please try again later. Do not translate the text too often, so that Google does not consider your actions as spam");
-            }
+            //try
+            //{
+
+            //}
+            //catch
+            //{
+            //    response = "process error";
+            //    StopAllCoroutines();
+            //    processTranslateLabel = processTranslateLabel + " error";
+
+            //    Debug.LogError("(ruСообщение) Процесс не завершён! Вероятно, Вы делали слишком много запросов. В таком случае, API Google Translate блокирует доступ к переводу на некоторое время.  Пожалуйста, попробуйте позже. Не переводите текст слишком часто, чтобы Google не посчитал Ваши действия за спам" +
+            //                "\n" + "(enMessage) The process is not completed! Most likely, you made too many requests. In this case, the Google Translate API blocks access to the translation for a while.  Please try again later. Do not translate the text too often, so that Google does not consider your actions as spam");
+            //}
 
             return response;
         }
