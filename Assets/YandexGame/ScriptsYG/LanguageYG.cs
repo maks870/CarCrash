@@ -1,14 +1,36 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using System.Collections.Generic;
+
 
 #if UNITY_EDITOR
+using Newtonsoft.Json;
 using System.Collections;
 using System.Net;
+using System;
 #endif
 
 namespace YG
 {
+
+    public class TokenInfo
+    {
+        public string iamToken { get; set; }
+        public string expiresAt { get; set; }
+    }
+
+    public class RootTranslation
+    {
+        public List<Translation> translations { get; set; }
+    }
+
+    public class Translation
+    {
+        public string text { get; set; }
+        public string detectedLanguageCode { get; set; }
+    }
+
     public class LanguageYG : MonoBehaviour
     {
         public Text textUIComponent;
@@ -21,7 +43,8 @@ namespace YG
         public int fontNumber;
         public Font uniqueFont;
         int baseFontSize;
-        private string token = "t1.9euelZqQypeWzpOJjI2XksqZx52Mnu3rnpWalo2OlpnGzZKJz5LLmZuXiZnl8_c4InVg-e8BIXNZ_t3z93hQcmD57wEhc1n-.s3ugHY9-KDGQ83O2tAZwMb_Hpc2mE1eE-E4Vsp6N6fJ8rGscoqW5NAzdJrsqfXoiRhj_NV2BLFjO6RVPJKEiCw"
+        private string token;
+        private DateTime timeExpiresToken = DateTime.Now;
 
         private void Awake()
         {
@@ -231,16 +254,15 @@ namespace YG
             httpRequest.Method = "POST";
 
             httpRequest.Accept = "application/json";
-            httpRequest.Headers["Authorization"] = "Bearer " + token;
+            httpRequest.Headers["Authorization"] = "Bearer " + GetNewToken();
             httpRequest.ContentType = "application/json";
 
 
             string data = @"{ 
             ""folderId"": ""b1g4sfub2o5ejcr20d4s"",
-            ""texts"" : ["""+ text + @"""],
+            ""texts"" : [""" + text + @"""],
             ""targetLanguageCode"": """ + translationTo + @"""
              }";
-
 
             using (StreamWriter streamWriter = new StreamWriter(httpRequest.GetRequestStream()))
             {
@@ -256,24 +278,72 @@ namespace YG
                 result = streamReader.ReadToEnd();
             }
 
-            string response = result;
+            string response;
 
+            try
+            {
+                RootTranslation translate = JsonConvert.DeserializeObject<RootTranslation>(result);
+                response = translate.translations[0].text;
+            }
+            catch
+            {
+                response = "process error";
+                StopAllCoroutines();
+                processTranslateLabel = processTranslateLabel + " error";
 
-            //try
-            //{
-
-            //}
-            //catch
-            //{
-            //    response = "process error";
-            //    StopAllCoroutines();
-            //    processTranslateLabel = processTranslateLabel + " error";
-
-            //    Debug.LogError("(ruСообщение) Процесс не завершён! Вероятно, Вы делали слишком много запросов. В таком случае, API Google Translate блокирует доступ к переводу на некоторое время.  Пожалуйста, попробуйте позже. Не переводите текст слишком часто, чтобы Google не посчитал Ваши действия за спам" +
-            //                "\n" + "(enMessage) The process is not completed! Most likely, you made too many requests. In this case, the Google Translate API blocks access to the translation for a while.  Please try again later. Do not translate the text too often, so that Google does not consider your actions as spam");
-            //}
+                Debug.LogError("Статус: " + httpResponse.StatusCode + "\nЗапрос вернул: " + result);
+            }
 
             return response;
+        }
+
+        private string GetNewToken()
+        {
+            DateTime dateTimeNow = DateTime.Now;
+
+            int hourDifference = timeExpiresToken.Hour - dateTimeNow.Hour;
+            int dayDifference = timeExpiresToken.Day - dateTimeNow.Day;
+
+            if (dayDifference * 24 + hourDifference > 6)
+            {
+                Debug.Log("Токен еще не истек");
+                return token;
+            }
+
+            string data = @"{
+            ""yandexPassportOauthToken"" : ""y0_AgAAAABUkA-LAATuwQAAAADbvuOWkd0wFsbqQyqVacZgsXwsMmK7a5s""
+            }";
+
+            string url = "https://iam.api.cloud.yandex.net/iam/v1/tokens";
+
+            var httpRequest = (HttpWebRequest)WebRequest.Create(url);
+            httpRequest.Method = "POST";
+
+            httpRequest.Accept = "application/json";
+            httpRequest.ContentType = "application/json";
+
+            using (StreamWriter streamWriter = new StreamWriter(httpRequest.GetRequestStream()))
+            {
+                streamWriter.Write(data);
+            }
+
+            HttpWebResponse httpResponse = (HttpWebResponse)httpRequest.GetResponse();
+
+            string result;
+
+            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            {
+                result = streamReader.ReadToEnd();
+            }
+
+            TokenInfo tokenInfo = JsonConvert.DeserializeObject<TokenInfo>(result);
+            timeExpiresToken = DateTime.ParseExact(tokenInfo.expiresAt, "O", System.Globalization.CultureInfo.CurrentCulture);
+
+            token = tokenInfo.iamToken;
+
+            Debug.Log("Получен новый токен");
+
+            return tokenInfo.iamToken;
         }
 
         public int countLang = 0;
