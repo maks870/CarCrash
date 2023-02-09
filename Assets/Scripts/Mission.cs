@@ -13,14 +13,16 @@ public class Mission : MonoBehaviour
 
     public MapSO Map => map;
     public Dialogue Dialogue => dialogue;
-    public Transform MissionZoine => missionZone.transform;
+    public Transform MissionZone => missionZone.transform;
 
     public void Initialize()
     {
         dialogue = GetComponent<Dialogue>();
         missionZone = GetComponent<ActionZone>();
-        missionZone.StayZoneEvent.AddListener(dialogue.StartTraining);
-        dialogue.EndDialogueAction += StartMap;
+        missionZone.StayZoneEvent.AddListener(dialogue.StartDialogue);
+
+        if (map != null)
+            dialogue.EndDialogueAction += StartMap;
     }
 
     public void StartMap()

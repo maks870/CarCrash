@@ -65,6 +65,7 @@ public class MenuInitializer : MonoBehaviour
         earningUIController.UpdateEarnings();
         SceneTransition.instance.EndPreload();
     }
+
     public void ResetProgressTEST()//тестовый метод
     {
         YandexGame.ResetSaveProgress();

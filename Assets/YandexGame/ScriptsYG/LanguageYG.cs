@@ -43,8 +43,10 @@ namespace YG
         public int fontNumber;
         public Font uniqueFont;
         int baseFontSize;
-        private string token;
-        private DateTime timeExpiresToken = DateTime.Now;
+
+        private static string token;
+        private static int hourCountForNewToken = 3;
+        private static DateTime timeExpiresToken = DateTime.Now;
 
         private void Awake()
         {
@@ -299,14 +301,30 @@ namespace YG
 
         private string GetNewToken()
         {
+            Debug.Log(timeExpiresToken);
+            Debug.Log(token);
+
+            //return token;
+
             DateTime dateTimeNow = DateTime.Now;
 
+            int minuteDifference = timeExpiresToken.Minute - dateTimeNow.Minute;
             int hourDifference = timeExpiresToken.Hour - dateTimeNow.Hour;
             int dayDifference = timeExpiresToken.Day - dateTimeNow.Day;
+            int totalDifference = dayDifference * 24 * 60 + hourDifference * 60 + minuteDifference;
 
-            if (dayDifference * 24 + hourDifference > 6)
+            if (totalDifference > 0)
             {
-                Debug.Log("Токен еще не истек");
+                int minuteCount = minuteDifference;
+                int hourCount = hourDifference >= 0 ? hourDifference : 24 + hourDifference;
+
+                if (minuteDifference < 0)
+                {
+                    minuteCount = 60 + minuteDifference;
+                    hourCount--;
+                }
+
+                Debug.Log($"До обновления токена еще {hourCount} часов {minuteCount} минут");
                 return token;
             }
 
@@ -336,8 +354,13 @@ namespace YG
                 result = streamReader.ReadToEnd();
             }
 
+            DateTime newTokenTime = DateTime.Now;
+            timeExpiresToken = newTokenTime.AddHours(hourCountForNewToken);
+
             TokenInfo tokenInfo = JsonConvert.DeserializeObject<TokenInfo>(result);
-            timeExpiresToken = DateTime.ParseExact(tokenInfo.expiresAt, "O", System.Globalization.CultureInfo.CurrentCulture);
+
+            Debug.Log("Новый токен");
+            //timeExpiresToken = DateTime.ParseExact(tokenInfo.expiresAt, "O", System.Globalization.CultureInfo.CurrentCulture);
 
             token = tokenInfo.iamToken;
 

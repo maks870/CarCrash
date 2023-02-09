@@ -26,6 +26,7 @@ public class MissionManager : MonoBehaviour
         foreach (Mission mission in missions)
         {
             mission.gameObject.SetActive(true);
+            mission.Dialogue.EndDialogueAction += NextMission;
             mission.Initialize();
             mission.gameObject.SetActive(false);
         }
@@ -36,7 +37,7 @@ public class MissionManager : MonoBehaviour
     {
         int currentMissionIndex = YandexGame.savesData.currentMission;
         currentMission = missions[currentMissionIndex];
-        missionPointer.target = currentMission.MissionZoine;
+        missionPointer.target = currentMission.MissionZone;
         currentMission.gameObject.SetActive(true);
 
     }
