@@ -12,6 +12,10 @@ public class MissionManager : MonoBehaviour
     public void SwitchMissionPointer(bool isEnable)
     {
         missionPointer.gameObject.SetActive(isEnable);
+        Looker looker = missionPointer.GetComponent<Looker>();
+
+        if (looker.target == null)
+            missionPointer.gameObject.SetActive(false);
     }
 
     private void Start()
@@ -19,7 +23,7 @@ public class MissionManager : MonoBehaviour
         InitializeMissions();
         int currentMissionIndex = YandexGame.savesData.currentMission;
         if (currentMissionIndex < missions.Length)
-            InitializeCurrentMission(currentMissionIndex);
+            InitializeCurrentMission();
 
         SwitchMissionPointer(true);
     }
@@ -30,25 +34,56 @@ public class MissionManager : MonoBehaviour
         {
             mission.gameObject.SetActive(true);
             mission.Initialize();
-            mission.Dialogue.EndDialogueAction += NextMission;
+
+            if (mission.Map == null)
+                mission.Dialogue.EndDialogueAction += NextMission;
+
             mission.gameObject.SetActive(false);
         }
 
     }
 
-    public void InitializeCurrentMission(int currentMissionIndex)
+    private bool CheckActiveMission(int currentMissionIndex)
     {
-        currentMission = missions[currentMissionIndex];
-        missionPointer.target = currentMission.MissionZone;
-        currentMission.gameObject.SetActive(true);
+        bool isActive = false;
 
+        if (missions[currentMissionIndex].Map != null)
+        {
+            MapInfo[] mapInfos = YandexGame.savesData.playerWrapper.maps.ToArray();
+            foreach (MapInfo map in mapInfos)
+            {
+                if (map.mapName == missions[currentMissionIndex].Map.Name)
+                    isActive = true;
+            }
+        }
+
+        return isActive;
     }
+
+    private void InitializeCurrentMission()
+    {
+        int currentMissionIndex = YandexGame.savesData.currentMission;
+        currentMission = missions[currentMissionIndex];
+
+        if (CheckActiveMission(currentMissionIndex))
+        {
+            currentMission.endGoalText.SetActive(true);
+        }
+        else
+        {
+            missionPointer.target = currentMission.MissionZone;
+            currentMission.goalText.SetActive(true);
+            currentMission.gameObject.SetActive(true);
+        }
+    }
+
+
 
     public void NextMission()
     {
         currentMission.gameObject.SetActive(false);
         YandexGame.savesData.currentMission += 1;
         YandexGame.SaveProgress();
-        InitializeCurrentMission(YandexGame.savesData.currentMission);
+        InitializeCurrentMission();
     }
 }

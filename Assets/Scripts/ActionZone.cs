@@ -12,6 +12,7 @@ public class ActionZone : MonoBehaviour
     private float time;
     private bool isActive = false;
     public UnityEvent StayZoneEvent = new UnityEvent();
+    public UnityEvent ExitZoneEvent = new UnityEvent();
 
 
     private void OnTriggerEnter(Collider other)
