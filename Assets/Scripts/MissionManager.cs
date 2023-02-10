@@ -6,9 +6,9 @@ public class MissionManager : MonoBehaviour
 
     [SerializeField] private GameObject missionsObj;
     [SerializeField] private GameObject goalMissionObj;
+    [SerializeField] private GameObject endGoalMissionObj;
     [SerializeField] private Looker missionPointer;
     private Mission[] missions;
-    private GameObject[] goalMissionTexts;
     private Mission currentMission;
 
     public void SwitchMissionPointer(bool isEnable)
@@ -33,7 +33,6 @@ public class MissionManager : MonoBehaviour
     private void InitializeMissions()
     {
         Mission[] missions = new Mission[missionsObj.transform.childCount];
-        GameObject[] goalMissionTexts = new GameObject[goalMissionObj.transform.childCount];
 
         for (int i = 0; i < missionsObj.transform.childCount; i++)
         {
@@ -43,14 +42,23 @@ public class MissionManager : MonoBehaviour
             missionObj.SetActive(true);
             missions[i] = missionObj.GetComponent<Mission>();
             missions[i].goalText = goalMission;
+            if (missions[i].Map != null)
+                missions[i].goalText = goalMission;
         }
 
+        int endGoalCounter = 0;
         foreach (Mission mission in missions)
         {
             mission.Initialize();
 
             if (mission.Map == null)
                 mission.Dialogue.EndDialogueAction += NextMission;
+            else
+            {
+                GameObject endGoalMission = endGoalMissionObj.transform.GetChild(endGoalCounter).gameObject;
+                endGoalCounter++;
+                mission.endGoalText = endGoalMission;
+            }
 
             mission.gameObject.SetActive(false);
         }

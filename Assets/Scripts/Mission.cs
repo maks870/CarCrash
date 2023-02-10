@@ -6,7 +6,7 @@ public class Mission : MonoBehaviour
 {
     [SerializeField] private MapSO map;
     [HideInInspector] public GameObject goalText;
-    [SerializeField] public GameObject endGoalText;
+    [HideInInspector] public GameObject endGoalText;
     private Dialogue dialogue;
     private ActionZone missionZone;
 
