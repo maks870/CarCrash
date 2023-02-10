@@ -32,8 +32,7 @@ public class MissionManager : MonoBehaviour
 
     private void InitializeMissions()
     {
-        Mission[] missions = new Mission[missionsObj.transform.childCount];
-
+        missions = new Mission[missionsObj.transform.childCount];
         for (int i = 0; i < missionsObj.transform.childCount; i++)
         {
             GameObject goalMission = goalMissionObj.transform.GetChild(i).gameObject;
@@ -48,6 +47,7 @@ public class MissionManager : MonoBehaviour
         }
 
         int endGoalCounter = 0;
+
         foreach (Mission mission in missions)
         {
             mission.Initialize();
