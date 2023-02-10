@@ -44,6 +44,7 @@ public class MissionManager : MonoBehaviour
             missions[i].goalText = goalMission;
             if (missions[i].Map != null)
                 missions[i].goalText = goalMission;
+            goalMission.SetActive(false);
         }
 
         int endGoalCounter = 0;
@@ -58,6 +59,7 @@ public class MissionManager : MonoBehaviour
                 GameObject endGoalMission = endGoalMissionObj.transform.GetChild(endGoalCounter).gameObject;
                 endGoalCounter++;
                 mission.endGoalText = endGoalMission;
+                endGoalMission.SetActive(false);
             }
 
             mission.gameObject.SetActive(false);
