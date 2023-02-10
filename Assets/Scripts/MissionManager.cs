@@ -26,8 +26,8 @@ public class MissionManager : MonoBehaviour
         foreach (Mission mission in missions)
         {
             mission.gameObject.SetActive(true);
-            mission.Dialogue.EndDialogueAction += NextMission;
             mission.Initialize();
+            mission.Dialogue.EndDialogueAction += NextMission;
             mission.gameObject.SetActive(false);
         }
 

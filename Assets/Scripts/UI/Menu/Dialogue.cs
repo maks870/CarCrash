@@ -49,7 +49,7 @@ public class Dialogue : MonoBehaviour
 
     public void OnNextSentence()
     {
-        CloseAdvice();
+        CloseSentence();
 
         if (currentSentence >= 0 && currentSentence < sentences.Length)
         {
@@ -63,7 +63,7 @@ public class Dialogue : MonoBehaviour
             EndDialogue();
     }
 
-    private void CloseAdvice()
+    private void CloseSentence()
     {
         if (currentSentence > 0 && currentSentence <= sentences.Length)
         {
@@ -80,6 +80,7 @@ public class Dialogue : MonoBehaviour
 
     public void StartDialogue()
     {
+        Debug.Log("ÍÀקאכמ הטאכמדא");
         currentSentence = 0;
         NextSentenceAction += OnNextSentence;
         OnNextSentence();
