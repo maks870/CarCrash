@@ -27,7 +27,7 @@ public class Dialogue : MonoBehaviour
     private Sentence[] sentences;
     private int currentSentence;
 
-    public static Action NextSentenceAction;
+    public Action NextSentenceAction;
     public Action EndDialogueAction;
 
     public Sentence[] Sentences => sentences;
