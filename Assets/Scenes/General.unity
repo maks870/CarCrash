@@ -6474,12 +6474,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cb1fa4364448354e80843eb7ce6fed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exchangeCoinCost: 50
+  exchangeCoinCost: 7
   exchangeGemReward: 1
-  smallAdReward: 1
-  mediumAdReward: 2
+  smallAdReward: 50
+  mediumAdReward: 15
   mediumAdViews: 2
-  lootboxCost: 5
+  lootboxCost: 10
   openLootboxButton: {fileID: 1673411890}
   noLootboxImage: {fileID: 1978099349}
   lootbox: {fileID: 1942103843}
@@ -17849,6 +17849,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 574220782056e3e4b8782ae121b014a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trainingTransform: {fileID: 1606281309}
   trainigStages:
   - trainingUI: {fileID: 1672095989}
     nonTrainingUI: {fileID: 0}
@@ -17898,7 +17899,6 @@ MonoBehaviour:
     nonTrainingUI: {fileID: 0}
     nextStage: {fileID: 661316460}
     trainingWaiter: {fileID: 0}
-  trainingTransform: {fileID: 1606281309}
 --- !u!1 &1397711798
 GameObject:
   m_ObjectHideFlags: 0
@@ -26297,11 +26297,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f657bd481f077bf4fad81ca087cba979, type: 2}
   - {fileID: 11400000, guid: 4f2498189f1b385438a92827a64f80fd, type: 2}
   - {fileID: 11400000, guid: 29a0ecb83529598459236565ca155d34, type: 2}
-  minDropCoin: 5
-  maxDropCoin: 40
+  minDropCoin: 70
+  maxDropCoin: 200
   minDropGem: 1
   maxDropGem: 10
-  cost: 0
   roomUI: {fileID: 1737514705}
 --- !u!1 &1947071382
 GameObject:

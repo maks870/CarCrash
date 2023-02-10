@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quality: 0
   texture: {fileID: 2800000, guid: 46ed1967a0afcaa4b9754f3f83e48477, type: 3}
-  cost: 10
+  cost: 100

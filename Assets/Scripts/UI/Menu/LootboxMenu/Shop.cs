@@ -56,7 +56,7 @@ public class Shop : MonoBehaviour
         switch (type)
         {
             case AdvertisementType.SingleAd:
-                EarningManager.AddGem(smallAdReward);
+                EarningManager.AddCoin(smallAdReward);
                 break;
 
             case AdvertisementType.DoubleAd:

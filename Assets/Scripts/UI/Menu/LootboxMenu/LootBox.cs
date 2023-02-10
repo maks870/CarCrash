@@ -16,15 +16,11 @@ public class LootBox : MonoBehaviour, ITrainingWaiter
     [SerializeField] private int minDropGem = 1;
     [SerializeField] private int maxDropGem = 10;
 
-    [SerializeField] private int cost;
-
     [SerializeField] private GameObject roomUI;
     private Animator animator;
 
     public Action ActionEndOpen;
     public Action ActionEndClose;
-
-    public int Cost => cost;
 
     private void Start()
     {

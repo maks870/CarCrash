@@ -17,11 +17,11 @@ MonoBehaviour:
   nextMap: {fileID: 11400000, guid: af3ca91b6f2bacd4bb87473fb1d9fedc, type: 2}
   sprite: {fileID: 21300000, guid: 637288d24092c454e9b70bfd9b1a5c9b, type: 3}
   awards:
-  - coins: 5
-    gems: 0
-  - coins: 20
-    gems: 10
-  - coins: 15
-    gems: 5
   - coins: 10
-    gems: 3
+    gems: 0
+  - coins: 100
+    gems: 12
+  - coins: 70
+    gems: 7
+  - coins: 40
+    gems: 5
