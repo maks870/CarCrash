@@ -5,7 +5,7 @@ using YG;
 
 public class MissionManager : MonoBehaviour
 {
-    [SerializeField] private List<Mission> missions = new List<Mission>();
+    [SerializeField] private Mission[] missions;
     [SerializeField] private Looker missionPointer;
     private Mission currentMission;
 
