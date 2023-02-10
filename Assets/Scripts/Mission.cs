@@ -7,7 +7,6 @@ public class Mission : MonoBehaviour
 {
     [SerializeField] private MapSO map;
     [SerializeField] public GameObject goalText;
-    [SerializeField] public GameObject endGoalText;
     private Dialogue dialogue;
     private ActionZone missionZone;
 
@@ -20,7 +19,6 @@ public class Mission : MonoBehaviour
         dialogue = GetComponent<Dialogue>();
         missionZone = GetComponent<ActionZone>();
         missionZone.StayZoneEvent.AddListener(dialogue.StartDialogue);
-
         if (map != null)
             dialogue.EndDialogueAction += StartMap;
     }
