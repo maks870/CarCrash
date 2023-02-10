@@ -37,12 +37,10 @@ public class MissionManager : MonoBehaviour
             GameObject missionObj = missionsObj.transform.GetChild(i).gameObject;
             missionObj.SetActive(true);
             missions[i] = missionObj.GetComponent<Mission>();
-            missionObj.SetActive(false);
         }
 
         foreach (Mission mission in missions)
         {
-            mission.gameObject.SetActive(true);
             mission.Initialize();
 
             if (mission.Map == null)
