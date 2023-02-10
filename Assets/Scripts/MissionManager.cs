@@ -1,12 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using YG;
 
 public class MissionManager : MonoBehaviour
 {
-    [SerializeField] private Mission[] missions;
+
+    [SerializeField] private GameObject missionsObj;
     [SerializeField] private Looker missionPointer;
+    private Mission[] missions;
     private Mission currentMission;
 
     public void SwitchMissionPointer(bool isEnable)
@@ -30,6 +30,16 @@ public class MissionManager : MonoBehaviour
 
     private void InitializeMissions()
     {
+        Mission[] missions = new Mission[missionsObj.transform.childCount];
+
+        for (int i = 0; i < missionsObj.transform.childCount; i++)
+        {
+            GameObject missionObj = missionsObj.transform.GetChild(i).gameObject;
+            missionObj.SetActive(true);
+            missions[i] = missionObj.GetComponent<Mission>();
+            missionObj.SetActive(false);
+        }
+
         foreach (Mission mission in missions)
         {
             mission.gameObject.SetActive(true);
