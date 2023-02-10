@@ -83,7 +83,6 @@ public class Dialogue : MonoBehaviour
 
     public void StartDialogue()
     {
-        Debug.Log("ÍÀקאכמ הטאכמדא");
         currentSentence = 0;
         NextSentenceAction += OnNextSentence;
         OnNextSentence();
