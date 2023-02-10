@@ -5,7 +5,7 @@ using YG;
 public class Mission : MonoBehaviour
 {
     [SerializeField] private MapSO map;
-    [SerializeField] public GameObject goalText;
+    [HideInInspector] public GameObject goalText;
     [SerializeField] public GameObject endGoalText;
     private Dialogue dialogue;
     private ActionZone missionZone;
