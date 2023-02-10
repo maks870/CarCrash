@@ -235,7 +235,7 @@ MonoBehaviour:
   text: 
   ru: "\u0412\u0440\u0435\u043C\u044F \u0437\u0430\u0435\u0437\u0434\u0430:"
   en: 'Check-in time:'
-  tr: "Zaman\u0131nda kontrol et:"
+  tr: "Var\u0131\u015F saati:"
   az: 
   be: 
   he: 
@@ -263,9 +263,9 @@ MonoBehaviour:
   fontNumber: 0
   uniqueFont: {fileID: 0}
   textHeight: 20
-  processTranslateLabel: 0/3 completed
+  processTranslateLabel: 3/3 completed
   componentTextField: 1
-  countLang: 0
+  countLang: 3
 --- !u!114 &2017846157646085689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,8 +381,8 @@ MonoBehaviour:
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
   ru: "\u041D\u043E\u0432\u044B\u0439 \u0440\u0435\u043A\u043E\u0440\u0434!"
-  en: New record!
-  tr: Yeni Rekor!
+  en: A new record!
+  tr: Yeni bir rekor!
   az: 
   be: 
   he: 
@@ -685,7 +685,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041A\u0440\u0443\u0433"
+  m_Text: Lap
 --- !u!114 &5536777607083358755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -702,9 +702,9 @@ MonoBehaviour:
   textMeshComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
-  ru: "\u041A\u0440\u0443\u0433\u0438"
+  ru: "\u041A\u0440\u0443\u0433"
   en: Lap
-  tr: Daireler
+  tr: Kucak
   az: 
   be: 
   he: 
@@ -732,9 +732,9 @@ MonoBehaviour:
   fontNumber: 0
   uniqueFont: {fileID: 0}
   textHeight: 20
-  processTranslateLabel: 3/3 completed
+  processTranslateLabel: 2/3 completed
   componentTextField: 1
-  countLang: 3
+  countLang: 2
 --- !u!114 &5536777607083358758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4092,9 +4092,9 @@ MonoBehaviour:
   fontNumber: 0
   uniqueFont: {fileID: 0}
   textHeight: 20
-  processTranslateLabel: 2/3 completed
+  processTranslateLabel: 3/3 completed
   componentTextField: 1
-  countLang: 2
+  countLang: 3
 --- !u!114 &5536777608934776829
 MonoBehaviour:
   m_ObjectHideFlags: 0
