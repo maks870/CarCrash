@@ -75,7 +75,7 @@ public class Dialogue : MonoBehaviour
 
     private void EndDialogue()
     {
-        EndDialogueAction.Invoke();
+        EndDialogueAction?.Invoke();
     }
 
     public void StartDialogue()

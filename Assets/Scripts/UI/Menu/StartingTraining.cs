@@ -81,7 +81,7 @@ public class StartingTraining : MonoBehaviour
 
     private void EndDialogue()
     {
-        EndDialogueAction.Invoke();
+        EndDialogueAction?.Invoke();
     }
 
     public void StartTraining()
