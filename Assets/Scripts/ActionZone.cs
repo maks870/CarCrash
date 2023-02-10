@@ -10,7 +10,9 @@ public class ActionZone : MonoBehaviour
     [SerializeField] private float zoneEventDelay = 1;
     private Collider userCollider;
     private float time;
+    private bool isActive = false;
     public UnityEvent StayZoneEvent = new UnityEvent();
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -32,6 +34,7 @@ public class ActionZone : MonoBehaviour
     {
         if (userCollider != null && userCollider == other)
         {
+            isActive = false;
             time = 0;
             userCollider = null;
         }
@@ -39,7 +42,10 @@ public class ActionZone : MonoBehaviour
 
     void Update()
     {
-        if (time >= zoneEventDelay)
+        if (time >= zoneEventDelay && !isActive)
+        {
+            isActive = true;
             StayZoneEvent.Invoke();
+        }
     }
 }

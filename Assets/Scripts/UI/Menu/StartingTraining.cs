@@ -55,7 +55,7 @@ public class StartingTraining : MonoBehaviour
 
         currentAdvice++;
 
-        if (currentAdvice >= trainigStages.Length)
+        if (currentAdvice > trainigStages.Length)
             EndDialogue();
     }
 

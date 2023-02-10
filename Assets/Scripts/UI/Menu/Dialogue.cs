@@ -50,7 +50,8 @@ public class Dialogue : MonoBehaviour
     public void OnNextSentence()
     {
         CloseSentence();
-
+        Debug.Log("Текущее предложение номер " + currentSentence);
+        Debug.Log(sentences.Length);
         if (currentSentence >= 0 && currentSentence < sentences.Length)
         {
             sentences[currentSentence].sentenceObj.gameObject.SetActive(true);
@@ -59,8 +60,10 @@ public class Dialogue : MonoBehaviour
 
         currentSentence++;
 
-        if (currentSentence >= sentences.Length)
+        if (currentSentence > sentences.Length)
+        {
             EndDialogue();
+        }
     }
 
     private void CloseSentence()
