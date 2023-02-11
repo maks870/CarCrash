@@ -67,7 +67,7 @@ namespace UnityStandardAssets.Vehicles.Car
                 else
                 {
                     carController.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                    ControlMove(0, 0, -1, 1);
+                    ControlMove(0, 0, 0, 1);
                 }
             }
         }
