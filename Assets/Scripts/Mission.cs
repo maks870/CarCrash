@@ -15,7 +15,7 @@ public class Mission : MonoBehaviour
 
     public MapSO Map => map;
     public Dialogue Dialogue => dialogue;
-    public Transform MissionZone => missionZone.transform;
+    public ActionZone MissionZone => missionZone;
 
     private void Awake()
     {

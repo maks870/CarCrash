@@ -94,9 +94,11 @@ public class MissionManager : MonoBehaviour
         }
         else
         {
-            missionPointer.target = currentMission.MissionZone;
+            missionPointer.target = currentMission.MissionZone.transform;
             currentMission.goalText.SetActive(true);
             currentMission.gameObject.SetActive(true);
+            currentMission.MissionZone.StayZoneEvent.AddListener(() => SwitchMissionPointer(false));
+            currentMission.MissionZone.ExitZoneEvent.AddListener(() => SwitchMissionPointer(true));
         }
     }
 

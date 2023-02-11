@@ -45,6 +45,7 @@ public class ActionZone : MonoBehaviour
             isActive = false;
             time = 0;
             userCollider = null;
+            ExitZoneEvent.Invoke();
         }
     }
 
