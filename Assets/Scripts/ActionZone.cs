@@ -11,14 +11,20 @@ public class ActionZone : MonoBehaviour
     private Collider userCollider;
     private float time;
     private bool isActive = false;
+    private CarUserControl carUserControl;
     public UnityEvent StayZoneEvent = new UnityEvent();
     public UnityEvent ExitZoneEvent = new UnityEvent();
 
+    private void Awake()
+    {
+        StayZoneEvent.AddListener(() => SwitchCarControl(true));
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<CarUserControl>() != null)
         {
+            carUserControl = other.GetComponent<CarUserControl>();
             time = 0;
             userCollider = other;
         }
@@ -35,6 +41,7 @@ public class ActionZone : MonoBehaviour
     {
         if (userCollider != null && userCollider == other)
         {
+            carUserControl = null;
             isActive = false;
             time = 0;
             userCollider = null;
@@ -48,5 +55,10 @@ public class ActionZone : MonoBehaviour
             isActive = true;
             StayZoneEvent.Invoke();
         }
+    }
+
+    public void SwitchCarControl(bool isStopped)
+    {
+        carUserControl.IsStopped = isStopped;
     }
 }

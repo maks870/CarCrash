@@ -18,6 +18,7 @@ public class Mission : MonoBehaviour
     {
         dialogue = GetComponent<Dialogue>();
         missionZone = GetComponent<ActionZone>();
+        dialogue.EndDialogueAction += () => missionZone.SwitchCarControl(false);
         missionZone.StayZoneEvent.AddListener(() => goalText.SetActive(false));
         missionZone.ExitZoneEvent.AddListener(() => goalText.SetActive(true));
         missionZone.StayZoneEvent.AddListener(dialogue.StartDialogue);

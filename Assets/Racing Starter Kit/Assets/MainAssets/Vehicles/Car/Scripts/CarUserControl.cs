@@ -18,11 +18,13 @@ namespace UnityStandardAssets.Vehicles.Car
         [SerializeField] private float normalFOV = 80f;
         [SerializeField] private float acceleratedFOV = 120f;
         [SerializeField] private float changeFOVStep;
+        private bool isStopped = false;
         private float taxiingSteer;
         private BaseInput input;
         private TargetPointer targetPointer;
         private Camera cam;
 
+        public bool IsStopped { set => isStopped = value; }
         public float TurnSteerAngle { get => turnSteerAngle; set => turnSteerAngle = value; }
 
         private void Awake()
@@ -55,12 +57,18 @@ namespace UnityStandardAssets.Vehicles.Car
                 ControlMove(currentSteer, input.VerticalAxis, input.VerticalAxis, input.HandBrake);
 
             }
-            else
+            else // Œ—ÕŒ¬Õ¿ﬂ ÀŒ√» ¿ ≈«ƒ€
             {
                 if (simpleSteerHelper)
                     SteerChanger();
 
-                ControlMove(input.HorizontalAxis, input.VerticalAxis, input.VerticalAxis, input.HandBrake);
+                if (!isStopped)
+                    ControlMove(input.HorizontalAxis, input.VerticalAxis, input.VerticalAxis, input.HandBrake);
+                else
+                {
+                    carController.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                    ControlMove(0, 0, -1, 1);
+                }
             }
         }
 
