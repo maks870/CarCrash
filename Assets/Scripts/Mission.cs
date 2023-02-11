@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Utility;
 using YG;
 
 public class Mission : MonoBehaviour
@@ -7,6 +8,8 @@ public class Mission : MonoBehaviour
     [SerializeField] private MapSO map;
     [HideInInspector] public GameObject goalText;
     [HideInInspector] public GameObject endGoalText;
+    private Transform camTransform;
+    private Transform lookAtTransform;
     private Dialogue dialogue;
     private ActionZone missionZone;
 
@@ -14,14 +17,27 @@ public class Mission : MonoBehaviour
     public Dialogue Dialogue => dialogue;
     public Transform MissionZone => missionZone.transform;
 
+    private void Awake()
+    {
+        camTransform = transform.GetChild(0);
+        lookAtTransform = transform.GetChild(1);
+    }
+
     public void Initialize()
     {
         dialogue = GetComponent<Dialogue>();
         missionZone = GetComponent<ActionZone>();
-        dialogue.EndDialogueAction += () => missionZone.SwitchCarControl(false);
+        DialogueCameraChanger dialogueCameraChanger = FindObjectOfType<DialogueCameraChanger>();
+
         missionZone.StayZoneEvent.AddListener(() => goalText.SetActive(false));
-        missionZone.ExitZoneEvent.AddListener(() => goalText.SetActive(true));
+        missionZone.StayZoneEvent.AddListener(() => dialogueCameraChanger.SetDialogueTarget(camTransform, lookAtTransform));
+        missionZone.StayZoneEvent.AddListener(() => GetComponent<MeshRenderer>().enabled = false);
         missionZone.StayZoneEvent.AddListener(dialogue.StartDialogue);
+        missionZone.ExitZoneEvent.AddListener(() => goalText.SetActive(true));
+
+        dialogue.EndDialogueAction += () => missionZone.SwitchCarControl(false);
+        dialogue.EndDialogueAction += dialogueCameraChanger.ResetDialogueTarget;
+
         if (map != null)
             dialogue.EndDialogueAction += StartMap;
     }
