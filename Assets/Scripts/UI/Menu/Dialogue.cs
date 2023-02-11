@@ -100,10 +100,9 @@ public class Dialogue : MonoBehaviour
         text.text = "";
         sentence.nextStage.gameObject.SetActive(false);
 
-        foreach (char sym in sentenceText)
+        foreach (char ch in sentenceText)
         {
-            Debug.Log(sym);
-            text.text += sym;
+            text.text += ch;
             yield return new WaitForSeconds(textOutputDelay);
         }
 
