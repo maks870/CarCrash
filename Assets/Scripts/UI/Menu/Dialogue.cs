@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using YG;
 
 public class Sentence
 {
@@ -23,6 +24,8 @@ public class Sentence
 
 public class Dialogue : MonoBehaviour
 {
+    const float textOutputDelay = 0.05f;
+
     [SerializeField] private GameObject dialogueUI;
     private Sentence[] sentences;
     private int currentSentence;
@@ -54,8 +57,10 @@ public class Dialogue : MonoBehaviour
         Debug.Log(sentences.Length);
         if (currentSentence >= 0 && currentSentence < sentences.Length)
         {
-            sentences[currentSentence].sentenceObj.gameObject.SetActive(true);
-            sentences[currentSentence].Subscribe(NextSentenceAction.Invoke);
+            Sentence sentence = sentences[currentSentence];
+            sentence.sentenceObj.gameObject.SetActive(true);
+            sentence.Subscribe(NextSentenceAction.Invoke);
+            StartCoroutine(SentenceOutput(sentence));
         }
 
         currentSentence++;
@@ -86,5 +91,22 @@ public class Dialogue : MonoBehaviour
         currentSentence = 0;
         NextSentenceAction += OnNextSentence;
         OnNextSentence();
+    }
+
+    IEnumerator SentenceOutput(Sentence sentence)
+    {
+        Text text = sentence.sentenceObj.GetComponentsInChildren<Text>()[1];
+        string sentenceText = text.text;
+        text.text = "";
+        sentence.nextStage.gameObject.SetActive(false);
+
+        foreach (char sym in sentenceText)
+        {
+            Debug.Log(sym);
+            text.text += sym;
+            yield return new WaitForSeconds(textOutputDelay);
+        }
+
+        sentence.nextStage.gameObject.SetActive(true);
     }
 }
