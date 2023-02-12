@@ -3,6 +3,7 @@ using YG;
 
 enum AdvertisementType
 {
+    NoLootboxAdd = 0,
     SingleAd = 1,
     DoubleAd = 2
 }
@@ -16,7 +17,7 @@ public class Shop : MonoBehaviour
     [SerializeField] private int mediumAdViews = 2;
     [SerializeField] private int lootboxCost = 5;
     [SerializeField] private GameObject openLootboxButton;
-    [SerializeField] private GameObject noLootboxImage;
+    [SerializeField] private GameObject noLootboxButton;
     [SerializeField] private LootBox lootbox;
     [SerializeField] private AwardUIController lootboxAwardUI;
     [SerializeField] private ShopUIController gemPresenterUI;
@@ -71,6 +72,11 @@ public class Shop : MonoBehaviour
                 }
 
                 gemPresenterUI.UpdateDoubleAdUI();
+                break;
+
+            case AdvertisementType.NoLootboxAdd:
+                EarningManager.AddLootbox();
+                UpdateUI();
                 break;
         }
 
@@ -141,7 +147,7 @@ public class Shop : MonoBehaviour
     {
         bool haveLootbox = YandexGame.savesData.lootboxes > 0;
         openLootboxButton.SetActive(haveLootbox);
-        noLootboxImage.SetActive(!haveLootbox);
+        noLootboxButton.SetActive(!haveLootbox);
     }
 
 
