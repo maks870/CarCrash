@@ -5,7 +5,6 @@ public class TargetPointer : MonoBehaviour
 
     [SerializeField] private Camera mainCamera;
     [SerializeField] private RectTransform pointerUI; // объект Image UI
-    [SerializeField] private float interfaceScale = 100;
     [SerializeField] private RectTransform canvas;
     [SerializeField] private Transform target;
     [SerializeField] private Vector3 offset = new Vector3(0, 0.5f, 0);

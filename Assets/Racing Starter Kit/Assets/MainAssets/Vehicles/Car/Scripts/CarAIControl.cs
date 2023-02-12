@@ -50,7 +50,6 @@ namespace UnityStandardAssets.Vehicles.Car
         private Transform accelTarget;
         private bool randomMove = false;
 
-        [SerializeField] private float avoidNearAngle = 60f;
         [SerializeField] private float avoidFarAngle = 100f;
         [SerializeField] private float avoidMinimumDistance = 2f;
         [SerializeField] private float avoidDifferenceDistance = 1f;
