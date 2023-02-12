@@ -2,30 +2,38 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class SOLoader
 {
-    public static List<T> LoadAllSO<T>() where T : ScriptableObject
+    public static void LoadAllSO(AssetLabelReference assetLabel)
     {
-        List<T> loadedSO = new List<T>();
-        Type t = typeof(T);
+        //List<T> loadedSO = new List<T>();
+        //Type t = typeof(T);
 
-        T[] scriptableObjects = Resources.LoadAll("ScriptableObjects/" + t.Name, t).Cast<T>().ToArray();
-        loadedSO.AddRange(scriptableObjects);
+        //T[] scriptableObjects = Resources.LoadAll("ScriptableObjects/" + t.Name, t).Cast<T>().ToArray();
+        //ScriptableObject[] scriptableObjects =
+        Addressables.LoadAssetsAsync<ScriptableObject>(assetLabel, (scriptableObjects) => { QEw(scriptableObjects); });
 
-        return loadedSO;
+        //loadedSO.AddRange(scriptableObjects);
+
     }
 
-    public static T LoadSO<T>(string name) where T : ScriptableObject
+    private static void QEw(ScriptableObject scriptableObject) 
     {
-        foreach (T scriptableObject in LoadAllSO<T>())
-        {
-            if (scriptableObject.name == name)
-                return scriptableObject;
-        }
 
-        return null;
     }
+
+    //public static T LoadSO<T>(string name) where T : ScriptableObject
+    //{
+    //    foreach (T scriptableObject in LoadAllSO<T>())
+    //    {
+    //        if (scriptableObject.name == name)
+    //            return scriptableObject;
+    //    }
+
+    //    return null;
+    //}
 
 
 

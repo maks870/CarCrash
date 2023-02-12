@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using YG;
 
 public class PlayerLoad : MonoBehaviour
@@ -8,6 +9,9 @@ public class PlayerLoad : MonoBehaviour
     [SerializeField] private CarColorSO defaultCarColor;
     [SerializeField] private CarModelSO defaultCarModel;
     [SerializeField] private MapSO defaultMap;
+    [SerializeField] AssetLabelReference assetColorSO;
+    [SerializeField] AssetLabelReference assetModelSO;
+    [SerializeField] AssetLabelReference assetCharacterSO;
     private CharacterModelSO currentCharacter;
     private CarColorSO currentCarColor;
     private CarModelSO currentCarModel;
@@ -27,13 +31,16 @@ public class PlayerLoad : MonoBehaviour
 
     private void Awake()
     {
-        List<CharacterModelSO> charactersSO = SOLoader.LoadAllSO<CharacterModelSO>();
-        List<CarColorSO> carColorsSO = SOLoader.LoadAllSO<CarColorSO>();
-        List<CarModelSO> carModelsSO = SOLoader.LoadAllSO<CarModelSO>();
+        //List<CharacterModelSO> charactersSO = SOLoader.LoadAllSO<CharacterModelSO>();
+        //List<CarColorSO> carColorsSO = SOLoader.LoadAllSO<CarColorSO>();
+        //List<CarModelSO> carModelsSO = SOLoader.LoadAllSO<CarModelSO>();
+        SOLoader.LoadAllSO(assetColorSO);
+        SOLoader.LoadAllSO(assetModelSO);
+        SOLoader.LoadAllSO(assetCharacterSO);
 
-        characters.AddRange(charactersSO);
-        carColors.AddRange(carColorsSO);
-        carModels.AddRange(carModelsSO);
+        //characters.AddRange(charactersSO);
+        //carColors.AddRange(carColorsSO);
+        //carModels.AddRange(carModelsSO);
     }
     public void LoadPlayerItems()
     {
