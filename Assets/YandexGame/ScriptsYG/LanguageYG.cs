@@ -3,8 +3,8 @@ using UnityEngine.UI;
 using System.IO;
 using System.Collections.Generic;
 
-
 #if UNITY_EDITOR
+using UnityEditor;
 using Newtonsoft.Json;
 using System.Collections;
 using System.Net;
@@ -13,7 +13,6 @@ using System;
 
 namespace YG
 {
-
     public class TokenInfo
     {
         public string iamToken { get; set; }
@@ -35,7 +34,7 @@ namespace YG
     {
         public Text textUIComponent;
         public TextMesh textMeshComponent;
-        public InfoYG infoYG;
+        [SerializeField] public InfoYG infoYG;
         [Space(10)]
         public string text;
         [Tooltip("RUSSIAN")]
@@ -48,12 +47,32 @@ namespace YG
         private static int hourCountForNewToken = 3;
         private static DateTime timeExpiresToken = DateTime.Now;
 
+        public InfoYG GetInfoYG()
+        {
+            YandexGame yg = (YandexGame)GameObject.FindObjectOfType<YandexGame>();
+
+            if (yg)
+            {
+                return yg.infoYG;
+            }
+            else
+            {
+#if UNITY_EDITOR
+                GameObject ygPrefab = (GameObject)AssetDatabase.LoadAssetAtPath("Assets/YandexGame/Prefabs/YandexGame.prefab", typeof(GameObject));
+                yg = ygPrefab.GetComponent<YandexGame>();
+                return yg.infoYG;
+#else
+                return null;
+#endif
+            }
+
+        }
+
         private void Awake()
         {
             // Раскомментируйте нижнюю строку, если вы получаете какие-либо ошибки связанные с InfoYG. В каких то случаях, это может помочь.
             // Uncomment the bottom line if you get any errors related to infoYG. In some cases, it may help.
             //Serialize();
-
             if (textUIComponent)
                 baseFontSize = textUIComponent.fontSize;
             else if (textMeshComponent)
@@ -65,7 +84,6 @@ namespace YG
         {
             textUIComponent = GetComponent<Text>();
             textMeshComponent = GetComponent<TextMesh>();
-            infoYG = GameObject.Find("YandexGame").GetComponent<YandexGame>().infoYG;
         }
 
         private void OnEnable()
@@ -181,7 +199,6 @@ namespace YG
                 s[24] = it;
                 s[25] = de;
                 s[26] = hi;
-
                 return s;
             }
             set
@@ -234,7 +251,7 @@ namespace YG
             StartCoroutine(TranslateEmptyFields(countLangAvailable));
         }
 
-        string TranslateGoogle(string translationTo = "en")
+        string Translate(string translationTo = "en")
         {
             string text;
 
@@ -301,9 +318,6 @@ namespace YG
 
         private string GetNewToken()
         {
-            Debug.Log(timeExpiresToken);
-            Debug.Log(token);
-
             //return token;
 
             DateTime dateTimeNow = DateTime.Now;
@@ -324,7 +338,7 @@ namespace YG
                     hourCount--;
                 }
 
-                Debug.Log($"До обновления токена еще {hourCount} часов {minuteCount} минут");
+                //Debug.Log($"До обновления токена еще {hourCount} часов {minuteCount} минут");
                 return token;
             }
 
@@ -359,12 +373,9 @@ namespace YG
 
             TokenInfo tokenInfo = JsonConvert.DeserializeObject<TokenInfo>(result);
 
-            Debug.Log("Новый токен");
             //timeExpiresToken = DateTime.ParseExact(tokenInfo.expiresAt, "O", System.Globalization.CultureInfo.CurrentCulture);
 
             token = tokenInfo.iamToken;
-
-            Debug.Log("Получен новый токен");
 
             return tokenInfo.iamToken;
         }
@@ -380,7 +391,7 @@ namespace YG
                 if (infoYG.LangArr()[i] && (languages[i] == null || languages[i] == ""))
                 {
                     bool complete = false;
-                    SetLang(i, TranslateGoogle(infoYG.LangName(i)));
+                    SetLang(i, Translate(infoYG.LangName(i)));
 
                     if (processTranslateLabel.Contains("error"))
                         processTranslateLabel = countLang + "/" + countLangAvailable + " error";

@@ -732,9 +732,9 @@ MonoBehaviour:
   fontNumber: 0
   uniqueFont: {fileID: 0}
   textHeight: 20
-  processTranslateLabel: 2/3 completed
+  processTranslateLabel: 3/3 completed
   componentTextField: 1
-  countLang: 2
+  countLang: 3
 --- !u!114 &5536777607083358758
 MonoBehaviour:
   m_ObjectHideFlags: 0

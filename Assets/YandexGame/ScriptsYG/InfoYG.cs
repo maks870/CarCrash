@@ -56,7 +56,7 @@ namespace YG
         public CallingLanguageCheck callingLanguageCheck;
 
         public enum TranslateMethod { AutoLocalization, Manual, CSVFile };
-        [Tooltip("Метод перевода. \nAutoLocalization - Автоматический перевод через интернет с помощью Google Translate \nManual - Ручной режим. Вы сами записываете перевод в компоненте LanguageYG \nCSVFile - Перевод с плмлщью Excel файла.")]
+        [Tooltip("Метод перевода. \nAutoLocalization - Автоматический перевод через интернет \nManual - Ручной режим. Вы сами записываете перевод в компоненте LanguageYG \nCSVFile - Перевод с плмлщью Excel файла.")]
         [ConditionallyVisible(nameof(LocalizationEnable))]
         public TranslateMethod translateMethod;
 

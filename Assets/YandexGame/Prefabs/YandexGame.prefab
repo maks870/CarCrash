@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseType: 3
-  pauseMethod: 0
+  pauseMethod: 1
   openAudioPause: 1
   openTimeScale: 0
   closeAudioPause: 0
