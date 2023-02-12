@@ -20,15 +20,21 @@ MonoBehaviour:
   - m_GUID: 4044f30eacdde2f45ab667c6d2b6bbd7
     m_Address: AbilityMine
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - SO
+    - Ability
   - m_GUID: bc2f5381aa10362408a231809927c0fe
     m_Address: AbilityMissle
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - SO
+    - Ability
   - m_GUID: 01b046ff4efe50e4b908738c634032bd
     m_Address: AbilityShield
     m_ReadOnly: 0
-    m_SerializedLabels: []
+    m_SerializedLabels:
+    - SO
+    - Ability
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: d84bdf84c78b0c0489a17cf42914ce37, type: 2}
   m_SchemaSet:

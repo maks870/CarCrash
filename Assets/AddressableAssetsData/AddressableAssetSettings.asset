@@ -47,7 +47,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f096a73c31ccb8742b9129ed50278661, type: 2}
   - {fileID: 11400000, guid: 77cac80282608fc4683e549c93ace77e, type: 2}
   - {fileID: 11400000, guid: e995612e2067e7b49bc06756d4c2a04c, type: 2}
-  - {fileID: 11400000, guid: cfa1c85fff028cb4f85abd9bb8c43c83, type: 2}
   - {fileID: 11400000, guid: 3c197b9634d66884faa28b3c16efb47b, type: 2}
   - {fileID: 11400000, guid: 175b6b45e5891f847ab319633785e7da, type: 2}
   - {fileID: 11400000, guid: 4e4d67d495cd0024fa30c6d10034f88c, type: 2}
@@ -95,6 +94,13 @@ MonoBehaviour:
   m_LabelTable:
     m_LabelNames:
     - default
+    - SO
+    - Ability
+    - Color
+    - CharacterModel
+    - Map
+    - CarModel
+    - CharacterPref
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 669e3f2779d5a7c41b7825b20e2f31b6, type: 2}
