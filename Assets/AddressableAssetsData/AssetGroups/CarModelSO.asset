@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: CarModelSO
+  m_EditorClassIdentifier: 
+  m_GroupName: CarModelSO
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 0ecffd8b3b5fd3a43ab05e3d0ec563e1
+  m_SerializeEntries:
+  - m_GUID: 948b7f7278c9cb54d990209d3bb5ed28
+    m_Address: Car1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 29fb4ce114bfab24e85fda017c377086
+    m_Address: Car2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e9e806e50d6003949b1f420876eee380
+    m_Address: Car3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 037cf8e7a9ed2df4fa4bbba940436c37
+    m_Address: Car4
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: d84bdf84c78b0c0489a17cf42914ce37, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 28045259b846240439031b39a66a9e52, type: 2}
+    - {fileID: 11400000, guid: b76c0cc6bdce7a7438bf82bb1ff81d04, type: 2}

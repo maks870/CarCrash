@@ -5,37 +5,37 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/General.unity
     guid: 570666e4e7b37ee439f425b1e1dce1ba
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SimpleTown.unity
     guid: 21ba8959b0b9c5e41889da424bb00b0b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tracks/Forest/11.unity
     guid: 36015eecdbb5c5048bb04548697e6595
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tracks/Forest/12.unity
     guid: 84884edfa8cb0cc458be679588835c78
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tracks/Forest/13.unity
     guid: a00eb35d3f4a37448817292bf0676c93
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tracks/Snow/21.unity
     guid: 70ffb6d0f977f3840b10f0f548027153
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tracks/Snow/22.unity
     guid: eec7ba7f03a2afa408e1fe31a1926a3c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tracks/Snow/23.unity
     guid: a5bb5ccbc2b6eb149baca4a565663b70
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tracks/Hell/31.unity
     guid: d02c686d95a718c4eaaada409bf27cb1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tracks/Hell/32.unity
     guid: 79e5dd72b10c0814ba19b534691f6fda
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tracks/Hell/33.unity
     guid: 19d7fbadce8550e41936c7f7e4000ff4
   m_configObjects:
