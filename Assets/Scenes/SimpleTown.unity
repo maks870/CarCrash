@@ -10817,7 +10817,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &46051112
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26504,7 +26504,7 @@ MonoBehaviour:
   m_Text: "\u042F \u0443\u0436\u0435 \u043F\u043E\u0434\u0433\u043E\u0442\u043E\u0432\u0438\u043B
     \u0434\u043B\u044F \u0442\u0435\u0431\u044F \u043B\u0443\u0447\u0448\u0443\u044E
     \u0442\u0440\u0430\u0441\u0441\u0443. \u0422\u044B \u0433\u043E\u0442\u043E\u0432
-    \u043A \u0437\u0430\u0435\u0437\u0434\u0443?\r\n"
+    \u043A \u0437\u0430\u0435\u0437\u0434\u0443?\r"
 --- !u!222 &407399199
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -26547,12 +26547,10 @@ MonoBehaviour:
   ru: "\u042F \u0443\u0436\u0435 \u043F\u043E\u0434\u0433\u043E\u0442\u043E\u0432\u0438\u043B
     \u0434\u043B\u044F \u0442\u0435\u0431\u044F \u043B\u0443\u0447\u0448\u0443\u044E
     \u0442\u0440\u0430\u0441\u0441\u0443. \u0422\u044B \u0433\u043E\u0442\u043E\u0432
-    \u043A \u0437\u0430\u0435\u0437\u0434\u0443?\r\n"
-  en: 'I''ve already prepared the best track for you. Are you ready to check in?
-
-'
+    \u043A \u0437\u0430\u0435\u0437\u0434\u0443?\r"
+  en: "I've already prepared the best track for you. Are you ready to check in?\r"
   tr: "Senin i\xE7in en iyi pisti \xE7oktan haz\u0131rlad\u0131m bile. Gelmeye haz\u0131r
-    m\u0131s\u0131n?\r\n"
+    m\u0131s\u0131n?\r"
   az: 
   be: 
   he: 

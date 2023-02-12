@@ -54,6 +54,7 @@ public class SceneTransition : MonoBehaviour
     private IEnumerator StartLoadScene(string sceneName)
     {
         panel.SetActive(true);
+        yield return new WaitForEndOfFrame();
         audioMixer.SetFloat("Master", -80);
         instance.animator.SetTrigger("sceneClosing");
 
