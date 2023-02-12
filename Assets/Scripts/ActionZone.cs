@@ -8,12 +8,10 @@ using UnityStandardAssets.Vehicles.Car;
 public class ActionZone : MonoBehaviour
 {
     [SerializeField] private float zoneEventDelay = 1;
-    private Collider userCollider;
     private float time;
     private bool isActive = false;
     private CarUserControl carUserControl;
     public UnityEvent StayZoneEvent = new UnityEvent();
-    public UnityEvent ExitZoneEvent = new UnityEvent();
 
     private void Awake()
     {
@@ -26,26 +24,24 @@ public class ActionZone : MonoBehaviour
         {
             carUserControl = other.GetComponent<CarUserControl>();
             time = 0;
-            userCollider = other;
         }
 
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (userCollider != null && userCollider == other)
+        if (other.GetComponent<CarUserControl>() != null)
             time += Time.deltaTime;
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (userCollider != null && userCollider == other)
+        if (other.GetComponent<CarUserControl>() != null)
         {
+            Debug.Log("Выход из зоны2");
             carUserControl = null;
             isActive = false;
             time = 0;
-            userCollider = null;
-            ExitZoneEvent.Invoke();
         }
     }
 

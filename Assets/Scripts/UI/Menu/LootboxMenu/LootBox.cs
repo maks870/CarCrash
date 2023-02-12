@@ -53,8 +53,15 @@ public class LootBox : MonoBehaviour, ITrainingWaiter
             tempItems.RemoveAll(item => item.Name == itemName);
         }
 
-        int randItemIndex = UnityEngine.Random.Range(0, tempItems.Count);
-        collectibleItem = tempItems[randItemIndex];
+        if (tempItems.Count != 0)
+        {
+            int randItemIndex = UnityEngine.Random.Range(0, tempItems.Count);
+            collectibleItem = tempItems[randItemIndex];
+        }
+        else
+        {
+            collectibleItem = null;
+        }
 
         if (rand <= gemDropChance)
             gemValue = UnityEngine.Random.Range(minDropGem, maxDropGem);
@@ -67,6 +74,7 @@ public class LootBox : MonoBehaviour, ITrainingWaiter
 
     public void Open()
     {
+        Debug.Log("Анимация лутбокса");
         animator.SetTrigger("Open");
     }
 
