@@ -63,7 +63,9 @@ public class AwardUIController : MonoBehaviour
         currentAward = 0;
         AwardPresenterUI.GetComponent<TargetPointer>().enabled = isLootboxAward;
         SwitchAward();
-        AwardPresenterUI.SetActive(true);
+
+        if (awards.Count != 0)
+            AwardPresenterUI.SetActive(true);
     }
     public void CloseAwards()
     {
