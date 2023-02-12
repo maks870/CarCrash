@@ -98,7 +98,8 @@ public class MissionManager : MonoBehaviour
             currentMission.goalText.SetActive(true);
             currentMission.gameObject.SetActive(true);
             currentMission.MissionZone.StayZoneEvent.AddListener(() => SwitchMissionPointer(false));
-            currentMission.MissionZone.ExitZoneEvent.AddListener(() => SwitchMissionPointer(true));
+            currentMission.Dialogue.EndDialogueAction += () => SwitchMissionPointer(true);
+            currentMission.Dialogue.EndDialogueAction += () => Debug.Log("Выход из зоны");
         }
     }
 
