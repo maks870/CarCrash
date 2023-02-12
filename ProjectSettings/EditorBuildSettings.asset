@@ -38,4 +38,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tracks/Hell/33.unity
     guid: 19d7fbadce8550e41936c7f7e4000ff4
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: bba4aacf0debdaa41912006e387db0ee,
+      type: 2}
