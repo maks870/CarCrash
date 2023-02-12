@@ -22,91 +22,91 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - SO
-    - Color
+    - CarColorSO
   - m_GUID: c34c41fe3bda7f743a49160cb9391e7f
     m_Address: Color 10
     m_ReadOnly: 0
     m_SerializedLabels:
     - SO
-    - Color
+    - CarColorSO
   - m_GUID: 6ab476c8fef299d4781e7f0bf69014f2
     m_Address: Color 11
     m_ReadOnly: 0
     m_SerializedLabels:
     - SO
-    - Color
+    - CarColorSO
   - m_GUID: c8237522dbe5f1346bd1952585c5f55c
     m_Address: Color 12
     m_ReadOnly: 0
     m_SerializedLabels:
     - SO
-    - Color
+    - CarColorSO
   - m_GUID: a9cff1062a08f0242984ef1d98f0de97
     m_Address: Color 13
     m_ReadOnly: 0
     m_SerializedLabels:
     - SO
-    - Color
+    - CarColorSO
   - m_GUID: 5f660cf88c6aae445a5e241dc23b345c
     m_Address: Color 14
     m_ReadOnly: 0
     m_SerializedLabels:
     - SO
-    - Color
+    - CarColorSO
   - m_GUID: aa84066cb0e955c4eb4191e9033e14a6
     m_Address: Color 15
     m_ReadOnly: 0
     m_SerializedLabels:
     - SO
-    - Color
+    - CarColorSO
   - m_GUID: 17b37de52e4e9c8488b88cad8d0e0008
     m_Address: Color 2
     m_ReadOnly: 0
     m_SerializedLabels:
     - SO
-    - Color
+    - CarColorSO
   - m_GUID: 5dca8a0d53fbd8e4e8abba437e8e4427
     m_Address: Color 3
     m_ReadOnly: 0
     m_SerializedLabels:
     - SO
-    - Color
+    - CarColorSO
   - m_GUID: 2041390e08077114b8dc86c585acce47
     m_Address: Color 4
     m_ReadOnly: 0
     m_SerializedLabels:
     - SO
-    - Color
+    - CarColorSO
   - m_GUID: 8f8e1efe49ca3c544a0625a54bc3279a
     m_Address: Color 5
     m_ReadOnly: 0
     m_SerializedLabels:
     - SO
-    - Color
+    - CarColorSO
   - m_GUID: cf05da96c1b5b114d94aa240de947ea7
     m_Address: Color 6
     m_ReadOnly: 0
     m_SerializedLabels:
     - SO
-    - Color
+    - CarColorSO
   - m_GUID: 722cd0e608affff4fb32129ae02199ab
     m_Address: Color 7
     m_ReadOnly: 0
     m_SerializedLabels:
     - SO
-    - Color
+    - CarColorSO
   - m_GUID: 202c5b6a7dce7024fa93b17be6090111
     m_Address: Color 8
     m_ReadOnly: 0
     m_SerializedLabels:
     - SO
-    - Color
+    - CarColorSO
   - m_GUID: c1b658433f04a48418c0a33e6807f725
     m_Address: Color 9
     m_ReadOnly: 0
     m_SerializedLabels:
     - SO
-    - Color
+    - CarColorSO
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: d84bdf84c78b0c0489a17cf42914ce37, type: 2}
   m_SchemaSet:

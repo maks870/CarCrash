@@ -45,8 +45,9 @@ namespace YG
 
         private static string token;
         private static int hourCountForNewToken = 3;
+#if UNITY_EDITOR
         private static DateTime timeExpiresToken = DateTime.Now;
-
+#endif
         public InfoYG GetInfoYG()
         {
             YandexGame yg = (YandexGame)GameObject.FindObjectOfType<YandexGame>();

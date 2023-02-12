@@ -21,55 +21,55 @@ MonoBehaviour:
     m_Address: 11
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Map
+    - MapSO
     - SO
   - m_GUID: 01646824a0eb5a044b4ee5f24d1877d1
     m_Address: 12
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Map
+    - MapSO
     - SO
   - m_GUID: e1bb2162d2a31c74eb7b4c770d1df7de
     m_Address: 13
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Map
+    - MapSO
     - SO
   - m_GUID: e5944e0f766d1084195d033e7f780d82
     m_Address: 21
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Map
+    - MapSO
     - SO
   - m_GUID: 0fba57a6319a98543899a7ebf536c3e3
     m_Address: 22
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Map
+    - MapSO
     - SO
   - m_GUID: af3ca91b6f2bacd4bb87473fb1d9fedc
     m_Address: 23
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Map
+    - MapSO
     - SO
   - m_GUID: bbe1906494970b44ba5c26f632c30b90
     m_Address: 31
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Map
+    - MapSO
     - SO
   - m_GUID: c37d8d48f341b0b4980223ba80caf5fa
     m_Address: 32
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Map
+    - MapSO
     - SO
   - m_GUID: 5995e346cac295641949717414cf0f43
     m_Address: 33
     m_ReadOnly: 0
     m_SerializedLabels:
-    - Map
+    - MapSO
     - SO
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: d84bdf84c78b0c0489a17cf42914ce37, type: 2}

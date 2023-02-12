@@ -1,27 +1,38 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-public class SOLoader
+public class SOLoader : MonoBehaviour
 {
-    public static void LoadAllSO(AssetLabelReference assetLabel)
+    public static SOLoader instance;
+
+    private void Awake()
     {
-        //List<T> loadedSO = new List<T>();
-        //Type t = typeof(T);
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this);
 
-        //T[] scriptableObjects = Resources.LoadAll("ScriptableObjects/" + t.Name, t).Cast<T>().ToArray();
-        //ScriptableObject[] scriptableObjects =
-        Addressables.LoadAssetsAsync<ScriptableObject>(assetLabel, (scriptableObjects) => { QEw(scriptableObjects); });
-
-        //loadedSO.AddRange(scriptableObjects);
-
+        DontDestroyOnLoad(this.gameObject);
     }
 
-    private static void QEw(ScriptableObject scriptableObject) 
+    public static List<T> LoadAllSO<T>() where T : ScriptableObject
     {
+        string assetLabel = typeof(T).Name;
+        List <T> obj = new List<T>();
+        var handle = Addressables.LoadAssetsAsync<T>(assetLabel, scriptableObject => obj.Add(scriptableObject));
+        handle.WaitForCompletion();
 
+        return obj;
+    }
+
+    public static T LoadSO<T>(string name) where T : ScriptableObject
+    {
+        var handle = Addressables.LoadAssetAsync<T>(name);
+        handle.WaitForCompletion();
+
+        return handle.Result;
     }
 
     //public static T LoadSO<T>(string name) where T : ScriptableObject
