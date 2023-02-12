@@ -20,12 +20,12 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.8479221, g: 0.5896226, b: 1, a: 1}
-  m_AmbientEquatorColor: {r: 0.6132076, g: 0.39048594, b: 0.4101004, a: 1}
-  m_AmbientGroundColor: {r: 0.2206746, g: 0.33779764, b: 0.8207547, a: 1}
+  m_AmbientSkyColor: {r: 0.8117647, g: 0.83137256, b: 0.6392157, a: 1}
+  m_AmbientEquatorColor: {r: 0.93333334, g: 0.92156863, b: 0.7176471, a: 1}
+  m_AmbientGroundColor: {r: 0.93333334, g: 0.7176471, b: 0.29411766, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 1
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_SubtractiveShadowColor: {r: 0.54901963, g: 0.54901963, b: 0.54901963, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 70ad4885b1f34044eb595ed36d9f1ef1, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -9173,9 +9173,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  ExitZoneEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!23 &15803484
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11652,9 +11649,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  ExitZoneEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!64 &60199570
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -12604,9 +12598,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  ExitZoneEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!64 &85072021
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -19233,9 +19224,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  ExitZoneEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!64 &242705166
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -19395,9 +19383,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  ExitZoneEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!64 &242999174
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23071,9 +23056,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  ExitZoneEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!64 &336655304
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -24754,9 +24736,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  ExitZoneEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!64 &370463585
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -26705,9 +26684,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  ExitZoneEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!64 &410332995
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -28739,9 +28715,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  ExitZoneEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!64 &456692467
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -37966,9 +37939,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  ExitZoneEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!64 &696231455
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -38904,9 +38874,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  ExitZoneEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!64 &721828582
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -46044,9 +46011,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  ExitZoneEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!64 &897327014
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -48254,9 +48218,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  ExitZoneEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!64 &941316303
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -50502,9 +50463,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  ExitZoneEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!64 &1012200857
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -59776,9 +59734,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  ExitZoneEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!64 &1216663863
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -64127,9 +64082,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  ExitZoneEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!64 &1317862471
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -68440,9 +68392,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  ExitZoneEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!64 &1432717664
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -69710,9 +69659,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  ExitZoneEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!64 &1455558376
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -81150,9 +81096,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  ExitZoneEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!64 &1758452599
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -83552,9 +83495,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  ExitZoneEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!64 &1816402833
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -90213,9 +90153,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  ExitZoneEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!64 &1980757468
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -93395,9 +93332,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  ExitZoneEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!64 &2041115496
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -95487,9 +95421,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  ExitZoneEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!64 &2077663670
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -98905,9 +98836,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  ExitZoneEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!64 &2142318682
 MeshCollider:
   m_ObjectHideFlags: 0
