@@ -35,7 +35,13 @@ public class LvlMenu : MonoBehaviour
     public void Exit()
     {
         SetPause(false);
-        SceneTransition.SwitchScene(0);//so it will restart the game's scene
+        SceneTransition.SwitchScene(0);
+    }
+
+    public void ExitInCity()
+    {
+        SetPause(false);
+        SceneTransition.SwitchScene(1);
     }
 
     public void Pause()

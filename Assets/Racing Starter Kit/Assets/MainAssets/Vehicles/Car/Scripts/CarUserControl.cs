@@ -11,7 +11,6 @@ namespace UnityStandardAssets.Vehicles.Car
         [SerializeField] private bool hardSteerHelper = false;
         [SerializeField] [Range(0, 1)] private float taxiingHelper;
         [SerializeField] private float m_SteerSensitivity = 0.05f;
-        [SerializeField] private float targetMarkHeight = 1f;
 
         [SerializeField] private float normalSteerAngle = 15f;
         [SerializeField] private float turnSteerAngle = 25f;

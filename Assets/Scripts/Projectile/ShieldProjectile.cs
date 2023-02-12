@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ShieldProjectile : MonoBehaviour
 {
-    private Animator animator;
+    //private Animator animator;
     private int isProtected = 0;
     private MeshRenderer meshRenderer;
     private float lifeTime;
@@ -26,13 +26,13 @@ public class ShieldProjectile : MonoBehaviour
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
         meshRenderer = GetComponent<MeshRenderer>();
     }
     public void Activate()
     {
         StartCoroutine(ShieldTimer(lifeTime));
-        animator.SetBool(0, true);
+        //animator.SetBool(0, true);
     }
     public void Deactivate()
     {
@@ -44,7 +44,7 @@ public class ShieldProjectile : MonoBehaviour
         if (isProtected == 0)
         {
             meshRenderer.enabled = false;
-            animator.SetBool(0, false);
+            //animator.SetBool(0, false);
         }
     }
 

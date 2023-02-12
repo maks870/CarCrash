@@ -31,7 +31,7 @@ namespace UnityStandardAssets.Vehicles.Car
         [Range(0, 1)] [SerializeField] private float m_TractionControl; // 0 is no traction control, 1 is full interference
         [SerializeField] public float m_FullTorqueOverAllWheels;
         [SerializeField] private float m_ReverseTorque;
-        [SerializeField] private float m_MaxHandbrakeTorque;
+        //[SerializeField] private float m_MaxHandbrakeTorque;
         [SerializeField] private float m_Downforce = 100f;
         [SerializeField] private SpeedType m_SpeedType;
         [SerializeField] public float m_Topspeed = 200;
@@ -41,14 +41,14 @@ namespace UnityStandardAssets.Vehicles.Car
         [SerializeField] private float m_BrakeTorque;
 
         private Quaternion[] m_WheelMeshLocalRotations;
-        private Vector3 m_Prevpos, m_Pos;
+        //private Vector3 m_Prevpos, m_Pos;
         private float m_SteerAngle;
         private int m_GearNum;
         private float m_GearFactor;
         private float m_OldRotation;
         private float m_CurrentTorque;
         private Rigidbody m_Rigidbody;
-        private const float k_ReversingThreshold = 0.01f;
+        //private const float k_ReversingThreshold = 0.01f;
         private bool handbrakeOn = false;
         private bool isAccelerated = false;
         private bool isOvertaking = false;
@@ -75,7 +75,7 @@ namespace UnityStandardAssets.Vehicles.Car
             }
             m_WheelColliders[0].attachedRigidbody.centerOfMass = m_CentreOfMassOffset;
 
-            m_MaxHandbrakeTorque = float.MaxValue;
+            //m_MaxHandbrakeTorque = float.MaxValue;
 
             m_Rigidbody = GetComponent<Rigidbody>();
             m_CurrentTorque = m_FullTorqueOverAllWheels - (m_TractionControl * m_FullTorqueOverAllWheels);

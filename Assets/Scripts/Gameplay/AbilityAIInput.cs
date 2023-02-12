@@ -24,7 +24,6 @@ public class AbilityAIInput : MonoBehaviour
     public CarAIControl CarAIControl { set => carAIControl = value; }
 
     public delegate void AbilityUseDecision(int numberAbility);
-    public event AbilityUseDecision UseDecisionEvent;
 
     private void Start()
     {
@@ -136,8 +135,6 @@ public class AbilityAIInput : MonoBehaviour
 
         if (abilityIndex == null)
             return;
-
-        bool decision = FinalDecision((int)abilityIndex);
     }
 
     private void ShieldDesicion()//Логика для щита
@@ -146,9 +143,6 @@ public class AbilityAIInput : MonoBehaviour
 
         if (abilityIndex == null)
             return;
-
-        bool decision = FinalDecision((int)abilityIndex);
-
     }
 
     public void SetAbilities(List<AbilitySO> abilities)
