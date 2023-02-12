@@ -126,8 +126,11 @@ public class Shop : MonoBehaviour
         if (gemValue != 0)
             EarningManager.AddGem(gemValue);
 
-        YandexGame.savesData.playerWrapper.collectibles.Add(collectibleItem.Name);
-        YandexGame.savesData.playerWrapper.newCollectibles.Add(collectibleItem.Name);
+        if (collectibleItem != null)
+        {
+            YandexGame.savesData.playerWrapper.collectibles.Add(collectibleItem.Name);
+            YandexGame.savesData.playerWrapper.newCollectibles.Add(collectibleItem.Name);
+        }
 
         YandexGame.SaveProgress();
 
