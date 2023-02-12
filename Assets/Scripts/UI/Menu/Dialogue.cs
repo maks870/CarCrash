@@ -95,13 +95,28 @@ public class Dialogue : MonoBehaviour
     IEnumerator SentenceOutput(Sentence sentence)
     {
         Text text = sentence.sentenceObj.GetComponentsInChildren<Text>()[1];
+
         string sentenceText = text.text;
+        int textLenght = sentenceText.Length;
         text.text = "";
+
+        for (int i = 0; i < textLenght; i++)
+        {
+            text.text += " ";
+        }
+        Debug.Log("Длина массива пустых символов " + text.text.Length);
+        Debug.Log("Длина массива пустых символов " + sentenceText.Length + "|" + sentenceText + "|");
+
         sentence.nextStage.gameObject.SetActive(false);
 
-        foreach (char ch in sentenceText)
+        for (int i = 0; i < sentenceText.Length; i++)
         {
-            text.text += ch;
+            char[] charText = text.text.ToCharArray();
+            Debug.Log("Длина массива пустых символов " + text.text.Length + "|" + text.text + "|");
+            char[] charSentence = sentenceText.ToCharArray();
+            charText[i] = charSentence[i];
+            string newText = charText.ToString();
+            text.text = newText;
             yield return new WaitForSeconds(textOutputDelay);
         }
 
