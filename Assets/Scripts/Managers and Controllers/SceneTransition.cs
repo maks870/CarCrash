@@ -42,11 +42,16 @@ public class SceneTransition : MonoBehaviour
     {
         panel.SetActive(false);
         endAnimation = false;
+        if (!unloaded) 
+        {
+            Addressables.UnloadSceneAsync(handle, true);
+            unloaded = true;
+        }
     }
 
     public static void SwitchScene(string sceneName)
     {
-
+        instance.unloaded = false;
         instance.StartCoroutine(instance.SceneLoadComplete(sceneName));
     }
 
