@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 //this script is used in the Play button from the first menu and the Continue button when you finish the race
 public class LvlMenu : MonoBehaviour
@@ -35,13 +36,13 @@ public class LvlMenu : MonoBehaviour
     public void Exit()
     {
         SetPause(false);
-        SceneTransition.SwitchScene(0);
+        SceneTransition.SwitchScene("General");
     }
 
     public void ExitInCity()
     {
         SetPause(false);
-        SceneTransition.SwitchScene(1);
+        SceneTransition.SwitchScene("SimpleTown");
     }
 
     public void Pause()

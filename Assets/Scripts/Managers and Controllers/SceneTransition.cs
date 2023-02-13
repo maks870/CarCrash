@@ -1,6 +1,9 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.Audio;
+using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -9,6 +12,8 @@ public class SceneTransition : MonoBehaviour
     [SerializeField] private Image loadingImage;
     [SerializeField] private GameObject panel;
     [SerializeField] private AudioMixer audioMixer;
+    private AsyncOperationHandle<SceneInstance> handle;
+    private bool unloaded;
     private bool endAnimation = false;
     private Animator animator;
     public static SceneTransition instance;
@@ -19,7 +24,7 @@ public class SceneTransition : MonoBehaviour
 
     private void OnDisable()
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     private void Start()
@@ -41,33 +46,32 @@ public class SceneTransition : MonoBehaviour
 
     public static void SwitchScene(string sceneName)
     {
-        instance.StartCoroutine(instance.StartLoadScene(sceneName));
+
+        instance.StartCoroutine(instance.SceneLoadComplete(sceneName));
     }
 
-    public static void SwitchScene(int idScene)
+    private IEnumerator SceneLoadComplete(string sceneName)
     {
-        string scenePath = SceneUtility.GetScenePathByBuildIndex(idScene);
-        string sceneName = System.IO.Path.GetFileNameWithoutExtension(scenePath);
-        SwitchScene(sceneName);
-    }
-
-    private IEnumerator StartLoadScene(string sceneName)
-    {
-        panel.SetActive(true);
-        yield return new WaitForEndOfFrame();
-        audioMixer.SetFloat("Master", -80);
+        instance.panel.SetActive(true);
+        instance.audioMixer.SetFloat("Master", -80);
         instance.animator.SetTrigger("sceneClosing");
+        yield return new WaitForEndOfFrame();
 
-        AsyncOperation sceneOperation = SceneManager.LoadSceneAsync(sceneName);
-        sceneOperation.allowSceneActivation = false;
+        instance.handle = Addressables.LoadSceneAsync(sceneName, LoadSceneMode.Single, false);
 
-        while (sceneOperation.progress < 90 && !endAnimation)
+        while (!endAnimation)
         {
             yield return null;
         }
 
-        sceneOperation.allowSceneActivation = true;
+        while (handle.Status != AsyncOperationStatus.Succeeded) 
+        {
+            yield return null;
+        }
+
+        handle.Result.ActivateAsync();
     }
+
     public void EndPreload()
     {
     }
