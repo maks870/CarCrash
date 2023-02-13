@@ -36,6 +36,7 @@ public class PlayerLoad : MonoBehaviour
         carColors.AddRange(carColorsSO);
         carModels.AddRange(carModelsSO);
     }
+
     public void LoadPlayerItems()
     {
 
@@ -47,7 +48,6 @@ public class PlayerLoad : MonoBehaviour
 
         if (carModels.Count != 0)
             currentCarModel = carModels.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCarModelItem);
-
     }
 
     private void OnDestroy()

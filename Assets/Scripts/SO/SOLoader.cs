@@ -24,7 +24,7 @@ public class SOLoader : MonoBehaviour
         List<T> obj = new List<T>();
         AsyncOperationHandle<IList<T>> handle = Addressables.LoadAssetsAsync<T>(assetLabel, scriptableObject => obj.Add(scriptableObject));
         handle.WaitForCompletion();
-
+        Addressables.Release(handle);
         return obj;
     }
 
@@ -32,33 +32,27 @@ public class SOLoader : MonoBehaviour
     {
         AsyncOperationHandle<T> handle = Addressables.LoadAssetAsync<T>(name);
         handle.WaitForCompletion();
-
-        return handle.Result;
+        T obj = handle.Result;
+        Addressables.Release(handle);
+        return obj;
     }
 
-    public static GameObject LoadAndCreate(AssetReference assetReference, Transform parent)
-    {
-        GameObject gameObject;
-
-
-
-        AsyncOperationHandle<GameObject> handle = assetReference.InstantiateAsync(parent);
-        handle.WaitForCompletion();
-        gameObject = handle.Result;
-
-        return gameObject;
-
-    }
-
-    public static T LoadComponent<T>(AssetReference assetReference)
+    public static T LoadAsset<T>(AssetReference assetReference)
     {
         AsyncOperationHandle<T> handle = assetReference.LoadAssetAsync<T>();
         handle.WaitForCompletion();
-        T compontent = handle.Result;
-
-        return compontent;
-
+        T obj = handle.Result;
+        assetReference.ReleaseAsset();
+        return obj;
     }
+
+    //public static void ReleaseSO<T>(List<T> assetList)
+    //{
+    //    for (int i=0; i< assetList.Count; i++)
+    //    { 
+    //    assetList[i].
+    //    }
+    //}
 
     //public static T LoadSO<T>(string name) where T : ScriptableObject
     //{

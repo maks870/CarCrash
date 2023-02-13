@@ -163,12 +163,11 @@ public class CharacterModelSwitcher : MonoBehaviour
 
     public void SetCurrentCharacter(CharacterModelSO characterCollectible)
     {
-        GameObject character = SOLoader.LoadAndCreate(characterCollectible.AssetReference, currentCharacterTransform);
-        character.transform.parent = null;
-
+        GameObject character = SOLoader.LoadAsset<GameObject>(characterCollectible.AssetReference);
+        GameObject newCharacter = Instantiate(character, currentCharacterTransform);
+        newCharacter.transform.parent = null;
         Destroy(currentCharacterTransform.gameObject);
-
-        tabSwitcher.UpdateCurrentCharacter(character.transform);
+        tabSwitcher.UpdateCurrentCharacter(newCharacter.transform);
         currentCharacter = characterCollectible;
         tabSwitcher.CurrentSwitcher = this;
         SelectCurrentButton();
