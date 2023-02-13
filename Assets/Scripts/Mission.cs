@@ -33,7 +33,6 @@ public class Mission : MonoBehaviour
         missionZone.StayZoneEvent.AddListener(() => dialogueCameraChanger.SetDialogueTarget(camTransform, lookAtTransform));
         missionZone.StayZoneEvent.AddListener(() => GetComponent<MeshRenderer>().enabled = false);
         missionZone.StayZoneEvent.AddListener(dialogue.StartDialogue);
-        dialogue.EndDialogueAction += () => goalText.SetActive(true);
         dialogue.EndDialogueAction += () => missionZone.SwitchCarControl(false);
         dialogue.EndDialogueAction += dialogueCameraChanger.ResetDialogueTarget;
 
