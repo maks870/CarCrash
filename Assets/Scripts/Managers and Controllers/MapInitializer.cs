@@ -31,13 +31,13 @@ public class MapInitializer : MonoBehaviour
         carColor = SOLoader.LoadSO<CarColorSO>(YandexGame.savesData.playerWrapper.currentCarColorItem);
         carModel = SOLoader.LoadSO<CarModelSO>(YandexGame.savesData.playerWrapper.currentCarModelItem);
 
-        Instantiate(character.Prefab, characterModel.transform.parent);
+        SOLoader.LoadAndCreate(character.AssetReference, characterModel.transform.parent);
         Destroy(characterModel.gameObject);
 
         carObj.GetComponent<CarController>().m_FullTorqueOverAllWheels = carModel.Acceleration;
         carObj.GetComponent<CarController>().Handability = carModel.Handleability;
         carRenderer.material.mainTexture = carColor.Texture;
-        carFilter.mesh = carModel.Mesh;
+        carFilter.mesh = SOLoader.LoadComponent<Mesh>(carModel.MeshAsset);
         soundController.Initialize();
     }
 

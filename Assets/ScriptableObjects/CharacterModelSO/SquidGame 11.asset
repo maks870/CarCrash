@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quality: 0
   sprite: {fileID: 21300000, guid: 1c619822b386e334e839eca32bb53f8c, type: 3}
-  prefab: {fileID: 5962661230516602851, guid: b3e082950c8da6540afbc6082e9f950f, type: 3}
+  assetReference:
+    m_AssetGUID: b3e082950c8da6540afbc6082e9f950f
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
   characterType: 3

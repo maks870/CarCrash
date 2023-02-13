@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public enum CharacterType
 {
@@ -13,11 +14,13 @@ public enum CharacterType
 public class CharacterModelSO : CollectibleSO
 {
     [SerializeField] private Sprite sprite;
-    [SerializeField] private GameObject prefab;
+    [SerializeField] private AssetReference assetReference;
     [SerializeField] private CharacterType characterType;
 
     public override string Name { get => name; }
     public Sprite Sprite => sprite;
-    public GameObject Prefab => prefab;
+    public AssetReference AssetReference => assetReference;
     public CharacterType CharacterType => characterType;
+
+
 }

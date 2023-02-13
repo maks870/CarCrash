@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: CarsPrefabs
+  m_EditorClassIdentifier: 
+  m_GroupName: CarsPrefabs
+  m_Data:
+    m_SerializedData: []
+  m_GUID: b0dc34e6db0905040a567ea55729b50f
+  m_SerializeEntries:
+  - m_GUID: 64ad674b60353844884a4b72d11997af
+    m_Address: Assets/Models/cars/car_16.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CarModel
+  - m_GUID: a0423db497cf8ed40883b7a19a3aa97a
+    m_Address: Assets/Models/cars/car_12.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CarModel
+  - m_GUID: 1e2dd3ae7e65373409bebde255714c27
+    m_Address: Assets/Models/cars/car_2.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CarModel
+  - m_GUID: 952d3bda5262d2146a71979c27c0b918
+    m_Address: Assets/Models/cars/car_1.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - CarModel
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: d84bdf84c78b0c0489a17cf42914ce37, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 893d4e0442092d945a1f3067c94d7919, type: 2}
+    - {fileID: 11400000, guid: 3aa38b31da1eead4dbf3bf2da99baacb, type: 2}

@@ -168,7 +168,7 @@ public class CarModelSwitcher : MonoBehaviour
 
     public void SetCurrentModel(CarModelSO characterCollectible)
     {
-        currentMeshFilter.mesh = characterCollectible.Mesh;
+        currentMeshFilter.mesh = SOLoader.LoadComponent<Mesh>(characterCollectible.MeshAsset);
         currentCarModel = characterCollectible;
         SelectCurrentButton();
         UpdateCarStatWindow();

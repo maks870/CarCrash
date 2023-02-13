@@ -16,4 +16,9 @@ MonoBehaviour:
   acceleration: 300
   handleability: 0.35
   sprite: {fileID: 21300000, guid: 771dae26753785a4b8ebdc87ce15ec41, type: 3}
-  mesh: {fileID: -8545447256379345787, guid: 952d3bda5262d2146a71979c27c0b918, type: 3}
+  meshAsset:
+    m_AssetGUID: 952d3bda5262d2146a71979c27c0b918
+    m_SubObjectName: body
+    m_SubObjectType: UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    m_EditorAssetChanged: 0

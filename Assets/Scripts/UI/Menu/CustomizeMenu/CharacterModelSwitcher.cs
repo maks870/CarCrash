@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using YG;
 
 public class CharacterModelSwitcher : MonoBehaviour
@@ -162,9 +163,11 @@ public class CharacterModelSwitcher : MonoBehaviour
 
     public void SetCurrentCharacter(CharacterModelSO characterCollectible)
     {
-        GameObject character = Instantiate(characterCollectible.Prefab, currentCharacterTransform);
+        GameObject character = SOLoader.LoadAndCreate(characterCollectible.AssetReference, currentCharacterTransform);
         character.transform.parent = null;
+
         Destroy(currentCharacterTransform.gameObject);
+
         tabSwitcher.UpdateCurrentCharacter(character.transform);
         currentCharacter = characterCollectible;
         tabSwitcher.CurrentSwitcher = this;

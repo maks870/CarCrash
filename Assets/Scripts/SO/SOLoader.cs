@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class SOLoader : MonoBehaviour
 {
@@ -20,8 +21,8 @@ public class SOLoader : MonoBehaviour
     public static List<T> LoadAllSO<T>() where T : ScriptableObject
     {
         string assetLabel = typeof(T).Name;
-        List <T> obj = new List<T>();
-        var handle = Addressables.LoadAssetsAsync<T>(assetLabel, scriptableObject => obj.Add(scriptableObject));
+        List<T> obj = new List<T>();
+        AsyncOperationHandle<IList<T>> handle = Addressables.LoadAssetsAsync<T>(assetLabel, scriptableObject => obj.Add(scriptableObject));
         handle.WaitForCompletion();
 
         return obj;
@@ -29,10 +30,34 @@ public class SOLoader : MonoBehaviour
 
     public static T LoadSO<T>(string name) where T : ScriptableObject
     {
-        var handle = Addressables.LoadAssetAsync<T>(name);
+        AsyncOperationHandle<T> handle = Addressables.LoadAssetAsync<T>(name);
         handle.WaitForCompletion();
 
         return handle.Result;
+    }
+
+    public static GameObject LoadAndCreate(AssetReference assetReference, Transform parent)
+    {
+        GameObject gameObject;
+
+
+
+        AsyncOperationHandle<GameObject> handle = assetReference.InstantiateAsync(parent);
+        handle.WaitForCompletion();
+        gameObject = handle.Result;
+
+        return gameObject;
+
+    }
+
+    public static T LoadComponent<T>(AssetReference assetReference)
+    {
+        AsyncOperationHandle<T> handle = assetReference.LoadAssetAsync<T>();
+        handle.WaitForCompletion();
+        T compontent = handle.Result;
+
+        return compontent;
+
     }
 
     //public static T LoadSO<T>(string name) where T : ScriptableObject
