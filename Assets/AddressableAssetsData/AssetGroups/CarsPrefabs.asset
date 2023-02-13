@@ -18,22 +18,22 @@ MonoBehaviour:
   m_GUID: b0dc34e6db0905040a567ea55729b50f
   m_SerializeEntries:
   - m_GUID: 64ad674b60353844884a4b72d11997af
-    m_Address: Assets/Models/cars/car_16.fbx
+    m_Address: car_16
     m_ReadOnly: 0
     m_SerializedLabels:
     - CarModelSO
   - m_GUID: a0423db497cf8ed40883b7a19a3aa97a
-    m_Address: Assets/Models/cars/car_12.fbx
+    m_Address: car_12
     m_ReadOnly: 0
     m_SerializedLabels:
     - CarModelSO
   - m_GUID: 1e2dd3ae7e65373409bebde255714c27
-    m_Address: Assets/Models/cars/car_2.fbx
+    m_Address: car_2
     m_ReadOnly: 0
     m_SerializedLabels:
     - CarModelSO
   - m_GUID: 952d3bda5262d2146a71979c27c0b918
-    m_Address: Assets/Models/cars/car_1.fbx
+    m_Address: car_1
     m_ReadOnly: 0
     m_SerializedLabels:
     - CarModelSO
