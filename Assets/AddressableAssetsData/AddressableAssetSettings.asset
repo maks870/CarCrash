@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468a46d0ae32c3544b7d98094e6448a9, type: 3}
   m_Name: AddressableAssetSettings
   m_EditorClassIdentifier: 
-  m_DefaultGroup: 405e114d843f9e24c8e46b29e787de2d
+  m_DefaultGroup: e3a8c71f385cff14c9346f7ea0f4dd7a
   m_CachedHash:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000
-  m_OptimizeCatalogSize: 1
+  m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_BundleLocalCatalog: 1
   m_CatalogRequestsTimeout: 0
@@ -42,7 +42,6 @@ MonoBehaviour:
   m_overridePlayerVersion: 
   m_GroupAssets:
   - {fileID: 11400000, guid: 1d2bd3f12087dcb4fa6f9257182cfca7, type: 2}
-  - {fileID: 11400000, guid: 43bb1f30239c3914ba6181fb3e0cec1f, type: 2}
   - {fileID: 11400000, guid: 154ac0a388a968a40a4ea2e034b40cda, type: 2}
   - {fileID: 11400000, guid: f096a73c31ccb8742b9129ed50278661, type: 2}
   - {fileID: 11400000, guid: 77cac80282608fc4683e549c93ace77e, type: 2}
@@ -54,14 +53,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 004e824417e0e3544821a11582e1d98d, type: 2}
   - {fileID: 11400000, guid: f3170c5c60ca84f4b8b97e231b9400c0, type: 2}
   - {fileID: 11400000, guid: 64c44e8423043a64ab56b6cc7cc98d2c, type: 2}
-  - {fileID: 11400000, guid: 59199e3720859c64a892e5d70872eade, type: 2}
-  - {fileID: 11400000, guid: 2c420749203466d4cb92db91255cd40a, type: 2}
-  - {fileID: 11400000, guid: 67daf594b18e2ae45afc8cb4889275fd, type: 2}
-  - {fileID: 11400000, guid: d68b4db36bc8a4d4fbfc81230ba47b09, type: 2}
-  - {fileID: 11400000, guid: bbf2d421e6b65d84b8fb60409aabe924, type: 2}
-  - {fileID: 11400000, guid: d8381b9221520d946b0d44a92be53905, type: 2}
-  - {fileID: 11400000, guid: 02691b60b241cdc46b4b7b00bf2645be, type: 2}
-  - {fileID: 11400000, guid: b8797f47646702c4f8c2e7d4dfe46197, type: 2}
   - {fileID: 11400000, guid: e5acaab915ef17b4d8c9577a1929b35f, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
@@ -81,9 +72,9 @@ MonoBehaviour:
       - m_Id: 3d78fd0c6de74b045ad7a4fb14a03fb2
         m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
       - m_Id: 61a7c6d6b201ad345aa63878e27587bf
-        m_Value: ServerData/[BuildTarget]
+        m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
       - m_Id: 84e8084663ba7714ab00232a29f00411
-        m_Value: http://[PrivateIpAddress]:[HostingServicePort]
+        m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
     m_ProfileEntryNames:
     - m_Id: 1e89afae035e9714c8490ec00ededb01
       m_Name: BuildTarget

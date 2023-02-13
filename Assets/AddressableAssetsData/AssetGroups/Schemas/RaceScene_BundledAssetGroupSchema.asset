@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5d17a21594effb4e9591490b009e7aa, type: 3}
-  m_Name: Race22_BundledAssetGroupSchema
+  m_Name: RaceScene_BundledAssetGroupSchema
   m_EditorClassIdentifier: 
-  m_Group: {fileID: 11400000, guid: d68b4db36bc8a4d4fbfc81230ba47b09, type: 2}
+  m_Group: {fileID: 11400000, guid: 64c44e8423043a64ab56b6cc7cc98d2c, type: 2}
   m_InternalBundleIdMode: 1
   m_Compression: 1
   m_IncludeAddressInCatalog: 1
@@ -37,7 +37,7 @@ MonoBehaviour:
     m_Id: 01bc549bc9df2eb498d664c82de58d95
   m_LoadPath:
     m_Id: 3d78fd0c6de74b045ad7a4fb14a03fb2
-  m_BundleMode: 0
+  m_BundleMode: 1
   m_AssetBundleProviderType:
     m_AssemblyName: Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
     m_ClassName: UnityEngine.ResourceManagement.ResourceProviders.AssetBundleProvider

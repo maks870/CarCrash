@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5834b5087d578d24c926ce20cd31e6d6, type: 3}
-  m_Name: Race23_ContentUpdateGroupSchema
+  m_Name: RaceScene_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
-  m_Group: {fileID: 11400000, guid: bbf2d421e6b65d84b8fb60409aabe924, type: 2}
+  m_Group: {fileID: 11400000, guid: 64c44e8423043a64ab56b6cc7cc98d2c, type: 2}
   m_StaticContent: 0
