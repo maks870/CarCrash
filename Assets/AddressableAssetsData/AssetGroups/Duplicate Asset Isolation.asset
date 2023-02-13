@@ -1,0 +1,515 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Duplicate Asset Isolation
+  m_EditorClassIdentifier: 
+  m_GroupName: Duplicate Asset Isolation
+  m_Data:
+    m_SerializedData: []
+  m_GUID: b740dd305b3548a4ab892080fb8282be
+  m_SerializeEntries:
+  - m_GUID: d257f400440650642af3a68953ab7c02
+    m_Address: Assets/Materials/Characters/AmongUs/New Material.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 663e7535fa84e794c861539fa0b246a9
+    m_Address: Assets/Models/characters/AmongUs/AmongHat_1.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 642822e6a641cfd4f8b8e31823ee1747
+    m_Address: Assets/Materials/Characters/AmongUs/New Material 1.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8aea6f1a674277a4392db74727454388
+    m_Address: Assets/Models/characters/AmongUs/CharacterAmong.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d4cfccb6144228d44b0c7b59114a2efe
+    m_Address: Assets/Textures/Characters/AmongUs/AmongTexture4.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 473ca90c6af1d554385142ddcfb8ff6c
+    m_Address: Assets/Textures/Characters/AmongUs/AmongTexture 1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 03e31526d20dcf04cbfb4722c0b555e5
+    m_Address: Assets/Materials/Characters/AmongUs/New Material 3.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8df6b0536067f59408917076863d1abc
+    m_Address: Assets/Textures/Characters/AmongUs/AmongTexture 3.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b021f4e444dca2141b3f255cb9de6f0e
+    m_Address: Assets/Materials/Characters/AmongUs/New Material 6.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ebc92d3600ecfd247b8d4241ead62cc3
+    m_Address: Assets/Textures/Characters/AmongUs/AmongTexture 6.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8069af74107acbe458b85bac72848dd4
+    m_Address: Assets/Materials/Characters/AmongUs/New Material 5.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1e9cdeeccd64ee247a729145cb15a97c
+    m_Address: Assets/Models/characters/AmongUs/AmongHat_4.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ae5eab3bbc159a74c9363c84fd4fe99f
+    m_Address: Assets/Textures/Characters/AmongUs/AmongTexture 7.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c85bf29d9caaa57459319f0d88085ec1
+    m_Address: Assets/Materials/Characters/AmongUs/New Material 2.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ea31fa69250eb894ba6486003cecf9d6
+    m_Address: Assets/Textures/Characters/AmongUs/AmongTexture 2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 87472254beaf04f43a691c019017404b
+    m_Address: Assets/Models/characters/AmongUs/AmongHat_6.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 66d88a056be2d3c4f8948bea91576e89
+    m_Address: Assets/Models/characters/AmongUs/AmongHat_8.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4efbcdb5aadb22a4b9fa5e25315c22e6
+    m_Address: Assets/Materials/Characters/AmongUs/New Material 4.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f5bc50a3ced273f4d83d0e75aa689fda
+    m_Address: Assets/Textures/Characters/AmongUs/AmongTexture 5.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3db12a449e88552429da0b47b0fa2947
+    m_Address: Assets/Models/characters/AmongUs/AmongHat_9.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c2c3eec253928674e98981cb14e939b8
+    m_Address: Assets/Models/characters/AmongUs/AmongHat_10.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 43fbe6c1ff7ef7144bc77d54c64f02e8
+    m_Address: Assets/Models/characters/AmongUs/AmongHat_11.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 38258b92b14cc1d40a071c17ea74e956
+    m_Address: Assets/Models/characters/Hagivagi/character_hagi_1.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b79ae6ca2a64306478d0c0ff586bb57c
+    m_Address: Assets/Materials/Characters/HagiVagi/1.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cc64471b4d24b4f40a0551373b687376
+    m_Address: Assets/Textures/Characters/HagiVagi/characte_hagi_1_texture_3 1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7fa2498b4f6b89b4284a3222b8a38bd1
+    m_Address: Assets/Models/characters/Minecraft/character_Minecraft.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3217b570b11b257469c5461f0457e5d4
+    m_Address: Assets/JMO Assets/Cartoon FX (legacy)/Materials/Misc/CFX_Smoke_4frms.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8c9cbaa0daffbc54f9604406891b5e74
+    m_Address: Assets/Materials/Metall.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f9db7451324bb8d43aa225c4bfe3a1ec
+    m_Address: Assets/Materials/Green.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 32a76832b79e84347ad9df08b12709c3
+    m_Address: Assets/Materials/Force Field.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8783047217b1fa3479551cfb71205f09
+    m_Address: Assets/Materials/Car.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0e720e922ddf56b4599e17d3737ea89d
+    m_Address: Assets/Materials/White.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1b0a70d23ec355549b20971e4759e119
+    m_Address: Assets/Materials/Bricks.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0e0d13f37af384b429b90a575d186dc5
+    m_Address: Assets/Materials/Characters/MenuCharacters.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5019b6345013c0647a496c27d3297091
+    m_Address: Assets/Materials/Brown.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: af67e846df2d57d41abb103cc773a422
+    m_Address: Assets/Materials/Yellow.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 503ba37627ac18c4ebe9bbe73d6ea9ad
+    m_Address: Assets/JMO Assets/Cartoon FX (legacy)/Materials/Animated/CFX_Anim_Bubble_Add.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: dcc37b4790fef784ea391ad72859e017
+    m_Address: Assets/Materials/Brown2.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3831e9f70e18c52448d29e5c9459d950
+    m_Address: Assets/Materials/Green2.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 20428cb83e0e238499cbf701aa43f010
+    m_Address: Assets/Materials/Red.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: acf50539b576d65478afd6a110b27a53
+    m_Address: Assets/Materials/10.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9bef78598cbb6dc4dac78eac8ba683d4
+    m_Address: Assets/Materials/Green3.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ecd313b9b4c404c489e83c1cf0210d82
+    m_Address: Assets/Materials/MineGreen.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ee261b7aebc1ae9468c749b6ac4e30e7
+    m_Address: Assets/Materials/LootBox.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9e68ed9aa76434745a0bc3bb6c5ab809
+    m_Address: Assets/Materials/Black.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6c7b7cda470ffd64481ffee0202ceb59
+    m_Address: Assets/Materials/Graffiti2.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: af6d26adc4bf82e4ab3b7d1d5b8343cd
+    m_Address: Assets/Materials/Road.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5c101b85eb5859b46afafcd7a40cf7bb
+    m_Address: Assets/Models/capabilities/LootBox.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 097a05f9ed4d23945aff193c473fc74c
+    m_Address: Assets/Models/characters/hagivagi (1)@Chicken Dance.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ea09d7f2701f7954fbef31c5b6a48e71
+    m_Address: Assets/Animations/Cube.controller
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 09c644a84c227624fa18a028fb1d3b2f
+    m_Address: Assets/Animations/CharacterMenu.controller
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8933279a4a685734ab55217c7edaf0fa
+    m_Address: Assets/Fonts/a_futuraround-bold.ttf
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ab7cfd7120996224ebb4ffecbe50ca27
+    m_Address: Assets/Sprites/ButtonMusicOff1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: aafbcd91c4e46a748a291a832ea6be1f
+    m_Address: Assets/Sprites/ButtonSubstrateTurn.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: efe26f84271154449a1639ba1095489a
+    m_Address: Assets/Sprites/Cup2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 47800e6530887e64094c75d7978abb3e
+    m_Address: Assets/Sprites/Cup1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 128337c5475655844b0fb7832e2d581f
+    m_Address: Assets/Sprites/Cup3.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 63181e96f59c23a4fb5a4baabd03adbe
+    m_Address: Assets/Sprites/ButtonMusicOn1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ae230b884f3a4e94e92e1cd3f645bad8
+    m_Address: Assets/Sprites/CupShade.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 08d5fd4c9cb4b0f4a811e7906e9cb969
+    m_Address: Assets/Sprites/Characters/Training1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: bbdc216fe6fd20747ab0c18f7ad2410d
+    m_Address: Assets/Sprites/ButtonBuy.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 850e70d2481079c4aa83930d686ef4c4
+    m_Address: Assets/Sounds/AudioMixer.mixer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 162644796a8b0d044bce3d6fda0641e3
+    m_Address: Assets/YandexGame/WorkingData/InfoYG.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 099b0b717e979ab478f7040325858305
+    m_Address: Assets/Textures/Road.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 410eb0629ba5d54419068703df32db85
+    m_Address: Assets/Animations/LootBoxGameObjectIdle.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: bf829fc56f02ce346ac90e00a6790780
+    m_Address: Assets/Textures/Characters/GarageCharacterTexture.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c89368e5deaa5ad44a97bad849b1643f
+    m_Address: Assets/Textures/LootBox.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4162c377715038f47ab4a050b7d22fc7
+    m_Address: Assets/Textures/Cars/3.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: eeedacb871756334bbdb08982732d504
+    m_Address: Assets/Shaders/PeterLu_HologramShader/Shader/BaiscRim.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cacfcc09b4fbf7e4baebb23fbaaff36b
+    m_Address: Assets/Textures/CFXR Demo Ground.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7987b6791dff098469332588914e2c84
+    m_Address: Assets/JMO Assets/Cartoon FX (legacy)/Textures/CFX_T_Anim4_RoundedLines.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 12d6e56bbf4ac7a419ac250680dfae07
+    m_Address: Assets/JMO Assets/Cartoon FX (legacy)/Textures/CFX_T_Anim4_Bubble.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3d70761f9ae377945a3aad2a3936df5e
+    m_Address: Assets/JMO Assets/Cartoon FX (legacy)/Textures/CFX_T_Smoke_4Frames.tga
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ecd7209f7d3ec074e8eee1af21a85ba5
+    m_Address: Assets/Textures/Graffiti2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: bb4c52cfb53c8ec47a194d4ea13903ab
+    m_Address: Assets/Animations/Chicken Dance.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7840d900dc0a4ed4dbcd26e23f064dd8
+    m_Address: Assets/JMO Assets/Cartoon FX Remaster/CFXR Assets/Graphics/cfxr smoke
+      cloud x4 ab.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 900acfa037f7a0242b5afdeea8ff53bc
+    m_Address: Assets/JMO Assets/Cartoon FX Remaster/CFXR Assets/Graphics/cfxr fire
+      circle plain hdr ab.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d9d481556c239f047b097c980001497e
+    m_Address: Assets/Materials/RedLight.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0799a1e95665ef14f8fe2cbcd4ba3dc4
+    m_Address: Assets/Materials/PP_Standard_Material.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b692d0ba979c41946bbe57f2baba17eb
+    m_Address: Assets/JMO Assets/Cartoon FX (legacy)/Materials/Light/CFX3_GlowDot
+      ADDSOFT.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e13b18fb1ed34d845ba89098082904e2
+    m_Address: Assets/Materials/Cars/Player.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6cd2d08f4a4d93542aa0004bdac91566
+    m_Address: Assets/JMO Assets/Cartoon FX Remaster/CFXR Assets/Graphics/cfxr ember
+      blur hdr ab.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ddd36401006c8654eae1d9a6bcd6380d
+    m_Address: Assets/Models/MeshesForest/PP_Birch_Tree_06.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c6b568bf9e55de141add501b8cd2a0e9
+    m_Address: Assets/Models/MeshesForest/PP_Tree_02.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 64461925f7508c34c816e23c4093ccb0
+    m_Address: Assets/Sounds/FX/GoAudio.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 03bf91d88fce91c41995d27de63cc967
+    m_Address: Assets/Racing Starter Kit/Assets/MainAssets/Vehicles/Car/Audio/DecelerationHigh.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ee47b6ba27d8a484298075c6625df88d
+    m_Address: Assets/Sounds/FX/GetReady.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: bd9566abdbf08834281bfb4ea8b92a5d
+    m_Address: Assets/Racing Starter Kit/Assets/MainAssets/Vehicles/Car/Audio/Skid.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6c54702c778af6347b8db886b7f1a4ae
+    m_Address: Assets/Sounds/Muscle Car Engine Loop.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c4d8928c75c21af43998193f0f038429
+    m_Address: Assets/Racing Starter Kit/Assets/MainAssets/Vehicles/Car/Audio/AccelerationLow.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5699dddcce16c4543b95951c4ce0e092
+    m_Address: Assets/Racing Starter Kit/Assets/MainAssets/Vehicles/Car/Audio/DecelerationLow.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ec05311eb033f1f4888e4ddaa4d910bc
+    m_Address: Assets/Sounds/Muisic/33 - Inkedsplat - Shred Waste.ogg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 88988902fa6dee24daaff7f8a3b463af
+    m_Address: Assets/Materials/New Physic Material.physicMaterial
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9737fe80e2e7afb46a3237701445e5a9
+    m_Address: Assets/Sprites/UIMaps/SubstratePause.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 645c0784ffa73ff4297685107b5161dc
+    m_Address: Assets/Sprites/UIMaps/ButtonPlay.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9181e7f5428516f42b67d1ec4fc6e9aa
+    m_Address: Assets/Sprites/UIMaps/ButtonPause.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 116647c6cddf0104bb475c147490adc2
+    m_Address: Assets/Sprites/UIMaps/ButtonHome.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3cd85aad93fb0e54bafbeb68a04b75d0
+    m_Address: Assets/Sprites/UIMaps/Substrate.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1fa973feda0253143837e3d4eada18dc
+    m_Address: Assets/Sprites/UIMaps/Target-Aim.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d22c6e96bdd3b034e89f97e09e7eb5de
+    m_Address: Assets/Prefabs/UI/MobileInput.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: faf0472dff4139e48b781693ebf3a62a
+    m_Address: Assets/Prefabs/UI/DesktopInput.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4b6aa99de5d21424eab6ae279f31475b
+    m_Address: Assets/Racing Starter Kit/Assets/MainAssets/Vehicles/Car/Prefabs/SkidTrail.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4a4bd2804b2d1ff46ab18baabfc526da
+    m_Address: Assets/JMO Assets/Cartoon FX Remaster/CFXR Assets/Graphics/cfxr smoke
+      cloud x4.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 74db0952acdd7ba488d3d0b114954504
+    m_Address: Assets/JMO Assets/Cartoon FX Remaster/CFXR Assets/Graphics/cfxr uv
+      distortion fire smudge.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3deb8633c6b720d42aab1c61a340a3af
+    m_Address: Assets/JMO Assets/Cartoon FX (legacy)/Textures/CFX3_T_GlowDot.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0855038b7bf8ecc4eb77dc56090675cd
+    m_Address: Assets/JMO Assets/Cartoon FX Remaster/CFXR Assets/Graphics/cfxr fire
+      circle plain.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 209460ccb2aaaf847a61d7e73c92f193
+    m_Address: Assets/JMO Assets/Cartoon FX Remaster/CFXR Assets/Graphics/cfxr ember
+      blur.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e198026df304af84a85675be636192ea
+    m_Address: Assets/JMO Assets/Cartoon FX Remaster/CFXR Assets/Shaders/CFXR Particle
+      Ubershader.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cffb506ec5b6cc94498def65473d32ed
+    m_Address: Assets/Textures/PP_Color_Palette.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c1819aef53deedf40af80257ccb5b1a8
+    m_Address: Assets/JMO Assets/Cartoon FX Remaster/CFXR Assets/Graphics/cfxr smoke
+      cloud x4 dissolve.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: aa4c8348fc4dce244a4e23b9c255e7a6
+    m_Address: Assets/Prefabs/UI/ButtonAbility.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 460ea0ebb5c4c4744afb91b22afcc6d4
+    m_Address: Assets/Prefabs/UI/ImageAbility.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f4dd0bba6decdd5418fd3d541ff5f7f0
+    m_Address: Assets/Racing Starter Kit/Assets/MainAssets/Vehicles/Car/Materials/TrailSkid.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1d504e006c07a4b428ef5de2e9b0948b
+    m_Address: Assets/Sprites/UIMaps/ButtonRocket.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 06e5c4401455b1d43a6255b4b8776102
+    m_Address: Assets/Racing Starter Kit/Assets/MainAssets/Vehicles/Car/Textures/SkidTrailAlbedo.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2500334b8d21d054680ea392bcc6ebaf
+    m_Address: Assets/Sprites/UIMaps/ButtonGas.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: eaedab8effc5618448547aaae590b872
+    m_Address: Assets/Sprites/UIMaps/ButtonBrake.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f59f646e7d4e1f144b518a21bb4e4786
+    m_Address: Assets/Sprites/ButtonSignTurn.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: dba56cdad55ce584e997cba54403e425
+    m_Address: Assets/Models/forest/forest_1.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1a5429026b5f63240902d71b093f4e33
+    m_Address: Assets/Textures/Cars/1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: d84bdf84c78b0c0489a17cf42914ce37, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 718949896c9e1554f9c8fc47dccc65c7, type: 2}
+    - {fileID: 11400000, guid: f29211b8f6c88e54a97ac1ca5f9f1309, type: 2}
