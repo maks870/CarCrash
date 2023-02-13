@@ -1,0 +1,401 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Duplicate Asset Isolation1
+  m_EditorClassIdentifier: 
+  m_GroupName: Duplicate Asset Isolation1
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 9e0aa4ddd6c3545409d90f5b320599c1
+  m_SerializeEntries:
+  - m_GUID: f9ac0268f98fd304bad8b4e299518513
+    m_Address: Assets/Materials/Gray.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8101e0ba269644642884833fd7a61991
+    m_Address: Assets/Materials/Background.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d5ebbdadfe9004248a2414a149d20395
+    m_Address: Assets/Models/forest/PP_Lake_Ground_04.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e6fc49deecd6f7343a301124777835fb
+    m_Address: Assets/Materials/BackgroundTrees.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d721af70c8ba1ab4daa81f30de0dbb54
+    m_Address: Assets/Models/MeshesForest/PP_Birch_Tree_05.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3184c8a016da6e34abff1686da99650b
+    m_Address: Assets/Models/MeshesForest/PP_Rock_Moss_Grown_09.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1aa731d035afbe64ba7ec836bc2af8f7
+    m_Address: Assets/Models/forest/overheadLights_1.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4e40842238bcca046a7c50ffff32b019
+    m_Address: Assets/Models/MeshesForest/PP_Daffodil_03.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8ad8ffc355e26f24395d1a40fff559c6
+    m_Address: Assets/Models/forest/1.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 324d33f3ad1481c4e8ba55d696fe64d9
+    m_Address: Assets/Models/MeshesForest/PP_Meadow_Path_05.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fe4919662a2d4704d9326392a713b20c
+    m_Address: Assets/Models/forest/2.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 38b178f6a1ea19f4baf761918779b712
+    m_Address: Assets/Models/MeshesForest/PP_Lake_Ground_04.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5374e258aa8b0a54b9ad017e47f849ec
+    m_Address: Assets/Models/MeshesForest/PP_Sunflower_04.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ac41480a091ee2446a41d386b366ae44
+    m_Address: Assets/Models/MeshesForest/PP_Grass_15.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a3ccb41ae53c6bf4bb0a5bfc470bf069
+    m_Address: Assets/Models/MeshesForest/PP_Tree_10.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d593537a4ae47624a9e98c57da677238
+    m_Address: Assets/Models/forest/pitsGarage_1.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b185b3da81e20ca469a8cee9fc968fd1
+    m_Address: Assets/Models/grass.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4028c4da380bf5d46a2180cd3482c5ad
+    m_Address: Assets/Models/forest/railS_1.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0a4e8c0b5a685eb4394da10424e65a7a
+    m_Address: Assets/Models/MeshesForest/PP_Forest_Mountain_Moss_02.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f0c5876b5e45a4c4f8b3f20f27e83d97
+    m_Address: Assets/Models/forest/railL_1.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b0ba9b7cecd675b45894beca57389899
+    m_Address: Assets/Models/MeshesForest/PP_Rock_Pile_Forest_Moss_05.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d818648c1b009ab48a03dbcc4ae09583
+    m_Address: Assets/Models/MeshesForest/PP_Forest_Mountain_Moss_01.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a5631ddcac1344f4e8eddaee412b1c77
+    m_Address: Assets/Models/background.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 46d171de72518e343891c4b4c03e5103
+    m_Address: Assets/Models/MeshesForest/PP_Hyacinth_04.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3f9b0afe5aa7e364b939fb1853a486e1
+    m_Address: Assets/Models/forest/pitsGarageCorner_1.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 08eefc2f613faa34fbb717ac2142af0a
+    m_Address: Assets/Models/MeshesForest/PP_Meadow_08.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b50dd34feb8fa1b4fa5aa0a7d2271066
+    m_Address: Assets/Models/MeshesForest/PP_Grass_11.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: def861fea074f114e88aa708518f8b34
+    m_Address: Assets/Animations/NewRecord.controller
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4e6134808f7698341a2eb92c2b1bc85a
+    m_Address: Assets/Sprites/UIMaps/SubstrateGameResult.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9cd93b333cf9741488f54271131b1283
+    m_Address: Assets/Sprites/UIMaps/SubstrateGameResultTop.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d9e59a346b6369b449fee500ee7b76f4
+    m_Address: Assets/Sprites/ButtonCity.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 96ed996461e54a24f8960e13399b415c
+    m_Address: Assets/Sprites/UIMaps/2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a99890e470770d545ba958b5aaa0ef83
+    m_Address: Assets/Sprites/UIMaps/ButtonRestart.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f307396585eb05c46ac7fb04fc991826
+    m_Address: Assets/Sprites/UIMaps/1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: bb55f3e90a04e584eb8fabef4ea2370d
+    m_Address: Assets/Sprites/UIMaps/3.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6d33cb1ac24848940be6d44f15bd0f4d
+    m_Address: Assets/Sprites/UIMaps/SubstrateGameResultTop2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 868737af16d98414cbaf79edfb315838
+    m_Address: Assets/Sprites/UIMaps/Warning.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 812868b27aa5f6b44aff14507cd07280
+    m_Address: Assets/Prefabs/Abilities/LootBox.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1901b9d6de693c0498ad5893c320117b
+    m_Address: Assets/Animations/NewRecord.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: bd23736b294d8774f97a27c3bc8478c9
+    m_Address: Assets/Textures/backgroundTextura.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: af85d88bd5e836b478f483ed521ddbda
+    m_Address: Assets/Textures/TreesTexture.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7672cc27f00c3934da010160985935e3
+    m_Address: Assets/Prefabs/Abilities/ShieldAbility.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 50a78df81660e1c4c9249ca23a9717fc
+    m_Address: Assets/Prefabs/Abilities/MineAbility.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 314755b9ad25d9d41ab6e2c188f2691d
+    m_Address: Assets/Prefabs/Abilities/MissleAbility.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 29e670da449f0b543ab376588cd1b274
+    m_Address: Assets/Sounds/CrateBroke.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: bc2f5381aa10362408a231809927c0fe
+    m_Address: Assets/ScriptableObjects/AbilityMineSO/AbilityMissle.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4044f30eacdde2f45ab667c6d2b6bbd7
+    m_Address: Assets/ScriptableObjects/AbilityMineSO/AbilityMine.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 01b046ff4efe50e4b908738c634032bd
+    m_Address: Assets/ScriptableObjects/AbilityMineSO/AbilityShield.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b9e3282157f8bd1479a3a911befc81ec
+    m_Address: Assets/Prefabs/Abilities/ShiledProjectile.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3fa0acc36cb9d4e46b1a8b79b446b779
+    m_Address: Assets/Sprites/UIMaps/ButtonShield.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7ce1a668a522b4c488cfa3f9221744f6
+    m_Address: Assets/Prefabs/Abilities/MissleProjectile.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d041884b10627924dbae9dd2eb037a53
+    m_Address: Assets/Prefabs/Abilities/MineProjectile 1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 727507bc4aea95e47a019cf439ca94e4
+    m_Address: Assets/Sprites/UIMaps/ButtonMine.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 46876a2780737ec45a19d62f88e5ce56
+    m_Address: Assets/JMO Assets/Explosion.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: dce80c76b3bd8944d86da741ad622cbc
+    m_Address: Assets/Materials/MineLight.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4d5a52cb18e09b843887aee389016b8d
+    m_Address: Assets/JMO Assets/Cartoon FX (legacy)/Materials/Animated/CFX_Anim_Triangle2_AlphaBlendedPremult.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d7358a0d110cda84581d0dd3e2da2fc7
+    m_Address: Assets/Sounds/Explosion Small 2.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 59753a30e2b53e343b6f236481787052
+    m_Address: Assets/Models/capabilities/mine.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 398da4b026da3fd4dbe04dfc2ba43f09
+    m_Address: Assets/JMO Assets/Cartoon FX (legacy)/Textures/CFX_T_Anim8_Triangle2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 262dacc45a9a3994e999d4df07a1369b
+    m_Address: Assets/Models/capabilities/rocket.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d1c965e3a9110b94db515cf6edd67b92
+    m_Address: Assets/JMO Assets/Cartoon FX (legacy)/Materials/Texts/CFX_Text_Boom.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e3d4119c3e4597d4b90fc27f1419ca4b
+    m_Address: Assets/JMO Assets/Cartoon FX (legacy)/Materials/Animated/CFX_Anim_Poof_Add.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 19af7054766e9ea4789ead0cefad4a77
+    m_Address: Assets/JMO Assets/Cartoon FX (legacy)/Textures/CFX_T_Text_Boom.tga
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c8d7d8e44a6500e44abe38f4e4e23353
+    m_Address: Assets/Materials/Acceleration.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0663cd5873acb714dbe24fdfcb0003a8
+    m_Address: Assets/Animations/Cube 1.controller
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 32c554818ac464c45a9cc81352ec9c2d
+    m_Address: Assets/Animations/Acceleration.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7aae660b241ecc64f8e382e9fcf6f824
+    m_Address: Assets/Textures/Acceleration.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 21571e505b2706848a06a2900e39d13a
+    m_Address: Assets/Materials/Snow 1.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ad8cc4646deba734fa6e27d8e95adb13
+    m_Address: Assets/Materials/Snow.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8b4fe7a417e10564aaeaa77ba60a00f1
+    m_Address: Assets/Materials/Background 1.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 979302799796f9249bf7b1dd9af745e0
+    m_Address: Assets/Materials/BackgroundTrees2.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 756d18fa69ce1a84eb49d79bf4e98ffd
+    m_Address: Assets/Materials/Road 1.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 43e6382e61bebcd4da0193be93f01235
+    m_Address: Assets/Materials/Ice.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 74871fa065faaaf4aa0a2ea47ebb35fb
+    m_Address: Assets/Models/winter/pitsGarage_2.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d0aef7b18e5d1514489b02177a9af450
+    m_Address: Assets/Models/winter/grandStandCovered_2.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 16fae7e34b0238445a40a7dcf95455cd
+    m_Address: Assets/Models/winter/forest_2.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 69576fa819554644081eeed68a2445f7
+    m_Address: Assets/Models/winter/pitsGarageCorner_2.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 49b418fdd364e554eb914e427f898acd
+    m_Address: Assets/Models/winter/overheadLights_2.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a47c790afa8c4604996540c335519356
+    m_Address: Assets/Textures/TreesTexture 1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 386514ea51fe6924e878375dc5c41051
+    m_Address: Assets/Textures/backgroundTextura2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2f984dd1b63fbc24abdd916834492e6e
+    m_Address: Assets/Materials/PP_Ground.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f799192334c713940939e29c44cd9f63
+    m_Address: Assets/Materials/BackgroundTrees2 1.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b6bae5832edc3204bb22293633377dba
+    m_Address: Assets/Materials/Bone.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 74fc24fc2a00b3e4c955e727abbd4b04
+    m_Address: Assets/Materials/Background 2.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b4bc04208ba59434293e55f3a594dc20
+    m_Address: Assets/Models/hell/overheadRound_3.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 02b23bf20bee6fd4ba9088720707712b
+    m_Address: Assets/Models/hell/grandStand_3.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0b30c6a3388c0cd4baead7ed7684760b
+    m_Address: Assets/Models/hell/pitsGarageCorner_3.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a9c6bfe4d7ed5ce47a1758353285b228
+    m_Address: Assets/Models/hell/pitsGarage_3.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 25de81579c1e82a48bc7c57b19c0a4bb
+    m_Address: Assets/Models/hell/overheadLights_3.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8202fc3af612b144eb88966228acbf65
+    m_Address: Assets/Models/hell/crack1.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a0d70e3cbbdce4e4096e91ab340d98ed
+    m_Address: Assets/Models/hell/railDamage_3.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e38f110fd77f827419c8ed6bb7118333
+    m_Address: Assets/Models/hell/forest_3.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b05d3e27382c0fd47bcfdb0b7be6abc7
+    m_Address: Assets/Textures/backgroundTextura3.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6379064fb30e55446bce0ed931865991
+    m_Address: Assets/Textures/TreesTexture3.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: d84bdf84c78b0c0489a17cf42914ce37, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: d0b0efbb7b4cf0c4185464ee555071e0, type: 2}
+    - {fileID: 11400000, guid: 99b678d759797bb45a28e4dfc132b5ad, type: 2}

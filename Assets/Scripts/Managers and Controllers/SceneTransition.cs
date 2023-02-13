@@ -42,6 +42,7 @@ public class SceneTransition : MonoBehaviour
     {
         panel.SetActive(false);
         endAnimation = false;
+
         if (!unloaded) 
         {
             Addressables.UnloadSceneAsync(handle, true);
