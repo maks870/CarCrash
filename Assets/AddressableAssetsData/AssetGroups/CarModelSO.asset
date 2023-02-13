@@ -22,25 +22,25 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - SO
-    - CarModelSO
+    - CarModel
   - m_GUID: 29fb4ce114bfab24e85fda017c377086
     m_Address: Car2
     m_ReadOnly: 0
     m_SerializedLabels:
     - SO
-    - CarModelSO
+    - CarModel
   - m_GUID: e9e806e50d6003949b1f420876eee380
     m_Address: Car3
     m_ReadOnly: 0
     m_SerializedLabels:
     - SO
-    - CarModelSO
+    - CarModel
   - m_GUID: 037cf8e7a9ed2df4fa4bbba940436c37
     m_Address: Car4
     m_ReadOnly: 0
     m_SerializedLabels:
     - SO
-    - CarModelSO
+    - CarModel
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: d84bdf84c78b0c0489a17cf42914ce37, type: 2}
   m_SchemaSet:

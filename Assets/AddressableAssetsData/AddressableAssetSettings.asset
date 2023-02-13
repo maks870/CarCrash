@@ -97,11 +97,12 @@ MonoBehaviour:
     - default
     - SO
     - Ability
-    - Color
-    - CharacterModel
-    - Map
+    - CarColorSO
+    - CharacterModelSO
+    - MapSO
     - CarModel
     - CharacterPref
+    - CarModelSO
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 669e3f2779d5a7c41b7825b20e2f31b6, type: 2}

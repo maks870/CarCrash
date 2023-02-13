@@ -13,7 +13,7 @@ public class SceneTransition : MonoBehaviour
     [SerializeField] private GameObject panel;
     [SerializeField] private AudioMixer audioMixer;
     private AsyncOperationHandle<SceneInstance> handle;
-    private bool unloaded;
+    private bool unloaded = true;
     private bool endAnimation = false;
     private Animator animator;
     public static SceneTransition instance;
