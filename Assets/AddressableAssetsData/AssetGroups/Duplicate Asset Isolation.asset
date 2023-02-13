@@ -483,10 +483,6 @@ MonoBehaviour:
     m_Address: Assets/Sprites/UIMaps/ButtonRocket.png
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 06e5c4401455b1d43a6255b4b8776102
-    m_Address: Assets/Racing Starter Kit/Assets/MainAssets/Vehicles/Car/Textures/SkidTrailAlbedo.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 2500334b8d21d054680ea392bcc6ebaf
     m_Address: Assets/Sprites/UIMaps/ButtonGas.png
     m_ReadOnly: 0
