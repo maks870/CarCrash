@@ -8,6 +8,7 @@ public class TargetPointer : MonoBehaviour
     [SerializeField] private RectTransform canvas;
     [SerializeField] private Transform target;
     [SerializeField] private Vector3 offset = new Vector3(0, 0.5f, 0);
+    private Vector2 oldScale;
 
     private Vector2 oldPos;
     private Vector2 oldAnchorMax;
@@ -41,6 +42,7 @@ public class TargetPointer : MonoBehaviour
             pointerUI.gameObject.SetActive(false);
         }
         pointerUI.anchoredPosition = realPos;
+        pointerUI.localScale = oldScale;
     }
 
     private bool IsBehind(Vector3 point) // true если point сзади камеры
@@ -56,7 +58,8 @@ public class TargetPointer : MonoBehaviour
         oldPos = pointerUI.anchoredPosition;
         oldAnchorMax = pointerUI.anchorMax;
         oldAnchorMin = pointerUI.anchorMin;
-
+        oldScale = pointerUI.localScale;
+        pointerUI.localScale = Vector2.zero;
         pointerUI.anchorMax = Vector2.zero;
         pointerUI.anchorMin = Vector2.zero;
     }
