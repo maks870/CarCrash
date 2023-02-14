@@ -36,12 +36,12 @@ public class MenuInitializer : MonoBehaviour
         if (isInitializeProcess)
             return;
         isInitializeProcess = true;
-        MainMenuManager mainMenu = new MainMenuManager();
+        MenuManager mainMenu = menuManagers[0];
 
         for (int i = 0; i < menuManagers.Count; i++)
         {
             if (menuManagers[i].GetType() == typeof(MainMenuManager))
-                mainMenu = (MainMenuManager)menuManagers[i];
+                mainMenu = menuManagers[i];
 
             if (YandexGame.savesData.isFirstSession2)
                 menuManagers[i].SaveDefaultSO();
@@ -65,7 +65,8 @@ public class MenuInitializer : MonoBehaviour
         //        menuManagers[i].objectUI.SetActive(false);
         //}
 
-        mainMenu.AddDataLoadingListener();
+        MainMenuManager newMainMenu = (MainMenuManager)mainMenu;
+        newMainMenu.AddDataLoadingListener();
         earningUIController.UpdateEarnings();
         SceneTransition.instance.EndPreload();
     }
