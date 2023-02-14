@@ -148,6 +148,7 @@ public class CharacterModelSwitcher : MonoBehaviour
             if (characters[i].CharacterType == characterType)
                 charactersSO.Add(characters[i]);
         }
+        Debug.Log("1st char in charModelSwitcherList " + charactersSO[0].name);
     }
 
     public bool FindStartCharacter(CharacterModelSO characterSO)

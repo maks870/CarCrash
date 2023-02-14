@@ -41,6 +41,7 @@ public class CharacterTabSwitcher : MonoBehaviour
     {
         SOLoader.LoadAllSO<CharacterModelSO>((result) =>
         {
+            Debug.Log("Character list 1st obj " + result[0].Name);
             for (int i = 0; i < switchers.Count; i++)
             {
                 switchers[i].FillListBySO(result);

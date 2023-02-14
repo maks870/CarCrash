@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Duplicate Asset Isolation2
+  m_EditorClassIdentifier: 
+  m_GroupName: Duplicate Asset Isolation2
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 0202ca0423fc6d642a6d28847d4ca969
+  m_SerializeEntries:
+  - m_GUID: 771dae26753785a4b8ebdc87ce15ec41
+    m_Address: Assets/Sprites/Cars/1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9580f99637f387d478426f28e325aadc
+    m_Address: Assets/Sprites/UIMaps/Road1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1dd8fd7ca2fdb6c4caa338352c928e9b
+    m_Address: Assets/Sprites/CharacterIcons/AmongUs/Among1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: d84bdf84c78b0c0489a17cf42914ce37, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 94b3f0b6c1c1d1b4b9f556ae8a5e8e68, type: 2}
+    - {fileID: 11400000, guid: 9f584f0e9cfec784188309ce1049eea0, type: 2}

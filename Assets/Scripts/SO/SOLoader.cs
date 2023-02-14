@@ -38,8 +38,10 @@ public class SOLoader
         handle.Completed += (operation) =>
         {
 
+            Debug.Log(obj[0].name);
             action.Invoke(obj);
-            Addressables.Release(handle);
+            //Addressables.Release(handle);
+            Debug.Log("After release " + obj[0].name);
             //CheckEndAddresablesLoading();
         };
     }
@@ -51,7 +53,7 @@ public class SOLoader
         handle.Completed += (operation) =>
         {
             action.Invoke(handle.Result);
-            Addressables.Release(handle);
+            //Addressables.Release(handle);
             //CheckEndAddresablesLoading();
         };
     }
@@ -63,7 +65,7 @@ public class SOLoader
         handle.Completed += (operation) =>
         {
             action.Invoke(handle.Result);
-            assetReference.ReleaseAsset();
+            //assetReference.ReleaseAsset();
             //CheckEndAddresablesLoading();
         };
     }
