@@ -20,6 +20,11 @@ public class LootboxMenuManager : MenuManager
         YandexGame.SaveProgress();
     }
 
+    public override void SOLoaderInitialize()
+    {
+        lootbox.SOLoaderInitialize();
+    }
+
     public override void SaveDefaultSO()
     {
     }

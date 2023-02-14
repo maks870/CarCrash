@@ -35,7 +35,6 @@ public class MenuInitializer : MonoBehaviour
     {
         if (isInitializeProcess)
             return;
-        Debug.Log("—“¿–“Œ¬¿ﬂ »Õ»÷»¿À»«¿÷»ﬂ");
         isInitializeProcess = true;
         MainMenuManager mainMenu = new MainMenuManager();
 

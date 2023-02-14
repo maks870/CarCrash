@@ -5,8 +5,6 @@ using YG;
 
 public class LootBox : MonoBehaviour, ITrainingWaiter
 {
-    [SerializeField] private List<CollectibleSO> items = new List<CollectibleSO>();
-
     [Range(0, 100)] private int coinDropChance = 30;
     [Range(0, 100)] private int gemDropChance = 20;
 
@@ -18,6 +16,7 @@ public class LootBox : MonoBehaviour, ITrainingWaiter
 
     [SerializeField] private GameObject roomUI;
     private Animator animator;
+    private List<CollectibleSO> items = new List<CollectibleSO>();
 
     public Action ActionEndOpen;
     public Action ActionEndClose;
@@ -35,6 +34,11 @@ public class LootBox : MonoBehaviour, ITrainingWaiter
     public void UnsubscribeWaitAction(Action endWaitAction)
     {
         ActionEndClose -= endWaitAction;
+    }
+
+    public void SOLoaderInitialize()
+    {
+        SOLoader.LoadAllSO<CharacterModelSO>((result) => items.AddRange(result));
     }
 
     public void GetReward(out int coinValue, out int gemValue, out CollectibleSO collectibleItem)
