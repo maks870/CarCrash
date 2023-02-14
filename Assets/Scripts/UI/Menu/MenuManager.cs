@@ -9,6 +9,11 @@ public abstract class MenuManager : MonoBehaviour
     {
     }
 
+    public virtual void SOLoaderInitialize()
+    {
+
+    }
+
     public virtual void SaveDefaultSO()
     {
 

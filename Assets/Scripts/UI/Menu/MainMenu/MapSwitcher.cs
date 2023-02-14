@@ -14,10 +14,9 @@ public class MapSwitcher : MonoBehaviour
     private List<MapSO> closedMaps = new List<MapSO>();
     private List<ButtonMapUI> buttons = new List<ButtonMapUI>();
 
-    private void Awake()
+    public void SOLoaderInitialize()
     {
-        List<MapSO> maps = SOLoader.LoadAllSO<MapSO>();
-        FillListBySO(maps);
+        SOLoader.LoadAllSO<MapSO>((result) => FillListBySO(result));
     }
 
     private void CreateButtons()

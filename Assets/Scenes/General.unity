@@ -14121,10 +14121,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8f49cb09828d384f8d9890ef04cf762, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultCharacter: {fileID: 11400000, guid: 5e5fd033b6bcd6047961a263e1e3ffdf, type: 2}
-  defaultCarColor: {fileID: 11400000, guid: e669f1b151ab75e419caaceb86b61995, type: 2}
-  defaultCarModel: {fileID: 11400000, guid: 948b7f7278c9cb54d990209d3bb5ed28, type: 2}
-  defaultMap: {fileID: 11400000, guid: da316d7976e203147ae1e86dfe9ebf01, type: 2}
+  defaultCharacter:
+    m_AssetGUID: 5e5fd033b6bcd6047961a263e1e3ffdf
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  defaultCarColor:
+    m_AssetGUID: e669f1b151ab75e419caaceb86b61995
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  defaultCarModel:
+    m_AssetGUID: 948b7f7278c9cb54d990209d3bb5ed28
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  defaultMap:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
 --- !u!4 &1115926560
 Transform:
   m_ObjectHideFlags: 0

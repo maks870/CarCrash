@@ -18,18 +18,18 @@ public class MainMenuManager : MenuManager
     private void GetAwardsAfterMap()
     {
         presenter.GetAward();
-        YandexGame.savesData.playerWrapper.lastMap = "";
-        YandexGame.savesData.playerWrapper.lastMapPlaces.Clear();
-        YandexGame.SaveProgress();
         UpdateNewPossibilitiyWarnings();
         YandexGame.EndDataLoadingEvent -= GetAwardsAfterMap;
     }
 
+    public override void SOLoaderInitialize()
+    {
+        mapSwitcher.SOLoaderInitialize();
+    }
+
     public override void SaveDefaultSO()
     {
-        //MapSO map = playerLoad.DefaultMap;
-        //MapInfo mapInfo = new MapInfo(map.Name, map.MaxPoints);
-        //YandexGame.savesData.playerWrapper.maps.Add(mapInfo);
+
     }
 
     public override void OpenMenu()
@@ -38,11 +38,14 @@ public class MainMenuManager : MenuManager
         InitializeMenu();
     }
 
-    public override void InitializeMenu()
+    public void AddDataLoadingListener()
     {
         if (YandexGame.savesData.playerWrapper.lastMap != "" && YandexGame.savesData.playerWrapper.lastMapPlaces.Count != 0)
             YandexGame.EndDataLoadingEvent += GetAwardsAfterMap;
+    }
 
+    public override void InitializeMenu()
+    {
 
         for (int i = 0; i < gamemodePanels.Count; i++)
         {

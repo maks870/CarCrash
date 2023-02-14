@@ -5,10 +5,10 @@ using YG;
 
 public class PlayerLoad : MonoBehaviour
 {
-    [SerializeField] private CharacterModelSO defaultCharacter;
-    [SerializeField] private CarColorSO defaultCarColor;
-    [SerializeField] private CarModelSO defaultCarModel;
-    [SerializeField] private MapSO defaultMap;
+    [SerializeField] private AssetReference defaultCharacter;
+    [SerializeField] private AssetReference defaultCarColor;
+    [SerializeField] private AssetReference defaultCarModel;
+    [SerializeField] private AssetReference defaultMap;
     private CharacterModelSO currentCharacter;
     private CarColorSO currentCarColor;
     private CarModelSO currentCarModel;
@@ -21,20 +21,16 @@ public class PlayerLoad : MonoBehaviour
     public CharacterModelSO CurrentCharacter => currentCharacter;
     public CarColorSO CurrentCarColor => currentCarColor;
     public CarModelSO CurrentCarModel => currentCarModel;
-    public CharacterModelSO DefaultCharacter => defaultCharacter;
-    public CarColorSO DefaultCarColor => defaultCarColor;
-    public CarModelSO DefaultCarModel => defaultCarModel;
-    public MapSO DefaultMap => defaultMap;
+    public AssetReference DefaultCharacter => defaultCharacter;
+    public AssetReference DefaultCarColor => defaultCarColor;
+    public AssetReference DefaultCarModel => defaultCarModel;
 
     private void Awake()
     {
-        List<CharacterModelSO> charactersSO = SOLoader.LoadAllSO<CharacterModelSO>();
-        List<CarColorSO> carColorsSO = SOLoader.LoadAllSO<CarColorSO>();
-        List<CarModelSO> carModelsSO = SOLoader.LoadAllSO<CarModelSO>();
-
-        characters.AddRange(charactersSO);
-        carColors.AddRange(carColorsSO);
-        carModels.AddRange(carModelsSO);
+        //SOLoader.AddListenerYGLoading(SOLoaderInitialize);
+        SOLoader.LoadAllSO<CharacterModelSO>((result) => characters.AddRange(result));
+        SOLoader.LoadAllSO<CarColorSO>((result) => carColors.AddRange(result));
+        SOLoader.LoadAllSO<CarModelSO>((result) => carModels.AddRange(result));
     }
 
     public void LoadPlayerItems()

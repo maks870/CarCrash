@@ -10396,7 +10396,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf856f44d897554ab971d6cae380a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carModel: {fileID: 11400000, guid: 948b7f7278c9cb54d990209d3bb5ed28, type: 2}
+  meshAsset:
+    m_AssetGUID: 1e2dd3ae7e65373409bebde255714c27
+    m_SubObjectName: body
+    m_SubObjectType: UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+    m_EditorAssetChanged: 0
   characterModel: {fileID: 4533544608527221886}
   carRenderer: {fileID: 2246598232839147957}
   carFilter: {fileID: 5884958108483131119}
@@ -10436,7 +10441,6 @@ MonoBehaviour:
   m_TractionControl: 1
   m_FullTorqueOverAllWheels: 230
   m_ReverseTorque: 150
-  m_MaxHandbrakeTorque: 100000000
   m_Downforce: 100
   m_SpeedType: 0
   m_Topspeed: 55
@@ -10473,7 +10477,6 @@ MonoBehaviour:
   m_Driving: 1
   m_StopWhenTargetReached: 0
   m_ReachTargetThreshold: 2
-  avoidNearAngle: 90
   avoidFarAngle: 100
   avoidMinimumDistance: 3
   avoidDifferenceDistance: 1

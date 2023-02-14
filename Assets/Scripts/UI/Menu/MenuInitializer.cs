@@ -11,12 +11,14 @@ public class MenuInitializer : MonoBehaviour
     private bool isInitializeProcess = false;
     private void OnEnable()
     {
+        //SOLoader.EndLoadingEvent += StartInitialize;
         YandexGame.GetDataEvent += StartInitialize;
         YandexGame.EndDataLoadingEvent += soundController.Initialize;
     }
 
     private void OnDisable()
     {
+        //SOLoader.EndLoadingEvent -= StartInitialize;
         YandexGame.GetDataEvent -= StartInitialize;
         YandexGame.EndDataLoadingEvent -= soundController.Initialize;
     }
@@ -33,9 +35,9 @@ public class MenuInitializer : MonoBehaviour
     {
         if (isInitializeProcess)
             return;
-
+        Debug.Log("—“¿–“Œ¬¿ﬂ »Õ»÷»¿À»«¿÷»ﬂ");
         isInitializeProcess = true;
-        MenuManager mainMenu = menuManagers[0];
+        MainMenuManager mainMenu = new MainMenuManager();
 
         for (int i = 0; i < menuManagers.Count; i++)
         {
@@ -44,6 +46,8 @@ public class MenuInitializer : MonoBehaviour
 
             if (YandexGame.savesData.isFirstSession2)
                 menuManagers[i].SaveDefaultSO();
+
+            menuManagers[i].SOLoaderInitialize();
         }
 
         if (YandexGame.savesData.isFirstSession2)
@@ -54,14 +58,15 @@ public class MenuInitializer : MonoBehaviour
             startingTraining.StartTraining();
         }
 
-        for (int i = 0; i < menuManagers.Count; i++)
-        {
-            menuManagers[i].OpenMenu();
+        //for (int i = 0; i < menuManagers.Count; i++)
+        //{
+        //    menuManagers[i].OpenMenu();
 
-            if (menuManagers[i] != mainMenu)
-                menuManagers[i].objectUI.SetActive(false);
-        }
+        //    if (menuManagers[i] != mainMenu)
+        //        menuManagers[i].objectUI.SetActive(false);
+        //}
 
+        mainMenu.AddDataLoadingListener();
         earningUIController.UpdateEarnings();
         SceneTransition.instance.EndPreload();
     }

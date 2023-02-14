@@ -27,19 +27,31 @@ public class CustomizeMenuManager : MenuManager
         YandexGame.SaveProgress();
     }
 
+    public override void SOLoaderInitialize()
+    {
+        characterTabSwitcher.SOLoaderInitialize();
+        carTabSwitcher.SOLoaderInitialize();
+    }
+
     public override void SaveDefaultSO()
     {
-        CollectibleSO character = playerLoad.DefaultCharacter;
-        CollectibleSO carColor = playerLoad.DefaultCarColor;
-        CollectibleSO carModel = playerLoad.DefaultCarModel;
+        SOLoader.LoadAsset<CharacterModelSO>(playerLoad.DefaultCharacter, (result) =>
+        {
+            YandexGame.savesData.playerWrapper.collectibles.Add(result.Name);
+            YandexGame.savesData.playerWrapper.currentCharacterItem = result.Name;
+        });
 
-        YandexGame.savesData.playerWrapper.collectibles.Add(character.Name);
-        YandexGame.savesData.playerWrapper.collectibles.Add(carColor.Name);
-        YandexGame.savesData.playerWrapper.collectibles.Add(carModel.Name);
+        SOLoader.LoadAsset<CarColorSO>(playerLoad.DefaultCarColor, (result) =>
+        {
+            YandexGame.savesData.playerWrapper.collectibles.Add(result.Name);
+            YandexGame.savesData.playerWrapper.currentCarColorItem = result.Name;
+        });
 
-        YandexGame.savesData.playerWrapper.currentCharacterItem = character.Name;
-        YandexGame.savesData.playerWrapper.currentCarColorItem = carColor.Name;
-        YandexGame.savesData.playerWrapper.currentCarModelItem = carModel.Name;
+        SOLoader.LoadAsset<CarModelSO>(playerLoad.DefaultCarModel, (result) =>
+        {
+            YandexGame.savesData.playerWrapper.collectibles.Add(result.Name);
+            YandexGame.savesData.playerWrapper.currentCarModelItem = result.Name;
+        });
     }
 
     public override void OpenMenu()
@@ -68,28 +80,33 @@ public class CustomizeMenuManager : MenuManager
 
     public void OpenAllMapsTEST()//тестовый метод
     {
-        List<MapSO> maps = SOLoader.LoadAllSO<MapSO>();
-
-        foreach (MapSO map in maps)
+        SOLoader.LoadAllSO<MapSO>((result) =>
         {
-            MapInfo mapInfo = new MapInfo(map.name, map.MaxPoints);
-            YandexGame.savesData.playerWrapper.maps.Add(mapInfo);
-            Debug.Log("Получена карта " + mapInfo.mapName);
-        }
-        YandexGame.SaveProgress();
+            foreach (MapSO map in result)
+            {
+                MapInfo mapInfo = new MapInfo(map.name, map.MaxPoints);
+                YandexGame.savesData.playerWrapper.maps.Add(mapInfo);
+                Debug.Log("Получена карта " + mapInfo.mapName);
+            }
+            YandexGame.SaveProgress();
+        });
+
+
     }
 
     public void OpenAllCarModelsTEST()//тестовый метод
     {
-        List<CarModelSO> cars = SOLoader.LoadAllSO<CarModelSO>();
+        SOLoader.LoadAllSO<CarModelSO>((result) =>
+       {
+           foreach (CarModelSO car in result)
+           {
+               YandexGame.savesData.playerWrapper.collectibles.Add(car.Name);
+               Debug.Log("Получен автомобиль " + car.Name);
+           }
+           YandexGame.SaveProgress();
+           InitializeMenu();
+       });
 
-        foreach (CarModelSO car in cars)
-        {
-            YandexGame.savesData.playerWrapper.collectibles.Add(car.Name);
-            Debug.Log("Получен автомобиль " + car.Name);
-        }
-        YandexGame.SaveProgress();
-        InitializeMenu();
     }
 
     public void ShowOurCollectiblesTEST()//тестовый метод

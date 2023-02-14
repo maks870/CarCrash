@@ -26,13 +26,27 @@ public class CharacterTabSwitcher : MonoBehaviour
 
     private void Awake()
     {
-        List<CharacterModelSO> characters = SOLoader.LoadAllSO<CharacterModelSO>();
+        //SOLoader.AddListenerYGLoading(SOLoaderInitialize);
+        //SOLoader.LoadAllSO<CharacterModelSO>((result) =>
+        //{
+        //    for (int i = 0; i < switchers.Count; i++)
+        //    {
+        //        switchers[i].FillListBySO(result);
+        //    }
+        //    UpdateCurrentCharacter(startCurrentCharacterTransform);
+        //});
+    }
 
-        for (int i = 0; i < switchers.Count; i++)
+    public void SOLoaderInitialize()
+    {
+        SOLoader.LoadAllSO<CharacterModelSO>((result) =>
         {
-            switchers[i].FillListBySO(characters);
-        }
-        UpdateCurrentCharacter(startCurrentCharacterTransform);
+            for (int i = 0; i < switchers.Count; i++)
+            {
+                switchers[i].FillListBySO(result);
+            }
+            UpdateCurrentCharacter(startCurrentCharacterTransform);
+        });
     }
 
     public void SetSavedCharacter(CharacterModelSO characterSO)
