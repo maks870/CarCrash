@@ -69,6 +69,17 @@ public class SOLoader
             //CheckEndAddresablesLoading();
         };
     }
+    public static void LoadAsset<T>(string assetName, Action<T> action)
+    {
+        AsyncOperationHandle<T> handle = Addressables.LoadAssetAsync<T>(assetName);
+
+        handle.Completed += (operation) =>
+        {
+            action.Invoke(handle.Result);
+            //assetReference.ReleaseAsset();
+            //CheckEndAddresablesLoading();
+        };
+    }
 
     //public List<T> LoadAllSO<T>() where T : ScriptableObject
     //{

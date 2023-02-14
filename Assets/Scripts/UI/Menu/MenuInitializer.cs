@@ -38,6 +38,8 @@ public class MenuInitializer : MonoBehaviour
         isInitializeProcess = true;
         MenuManager mainMenu = menuManagers[0];
 
+        SOLoader.LoadAsset<Material>("1 4", (result) => Debug.Log(result.name));
+
         for (int i = 0; i < menuManagers.Count; i++)
         {
             if (menuManagers[i].GetType() == typeof(MainMenuManager))
