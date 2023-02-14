@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 using YG;
 
 public class CharacterModelSwitcher : MonoBehaviour
@@ -141,7 +140,22 @@ public class CharacterModelSwitcher : MonoBehaviour
         tabSwitcher.SelectButton(buttonTransform);
     }
 
-    public void FillListBySO(List<CharacterModelSO> characters)
+    public void LoadSOSubscribe()
+    {
+        SOLoader.OnLoadingEvent += (scriptableObj) =>
+        {
+            Debug.Log("Èìÿ " + scriptableObj.name);
+            if (scriptableObj.GetType() == typeof(CharacterModelSO))
+            {
+                Debug.Log("Òèï " + scriptableObj.GetType().ToString());
+                CharacterModelSO character = (CharacterModelSO)scriptableObj;
+                if (character.CharacterType == characterType)
+                    charactersSO.Add(character);
+            }
+        };
+    }
+
+    public void FillListBySO(List<CharacterModelSO> characters)//Legacy
     {
         for (int i = 0; i < characters.Count; i++)
         {
@@ -164,7 +178,7 @@ public class CharacterModelSwitcher : MonoBehaviour
 
     public void SetCurrentCharacter(CharacterModelSO characterCollectible)
     {
-        SOLoader.LoadAsset<GameObject>(characterCollectible.AssetReference, (result) =>
+        SOLoader.LoadAssetReference<GameObject>(characterCollectible.AssetReference, (result) =>
         {
             GameObject newCharacter = Instantiate(result, currentCharacterTransform);
             newCharacter.transform.parent = null;

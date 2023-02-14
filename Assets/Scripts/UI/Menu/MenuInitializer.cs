@@ -9,7 +9,6 @@ public class MenuInitializer : MonoBehaviour
     [SerializeField] private EarningUIController earningUIController;
     [SerializeField] private SoundController soundController;
     [SerializeField] private StartingTraining startingTraining;
-    [SerializeField] private AssetReference assetReference;
 
     private bool isInitializeProcess = false;
     private void OnEnable()
@@ -41,8 +40,6 @@ public class MenuInitializer : MonoBehaviour
         isInitializeProcess = true;
         MenuManager mainMenu = menuManagers[0];
 
-        SOLoader.LoadAsset<Material>(assetReference, (result) => Debug.Log(result.name));
-
         for (int i = 0; i < menuManagers.Count; i++)
         {
             if (menuManagers[i].GetType() == typeof(MainMenuManager))
@@ -51,9 +48,9 @@ public class MenuInitializer : MonoBehaviour
             if (YandexGame.savesData.isFirstSession2)
                 menuManagers[i].SaveDefaultSO();
 
-            menuManagers[i].SOLoaderInitialize();
+            menuManagers[i].SOLoaderSubscribe();/////
         }
-
+        SOLoader.LoadAll();
         if (YandexGame.savesData.isFirstSession2)
         {
             YandexGame.savesData.playerWrapper.lastMap = "";
@@ -71,7 +68,7 @@ public class MenuInitializer : MonoBehaviour
         //}
 
         MainMenuManager newMainMenu = (MainMenuManager)mainMenu;
-        newMainMenu.AddDataLoadingListener();
+        newMainMenu.AddYGDataLoadingListener();
         earningUIController.UpdateEarnings();
         SceneTransition.instance.EndPreload();
     }

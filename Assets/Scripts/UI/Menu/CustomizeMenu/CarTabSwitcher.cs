@@ -15,17 +15,12 @@ public class CarTabSwitcher : MonoBehaviour
     public CarColorSwitcher CarColorSwitcher { get => carColorSwitcher; set => carColorSwitcher = value; }
     public CarModelSwitcher CarModelSwitcher { get => carModelSwitcher; set => carModelSwitcher = value; }
 
-    private void Awake()
+    public void SubscribeSwitchers()
     {
-        //SOLoader.AddListenerYGLoading(SOLoaderInitialize);
         //SOLoader.LoadAllSO<CarColorSO>((result) => carColorSwitcher.FillListBySO(result));
         //SOLoader.LoadAllSO<CarModelSO>((result) => carModelSwitcher.FillListBySO(result));
-    }
-
-    public void SOLoaderInitialize()
-    {
-        SOLoader.LoadAllSO<CarColorSO>((result) => carColorSwitcher.FillListBySO(result));
-        SOLoader.LoadAllSO<CarModelSO>((result) => carModelSwitcher.FillListBySO(result));
+        carColorSwitcher.LoadSOSubscribe();
+        carModelSwitcher.LoadSOSubscribe();
     }
 
     public void SwitchToCarColor()

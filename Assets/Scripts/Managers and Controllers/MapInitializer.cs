@@ -20,54 +20,89 @@ public class MapInitializer : MonoBehaviour
 
     public List<BotSettings> botInitializers = new List<BotSettings>();
 
+    private void OnEnable()
+    {
+        SOLoader.OnLoadingEvent += (scriptableObj) =>
+        {
+            if (scriptableObj.GetType() == typeof(CharacterModelSO))
+                characterModels.Add((CharacterModelSO)scriptableObj);
+
+            if (scriptableObj.GetType() == typeof(CarColorSO))
+                carColors.Add((CarColorSO)scriptableObj);
+        };
+
+        SOLoader.EndLoadingEvent += SOLoaderInitialize;
+    }
+
     void Start()
     {
         botInitializers.AddRange(FindObjectsOfType<BotSettings>());
-        SOLoaderInitialize();
+        SOLoader.LoadAll();
     }
 
     private void InitializePlayerPrefab()
     {
-        SOLoader.LoadSO<CharacterModelSO>(YandexGame.savesData.playerWrapper.currentCharacterItem, (result) =>
+        List<CharacterModelSO> charList = (List<CharacterModelSO>)SOLoader.characterHandle.Result;
+        CharacterModelSO characterSO = charList.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCharacterItem);
+        SOLoader.LoadAssetReference<GameObject>(character.AssetReference, (result) =>
         {
-            character = result;
-            SOLoader.LoadAsset<GameObject>(character.AssetReference, (result) =>
-            {
-                Debug.Log(result);
-                Debug.Log(characterModel.transform.parent);
-                Instantiate(result, characterModel.transform.parent);
-                Destroy(characterModel.gameObject);
-            });
+            Instantiate(result, characterModel.transform.parent);
+            Destroy(characterModel.gameObject);
         });
 
-        SOLoader.LoadSO<CarColorSO>(YandexGame.savesData.playerWrapper.currentCarColorItem, (result) =>
-        {
-            carColor = result;
-            carRenderer.material.mainTexture = carColor.Texture;
-        });
+        List<CarColorSO> carColorList = (List<CarColorSO>)SOLoader.carColorHandle.Result;
+        CarColorSO carColorSO = carColorList.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCarColorItem);
+        carRenderer.material.mainTexture = carColorSO.Texture;
 
-        SOLoader.LoadSO<CarModelSO>(YandexGame.savesData.playerWrapper.currentCarModelItem, (result) =>
-        {
-            carModel = result;
-            carObj.GetComponent<CarController>().m_FullTorqueOverAllWheels = carModel.Acceleration;
-            carObj.GetComponent<CarController>().Handability = carModel.Handleability;
-            SOLoader.LoadAsset<Mesh>(carModel.MeshAsset, (mesh) => carFilter.mesh = mesh);
-        });
+        List<CarModelSO> carModelList = (List<CarModelSO>)SOLoader.carModelHandle.Result;
+        CarModelSO carModelSO = carModelList.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCarModelItem);
+        carModel = carModelSO;
+        carObj.GetComponent<CarController>().m_FullTorqueOverAllWheels = carModel.Acceleration;
+        carObj.GetComponent<CarController>().Handability = carModel.Handleability;
+        SOLoader.LoadAssetReference<Mesh>(carModel.MeshAsset, (mesh) => carFilter.mesh = mesh);
+
+
+        //SOLoader.LoadSO<CharacterModelSO>(YandexGame.savesData.playerWrapper.currentCharacterItem, (result) =>
+        //{
+        //    character = result;
+        //    SOLoader.LoadAssetReference<GameObject>(character.AssetReference, (result) =>
+        //    {
+        //        Instantiate(result, characterModel.transform.parent);
+        //        Destroy(characterModel.gameObject);
+        //    });
+        //});
+
+        //SOLoader.LoadSO<CarColorSO>(YandexGame.savesData.playerWrapper.currentCarColorItem, (result) =>
+        //{
+        //    carColor = result;
+        //    carRenderer.material.mainTexture = carColor.Texture;
+        //});
+
+        //SOLoader.LoadSO<CarModelSO>(YandexGame.savesData.playerWrapper.currentCarModelItem, (result) =>
+        //{
+        //    carModel = result;
+        //    carObj.GetComponent<CarController>().m_FullTorqueOverAllWheels = carModel.Acceleration;
+        //    carObj.GetComponent<CarController>().Handability = carModel.Handleability;
+        //    SOLoader.LoadAssetReference<Mesh>(carModel.MeshAsset, (mesh) => carFilter.mesh = mesh);
+        //});
 
         soundController.Initialize();
     }
 
     private void SOLoaderInitialize()
     {
-        SOLoader.LoadAllSO<CharacterModelSO>((result) =>
-        {
-            characterModels = result;
-            SOLoader.LoadAllSO<CarColorSO>((result) =>
-            {
-                carColors = result;
-                InitializePrefabs();
-            });
-        });
+        characterModels = (List<CharacterModelSO>)SOLoader.characterHandle.Result;
+        carColors = (List<CarColorSO>)SOLoader.carColorHandle.Result;
+        InitializePrefabs();
+        //SOLoader.LoadAllSO<CharacterModelSO>((result) =>
+        //{
+        //    characterModels = result;
+        //    SOLoader.LoadAllSO<CarColorSO>((result) =>
+        //    {
+        //        carColors = result;
+        //        InitializePrefabs();
+        //    });
+        //});
     }
 
     private void InitializePrefabs()

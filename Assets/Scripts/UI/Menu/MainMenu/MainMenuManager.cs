@@ -22,9 +22,9 @@ public class MainMenuManager : MenuManager
         YandexGame.EndDataLoadingEvent -= GetAwardsAfterMap;
     }
 
-    public override void SOLoaderInitialize()
+    public override void SOLoaderSubscribe()
     {
-        mapSwitcher.SOLoaderInitialize();
+        mapSwitcher.LoadSOSubscribe();
     }
 
     public override void SaveDefaultSO()
@@ -38,7 +38,7 @@ public class MainMenuManager : MenuManager
         InitializeMenu();
     }
 
-    public void AddDataLoadingListener()
+    public void AddYGDataLoadingListener()
     {
         if (YandexGame.savesData.playerWrapper.lastMap != "" && YandexGame.savesData.playerWrapper.lastMapPlaces.Count != 0)
             YandexGame.EndDataLoadingEvent += GetAwardsAfterMap;

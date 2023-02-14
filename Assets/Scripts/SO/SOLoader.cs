@@ -6,27 +6,71 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using YG;
 
 public delegate void AddressableHandler();
+public delegate void AddressableSOHandler(ScriptableObject obj);
 public class SOLoader
 {
-    public static int onLoadingYGEvents = 0;
     public static event AddressableHandler EndLoadingEvent;
+    public static event AddressableSOHandler OnLoadingEvent;
+    public static AsyncOperationHandle<IList<CharacterModelSO>> characterHandle;
+    public static AsyncOperationHandle<IList<CarColorSO>> carColorHandle;
+    public static AsyncOperationHandle<IList<CarModelSO>> carModelHandle;
+    public static AsyncOperationHandle<IList<MapSO>> mapHandle;
+    public static List<AssetReference> assetReferenceList = new List<AssetReference>();
 
-    public static void AddListenerYGLoading(Action action)
+    public static void LoadAll()
     {
-        onLoadingYGEvents++;
-        YandexGame.GetDataEvent += action;
+        //Clear();
+        StartLoadAllSO(characterHandle);
+        StartLoadAllSO(carColorHandle);
+        StartLoadAllSO(carModelHandle);
+        StartLoadAllSO(mapHandle);
+        EndLoadingEvent?.Invoke();
     }
 
-    public static void RemoveListenerYGLoading(Action action)
+    public static void Clear()
     {
-        YandexGame.GetDataEvent = action;
+        if (characterHandle.IsValid())
+            Addressables.Release(characterHandle);
+
+        if (carColorHandle.IsValid())
+            Addressables.Release(carColorHandle);
+
+        if (carModelHandle.IsValid())
+            Addressables.Release(carModelHandle);
+
+        if (mapHandle.IsValid())
+            Addressables.Release(mapHandle);
+
+
+        if (OnLoadingEvent != null)
+        {
+            foreach (Delegate d in OnLoadingEvent.GetInvocationList())
+            {
+                OnLoadingEvent -= (AddressableSOHandler)d;
+            }
+        }
+
+        if (EndLoadingEvent != null)
+        {
+            foreach (Delegate d in EndLoadingEvent.GetInvocationList())
+            {
+                EndLoadingEvent -= (AddressableHandler)d;
+            }
+        }
+
+        foreach (AssetReference assetReference in assetReferenceList)
+        {
+            assetReference.ReleaseAsset();
+        }
+
+        assetReferenceList.Clear();
     }
 
-    public static void CheckEndAddresablesLoading()
+    private static void StartLoadAllSO<T>(AsyncOperationHandle<IList<T>> handle) where T : ScriptableObject
     {
-        onLoadingYGEvents--;
-        if (onLoadingYGEvents == 0)
-            EndLoadingEvent.Invoke();
+        Debug.Log("загрузка");
+        string assetLabel = typeof(T).Name;
+        handle = Addressables.LoadAssetsAsync<T>(assetLabel, scriptableObject => { Debug.Log("Загрузка ассетов"); OnLoadingEvent?.Invoke(scriptableObject); });
     }
 
     public static void LoadAllSO<T>(Action<List<T>> action) where T : ScriptableObject
@@ -34,19 +78,17 @@ public class SOLoader
         string assetLabel = typeof(T).Name;
         List<T> obj = new List<T>();
         AsyncOperationHandle<IList<T>> handle = Addressables.LoadAssetsAsync<T>(assetLabel, scriptableObject => obj.Add(scriptableObject));
-
         handle.Completed += (operation) =>
         {
-
             Debug.Log(obj[0].name);
             action.Invoke(obj);
             //Addressables.Release(handle);
             Debug.Log("After release " + obj[0].name);
-            //CheckEndAddresablesLoading();
         };
     }
 
-    public static void LoadSO<T>(string name, Action<T> action) where T : ScriptableObject
+
+    public static void LoadSO<T>(string name, Action<T> action) where T : ScriptableObject// Legacy
     {
         AsyncOperationHandle<T> handle = Addressables.LoadAssetAsync<T>(name);
 
@@ -54,22 +96,50 @@ public class SOLoader
         {
             action.Invoke(handle.Result);
             //Addressables.Release(handle);
-            //CheckEndAddresablesLoading();
         };
     }
 
-    public static void LoadAsset<T>(AssetReference assetReference, Action<T> action)
+    //public static void LoadSO<T>(string name, Action<T> action) where T : ScriptableObject
+    //{
+    //    AsyncOperationHandle<T> handle = Addressables.LoadAssetAsync<T>(name);
+
+    //    handle.Completed += (operation) =>
+    //    {
+    //        action.Invoke(handle.Result);
+    //        //Addressables.Release(handle);
+    //    };
+    //}
+
+    public static void LoadAssetReference<T>(AssetReference assetReference, Action<T> action)
     {
-        AsyncOperationHandle<T> handle = assetReference.LoadAssetAsync<T>();
-
-        handle.Completed += (operation) =>
+        bool isNewAssetReference = true;
+        T obj = default(T);
+        foreach (AssetReference assetRef in assetReferenceList)
         {
-            action.Invoke(handle.Result);
-            //assetReference.ReleaseAsset();
-            //CheckEndAddresablesLoading();
-        };
+            if (assetReference == assetRef)
+            {
+                obj = assetRef.OperationHandle.Convert<T>().Result;
+                isNewAssetReference = false;
+                break;
+            }
+        }
+
+        if (!isNewAssetReference)
+        {
+            action.Invoke(obj);
+        }
+        else
+        {
+            AsyncOperationHandle<T> handle = Addressables.LoadAssetAsync<T>(assetReference);
+            assetReferenceList.Add(assetReference);
+            handle.Completed += (operation) =>
+            {
+                action.Invoke(handle.Result);
+            };
+        }
     }
-    public static void LoadAsset<T>(string assetName, Action<T> action)
+
+    public static void LoadAsset<T>(string assetName, Action<T> action) //Legacy
     {
         AsyncOperationHandle<T> handle = Addressables.LoadAssetAsync<T>(assetName);
 
@@ -77,7 +147,6 @@ public class SOLoader
         {
             action.Invoke(handle.Result);
             //assetReference.ReleaseAsset();
-            //CheckEndAddresablesLoading();
         };
     }
 

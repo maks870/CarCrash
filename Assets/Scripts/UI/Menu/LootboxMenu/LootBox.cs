@@ -21,6 +21,8 @@ public class LootBox : MonoBehaviour, ITrainingWaiter
     public Action ActionEndOpen;
     public Action ActionEndClose;
 
+
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -36,9 +38,14 @@ public class LootBox : MonoBehaviour, ITrainingWaiter
         ActionEndClose -= endWaitAction;
     }
 
-    public void SOLoaderInitialize()
+    public void CollectibledLoadSubscribe()
     {
-        SOLoader.LoadAllSO<CharacterModelSO>((result) => items.AddRange(result));
+        SOLoader.OnLoadingEvent += (scriptableObj) =>
+        {
+            if (scriptableObj.GetType() == typeof(CharacterModelSO))
+                items.Add((CharacterModelSO)scriptableObj);
+        };
+        //SOLoader.LoadAllSO<CharacterModelSO>((result) => items.AddRange(result));
     }
 
     public void GetReward(out int coinValue, out int gemValue, out CollectibleSO collectibleItem)

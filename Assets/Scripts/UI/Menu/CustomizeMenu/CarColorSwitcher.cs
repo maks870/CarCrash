@@ -132,6 +132,16 @@ public class CarColorSwitcher : MonoBehaviour
         carTabSwitcher.SelectButton(buttonTransform);
     }
 
+    public void LoadSOSubscribe()
+    {
+        SOLoader.OnLoadingEvent += (scriptableObj) =>
+        {
+            if (scriptableObj.GetType() == typeof(CarColorSO))
+                carColorsSO.Add((CarColorSO)scriptableObj);
+            Debug.Log("Добавил");
+        };
+    }
+
     public void FillListBySO(List<CarColorSO> carColors)
     {
         carColorsSO.AddRange(carColors);

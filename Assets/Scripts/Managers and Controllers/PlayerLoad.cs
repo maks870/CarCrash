@@ -25,12 +25,19 @@ public class PlayerLoad : MonoBehaviour
     public AssetReference DefaultCarColor => defaultCarColor;
     public AssetReference DefaultCarModel => defaultCarModel;
 
-    private void Awake()
+    private void OnEnable()
     {
-        //SOLoader.AddListenerYGLoading(SOLoaderInitialize);
-        SOLoader.LoadAllSO<CharacterModelSO>((result) => characters.AddRange(result));
-        SOLoader.LoadAllSO<CarColorSO>((result) => carColors.AddRange(result));
-        SOLoader.LoadAllSO<CarModelSO>((result) => carModels.AddRange(result));
+        SOLoader.OnLoadingEvent += (scriptableObj) =>
+        {
+            if (scriptableObj.GetType() == typeof(CharacterModelSO))
+                characters.Add((CharacterModelSO)scriptableObj);
+
+            if (scriptableObj.GetType() == typeof(CarColorSO))
+                carColors.Add((CarColorSO)scriptableObj);
+
+            if (scriptableObj.GetType() == typeof(CarModelSO))
+                carModels.Add((CarModelSO)scriptableObj);
+        };
     }
 
     public void LoadPlayerItems()

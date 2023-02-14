@@ -152,6 +152,15 @@ public class CarModelSwitcher : MonoBehaviour
         carTabSwitcher.SelectButton(buttonTransform);
     }
 
+    public void LoadSOSubscribe()
+    {
+        SOLoader.OnLoadingEvent += (scriptableObj) =>
+        {
+            if (scriptableObj.GetType() == typeof(CarModelSO))
+                carModelsSO.Add((CarModelSO)scriptableObj);
+        };
+    }
+
     public void FillListBySO(List<CarModelSO> carModels)
     {
         carModelsSO.AddRange(carModels);
@@ -168,7 +177,7 @@ public class CarModelSwitcher : MonoBehaviour
 
     public void SetCurrentModel(CarModelSO characterCollectible)
     {
-        SOLoader.LoadAsset<Mesh>(characterCollectible.MeshAsset, (result) => currentMeshFilter.mesh = result);
+        SOLoader.LoadAssetReference<Mesh>(characterCollectible.MeshAsset, (result) => currentMeshFilter.mesh = result);
         currentCarModel = characterCollectible;
         SelectCurrentButton();
         UpdateCarStatWindow();
