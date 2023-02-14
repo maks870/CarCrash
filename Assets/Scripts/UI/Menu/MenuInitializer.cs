@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using YG;
 
 public class MenuInitializer : MonoBehaviour
@@ -8,6 +9,8 @@ public class MenuInitializer : MonoBehaviour
     [SerializeField] private EarningUIController earningUIController;
     [SerializeField] private SoundController soundController;
     [SerializeField] private StartingTraining startingTraining;
+    [SerializeField] private AssetReference assetReference;
+
     private bool isInitializeProcess = false;
     private void OnEnable()
     {
@@ -38,7 +41,7 @@ public class MenuInitializer : MonoBehaviour
         isInitializeProcess = true;
         MenuManager mainMenu = menuManagers[0];
 
-        SOLoader.LoadAsset<Material>("1 4", (result) => Debug.Log(result.name));
+        SOLoader.LoadAsset<Material>(assetReference, (result) => Debug.Log(result.name));
 
         for (int i = 0; i < menuManagers.Count; i++)
         {
