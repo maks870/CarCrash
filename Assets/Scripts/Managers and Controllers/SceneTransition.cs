@@ -52,6 +52,7 @@ public class SceneTransition : MonoBehaviour
 
     public static void SwitchScene(string sceneName)
     {
+        //SOLoader.instance.Clear();
         instance.unloaded = false;
         instance.StartCoroutine(instance.SceneLoadComplete(sceneName));
     }
