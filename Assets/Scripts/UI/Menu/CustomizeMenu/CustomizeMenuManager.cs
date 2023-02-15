@@ -35,19 +35,19 @@ public class CustomizeMenuManager : MenuManager
 
     public override void SaveDefaultSO()
     {
-        SOLoader.LoadAssetReference<CharacterModelSO>(playerLoad.DefaultCharacter, (result) =>
+        SOLoader.instance.LoadAssetReference<CharacterModelSO>(playerLoad.DefaultCharacter, (result) =>
         {
             YandexGame.savesData.playerWrapper.collectibles.Add(result.Name);
             YandexGame.savesData.playerWrapper.currentCharacterItem = result.Name;
         });
 
-        SOLoader.LoadAssetReference<CarColorSO>(playerLoad.DefaultCarColor, (result) =>
+        SOLoader.instance.LoadAssetReference<CarColorSO>(playerLoad.DefaultCarColor, (result) =>
         {
             YandexGame.savesData.playerWrapper.collectibles.Add(result.Name);
             YandexGame.savesData.playerWrapper.currentCarColorItem = result.Name;
         });
 
-        SOLoader.LoadAssetReference<CarModelSO>(playerLoad.DefaultCarModel, (result) =>
+        SOLoader.instance.LoadAssetReference<CarModelSO>(playerLoad.DefaultCarModel, (result) =>
         {
             YandexGame.savesData.playerWrapper.collectibles.Add(result.Name);
             YandexGame.savesData.playerWrapper.currentCarModelItem = result.Name;
@@ -80,7 +80,7 @@ public class CustomizeMenuManager : MenuManager
 
     public void OpenAllMapsTEST()//тестовый метод
     {
-        List<MapSO> mapList = (List<MapSO>)SOLoader.mapHandle.Result;
+        List<MapSO> mapList = (List<MapSO>)SOLoader.instance.mapHandle.Result;
 
         foreach (MapSO map in mapList)
         {
@@ -93,7 +93,7 @@ public class CustomizeMenuManager : MenuManager
 
     public void OpenAllCarModelsTEST()//тестовый метод
     {
-        List<CarModelSO> carList = (List<CarModelSO>)SOLoader.carModelHandle.Result;
+        List<CarModelSO> carList = (List<CarModelSO>)SOLoader.instance.carModelHandle.Result;
 
         foreach (CarModelSO car in carList)
         {

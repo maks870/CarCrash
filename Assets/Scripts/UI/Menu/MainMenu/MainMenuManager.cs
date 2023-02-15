@@ -79,7 +79,7 @@ public class MainMenuManager : MenuManager
 
     public void ClearSOLoaderTEST()
     {
-        SOLoader.Clear();
+        SOLoader.instance.Clear();
     }
 
 }

@@ -134,11 +134,10 @@ public class CarColorSwitcher : MonoBehaviour
 
     public void LoadSOSubscribe()
     {
-        SOLoader.OnLoadingEvent += (scriptableObj) =>
+        SOLoader.instance.OnLoadingEvent += (scriptableObj) =>
         {
             if (scriptableObj.GetType() == typeof(CarColorSO))
                 carColorsSO.Add((CarColorSO)scriptableObj);
-            Debug.Log("Добавил");
         };
     }
 

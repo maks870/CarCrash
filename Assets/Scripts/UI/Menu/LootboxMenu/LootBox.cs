@@ -40,7 +40,7 @@ public class LootBox : MonoBehaviour, ITrainingWaiter
 
     public void CollectibledLoadSubscribe()
     {
-        SOLoader.OnLoadingEvent += (scriptableObj) =>
+        SOLoader.instance.OnLoadingEvent += (scriptableObj) =>
         {
             if (scriptableObj.GetType() == typeof(CharacterModelSO))
                 items.Add((CharacterModelSO)scriptableObj);

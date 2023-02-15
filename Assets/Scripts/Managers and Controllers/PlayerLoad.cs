@@ -27,7 +27,7 @@ public class PlayerLoad : MonoBehaviour
 
     private void OnEnable()
     {
-        SOLoader.OnLoadingEvent += (scriptableObj) =>
+        SOLoader.instance.OnLoadingEvent += (scriptableObj) =>
         {
             if (scriptableObj.GetType() == typeof(CharacterModelSO))
                 characters.Add((CharacterModelSO)scriptableObj);

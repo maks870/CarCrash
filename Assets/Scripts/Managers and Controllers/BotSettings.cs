@@ -27,13 +27,13 @@ public class BotSettings : MonoBehaviour
 
     public void InitializeBot(CharacterModelSO character, CarColorSO carColor)
     {
-        SOLoader.LoadAssetReference<GameObject>(character.AssetReference, (result) =>
+        SOLoader.instance.LoadAssetReference<GameObject>(character.AssetReference, (result) =>
         {
             Instantiate(result, characterModel.transform.parent);
             Destroy(characterModel.gameObject);
         });
 
-        SOLoader.LoadAssetReference<Mesh>(meshAsset, (result) => carFilter.mesh = result);
+        SOLoader.instance.LoadAssetReference<Mesh>(meshAsset, (result) => carFilter.mesh = result);
         carRenderer.material.mainTexture = carColor.Texture;
     }
 }

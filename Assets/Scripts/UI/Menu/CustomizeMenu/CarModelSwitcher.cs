@@ -154,7 +154,7 @@ public class CarModelSwitcher : MonoBehaviour
 
     public void LoadSOSubscribe()
     {
-        SOLoader.OnLoadingEvent += (scriptableObj) =>
+        SOLoader.instance.OnLoadingEvent += (scriptableObj) =>
         {
             if (scriptableObj.GetType() == typeof(CarModelSO))
                 carModelsSO.Add((CarModelSO)scriptableObj);
@@ -177,7 +177,7 @@ public class CarModelSwitcher : MonoBehaviour
 
     public void SetCurrentModel(CarModelSO characterCollectible)
     {
-        SOLoader.LoadAssetReference<Mesh>(characterCollectible.MeshAsset, (result) => currentMeshFilter.mesh = result);
+        SOLoader.instance.LoadAssetReference<Mesh>(characterCollectible.MeshAsset, (result) => currentMeshFilter.mesh = result);
         currentCarModel = characterCollectible;
         SelectCurrentButton();
         UpdateCarStatWindow();

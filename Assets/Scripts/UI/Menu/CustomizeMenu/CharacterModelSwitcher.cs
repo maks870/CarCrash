@@ -142,12 +142,10 @@ public class CharacterModelSwitcher : MonoBehaviour
 
     public void LoadSOSubscribe()
     {
-        SOLoader.OnLoadingEvent += (scriptableObj) =>
+        SOLoader.instance.OnLoadingEvent += (scriptableObj) =>
         {
-            Debug.Log("Èìÿ " + scriptableObj.name);
             if (scriptableObj.GetType() == typeof(CharacterModelSO))
             {
-                Debug.Log("Òèï " + scriptableObj.GetType().ToString());
                 CharacterModelSO character = (CharacterModelSO)scriptableObj;
                 if (character.CharacterType == characterType)
                     charactersSO.Add(character);
@@ -162,7 +160,6 @@ public class CharacterModelSwitcher : MonoBehaviour
             if (characters[i].CharacterType == characterType)
                 charactersSO.Add(characters[i]);
         }
-        Debug.Log("1st char in charModelSwitcherList " + charactersSO[0].name);
     }
 
     public bool FindStartCharacter(CharacterModelSO characterSO)
@@ -178,8 +175,7 @@ public class CharacterModelSwitcher : MonoBehaviour
 
     public void SetCurrentCharacter(CharacterModelSO characterCollectible)
     {
-        Debug.Log(characterCollectible.AssetReference.RuntimeKey.ToString());
-        SOLoader.LoadAssetReference<GameObject>(characterCollectible.AssetReference, (result) =>
+        SOLoader.instance.LoadAssetReference<GameObject>(characterCollectible.AssetReference, (result) =>
         {
             GameObject newCharacter = Instantiate(result, currentCharacterTransform);
             newCharacter.transform.parent = null;

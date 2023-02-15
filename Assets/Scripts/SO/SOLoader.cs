@@ -6,20 +6,30 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 public delegate void AddressableHandler();
 public delegate void AddressableSOHandler(ScriptableObject obj);
-public class SOLoader
+public class SOLoader : MonoBehaviour
 {
-    public static event AddressableHandler EndLoadingEvent;
-    public static event AddressableSOHandler OnLoadingEvent;
-    public static AsyncOperationHandle<IList<CharacterModelSO>> characterHandle;
-    public static AsyncOperationHandle<IList<CarColorSO>> carColorHandle;
-    public static AsyncOperationHandle<IList<CarModelSO>> carModelHandle;
-    public static AsyncOperationHandle<IList<MapSO>> mapHandle;
-    public static Dictionary<string, AsyncOperationHandle> uniqueHandleDictionary = new Dictionary<string, AsyncOperationHandle>();
-    public static List<AssetReference> assetReferenceList = new List<AssetReference>();
+    public static SOLoader instance;
 
-    public static void LoadAll()
+    public event AddressableHandler EndLoadingEvent;
+    public event AddressableSOHandler OnLoadingEvent;
+    public AsyncOperationHandle<IList<CharacterModelSO>> characterHandle;
+    public AsyncOperationHandle<IList<CarColorSO>> carColorHandle;
+    public AsyncOperationHandle<IList<CarModelSO>> carModelHandle;
+    public AsyncOperationHandle<IList<MapSO>> mapHandle;
+    public Dictionary<string, AsyncOperationHandle> uniqueHandleDictionary = new Dictionary<string, AsyncOperationHandle>();
+
+    private void OnEnable()
     {
-        //    Clear();
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this);
+
+        DontDestroyOnLoad(gameObject);
+    }
+
+    public void LoadAll()
+    {
         StartLoadAllSO(characterHandle);
         StartLoadAllSO(carColorHandle);
         StartLoadAllSO(carModelHandle);
@@ -27,7 +37,7 @@ public class SOLoader
         EndLoadingEvent?.Invoke();
     }
 
-    public static void Clear()
+    public void Clear()
     {
         if (characterHandle.IsValid())
             Addressables.Release(characterHandle);
@@ -66,13 +76,13 @@ public class SOLoader
         uniqueHandleDictionary.Clear();
     }
 
-    private static void StartLoadAllSO<T>(AsyncOperationHandle<IList<T>> handle) where T : ScriptableObject
+    private void StartLoadAllSO<T>(AsyncOperationHandle<IList<T>> handle) where T : ScriptableObject
     {
         string assetLabel = typeof(T).Name;
         handle = Addressables.LoadAssetsAsync<T>(assetLabel, scriptableObject => OnLoadingEvent?.Invoke(scriptableObject));
     }
 
-    public static void LoadAllSO<T>(Action<List<T>> action) where T : ScriptableObject
+    public void LoadAllSO<T>(Action<List<T>> action) where T : ScriptableObject
     {
         string assetLabel = typeof(T).Name;
         List<T> obj = new List<T>();
@@ -85,7 +95,7 @@ public class SOLoader
     }
 
 
-    public static void LoadSO<T>(string name, Action<T> action) where T : ScriptableObject// Legacy
+    public void LoadSO<T>(string name, Action<T> action) where T : ScriptableObject// Legacy
     {
         AsyncOperationHandle<T> handle = Addressables.LoadAssetAsync<T>(name);
 
@@ -106,7 +116,7 @@ public class SOLoader
     //    };
     //}
 
-    public static void LoadAssetReference<T>(AssetReference assetReference, Action<T> action) where T : UnityEngine.Object
+    public void LoadAssetReference<T>(AssetReference assetReference, Action<T> action) where T : UnityEngine.Object
     {
         T obj = default(T);
         AsyncOperationHandle handle;
@@ -128,7 +138,7 @@ public class SOLoader
         }
     }
 
-    public static void LoadAsset<T>(string assetName, Action<T> action) //Legacy
+    public void LoadAsset<T>(string assetName, Action<T> action) //Legacy
     {
         AsyncOperationHandle<T> handle = Addressables.LoadAssetAsync<T>(assetName);
 
