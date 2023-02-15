@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
-using YG;
 
 public delegate void AddressableHandler();
 public delegate void AddressableSOHandler(ScriptableObject obj);
@@ -15,11 +14,12 @@ public class SOLoader
     public static AsyncOperationHandle<IList<CarColorSO>> carColorHandle;
     public static AsyncOperationHandle<IList<CarModelSO>> carModelHandle;
     public static AsyncOperationHandle<IList<MapSO>> mapHandle;
+    public static Dictionary<string, AsyncOperationHandle> uniqueHandleDictionary = new Dictionary<string, AsyncOperationHandle>();
     public static List<AssetReference> assetReferenceList = new List<AssetReference>();
 
     public static void LoadAll()
     {
-        //Clear();
+        //    Clear();
         StartLoadAllSO(characterHandle);
         StartLoadAllSO(carColorHandle);
         StartLoadAllSO(carModelHandle);
@@ -58,19 +58,18 @@ public class SOLoader
             }
         }
 
-        foreach (AssetReference assetReference in assetReferenceList)
+        foreach (var handle in uniqueHandleDictionary)
         {
-            assetReference.ReleaseAsset();
+            Addressables.Release(handle.Value);
         }
 
-        assetReferenceList.Clear();
+        uniqueHandleDictionary.Clear();
     }
 
     private static void StartLoadAllSO<T>(AsyncOperationHandle<IList<T>> handle) where T : ScriptableObject
     {
-        Debug.Log("загрузка");
         string assetLabel = typeof(T).Name;
-        handle = Addressables.LoadAssetsAsync<T>(assetLabel, scriptableObject => { Debug.Log("Загрузка ассетов"); OnLoadingEvent?.Invoke(scriptableObject); });
+        handle = Addressables.LoadAssetsAsync<T>(assetLabel, scriptableObject => OnLoadingEvent?.Invoke(scriptableObject));
     }
 
     public static void LoadAllSO<T>(Action<List<T>> action) where T : ScriptableObject
@@ -82,8 +81,6 @@ public class SOLoader
         {
             Debug.Log(obj[0].name);
             action.Invoke(obj);
-            //Addressables.Release(handle);
-            Debug.Log("After release " + obj[0].name);
         };
     }
 
@@ -95,7 +92,6 @@ public class SOLoader
         handle.Completed += (operation) =>
         {
             action.Invoke(handle.Result);
-            //Addressables.Release(handle);
         };
     }
 
@@ -110,31 +106,24 @@ public class SOLoader
     //    };
     //}
 
-    public static void LoadAssetReference<T>(AssetReference assetReference, Action<T> action)
+    public static void LoadAssetReference<T>(AssetReference assetReference, Action<T> action) where T : UnityEngine.Object
     {
-        bool isNewAssetReference = true;
         T obj = default(T);
-        foreach (AssetReference assetRef in assetReferenceList)
-        {
-            if (assetReference == assetRef)
-            {
-                obj = assetRef.OperationHandle.Convert<T>().Result;
-                isNewAssetReference = false;
-                break;
-            }
-        }
+        AsyncOperationHandle handle;
+        bool isLoadedAssetReference = uniqueHandleDictionary.TryGetValue(assetReference.RuntimeKey.ToString(), out handle);
 
-        if (!isNewAssetReference)
+        if (isLoadedAssetReference)
         {
+            obj = handle.Convert<T>().Result;
             action.Invoke(obj);
         }
         else
         {
-            AsyncOperationHandle<T> handle = Addressables.LoadAssetAsync<T>(assetReference);
-            assetReferenceList.Add(assetReference);
-            handle.Completed += (operation) =>
+            AsyncOperationHandle<T> newHandle = Addressables.LoadAssetAsync<T>(assetReference);
+            newHandle.Completed += (operation) =>
             {
-                action.Invoke(handle.Result);
+                uniqueHandleDictionary.Add(assetReference.RuntimeKey.ToString(), newHandle);
+                action.Invoke(newHandle.Result);
             };
         }
     }
@@ -146,7 +135,6 @@ public class SOLoader
         handle.Completed += (operation) =>
         {
             action.Invoke(handle.Result);
-            //assetReference.ReleaseAsset();
         };
     }
 

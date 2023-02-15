@@ -77,6 +77,9 @@ public class MainMenuManager : MenuManager
             newLootbloxesWarning.SetActive(false);
     }
 
-
+    public void ClearSOLoaderTEST()
+    {
+        SOLoader.Clear();
+    }
 
 }

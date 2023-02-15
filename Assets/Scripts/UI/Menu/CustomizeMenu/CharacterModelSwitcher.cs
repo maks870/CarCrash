@@ -178,6 +178,7 @@ public class CharacterModelSwitcher : MonoBehaviour
 
     public void SetCurrentCharacter(CharacterModelSO characterCollectible)
     {
+        Debug.Log(characterCollectible.AssetReference.RuntimeKey.ToString());
         SOLoader.LoadAssetReference<GameObject>(characterCollectible.AssetReference, (result) =>
         {
             GameObject newCharacter = Instantiate(result, currentCharacterTransform);
