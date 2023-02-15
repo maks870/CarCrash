@@ -5,7 +5,7 @@ using Random = UnityEngine.Random;
 
 namespace UnityStandardAssets.Vehicles.Car
 {
-    [RequireComponent(typeof (CarController))]
+    [RequireComponent(typeof(CarController))]
     public class CarAudio : MonoBehaviour
     {
         // This script reads some of the car's current properties and plays sounds accordingly.
@@ -50,11 +50,12 @@ namespace UnityStandardAssets.Vehicles.Car
         private AudioSource m_HighDecel; // Source for the high deceleration sounds
         private bool m_StartedSound; // flag for knowing if we have started sounds
         private CarController m_CarController; // Reference to car we are controlling
-        private Camera cam;
+        [SerializeField] private Camera cam;
 
         private void StartSound()
         {
-            cam = Camera.main;
+            if (cam == null)
+                cam = Camera.main;
             // get the carcontroller ( this will not be null as we have require component)
             m_CarController = GetComponent<CarController>();
 
@@ -93,13 +94,13 @@ namespace UnityStandardAssets.Vehicles.Car
             float camDist = (cam.transform.position - transform.position).sqrMagnitude;
 
             // stop sound if the object is beyond the maximum roll off distance
-            if (m_StartedSound && camDist > maxRolloffDistance*maxRolloffDistance)
+            if (m_StartedSound && camDist > maxRolloffDistance * maxRolloffDistance || cam == null)
             {
                 StopSound();
             }
 
             // start the sound if not playing and it is nearer than the maximum distance
-            if (!m_StartedSound && camDist < maxRolloffDistance*maxRolloffDistance)
+            if (!m_StartedSound && camDist < maxRolloffDistance * maxRolloffDistance)
             {
                 StartSound();
             }
@@ -115,7 +116,7 @@ namespace UnityStandardAssets.Vehicles.Car
                 if (engineSoundStyle == EngineAudioOptions.Simple)
                 {
                     // for 1 channel engine sound, it's oh so simple:
-                    m_HighAccel.pitch = pitch*pitchMultiplier*highPitchMultiplier;
+                    m_HighAccel.pitch = pitch * pitchMultiplier * highPitchMultiplier;
                     m_HighAccel.dopplerLevel = useDoppler ? dopplerLevel : 0;
                     m_HighAccel.volume = 0.3f;
                 }
@@ -124,10 +125,10 @@ namespace UnityStandardAssets.Vehicles.Car
                     // for 4 channel engine sound, it's a little more complex:
 
                     // adjust the pitches based on the multipliers
-                    m_LowAccel.pitch = pitch*pitchMultiplier;
-                    m_LowDecel.pitch = pitch*pitchMultiplier;
-                    m_HighAccel.pitch = pitch*highPitchMultiplier*pitchMultiplier;
-                    m_HighDecel.pitch = pitch*highPitchMultiplier*pitchMultiplier;
+                    m_LowAccel.pitch = pitch * pitchMultiplier;
+                    m_LowDecel.pitch = pitch * pitchMultiplier;
+                    m_HighAccel.pitch = pitch * highPitchMultiplier * pitchMultiplier;
+                    m_HighDecel.pitch = pitch * highPitchMultiplier * pitchMultiplier;
 
                     // get values for fading the sounds based on the acceleration
                     float accFade = Mathf.Abs(m_CarController.AccelInput);
@@ -138,16 +139,16 @@ namespace UnityStandardAssets.Vehicles.Car
                     float lowFade = 1 - highFade;
 
                     // adjust the values to be more realistic
-                    highFade = 1 - ((1 - highFade)*(1 - highFade));
-                    lowFade = 1 - ((1 - lowFade)*(1 - lowFade));
-                    accFade = 1 - ((1 - accFade)*(1 - accFade));
-                    decFade = 1 - ((1 - decFade)*(1 - decFade));
+                    highFade = 1 - ((1 - highFade) * (1 - highFade));
+                    lowFade = 1 - ((1 - lowFade) * (1 - lowFade));
+                    accFade = 1 - ((1 - accFade) * (1 - accFade));
+                    decFade = 1 - ((1 - decFade) * (1 - decFade));
 
                     // adjust the source volumes based on the fade values
-                    m_LowAccel.volume = lowFade*accFade;
-                    m_LowDecel.volume = lowFade*decFade;
-                    m_HighAccel.volume = highFade*accFade;
-                    m_HighDecel.volume = highFade*decFade;
+                    m_LowAccel.volume = lowFade * accFade;
+                    m_LowDecel.volume = lowFade * decFade;
+                    m_HighAccel.volume = highFade * accFade;
+                    m_HighDecel.volume = highFade * decFade;
 
                     // adjust the doppler levels
                     m_HighAccel.dopplerLevel = useDoppler ? dopplerLevel : 0;
@@ -183,7 +184,7 @@ namespace UnityStandardAssets.Vehicles.Car
         // unclamped versions of Lerp and Inverse Lerp, to allow value to exceed the from-to range
         private static float ULerp(float from, float to, float value)
         {
-            return (1.0f - value)*from + value*to;
+            return (1.0f - value) * from + value * to;
         }
     }
 }
