@@ -155,7 +155,7 @@ public class SOLoader : MonoBehaviour
         T obj = default(T);
         AsyncOperationHandle handle;
         bool isLoadedAssetReference = uniqueHandleDictionary.TryGetValue(assetReference.RuntimeKey.ToString(), out handle);
-
+        Debug.Log(isLoadedAssetReference.ToString());
         if (isLoadedAssetReference)
         {
             obj = handle.Convert<T>().Result;

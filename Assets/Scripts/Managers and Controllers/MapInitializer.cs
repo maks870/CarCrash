@@ -106,15 +106,18 @@ public class MapInitializer : MonoBehaviour
     {
         InitializePlayerPrefab();
 
+        List<CharacterModelSO> existingCharacters = new List<CharacterModelSO> { character };
+        List<CarColorSO> existingCarColors = new List<CarColorSO> { carColor };
+
         foreach (BotSettings bot in botInitializers)
         {
-            CharacterModelSO characterBot = GetRandomItem(characterModels, character);
-            CarColorSO carColorBot = GetRandomItem(carColors, carColor);
+            CharacterModelSO characterBot = GetRandomItem(characterModels, existingCharacters);
+            CarColorSO carColorBot = GetRandomItem(carColors, existingCarColors);
             bot.InitializeBot(characterBot, carColorBot);
         }
     }
 
-    private T GetRandomItem<T>(List<T> items, T existingItem)
+    private T GetRandomItem<T>(List<T> items, List<T> existingItem) where T : CollectibleSO
     {
         T result = default(T);
         bool gotItem = false;
@@ -123,10 +126,15 @@ public class MapInitializer : MonoBehaviour
         {
             result = items[Random.Range(0, items.Count)];
 
-            if (ReferenceEquals(result, existingItem))
+            T checkResult = existingItem.Find((item) => item.Name == result.Name);
+
+            if (checkResult == null)
                 gotItem = true;
+            //if (ReferenceEquals(result, existingItem))
+            //    gotItem = true;
         }
 
+        existingItem.Add(result);
         return result;
     }
 
