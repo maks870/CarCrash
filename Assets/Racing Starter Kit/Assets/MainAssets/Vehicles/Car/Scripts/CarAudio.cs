@@ -90,6 +90,9 @@ namespace UnityStandardAssets.Vehicles.Car
         // Update is called once per frame
         private void Update()
         {
+            if (!m_StartedSound)
+                StartSound();
+
             // get the distance to main camera
             float camDist = (cam.transform.position - transform.position).sqrMagnitude;
 

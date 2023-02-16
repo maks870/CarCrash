@@ -28,13 +28,19 @@ public class SOLoader : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    private void CheckEndLoading()
+    {
+
+        if (characterHandle.IsValid() && carColorHandle.IsValid() && carModelHandle.IsValid() && mapHandle.IsValid())
+            EndLoadingEvent?.Invoke();
+    }
+
     public void LoadAll()
     {
         StartLoadAllSO(characterHandle);
         StartLoadAllSO(carColorHandle);
         StartLoadAllSO(carModelHandle);
         StartLoadAllSO(mapHandle);
-        EndLoadingEvent?.Invoke();
     }
 
     public void Clear()
@@ -79,7 +85,11 @@ public class SOLoader : MonoBehaviour
     private void StartLoadAllSO<T>(AsyncOperationHandle<IList<T>> handle) where T : ScriptableObject
     {
         string assetLabel = typeof(T).Name;
-        handle = Addressables.LoadAssetsAsync<T>(assetLabel, scriptableObject => OnLoadingEvent?.Invoke(scriptableObject));
+        handle = Addressables.LoadAssetsAsync<T>(assetLabel, scriptableObject =>
+        {
+            OnLoadingEvent?.Invoke(scriptableObject);
+            CheckEndLoading();
+        });
     }
 
     public void LoadAllSO<T>(Action<List<T>> action) where T : ScriptableObject
