@@ -42,21 +42,18 @@ public class MapInitializer : MonoBehaviour
 
     private void InitializePlayerPrefab()
     {
-        List<CharacterModelSO> charList = (List<CharacterModelSO>)SOLoader.instance.characterHandle.Result;
-        CharacterModelSO characterSO = charList.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCharacterItem);
+        character = characterModels.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCharacterItem);
         SOLoader.instance.LoadAssetReference<GameObject>(character.AssetReference, (result) =>
         {
             Instantiate(result, characterModel.transform.parent);
             Destroy(characterModel.gameObject);
         });
 
-        List<CarColorSO> carColorList = (List<CarColorSO>)SOLoader.instance.carColorHandle.Result;
-        CarColorSO carColorSO = carColorList.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCarColorItem);
-        carRenderer.material.mainTexture = carColorSO.Texture;
+        carColor = carColors.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCarColorItem);
+        carRenderer.material.mainTexture = carColor.Texture;
 
-        List<CarModelSO> carModelList = (List<CarModelSO>)SOLoader.instance.carModelHandle.Result;
-        CarModelSO carModelSO = carModelList.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCarModelItem);
-        carModel = carModelSO;
+        List<CarModelSO> carModelList = SOLoader.instance.GetSOList<CarModelSO>();
+        carModel = carModelList.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCarModelItem);
         carObj.GetComponent<CarController>().m_FullTorqueOverAllWheels = carModel.Acceleration;
         carObj.GetComponent<CarController>().Handability = carModel.Handleability;
         SOLoader.instance.LoadAssetReference<Mesh>(carModel.MeshAsset, (mesh) => carFilter.mesh = mesh);
@@ -91,8 +88,8 @@ public class MapInitializer : MonoBehaviour
 
     private void SOLoaderInitialize()
     {
-        characterModels = (List<CharacterModelSO>)SOLoader.instance.characterHandle.Result;
-        carColors = (List<CarColorSO>)SOLoader.instance.carColorHandle.Result;
+        characterModels = SOLoader.instance.GetSOList<CharacterModelSO>();
+        carColors = SOLoader.instance.GetSOList<CarColorSO>();
         InitializePrefabs();
         //SOLoader.LoadAllSO<CharacterModelSO>((result) =>
         //{

@@ -12,10 +12,11 @@ public class SOLoader : MonoBehaviour
 
     public event AddressableHandler EndLoadingEvent;
     public event AddressableSOHandler OnLoadingEvent;
-    public AsyncOperationHandle<IList<CharacterModelSO>> characterHandle;
-    public AsyncOperationHandle<IList<CarColorSO>> carColorHandle;
-    public AsyncOperationHandle<IList<CarModelSO>> carModelHandle;
-    public AsyncOperationHandle<IList<MapSO>> mapHandle;
+    //private AsyncOperationHandle<IList<CharacterModelSO>> characterHandle;
+    //private AsyncOperationHandle<IList<CarColorSO>> carColorHandle;
+    //private AsyncOperationHandle<IList<CarModelSO>> carModelHandle;
+    //private AsyncOperationHandle<IList<MapSO>> mapHandle;
+    public Dictionary<string, AsyncOperationHandle> SOHandleDictionary = new Dictionary<string, AsyncOperationHandle>();
     public Dictionary<string, AsyncOperationHandle> uniqueHandleDictionary = new Dictionary<string, AsyncOperationHandle>();
 
     private void OnEnable()
@@ -30,33 +31,42 @@ public class SOLoader : MonoBehaviour
 
     private void CheckEndLoading()
     {
+        if (SOHandleDictionary.Count != 4)
+            return;
 
-        if (characterHandle.IsValid() && carColorHandle.IsValid() && carModelHandle.IsValid() && mapHandle.IsValid())
-            EndLoadingEvent?.Invoke();
+        EndLoadingEvent?.Invoke();
     }
 
     public void LoadAll()
     {
-        StartLoadAllSO(characterHandle);
-        StartLoadAllSO(carColorHandle);
-        StartLoadAllSO(carModelHandle);
-        StartLoadAllSO(mapHandle);
+        StartLoadAllSO<CharacterModelSO>();
+        StartLoadAllSO<CarColorSO>();
+        StartLoadAllSO<CarModelSO>();
+        StartLoadAllSO<MapSO>();
     }
 
     public void Clear()
     {
-        if (characterHandle.IsValid())
-            Addressables.Release(characterHandle);
 
-        if (carColorHandle.IsValid())
-            Addressables.Release(carColorHandle);
+        //if (carColorHandle.IsValid())
+        //{
+        //    //Addressables.ClearDependencyCacheAsync(characterHandle.Result, true);
+        //    Addressables.Release(characterHandle);
+        //}
 
-        if (carModelHandle.IsValid())
-            Addressables.Release(carModelHandle);
+        //if (carColorHandle.IsValid())
+        //    Addressables.Release(carColorHandle);
 
-        if (mapHandle.IsValid())
-            Addressables.Release(mapHandle);
+        //if (carModelHandle.IsValid())
+        //Addressables.Release(carModelHandle);
 
+        //if (mapHandle.IsValid())
+        //    Addressables.Release(mapHandle);
+
+        foreach (var handle in SOHandleDictionary)
+        {
+            Addressables.Release(handle.Value);
+        }
 
         if (OnLoadingEvent != null)
         {
@@ -79,27 +89,41 @@ public class SOLoader : MonoBehaviour
             Addressables.Release(handle.Value);
         }
 
+        SOHandleDictionary.Clear();
         uniqueHandleDictionary.Clear();
     }
 
-    private void StartLoadAllSO<T>(AsyncOperationHandle<IList<T>> handle) where T : ScriptableObject
+    private void StartLoadAllSO<T>() where T : ScriptableObject
     {
         string assetLabel = typeof(T).Name;
-        handle = Addressables.LoadAssetsAsync<T>(assetLabel, scriptableObject =>
+        AsyncOperationHandle handle = Addressables.LoadAssetsAsync<T>(assetLabel, scriptableObject =>
         {
             OnLoadingEvent?.Invoke(scriptableObject);
-            CheckEndLoading();
         });
+
+        handle.Completed += (operation) =>
+        {
+            SOHandleDictionary.Add(assetLabel, handle);
+            CheckEndLoading();
+        };
+    }
+
+    public List<T> GetSOList<T>()
+    {
+        string assetLabel = typeof(T).Name;
+        AsyncOperationHandle handle;
+        SOHandleDictionary.TryGetValue(assetLabel, out handle);
+        return (List<T>)handle.Convert<IList<T>>().Result;
     }
 
     public void LoadAllSO<T>(Action<List<T>> action) where T : ScriptableObject
     {
+        AsyncOperationHandle handle;
         string assetLabel = typeof(T).Name;
         List<T> obj = new List<T>();
-        AsyncOperationHandle<IList<T>> handle = Addressables.LoadAssetsAsync<T>(assetLabel, scriptableObject => obj.Add(scriptableObject));
+        handle = Addressables.LoadAssetsAsync<T>(assetLabel, scriptableObject => obj.Add(scriptableObject));
         handle.Completed += (operation) =>
         {
-            Debug.Log(obj[0].name);
             action.Invoke(obj);
         };
     }

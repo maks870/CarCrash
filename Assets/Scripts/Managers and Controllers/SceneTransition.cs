@@ -12,7 +12,8 @@ public class SceneTransition : MonoBehaviour
     [SerializeField] private Image loadingImage;
     [SerializeField] private GameObject panel;
     [SerializeField] private AudioMixer audioMixer;
-    private AsyncOperationHandle<SceneInstance> handle;
+    private AsyncOperationHandle<SceneInstance> previousHandle;
+    private AsyncOperationHandle<SceneInstance> currentHandlehandle;
     private bool unloaded = true;
     private bool endAnimation = false;
     private Animator animator;
@@ -43,12 +44,14 @@ public class SceneTransition : MonoBehaviour
         panel.SetActive(false);
         endAnimation = false;
 
-        if (!unloaded) 
+
+        if (previousHandle.IsValid())
         {
-            Addressables.UnloadSceneAsync(handle, true);
+            Addressables.UnloadSceneAsync(previousHandle, true);
             unloaded = true;
         }
     }
+
 
     public static void SwitchScene(string sceneName)
     {
@@ -62,21 +65,25 @@ public class SceneTransition : MonoBehaviour
         instance.panel.SetActive(true);
         instance.audioMixer.SetFloat("Master", -80);
         instance.animator.SetTrigger("sceneClosing");
+
+        if (previousHandle.IsValid())
+            previousHandle = currentHandlehandle;
+
         yield return new WaitForEndOfFrame();
 
-        instance.handle = Addressables.LoadSceneAsync(sceneName, LoadSceneMode.Single, false);
+        instance.currentHandlehandle = Addressables.LoadSceneAsync(sceneName, LoadSceneMode.Single, false);
 
         while (!endAnimation)
         {
             yield return null;
         }
 
-        while (handle.Status != AsyncOperationStatus.Succeeded) 
+        while (currentHandlehandle.Status != AsyncOperationStatus.Succeeded)
         {
             yield return null;
         }
 
-        handle.Result.ActivateAsync();
+        currentHandlehandle.Result.ActivateAsync();
     }
 
     public void EndPreload()

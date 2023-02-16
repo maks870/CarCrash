@@ -80,7 +80,7 @@ public class CustomizeMenuManager : MenuManager
 
     public void OpenAllMapsTEST()//тестовый метод
     {
-        List<MapSO> mapList = (List<MapSO>)SOLoader.instance.mapHandle.Result;
+        List<MapSO> mapList = SOLoader.instance.GetSOList<MapSO>();
 
         foreach (MapSO map in mapList)
         {
@@ -93,7 +93,7 @@ public class CustomizeMenuManager : MenuManager
 
     public void OpenAllCarModelsTEST()//тестовый метод
     {
-        List<CarModelSO> carList = (List<CarModelSO>)SOLoader.instance.carModelHandle.Result;
+        List<CarModelSO> carList = SOLoader.instance.GetSOList<CarModelSO>();
 
         foreach (CarModelSO car in carList)
         {
