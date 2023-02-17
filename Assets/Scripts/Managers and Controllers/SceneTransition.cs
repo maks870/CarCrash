@@ -12,7 +12,6 @@ public class SceneTransition : MonoBehaviour
     [SerializeField] private Image loadingImage;
     [SerializeField] private GameObject panel;
     [SerializeField] private AudioMixer audioMixer;
-    private AsyncOperationHandle<SceneInstance> previousHandle;
     private AsyncOperationHandle<SceneInstance> currentHandlehandle;
     private bool endAnimation = false;
     private Animator animator;
@@ -42,11 +41,6 @@ public class SceneTransition : MonoBehaviour
     {
         panel.SetActive(false);
         endAnimation = false;
-
-
-        if (previousHandle.IsValid())
-            Addressables.UnloadSceneAsync(previousHandle, true);
-
     }
 
 
@@ -61,9 +55,6 @@ public class SceneTransition : MonoBehaviour
         instance.panel.SetActive(true);
         instance.audioMixer.SetFloat("Master", -80);
         instance.animator.SetTrigger("sceneClosing");
-
-        if (previousHandle.IsValid())
-            previousHandle = currentHandlehandle;
 
         yield return new WaitForEndOfFrame();
 
