@@ -22,7 +22,7 @@ public class SoundController : MonoBehaviour
             buttonSound.image.sprite = buttonOffSprite;
             audioMixer.SetFloat("Master", -80);
         }
-
+        buttonSound.onClick.RemoveAllListeners();
         buttonSound.onClick.AddListener(() => SoundChange(!on));
 
         YandexGame.savesData.sound = on;
