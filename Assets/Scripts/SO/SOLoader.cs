@@ -16,8 +16,9 @@ public class SOLoader : MonoBehaviour
     //private AsyncOperationHandle<IList<CarColorSO>> carColorHandle;
     //private AsyncOperationHandle<IList<CarModelSO>> carModelHandle;
     //private AsyncOperationHandle<IList<MapSO>> mapHandle;
-    public Dictionary<string, AsyncOperationHandle> SOHandleDictionary = new Dictionary<string, AsyncOperationHandle>();
-    public Dictionary<string, AsyncOperationHandle> uniqueHandleDictionary = new Dictionary<string, AsyncOperationHandle>();
+    private Dictionary<string, AsyncOperationHandle> SOHandleDictionary = new Dictionary<string, AsyncOperationHandle>();
+    private Dictionary<string, AsyncOperationHandle> uniqueHandleDictionary = new Dictionary<string, AsyncOperationHandle>();
+    private Dictionary<string, Action<AsyncOperationHandle>> uniqueHandleActions = new Dictionary<string, Action<AsyncOperationHandle>>();
 
     private void OnEnable()
     {
@@ -47,22 +48,6 @@ public class SOLoader : MonoBehaviour
 
     public void Clear()
     {
-
-        //if (carColorHandle.IsValid())
-        //{
-        //    //Addressables.ClearDependencyCacheAsync(characterHandle.Result, true);
-        //    Addressables.Release(characterHandle);
-        //}
-
-        //if (carColorHandle.IsValid())
-        //    Addressables.Release(carColorHandle);
-
-        //if (carModelHandle.IsValid())
-        //Addressables.Release(carModelHandle);
-
-        //if (mapHandle.IsValid())
-        //    Addressables.Release(mapHandle);
-
         foreach (var handle in SOHandleDictionary)
         {
             Addressables.Release(handle.Value);
@@ -91,6 +76,7 @@ public class SOLoader : MonoBehaviour
 
         SOHandleDictionary.Clear();
         uniqueHandleDictionary.Clear();
+        uniqueHandleActions.Clear();
     }
 
     private void StartLoadAllSO<T>() where T : ScriptableObject
@@ -128,7 +114,6 @@ public class SOLoader : MonoBehaviour
         };
     }
 
-
     public void LoadSO<T>(string name, Action<T> action) where T : ScriptableObject// Legacy
     {
         AsyncOperationHandle<T> handle = Addressables.LoadAssetAsync<T>(name);
@@ -154,20 +139,40 @@ public class SOLoader : MonoBehaviour
     {
         T obj = default(T);
         AsyncOperationHandle handle;
+        Action<AsyncOperationHandle> handleCompletedActions;
         bool isLoadedAssetReference = uniqueHandleDictionary.TryGetValue(assetReference.RuntimeKey.ToString(), out handle);
-        Debug.Log(isLoadedAssetReference.ToString());
         if (isLoadedAssetReference)
         {
-            obj = handle.Convert<T>().Result;
-            action.Invoke(obj);
+            if (handle.IsDone)
+            {
+                obj = handle.Convert<T>().Result;
+                action.Invoke(obj);
+            }
+            else
+            {
+                uniqueHandleActions.TryGetValue(assetReference.RuntimeKey.ToString(), out handleCompletedActions);
+                handleCompletedActions += (handle) =>
+                {
+                    action.Invoke(handle.Convert<T>().Result);
+                };
+            }
+
         }
         else
         {
             AsyncOperationHandle<T> newHandle = Addressables.LoadAssetAsync<T>(assetReference);
+            uniqueHandleDictionary.Add(assetReference.RuntimeKey.ToString(), newHandle);
+
+            uniqueHandleActions.Add(assetReference.RuntimeKey.ToString(), (handle) =>
+            {
+                action.Invoke(handle.Convert<T>().Result);
+            });
+
+            uniqueHandleActions.TryGetValue(assetReference.RuntimeKey.ToString(), out handleCompletedActions);
+
             newHandle.Completed += (operation) =>
             {
-                uniqueHandleDictionary.Add(assetReference.RuntimeKey.ToString(), newHandle);
-                action.Invoke(newHandle.Result);
+                handleCompletedActions.Invoke(operation);
             };
         }
     }

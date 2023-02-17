@@ -14,7 +14,6 @@ public class SceneTransition : MonoBehaviour
     [SerializeField] private AudioMixer audioMixer;
     private AsyncOperationHandle<SceneInstance> previousHandle;
     private AsyncOperationHandle<SceneInstance> currentHandlehandle;
-    private bool unloaded = true;
     private bool endAnimation = false;
     private Animator animator;
     public static SceneTransition instance;
@@ -46,17 +45,14 @@ public class SceneTransition : MonoBehaviour
 
 
         if (previousHandle.IsValid())
-        {
             Addressables.UnloadSceneAsync(previousHandle, true);
-            unloaded = true;
-        }
+
     }
 
 
     public static void SwitchScene(string sceneName)
     {
         SOLoader.instance.Clear();
-        instance.unloaded = false;
         instance.StartCoroutine(instance.SceneLoadComplete(sceneName));
     }
 
