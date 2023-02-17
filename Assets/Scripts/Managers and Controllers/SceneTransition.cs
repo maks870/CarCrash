@@ -13,6 +13,7 @@ public class SceneTransition : MonoBehaviour
     [SerializeField] private GameObject panel;
     [SerializeField] private AudioMixer audioMixer;
     private AsyncOperationHandle<SceneInstance> currentHandlehandle;
+    private string currentSceneName;
     private bool endAnimation = false;
     private Animator animator;
     public static SceneTransition instance;
@@ -47,10 +48,11 @@ public class SceneTransition : MonoBehaviour
     public static void SwitchScene(string sceneName)
     {
         SOLoader.instance.Clear();
-        instance.StartCoroutine(instance.SceneLoadComplete(sceneName));
+        instance.StartCoroutine(instance.SceneLoad(sceneName, LoadSceneMode.Single));
+        instance.currentSceneName = sceneName;
     }
 
-    private IEnumerator SceneLoadComplete(string sceneName)
+    private IEnumerator SceneLoad(string sceneName, LoadSceneMode loadSceneMode)
     {
         instance.panel.SetActive(true);
         instance.audioMixer.SetFloat("Master", -80);
@@ -58,7 +60,7 @@ public class SceneTransition : MonoBehaviour
 
         yield return new WaitForEndOfFrame();
 
-        instance.currentHandlehandle = Addressables.LoadSceneAsync(sceneName, LoadSceneMode.Single, false);
+        instance.currentHandlehandle = Addressables.LoadSceneAsync(sceneName, loadSceneMode, false);
 
         while (!endAnimation)
         {
@@ -71,6 +73,11 @@ public class SceneTransition : MonoBehaviour
         }
 
         currentHandlehandle.Result.ActivateAsync();
+    }
+
+    public static void ReloadScene() 
+    {
+        Addressables.LoadSceneAsync(instance.currentHandlehandle.Result.Scene, LoadSceneMode.Single, true);
     }
 
     public void EndPreload()

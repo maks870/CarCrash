@@ -15,7 +15,7 @@ public class LvlMenu : MonoBehaviour
     }
     public void Restart()
     {   //void restart is used in continue buttons when we finish the race and in return button of the pause menu
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);//so it will restart the game's scene
+        SceneTransition.ReloadScene();//so it will restart the game's scene
     }
     //if we hit play in the menu at the start of the scene we will use the Play void:
     public void Play()
