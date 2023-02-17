@@ -50,7 +50,9 @@ public class MenuInitializer : MonoBehaviour
 
             menuManagers[i].SOLoaderSubscribe();/////
         }
+
         SOLoader.instance.LoadAll();
+
         if (YandexGame.savesData.isFirstSession2)
         {
             YandexGame.savesData.playerWrapper.lastMap = "";

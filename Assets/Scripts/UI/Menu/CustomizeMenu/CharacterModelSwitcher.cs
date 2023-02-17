@@ -142,15 +142,25 @@ public class CharacterModelSwitcher : MonoBehaviour
 
     public void LoadSOSubscribe()
     {
-        SOLoader.instance.OnLoadingEvent += (scriptableObj) =>
+        SOLoader.instance.EndLoadingEvent += () =>
         {
-            if (scriptableObj.GetType() == typeof(CharacterModelSO))
+            List<CharacterModelSO> charList = SOLoader.instance.GetSOList<CharacterModelSO>();
+            foreach (CharacterModelSO character in charList)
             {
-                CharacterModelSO character = (CharacterModelSO)scriptableObj;
                 if (character.CharacterType == characterType)
                     charactersSO.Add(character);
             }
         };
+
+        //SOLoader.instance.OnLoadingEvent += (scriptableObj) =>
+        //{
+        //    if (scriptableObj.GetType() == typeof(CharacterModelSO))
+        //    {
+        //        CharacterModelSO character = (CharacterModelSO)scriptableObj;
+        //        if (character.CharacterType == characterType)
+        //            charactersSO.Add(character);
+        //    }
+        //};
     }
 
     public void FillListBySO(List<CharacterModelSO> characters)//Legacy

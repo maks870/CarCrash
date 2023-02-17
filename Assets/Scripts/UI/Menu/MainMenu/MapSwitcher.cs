@@ -16,11 +16,16 @@ public class MapSwitcher : MonoBehaviour
 
     public void LoadSOSubscribe()
     {
-        SOLoader.instance.OnLoadingEvent += (scriptableObj) =>
+        SOLoader.instance.EndLoadingEvent += () =>
         {
-            if (scriptableObj.GetType() == typeof(MapSO))
-                mapsSO.Add((MapSO)scriptableObj);
+            mapsSO.AddRange(SOLoader.instance.GetSOList<MapSO>());
         };
+
+        //SOLoader.instance.OnLoadingEvent += (scriptableObj) =>
+        //{
+        //    if (scriptableObj.GetType() == typeof(MapSO))
+        //        mapsSO.Add((MapSO)scriptableObj);
+        //};
         //SOLoader.LoadAllSO<MapSO>((result) => FillListBySO(result));
     }
 

@@ -40,11 +40,17 @@ public class LootBox : MonoBehaviour, ITrainingWaiter
 
     public void CollectibledLoadSubscribe()
     {
-        SOLoader.instance.OnLoadingEvent += (scriptableObj) =>
+        SOLoader.instance.EndLoadingEvent += () =>
         {
-            if (scriptableObj.GetType() == typeof(CharacterModelSO))
-                items.Add((CharacterModelSO)scriptableObj);
+            items.AddRange(SOLoader.instance.GetSOList<CharacterModelSO>());
         };
+
+        //SOLoader.instance.OnLoadingEvent += (scriptableObj) =>
+        //{
+        //    if (scriptableObj.GetType() == typeof(CharacterModelSO))
+        //        items.Add((CharacterModelSO)scriptableObj);
+        //};
+
         //SOLoader.LoadAllSO<CharacterModelSO>((result) => items.AddRange(result));
     }
 

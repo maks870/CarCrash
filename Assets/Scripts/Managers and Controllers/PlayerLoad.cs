@@ -27,17 +27,28 @@ public class PlayerLoad : MonoBehaviour
 
     private void OnEnable()
     {
-        SOLoader.instance.OnLoadingEvent += (scriptableObj) =>
+        SOLoader.instance.EndLoadingEvent += () =>
         {
-            if (scriptableObj.GetType() == typeof(CharacterModelSO))
-                characters.Add((CharacterModelSO)scriptableObj);
+            characters.AddRange(SOLoader.instance.GetSOList<CharacterModelSO>());
+            carColors.AddRange(SOLoader.instance.GetSOList<CarColorSO>());
+            carModels.AddRange(SOLoader.instance.GetSOList<CarModelSO>());
 
-            if (scriptableObj.GetType() == typeof(CarColorSO))
-                carColors.Add((CarColorSO)scriptableObj);
-
-            if (scriptableObj.GetType() == typeof(CarModelSO))
-                carModels.Add((CarModelSO)scriptableObj);
+            Debug.Log(characters.Count);
+            Debug.Log(carColors.Count);
+            Debug.Log(carModels.Count);
         };
+
+        //SOLoader.instance.OnLoadingEvent += (scriptableObj) =>
+        //{
+        //    if (scriptableObj.GetType() == typeof(CharacterModelSO))
+        //        characters.Add((CharacterModelSO)scriptableObj);
+
+        //    if (scriptableObj.GetType() == typeof(CarColorSO))
+        //        carColors.Add((CarColorSO)scriptableObj);
+
+        //    if (scriptableObj.GetType() == typeof(CarModelSO))
+        //        carModels.Add((CarModelSO)scriptableObj);
+        //};
     }
 
     public void LoadPlayerItems()

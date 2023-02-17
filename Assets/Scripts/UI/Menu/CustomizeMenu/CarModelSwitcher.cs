@@ -154,11 +154,16 @@ public class CarModelSwitcher : MonoBehaviour
 
     public void LoadSOSubscribe()
     {
-        SOLoader.instance.OnLoadingEvent += (scriptableObj) =>
+        SOLoader.instance.EndLoadingEvent += () =>
         {
-            if (scriptableObj.GetType() == typeof(CarModelSO))
-                carModelsSO.Add((CarModelSO)scriptableObj);
+            carModelsSO.AddRange(SOLoader.instance.GetSOList<CarModelSO>());
         };
+
+        //    SOLoader.instance.OnLoadingEvent += (scriptableObj) =>
+        //{
+        //    if (scriptableObj.GetType() == typeof(CarModelSO))
+        //        carModelsSO.Add((CarModelSO)scriptableObj);
+        //};
     }
 
     public void FillListBySO(List<CarModelSO> carModels)

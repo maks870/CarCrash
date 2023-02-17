@@ -22,22 +22,22 @@ public class MapInitializer : MonoBehaviour
 
     private void OnEnable()
     {
-        SOLoader.instance.OnLoadingEvent += (scriptableObj) =>
-        {
-            if (scriptableObj.GetType() == typeof(CharacterModelSO))
-                characterModels.Add((CharacterModelSO)scriptableObj);
+        //SOLoader.instance.OnLoadingEvent += (scriptableObj) =>
+        //{
+        //    if (scriptableObj.GetType() == typeof(CharacterModelSO))
+        //        characterModels.Add((CharacterModelSO)scriptableObj);
 
-            if (scriptableObj.GetType() == typeof(CarColorSO))
-                carColors.Add((CarColorSO)scriptableObj);
-        };
+        //    if (scriptableObj.GetType() == typeof(CarColorSO))
+        //        carColors.Add((CarColorSO)scriptableObj);
+        //};
 
-        SOLoader.instance.EndLoadingEvent += SOLoaderInitialize;
+        //SOLoader.instance.EndLoadingEvent += SOLoaderInitialize;
     }
 
     void Start()
     {
         botInitializers.AddRange(FindObjectsOfType<BotSettings>());
-        SOLoader.instance.LoadAll();
+        SOLoaderInitialize();
     }
 
     private void InitializePlayerPrefab()

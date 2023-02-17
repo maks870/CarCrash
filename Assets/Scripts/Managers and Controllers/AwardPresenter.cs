@@ -25,14 +25,13 @@ public class AwardPresenter : MonoBehaviour
 
         string mapName = YandexGame.savesData.playerWrapper.lastMap;
         int mapIndex = YandexGame.savesData.playerWrapper.GetMapInfoIndex(mapName);
-        Debug.Log("YandexGame.savesData.playerWrapper.lastMapPlaces.Count " + YandexGame.savesData.playerWrapper.lastMapPlaces.Count);
 
         List<MapSO> maps = SOLoader.instance.GetSOList<MapSO>();
         MapSO map = maps.Find(item => item.Name == mapName);
 
         carSO = null;
         MapInfo mapInfo = YandexGame.savesData.playerWrapper.maps[mapIndex];
-        Debug.Log("YandexGame.savesData.playerWrapper.lastMapPlaces.Count " + YandexGame.savesData.playerWrapper.lastMapPlaces.Count);
+
         for (int i = 0; i < YandexGame.savesData.playerWrapper.lastMapPlaces.Count; i++)
         {
             pos = YandexGame.savesData.playerWrapper.lastMapPlaces[i];

@@ -12,13 +12,12 @@ public class SOLoader : MonoBehaviour
 
     public event AddressableHandler EndLoadingEvent;
     public event AddressableSOHandler OnLoadingEvent;
-    //private AsyncOperationHandle<IList<CharacterModelSO>> characterHandle;
-    //private AsyncOperationHandle<IList<CarColorSO>> carColorHandle;
-    //private AsyncOperationHandle<IList<CarModelSO>> carModelHandle;
-    //private AsyncOperationHandle<IList<MapSO>> mapHandle;
+    private bool isResourcesLoaded = false;
     private Dictionary<string, AsyncOperationHandle> SOHandleDictionary = new Dictionary<string, AsyncOperationHandle>();
     private Dictionary<string, AsyncOperationHandle> uniqueHandleDictionary = new Dictionary<string, AsyncOperationHandle>();
     private Dictionary<string, Action<AsyncOperationHandle>> uniqueHandleActions = new Dictionary<string, Action<AsyncOperationHandle>>();
+
+    public bool IsResourcesLoaded => isResourcesLoaded;
 
     private void OnEnable()
     {
@@ -40,18 +39,27 @@ public class SOLoader : MonoBehaviour
 
     public void LoadAll()
     {
-        StartLoadAllSO<CharacterModelSO>();
-        StartLoadAllSO<CarColorSO>();
-        StartLoadAllSO<CarModelSO>();
-        StartLoadAllSO<MapSO>();
+        if (!isResourcesLoaded)
+        {
+            StartLoadAllSO<CharacterModelSO>();
+            StartLoadAllSO<CarColorSO>();
+            StartLoadAllSO<CarModelSO>();
+            StartLoadAllSO<MapSO>();
+        }
+        else
+        {
+            EndLoadingEvent?.Invoke();
+        }
+
+        isResourcesLoaded = true;
     }
 
     public void Clear()
     {
-        foreach (var handle in SOHandleDictionary)
-        {
-            Addressables.Release(handle.Value);
-        }
+        //foreach (var handle in SOHandleDictionary)
+        //{
+        //    Addressables.Release(handle.Value);
+        //}
 
         if (OnLoadingEvent != null)
         {
@@ -74,7 +82,7 @@ public class SOLoader : MonoBehaviour
             Addressables.Release(handle.Value);
         }
 
-        SOHandleDictionary.Clear();
+        //SOHandleDictionary.Clear();
         uniqueHandleDictionary.Clear();
         uniqueHandleActions.Clear();
     }
@@ -102,7 +110,7 @@ public class SOLoader : MonoBehaviour
         return (List<T>)handle.Convert<IList<T>>().Result;
     }
 
-    public void LoadAllSO<T>(Action<List<T>> action) where T : ScriptableObject
+    public void LoadAllSO<T>(Action<List<T>> action) where T : ScriptableObject // Legacy
     {
         AsyncOperationHandle handle;
         string assetLabel = typeof(T).Name;
@@ -156,7 +164,6 @@ public class SOLoader : MonoBehaviour
                     action.Invoke(handle.Convert<T>().Result);
                 };
             }
-
         }
         else
         {
