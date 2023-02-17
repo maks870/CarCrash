@@ -75,9 +75,9 @@ public class SceneTransition : MonoBehaviour
         currentHandlehandle.Result.ActivateAsync();
     }
 
-    public static void ReloadScene() 
+    public static void ReloadScene()
     {
-        Addressables.LoadSceneAsync(instance.currentHandlehandle.Result.Scene, LoadSceneMode.Single, true);
+        SwitchScene(SceneManager.GetActiveScene().name);
     }
 
     public void EndPreload()
