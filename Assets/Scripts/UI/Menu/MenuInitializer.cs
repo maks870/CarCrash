@@ -70,7 +70,10 @@ public class MenuInitializer : MonoBehaviour
         //}
 
         MainMenuManager newMainMenu = (MainMenuManager)mainMenu;
-        newMainMenu.AddYGDataLoadingListener();
+
+        if (YandexGame.savesData.playerWrapper.lastMap != "")
+            newMainMenu.GetAwardsAfterMap();
+
         earningUIController.UpdateEarnings();
         SceneTransition.instance.EndPreload();
     }

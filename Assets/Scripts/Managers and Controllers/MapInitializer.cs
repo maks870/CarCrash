@@ -43,12 +43,14 @@ public class MapInitializer : MonoBehaviour
     private void InitializePlayerPrefab()
     {
         character = characterModels.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCharacterItem);
-        SOLoader.instance.LoadAssetReference<GameObject>(character.AssetReference, (result) =>
-        {
-            Instantiate(result, characterModel.transform.parent);
-            Destroy(characterModel.gameObject);
-        });
+        //SOLoader.instance.LoadAssetReference<GameObject>(character.Prefab, (result) =>
+        //{
+        //    Instantiate(result, characterModel.transform.parent);
+        //    Destroy(characterModel.gameObject);
+        //});
 
+        Instantiate(character.Prefab, characterModel.transform.parent);
+        Destroy(characterModel.gameObject);
         carColor = carColors.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCarColorItem);
         carRenderer.material.mainTexture = carColor.Texture;
 
@@ -56,7 +58,8 @@ public class MapInitializer : MonoBehaviour
         carModel = carModelList.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCarModelItem);
         carObj.GetComponent<CarController>().m_FullTorqueOverAllWheels = carModel.Acceleration;
         carObj.GetComponent<CarController>().Handability = carModel.Handleability;
-        SOLoader.instance.LoadAssetReference<Mesh>(carModel.MeshAsset, (mesh) => carFilter.mesh = mesh);
+        carFilter.sharedMesh = carModel.Prefab.GetComponentInChildren<MeshFilter>().sharedMesh;
+        //SOLoader.instance.LoadAssetReference<Mesh>(carModel.Prefab, (mesh) => carFilter.mesh = mesh);
 
 
         //SOLoader.LoadSO<CharacterModelSO>(YandexGame.savesData.playerWrapper.currentCharacterItem, (result) =>

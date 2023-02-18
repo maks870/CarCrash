@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using YG;
 
 public class CustomizeMenuManager : MenuManager
@@ -39,18 +40,21 @@ public class CustomizeMenuManager : MenuManager
         {
             YandexGame.savesData.playerWrapper.collectibles.Add(result.Name);
             YandexGame.savesData.playerWrapper.currentCharacterItem = result.Name;
+            Addressables.Release(result);
         });
 
         SOLoader.instance.LoadAssetReference<CarColorSO>(playerLoad.DefaultCarColor, (result) =>
         {
             YandexGame.savesData.playerWrapper.collectibles.Add(result.Name);
             YandexGame.savesData.playerWrapper.currentCarColorItem = result.Name;
+            Addressables.Release(result);
         });
 
         SOLoader.instance.LoadAssetReference<CarModelSO>(playerLoad.DefaultCarModel, (result) =>
         {
             YandexGame.savesData.playerWrapper.collectibles.Add(result.Name);
             YandexGame.savesData.playerWrapper.currentCarModelItem = result.Name;
+            Addressables.Release(result);
         });
     }
 

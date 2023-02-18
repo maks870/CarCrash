@@ -15,8 +15,9 @@ public class MainMenuManager : MenuManager
         mapSwitcher.InitializeUI();
     }
 
-    private void GetAwardsAfterMap()
+    public void GetAwardsAfterMap()
     {
+        Debug.Log("Получение наград");
         presenter.GetAward();
         UpdateNewPossibilitiyWarnings();
         YandexGame.EndDataLoadingEvent -= GetAwardsAfterMap;
@@ -36,12 +37,6 @@ public class MainMenuManager : MenuManager
     {
         base.OpenMenu();
         InitializeMenu();
-    }
-
-    public void AddYGDataLoadingListener()
-    {
-        if (YandexGame.savesData.playerWrapper.lastMap != "" && YandexGame.savesData.playerWrapper.lastMapPlaces.Count != 0)
-            YandexGame.EndDataLoadingEvent += GetAwardsAfterMap;
     }
 
     public override void InitializeMenu()

@@ -19,28 +19,31 @@ public class AwardPresenter : MonoBehaviour
 
     public void GetAward()
     {
+        Debug.Log("Награды");
         int pos;
         MapAward mapAward = new MapAward();
         List<CollectibleSO> awardCollectibles = new List<CollectibleSO>();
 
         string mapName = YandexGame.savesData.playerWrapper.lastMap;
+        Debug.Log(mapName);
         int mapIndex = YandexGame.savesData.playerWrapper.GetMapInfoIndex(mapName);
-
+        Debug.Log(mapIndex);
         List<MapSO> maps = SOLoader.instance.GetSOList<MapSO>();
+        Debug.Log(maps.Count);
         MapSO map = maps.Find(item => item.Name == mapName);
 
         carSO = null;
         MapInfo mapInfo = YandexGame.savesData.playerWrapper.maps[mapIndex];
 
-        for (int i = 0; i < YandexGame.savesData.playerWrapper.lastMapPlaces.Count; i++)
-        {
-            pos = YandexGame.savesData.playerWrapper.lastMapPlaces[i];
-            Debug.Log("pos " + pos);
-            mapAward = pos > 3
-                ? mapAward.AddAward(map.Awards[0])
-                : mapAward.AddAward(map.Awards[pos]);
-        }
-
+        //for (int i = 0; i < YandexGame.savesData.playerWrapper.lastMapPlaces.Count; i++)
+        //{
+        //    pos = YandexGame.savesData.playerWrapper.lastMapPlaces[i];
+        //    Debug.Log("pos " + pos);
+        //    mapAward = pos > 3
+        //        ? mapAward.AddAward(map.Awards[0])
+        //        : mapAward.AddAward(map.Awards[pos]);
+        //}
+        mapAward.AddAward(map.Awards[0]);
         if (mapInfo.isPassed == false)
         {
             if (mapInfo.highestPlace < 4 && mapInfo.highestPlace != 0)

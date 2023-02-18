@@ -14,12 +14,12 @@ public enum CharacterType
 public class CharacterModelSO : CollectibleSO
 {
     [SerializeField] private Sprite sprite;
-    [SerializeField] private AssetReference assetReference;
+    [SerializeField] private GameObject prefab;
     [SerializeField] private CharacterType characterType;
 
     public override string Name { get => name; }
     public Sprite Sprite => sprite;
-    public AssetReference AssetReference => assetReference;
+    public GameObject Prefab => prefab;
     public CharacterType CharacterType => characterType;
 
 

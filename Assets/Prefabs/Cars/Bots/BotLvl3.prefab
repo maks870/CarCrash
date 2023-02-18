@@ -10396,12 +10396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cf856f44d897554ab971d6cae380a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshAsset:
-    m_AssetGUID: a0423db497cf8ed40883b7a19a3aa97a
-    m_SubObjectName: body
-    m_SubObjectType: UnityEngine.Mesh, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-    m_EditorAssetChanged: 0
+  carModelSOName: 3
   characterModel: {fileID: 4533544608527221886}
   carRenderer: {fileID: 2246598232839147957}
   carFilter: {fileID: 5884958108483131119}
@@ -10508,6 +10503,7 @@ MonoBehaviour:
   dopplerLevel: 5
   useDoppler: 1
   source: {fileID: 452932085390883369}
+  cam: {fileID: 0}
 --- !u!114 &3103854571908569317
 MonoBehaviour:
   m_ObjectHideFlags: 0

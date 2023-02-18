@@ -32,10 +32,6 @@ public class PlayerLoad : MonoBehaviour
             characters.AddRange(SOLoader.instance.GetSOList<CharacterModelSO>());
             carColors.AddRange(SOLoader.instance.GetSOList<CarColorSO>());
             carModels.AddRange(SOLoader.instance.GetSOList<CarModelSO>());
-
-            Debug.Log(characters.Count);
-            Debug.Log(carColors.Count);
-            Debug.Log(carModels.Count);
         };
 
         //SOLoader.instance.OnLoadingEvent += (scriptableObj) =>
