@@ -35,15 +35,15 @@ public class AwardPresenter : MonoBehaviour
         carSO = null;
         MapInfo mapInfo = YandexGame.savesData.playerWrapper.maps[mapIndex];
 
-        //for (int i = 0; i < YandexGame.savesData.playerWrapper.lastMapPlaces.Count; i++)
-        //{
-        //    pos = YandexGame.savesData.playerWrapper.lastMapPlaces[i];
-        //    Debug.Log("pos " + pos);
-        //    mapAward = pos > 3
-        //        ? mapAward.AddAward(map.Awards[0])
-        //        : mapAward.AddAward(map.Awards[pos]);
-        //}
-        mapAward.AddAward(map.Awards[0]);
+        for (int i = 0; i < YandexGame.savesData.playerWrapper.lastMapPlaces.Count; i++)
+        {
+            pos = YandexGame.savesData.playerWrapper.lastMapPlaces[i];
+            Debug.Log("pos " + pos);
+            mapAward = pos > 3
+                ? mapAward.AddAward(map.Awards[0])
+                : mapAward.AddAward(map.Awards[pos]);
+        }
+
         if (mapInfo.isPassed == false)
         {
             if (mapInfo.highestPlace < 4 && mapInfo.highestPlace != 0)
