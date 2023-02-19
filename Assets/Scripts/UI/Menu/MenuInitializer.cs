@@ -13,14 +13,12 @@ public class MenuInitializer : MonoBehaviour
     private bool isInitializeProcess = false;
     private void OnEnable()
     {
-        //SOLoader.EndLoadingEvent += StartInitialize;
         YandexGame.GetDataEvent += StartInitialize;
         YandexGame.EndDataLoadingEvent += soundController.Initialize;
     }
 
     private void OnDisable()
     {
-        //SOLoader.EndLoadingEvent -= StartInitialize;
         YandexGame.GetDataEvent -= StartInitialize;
         YandexGame.EndDataLoadingEvent -= soundController.Initialize;
     }
@@ -51,6 +49,18 @@ public class MenuInitializer : MonoBehaviour
             menuManagers[i].SOLoaderSubscribe();/////
         }
 
+        MainMenuManager newMainMenu = (MainMenuManager)mainMenu;
+        newMainMenu.PlayerLoad.SOLoaderSubscribe();
+        if (SOLoader.instance.IsResourcesLoaded)
+        {
+            SOLoader.instance.EndLoadingEvent += newMainMenu.GetAwardsAfterMap;
+        }
+        else
+        {
+            YandexGame.EndDataLoadingEvent += newMainMenu.GetAwardsAfterMap;
+            newMainMenu.SubYandexLoad = true;
+        }
+
         SOLoader.instance.LoadAll();
 
         if (YandexGame.savesData.isFirstSession2)
@@ -68,11 +78,6 @@ public class MenuInitializer : MonoBehaviour
         //    if (menuManagers[i] != mainMenu)
         //        menuManagers[i].objectUI.SetActive(false);
         //}
-
-        MainMenuManager newMainMenu = (MainMenuManager)mainMenu;
-
-        if (YandexGame.savesData.playerWrapper.lastMap != "")
-            newMainMenu.GetAwardsAfterMap();
 
         earningUIController.UpdateEarnings();
         SceneTransition.instance.EndPreload();

@@ -25,7 +25,7 @@ public class PlayerLoad : MonoBehaviour
     public AssetReference DefaultCarColor => defaultCarColor;
     public AssetReference DefaultCarModel => defaultCarModel;
 
-    private void OnEnable()
+    public void SOLoaderSubscribe()
     {
         SOLoader.instance.EndLoadingEvent += () =>
         {
@@ -33,23 +33,10 @@ public class PlayerLoad : MonoBehaviour
             carColors.AddRange(SOLoader.instance.GetSOList<CarColorSO>());
             carModels.AddRange(SOLoader.instance.GetSOList<CarModelSO>());
         };
-
-        //SOLoader.instance.OnLoadingEvent += (scriptableObj) =>
-        //{
-        //    if (scriptableObj.GetType() == typeof(CharacterModelSO))
-        //        characters.Add((CharacterModelSO)scriptableObj);
-
-        //    if (scriptableObj.GetType() == typeof(CarColorSO))
-        //        carColors.Add((CarColorSO)scriptableObj);
-
-        //    if (scriptableObj.GetType() == typeof(CarModelSO))
-        //        carModels.Add((CarModelSO)scriptableObj);
-        //};
     }
 
     public void LoadPlayerItems()
     {
-
         if (characters.Count != 0)
             currentCharacter = characters.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCharacterItem);
 
@@ -58,6 +45,11 @@ public class PlayerLoad : MonoBehaviour
 
         if (carModels.Count != 0)
             currentCarModel = carModels.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCarModelItem);
+
+        Debug.Log(YandexGame.savesData.playerWrapper.currentCharacterItem);
+        Debug.Log(characters.Count);
+        Debug.Log(characters[0].Name);
+        Debug.Log(currentCharacter.Name);
     }
 
     private void OnDestroy()

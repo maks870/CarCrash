@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 public class AwardUIController : MonoBehaviour
 {
@@ -31,6 +32,7 @@ public class AwardUIController : MonoBehaviour
 
         if (coinValue != 0)
         {
+            Debug.Log("Coins " + coinValue.ToString());
             coinAwardUI.GetComponentInChildren<Text>().text = coinValue.ToString();
             awards.Add(coinAwardUI);
         }
@@ -88,6 +90,7 @@ public class AwardUIController : MonoBehaviour
         {
             CloseAwards();
             OnAwardsEnd?.Invoke();
+            YandexGame.SaveProgress();
             return;
         }
 

@@ -5,6 +5,7 @@ public abstract class MenuManager : MonoBehaviour
     [SerializeField] protected PlayerLoad playerLoad;
     [SerializeField] public GameObject objectUI;
 
+    public PlayerLoad PlayerLoad => playerLoad;
     protected virtual void SavePlayer()
     {
     }

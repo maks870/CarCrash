@@ -10,6 +10,10 @@ public class MainMenuManager : MenuManager
     [SerializeField] private GameObject newLootbloxesWarning;
     [SerializeField] private List<GameObject> gamemodePanels;
 
+    private bool subYandexLoad = false;
+
+    public bool SubYandexLoad { set => subYandexLoad = value; }
+
     private void SetSavedSO()
     {
         mapSwitcher.InitializeUI();
@@ -17,10 +21,14 @@ public class MainMenuManager : MenuManager
 
     public void GetAwardsAfterMap()
     {
-        Debug.Log("Получение наград");
-        presenter.GetAward();
-        UpdateNewPossibilitiyWarnings();
-        YandexGame.EndDataLoadingEvent -= GetAwardsAfterMap;
+        if (YandexGame.savesData.playerWrapper.lastMap != "" && YandexGame.savesData.playerWrapper.lastMapPlaces.Count != 0)
+        {
+            presenter.GetAward();
+            UpdateNewPossibilitiyWarnings();
+
+            if (subYandexLoad)
+                YandexGame.EndDataLoadingEvent -= GetAwardsAfterMap;
+        }
     }
 
     public override void SOLoaderSubscribe()

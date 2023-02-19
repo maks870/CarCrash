@@ -19,17 +19,13 @@ public class AwardPresenter : MonoBehaviour
 
     public void GetAward()
     {
-        Debug.Log("Награды");
         int pos;
         MapAward mapAward = new MapAward();
         List<CollectibleSO> awardCollectibles = new List<CollectibleSO>();
 
         string mapName = YandexGame.savesData.playerWrapper.lastMap;
-        Debug.Log(mapName);
         int mapIndex = YandexGame.savesData.playerWrapper.GetMapInfoIndex(mapName);
-        Debug.Log(mapIndex);
         List<MapSO> maps = SOLoader.instance.GetSOList<MapSO>();
-        Debug.Log(maps.Count);
         MapSO map = maps.Find(item => item.Name == mapName);
 
         carSO = null;
@@ -38,7 +34,6 @@ public class AwardPresenter : MonoBehaviour
         for (int i = 0; i < YandexGame.savesData.playerWrapper.lastMapPlaces.Count; i++)
         {
             pos = YandexGame.savesData.playerWrapper.lastMapPlaces[i];
-            Debug.Log("pos " + pos);
             mapAward = pos > 3
                 ? mapAward.AddAward(map.Awards[0])
                 : mapAward.AddAward(map.Awards[pos]);
@@ -65,7 +60,6 @@ public class AwardPresenter : MonoBehaviour
 
         YandexGame.savesData.playerWrapper.lastMap = "";
         YandexGame.savesData.playerWrapper.lastMapPlaces.Clear();
-        YandexGame.SaveProgress();
 
         //SOLoader.LoadSO<MapSO>(mapName, (map) =>
         //{

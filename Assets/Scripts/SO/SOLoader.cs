@@ -39,6 +39,7 @@ public class SOLoader : MonoBehaviour
 
     public void LoadAll()
     {
+        Debug.Log("isResourcesLoaded " + isResourcesLoaded);
         if (!isResourcesLoaded)
         {
             StartLoadAllSO<CharacterModelSO>();
