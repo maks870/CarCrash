@@ -32,7 +32,7 @@ public class SceneTransition : MonoBehaviour
         if (instance == null)
             instance = this;
         else
-            Destroy(this);
+            Destroy(gameObject);
 
         DontDestroyOnLoad(this.gameObject);
         animator = GetComponent<Animator>();
