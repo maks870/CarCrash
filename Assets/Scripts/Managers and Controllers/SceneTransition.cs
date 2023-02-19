@@ -13,7 +13,6 @@ public class SceneTransition : MonoBehaviour
     [SerializeField] private GameObject panel;
     [SerializeField] private AudioMixer audioMixer;
     private AsyncOperationHandle<SceneInstance> currentHandlehandle;
-    private string currentSceneName;
     private bool endAnimation = false;
     private Animator animator;
     public static SceneTransition instance;
@@ -49,7 +48,6 @@ public class SceneTransition : MonoBehaviour
     {
         SOLoader.instance.Clear();
         instance.StartCoroutine(instance.SceneLoad(sceneName, LoadSceneMode.Single));
-        instance.currentSceneName = sceneName;
     }
 
     private IEnumerator SceneLoad(string sceneName, LoadSceneMode loadSceneMode)
