@@ -24,7 +24,7 @@ public class SOLoader : MonoBehaviour
         if (instance == null)
             instance = this;
         else
-            Destroy(this);
+            Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
     }
