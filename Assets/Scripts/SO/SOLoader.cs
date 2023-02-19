@@ -26,6 +26,7 @@ public class SOLoader : MonoBehaviour
         else
             Destroy(gameObject);
 
+        EndLoadingEvent += () => isResourcesLoaded = true;
         DontDestroyOnLoad(gameObject);
     }
 
@@ -51,8 +52,6 @@ public class SOLoader : MonoBehaviour
         {
             EndLoadingEvent?.Invoke();
         }
-
-        isResourcesLoaded = true;
     }
 
     public void Clear()

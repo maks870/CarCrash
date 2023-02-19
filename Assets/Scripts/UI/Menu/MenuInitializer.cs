@@ -51,6 +51,7 @@ public class MenuInitializer : MonoBehaviour
 
         MainMenuManager newMainMenu = (MainMenuManager)mainMenu;
         newMainMenu.PlayerLoad.SOLoaderSubscribe();
+
         if (SOLoader.instance.IsResourcesLoaded)
         {
             SOLoader.instance.EndLoadingEvent += newMainMenu.GetAwardsAfterMap;

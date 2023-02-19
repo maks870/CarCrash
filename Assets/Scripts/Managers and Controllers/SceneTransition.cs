@@ -58,6 +58,11 @@ public class SceneTransition : MonoBehaviour
 
         yield return new WaitForEndOfFrame();
 
+        while (!SOLoader.instance.IsResourcesLoaded)
+        {
+            yield return null;
+        }
+
         instance.currentHandlehandle = Addressables.LoadSceneAsync(sceneName, loadSceneMode, false);
 
         while (!endAnimation)

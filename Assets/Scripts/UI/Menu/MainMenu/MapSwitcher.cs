@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using YG;
@@ -7,6 +8,7 @@ public class MapSwitcher : MonoBehaviour
 {
 
     [SerializeField] private GameObject button;
+    [SerializeField] private GameObject waiterBanner;
 
     private bool isFirstLoad = true;
     private List<MapSO> mapsSO = new List<MapSO>();
@@ -120,6 +122,24 @@ public class MapSwitcher : MonoBehaviour
         }
 
         UpdateUI(openedMaps, closedMaps);
+    }
+
+    private IEnumerator SOLoadWaiter()
+    {
+        waiterBanner.SetActive(true);
+
+        while (!SOLoader.instance.IsResourcesLoaded)
+        {
+            yield return null;
+        }
+
+        InitializeUI();
+        waiterBanner.SetActive(false);
+    }
+
+    public void InitializeWaiter()
+    {
+        StartCoroutine(SOLoadWaiter());
     }
 
     public void InitializeUI()
