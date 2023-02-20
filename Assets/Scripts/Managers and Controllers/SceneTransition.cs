@@ -13,7 +13,6 @@ public class SceneTransition : MonoBehaviour
     [SerializeField] private GameObject panel;
     [SerializeField] private AudioMixer audioMixer;
     private AsyncOperationHandle<SceneInstance> currentHandlehandle;
-    private bool endAnimation = false;
     private Animator animator;
     public static SceneTransition instance;
     private void OnEnable()
@@ -35,12 +34,14 @@ public class SceneTransition : MonoBehaviour
 
         DontDestroyOnLoad(this.gameObject);
         animator = GetComponent<Animator>();
+        animator.speed = 0;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        if (animator != null)
+            animator.speed = 0;
         panel.SetActive(false);
-        endAnimation = false;
     }
 
 
@@ -52,8 +53,8 @@ public class SceneTransition : MonoBehaviour
     private IEnumerator SceneLoad(string sceneName, LoadSceneMode loadSceneMode)
     {
         instance.panel.SetActive(true);
+        animator.speed = 1;
         instance.audioMixer.SetFloat("Master", -80);
-        instance.animator.SetTrigger("sceneClosing");
 
         yield return new WaitForEndOfFrame();
 
@@ -65,13 +66,11 @@ public class SceneTransition : MonoBehaviour
         SOLoader.instance.Clear();
         instance.currentHandlehandle = Addressables.LoadSceneAsync(sceneName, loadSceneMode, false);
 
-        while (!endAnimation)
-        {
-            yield return null;
-        }
+        float timer = 40f;
 
-        while (currentHandlehandle.Status != AsyncOperationStatus.Succeeded)
+        while (currentHandlehandle.Status != AsyncOperationStatus.Succeeded || timer > 0.1f)
         {
+            timer -= 0.1f;
             yield return null;
         }
 
@@ -85,10 +84,5 @@ public class SceneTransition : MonoBehaviour
 
     public void EndPreload()
     {
-    }
-
-    public void EndAnimation()
-    {
-        endAnimation = true;
     }
 }
