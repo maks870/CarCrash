@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -8,11 +9,34 @@ public class CustomizeMenuManager : MenuManager
 {
     [SerializeField] private CarTabSwitcher carTabSwitcher;
     [SerializeField] private CharacterTabSwitcher characterTabSwitcher;
+    [SerializeField] private GameObject[] waiterBanners;
     public static Action<bool> ExitCustomizeMenu;
+
     private void SetSavedSO()
     {
         characterTabSwitcher.SetSavedCharacter(playerLoad.CurrentCharacter);
         carTabSwitcher.SetSavedCar(playerLoad.CurrentCarColor, playerLoad.CurrentCarModel);
+    }
+
+    private IEnumerator SOLoadWaiter()
+    {
+        foreach (GameObject banner in waiterBanners)
+        {
+            banner.SetActive(true);
+
+        }
+
+        while (!SOLoader.instance.IsResourcesLoaded)
+        {
+            yield return null;
+        }
+
+        InitializeMenu();
+
+        foreach (GameObject banner in waiterBanners)
+        {
+            banner.SetActive(false);
+        }
     }
 
     protected override void SavePlayer()
@@ -61,7 +85,7 @@ public class CustomizeMenuManager : MenuManager
     public override void OpenMenu()
     {
         base.OpenMenu();
-        InitializeMenu();
+        StartCoroutine(SOLoadWaiter());
     }
 
     public override void CloseMenu()

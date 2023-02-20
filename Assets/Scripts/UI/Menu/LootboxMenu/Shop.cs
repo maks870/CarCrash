@@ -116,7 +116,6 @@ public class Shop : MonoBehaviour
     {
         if (!EarningManager.SpendLootbox())
         {
-            //вывести сообщение об нехватке лутбоксов
             return;
         }
 
