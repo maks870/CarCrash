@@ -1628,9 +1628,6 @@ MonoBehaviour:
   noLootboxImage: {fileID: 1978099349}
   lootboxAwardUI: {fileID: 982961183}
   shop: {fileID: 581943004}
-  waiterBanners:
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &156512659
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -46,7 +46,6 @@ public class SceneTransition : MonoBehaviour
 
     public static void SwitchScene(string sceneName)
     {
-        SOLoader.instance.Clear();
         instance.StartCoroutine(instance.SceneLoad(sceneName, LoadSceneMode.Single));
     }
 
@@ -63,6 +62,7 @@ public class SceneTransition : MonoBehaviour
             yield return null;
         }
 
+        SOLoader.instance.Clear();
         instance.currentHandlehandle = Addressables.LoadSceneAsync(sceneName, loadSceneMode, false);
 
         while (!endAnimation)
