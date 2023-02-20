@@ -14815,7 +14815,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 8072064640669006121, guid: 850e70d2481079c4aa83930d686ef4c4,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: ee47b6ba27d8a484298075c6625df88d, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
@@ -16022,7 +16022,6 @@ MonoBehaviour:
   m_TractionControl: 0
   m_FullTorqueOverAllWheels: 300
   m_ReverseTorque: 100
-  m_MaxHandbrakeTorque: 0
   m_Downforce: 100
   m_SpeedType: 0
   m_Topspeed: 90
@@ -16050,9 +16049,11 @@ MonoBehaviour:
   hardSteerHelper: 0
   taxiingHelper: 0.5
   m_SteerSensitivity: 0.05
-  targetMarkHeight: 1
   normalSteerAngle: 15
   turnSteerAngle: 25
+  normalFOV: 80
+  acceleratedFOV: 120
+  changeFOVStep: 0
 --- !u!114 &4650270483354694012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16078,6 +16079,7 @@ MonoBehaviour:
   dopplerLevel: 5
   useDoppler: 1
   source: {fileID: 1676254439}
+  cam: {fileID: 0}
 --- !u!114 &4650270483354693953
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16116,7 +16118,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCamera: {fileID: 0}
   pointerUI: {fileID: 0}
-  interfaceScale: 100
   canvas: {fileID: 0}
   target: {fileID: 0}
   offset: {x: 0, y: 0.5, z: 0}
@@ -16307,7 +16308,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 8072064640669006121, guid: 850e70d2481079c4aa83930d686ef4c4,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 64461925f7508c34c816e23c4093ccb0, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
