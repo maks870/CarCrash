@@ -7,14 +7,20 @@ public class LvlMenu : MonoBehaviour
     [SerializeField] private GameObject PauseMenu;
     [SerializeField] SoundController soundController;
     [SerializeField] private bool isFreeplayMode = false;
+    private float oldVolume;
+
+    private bool endRace = false;
+    public bool EndRace { get => endRace; set => endRace = value; }
+
     private void Start()
     {
         Play();
+        soundController.AudioMixer.GetFloat("Effect", out oldVolume);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !EndRace)
         {
             Pause();
         }
@@ -59,12 +65,14 @@ public class LvlMenu : MonoBehaviour
     {
         if (paused)
         {
+            soundController.AudioMixer.SetFloat("Effect", -80);
             Cursor.visible = true;
             Time.timeScale = 0;
             PauseMenu.SetActive(true); 
         }
         else
         {
+            soundController.AudioMixer.SetFloat("Effect", oldVolume);
             Cursor.visible = false;
             Time.timeScale = 1;
             PauseMenu.SetActive(false); 
