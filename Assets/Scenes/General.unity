@@ -14862,7 +14862,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e75939a36cc2477498a269a921e9c58c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1314a7ac0b8e3b44b93e219823b30dc6, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -15237,7 +15237,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.67240566}
+  m_AnchorMax: {x: 1, y: 0.62948936}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -16039,8 +16039,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1160675675}
   m_HandleRect: {fileID: 1160675674}
   m_Direction: 2
-  m_Value: -0.00000032578384
-  m_Size: 0.67240566
+  m_Value: -0.00000038406432
+  m_Size: 0.62948936
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -17336,7 +17336,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e75939a36cc2477498a269a921e9c58c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5076e4c4940a42444a6b6fac5bccf188, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -19533,8 +19533,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -25}
-  m_SizeDelta: {x: 105.4827, y: 128.5665}
+  m_AnchoredPosition: {x: -6.2, y: -9}
+  m_SizeDelta: {x: 140.1669, y: 128.5665}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1459179346
 MonoBehaviour:
@@ -19584,7 +19584,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2
+  m_Text: 15
 --- !u!222 &1459179348
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23678,7 +23678,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -25}
-  m_SizeDelta: {x: 105.4827, y: 128.5665}
+  m_SizeDelta: {x: 182.2359, y: 128.5665}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1730405362
 MonoBehaviour:
@@ -23728,7 +23728,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1
+  m_Text: 50
 --- !u!222 &1730405364
 CanvasRenderer:
   m_ObjectHideFlags: 0
