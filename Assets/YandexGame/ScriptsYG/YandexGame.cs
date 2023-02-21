@@ -6,6 +6,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace YG
 {
@@ -73,6 +74,24 @@ namespace YG
         #endregion Data Fields
 
         #region Methods
+        private void OnEnable()
+        {
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+
+        private void OnDisable()
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
+
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            if (Instance == this) 
+            {
+                Start();
+            }     
+        }
+
         private void Awake()
         {
             pathSaves = Application.dataPath + "/YandexGame/WorkingData/saveyg.yg";
