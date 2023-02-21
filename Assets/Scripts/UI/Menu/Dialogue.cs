@@ -23,7 +23,7 @@ public class Sentence
 
 public class Dialogue : MonoBehaviour
 {
-    const float textOutputDelay = 0.05f;
+    const float textOutputDelay = 0.025f;
 
     [SerializeField] private GameObject dialogueUI;
     private Sentence[] sentences;
