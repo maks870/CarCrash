@@ -5,6 +5,7 @@ using YG;
 
 public class MenuInitializer : MonoBehaviour
 {
+    [SerializeField] private GameObject startRoom;
     [SerializeField] private List<MenuManager> menuManagers = new List<MenuManager>();
     [SerializeField] private EarningUIController earningUIController;
     [SerializeField] private SoundController soundController;
@@ -14,6 +15,7 @@ public class MenuInitializer : MonoBehaviour
     private void OnEnable()
     {
         YandexGame.GetDataEvent += StartInitialize;
+        YandexGame.GetDataEvent += () => startRoom.SetActive(true);
         YandexGame.EndDataLoadingEvent += soundController.Initialize;
     }
 

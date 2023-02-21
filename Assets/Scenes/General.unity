@@ -1582,6 +1582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d94d727cb3a47224faff5935ad180b73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startRoom: {fileID: 945202523}
   menuManagers:
   - {fileID: 156512659}
   - {fileID: 156512657}
@@ -12537,7 +12538,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &945202527
 RectTransform:
   m_ObjectHideFlags: 0

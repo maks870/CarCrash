@@ -17,6 +17,4 @@ public class LeaderboardWriter : MonoBehaviour
 
         YandexGame.NewLeaderboardScores("GlobalLeaderboard", currentPoints);
     }
-
-
 }
