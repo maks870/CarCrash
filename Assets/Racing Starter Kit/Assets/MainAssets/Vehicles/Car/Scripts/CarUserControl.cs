@@ -24,6 +24,7 @@ namespace UnityStandardAssets.Vehicles.Car
         private Camera cam;
 
         public bool IsStopped { set => isStopped = value; }
+        public float NormalSteerAngle { get => normalSteerAngle; set => normalSteerAngle = value; }
         public float TurnSteerAngle { get => turnSteerAngle; set => turnSteerAngle = value; }
 
         private void Awake()
