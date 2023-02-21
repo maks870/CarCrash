@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44515753, g: 0.49476904, b: 0.57382804, a: 1}
+  m_IndirectSpecularColor: {r: 0.4451573, g: 0.49476856, b: 0.57382727, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -24991,7 +24991,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &370463581
 Transform:
   m_ObjectHideFlags: 0
@@ -45108,6 +45108,7 @@ MonoBehaviour:
   goalMissionObj: {fileID: 1181989320}
   endGoalMissionObj: {fileID: 1213904033}
   missionPointer: {fileID: 1387104296}
+  inputManager: {fileID: 1321064512}
 --- !u!1 &856160132
 GameObject:
   m_ObjectHideFlags: 0

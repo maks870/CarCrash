@@ -16,7 +16,13 @@ public class RaceFinish : MonoBehaviour
     [SerializeField] private Image cup;
     [SerializeField] private Sprite[] spritesCup;
     [SerializeField] private Text posText;
+    private LvlMenu lvlMenu;
     private bool finish = false;
+
+    private void Awake()
+    {
+        lvlMenu = transform.parent.GetComponentInChildren<LvlMenu>();
+    }
 
     private void WriteRecords()
     {
@@ -61,6 +67,10 @@ public class RaceFinish : MonoBehaviour
 
     public void Finish()
     {
+        Cursor.visible = true;
+
+        lvlMenu.EndRace = true;
+
         if (finish)
             return;
 
@@ -94,6 +104,6 @@ public class RaceFinish : MonoBehaviour
             FinishPanelWin.SetActive(false);//win panel turns off
             FinishPanelLose.SetActive(true);//lose panel turns on
         }
-        AudioListener.volume = 0f;//audio turns off
+        //AudioListener.volume = 0f;//audio turns off
     }
 }

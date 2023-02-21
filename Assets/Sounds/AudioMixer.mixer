@@ -54,6 +54,8 @@ AudioMixerController:
   m_EnableSuspend: 1
   m_UpdateMode: 1
   m_ExposedParameters:
+  - guid: f63a145337625584787249a618b7f5c0
+    name: Effect
   - guid: b7b3edfb0ecea0544bdaee5ace39fe98
     name: Master
   m_AudioMixerGroupViews:
@@ -116,10 +118,10 @@ AudioMixerSnapshotController:
     e44e30a1c9af5be47894420094ec663d: 0.9
     5bfc8ef1f3ca715469eb3c8b8ed1ec7d: 1000
     5cb9457260727d04cb926289eeb378d0: 0
-    f63a145337625584787249a618b7f5c0: 3.1596472
+    f63a145337625584787249a618b7f5c0: 3
     00a1bcf32291d5147bf2cfe07fc934a1: 6.381
     fbcee5a525aed16468ad9e0e2d88bff3: 873
-    8270deb5be2d07b43b03308df44fe250: 0
+    8270deb5be2d07b43b03308df44fe250: 3.7041535
     f471aa66aa8fb794298b4a7538533cc0: 0
     3d842276a38cb514a9814369f210a52e: 1
     2ca2286778b6ec6488e58258cbbb65da: 2.7

@@ -10,17 +10,19 @@ public class SoundController : MonoBehaviour
     [SerializeField] private Sprite buttonOnSprite;
     [SerializeField] private Sprite buttonOffSprite;
 
+    public AudioMixer AudioMixer { get => audioMixer;}
+
     private void SoundChange(bool on)
     {
         if (on)
         {
             buttonSound.image.sprite = buttonOnSprite;
-            audioMixer.SetFloat("Master", -10);
+            AudioMixer.SetFloat("Master", -10);
         }
         else
         {
             buttonSound.image.sprite = buttonOffSprite;
-            audioMixer.SetFloat("Master", -80);
+            AudioMixer.SetFloat("Master", -80);
         }
         buttonSound.onClick.RemoveAllListeners();
         buttonSound.onClick.AddListener(() => SoundChange(!on));

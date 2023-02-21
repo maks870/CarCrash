@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
-using UnityEngine.AddressableAssets;
-using UnityEngine.SceneManagement;
-//this script is used in the Play button from the first menu and the Continue button when you finish the race
+
 public class LvlMenu : MonoBehaviour
 {
     [SerializeField] private GameObject RaceUI, Countdown, FinishCamera, LapsSelected;
@@ -9,25 +7,38 @@ public class LvlMenu : MonoBehaviour
     [SerializeField] private GameObject PauseMenu;
     [SerializeField] SoundController soundController;
     [SerializeField] private bool isFreeplayMode = false;
+    private float oldVolume;
+
+    private bool endRace = false;
+    public bool EndRace { get => endRace; set => endRace = value; }
+
     private void Start()
     {
         Play();
+        soundController.AudioMixer.GetFloat("Effect", out oldVolume);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && !EndRace)
+        {
+            Pause();
+        }
     }
     public void Restart()
-    {   //void restart is used in continue buttons when we finish the race and in return button of the pause menu
-        SceneTransition.ReloadScene();//so it will restart the game's scene
+    {   
+        SceneTransition.ReloadScene();
     }
-    //if we hit play in the menu at the start of the scene we will use the Play void:
+   
     public void Play()
     {
-        RaceUI.SetActive(true); //racing UI
+        RaceUI.SetActive(true); 
 
         if (!isFreeplayMode)
         {
-            //all the racing stuff turns on
-            LapsSelected.SetActive(true); //turn on the lap requirement race-UI text
-            FinishCamera.SetActive(false); //and the camera goes off too, to use the one in the player car
-            Countdown?.SetActive(true);  //countdown UI (3,2,1,go)
+            LapsSelected.SetActive(true); 
+            FinishCamera.SetActive(false); 
+            Countdown?.SetActive(true); 
         }
 
         SetPause(false);
@@ -54,16 +65,17 @@ public class LvlMenu : MonoBehaviour
     {
         if (paused)
         {
-            //soundController.SoundDistortion(true);
+            soundController.AudioMixer.SetFloat("Effect", -80);
+            Cursor.visible = true;
             Time.timeScale = 0;
-            PauseMenu.SetActive(true); //show the pause menu (to resume or restart race)
+            PauseMenu.SetActive(true); 
         }
         else
         {
-            //soundController.SoundDistortion(false);
-            //unpausing reactivates audio and resumes normal time
+            soundController.AudioMixer.SetFloat("Effect", oldVolume);
+            Cursor.visible = false;
             Time.timeScale = 1;
-            PauseMenu.SetActive(false); //turn off the pause menu
+            PauseMenu.SetActive(false); 
         }
     }
 }

@@ -8,6 +8,7 @@ public class MissionManager : MonoBehaviour
     [SerializeField] private GameObject goalMissionObj;
     [SerializeField] private GameObject endGoalMissionObj;
     [SerializeField] private Looker missionPointer;
+    [SerializeField] private InputManager inputManager;
     private Mission[] missions;
     private Mission currentMission;
 
@@ -98,12 +99,11 @@ public class MissionManager : MonoBehaviour
             currentMission.goalText.SetActive(true);
             currentMission.gameObject.SetActive(true);
             currentMission.MissionZone.StayZoneEvent.AddListener(() => SwitchMissionPointer(false));
+            currentMission.MissionZone.StayZoneEvent.AddListener(() => inputManager.Enable(false));
             currentMission.Dialogue.EndDialogueAction += () => SwitchMissionPointer(true);
-            currentMission.Dialogue.EndDialogueAction += () => Debug.Log("Выход из зоны");
+            currentMission.Dialogue.EndDialogueAction += () => inputManager.Enable(true);
         }
     }
-
-
 
     public void NextMission()
     {

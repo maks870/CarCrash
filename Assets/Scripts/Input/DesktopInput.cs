@@ -27,8 +27,8 @@ public class DesktopInput : BaseInput
 
     private void Update()
     {
-        verticalAxis = Input.GetAxis("VerticalP2");
-        horizontalAxis = Input.GetAxis("HorizontalP2");
+        verticalAxis = Input.GetAxis("VerticalP2") + Input.GetAxis("Vertical");
+        horizontalAxis = Input.GetAxis("HorizontalP2") + Input.GetAxis("Horizontal");
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
