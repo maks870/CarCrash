@@ -25,6 +25,7 @@ public class MenuInitializer : MonoBehaviour
 
     void Start()
     {
+        startingTraining.StartTraining();
         if (YandexGame.SDKEnabled == true)
         {
             YandexGame.LoadProgress();
@@ -69,7 +70,6 @@ public class MenuInitializer : MonoBehaviour
             YandexGame.savesData.playerWrapper.lastMap = "";
             YandexGame.savesData.playerWrapper.lastMapPlaces.Clear();
             YandexGame.savesData.isFirstSession2 = false;
-            startingTraining.StartTraining();
         }
 
         //for (int i = 0; i < menuManagers.Count; i++)
