@@ -18,4 +18,9 @@ public class InputManager : MonoBehaviour
             currentInput = Instantiate(mobileInputObj).GetComponent<BaseInput>();
 
     }
+
+    public void Enable(bool active) 
+    {
+        currentInput.gameObject.SetActive(active);
+    }
 }
