@@ -64,6 +64,7 @@ namespace UnityStandardAssets.Vehicles.Car
         public bool IsAccelerated { get => isAccelerated; set => isAccelerated = value; }
         public bool IsOvertaking { set => isOvertaking = value; }
         public float Handability { set => m_SteerHelper = value; }
+        public float SlipLimit { set => m_SlipLimit = value; }
 
         // Use this for initialization
         private void Start()

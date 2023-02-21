@@ -16052,8 +16052,8 @@ MonoBehaviour:
   normalSteerAngle: 15
   turnSteerAngle: 25
   normalFOV: 80
-  acceleratedFOV: 120
-  changeFOVStep: 0
+  acceleratedFOV: 95
+  changeFOVStep: 0.03
 --- !u!114 &4650270483354694012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16066,7 +16066,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20fa55eb64c5cea4aa3c71ae19c434bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  engineSoundStyle: 0
   lowAccelClip: {fileID: 8300000, guid: c4d8928c75c21af43998193f0f038429, type: 3}
   lowDecelClip: {fileID: 8300000, guid: 5699dddcce16c4543b95951c4ce0e092, type: 3}
   highAccelClip: {fileID: 8300000, guid: 6c54702c778af6347b8db886b7f1a4ae, type: 3}

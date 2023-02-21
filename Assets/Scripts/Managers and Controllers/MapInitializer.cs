@@ -58,6 +58,7 @@ public class MapInitializer : MonoBehaviour
         carModel = carModelList.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCarModelItem);
         carObj.GetComponent<CarController>().m_FullTorqueOverAllWheels = carModel.Acceleration;
         carObj.GetComponent<CarController>().Handability = carModel.Handleability;
+        carObj.GetComponent<CarController>().SlipLimit = carModel.SlipLimit;
         carFilter.sharedMesh = carModel.Prefab.GetComponentInChildren<MeshFilter>().sharedMesh;
         //SOLoader.instance.LoadAssetReference<Mesh>(carModel.Prefab, (mesh) => carFilter.mesh = mesh);
 
