@@ -385,10 +385,6 @@ MonoBehaviour:
     m_Address: Assets/Racing Starter Kit/Assets/MainAssets/Vehicles/Car/Audio/DecelerationLow.wav
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: ec05311eb033f1f4888e4ddaa4d910bc
-    m_Address: Assets/Sounds/Muisic/33 - Inkedsplat - Shred Waste.ogg
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 88988902fa6dee24daaff7f8a3b463af
     m_Address: Assets/Materials/New Physic Material.physicMaterial
     m_ReadOnly: 0

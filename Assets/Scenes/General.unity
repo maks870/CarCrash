@@ -6637,10 +6637,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cb1fa4364448354e80843eb7ce6fed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exchangeCoinCost: 30
-  exchangeGemReward: 3
-  smallAdReward: 75
-  mediumAdReward: 25
+  exchangeCoinCost: 7
+  exchangeGemReward: 1
+  smallAdReward: 50
+  mediumAdReward: 15
   mediumAdViews: 2
   lootboxCost: 10
   openLootboxButton: {fileID: 1673411890}
@@ -15236,8 +15236,8 @@ RectTransform:
   m_Father: {fileID: 169573922}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.62948936}
+  m_AnchorMin: {x: 0, y: 0.37051064}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -16039,7 +16039,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1160675675}
   m_HandleRect: {fileID: 1160675674}
   m_Direction: 2
-  m_Value: -0.00000038406432
+  m_Value: 1
   m_Size: 0.62948936
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -22876,18 +22876,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 982961183}
-        m_TargetAssemblyTypeName: AwardUIController, Assembly-CSharp
-        m_MethodName: CloseAwards
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1942103843}
         m_TargetAssemblyTypeName: LootBox, Assembly-CSharp
         m_MethodName: Open
@@ -22898,6 +22886,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: Open
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 982961183}
+        m_TargetAssemblyTypeName: AwardUIController, Assembly-CSharp
+        m_MethodName: CloseAwards
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1673411890}
@@ -29580,7 +29580,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -10.448784, y: 857.83844}
+  m_AnchoredPosition: {x: -10.448784, y: 222.1618}
   m_SizeDelta: {x: 300.08, y: 1715.6764}
   m_Pivot: {x: 0.5000001, y: 0.5}
 --- !u!114 &2105906124
@@ -30239,57 +30239,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 360253993813136910, guid: e62e745ea1540974fb8457b0c98c6068,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 360253993813136910, guid: e62e745ea1540974fb8457b0c98c6068,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 360253993813136910, guid: e62e745ea1540974fb8457b0c98c6068,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 360253993813136910, guid: e62e745ea1540974fb8457b0c98c6068,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 360253993813136910, guid: e62e745ea1540974fb8457b0c98c6068,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 788184567804039284, guid: e62e745ea1540974fb8457b0c98c6068,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 8deddf691d9b3fe4f8d1757643e72e15, type: 2}
-    - target: {fileID: 788184567804039284, guid: e62e745ea1540974fb8457b0c98c6068,
-        type: 3}
-      propertyPath: m_UpdateMode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1600662402642182295, guid: e62e745ea1540974fb8457b0c98c6068,
-        type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1600662402642182295, guid: e62e745ea1540974fb8457b0c98c6068,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 761585de097e0e747869075726db65e9,
-        type: 3}
-    - target: {fileID: 1600662402642182295, guid: e62e745ea1540974fb8457b0c98c6068,
-        type: 3}
-      propertyPath: m_Maskable
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3792633865187448101, guid: e62e745ea1540974fb8457b0c98c6068,
         type: 3}
       propertyPath: m_Pivot.x
@@ -30395,36 +30344,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4128292279988218833, guid: e62e745ea1540974fb8457b0c98c6068,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4128292279988218833, guid: e62e745ea1540974fb8457b0c98c6068,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4128292279988218833, guid: e62e745ea1540974fb8457b0c98c6068,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4128292279988218833, guid: e62e745ea1540974fb8457b0c98c6068,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.009277344
-      objectReference: {fileID: 0}
-    - target: {fileID: 4128292279988218833, guid: e62e745ea1540974fb8457b0c98c6068,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5889096263035044098, guid: e62e745ea1540974fb8457b0c98c6068,
-        type: 3}
-      propertyPath: anim
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 8224483372661662888, guid: e62e745ea1540974fb8457b0c98c6068,
         type: 3}
       propertyPath: m_IsActive
@@ -30434,11 +30353,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SceneLoader
-      objectReference: {fileID: 0}
-    - target: {fileID: 8306383306904086782, guid: e62e745ea1540974fb8457b0c98c6068,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e62e745ea1540974fb8457b0c98c6068, type: 3}
