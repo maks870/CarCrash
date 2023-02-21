@@ -24991,7 +24991,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &370463581
 Transform:
   m_ObjectHideFlags: 0
@@ -46871,7 +46871,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 37b1b3da5534ae04f95ecccbe75e0fe6, type: 2}
+      objectReference: {fileID: 2100000, guid: 6496f574b14020a469f610a8ae61c62c, type: 2}
     - target: {fileID: 919132149155446097, guid: 97d0bd3199ab87646947d20bd20e2a54,
         type: 3}
       propertyPath: m_Name
@@ -46881,17 +46881,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 37b1b3da5534ae04f95ecccbe75e0fe6, type: 2}
+      objectReference: {fileID: 2100000, guid: 6496f574b14020a469f610a8ae61c62c, type: 2}
     - target: {fileID: 2115122935096573124, guid: 97d0bd3199ab87646947d20bd20e2a54,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 37b1b3da5534ae04f95ecccbe75e0fe6, type: 2}
+      objectReference: {fileID: 2100000, guid: 6496f574b14020a469f610a8ae61c62c, type: 2}
     - target: {fileID: 6502864751811091877, guid: 97d0bd3199ab87646947d20bd20e2a54,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 37b1b3da5534ae04f95ecccbe75e0fe6, type: 2}
+      objectReference: {fileID: 2100000, guid: 6496f574b14020a469f610a8ae61c62c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97d0bd3199ab87646947d20bd20e2a54, type: 3}
 --- !u!1 &903036512
