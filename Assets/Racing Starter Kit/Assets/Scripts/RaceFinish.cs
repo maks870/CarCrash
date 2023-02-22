@@ -68,6 +68,7 @@ public class RaceFinish : MonoBehaviour
     public void Finish()
     {
         Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
 
         lvlMenu.EndRace = true;
 
