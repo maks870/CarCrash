@@ -5,6 +5,7 @@ public class LvlMenu : MonoBehaviour
     [SerializeField] private GameObject RaceUI, Countdown, FinishCamera, LapsSelected;
     //also, it is used if we hit restart in the pause menu
     [SerializeField] private GameObject PauseMenu;
+    [SerializeField] private MissionManager missionManager;
     [SerializeField] SoundController soundController;
     [SerializeField] private bool isFreeplayMode = false;
     private float oldVolume;
@@ -26,19 +27,19 @@ public class LvlMenu : MonoBehaviour
         }
     }
     public void Restart()
-    {   
+    {
         SceneTransition.ReloadScene();
     }
-   
+
     public void Play()
     {
-        RaceUI.SetActive(true); 
+        RaceUI.SetActive(true);
 
         if (!isFreeplayMode)
         {
-            LapsSelected.SetActive(true); 
-            FinishCamera.SetActive(false); 
-            Countdown?.SetActive(true); 
+            LapsSelected.SetActive(true);
+            FinishCamera.SetActive(false);
+            Countdown?.SetActive(true);
         }
 
         SetPause(false);
@@ -66,16 +67,28 @@ public class LvlMenu : MonoBehaviour
         if (paused)
         {
             soundController.AudioMixer.SetFloat("Effect", -80);
-            Cursor.visible = true;
+
+            if (missionManager != null && !missionManager.IsActiveDialogue)
+            {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+            }
+
             Time.timeScale = 0;
-            PauseMenu.SetActive(true); 
+            PauseMenu.SetActive(true);
         }
         else
         {
             soundController.AudioMixer.SetFloat("Effect", oldVolume);
-            Cursor.visible = false;
+
+            if (missionManager != null && !missionManager.IsActiveDialogue)
+            {
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+
             Time.timeScale = 1;
-            PauseMenu.SetActive(false); 
+            PauseMenu.SetActive(false);
         }
     }
 }

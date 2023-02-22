@@ -9,8 +9,11 @@ public class MissionManager : MonoBehaviour
     [SerializeField] private GameObject endGoalMissionObj;
     [SerializeField] private Looker missionPointer;
     [SerializeField] private InputManager inputManager;
+    private bool isActiveDialogue = false;
     private Mission[] missions;
     private Mission currentMission;
+
+    public bool IsActiveDialogue => isActiveDialogue;
 
     public void SwitchMissionPointer(bool isEnable)
     {
@@ -99,14 +102,18 @@ public class MissionManager : MonoBehaviour
             missionPointer.target = currentMission.MissionZone.transform;
             currentMission.goalText.SetActive(true);
             currentMission.gameObject.SetActive(true);
+
             currentMission.MissionZone.StayZoneEvent.AddListener(() => SwitchMissionPointer(false));
             currentMission.MissionZone.StayZoneEvent.AddListener(() => inputManager.Enable(false));
             currentMission.MissionZone.StayZoneEvent.AddListener(() => Cursor.visible = true);
             currentMission.MissionZone.StayZoneEvent.AddListener(() => Cursor.lockState = CursorLockMode.None);
+            currentMission.MissionZone.StayZoneEvent.AddListener(() => isActiveDialogue = true); ;
+
             currentMission.Dialogue.EndDialogueAction += () => Cursor.visible = false;
             currentMission.Dialogue.EndDialogueAction += () => Cursor.lockState = CursorLockMode.Locked;
             currentMission.Dialogue.EndDialogueAction += () => SwitchMissionPointer(true);
             currentMission.Dialogue.EndDialogueAction += () => inputManager.Enable(true);
+            currentMission.Dialogue.EndDialogueAction += () => isActiveDialogue = false;
         }
     }
 
