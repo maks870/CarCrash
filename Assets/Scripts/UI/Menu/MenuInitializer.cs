@@ -37,6 +37,7 @@ public class MenuInitializer : MonoBehaviour
         if (isInitializeProcess)
             return;
         isInitializeProcess = true;
+        startRoom.SetActive(true);
         MenuManager mainMenu = menuManagers[0];
 
         for (int i = 0; i < menuManagers.Count; i++)
@@ -64,7 +65,6 @@ public class MenuInitializer : MonoBehaviour
         }
 
         SOLoader.instance.LoadAll();
-        startRoom.SetActive(true);
 
         if (YandexGame.savesData.isFirstSession2)
         {
@@ -86,7 +86,7 @@ public class MenuInitializer : MonoBehaviour
         SceneTransition.instance.EndPreload();
     }
 
-    public void ResetProgressTEST()//тестовый метод
+    public void ResetProgressTEST()//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     {
         YandexGame.ResetSaveProgress();
         YandexGame.SaveProgress();
