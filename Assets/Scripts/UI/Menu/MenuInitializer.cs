@@ -15,7 +15,6 @@ public class MenuInitializer : MonoBehaviour
     private void OnEnable()
     {
         YandexGame.GetDataEvent += StartInitialize;
-        YandexGame.GetDataEvent += () => startRoom.SetActive(true);
         YandexGame.EndDataLoadingEvent += soundController.Initialize;
     }
 
@@ -65,6 +64,7 @@ public class MenuInitializer : MonoBehaviour
         }
 
         SOLoader.instance.LoadAll();
+        startRoom.SetActive(true);
 
         if (YandexGame.savesData.isFirstSession2)
         {
