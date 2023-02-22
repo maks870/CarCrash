@@ -571,6 +571,12 @@
         }
     }
 
+    function EndLoad() {
+
+    ysdk.features.LoadingAPI.ready();
+
+    }
+
     function InitLeaderboard() {
         try {
             ysdk.getLeaderboards().then(_lb => {

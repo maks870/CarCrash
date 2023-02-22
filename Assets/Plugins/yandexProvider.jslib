@@ -20,6 +20,11 @@ mergeInto(LibraryManager.library,
 		LoadCloud();
 	},
 	
+	EndLoad: function ()
+	{
+		EndLoad();
+	},
+
 	InitLeaderboard: function ()
 	{
 		InitLeaderboard();

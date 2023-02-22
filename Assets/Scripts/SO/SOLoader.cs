@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -27,6 +28,10 @@ public class SOLoader : MonoBehaviour
             Destroy(gameObject);
 
         EndLoadingEvent += () => isResourcesLoaded = true;
+
+#if !UNITY_EDITOR
+        EndLoadingEvent += () => EndLoad();
+#endif
         DontDestroyOnLoad(gameObject);
     }
 
@@ -37,6 +42,8 @@ public class SOLoader : MonoBehaviour
 
         EndLoadingEvent?.Invoke();
     }
+    [DllImport("__Internal")]
+    private static extern void EndLoad();
 
     public void LoadAll()
     {
