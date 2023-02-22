@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf8c7cc39c7cc5f47be7860a7c421cbd, type: 3}
   m_Name: 32
   m_EditorClassIdentifier: 
-  maxPoints: 0
+  maxPoints: 1500
   car: {fileID: 0}
   nextMap: {fileID: 11400000, guid: 5995e346cac295641949717414cf0f43, type: 2}
   sprite: {fileID: 21300000, guid: ee7ba7230232ce945908c178492d2f62, type: 3}
