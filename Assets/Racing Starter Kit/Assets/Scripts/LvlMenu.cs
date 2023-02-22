@@ -68,27 +68,29 @@ public class LvlMenu : MonoBehaviour
         {
             soundController.AudioMixer.SetFloat("Effect", -80);
 
-            if (missionManager != null && !missionManager.IsActiveDialogue)
-            {
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.None;
-            }
-
             Time.timeScale = 0;
             PauseMenu.SetActive(true);
+
+            if (missionManager != null && missionManager.IsActiveDialogue)
+                return;
+
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+
         }
         else
         {
             soundController.AudioMixer.SetFloat("Effect", oldVolume);
 
-            if (missionManager != null && !missionManager.IsActiveDialogue)
-            {
-                Cursor.visible = false;
-                Cursor.lockState = CursorLockMode.Locked;
-            }
-
             Time.timeScale = 1;
             PauseMenu.SetActive(false);
+
+            if (missionManager != null && missionManager.IsActiveDialogue)
+                return;
+
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+
         }
     }
 }
