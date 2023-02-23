@@ -6,6 +6,7 @@ public class MainMenuManager : MenuManager
 {
     [SerializeField] private MapSwitcher mapSwitcher;
     [SerializeField] private AwardPresenter presenter;
+    [SerializeField] private GameObject newMissionWarning;
     [SerializeField] private GameObject newCollectiblesWarning;
     [SerializeField] private GameObject newLootbloxesWarning;
     [SerializeField] private List<GameObject> gamemodePanels;
@@ -73,11 +74,14 @@ public class MainMenuManager : MenuManager
             newCollectiblesWarning.SetActive(false);
 
         if (YandexGame.savesData.lootboxes > 0)
-        {
             newLootbloxesWarning.SetActive(true);
-        }
         else
             newLootbloxesWarning.SetActive(false);
+
+        if (YandexGame.savesData.playerWrapper.newMission == true)
+            newMissionWarning.SetActive(true);
+        else
+            newMissionWarning.SetActive(false);
     }
 
     public void ClearSOLoaderTEST()

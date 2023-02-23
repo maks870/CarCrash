@@ -77,15 +77,8 @@ public class MenuInitializer : MonoBehaviour
             startingTraining.StartTraining();
         }
 
-        //for (int i = 0; i < menuManagers.Count; i++)
-        //{
-        //    menuManagers[i].OpenMenu();
-
-        //    if (menuManagers[i] != mainMenu)
-        //        menuManagers[i].objectUI.SetActive(false);
-        //}
-
         earningUIController.UpdateEarnings();
+        newMainMenu.UpdateNewPossibilitiyWarnings();
         SceneTransition.instance.EndPreload();
     }
 

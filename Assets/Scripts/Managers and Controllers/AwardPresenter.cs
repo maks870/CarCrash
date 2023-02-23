@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using YG;
 
 public class AwardPresenter : MonoBehaviour
@@ -51,6 +52,7 @@ public class AwardPresenter : MonoBehaviour
                     awardCollectibles.Add(map.Car);
                 }
                 YandexGame.savesData.currentMission += 1;
+                YandexGame.savesData.playerWrapper.newMission = true;
                 mapInfo.isPassed = true;
             }
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 [System.Serializable]
 public class PlayerWrapper
 {
+    public bool newMission = true;
     public string lastMap;
     public string currentCharacterItem;
     public string currentCarColorItem;
