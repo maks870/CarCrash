@@ -84,6 +84,7 @@ public class RaceFinish : MonoBehaviour
         YandexGame.SaveProgress();
 
         FinishCam.SetActive(true);
+        FinishCam.GetComponent<AudioListener>().enabled = true;
         PauseButton.SetActive(false);
         Panel1.SetActive(false);
         Panel2.SetActive(false);

@@ -8,7 +8,6 @@ public class LvlMenu : MonoBehaviour
     [SerializeField] private MissionManager missionManager;
     [SerializeField] SoundController soundController;
     [SerializeField] private bool isFreeplayMode = false;
-    private float oldVolume;
 
     private bool endRace = false;
     public bool EndRace { get => endRace; set => endRace = value; }
@@ -16,7 +15,6 @@ public class LvlMenu : MonoBehaviour
     private void Start()
     {
         Play();
-        soundController.AudioMixer.GetFloat("Effect", out oldVolume);
     }
 
     private void Update()
@@ -47,14 +45,19 @@ public class LvlMenu : MonoBehaviour
 
     public void Exit()
     {
-        SetPause(false);
-        SceneTransition.SwitchScene("General");
+        ExitScene("General");
     }
 
     public void ExitInCity()
     {
+        ExitScene("SimpleTown");
+    }
+
+    private void ExitScene(string scene) 
+    {
         SetPause(false);
-        SceneTransition.SwitchScene("SimpleTown");
+        soundController.EnableSoundEffect(false);
+        SceneTransition.SwitchScene(scene);
     }
 
     public void Pause()
@@ -66,7 +69,7 @@ public class LvlMenu : MonoBehaviour
     {
         if (paused)
         {
-            soundController.AudioMixer.SetFloat("Effect", -80);
+            soundController.EnableSoundEffect(false);
 
             Time.timeScale = 0;
             PauseMenu.SetActive(true);
@@ -80,7 +83,7 @@ public class LvlMenu : MonoBehaviour
         }
         else
         {
-            soundController.AudioMixer.SetFloat("Effect", oldVolume);
+            soundController.EnableSoundEffect(true);
 
             Time.timeScale = 1;
             PauseMenu.SetActive(false);

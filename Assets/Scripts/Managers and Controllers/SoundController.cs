@@ -9,20 +9,25 @@ public class SoundController : MonoBehaviour
     [SerializeField] private Button buttonSound;
     [SerializeField] private Sprite buttonOnSprite;
     [SerializeField] private Sprite buttonOffSprite;
+    private float oldVolume = 4;
 
-    public AudioMixer AudioMixer { get => audioMixer; }
+    private void Start()
+    {
+        EnableSoundEffect(true);
+        //audioMixer.GetFloat("Effect", out oldVolume);
+    }
 
     private void SoundChange(bool on)
     {
         if (on)
         {
             buttonSound.image.sprite = buttonOnSprite;
-            AudioMixer.SetFloat("Master", -10);
+            audioMixer.SetFloat("Master", -10);
         }
         else
         {
             buttonSound.image.sprite = buttonOffSprite;
-            AudioMixer.SetFloat("Master", -80);
+            audioMixer.SetFloat("Master", -80);
         }
         buttonSound.onClick.RemoveAllListeners();
         buttonSound.onClick.AddListener(() => SoundChange(!on));
@@ -35,5 +40,13 @@ public class SoundController : MonoBehaviour
     public void Initialize()
     {
         SoundChange(YandexGame.savesData.sound);
+    }
+
+    public void EnableSoundEffect(bool enable) 
+    {
+        if (!enable)
+            audioMixer.SetFloat("Effect", -80);
+        else
+            audioMixer.SetFloat("Effect", oldVolume);
     }
 }
