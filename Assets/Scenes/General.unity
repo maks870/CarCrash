@@ -1609,7 +1609,6 @@ MonoBehaviour:
   waiterBanners:
   - {fileID: 1811971228}
   - {fileID: 1763172331}
-  - {fileID: 0}
 --- !u!114 &156512658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6460,10 +6459,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cb1fa4364448354e80843eb7ce6fed0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exchangeCoinCost: 7
-  exchangeGemReward: 1
-  smallAdReward: 50
-  mediumAdReward: 15
+  exchangeCoinCost: 30
+  exchangeGemReward: 3
+  smallAdReward: 70
+  mediumAdReward: 25
   mediumAdViews: 2
   lootboxCost: 10
   openLootboxButton: {fileID: 1673411890}
@@ -15308,7 +15307,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 10
 --- !u!222 &1181240411
 CanvasRenderer:
   m_ObjectHideFlags: 0
