@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 6331429006020127224}
   - component: {fileID: 4040655990144384915}
   - component: {fileID: 4715591394122589276}
-  - component: {fileID: 2483811624436172536}
+  - component: {fileID: 6577148999351385495}
   m_Layer: 5
   m_Name: RightPedalButton
   m_TagString: Untagged
@@ -162,7 +162,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1567019749502701470}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2483811624436172536
+--- !u!114 &6577148999351385495
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,42 +208,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 1567019749502701470}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: eb1f43b7e55c16a4ea5fb02a6d5b2b9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5774812143441778438}
-          m_TargetAssemblyTypeName: MobileInput, Assembly-CSharp
-          m_MethodName: SetHorizontalAxis
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 1
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5774812143441778438}
-          m_TargetAssemblyTypeName: MobileInput, Assembly-CSharp
-          m_MethodName: SetHorizontalAxis
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  buttonDown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5774812143441778438}
+        m_TargetAssemblyTypeName: MobileInput, Assembly-CSharp
+        m_MethodName: SetHorizontalAxis
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  buttonUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5774812143441778438}
+        m_TargetAssemblyTypeName: MobileInput, Assembly-CSharp
+        m_MethodName: SetHorizontalAxis
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1937030797448239117
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,7 +323,7 @@ GameObject:
   - component: {fileID: 5035380213214346452}
   - component: {fileID: 4658833764973402305}
   - component: {fileID: 7162520800487112540}
-  - component: {fileID: 6178754318006391286}
+  - component: {fileID: 7581765828117724269}
   m_Layer: 5
   m_Name: LeftPedalButton
   m_TagString: Untagged
@@ -400,7 +397,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2015884487945192805}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -437,7 +434,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6178754318006391286
+--- !u!114 &7581765828117724269
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -446,42 +443,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 2015884487945192805}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: eb1f43b7e55c16a4ea5fb02a6d5b2b9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5774812143441778438}
-          m_TargetAssemblyTypeName: MobileInput, Assembly-CSharp
-          m_MethodName: SetHorizontalAxis
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: -1
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5774812143441778438}
-          m_TargetAssemblyTypeName: MobileInput, Assembly-CSharp
-          m_MethodName: SetHorizontalAxis
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  buttonDown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5774812143441778438}
+        m_TargetAssemblyTypeName: MobileInput, Assembly-CSharp
+        m_MethodName: SetHorizontalAxis
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  buttonUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5774812143441778438}
+        m_TargetAssemblyTypeName: MobileInput, Assembly-CSharp
+        m_MethodName: SetHorizontalAxis
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3936641610690803490
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,7 +488,7 @@ GameObject:
   - component: {fileID: 424018367575284684}
   - component: {fileID: 8503863895129962905}
   - component: {fileID: 2979920333863333277}
-  - component: {fileID: 3950210902052188624}
+  - component: {fileID: 3398961503784351146}
   m_Layer: 5
   m_Name: BrakePedalButton
   m_TagString: Untagged
@@ -567,7 +561,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3936641610690803490}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -604,7 +598,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &3950210902052188624
+--- !u!114 &3398961503784351146
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -613,42 +607,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 3936641610690803490}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: eb1f43b7e55c16a4ea5fb02a6d5b2b9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5774812143441778438}
-          m_TargetAssemblyTypeName: MobileInput, Assembly-CSharp
-          m_MethodName: SetVerticalAxis
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: -1
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5774812143441778438}
-          m_TargetAssemblyTypeName: MobileInput, Assembly-CSharp
-          m_MethodName: SetVerticalAxis
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  buttonDown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5774812143441778438}
+        m_TargetAssemblyTypeName: MobileInput, Assembly-CSharp
+        m_MethodName: SetVerticalAxis
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  buttonUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5774812143441778438}
+        m_TargetAssemblyTypeName: MobileInput, Assembly-CSharp
+        m_MethodName: SetVerticalAxis
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4278707506074903962
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,7 +773,7 @@ GameObject:
   - component: {fileID: 460820265684867825}
   - component: {fileID: 6330326566957472917}
   - component: {fileID: 3472670472059078272}
-  - component: {fileID: 3198316896207279656}
+  - component: {fileID: 3146556284424553836}
   m_Layer: 5
   m_Name: GasPedalButton
   m_TagString: Untagged
@@ -855,7 +846,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4693411499909868425}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -892,7 +883,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &3198316896207279656
+--- !u!114 &3146556284424553836
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -901,42 +892,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 4693411499909868425}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Script: {fileID: 11500000, guid: eb1f43b7e55c16a4ea5fb02a6d5b2b9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 2
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5774812143441778438}
-          m_TargetAssemblyTypeName: MobileInput, Assembly-CSharp
-          m_MethodName: SetVerticalAxis
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 1
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5774812143441778438}
-          m_TargetAssemblyTypeName: MobileInput, Assembly-CSharp
-          m_MethodName: SetVerticalAxis
-          m_Mode: 3
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+  buttonDown:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5774812143441778438}
+        m_TargetAssemblyTypeName: MobileInput, Assembly-CSharp
+        m_MethodName: SetVerticalAxis
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  buttonUp:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5774812143441778438}
+        m_TargetAssemblyTypeName: MobileInput, Assembly-CSharp
+        m_MethodName: SetVerticalAxis
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6822203371239749940
 GameObject:
   m_ObjectHideFlags: 0

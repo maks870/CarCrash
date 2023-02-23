@@ -26,7 +26,6 @@ public class MissionManager : MonoBehaviour
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
         InitializeMissions();
         int currentMissionIndex = YandexGame.savesData.currentMission;
         if (currentMissionIndex < missions.Length)
@@ -107,10 +106,8 @@ public class MissionManager : MonoBehaviour
 
             currentMission.MissionZone.StayZoneEvent.AddListener(() => SwitchMissionPointer(false));
             currentMission.MissionZone.StayZoneEvent.AddListener(() => inputManager.Enable(false));
-            currentMission.MissionZone.StayZoneEvent.AddListener(() => Cursor.lockState = CursorLockMode.None);
             currentMission.MissionZone.StayZoneEvent.AddListener(() => isActiveDialogue = true); ;
 
-            currentMission.Dialogue.EndDialogueAction += () => Cursor.lockState = CursorLockMode.Locked;
             currentMission.Dialogue.EndDialogueAction += () => SwitchMissionPointer(true);
             currentMission.Dialogue.EndDialogueAction += () => inputManager.Enable(true);
             currentMission.Dialogue.EndDialogueAction += () => isActiveDialogue = false;

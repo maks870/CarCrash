@@ -68,8 +68,6 @@ public class RaceFinish : MonoBehaviour
 
     public void Finish()
     {
-        Cursor.lockState = CursorLockMode.None;
-
         lvlMenu.EndRace = true;
 
         if (finish)
