@@ -52,11 +52,13 @@ public class AwardPresenter : MonoBehaviour
                     awardCollectibles.Add(map.Car);
                 }
                 YandexGame.savesData.currentMission += 1;
-                YandexGame.savesData.playerWrapper.newMission = true;
+
+                if (mapIndex != maps.Count - 1)
+                    YandexGame.savesData.playerWrapper.newMission = true;
+
                 mapInfo.isPassed = true;
             }
         }
-
         awardUI.ShowAwards(mapAward.coins, mapAward.gems, carSO, null);
         OpenEarnings(mapAward);
 

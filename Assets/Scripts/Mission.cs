@@ -56,6 +56,7 @@ public class Mission : MonoBehaviour
             YandexGame.savesData.playerWrapper.maps.Add(mapInfo);
         }
 
+        YandexGame.savesData.playerWrapper.newMission = false;
         YandexGame.savesData.playerWrapper.lastMap = map.Name;
         YandexGame.SaveProgress();
         SceneTransition.SwitchScene(map.Name);

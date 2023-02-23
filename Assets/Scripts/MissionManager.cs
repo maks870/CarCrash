@@ -121,8 +121,6 @@ public class MissionManager : MonoBehaviour
     {
         currentMission.gameObject.SetActive(false);
         YandexGame.savesData.currentMission += 1;
-        YandexGame.savesData.playerWrapper.newMission = false;
-
         YandexGame.SaveProgress();
         InitializeCurrentMission();
     }
