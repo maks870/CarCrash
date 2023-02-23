@@ -39,7 +39,6 @@ public class MenuInitializer : MonoBehaviour
         isInitializeProcess = true;
 
         startRoom.SetActive(true);
-        Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
         MenuManager mainMenu = menuManagers[0];
