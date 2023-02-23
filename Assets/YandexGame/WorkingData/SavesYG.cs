@@ -16,7 +16,7 @@
         public bool[] openLevels = new bool[3];
         public bool sound = true;
 
-        public int coins = 100;
+        public int coins = 0;
         public int gems = 0;
         public int lootboxes = 1;
         public int currentMission = 0;
