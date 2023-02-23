@@ -22,13 +22,6 @@ public class MapSwitcher : MonoBehaviour
         {
             mapsSO.AddRange(SOLoader.instance.GetSOList<MapSO>());
         };
-
-        //SOLoader.instance.OnLoadingEvent += (scriptableObj) =>
-        //{
-        //    if (scriptableObj.GetType() == typeof(MapSO))
-        //        mapsSO.Add((MapSO)scriptableObj);
-        //};
-        //SOLoader.LoadAllSO<MapSO>((result) => FillListBySO(result));
     }
 
     private void CreateButtons()

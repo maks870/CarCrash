@@ -46,8 +46,10 @@ public class MissionManager : MonoBehaviour
             missionObj.SetActive(true);
             missions[i] = missionObj.GetComponent<Mission>();
             missions[i].goalText = goalMission;
+
             if (missions[i].Map != null)
                 missions[i].goalText = goalMission;
+
             goalMission.SetActive(false);
         }
 

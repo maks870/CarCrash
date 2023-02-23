@@ -7,7 +7,6 @@ public class CharacterTabSwitcher : MonoBehaviour
     [SerializeField] private List<CharacterModelSwitcher> switchers = new List<CharacterModelSwitcher>();
     [SerializeField] private GameObject selectFrame;
     private CharacterModelSwitcher currentSwitcher;
-    private ButtonCollectibleUI choosenButton;
 
     public CharacterModelSwitcher CurrentSwitcher { get => currentSwitcher; set => currentSwitcher = value; }
     public bool HaveNewCollectibles
@@ -26,16 +25,6 @@ public class CharacterTabSwitcher : MonoBehaviour
 
     public void SubscribeSwitchers()
     {
-        //SOLoader.LoadAllSO<CharacterModelSO>((result) =>
-        //{
-        //    Debug.Log("Character list 1st obj " + result[0].Name);
-        //    for (int i = 0; i < switchers.Count; i++)
-        //    {
-        //        switchers[i].FillListBySO(result);
-        //    }
-        //    UpdateCurrentCharacter(startCurrentCharacterTransform);
-        //});
-
         for (int i = 0; i < switchers.Count; i++)
         {
             switchers[i].LoadSOSubscribe();

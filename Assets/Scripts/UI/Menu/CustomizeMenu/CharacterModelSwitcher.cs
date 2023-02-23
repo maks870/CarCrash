@@ -151,16 +151,6 @@ public class CharacterModelSwitcher : MonoBehaviour
                     charactersSO.Add(character);
             }
         };
-
-        //SOLoader.instance.OnLoadingEvent += (scriptableObj) =>
-        //{
-        //    if (scriptableObj.GetType() == typeof(CharacterModelSO))
-        //    {
-        //        CharacterModelSO character = (CharacterModelSO)scriptableObj;
-        //        if (character.CharacterType == characterType)
-        //            charactersSO.Add(character);
-        //    }
-        //};
     }
 
     public void FillListBySO(List<CharacterModelSO> characters)//Legacy
@@ -185,14 +175,6 @@ public class CharacterModelSwitcher : MonoBehaviour
 
     public void SetCurrentCharacter(CharacterModelSO characterCollectible)
     {
-        //SOLoader.instance.LoadAssetReference<GameObject>(characterCollectible.AssetReference, (result) =>
-        //{
-        //    GameObject newCharacter = Instantiate(result, currentCharacterTransform);
-        //    newCharacter.transform.parent = null;
-        //    Destroy(currentCharacterTransform.gameObject);
-        //    tabSwitcher.UpdateCurrentCharacter(newCharacter.transform);
-        //});
-
         GameObject newCharacter = Instantiate(characterCollectible.Prefab, currentCharacterTransform);
         newCharacter.transform.parent = null;
         Destroy(currentCharacterTransform.gameObject);

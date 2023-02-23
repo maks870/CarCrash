@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 using YG;
 
 public class MenuInitializer : MonoBehaviour
@@ -53,7 +52,7 @@ public class MenuInitializer : MonoBehaviour
             if (YandexGame.savesData.isFirstSession2)
                 menuManagers[i].SaveDefaultSO();
 
-            menuManagers[i].SOLoaderSubscribe();/////
+            menuManagers[i].SOLoaderSubscribe();
         }
 
         MainMenuManager newMainMenu = (MainMenuManager)mainMenu;

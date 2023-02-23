@@ -44,14 +44,6 @@ public class LootBox : MonoBehaviour, ITrainingWaiter
         {
             items.AddRange(SOLoader.instance.GetSOList<CharacterModelSO>());
         };
-
-        //SOLoader.instance.OnLoadingEvent += (scriptableObj) =>
-        //{
-        //    if (scriptableObj.GetType() == typeof(CharacterModelSO))
-        //        items.Add((CharacterModelSO)scriptableObj);
-        //};
-
-        //SOLoader.LoadAllSO<CharacterModelSO>((result) => items.AddRange(result));
     }
 
     public void GetReward(out int coinValue, out int gemValue, out CollectibleSO collectibleItem)
@@ -91,7 +83,6 @@ public class LootBox : MonoBehaviour, ITrainingWaiter
 
     public void Open()
     {
-        Debug.Log("Анимация лутбокса");
         animator.SetTrigger("Open");
     }
 

@@ -2,7 +2,6 @@
 
 public class CarCamera : MonoBehaviour
 {
-    Transform car;
     private GameObject PlayerCar;
     public Vector3 offset;
     public float rotX;
@@ -28,24 +27,11 @@ public class CarCamera : MonoBehaviour
         SmoothFollow();
     }
 
-    private void SmoothFollow() 
+    private void SmoothFollow()
     {
-        Vector3 offsetPos  = PlayerCar.transform.position + offset;
+        Vector3 offsetPos = PlayerCar.transform.position + offset;
         Vector3 smoothFollow = Vector3.Lerp(transform.position, offsetPos, smoothSpeed * Time.deltaTime);
-        //float rotZ = cam.transform.eulerAngles.z;
-        //cam.transform.Rotate(rotX, 0, -rotZ);
-
-
-       
-
         transform.position = smoothFollow;
-        //Quaternion look;
-
-        //car = PlayerCar.transform;
-        //look = Quaternion.LookRotation(car.forward);
-
-        //look = Quaternion.Slerp(transform.rotation, look, smoothSpeed * Time.fixedDeltaTime);
         transform.LookAt(PlayerCar.transform);
-        //transform.rotation = look;
     }
 }

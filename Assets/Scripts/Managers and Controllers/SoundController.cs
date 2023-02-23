@@ -10,7 +10,7 @@ public class SoundController : MonoBehaviour
     [SerializeField] private Sprite buttonOnSprite;
     [SerializeField] private Sprite buttonOffSprite;
 
-    public AudioMixer AudioMixer { get => audioMixer;}
+    public AudioMixer AudioMixer { get => audioMixer; }
 
     private void SoundChange(bool on)
     {
@@ -31,14 +31,6 @@ public class SoundController : MonoBehaviour
         YandexGame.SaveProgress();
 
     }
-
-    //public void SoundDistortion(bool on)
-    //{
-    //    if (on)
-    //        distortionSnapshot.TransitionTo(0.3f);
-    //    else
-    //        normalSnapshot.TransitionTo(0.3f);
-    //}
 
     public void Initialize()
     {

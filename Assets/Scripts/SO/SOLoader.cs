@@ -42,12 +42,12 @@ public class SOLoader : MonoBehaviour
 
         EndLoadingEvent?.Invoke();
     }
+
     [DllImport("__Internal")]
     private static extern void EndLoad();
 
     public void LoadAll()
     {
-        Debug.Log("isResourcesLoaded " + isResourcesLoaded);
         if (!isResourcesLoaded)
         {
             StartLoadAllSO<CharacterModelSO>();
@@ -63,11 +63,6 @@ public class SOLoader : MonoBehaviour
 
     public void Clear()
     {
-        //foreach (var handle in SOHandleDictionary)
-        //{
-        //    Addressables.Release(handle.Value);
-        //}
-
         if (OnLoadingEvent != null)
         {
             foreach (Delegate d in OnLoadingEvent.GetInvocationList())
@@ -89,7 +84,6 @@ public class SOLoader : MonoBehaviour
             Addressables.Release(handle.Value);
         }
 
-        //SOHandleDictionary.Clear();
         uniqueHandleDictionary.Clear();
         uniqueHandleActions.Clear();
     }

@@ -19,20 +19,12 @@ public class AwardUIController : MonoBehaviour
 
     public Action OnAwardsEnd;
 
-    //private void SwitchLootboxAward(bool isLootboxAward)
-    //{
-    //    foreach (GameObject awardUI in awards)
-    //    {
-    //        awardUI.transform.parent.GetComponent<TargetPointer>().enabled = isLootboxAward;
-    //    }
-    //}
     private void ShowAwards(int coinValue, int gemValue, CarModelSO carSO, MapSO mapSO, CollectibleSO collectibleItem, bool isLootboxAward)
     {
         awards.Clear();
 
         if (coinValue != 0)
         {
-            Debug.Log("Coins " + coinValue.ToString());
             coinAwardUI.GetComponentInChildren<Text>().text = coinValue.ToString();
             awards.Add(coinAwardUI);
         }
@@ -69,6 +61,7 @@ public class AwardUIController : MonoBehaviour
         if (awards.Count != 0)
             AwardPresenterUI.SetActive(true);
     }
+
     public void CloseAwards()
     {
         foreach (GameObject award in awards)

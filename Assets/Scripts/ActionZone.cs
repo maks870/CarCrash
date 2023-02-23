@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityStandardAssets.Vehicles.Car;
@@ -38,7 +36,6 @@ public class ActionZone : MonoBehaviour
     {
         if (other.GetComponent<CarUserControl>() != null)
         {
-            Debug.Log("Выход из зоны2");
             carUserControl = null;
             isActive = false;
             time = 0;

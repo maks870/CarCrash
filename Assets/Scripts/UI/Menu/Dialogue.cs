@@ -3,7 +3,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using YG;
 
 public class Sentence
 {
@@ -52,8 +51,7 @@ public class Dialogue : MonoBehaviour
     public void OnNextSentence()
     {
         CloseSentence();
-        Debug.Log("Текущее предложение номер " + currentSentence);
-        Debug.Log(sentences.Length);
+
         if (currentSentence >= 0 && currentSentence < sentences.Length)
         {
             Sentence sentence = sentences[currentSentence];

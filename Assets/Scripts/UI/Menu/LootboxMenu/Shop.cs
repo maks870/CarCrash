@@ -26,11 +26,6 @@ public class Shop : MonoBehaviour
     {
         YandexGame.RewardVideoEvent += GetAdReward;
         lootboxAwardUI.OnAwardsEnd += lootbox.Close;
-        //YandexGame.CheaterVideoEvent
-        //YandexGame.ErrorVideoEvent
-
-        //YandexGame.OpenVideoEvent
-        //YandexGame.CloseVideoEvent
     }
 
     private void Awake()

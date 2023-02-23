@@ -45,11 +45,6 @@ public class PlayerLoad : MonoBehaviour
 
         if (carModels.Count != 0)
             currentCarModel = carModels.Find(item => item.Name == YandexGame.savesData.playerWrapper.currentCarModelItem);
-
-        Debug.Log(YandexGame.savesData.playerWrapper.currentCharacterItem);
-        Debug.Log(characters.Count);
-        Debug.Log(characters[0].Name);
-        Debug.Log(currentCharacter.Name);
     }
 
     private void OnDestroy()

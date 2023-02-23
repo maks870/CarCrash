@@ -57,7 +57,6 @@ public class PlayerWrapper
                 highestPlace = maps[i].highestPlace;
                 return highestPlace;
             }
-
         }
 
         return highestPlace;

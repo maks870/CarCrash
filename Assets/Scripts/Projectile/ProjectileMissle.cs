@@ -58,23 +58,16 @@ public class ProjectileMissle : Projectile
 
         rb.velocity = transform.forward * maxSpeed;
 
-        //rb.AddForce(transform.forward * maxSpeed, ForceMode.Force);
-
-        //if (rb.velocity.magnitude < maxSpeed)
-        //    rb.AddForce(transform.forward * missleAccel, ForceMode.Force);
-
         if (target != null)
             RotateRocket();
     }
 
     private void RotateRocket()
     {
-        //Vector3 moveDir = target.transform.position - transform.position;
-        //Quaternion rotation = Quaternion.FromToRotation(transform.forward, moveDir);
-
         Quaternion rotation = Quaternion.LookRotation(target.transform.position - transform.position);
         rb.MoveRotation(Quaternion.RotateTowards(transform.rotation, rotation, rotateSpeed * Time.deltaTime));
     }
+
     protected override void Destruct()
     {
         if (target != null)
@@ -82,5 +75,4 @@ public class ProjectileMissle : Projectile
 
         base.Destruct();
     }
-
 }

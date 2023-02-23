@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CarTabSwitcher : MonoBehaviour
@@ -17,8 +16,6 @@ public class CarTabSwitcher : MonoBehaviour
 
     public void SubscribeSwitchers()
     {
-        //SOLoader.LoadAllSO<CarColorSO>((result) => carColorSwitcher.FillListBySO(result));
-        //SOLoader.LoadAllSO<CarModelSO>((result) => carModelSwitcher.FillListBySO(result));
         carColorSwitcher.LoadSOSubscribe();
         carModelSwitcher.LoadSOSubscribe();
     }

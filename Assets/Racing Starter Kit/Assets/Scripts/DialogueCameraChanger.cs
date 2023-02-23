@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Utility;
 
@@ -39,31 +37,9 @@ public class DialogueCameraChanger : MonoBehaviour
 
     private void SmoothFollowDialogue()
     {
-        Vector3 offsetPos = camTransform.position + offset;
-        //Vector3 smoothFollow = Vector3.Lerp(transform.position, offsetPos, smoothSpeed * Time.deltaTime);
-
-
         Vector3 smoothFollow = Vector3.Lerp(transform.position, camTransform.position, smoothSpeed * Time.deltaTime);
-
-
-        //float rotZ = cam.transform.eulerAngles.z;
-        //cam.transform.Rotate(rotX, 0, -rotZ);
-
-
-
-
         transform.position = smoothFollow;
-        //Quaternion look;
-
-        //car = PlayerCar.transform;
-        //look = Quaternion.LookRotation(car.forward);
-
-        //look = Quaternion.Slerp(transform.rotation, look, smoothSpeed * Time.fixedDeltaTime);
         transform.LookAt(lookAtTransform);
-        //transform.rotation = look;
-
-
-
     }
 
     public void SetDialogueTarget(Transform camTransform, Transform lookAtTransform)

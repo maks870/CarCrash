@@ -2,7 +2,6 @@
 
 public class TargetPointer : MonoBehaviour
 {
-
     [SerializeField] private Camera mainCamera;
     [SerializeField] private RectTransform pointerUI; // объект Image UI
     [SerializeField] private RectTransform canvas;
@@ -49,6 +48,7 @@ public class TargetPointer : MonoBehaviour
     {
         Vector3 forward = mainCamera.transform.TransformDirection(Vector3.forward);
         Vector3 toOther = point - mainCamera.transform.position;
+
         if (Vector3.Dot(forward, toOther) < 0) return true;
         return false;
     }
@@ -68,6 +68,7 @@ public class TargetPointer : MonoBehaviour
     {
         if (pointerUI == null)
             return;
+
         pointerUI.anchorMax = oldAnchorMax;
         pointerUI.anchorMin = oldAnchorMin;
         pointerUI.anchoredPosition = oldPos;

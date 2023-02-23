@@ -19,10 +19,6 @@ public class ProjectileMine : Projectile
 
     private void SwitchLight()
     {
-        //if (lightOn)
-        //    meshRenderer.materials[1].color *= -10;
-        //else
-        //    meshRenderer.materials[1].color *= 0;
         mineLight.SetActive(lightOn);
         lightOn = !lightOn;
         StartCoroutine(SwitchTimer());

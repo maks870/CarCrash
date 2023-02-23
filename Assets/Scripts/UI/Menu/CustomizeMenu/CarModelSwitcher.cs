@@ -29,17 +29,6 @@ public class CarModelSwitcher : MonoBehaviour
     public CollectibleSO CurrentCarModel => currentCarModel;
     public GameObject CarStatWindow => carStatWindow;
 
-    //private void Awake()
-    //{
-    //    AwardPresenter.AddedNewCollectibles += UpdateNewCollectibles;
-    //}
-
-    //private void UpdateNewCollectibles(List<CollectibleSO> newCollectibles)
-    //{
-    //    this.newCollectibles.Clear();
-    //    this.newCollectibles.AddRange(newCollectibles);
-    //}
-
     private void CreateButtons()
     {
         buttons.Add(button.GetComponent<ButtonCollectibleUI>());
@@ -158,12 +147,6 @@ public class CarModelSwitcher : MonoBehaviour
         {
             carModelsSO.AddRange(SOLoader.instance.GetSOList<CarModelSO>());
         };
-
-        //    SOLoader.instance.OnLoadingEvent += (scriptableObj) =>
-        //{
-        //    if (scriptableObj.GetType() == typeof(CarModelSO))
-        //        carModelsSO.Add((CarModelSO)scriptableObj);
-        //};
     }
 
     public void FillListBySO(List<CarModelSO> carModels)
@@ -182,7 +165,6 @@ public class CarModelSwitcher : MonoBehaviour
 
     public void SetCurrentModel(CarModelSO characterCollectible)
     {
-        //SOLoader.instance.LoadAssetReference<Mesh>(characterCollectible.Prefab, (result) => currentMeshFilter.mesh = result);
         currentMeshFilter.sharedMesh = characterCollectible.Prefab.GetComponentInChildren<MeshFilter>().sharedMesh;
         currentCarModel = characterCollectible;
         SelectCurrentButton();

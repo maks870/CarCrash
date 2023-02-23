@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 using UnityStandardAssets.Vehicles.Car;
 
 enum CarModel
@@ -36,19 +35,12 @@ public class BotSettings : MonoBehaviour
 
     public void InitializeBot(CharacterModelSO character, CarColorSO carColor)
     {
-        //SOLoader.instance.LoadAssetReference<GameObject>(character.Prefab, (result) =>
-        //{
-        //    Instantiate(result, characterModel.transform.parent);
-        //    Destroy(characterModel.gameObject);
-        //});
 
         Instantiate(character.Prefab, characterModel.transform.parent);
         Destroy(characterModel.gameObject);
 
         CarModelSO carModel = SOLoader.instance.GetSOList<CarModelSO>().Find((item) => item.Name == carModelSOName.ToString());
-        Debug.Log(carModel.Name);
         carFilter.mesh = carModel.Prefab.GetComponentInChildren<MeshFilter>().sharedMesh;
-        //SOLoader.instance.LoadAssetReference<Mesh>(carPrefab, (result) => carFilter.mesh = result);
         carRenderer.material.mainTexture = carColor.Texture;
     }
 }

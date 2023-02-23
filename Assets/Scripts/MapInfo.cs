@@ -7,7 +7,6 @@ public class MapInfo
     public int fastestTimeMiliSec;
     public int maxPoints;
     public bool isPassed;
-
     public bool newRecordPlace;
     public bool newRecordTime;
 

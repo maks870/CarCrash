@@ -138,12 +138,6 @@ public class CarColorSwitcher : MonoBehaviour
         {
             carColorsSO.AddRange(SOLoader.instance.GetSOList<CarColorSO>());
         };
-
-        //SOLoader.instance.OnLoadingEvent += (scriptableObj) =>
-        //{
-        //    if (scriptableObj.GetType() == typeof(CarColorSO))
-        //        carColorsSO.Add((CarColorSO)scriptableObj);
-        //};
     }
 
     public void FillListBySO(List<CarColorSO> carColors)

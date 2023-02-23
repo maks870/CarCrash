@@ -46,14 +46,4 @@ public class EarningUIController : MonoBehaviour
     {
         lackGemsAnim.SetTrigger("On");
     }
-
-    //public void CloseLackCoinWarning()
-    //{
-    //    lackCoinsWarning.SetActive(false);
-    //}
-
-    //public void CloseLackGemsWarning()
-    //{
-    //    lackGemsWarning.SetActive(false);
-    //}
 }
