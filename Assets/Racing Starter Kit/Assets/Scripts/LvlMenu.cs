@@ -74,7 +74,6 @@ public class LvlMenu : MonoBehaviour
             if (missionManager != null && missionManager.IsActiveDialogue)
                 return;
 
-            Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
 
         }
@@ -88,7 +87,6 @@ public class LvlMenu : MonoBehaviour
             if (missionManager != null && missionManager.IsActiveDialogue)
                 return;
 
-            Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
 
         }
