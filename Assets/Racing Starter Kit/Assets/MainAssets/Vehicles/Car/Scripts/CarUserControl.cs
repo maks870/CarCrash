@@ -8,7 +8,6 @@ namespace UnityStandardAssets.Vehicles.Car
         [SerializeField] private InputManager inputManager;
         [SerializeField] private UIPlayerManager uiManager;
         [SerializeField] private bool simpleSteerHelper = false;
-        [SerializeField] private bool hardSteerHelper = false;
         [SerializeField][Range(0, 1)] private float taxiingHelper;
         [SerializeField] private float m_SteerSensitivity = 0.05f;
         [SerializeField] private float normalSteerAngle = 15f;
