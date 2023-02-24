@@ -15,7 +15,7 @@ MonoBehaviour:
   quality: 0
   acceleration: 375
   handleability: 0.5
-  nSteerAngle: 22.5
+  nSteerAngle: 30
   tSteerAngle: 40
   angularDrag: 0.6
   sprite: {fileID: 21300000, guid: c42e88745dd7e874a8506c4aad0a422f, type: 3}
