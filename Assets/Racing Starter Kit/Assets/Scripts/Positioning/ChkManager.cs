@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Runtime.ConstrainedExecution;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class ChkManager : MonoBehaviour
 {
@@ -40,6 +39,7 @@ public class ChkManager : MonoBehaviour
 
     public void Start()
     {
+        bots = new List<Transform>();
         botPos = new int[nBots];
         scoreP.Clear();
         pNum.Clear();

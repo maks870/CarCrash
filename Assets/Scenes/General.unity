@@ -301,7 +301,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -2625313995714797068, guid: 850e70d2481079c4aa83930d686ef4c4,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 775b1dcc962b4fd4b98f669ce143f833, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -30365,6 +30365,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6281161236910001332, guid: f0ed7ca5b31f2ab4eac20cb79db79c9e,
+        type: 3}
+      propertyPath: music
+      value: 
+      objectReference: {fileID: 41444012}
     - target: {fileID: 6281161236910001332, guid: f0ed7ca5b31f2ab4eac20cb79db79c9e,
         type: 3}
       propertyPath: buttonOn

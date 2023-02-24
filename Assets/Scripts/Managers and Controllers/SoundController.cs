@@ -5,6 +5,7 @@ using YG;
 
 public class SoundController : MonoBehaviour
 {
+    [SerializeField] private AudioSource music;
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private Button buttonSound;
     [SerializeField] private Sprite buttonOnSprite;
@@ -13,6 +14,7 @@ public class SoundController : MonoBehaviour
 
     private void Start()
     {
+        music.Play();
         EnableSoundEffect(true);
         //audioMixer.GetFloat("Effect", out oldVolume);
     }
