@@ -75,10 +75,17 @@ public class LootBox : MonoBehaviour, ITrainingWaiter
         if (rand <= gemDropChance)
             gemValue = UnityEngine.Random.Range(minDropGem, maxDropGem);
 
-        rand = UnityEngine.Random.Range(0, 100);
+        if (collectibleItem != null)
+        {
+            rand = UnityEngine.Random.Range(0, 100);
 
-        if (rand <= coinDropChance)
-            coinValue = UnityEngine.Random.Range(minDropCoin, maxDropCoin);
+            if (rand <= coinDropChance)
+                coinValue = UnityEngine.Random.Range(minDropCoin, maxDropCoin);
+        }
+        else
+        {
+            coinValue = UnityEngine.Random.Range(minDropCoin * 3, maxDropCoin * 3);
+        }
     }
 
     public void Open()
