@@ -118,11 +118,15 @@ public class MissionManager : MonoBehaviour
     {
         currentMission.gameObject.SetActive(false);
 
-        if (YandexGame.savesData.currentMission < missions.Length) 
+        if (YandexGame.savesData.currentMission < missions.Length)
         {
             YandexGame.savesData.currentMission += 1;
             YandexGame.SaveProgress();
+
+            if (YandexGame.savesData.currentMission == missions.Length)
+                return;
+
             InitializeCurrentMission();
-        } 
+        }
     }
 }
