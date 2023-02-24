@@ -18,8 +18,8 @@ public class BotSettings : MonoBehaviour
     [SerializeField] private GameObject characterModel;
     [SerializeField] private MeshRenderer carRenderer;
     [SerializeField] private MeshFilter carFilter;
-    [SerializeField] [Range(0, 100)] private int complexity;
-    [SerializeField] [Range(200, 350)] private float accelerationSpeed;
+    [SerializeField][Range(0, 100)] private int complexity;
+    [SerializeField][Range(200, 900)] private float accelerationSpeed;
 
 
     private AbilityAIInput abilityAIInput;
@@ -42,5 +42,18 @@ public class BotSettings : MonoBehaviour
         CarModelSO carModel = SOLoader.instance.GetSOList<CarModelSO>().Find((item) => item.Name == carModelSOName.ToString());
         carFilter.mesh = carModel.Prefab.GetComponentInChildren<MeshFilter>().sharedMesh;
         carRenderer.material.mainTexture = carColor.Texture;
+    }
+
+    private void Update()
+    {
+        if (ChkManager.posBot(gameObject) < ChkManager.posMax)
+        {
+            carController.m_FullTorqueOverAllWheels = accelerationSpeed - 100;
+        }
+
+        if (ChkManager.posBot(gameObject) > ChkManager.posMax)
+        {
+            carController.m_FullTorqueOverAllWheels = accelerationSpeed + 350;
+        }
     }
 }

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.ConstrainedExecution;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class ChkManager : MonoBehaviour
 {
@@ -23,13 +25,13 @@ public class ChkManager : MonoBehaviour
     public static int posMax;
     public static int nBots;
     private bool added = false;
+    public static int[] botPos;
+    private static List<Transform> bots = new List<Transform>();
 
     //IMPORTANT NOTE: if you change the player's car, remember to have a gameobject called CarPos
     //If you change or add AI bots cars, those need a gameobject called CarPosAI with a box collider and IsTrigger checked
     //AI cars need to have it's number next to CarPosAI name in the gameobject. (i.e: CarPosAI9, CarPosAI10, and so on)
     //Each of these game objects needs a box collider with the IsTrigger option checked
-
-    private GameObject[] UnparentChks;
 
     private void Awake()
     {
@@ -38,6 +40,7 @@ public class ChkManager : MonoBehaviour
 
     public void Start()
     {
+        botPos = new int[nBots];
         scoreP.Clear();
         pNum.Clear();
         nChk.Clear();
@@ -53,6 +56,7 @@ public class ChkManager : MonoBehaviour
         int carPosNumber = 0;
         foreach (Transform go in cars)
         {
+            bots.Add(go);
             ChkTrigger chkTrigger = go.GetComponentInChildren<ChkTrigger>();
             GameObject car = chkTrigger.gameObject;
             chkTrigger.CarPosListNumber = carPosNumber;
@@ -159,14 +163,36 @@ public class ChkManager : MonoBehaviour
     //get the maximum position comparing cars scores
     public static void posPlayer(int nPlayer)
     {
-        posMax = 1;
+        posMax = posCar(nPlayer);
+    }
+
+    private static int posCar(int car) 
+    {
+        int pos = 1;
 
         for (int i = 0; i < scoreP.Count; i++)
         {
-            if (scoreP[nPlayer - 1] < scoreP[i])
+            if (scoreP[car - 1] < scoreP[i])
             {
-                posMax = posMax + 1;
+                pos = pos + 1;
             }
         }
+
+        return pos;
+    }
+
+    public static int posBot(GameObject botObject) 
+    {
+        int pos = 1;
+
+        for (int i = 0; i < bots.Count; i++) 
+        {
+            if (botObject == bots[i].gameObject) 
+            {
+                pos = posCar(i + 1);
+            }
+        }
+
+        return pos;
     }
 }

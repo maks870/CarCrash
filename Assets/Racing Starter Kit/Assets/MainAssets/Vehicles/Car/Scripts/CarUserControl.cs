@@ -9,16 +9,14 @@ namespace UnityStandardAssets.Vehicles.Car
         [SerializeField] private UIPlayerManager uiManager;
         [SerializeField] private bool simpleSteerHelper = false;
         [SerializeField] private bool hardSteerHelper = false;
-        [SerializeField] [Range(0, 1)] private float taxiingHelper;
+        [SerializeField][Range(0, 1)] private float taxiingHelper;
         [SerializeField] private float m_SteerSensitivity = 0.05f;
-
         [SerializeField] private float normalSteerAngle = 15f;
         [SerializeField] private float turnSteerAngle = 25f;
         [SerializeField] private float normalFOV = 80f;
         [SerializeField] private float acceleratedFOV = 120f;
         [SerializeField] private float changeFOVStep;
         private bool isStopped = false;
-        private float taxiingSteer;
         private BaseInput input;
         private TargetPointer targetPointer;
         private Camera cam;
@@ -44,31 +42,17 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void FixedUpdate()
         {
-            if (hardSteerHelper)// 2È ‚‡Ë‡ÌÚ œŒÃŒÿÕ» ¿ œŒ¬Œ–Œ“¿
+            if (simpleSteerHelper)
+                SteerChanger();
+
+            if (!isStopped)
             {
-                float currentSteer = input.HorizontalAxis;
-
-                if (input.HorizontalAxis != 0 && abilityController.IsMineWarning == false)
-                {
-                    CalculateTaxiingSteer();
-                    currentSteer = Mathf.Lerp(input.HorizontalAxis, taxiingSteer, taxiingHelper);
-                }
-
-                ControlMove(currentSteer, input.VerticalAxis, input.VerticalAxis, input.HandBrake);
-
+                ControlMove(input.HorizontalAxis, input.VerticalAxis, input.VerticalAxis, input.HandBrake);
             }
-            else // Œ—ÕŒ¬Õ¿ﬂ ÀŒ√» ¿ ≈«ƒ€
+            else
             {
-                if (simpleSteerHelper)
-                    SteerChanger();
-
-                if (!isStopped)
-                    ControlMove(input.HorizontalAxis, input.VerticalAxis, input.VerticalAxis, input.HandBrake);
-                else
-                {
-                    carController.GetComponent<Rigidbody>().velocity = Vector3.zero;
-                    ControlMove(0, 0, 0, 1);
-                }
+                carController.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                ControlMove(0, 0, 0, 1);
             }
         }
 
@@ -119,15 +103,6 @@ namespace UnityStandardAssets.Vehicles.Car
                 targetPointer.Target = abilityController.Target.transform;
             else
                 targetPointer.Target = null;
-        }
-
-        private void CalculateTaxiingSteer()
-        {
-            Vector3 localTarget = transform.InverseTransformPoint(carTrack.transform.position);
-            float targetAngle = Mathf.Atan2(localTarget.x, localTarget.z) * Mathf.Rad2Deg;
-            float steer = Mathf.Clamp(targetAngle * m_SteerSensitivity, -1, 1) * Mathf.Sign(carController.CurrentSpeed);
-
-            taxiingSteer = steer;
         }
 
         private void SteerChanger()

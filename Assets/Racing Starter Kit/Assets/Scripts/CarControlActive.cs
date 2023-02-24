@@ -16,6 +16,7 @@ public class CarControlActive : MonoBehaviour
         UnfreezeScripts = FindObjectsOfType(typeof(UnfreezePos)) as UnfreezePos[];
         CarAIControlScripts = FindObjectsOfType(typeof(CarAIControl)) as CarAIControl[];
         AICarBehaviourScripts = FindObjectsOfType(typeof(AICarBehaviour)) as AICarBehaviour[];
+
         foreach (FreezePos fp in FreezeScripts)
             fp.enabled = false;
         foreach (UnfreezePos up in UnfreezeScripts)
