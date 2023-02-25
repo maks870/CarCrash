@@ -21,7 +21,6 @@ public class MenuInitializer : MonoBehaviour
 }
 #else
         YandexGame.EndDataLoadingEvent += soundController.Initialize;
-        Debug.Log("Подписка ЭДИТОРА музыка");
 #endif
     }
 
@@ -34,7 +33,6 @@ public class MenuInitializer : MonoBehaviour
         YandexGame.GetDataEvent -= soundController.Initialize;
 }
 #else
-        Debug.Log("Отписка ЭДИТОРА музыка");
         YandexGame.EndDataLoadingEvent -= soundController.Initialize;
 #endif
     }
