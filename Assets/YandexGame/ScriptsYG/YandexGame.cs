@@ -1298,8 +1298,9 @@ namespace YG
         #region Update
         int delayFirstCalls = -1;
         static float timerShowAd;
+#if !UNITY_EDITOR
         static float timerSaveCloud = 62;
-
+#endif
         private void Update()
         {
             // Таймер для обработки показа Fillscreen рекламы
@@ -1319,7 +1320,7 @@ namespace YG
                 timerSaveCloud += Time.unscaledDeltaTime;
 #endif
         }
-        #endregion Update
+#endregion Update
 
         #region Json
         public class JsonAuth
