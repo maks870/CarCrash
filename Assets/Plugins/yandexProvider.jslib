@@ -15,16 +15,16 @@ mergeInto(LibraryManager.library,
 		SaveCloud(UTF8ToString(jsonData), flush);
 	},
 	
-	LoadYG: function ()
-	{
-		LoadCloud();
-	},
-	
 	EndLoad: function ()
 	{
 		EndLoad();
 	},
 
+	LoadYG: function ()
+	{
+		LoadCloud();
+	},
+	
 	InitLeaderboard: function ()
 	{
 		InitLeaderboard();
@@ -156,11 +156,16 @@ mergeInto(LibraryManager.library,
 var FileIO = {
 
   SaveToLocalStorage : function(key, data) {
-    localStorage.setItem(Pointer_stringify(key), Pointer_stringify(data));
+	try {
+		localStorage.setItem(UTF8ToString(key), UTF8ToString(data));
+	}
+	catch (e) {
+		console.error('Save to Local Storage error: ', e.message);
+	}
   },
 
   LoadFromLocalStorage : function(key) {
-    var returnStr = localStorage.getItem(Pointer_stringify(key));
+    var returnStr = localStorage.getItem(UTF8ToString(key));
     var bufferSize = lengthBytesUTF8(returnStr) + 1;
     var buffer = _malloc(bufferSize);
     stringToUTF8(returnStr, buffer, bufferSize);
@@ -168,16 +173,22 @@ var FileIO = {
   },
 
   RemoveFromLocalStorage : function(key) {
-    localStorage.removeItem(Pointer_stringify(key));
+    localStorage.removeItem(UTF8ToString(key));
   },
 
   HasKeyInLocalStorage : function(key) {
-    if (localStorage.getItem(Pointer_stringify(key))) {
-      return 1;
-    }
-    else {
-      return 0;
-    }
+	try {
+		if (localStorage.getItem(UTF8ToString(key))) {
+		  return 1;
+		}
+		else {
+		  return 0;
+		}
+	}
+	catch (e) {
+		console.error('Has key in Local Storage error: ', e.message);
+		return 0;
+	}
   }
 };
 
