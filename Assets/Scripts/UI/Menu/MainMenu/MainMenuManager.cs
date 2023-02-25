@@ -11,10 +11,6 @@ public class MainMenuManager : MenuManager
     [SerializeField] private GameObject newLootbloxesWarning;
     [SerializeField] private List<GameObject> gamemodePanels;
 
-    private bool subYandexLoad = false;
-
-    public bool SubYandexLoad { set => subYandexLoad = value; }
-
     private void SetSavedSO()
     {
         mapSwitcher.InitializeUI();
@@ -26,9 +22,6 @@ public class MainMenuManager : MenuManager
         {
             presenter.GetAward();
             UpdateNewPossibilitiyWarnings();
-
-            if (subYandexLoad)
-                YandexGame.EndDataLoadingEvent -= GetAwardsAfterMap;
         }
     }
 
