@@ -66,6 +66,7 @@ public class MenuInitializer : MonoBehaviour
 
             menuManagers[i].SOLoaderSubscribe();
         }
+
         if (YandexGame.savesData.playerWrapper.maps.Count > 0)
         {
             if (!YandexGame.savesData.playerWrapper.careerIsEnded && YandexGame.savesData.playerWrapper.maps[YandexGame.savesData.playerWrapper.maps.Count - 1].isPassed)
