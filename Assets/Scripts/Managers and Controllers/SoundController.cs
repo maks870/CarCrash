@@ -15,6 +15,7 @@ public class SoundController : MonoBehaviour
 
     private void Start()
     {
+        audioMixer.updateMode = AudioMixerUpdateMode.UnscaledTime;
         music.Play();
         EnableSoundEffect(true);
         //audioMixer.GetFloat("Effect", out oldVolume);
@@ -24,14 +25,14 @@ public class SoundController : MonoBehaviour
     {
         if (on)
         {
+            AudioListener.volume = 1;
             buttonSound.image.sprite = buttonOnSprite;
-            EnableSoundEffect(true);
             audioMixer.SetFloat("Master", -10);
         }
         else
         {
+            AudioListener.volume = 0;
             buttonSound.image.sprite = buttonOffSprite;
-            EnableSoundEffect(false);
             audioMixer.SetFloat("Master", -80);
         }
         buttonSound.onClick.RemoveAllListeners();
