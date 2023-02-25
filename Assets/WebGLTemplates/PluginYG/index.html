@@ -223,6 +223,16 @@
 #endif
 
 <script>
+
+var DEBUG = false;
+        if(!DEBUG){
+            if(!window.console) window.console = {};
+            var methods = ["debug", "warn", "info"];
+            for(var i=0;i<methods.length;i++){
+                console[methods] = function(){};
+            }
+        }
+
     const hideFullScreenButton = "";
     const buildUrl = "Build";
     const loaderUrl = buildUrl + "/{{{ LOADER_FILENAME }}}";
