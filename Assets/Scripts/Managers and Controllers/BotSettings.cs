@@ -55,7 +55,7 @@ public class BotSettings : MonoBehaviour
 
         if (ChkManager.posBot(gameObject) > ChkManager.posMax)
         {
-            carController.MaxSpeed = maxSpeed + maxSpeed * 0.2f;
+            carController.MaxSpeed = maxSpeed + maxSpeed * 0.15f;
         }
     }
 }
