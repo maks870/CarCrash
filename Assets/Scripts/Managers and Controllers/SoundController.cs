@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -24,11 +25,13 @@ public class SoundController : MonoBehaviour
         if (on)
         {
             buttonSound.image.sprite = buttonOnSprite;
+            EnableSoundEffect(true);
             audioMixer.SetFloat("Master", -10);
         }
         else
         {
             buttonSound.image.sprite = buttonOffSprite;
+            EnableSoundEffect(false);
             audioMixer.SetFloat("Master", -80);
         }
         buttonSound.onClick.RemoveAllListeners();
