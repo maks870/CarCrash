@@ -41,7 +41,8 @@ public class MenuInitializer : MonoBehaviour
     {
         if (YandexGame.SDKEnabled == true)
         {
-            YandexGame.LoadProgress();
+            soundController.Initialize();
+            StartInitialize();
         }
     }
 
@@ -82,8 +83,7 @@ public class MenuInitializer : MonoBehaviour
         }
         else
         {
-            YandexGame.EndDataLoadingEvent += newMainMenu.GetAwardsAfterMap;
-            newMainMenu.SubYandexLoad = true;
+            newMainMenu.GetAwardsAfterMap();
         }
 
         SOLoader.instance.LoadAll();

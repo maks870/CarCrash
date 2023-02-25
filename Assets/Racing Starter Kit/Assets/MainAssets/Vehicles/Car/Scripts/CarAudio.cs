@@ -25,6 +25,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void Start()
         {
+
             if (cam == null)
                 cam = Camera.main;
             // get the carcontroller ( this will not be null as we have require component)

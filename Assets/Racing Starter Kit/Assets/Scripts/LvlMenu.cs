@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine;
 
 public class LvlMenu : MonoBehaviour
 {
@@ -67,25 +70,24 @@ public class LvlMenu : MonoBehaviour
 
     private void SetPause(bool paused)
     {
+        StartCoroutine(PrePause(paused));
+    }
+
+    private IEnumerator PrePause(bool paused) 
+    {
+        soundController.EnableSoundEffect(!paused);
+
+        yield return new WaitForNextFrameUnit();
+
         if (paused)
         {
-            soundController.EnableSoundEffect(false);
-
             Time.timeScale = 0;
-            PauseMenu.SetActive(true);
-
-            if (missionManager != null && missionManager.IsActiveDialogue)
-                return;
         }
         else
         {
-            soundController.EnableSoundEffect(true);
-
             Time.timeScale = 1;
-            PauseMenu.SetActive(false);
-
-            if (missionManager != null && missionManager.IsActiveDialogue)
-                return;
         }
+
+        PauseMenu.SetActive(paused);
     }
 }
