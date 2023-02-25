@@ -14,6 +14,7 @@ public class MenuInitializer : MonoBehaviour
     private void OnEnable()
     {
         YandexGame.GetDataEvent += StartInitialize;
+        YandexGame.EndDataLoadingEvent += soundController.Initialize;
     }
 
     private void OnDisable()
@@ -38,7 +39,6 @@ public class MenuInitializer : MonoBehaviour
         isInitializeProcess = true;
 
         startRoom.SetActive(true);
-        YandexGame.EndDataLoadingEvent += soundController.Initialize;
 
         MenuManager mainMenu = menuManagers[0];
 
