@@ -88,6 +88,18 @@
         }
     </style>
     #endif
+    <script>
+            var DEBUG = false;
+            if(!DEBUG)
+        {
+            if(!window.console) window.console = {};
+            var methods = ["debug", "warn", "info"];
+            for(var i=0;i<methods.length;i++)
+            {
+            console[methods] = function(){};
+            }
+        }
+    </script>
 </head>
 <body class="{{{ SPLASH_SCREEN_STYLE.toLowerCase() }}}">
 <div id="unity-container" class="unity-desktop">
