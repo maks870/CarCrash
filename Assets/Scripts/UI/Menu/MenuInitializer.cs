@@ -17,10 +17,11 @@ public class MenuInitializer : MonoBehaviour
 
 #if !UNITY_EDITOR
 {
-        YandexGame.EndDataLoadingEvent += soundController.Initialize;
+        YandexGame.GetDataEvent += soundController.Initialize;
 }
 #else
-        YandexGame.GetDataEvent += soundController.Initialize;
+        YandexGame.EndDataLoadingEvent += soundController.Initialize;
+        Debug.Log("Подписка ЭДИТОРА музыка");
 #endif
     }
 
@@ -30,10 +31,11 @@ public class MenuInitializer : MonoBehaviour
 
 #if !UNITY_EDITOR
 {
-        YandexGame.EndDataLoadingEvent -= soundController.Initialize;
+        YandexGame.GetDataEvent -= soundController.Initialize;
 }
 #else
-        YandexGame.GetDataEvent -= soundController.Initialize;
+        Debug.Log("Отписка ЭДИТОРА музыка");
+        YandexGame.EndDataLoadingEvent -= soundController.Initialize;
 #endif
     }
 
@@ -83,7 +85,13 @@ public class MenuInitializer : MonoBehaviour
         }
         else
         {
+#if !UNITY_EDITOR
+{
             newMainMenu.GetAwardsAfterMap();
+}
+#else
+            YandexGame.EndDataLoadingEvent += newMainMenu.GetAwardsAfterMap;
+#endif
         }
 
         SOLoader.instance.LoadAll();

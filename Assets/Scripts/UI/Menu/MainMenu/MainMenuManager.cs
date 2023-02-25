@@ -22,6 +22,12 @@ public class MainMenuManager : MenuManager
         {
             presenter.GetAward();
             UpdateNewPossibilitiyWarnings();
+
+#if UNITY_EDITOR
+            {
+                YandexGame.EndDataLoadingEvent -= GetAwardsAfterMap;
+            }
+#endif
         }
     }
 
