@@ -14,7 +14,6 @@ public class MenuInitializer : MonoBehaviour
     private void OnEnable()
     {
         YandexGame.GetDataEvent += StartInitialize;
-        YandexGame.EndDataLoadingEvent += soundController.Initialize;
     }
 
     private void OnDisable()
@@ -39,6 +38,7 @@ public class MenuInitializer : MonoBehaviour
         isInitializeProcess = true;
 
         startRoom.SetActive(true);
+        YandexGame.EndDataLoadingEvent += soundController.Initialize;
 
         MenuManager mainMenu = menuManagers[0];
 
@@ -53,10 +53,13 @@ public class MenuInitializer : MonoBehaviour
             menuManagers[i].SOLoaderSubscribe();
         }
 
+        if (!YandexGame.savesData.playerWrapper.careerIsEnded && YandexGame.savesData.playerWrapper.maps[YandexGame.savesData.playerWrapper.maps.Count - 1].isPassed)
+            YandexGame.savesData.playerWrapper.newMission = true;
+
         MainMenuManager newMainMenu = (MainMenuManager)mainMenu;
         newMainMenu.PlayerLoad.SOLoaderSubscribe();
 
-        if (SOLoader.instance.IsResourcesLoaded)
+        if (!SOLoader.instance.IsResourcesLoaded)
         {
             SOLoader.instance.EndLoadingEvent += newMainMenu.GetAwardsAfterMap;
         }

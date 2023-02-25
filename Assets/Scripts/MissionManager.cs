@@ -3,7 +3,6 @@ using YG;
 
 public class MissionManager : MonoBehaviour
 {
-
     [SerializeField] private GameObject missionsObj;
     [SerializeField] private GameObject goalMissionObj;
     [SerializeField] private GameObject endGoalMissionObj;
@@ -118,13 +117,18 @@ public class MissionManager : MonoBehaviour
     {
         currentMission.gameObject.SetActive(false);
 
-        if (YandexGame.savesData.currentMission < missions.Length)
+        if (YandexGame.savesData.currentMission <= missions.Length)
         {
             YandexGame.savesData.currentMission += 1;
             YandexGame.SaveProgress();
 
             if (YandexGame.savesData.currentMission == missions.Length)
+            {
+                YandexGame.savesData.playerWrapper.careerIsEnded = true;
+                SwitchMissionPointer(false);
+                YandexGame.SaveProgress();
                 return;
+            }
 
             InitializeCurrentMission();
         }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class PlayerWrapper
 {
     public bool newMission = true;
+    public bool careerIsEnded = false;
     public string lastMap;
     public string currentCharacterItem;
     public string currentCarColorItem;

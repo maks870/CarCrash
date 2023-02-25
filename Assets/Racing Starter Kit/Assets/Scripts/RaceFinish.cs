@@ -52,10 +52,6 @@ public class RaceFinish : MonoBehaviour
     {
         int currentMapIndex = YandexGame.savesData.playerWrapper.GetMapInfoIndex(YandexGame.savesData.playerWrapper.lastMap);
         MapInfo currentMap = YandexGame.savesData.playerWrapper.maps[currentMapIndex];
-
-        if (currentMap.newRecordTime == true)
-            newRecord.SetActive(true);
-
         string minNull = LapTimeManager.MinuteCount > 10 ? "" : "0";
         string secNull = LapTimeManager.SecondCount > 10 ? "" : "0";
         string miliSecNull = LapTimeManager.MilliCount > 10 ? "" : "0";
