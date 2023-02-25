@@ -86,10 +86,10 @@ namespace YG
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
-            if (Instance == this) 
+            if (Instance == this)
             {
                 Start();
-            }     
+            }
         }
 
         private void Awake()
@@ -1320,7 +1320,7 @@ namespace YG
                 timerSaveCloud += Time.unscaledDeltaTime;
 #endif
         }
-#endregion Update
+        #endregion Update
 
         #region Json
         public class JsonAuth

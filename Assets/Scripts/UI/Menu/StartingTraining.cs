@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 [Serializable]
 public class TrainingStage
@@ -81,6 +82,8 @@ public class StartingTraining : MonoBehaviour
 
     private void EndDialogue()
     {
+        YandexGame.savesData.isFirstSession2 = false;
+        YandexGame.SaveProgress();
         EndDialogueAction?.Invoke();
     }
 

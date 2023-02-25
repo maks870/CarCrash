@@ -6,6 +6,9 @@
         public int idSave;
         public bool isFirstSession = true;
         public bool isFirstSession2 = true;
+        public bool isEndedTraining = false;
+        public bool isGotTrainingReward = false;
+
         public string language = "ru";
         public bool feedbackDone;
         public bool promptDone;

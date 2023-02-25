@@ -57,6 +57,9 @@ public class MenuInitializer : MonoBehaviour
 
         MenuManager mainMenu = menuManagers[0];
 
+        if (YandexGame.savesData.isFirstSession2)
+            YandexGame.ResetSaveProgress();
+
         for (int i = 0; i < menuManagers.Count; i++)
         {
             if (menuManagers[i].GetType() == typeof(MainMenuManager))
@@ -70,6 +73,9 @@ public class MenuInitializer : MonoBehaviour
 
         if (YandexGame.savesData.playerWrapper.maps.Count > 0)
         {
+            Debug.Log(YandexGame.savesData.playerWrapper.maps.Count);
+            Debug.Log(YandexGame.savesData.playerWrapper.maps[YandexGame.savesData.playerWrapper.maps.Count - 1].isPassed);
+
             if (!YandexGame.savesData.playerWrapper.careerIsEnded && YandexGame.savesData.playerWrapper.maps[YandexGame.savesData.playerWrapper.maps.Count - 1].isPassed)
                 YandexGame.savesData.playerWrapper.newMission = true;
         }
@@ -77,7 +83,7 @@ public class MenuInitializer : MonoBehaviour
         MainMenuManager newMainMenu = (MainMenuManager)mainMenu;
         newMainMenu.PlayerLoad.SOLoaderSubscribe();
 
-        if (!SOLoader.instance.IsResourcesLoaded)
+        if (SOLoader.instance.IsResourcesLoaded)
         {
             SOLoader.instance.EndLoadingEvent += newMainMenu.GetAwardsAfterMap;
         }
@@ -95,12 +101,7 @@ public class MenuInitializer : MonoBehaviour
         SOLoader.instance.LoadAll();
 
         if (YandexGame.savesData.isFirstSession2)
-        {
-            YandexGame.savesData.playerWrapper.lastMap = "";
-            YandexGame.savesData.playerWrapper.lastMapPlaces.Clear();
-            YandexGame.savesData.isFirstSession2 = false;
             startingTraining.StartTraining();
-        }
 
         earningUIController.UpdateEarnings();
         newMainMenu.UpdateNewPossibilitiyWarnings();
