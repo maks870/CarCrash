@@ -304,10 +304,8 @@
 
     YaGames.init()
         .then(ysdk => {
-            #if !OFF_ADS_BEFORE_LOADING_GAME
             if (ysdk.deviceInfo.type == "desktop")
                 ysdk.adv.showFullscreenAdv();
-            #endif
 
             window.ysdk = ysdk;
 
@@ -425,11 +423,6 @@
 
     function AuthorizationCheck(photoSize, scopes) {
         InitPlayer(photoSize, scopes);
-
-        #if !OFF_ADS_BEFORE_LOADING_GAME
-        if (ysdk.deviceInfo.type != "desktop")
-            FullscreenShow();
-        #endif
     }
 
     function OpenAuthDialog(photoSize, scopes) {
