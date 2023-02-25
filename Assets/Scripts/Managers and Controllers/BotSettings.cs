@@ -20,6 +20,7 @@ public class BotSettings : MonoBehaviour
     [SerializeField] private MeshFilter carFilter;
     [SerializeField][Range(0, 100)] private int complexity;
     [SerializeField][Range(200, 900)] private float accelerationSpeed;
+    private float maxSpeed;
 
 
     private AbilityAIInput abilityAIInput;
@@ -31,6 +32,7 @@ public class BotSettings : MonoBehaviour
         carController = GetComponent<CarController>();
         abilityAIInput.Complexity = complexity;
         carController.m_FullTorqueOverAllWheels = accelerationSpeed;
+        maxSpeed = carController.MaxSpeed;
     }
 
     public void InitializeBot(CharacterModelSO character, CarColorSO carColor)
@@ -48,12 +50,12 @@ public class BotSettings : MonoBehaviour
     {
         if (ChkManager.posBot(gameObject) < ChkManager.posMax)
         {
-            carController.m_FullTorqueOverAllWheels = accelerationSpeed - 100;
+            carController.MaxSpeed = maxSpeed / 0.1f;
         }
 
         if (ChkManager.posBot(gameObject) > ChkManager.posMax)
         {
-            carController.m_FullTorqueOverAllWheels = accelerationSpeed + 350;
+            carController.MaxSpeed = maxSpeed * 0.2f;
         }
     }
 }
