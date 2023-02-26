@@ -74,7 +74,7 @@ public class AwardUIController : MonoBehaviour
         AwardPresenterUI.SetActive(false);
     }
 
-    public void SwitchAward()//убрать дублирование
+    public void SwitchAward()
     {
         if (currentAward != 0)
             awards[currentAward - 1].SetActive(false);
@@ -83,22 +83,6 @@ public class AwardUIController : MonoBehaviour
         {
             CloseAwards();
             OnLootboxAwardsEnd?.Invoke();
-            YandexGame.SaveProgress();
-            return;
-        }
-
-        awards[currentAward].SetActive(true);
-        currentAward++;
-    }
-
-    public void SwitchAwardMap() //
-    {
-        if (currentAward != 0)
-            awards[currentAward - 1].SetActive(false);
-
-        if (currentAward >= awards.Count)
-        {
-            CloseAwards();
             YandexGame.SaveProgress();
             return;
         }

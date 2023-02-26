@@ -12107,6 +12107,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1942103841}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: ResetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Open
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1942103841}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: ResetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Close
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &924317137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21866,7 +21890,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 982961183}
         m_TargetAssemblyTypeName: AwardUIController, Assembly-CSharp
-        m_MethodName: SwitchAwardMap
+        m_MethodName: SwitchAward
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
