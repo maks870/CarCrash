@@ -16,6 +16,12 @@ public class MissionManager : MonoBehaviour
 
     public void SwitchMissionPointer(bool isEnable)
     {
+        if (YandexGame.savesData.playerWrapper.careerIsEnded) 
+        {
+            missionPointer.gameObject.SetActive(false);
+            return;
+        }
+
         missionPointer.gameObject.SetActive(isEnable);
         Looker looker = missionPointer.GetComponent<Looker>();
 
