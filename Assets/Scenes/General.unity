@@ -15597,7 +15597,7 @@ MonoBehaviour:
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
   ru: "\u0412\u044B\u0431\u0440\u0430\u0442\u044C \u0442\u0440\u0430\u0441\u0441\u0443"
-  en: Choose a track
+  en: Choose a route
   tr: "Pisti se\xE7"
   az: 
   be: 
@@ -25430,8 +25430,8 @@ MonoBehaviour:
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
   ru: "\u0412 \u0413\u041E\u0420\u041E\u0414"
-  en: CITY
-  tr: "\u015EEH\u0130R"
+  en: In the city
+  tr: "\u015EEHRE"
   az: 
   be: 
   he: 

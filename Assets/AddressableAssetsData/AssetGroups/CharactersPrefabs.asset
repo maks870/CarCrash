@@ -22,307 +22,256 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 90d7e8ab6d5eaa54883ebb9417e5b872
     m_Address: CharacterAmong Variant 1
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8dbc27e32a6157d4b99a248576c04119
     m_Address: CharacterAmong Variant 2
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b83ed41f291ca824aa16d0e8edfbd00d
     m_Address: CharacterAmong Variant 3
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: edde36c05aab12c4aa8acfc532810049
     m_Address: CharacterAmong Variant 4
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9e8c66648dcfe99429c9634d94e64efe
     m_Address: CharacterAmong Variant 5
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3d1a65afa3695c041a36bf8502a019f8
     m_Address: CharacterAmong Variant 6
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2904609ac1978fa4d91295250cb0c557
     m_Address: CharacterAmong Variant 7
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3a14ddd85a0f48a40969a74354046657
     m_Address: CharacterAmong Variant 8
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 029fb5580b6e525439609b16a8af5944
     m_Address: CharacterAmong Variant 9
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d96e700c102ee724eb567df5d4d660ce
     m_Address: CharacterAmong Variant 10
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b55ecb32d1cadd146b38b20eb38a42a3
     m_Address: CharacterAmong Variant 11
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7b018ac6b69dfb54fa6cb39b2ec0fad4
     m_Address: character_hagi_1 Variant 4
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9c97860561e98d54db48c889e204ebda
     m_Address: character_hagi_1 Variant 2
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5fbafad716bb42a458e5fe0c91de6f2f
     m_Address: character_hagi_1 Variant 3
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0e728414196471242b4fc8c48f1b4fd3
     m_Address: character_hagi_1 Variant 1
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 987ff52cf5e35b94d986896ffc0f4785
     m_Address: character_hagi_1 Variant
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1f86ccad497492345ae1eb926abb9474
     m_Address: character_hagi_1 Variant 5
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e730ce27302ab7048ae426e64820953c
     m_Address: character_hagi_1 Variant 6
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a2f6879f6136cf04391fdc6e6b67fe42
     m_Address: character_hagi_1 Variant 7
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 320b5cb8daf8a0a43adcb43b462d34cf
     m_Address: character_hagi_1 Variant 8
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6900bd668abf3c64f92b595115ccf1a7
     m_Address: character_hagi_2 Variant
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1d6c8e4defbf4dc499da2429a255b69c
     m_Address: character_Minecraft Variant 1
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 03b9d15fd3770284a954f0e03a856525
     m_Address: character_Minecraft Variant 2
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 52742db931d177e42b406b28e67d1b9e
     m_Address: character_Minecraft Variant 3
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 943cb964d019c05488c82073c6677f93
     m_Address: character_Minecraft Variant 4
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ec02f89825d3ef44e98ad524d72b3be7
     m_Address: character_Minecraft Variant 5
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1becade5dba68b74e88acc8e6ebd6f7b
     m_Address: character_Minecraft Variant 6
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 238a3837c8b54244ba0ae4b4d241f3a6
     m_Address: character_Minecraft Variant 7
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ea2f220538f2f0d468fde63b61472f4d
     m_Address: character_Minecraft Variant 8
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ebb8077c6f9e166439e2faaf43ca07c1
     m_Address: character_Minecraft Variant 9
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a5a8f64016019aa4f866fa86f9210f3b
     m_Address: character_Minecraft Variant 10
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6d260eedfaa7ddc479b5bd6c7f2185a3
     m_Address: character_Minecraft Variant
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d64f648693ba1ab4da4112fa4154a04d
     m_Address: character_rainbow_1 Variant
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a6772948f97c1ac4dbef19a68401b7d5
     m_Address: character_rainbow_2 Variant
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7e3022e2811c13a41b23e9e47a425f2c
     m_Address: character_rainbow_3 Variant
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 25917a2f0996d8e45a21e9c3ac206a45
     m_Address: character_rainbow_4 Variant
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fbfd55e137894a344a29c39bab74d3b7
     m_Address: character_rainbow_5 Variant
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: eb2826def4aacae47b798ead29cbd057
     m_Address: character_rainbow_6 Variant
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: af13fd38c39d87c41b97aedbf727426d
     m_Address: character_squids Variant11
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fa8103bba74ce094bb35d7a33d701ae1
     m_Address: character_squids Variant
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c9a85e6ad8d876f4ab59e3152a986ea7
     m_Address: character_squids Variant 1
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 91618542342dbe840a86bfefe8b83479
     m_Address: character_squids Variant 2
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 188634c57677d05449bf1ed91da4266b
     m_Address: character_squids Variant 3
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6f6a8bb098b715b4ba9d310cd5f12bf0
     m_Address: character_squids Variant 4
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 872bea733aa99c4489d4dd3fee8a27c1
     m_Address: character_squids Variant 5
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 583aa98fd3327414f80d36fc811f1f58
     m_Address: character_squids Variant 6
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 193792218f0486e4b94b3de4e94fcc9a
     m_Address: character_squids Variant 7
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d501fae344b1b9b4ebd0eb84f282c75b
     m_Address: character_squids Variant 8
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b3e082950c8da6540afbc6082e9f950f
     m_Address: character_squids Variant 9
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: eb202170f77bbe743929055219f3b303
     m_Address: character_squids Variant 10
     m_ReadOnly: 0
     m_SerializedLabels:
     - CharacterPref
-    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: d84bdf84c78b0c0489a17cf42914ce37, type: 2}
   m_SchemaSet:
