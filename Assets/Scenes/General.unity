@@ -21866,7 +21866,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 982961183}
         m_TargetAssemblyTypeName: AwardUIController, Assembly-CSharp
-        m_MethodName: SwitchAward
+        m_MethodName: SwitchAwardMap
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
