@@ -11,6 +11,8 @@ public class MenuInitializer : MonoBehaviour
     [SerializeField] private StartingTraining startingTraining;
 
     private bool isInitializeProcess = false;
+    private int testReset = 0;
+
     private void OnEnable()
     {
         YandexGame.GetDataEvent += StartInitialize;
@@ -108,11 +110,15 @@ public class MenuInitializer : MonoBehaviour
         SceneTransition.instance.EndPreload();
     }
 
-    public void ResetProgressTEST()//�������� �����
+    public void ResetProgressTEST()
     {
-        YandexGame.ResetSaveProgress();
-        YandexGame.SaveProgress();
+        testReset++;
+        if (testReset > 10)
+        {
+            YandexGame.ResetSaveProgress();
+            YandexGame.SaveProgress();
 
-        StartInitialize();
+            StartInitialize();
+        }
     }
 }

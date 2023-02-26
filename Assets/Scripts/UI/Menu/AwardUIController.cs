@@ -17,7 +17,7 @@ public class AwardUIController : MonoBehaviour
     private List<GameObject> awards = new List<GameObject>();
     private int currentAward = 0;
 
-    public Action OnAwardsEnd;
+    public Action OnLootboxAwardsEnd;
 
     private void ShowAwards(int coinValue, int gemValue, CarModelSO carSO, MapSO mapSO, CollectibleSO collectibleItem, bool isLootboxAward)
     {
@@ -74,7 +74,7 @@ public class AwardUIController : MonoBehaviour
         AwardPresenterUI.SetActive(false);
     }
 
-    public void SwitchAward()
+    public void SwitchAward()//убрать дублирование
     {
         if (currentAward != 0)
             awards[currentAward - 1].SetActive(false);
@@ -82,7 +82,23 @@ public class AwardUIController : MonoBehaviour
         if (currentAward >= awards.Count)
         {
             CloseAwards();
-            OnAwardsEnd?.Invoke();
+            OnLootboxAwardsEnd?.Invoke();
+            YandexGame.SaveProgress();
+            return;
+        }
+
+        awards[currentAward].SetActive(true);
+        currentAward++;
+    }
+
+    public void SwitchAwardMap() //
+    {
+        if (currentAward != 0)
+            awards[currentAward - 1].SetActive(false);
+
+        if (currentAward >= awards.Count)
+        {
+            CloseAwards();
             YandexGame.SaveProgress();
             return;
         }

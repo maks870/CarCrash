@@ -25,7 +25,7 @@ public class Shop : MonoBehaviour
     private void OnEnable()
     {
         YandexGame.RewardVideoEvent += GetAdReward;
-        lootboxAwardUI.OnAwardsEnd += lootbox.Close;
+        lootboxAwardUI.OnLootboxAwardsEnd += lootbox.Close;
     }
 
     private void Awake()
@@ -41,7 +41,7 @@ public class Shop : MonoBehaviour
     // Отписываемся от события открытия рекламы в OnDisable
     private void OnDisable()
     {
-        lootboxAwardUI.OnAwardsEnd -= lootbox.Close;
+        lootboxAwardUI.OnLootboxAwardsEnd -= lootbox.Close;
         YandexGame.RewardVideoEvent -= GetAdReward;
     }
 
