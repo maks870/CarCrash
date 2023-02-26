@@ -77,10 +77,7 @@ public class MainMenuManager : MenuManager
         else
             newLootbloxesWarning.SetActive(false);
 
-        if (YandexGame.savesData.playerWrapper.newMission == true)
-            newMissionWarning.SetActive(true);
-        else
-            newMissionWarning.SetActive(false);
+        newMissionWarning.SetActive(YandexGame.savesData.playerWrapper.newMission);
     }
 
     public void ClearSOLoaderTEST()
