@@ -73,15 +73,6 @@ public class MenuInitializer : MonoBehaviour
             menuManagers[i].SOLoaderSubscribe();
         }
 
-        if (YandexGame.savesData.playerWrapper.maps.Count > 0)
-        {
-            Debug.Log(YandexGame.savesData.playerWrapper.maps.Count);
-            Debug.Log(YandexGame.savesData.playerWrapper.maps[YandexGame.savesData.playerWrapper.maps.Count - 1].isPassed);
-
-            if (!YandexGame.savesData.playerWrapper.careerIsEnded && YandexGame.savesData.playerWrapper.maps[YandexGame.savesData.playerWrapper.maps.Count - 1].isPassed)
-                YandexGame.savesData.playerWrapper.newMission = true;
-        }
-
         MainMenuManager newMainMenu = (MainMenuManager)mainMenu;
         newMainMenu.PlayerLoad.SOLoaderSubscribe();
 
@@ -101,6 +92,12 @@ public class MenuInitializer : MonoBehaviour
         }
 
         SOLoader.instance.LoadAll();
+
+        if (YandexGame.savesData.playerWrapper.maps.Count > 0)
+        {
+            if (!YandexGame.savesData.playerWrapper.careerIsEnded && YandexGame.savesData.playerWrapper.maps[YandexGame.savesData.playerWrapper.maps.Count - 1].isPassed)
+                YandexGame.savesData.playerWrapper.newMission = true;
+        }
 
         if (YandexGame.savesData.isFirstSession2)
             startingTraining.StartTraining();
